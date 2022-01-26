@@ -1,0 +1,35 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "nbtcrafting"
+      ]
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:titanium_axe",
+    "data": {
+      "deny": {
+        "AlloygeryProperties": {
+          "DiamondTipped": "",
+          "EmeraldEmbossed": "",
+          "NetheritePlatted": ""
+        }
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:diamonds"
+  },
+  "result": {
+    "item": "alloygery:titanium_axe",
+    "data": {
+      "$": "$ base",
+      "AlloygeryProperties": {
+        "DiamondTipped": true
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "nbtcrafting"
+      ]
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:titanium_pickaxe",
+    "data": {
+      "deny": {
+        "AlloygeryProperties": {
+          "EmeraldEmbossed": "",
+          "DiamondTipped": "",
+          "NetheritePlatted": ""
+        }
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:emeralds"
+  },
+  "result": {
+    "item": "alloygery:titanium_pickaxe",
+    "data": {
+      "$": "$ base",
+      "AlloygeryProperties": {
+        "EmeraldEmbossed": true
+      }
+    }
+  }
+}

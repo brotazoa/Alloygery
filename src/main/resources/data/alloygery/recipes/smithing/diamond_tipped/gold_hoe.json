@@ -1,0 +1,34 @@
+{"fabric:load_conditions": [
+  {
+    "condition": "fabric:all_mods_loaded",
+    "values": [
+      "nbtcrafting"
+    ]
+  }
+],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "minecraft:golden_hoe",
+    "data": {
+      "deny": {
+        "AlloygeryProperties": {
+          "DiamondTipped": "",
+          "EmeraldEmbossed": "",
+          "NetheritePlatted": ""
+        }
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:diamonds"
+  },
+  "result": {
+    "item": "minecraft:golden_hoe",
+    "data": {
+      "$": "$ base",
+      "AlloygeryProperties": {
+        "DiamondTipped": true
+      }
+    }
+  }
+}

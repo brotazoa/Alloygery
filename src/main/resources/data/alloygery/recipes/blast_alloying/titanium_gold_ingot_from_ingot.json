@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:titanium_ingots"
+    },
+    {
+      "tag": "c:gold_ingots"
+    }
+  ],
+  "output":{
+    "id": "alloygery:titanium_gold_ingot",
+    "count": 2
+  },
+  "smelting_time": 200,
+  "experience": 0.7
+}

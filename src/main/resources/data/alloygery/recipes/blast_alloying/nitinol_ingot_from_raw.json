@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:nickel_dusts"
+    },
+    {
+      "tag": "c:titanium_dusts"
+    }
+  ],
+  "output":{
+    "id": "alloygery:nitinol_ingot",
+    "count": 2
+  },
+  "smelting_time": 200,
+  "experience": 0.7
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:raw_tin_block",
+    "minecraft:raw_copper_block",
+    "minecraft:raw_iron_block",
+    "minecraft:raw_gold_block",
+    "alloygery:raw_nickel_block",
+    "alloygery:raw_titanium_block"
+  ]
+}

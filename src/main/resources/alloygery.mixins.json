@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "amorphia.alloygery.mixins",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "ArmorItemMixin",
+    "ItemAccessor",
+    "ItemEntityMixin",
+    "ItemMixin",
+    "ItemStackMixin",
+    "MiningToolItemAccessor"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

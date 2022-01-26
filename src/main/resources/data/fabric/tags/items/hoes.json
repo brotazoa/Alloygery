@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_hoe",
+    "alloygery:antanium_hoe",
+    "alloygery:steel_hoe",
+    "alloygery:nickel_hoe",
+    "alloygery:invar_hoe",
+    "alloygery:constantan_hoe",
+    "alloygery:cupronickel_hoe",
+    "alloygery:titanium_hoe",
+    "alloygery:titanium_gold_hoe",
+    "alloygery:nitinol_hoe"
+  ]
+}

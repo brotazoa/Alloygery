@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:iron_ingots"
+    },
+    {
+      "tag": "c:nickel_ingots"
+    }
+  ],
+  "output":{
+    "id": "alloygery:invar_ingot",
+    "count": 2
+  },
+  "smelting_time": 200,
+  "experience": 0.7
+}

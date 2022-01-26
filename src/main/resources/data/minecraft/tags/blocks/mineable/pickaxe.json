@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:tin_ore",
+    "alloygery:deepslate_tin_ore",
+    "alloygery:nickel_ore",
+    "alloygery:titanium_ore",
+    "alloygery:raw_tin_block",
+    "alloygery:raw_nickel_block",
+    "alloygery:raw_titanium_block",
+    "alloygery:tin_block",
+    "alloygery:bronze_block",
+    "alloygery:antanium_block",
+    "alloygery:steel_block",
+    "alloygery:nickel_block",
+    "alloygery:invar_block",
+    "alloygery:constantan_block",
+    "alloygery:cupronickel_block",
+    "alloygery:titanium_block",
+    "alloygery:titanium_gold_block",
+    "alloygery:nitinol_block"
+  ]
+}

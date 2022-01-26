@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i i",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:titanium_ingots"
+    }
+  },
+  "result": {
+    "item": "alloygery:titanium_chestplate"
+  }
+}

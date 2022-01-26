@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i i",
+    "i i"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:bronze_ingots"
+    }
+  },
+  "result": {
+    "item": "alloygery:bronze_boots"
+  }
+}

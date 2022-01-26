@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:iron_dusts"
+    },
+    {
+      "tag": "c:charcoal"
+    }
+  ],
+  "output":{
+    "id": "alloygery:steel_ingot",
+    "count": 1
+  },
+  "smelting_time": 200,
+  "experience": 0.7
+}

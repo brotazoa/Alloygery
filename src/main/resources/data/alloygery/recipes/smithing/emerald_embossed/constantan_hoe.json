@@ -1,0 +1,35 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "nbtcrafting"
+      ]
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:constantan_hoe",
+    "data": {
+      "deny": {
+        "AlloygeryProperties": {
+          "EmeraldEmbossed": "",
+          "DiamondTipped": "",
+          "NetheritePlatted": ""
+        }
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:emeralds"
+  },
+  "result": {
+    "item": "alloygery:constantan_hoe",
+    "data": {
+      "$": "$ base",
+      "AlloygeryProperties": {
+        "EmeraldEmbossed": true
+      }
+    }
+  }
+}

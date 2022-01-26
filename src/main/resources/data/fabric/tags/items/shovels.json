@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_shovel",
+    "alloygery:antanium_shovel",
+    "alloygery:steel_shovel",
+    "alloygery:nickel_shovel",
+    "alloygery:invar_shovel",
+    "alloygery:constantan_shovel",
+    "alloygery:cupronickel_shovel",
+    "alloygery:titanium_shovel",
+    "alloygery:titanium_gold_shovel",
+    "alloygery:nitinol_shovel"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "nbtcrafting"
+      ]
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "minecraft:golden_boots",
+    "data": {
+      "deny": {
+        "AlloygeryProperties": {
+          "NetheritePlatted": ""
+        }
+      }
+    }
+  },
+  "ingredient": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "item": "minecraft:golden_boots",
+    "data": {
+      "$": "$ base",
+      "AlloygeryProperties": {
+        "NetheritePlatted": true
+      }
+    }
+  }
+}

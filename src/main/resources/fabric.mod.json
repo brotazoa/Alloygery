@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "alloygery",
+  "version": "${version}",
+  "name": "Alloygery",
+  "description": "Additional metals and alloys to enhance tool and armor progression",
+  "authors": [
+    "brotazoa"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/alloygery/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "amorphia.alloygery.Alloygery"
+    ],
+    "main": [
+      "amorphia.alloygery.Alloygery"
+    ],
+    "rei": [
+      "amorphia.alloygery.compat.rei.AlloygeryPlugin"
+    ]
+  },
+  "mixins": [
+    "alloygery.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.8",
+    "fabric": "*",
+    "minecraft": "1.18.1",
+    "nbtcrafting": ">=2.1.0+mc1.18-pre1"
+  }
+}

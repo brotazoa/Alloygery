@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "nickel_ingot",
+  "ingredient": {
+    "tag": "c:nickel_ores"
+  },
+  "result": "alloygery:nickel_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

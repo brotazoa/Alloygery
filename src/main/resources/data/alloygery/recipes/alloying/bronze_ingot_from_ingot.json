@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:alloying",
+  "inputs": [
+    {
+      "tag": "c:copper_ingots"
+    },
+    {
+      "tag": "c:copper_ingots"
+    },
+    {
+      "tag": "c:copper_ingots"
+    },
+    {
+      "tag": "c:tin_ingots"
+    }
+  ],
+  "output":{
+    "id": "alloygery:bronze_ingot",
+    "count": 4
+  },
+  "smelting_time": 800,
+  "experience": 0.7
+}

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_sword",
+    "alloygery:antanium_sword",
+    "alloygery:steel_sword",
+    "alloygery:nickel_sword",
+    "alloygery:invar_sword",
+    "alloygery:constantan_sword",
+    "alloygery:cupronickel_sword",
+    "alloygery:titanium_sword",
+    "alloygery:titanium_gold_sword",
+    "alloygery:nitinol_sword"
+  ]
+}

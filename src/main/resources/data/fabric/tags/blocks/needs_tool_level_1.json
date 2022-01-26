@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:tin_ore",
+    "alloygery:deepslate_tin_ore",
+    "alloygery:raw_tin_block",
+    "alloygery:tin_block"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_axe",
+    "alloygery:antanium_axe",
+    "alloygery:steel_axe",
+    "alloygery:nickel_axe",
+    "alloygery:invar_axe",
+    "alloygery:constantan_axe",
+    "alloygery:cupronickel_axe",
+    "alloygery:titanium_axe",
+    "alloygery:titanium_gold_axe",
+    "alloygery:nitinol_axe"
+  ]
+}

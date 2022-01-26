@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i i",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:invar_ingots"
+    }
+  },
+  "result": {
+    "item": "alloygery:invar_chestplate"
+  }
+}

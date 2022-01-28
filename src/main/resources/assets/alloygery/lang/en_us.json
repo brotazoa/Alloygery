@@ -177,6 +177,6 @@
   "rei.alloygery.alloying": "Alloy Kiln",
   "rei.alloygery.blast_alloying": "Blast Alloy Kiln",
   "itemGroup.alloygery.alloygery": "Alloygery",
-  "stats.alloygery.interact_with_alloy_kiln": "Interact With Alloy Kiln",
-  "stats.alloygery.interact_with_blast_alloy_kiln": "Interact With Blast Alloy Kiln"
+  "stat.alloygery.interact_with_alloy_kiln": "Interact With Alloy Kiln",
+  "stat.alloygery.interact_with_blast_alloy_kiln": "Interact With Blast Alloy Kiln"
 }

@@ -20,25 +20,25 @@ public class ModOreGeneration
 	public static final ConfiguredFeature<?, ?> OVERWORLD_TIN_CONFIGURED_FEATURE = Feature.ORE.configure(
 			new OreFeatureConfig(OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
 					ModBlocks.TIN_ORE.getDefaultState(),
-					4
+					9
 			)
 	);
 
 	public static final PlacedFeature OVERWORLD_TIN_ORE_PLACED_FEATURE = OVERWORLD_TIN_CONFIGURED_FEATURE.withPlacement(
-			CountPlacementModifier.of(10),
+			CountPlacementModifier.of(50),
 			SquarePlacementModifier.of(),
 			HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.getTop())
 	);
 
 	public static final ConfiguredFeature<?, ?> NETHER_NICKEL_CONFIGURED_FEATURE = Feature.ORE.configure(
 			new OreFeatureConfig(OreConfiguredFeatures.BASE_STONE_NETHER,
-					ModBlocks.TIN_ORE.getDefaultState(),
-					3
+					ModBlocks.NICKLE_ORE.getDefaultState(),
+					10
 			)
 	);
 
 	public static final PlacedFeature NETHER_NICKEL_PLACED_FEATURE = NETHER_NICKEL_CONFIGURED_FEATURE.withPlacement(
-			CountPlacementModifier.of(5),
+			CountPlacementModifier.of(10),
 			SquarePlacementModifier.of(),
 			HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.getTop())
 	);
@@ -46,12 +46,12 @@ public class ModOreGeneration
 	public static final ConfiguredFeature<?, ?> END_TITANIUM_CONFIGURED_FEATURE = Feature.ORE.configure(
 			new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE),
 					ModBlocks.TITANIUM_ORE.getDefaultState(),
-					1
+					6
 			)
 	);
 
 	public static final PlacedFeature END_TITANIUM_PLACED_FEATURE = END_TITANIUM_CONFIGURED_FEATURE.withPlacement(
-			CountPlacementModifier.of(2),
+			CountPlacementModifier.of(10),
 			SquarePlacementModifier.of(),
 			HeightRangePlacementModifier.trapezoid(YOffset.getBottom(), YOffset.getTop())
 	);

@@ -177,6 +177,6 @@
   "rei.alloygery.alloying": "Печь для обжига сплавов",
   "rei.alloygery.blast_alloying": "Доменный печь для обжига сплавов",
   "itemGroup.alloygery.alloygery": "Alloygery",
-  "stats.alloygery.interact_with_alloy_kiln": "Взаимодействие с печью для обжига сплавов",
-  "stats.alloygery.interact_with_blast_alloy_kiln": "Взаимодействие с доменной печью для обжига сплавов"
+  "stat.alloygery.interact_with_alloy_kiln": "Взаимодействие с печью для обжига сплавов",
+  "stat.alloygery.interact_with_blast_alloy_kiln": "Взаимодействие с доменной печью для обжига сплавов"
 }

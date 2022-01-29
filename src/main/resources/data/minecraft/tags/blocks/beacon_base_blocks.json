@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:steel_block",
+    "alloygery:nickel_block",
+    "alloygery:invar_block",
+    "alloygery:titanium_block",
+    "alloygery:titanium_gold_block",
+    "alloygery:nitinol_block"
+  ]
+}

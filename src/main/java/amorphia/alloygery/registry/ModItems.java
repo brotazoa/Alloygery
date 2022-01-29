@@ -391,18 +391,21 @@ public class ModItems
 		register("nitinol_leggings", NITINOL_LEGGINGS);
 		register("nitinol_boots", NITINOL_BOOTS);
 
-		//iron tool overrides
-		override(Items.IRON_AXE, IRON_AXE);
-		override(Items.IRON_HOE, IRON_HOE);
-		override(Items.IRON_PICKAXE, IRON_PICKAXE);
-		override(Items.IRON_SHOVEL, IRON_SHOVEL);
-		override(Items.IRON_SWORD, IRON_SWORD);
+		if (Alloygery.CONFIG.ironGear.enable)
+		{
+			//iron tool overrides
+			override(Items.IRON_AXE, IRON_AXE);
+			override(Items.IRON_HOE, IRON_HOE);
+			override(Items.IRON_PICKAXE, IRON_PICKAXE);
+			override(Items.IRON_SHOVEL, IRON_SHOVEL);
+			override(Items.IRON_SWORD, IRON_SWORD);
 
-		//iron armor overrides
-		override(Items.IRON_HELMET, IRON_HELMET);
-		override(Items.IRON_CHESTPLATE, IRON_CHESTPLATE);
-		override(Items.IRON_LEGGINGS, IRON_LEGGINGS);
-		override(Items.IRON_BOOTS, IRON_BOOTS);
+			//iron armor overrides
+			override(Items.IRON_HELMET, IRON_HELMET);
+			override(Items.IRON_CHESTPLATE, IRON_CHESTPLATE);
+			override(Items.IRON_LEGGINGS, IRON_LEGGINGS);
+			override(Items.IRON_BOOTS, IRON_BOOTS);
+		}
 
 		//ineffective diamond gear overrides
 		if (Alloygery.CONFIG != null && Alloygery.CONFIG.makeDiamondGearIneffective)

@@ -1,4 +1,10 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "nickelGear.enable"
+    }
+  ],
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "ii",

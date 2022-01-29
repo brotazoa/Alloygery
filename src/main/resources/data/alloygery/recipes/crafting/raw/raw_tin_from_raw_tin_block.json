@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "alloygery:raw_tin_block"
+    }
+  ],
+  "result": {
+    "item": "alloygery:raw_tin",
+    "count": 9
+  }
+}

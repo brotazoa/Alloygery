@@ -192,6 +192,9 @@
   "text.autoconfig.alloygery.option.disableNetheriteEquipment": "Disable vanilla crafting recipes for netherite tools and armor",
   "text.autoconfig.alloygery.option.makeDiamondGearIneffective": "Make diamond tools and armor ineffective",
   "text.autoconfig.alloygery.option.makeNetheriteGearIneffective": "Make netherite tools and armor ineffective",
+  "text.autoconfig.alloygery.option.enableDiamondUpgrade": "Enable the diamond upgrade at the smithing table",
+  "text.autoconfig.alloygery.option.enableEmeraldUpgrade": "Enable the emerald upgrade at the smithing table",
+  "text.autoconfig.alloygery.option.enableNetheriteUpgrade": "Enable the netherite upgrade at the smithing table",
 
   "text.autoconfig.alloygery.option.tinOre": "Tin ore generation",
   "text.autoconfig.alloygery.option.tinOre.shouldGenerate": "Generate tin ore",
@@ -209,6 +212,7 @@
   "text.autoconfig.alloygery.option.titaniumOre.number": "Average number of titanium ore patches per chunk",
 
   "text.autoconfig.alloygery.option.copperGear": "Copper gear stats",
+  "text.autoconfig.alloygery.option.copperGear.enable": "Enable copper gear",
   "text.autoconfig.alloygery.option.copperGear.miningLevel": "Mining level for copper tools",
   "text.autoconfig.alloygery.option.copperGear.uses": "Durability for copper tools",
   "text.autoconfig.alloygery.option.copperGear.speed": "Mining and attack speed for copper tools",
@@ -223,6 +227,7 @@
   "text.autoconfig.alloygery.option.copperGear.knockback": "Knockback resistance provided by copper armor",
 
   "text.autoconfig.alloygery.option.bronzeGear": "Bronze gear stats",
+  "text.autoconfig.alloygery.option.bronzeGear.enable": "Enable bronze gear",
   "text.autoconfig.alloygery.option.bronzeGear.miningLevel": "Mining level for bronze tools",
   "text.autoconfig.alloygery.option.bronzeGear.uses": "Durability for bronze tools",
   "text.autoconfig.alloygery.option.bronzeGear.speed": "Mining and attack speed for bronze tools",
@@ -237,6 +242,7 @@
   "text.autoconfig.alloygery.option.bronzeGear.knockback": "Knockback resistance provided by bronze armor",
 
   "text.autoconfig.alloygery.option.ironGear": "Iron gear stats",
+  "text.autoconfig.alloygery.option.ironGear.enable": "Enable iron gear override",
   "text.autoconfig.alloygery.option.ironGear.miningLevel": "Mining level for iron tools",
   "text.autoconfig.alloygery.option.ironGear.uses": "Durability for iron tools",
   "text.autoconfig.alloygery.option.ironGear.speed": "Mining and attack speed for iron tools",
@@ -251,6 +257,7 @@
   "text.autoconfig.alloygery.option.ironGear.knockback": "Knockback resistance provided by iron armor",
 
   "text.autoconfig.alloygery.option.antaniumGear": "Antanium gear stats",
+  "text.autoconfig.alloygery.option.antaniumGear.enable": "Enable antanium gear",
   "text.autoconfig.alloygery.option.antaniumGear.miningLevel": "Mining level for antanium tools",
   "text.autoconfig.alloygery.option.antaniumGear.uses": "Durability for antanium tools",
   "text.autoconfig.alloygery.option.antaniumGear.speed": "Mining and attack speed for antanium tools",
@@ -265,6 +272,7 @@
   "text.autoconfig.alloygery.option.antaniumGear.knockback": "Knockback resistance provided by antanium armor",
 
   "text.autoconfig.alloygery.option.steelGear": "Steel gear stats",
+  "text.autoconfig.alloygery.option.steelGear.enable": "Enable steel gear",
   "text.autoconfig.alloygery.option.steelGear.miningLevel": "Mining level for steel tools",
   "text.autoconfig.alloygery.option.steelGear.uses": "Durability for steel tools",
   "text.autoconfig.alloygery.option.steelGear.speed": "Mining and attack speed for steel tools",
@@ -279,6 +287,7 @@
   "text.autoconfig.alloygery.option.steelGear.knockback": "Knockback resistance provided by steel armor",
 
   "text.autoconfig.alloygery.option.nickelGear": "Nickel gear stats",
+  "text.autoconfig.alloygery.option.nickelGear.enable": "Enable nickel gear",
   "text.autoconfig.alloygery.option.nickelGear.miningLevel": "Mining level for nickel tools",
   "text.autoconfig.alloygery.option.nickelGear.uses": "Durability for nickel tools",
   "text.autoconfig.alloygery.option.nickelGear.speed": "Mining and attack speed for nickel tools",
@@ -293,6 +302,7 @@
   "text.autoconfig.alloygery.option.nickelGear.knockback": "Knockback resistance provided by nickel armor",
 
   "text.autoconfig.alloygery.option.invarGear": "Invar gear stats",
+  "text.autoconfig.alloygery.option.invarGear.enable": "Enable invar gear",
   "text.autoconfig.alloygery.option.invarGear.miningLevel": "Mining level for invar tools",
   "text.autoconfig.alloygery.option.invarGear.uses": "Durability for invar tools",
   "text.autoconfig.alloygery.option.invarGear.speed": "Mining and attack speed for invar tools",
@@ -307,6 +317,7 @@
   "text.autoconfig.alloygery.option.invarGear.knockback": "Knockback resistance provided by invar armor",
 
   "text.autoconfig.alloygery.option.constantanGear": "Constantan gear stats",
+  "text.autoconfig.alloygery.option.constantanGear.enable": "Enable constantan gear",
   "text.autoconfig.alloygery.option.constantanGear.miningLevel": "Mining level for constantan tools",
   "text.autoconfig.alloygery.option.constantanGear.uses": "Durability for constantan tools",
   "text.autoconfig.alloygery.option.constantanGear.speed": "Mining and attack speed for constantan tools",
@@ -321,6 +332,7 @@
   "text.autoconfig.alloygery.option.constantanGear.knockback": "Knockback resistance provided by constantan armor",
 
   "text.autoconfig.alloygery.option.cupronickelGear": "Cupronickel gear stats",
+  "text.autoconfig.alloygery.option.cupronickelGear.enable": "Enable cupronickel gear",
   "text.autoconfig.alloygery.option.cupronickelGear.miningLevel": "Mining level for cupronickel tools",
   "text.autoconfig.alloygery.option.cupronickelGear.uses": "Durability for cupronickel tools",
   "text.autoconfig.alloygery.option.cupronickelGear.speed": "Mining and attack speed for cupronickel tools",
@@ -335,6 +347,7 @@
   "text.autoconfig.alloygery.option.cupronickelGear.knockback": "Knockback resistance provided by cupronickel armor",
 
   "text.autoconfig.alloygery.option.titaniumGear": "Titanium gear stats",
+  "text.autoconfig.alloygery.option.titaniumGear.enable": "Enable titanium gear",
   "text.autoconfig.alloygery.option.titaniumGear.miningLevel": "Mining level for titanium tools",
   "text.autoconfig.alloygery.option.titaniumGear.uses": "Durability for titanium tools",
   "text.autoconfig.alloygery.option.titaniumGear.speed": "Mining and attack speed for titanium tools",
@@ -349,6 +362,7 @@
   "text.autoconfig.alloygery.option.titaniumGear.knockback": "Knockback resistance provided by titanium armor",
 
   "text.autoconfig.alloygery.option.titaniumGoldGear": "Titanium Gold gear stats",
+  "text.autoconfig.alloygery.option.titaniumGoldGear.enable": "Enable titanium gold gear",
   "text.autoconfig.alloygery.option.titaniumGoldGear.miningLevel": "Mining level for titanium gold tools",
   "text.autoconfig.alloygery.option.titaniumGoldGear.uses": "Durability for titanium gold tools",
   "text.autoconfig.alloygery.option.titaniumGoldGear.speed": "Mining and attack speed for titanium gold tools",
@@ -363,6 +377,7 @@
   "text.autoconfig.alloygery.option.titaniumGoldGear.knockback": "Knockback resistance provided by titanium gold armor",
 
   "text.autoconfig.alloygery.option.nitinolGear": "Nitinol gear stats",
+  "text.autoconfig.alloygery.option.nitinolGear.enable": "Enable nitinol gear",
   "text.autoconfig.alloygery.option.nitinolGear.miningLevel": "Mining level for nitinol tools",
   "text.autoconfig.alloygery.option.nitinolGear.uses": "Durability for nitinol tools",
   "text.autoconfig.alloygery.option.nitinolGear.speed": "Mining and attack speed for nitinol tools",

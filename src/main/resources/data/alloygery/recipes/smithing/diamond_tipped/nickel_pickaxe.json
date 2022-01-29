@@ -4,6 +4,14 @@
     "values": [
       "nbtcrafting"
     ]
+  },
+  {
+    "condition": "alloygery:config_boolean_condition",
+    "config": "enableDiamondUpgrade"
+  },
+  {
+    "condition": "alloygery:config_boolean_condition",
+    "config": "nickelGear.enable"
   }
 ],
   "type": "nbtcrafting:smithing",

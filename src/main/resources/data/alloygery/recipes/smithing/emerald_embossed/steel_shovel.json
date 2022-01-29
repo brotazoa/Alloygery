@@ -5,6 +5,14 @@
       "values": [
         "nbtcrafting"
       ]
+    },
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enableEmeraldUpgrade"
+    },
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "steelGear.enable"
     }
   ],
   "type": "nbtcrafting:smithing",

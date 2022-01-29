@@ -5,6 +5,14 @@
       "values": [
         "nbtcrafting"
       ]
+    },
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enableNetheriteUpgrade"
+    },
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "nitinolGear.enable"
     }
   ],
   "type": "nbtcrafting:smithing",

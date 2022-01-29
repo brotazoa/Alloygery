@@ -35,6 +35,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	public void onInitialize()
 	{
 		AutoConfig.register(AlloygeryConfig.class, JanksonConfigSerializer::new);
+		AutoConfig.getConfigHolder(AlloygeryConfig.class).load();
 		Alloygery.CONFIG = AutoConfig.getConfigHolder(AlloygeryConfig.class).getConfig();
 
 		ModResourceConditions.register();

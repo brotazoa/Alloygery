@@ -5,6 +5,10 @@
       "values": [
         "nbtcrafting"
       ]
+    },
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enableNetheriteUpgrade"
     }
   ],
   "type": "nbtcrafting:smithing",

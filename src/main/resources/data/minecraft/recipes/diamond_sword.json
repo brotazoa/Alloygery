@@ -1,9 +1,28 @@
 {
   "fabric:load_conditions": [
     {
-      "condition": "alloygery:config_boolean_condition",
-      "config": "disableDiamondEquipment"
+      "condition": "fabric:not",
+      "value": {
+        "condition": "alloygery:config_boolean_condition",
+        "config": "disableDiamondEquipment"
+      }
     }
   ],
-  "type": "minecraft:crafting_shaped"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond_sword"
+  }
 }

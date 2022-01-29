@@ -1,9 +1,21 @@
 {
   "fabric:load_conditions": [
     {
-      "condition": "alloygery:config_boolean_condition",
-      "config": "disableNetheriteEquipment"
+      "condition": "fabric:not",
+      "value": {
+        "condition": "alloygery:config_boolean_condition",
+        "config": "disableNetheriteEquipment"
+      }
     }
   ],
-  "type": "minecraft:smithing"
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:diamond_sword"
+  },
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "item": "minecraft:netherite_sword"
+  }
 }

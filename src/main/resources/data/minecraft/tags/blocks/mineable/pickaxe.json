@@ -18,6 +18,8 @@
     "alloygery:cupronickel_block",
     "alloygery:titanium_block",
     "alloygery:titanium_gold_block",
-    "alloygery:nitinol_block"
+    "alloygery:nitinol_block",
+    "alloygery:alloy_kiln",
+    "alloygery:blast_alloy_kiln"
   ]
 }

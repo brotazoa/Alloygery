@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rrr",
+    "rrr",
+    "rrr"
+  ],
+  "key": {
+    "r": {
+      "item": "alloygery:raw_nickel"
+    }
+  },
+  "result": {
+    "item": "alloygery:raw_nickel_block"
+  }
+}

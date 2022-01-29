@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:invar_ingot"
+    }
+  },
+  "result": {
+    "item": "alloygery:invar_block"
+  }
+}

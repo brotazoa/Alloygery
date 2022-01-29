@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rrr",
+    "rrr",
+    "rrr"
+  ],
+  "key": {
+    "r": {
+      "item": "alloygery:raw_tin"
+    }
+  },
+  "result": {
+    "item": "alloygery:raw_tin_block"
+  }
+}

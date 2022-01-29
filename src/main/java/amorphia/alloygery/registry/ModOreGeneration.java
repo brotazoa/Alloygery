@@ -58,28 +58,37 @@ public class ModOreGeneration
 
 	public static void register()
 	{
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("overworld_tin"), OVERWORLD_TIN_CONFIGURED_FEATURE);
-		Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("overworld_tin"), OVERWORLD_TIN_ORE_PLACED_FEATURE);
-		BiomeModifications.addFeature(
-				BiomeSelectors.foundInOverworld(),
-				GenerationStep.Feature.UNDERGROUND_ORES,
-				RegistryKey.of(Registry.PLACED_FEATURE_KEY, Alloygery.identifier("overworld_tin"))
-		);
+		if (Alloygery.CONFIG.tinOre.shouldGenerate)
+		{
+			Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("overworld_tin"), OVERWORLD_TIN_CONFIGURED_FEATURE);
+			Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("overworld_tin"), OVERWORLD_TIN_ORE_PLACED_FEATURE);
+			BiomeModifications.addFeature(
+					BiomeSelectors.foundInOverworld(),
+					GenerationStep.Feature.UNDERGROUND_ORES,
+					RegistryKey.of(Registry.PLACED_FEATURE_KEY, Alloygery.identifier("overworld_tin"))
+			);
+		}
 
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("nether_nickel"), NETHER_NICKEL_CONFIGURED_FEATURE);
-		Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("nether_nickel"), NETHER_NICKEL_PLACED_FEATURE);
-		BiomeModifications.addFeature(
-				BiomeSelectors.foundInTheNether(),
-				GenerationStep.Feature.UNDERGROUND_ORES,
-				RegistryKey.of(Registry.PLACED_FEATURE_KEY, Alloygery.identifier("nether_nickel"))
-		);
+		if (Alloygery.CONFIG.nickelOre.shouldGenerate)
+		{
+			Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("nether_nickel"), NETHER_NICKEL_CONFIGURED_FEATURE);
+			Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("nether_nickel"), NETHER_NICKEL_PLACED_FEATURE);
+			BiomeModifications.addFeature(
+					BiomeSelectors.foundInTheNether(),
+					GenerationStep.Feature.UNDERGROUND_ORES,
+					RegistryKey.of(Registry.PLACED_FEATURE_KEY, Alloygery.identifier("nether_nickel"))
+			);
+		}
 
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("end_titanium"), END_TITANIUM_CONFIGURED_FEATURE);
-		Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("end_titanium"), END_TITANIUM_PLACED_FEATURE);
-		BiomeModifications.addFeature(
-				BiomeSelectors.foundInTheEnd(),
-				GenerationStep.Feature.UNDERGROUND_ORES,
-				RegistryKey.of(Registry.PLACED_FEATURE_KEY, Alloygery.identifier("end_titanium"))
-		);
+		if (Alloygery.CONFIG.titaniumOre.shouldGenerate)
+		{
+			Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("end_titanium"), END_TITANIUM_CONFIGURED_FEATURE);
+			Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("end_titanium"), END_TITANIUM_PLACED_FEATURE);
+			BiomeModifications.addFeature(
+					BiomeSelectors.foundInTheEnd(),
+					GenerationStep.Feature.UNDERGROUND_ORES,
+					RegistryKey.of(Registry.PLACED_FEATURE_KEY, Alloygery.identifier("end_titanium"))
+			);
+		}
 	}
 }

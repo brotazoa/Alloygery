@@ -20,6 +20,9 @@
     ],
     "rei": [
       "amorphia.alloygery.compat.rei.AlloygeryPlugin"
+    ],
+    "modmenu": [
+      "amorphia.alloygery.config.AlloygeryModMenu"
     ]
   },
   "mixins": [

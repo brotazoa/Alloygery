@@ -88,21 +88,10 @@ public class ModBlocks
 				FabricBlockEntityTypeBuilder.create(AlloyKilnBlockEntity::new, ALLOY_KILN).build(null));
 		BLAST_ALLOY_KILN_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, Alloygery.identifier("blast_alloy_kiln_block_entity"),
 				FabricBlockEntityTypeBuilder.create(BlastAlloyKilnBlockEntity::new, BLAST_ALLOY_KILN).build(null));
-
-//		//tool level block tags
-//		TagFactory.BLOCK.create(new Identifier("fabric", "needs_tool_level_2"));
-//		TagFactory.BLOCK.create(new Identifier("fabric", "needs_tool_level_3"));
-//		TagFactory.BLOCK.create(new Identifier("fabric", "needs_tool_level_4"));
-//		TagFactory.BLOCK.create(new Identifier("fabric", "needs_tool_level_5"));
 	}
 
 	private static void register(String path, Block block)
 	{
 		Registry.register(Registry.BLOCK, Alloygery.identifier(path), block);
-	}
-
-	private static void override(String path, Block block)
-	{
-		Registry.register(Registry.BLOCK, new Identifier("minecraft", path), block);
 	}
 }

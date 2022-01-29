@@ -1,1 +1,9 @@
-
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "disableDiamondEquipment"
+    }
+  ],
+  "type": "minecraft:crafting_shaped"
+}

@@ -111,84 +111,6 @@ public class AlloygeryConfig implements ConfigData
 	@Comment("Nitinol gear stats")
 	public NitinolGearStats nitinolGear = new NitinolGearStats();
 
-	interface IOreGeneration
-	{
-		boolean shouldGenerate();
-		int getSize();
-		int getNumber();
-
-		default boolean getBooleanValue(String key, boolean defaultValue)
-		{
-			return key.equals("shouldGenerate") ? shouldGenerate() : defaultValue;
-		}
-
-		default int getIntegerValue(String key, int defaultValue)
-		{
-			return switch (key)
-					{
-						case "size" -> getSize();
-						case "number" -> getNumber();
-
-						default -> defaultValue;
-					};
-		}
-
-		default float getFloatValue(String key, float defaultValue)
-		{
-			return defaultValue;
-		}
-	}
-
-	interface IGearStats
-	{
-		boolean isEnable();
-		int getMiningLevel();
-		int getUses();
-		float getSpeed();
-		float getDamage();
-		int getEnchantability();
-		int getDurabilityMultiplier();
-		int getHelmetArmor();
-		int getChestplateArmor();
-		int getLeggingsArmor();
-		int getBootsArmor();
-		float getToughness();
-		float getKnockback();
-
-		default boolean getBooleanValue(String key, boolean defaultValue)
-		{
-			return key.equals("enable") ? isEnable() : defaultValue;
-		}
-
-		default int getIntegerValue(String key, int defaultValue)
-		{
-			return switch (key)
-					{
-						case "miningLevel" -> getMiningLevel();
-						case "uses" -> getUses();
-						case "enchantability" -> getEnchantability();
-						case "durabilityMultiplier" -> getDurabilityMultiplier();
-						case "helmetArmor" -> getHelmetArmor();
-						case "chestplateArmor" -> getChestplateArmor();
-						case "leggingsArmor" -> getLeggingsArmor();
-						case "bootsArmor" -> getBootsArmor();
-						default -> defaultValue;
-					};
-		}
-
-		default float getFloatValue(String key, float defaultValue)
-		{
-			return switch (key)
-					{
-						case "speed" -> getSpeed();
-						case "damage" -> getDamage();
-						case "toughness" -> getToughness();
-						case "knockback" -> getKnockback();
-						default -> defaultValue;
-					};
-		}
-	}
-
 	//this is an unmaintainable abomination
 	//it is better than reflection imo
 	public boolean getBooleanValue(String configKey, boolean defaultValue)
@@ -288,6 +210,84 @@ public class AlloygeryConfig implements ConfigData
 
 					default -> defaultValue;
 				};
+	}
+
+	interface IOreGeneration
+	{
+		boolean shouldGenerate();
+		int getSize();
+		int getNumber();
+
+		default boolean getBooleanValue(String key, boolean defaultValue)
+		{
+			return key.equals("shouldGenerate") ? shouldGenerate() : defaultValue;
+		}
+
+		default int getIntegerValue(String key, int defaultValue)
+		{
+			return switch (key)
+					{
+						case "size" -> getSize();
+						case "number" -> getNumber();
+
+						default -> defaultValue;
+					};
+		}
+
+		default float getFloatValue(String key, float defaultValue)
+		{
+			return defaultValue;
+		}
+	}
+
+	interface IGearStats
+	{
+		boolean isEnable();
+		int getMiningLevel();
+		int getUses();
+		float getSpeed();
+		float getDamage();
+		int getEnchantability();
+		int getDurabilityMultiplier();
+		int getHelmetArmor();
+		int getChestplateArmor();
+		int getLeggingsArmor();
+		int getBootsArmor();
+		float getToughness();
+		float getKnockback();
+
+		default boolean getBooleanValue(String key, boolean defaultValue)
+		{
+			return key.equals("enable") ? isEnable() : defaultValue;
+		}
+
+		default int getIntegerValue(String key, int defaultValue)
+		{
+			return switch (key)
+					{
+						case "miningLevel" -> getMiningLevel();
+						case "uses" -> getUses();
+						case "enchantability" -> getEnchantability();
+						case "durabilityMultiplier" -> getDurabilityMultiplier();
+						case "helmetArmor" -> getHelmetArmor();
+						case "chestplateArmor" -> getChestplateArmor();
+						case "leggingsArmor" -> getLeggingsArmor();
+						case "bootsArmor" -> getBootsArmor();
+						default -> defaultValue;
+					};
+		}
+
+		default float getFloatValue(String key, float defaultValue)
+		{
+			return switch (key)
+					{
+						case "speed" -> getSpeed();
+						case "damage" -> getDamage();
+						case "toughness" -> getToughness();
+						case "knockback" -> getKnockback();
+						default -> defaultValue;
+					};
+		}
 	}
 
 	public static class TinOreGeneration implements IOreGeneration

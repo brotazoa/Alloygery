@@ -1,6 +1,8 @@
 package amorphia.alloygery.mixins;
 
 import amorphia.alloygery.Alloygery;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
@@ -22,6 +24,7 @@ import java.util.List;
 @Mixin(Item.class)
 public abstract class ItemMixin
 {
+	@Environment(EnvType.CLIENT)
 	@Inject(method = "appendTooltip", at = @At("HEAD"))
 	public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci)
 	{

@@ -192,6 +192,9 @@
   "text.autoconfig.alloygery.option.disableNetheriteEquipment": "Отключение ванильных рецептов незеритовых инструментов и доспехов",
   "text.autoconfig.alloygery.option.makeDiamondGearIneffective": "Нельзя использовать алмазные инструменты и доспехи",
   "text.autoconfig.alloygery.option.makeNetheriteGearIneffective": "Нельзя использовать незеритовые инструменты и доспехи",
+  "text.autoconfig.alloygery.option.enableDiamondUpgrade": "Включить улучшение снаряжений алмазом",
+  "text.autoconfig.alloygery.option.enableEmeraldUpgrade": "Включить улучшение снаряжений изумрудом",
+  "text.autoconfig.alloygery.option.enableNetheriteUpgrade": "Включить улучшение снаряжений незеритом",
 
   "text.autoconfig.alloygery.option.tinOre": "Генерация оловяной руды",
   "text.autoconfig.alloygery.option.tinOre.shouldGenerate": "Генерация оловяной руды",
@@ -209,6 +212,7 @@
   "text.autoconfig.alloygery.option.titaniumOre.number": "Среднее количество скоплений титановой руды в чанке",
 
   "text.autoconfig.alloygery.option.copperGear": "Характеристики медных снаряжений",
+  "text.autoconfig.alloygery.option.copperGear.enable": "Разрешить медные снаряжения",
   "text.autoconfig.alloygery.option.copperGear.miningLevel": "Уровень добычи медных инструментов",
   "text.autoconfig.alloygery.option.copperGear.uses": "Прочность медных инструментов",
   "text.autoconfig.alloygery.option.copperGear.speed": "Скорость добычи и атаки медных инструментов",
@@ -223,6 +227,7 @@
   "text.autoconfig.alloygery.option.copperGear.knockback": "Сопротивление отбрасыванию медной брони",
 
   "text.autoconfig.alloygery.option.bronzeGear": "Характеристики бронзовых снаряжений",
+  "text.autoconfig.alloygery.option.bronzeGear.enable": "Разрешить бронзовые снаряжения",
   "text.autoconfig.alloygery.option.bronzeGear.miningLevel": "Уровень добычи бронзовых инструментов",
   "text.autoconfig.alloygery.option.bronzeGear.uses": "Прочность бронзовых инструментов",
   "text.autoconfig.alloygery.option.bronzeGear.speed": "Скорость добычи и атаки бронзовых инструментов",
@@ -237,6 +242,7 @@
   "text.autoconfig.alloygery.option.bronzeGear.knockback": "Сопротивление отбрасыванию бронзовой брони",
 
   "text.autoconfig.alloygery.option.ironGear": "Характеристики железных снаряжений",
+  "text.autoconfig.alloygery.option.ironGear.enable": "Разрешить изменение железных снаряжений",
   "text.autoconfig.alloygery.option.ironGear.miningLevel": "Уровень добычи железных инструментов",
   "text.autoconfig.alloygery.option.ironGear.uses": "Прочность железных инструментов",
   "text.autoconfig.alloygery.option.ironGear.speed": "Скорость добычи и атаки железных инструментов",
@@ -251,6 +257,7 @@
   "text.autoconfig.alloygery.option.ironGear.knockback": "Сопротивление отбрасыванию железной брони",
 
   "text.autoconfig.alloygery.option.antaniumGear": "Характеристики антаниевых снаряжений",
+  "text.autoconfig.alloygery.option.antaniumGear.enable": "Разрешить антаниевые снаряжения",
   "text.autoconfig.alloygery.option.antaniumGear.miningLevel": "Уровень добычи антаниевых инструментов",
   "text.autoconfig.alloygery.option.antaniumGear.uses": "Прочность антаниевых инструментов",
   "text.autoconfig.alloygery.option.antaniumGear.speed": "Скорость добычи и атаки антаниевых инструментов",
@@ -265,6 +272,7 @@
   "text.autoconfig.alloygery.option.antaniumGear.knockback": "Сопротивление отбрасыванию антаниевой брони",
 
   "text.autoconfig.alloygery.option.steelGear": "Характеристики стальных снаряжений",
+  "text.autoconfig.alloygery.option.steelGear.enable": "Разрешить стальные снаряжения",
   "text.autoconfig.alloygery.option.steelGear.miningLevel": "Уровень добычи стальных инструментов",
   "text.autoconfig.alloygery.option.steelGear.uses": "Прочность стальных инструментов",
   "text.autoconfig.alloygery.option.steelGear.speed": "Скорость добычи и атаки стальных инструментов",
@@ -279,6 +287,7 @@
   "text.autoconfig.alloygery.option.steelGear.knockback": "Сопротивление отбрасыванию стальной брони",
 
   "text.autoconfig.alloygery.option.nickelGear": "Характеристики никелевых снаряжений",
+  "text.autoconfig.alloygery.option.nickelGear.enable": "Разрешить никелевые снаряжения",
   "text.autoconfig.alloygery.option.nickelGear.miningLevel": "Уровень добычи никелевых инструментов",
   "text.autoconfig.alloygery.option.nickelGear.uses": "Прочность никелевых инструментов",
   "text.autoconfig.alloygery.option.nickelGear.speed": "Скорость добычи и атаки никелевых инструментов",
@@ -293,6 +302,7 @@
   "text.autoconfig.alloygery.option.nickelGear.knockback": "Сопротивление отбрасыванию никелевой брони",
 
   "text.autoconfig.alloygery.option.invarGear": "Характеристики инваровых снаряжений",
+  "text.autoconfig.alloygery.option.invarGear.enable": "Разрешить инваровые снаряжения",
   "text.autoconfig.alloygery.option.invarGear.miningLevel": "Уровень добычи инваровых инструментов",
   "text.autoconfig.alloygery.option.invarGear.uses": "Прочность инваровых инструментов",
   "text.autoconfig.alloygery.option.invarGear.speed": "Скорость добычи и атаки инваровых инструментов",
@@ -307,6 +317,7 @@
   "text.autoconfig.alloygery.option.invarGear.knockback": "Сопротивление отбрасыванию инваровой брони",
 
   "text.autoconfig.alloygery.option.constantanGear": "Характеристики константановых снаряжений",
+  "text.autoconfig.alloygery.option.constantanGear.enable": "Разрешить константановые снаряжения",
   "text.autoconfig.alloygery.option.constantanGear.miningLevel": "Уровень добычи константановых инструментов",
   "text.autoconfig.alloygery.option.constantanGear.uses": "Прочность константановых инструментов",
   "text.autoconfig.alloygery.option.constantanGear.speed": "Скорость добычи и атаки константановых инструментов",
@@ -321,6 +332,7 @@
   "text.autoconfig.alloygery.option.constantanGear.knockback": "Сопротивление отбрасыванию константановой брони",
 
   "text.autoconfig.alloygery.option.cupronickelGear": "Характеристики купроникелевых снаряжений",
+  "text.autoconfig.alloygery.option.cupronickelGear.enable": "Разрешить купроникелевые снаряжения",
   "text.autoconfig.alloygery.option.cupronickelGear.miningLevel": "Уровень добычи купроникелевых инструментов",
   "text.autoconfig.alloygery.option.cupronickelGear.uses": "Прочность купроникелевых инструментов",
   "text.autoconfig.alloygery.option.cupronickelGear.speed": "Скорость добычи и атаки купроникелевых инструментов",
@@ -335,6 +347,7 @@
   "text.autoconfig.alloygery.option.cupronickelGear.knockback": "Сопротивление отбрасыванию купроникелевой брони",
 
   "text.autoconfig.alloygery.option.titaniumGear": "Характеристики титановых снаряжений",
+  "text.autoconfig.alloygery.option.titaniumGear.enable": "Разрешить титановые снаряжения",
   "text.autoconfig.alloygery.option.titaniumGear.miningLevel": "Уровень добычи титановых инструментов",
   "text.autoconfig.alloygery.option.titaniumGear.uses": "Прочность титановых инструментов",
   "text.autoconfig.alloygery.option.titaniumGear.speed": "Скорость добычи и атаки титановых инструментов",
@@ -349,6 +362,7 @@
   "text.autoconfig.alloygery.option.titaniumGear.knockback": "Сопротивление отбрасыванию титановой брони",
 
   "text.autoconfig.alloygery.option.titaniumGoldGear": "Характеристики титаново-золотых снаряжений",
+  "text.autoconfig.alloygery.option.titaniumGoldGear.enable": "Разрешить титаново-золотые снаряжения",
   "text.autoconfig.alloygery.option.titaniumGoldGear.miningLevel": "Уровень добычи титаново-золотых инструментов",
   "text.autoconfig.alloygery.option.titaniumGoldGear.uses": "Прочность титаново-золотых инструментов",
   "text.autoconfig.alloygery.option.titaniumGoldGear.speed": "Скорость добычи и атаки титаново-золотых инструментов",
@@ -363,6 +377,7 @@
   "text.autoconfig.alloygery.option.titaniumGoldGear.knockback": "Сопротивление отбрасыванию титаново-золотой брони",
 
   "text.autoconfig.alloygery.option.nitinolGear": "Характеристики нитиноловых снаряжений",
+  "text.autoconfig.alloygery.option.nitinolGear.enable": "Разрешить никелевые снаряжения",
   "text.autoconfig.alloygery.option.nitinolGear.miningLevel": "Уровень добычи нитиноловых инструментов",
   "text.autoconfig.alloygery.option.nitinolGear.uses": "Прочность нитиноловых инструментов",
   "text.autoconfig.alloygery.option.nitinolGear.speed": "Скорость добычи и атаки нитиноловых инструментов",

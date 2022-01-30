@@ -1,0 +1,17 @@
+{
+  "type": "alloy_forgery:forging",
+  "inputs": [
+    {
+      "item": "alloygery:titanium_ore"
+    },
+    {
+      "item": "minecraft:gold_ore"
+    }
+  ],
+  "output": {
+    "id": "alloygery:titanium_gold_ingot",
+    "count": 2
+  },
+  "min_forge_tier": 3,
+  "fuel_per_tick": 5
+}

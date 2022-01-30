@@ -1,0 +1,23 @@
+{
+  "type": "alloy_forgery:forging",
+  "inputs": [
+    {
+      "item": "minecraft:iron_ore"
+    },
+    {
+      "item": "minecraft:iron_ore"
+    },
+    {
+      "item": "minecraft:gold_ore"
+    },
+    {
+      "item": "minecraft:copper_ore"
+    }
+  ],
+  "output": {
+    "id": "alloygery:antanium_ingot",
+    "count": 4
+  },
+  "min_forge_tier": 1,
+  "fuel_per_tick": 5
+}

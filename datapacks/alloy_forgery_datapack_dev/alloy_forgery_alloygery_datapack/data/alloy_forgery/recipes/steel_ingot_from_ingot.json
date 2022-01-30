@@ -1,19 +1,11 @@
 {
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "alloy_forgery"
-      ]
-    }
-  ],
   "type": "alloy_forgery:forging",
   "inputs": [
     {
-      "tag": "c:iron_dusts"
+      "item": "minecraft:iron_ingot"
     },
     {
-      "tag": "c:charcoal"
+      "item": "minecraft:charcoal"
     }
   ],
   "output": {

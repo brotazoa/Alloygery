@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "item": "gobber2:gobber2_glob_nether"
+    },
+    {
+      "item": "gobber2:gobber2_ingot"
+    },
+    {
+      "item": "gobber2:gobber2_ingot"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    }
+  ],
+  "output":{
+    "id": "gobber2:gobber2_ingot_nether",
+    "count": 3
+  },
+  "smelting_time": 500,
+  "experience": 0.7
+}

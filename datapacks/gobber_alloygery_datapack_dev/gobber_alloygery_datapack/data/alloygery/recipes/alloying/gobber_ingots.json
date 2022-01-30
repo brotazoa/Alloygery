@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:alloying",
+  "inputs": [
+    {
+      "item": "gobber2:gobber2_glob"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "output":{
+    "id": "gobber2:gobber2_ingot",
+    "count": 3
+  },
+  "smelting_time": 500,
+  "experience": 0.7
+}

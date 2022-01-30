@@ -66,9 +66,9 @@ public abstract class AbstractAlloyKilnBlock extends BlockWithEntity
 		if (state.getBlock() != newState.getBlock())
 		{
 			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof AbstractAlloyKilnBlockEntity kilnBlockEntity)
+			if (blockEntity instanceof AbstractAlloyKilnBlockEntity kilnBlockEntity && world instanceof ServerWorld serverWorld)
 			{
-				kilnBlockEntity.dropExperience(null, (ServerWorld) world, Vec3d.ofCenter(pos));
+				kilnBlockEntity.dropExperience(null, serverWorld, Vec3d.ofCenter(pos));
 				ItemScatterer.spawn(world, pos, kilnBlockEntity);
 			}
 			super.onStateReplaced(state, world, pos, newState, moved);

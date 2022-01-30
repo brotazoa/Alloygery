@@ -104,6 +104,10 @@ public abstract class AbstractAlloyKilnBlockEntity extends LockableContainerBloc
 		this.totalLitTime = nbt.getInt("TotalLitTime");
 		this.smeltingTime = nbt.getInt("SmeltingTime");
 		this.totalSmeltingTime = nbt.getInt("TotalSmeltingTime");
+
+		NbtCompound recipesUsedNbt = nbt.getCompound("RecipesUsed");
+		recipesUsedNbt.getKeys().forEach(key -> recipesUsed.put(new Identifier(key), recipesUsedNbt.getInt(key)));
+
 		markDirty();
 	}
 
@@ -116,6 +120,10 @@ public abstract class AbstractAlloyKilnBlockEntity extends LockableContainerBloc
 		nbt.putInt("TotalLitTime", this.totalLitTime);
 		nbt.putInt("SmeltingTime", this.smeltingTime);
 		nbt.putInt("TotalSmeltingTime", this.totalSmeltingTime);
+
+		NbtCompound recipesUsedNbt = new NbtCompound();
+		this.recipesUsed.forEach(((identifier, integer) -> recipesUsedNbt.putInt(identifier.toString(), integer)));
+		nbt.put("RecipesUsed", recipesUsedNbt);
 	}
 
 	@Override
@@ -256,7 +264,11 @@ public abstract class AbstractAlloyKilnBlockEntity extends LockableContainerBloc
 
 	public void dropExperience(ServerPlayerEntity playerEntity, ServerWorld world, Vec3d position)
 	{
+		if(recipesUsed == null || recipesUsed.isEmpty())
+			return;
+
 		List<Recipe<?>> recipes = new ArrayList<>();
+
 		for (Object2IntMap.Entry<Identifier> entry : this.recipesUsed.object2IntEntrySet())
 		{
 			world.getRecipeManager().get(entry.getKey()).ifPresent((recipe -> {
@@ -269,10 +281,10 @@ public abstract class AbstractAlloyKilnBlockEntity extends LockableContainerBloc
 
 				ExperienceOrbEntity.spawn(world, position, expInt);
 			}));
-
-			if(playerEntity != null) playerEntity.unlockRecipes(recipes);
-			this.recipesUsed.clear();
 		}
+
+		if(playerEntity != null) playerEntity.unlockRecipes(recipes);
+		this.recipesUsed.clear();
 	}
 
 	public static void tick(World world, BlockPos pos, BlockState state, AbstractAlloyKilnBlockEntity blockEntity)

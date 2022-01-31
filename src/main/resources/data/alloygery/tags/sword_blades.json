@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_sword_blade",
+    "alloygery:bronze_sword_blade",
+    "alloygery:iron_sword_blade",
+    "alloygery:gold_sword_blade",
+    "alloygery:antanium_sword_blade",
+    "alloygery:steel_sword_blade",
+    "alloygery:nickel_sword_blade",
+    "alloygery:invar_sword_blade",
+    "alloygery:constantan_sword_blade",
+    "alloygery:cupronickel_sword_blade",
+    "alloygery:titanium_sword_blade",
+    "alloygery:titanium_gold_sword_blade",
+    "alloygery:nitinol_sword_blade"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_shovel_head",
+    "alloygery:bronze_shovel_head",
+    "alloygery:iron_shovel_head",
+    "alloygery:gold_shovel_head",
+    "alloygery:antanium_shovel_head",
+    "alloygery:steel_shovel_head",
+    "alloygery:nickel_shovel_head",
+    "alloygery:invar_shovel_head",
+    "alloygery:constantan_shovel_head",
+    "alloygery:cupronickel_shovel_head",
+    "alloygery:titanium_shovel_head",
+    "alloygery:titanium_gold_shovel_head",
+    "alloygery:nitinol_shovel_head"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_axe_head",
+    "alloygery:bronze_axe_head",
+    "alloygery:iron_axe_head",
+    "alloygery:gold_axe_head",
+    "alloygery:antanium_axe_head",
+    "alloygery:steel_axe_head",
+    "alloygery:nickel_axe_head",
+    "alloygery:invar_axe_head",
+    "alloygery:constantan_axe_head",
+    "alloygery:cupronickel_axe_head",
+    "alloygery:titanium_axe_head",
+    "alloygery:titanium_gold_axe_head",
+    "alloygery:nitinol_axe_head"
+  ]
+}

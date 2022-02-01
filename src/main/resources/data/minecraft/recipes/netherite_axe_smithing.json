@@ -4,7 +4,7 @@
       "condition": "fabric:not",
       "value": {
         "condition": "alloygery:config_boolean_condition",
-        "config": "disableNetheriteEquipment"
+        "config": "disable_netherite_gear"
       }
     }
   ],

@@ -7,11 +7,11 @@
   },
   {
     "condition": "alloygery:config_boolean_condition",
-    "config": "enableDiamondUpgrade"
+    "config": "enable_diamond_upgrade"
   },
   {
     "condition": "alloygery:config_boolean_condition",
-    "config": "copperGear.enable"
+    "config": "copper_gear.enable"
   }
 ],
   "type": "nbtcrafting:smithing",

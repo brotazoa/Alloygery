@@ -8,7 +8,7 @@
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "enableNetheriteUpgrade"
+      "config": "enable_netherite_upgrade"
     }
   ],
   "type": "nbtcrafting:smithing",

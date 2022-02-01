@@ -8,11 +8,11 @@
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "enableNetheriteUpgrade"
+      "config": "enable_netherite_upgrade"
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "nitinolGear.enable"
+      "config": "nitinol_gear.enable"
     }
   ],
   "type": "nbtcrafting:smithing",

@@ -8,11 +8,11 @@
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "enableDiamondUpgrade"
+      "config": "enable_diamond_upgrade"
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "titaniumGoldGear.enable"
+      "config": "titanium_gold_gear.enable"
     }
   ],
   "type": "nbtcrafting:smithing",

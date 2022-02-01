@@ -1,6 +1,7 @@
 package amorphia.alloygery.registry;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.config.AlloygeryConfig;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.block.Blocks;
@@ -58,7 +59,7 @@ public class ModOreGeneration
 
 	public static void register()
 	{
-		if (Alloygery.CONFIG.tinOre.shouldGenerate)
+		if (AlloygeryConfig.tinOre.shouldGenerate.getValue())
 		{
 			Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("overworld_tin"), OVERWORLD_TIN_CONFIGURED_FEATURE);
 			Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("overworld_tin"), OVERWORLD_TIN_ORE_PLACED_FEATURE);
@@ -69,7 +70,7 @@ public class ModOreGeneration
 			);
 		}
 
-		if (Alloygery.CONFIG.nickelOre.shouldGenerate)
+		if (AlloygeryConfig.nickelOre.shouldGenerate.getValue())
 		{
 			Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("nether_nickel"), NETHER_NICKEL_CONFIGURED_FEATURE);
 			Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("nether_nickel"), NETHER_NICKEL_PLACED_FEATURE);
@@ -80,7 +81,7 @@ public class ModOreGeneration
 			);
 		}
 
-		if (Alloygery.CONFIG.titaniumOre.shouldGenerate)
+		if (AlloygeryConfig.titaniumOre.shouldGenerate.getValue())
 		{
 			Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, Alloygery.identifier("end_titanium"), END_TITANIUM_CONFIGURED_FEATURE);
 			Registry.register(BuiltinRegistries.PLACED_FEATURE, Alloygery.identifier("end_titanium"), END_TITANIUM_PLACED_FEATURE);

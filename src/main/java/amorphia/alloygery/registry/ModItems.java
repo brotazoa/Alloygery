@@ -1,6 +1,7 @@
 package amorphia.alloygery.registry;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.content.item.*;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.entity.EquipmentSlot;
@@ -391,7 +392,7 @@ public class ModItems
 		register("nitinol_leggings", NITINOL_LEGGINGS);
 		register("nitinol_boots", NITINOL_BOOTS);
 
-		if (Alloygery.CONFIG.ironGear.enable)
+		if (AlloygeryConfig.ironGear.enable.getValue())
 		{
 			//iron tool overrides
 			override(Items.IRON_AXE, IRON_AXE);
@@ -408,7 +409,7 @@ public class ModItems
 		}
 
 		//ineffective diamond gear overrides
-		if (Alloygery.CONFIG != null && Alloygery.CONFIG.makeDiamondGearIneffective)
+		if (AlloygeryConfig.makeNetheriteGearIneffective.getValue())
 		{
 			override(Items.DIAMOND_AXE, new Item(new Item.Settings().group(ItemGroup.TOOLS)));
 			override(Items.DIAMOND_HOE, new Item(new Item.Settings().group(ItemGroup.TOOLS)));
@@ -423,7 +424,7 @@ public class ModItems
 		}
 
 		//ineffective netherite gear overrides
-		if (Alloygery.CONFIG != null && Alloygery.CONFIG.makeNetheriteGearIneffective)
+		if (AlloygeryConfig.makeNetheriteGearIneffective.getValue())
 		{
 			override(Items.NETHERITE_AXE, new Item(new Item.Settings().group(ItemGroup.TOOLS)));
 			override(Items.NETHERITE_HOE, new Item(new Item.Settings().group(ItemGroup.TOOLS)));

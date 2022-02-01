@@ -1,23 +1,17 @@
 package amorphia.alloygery;
 
 import amorphia.alloygery.config.AlloygeryConfig;
+import amorphia.alloygery.config.AlloygeryConfigSerializer;
 import amorphia.alloygery.registry.*;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 public class Alloygery implements ModInitializer, ClientModInitializer
 {
 	public static final String MOD_ID = "alloygery";
-
-	public static AlloygeryConfig CONFIG = null;
 
 	public static final String NBT_KEY = "AlloygeryProperties";
 	public static final String DIAMOND_TIPPED_KEY = "DiamondTipped";
@@ -34,9 +28,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	@Override
 	public void onInitialize()
 	{
-		AutoConfig.register(AlloygeryConfig.class, JanksonConfigSerializer::new);
-		AutoConfig.getConfigHolder(AlloygeryConfig.class).load();
-		Alloygery.CONFIG = AutoConfig.getConfigHolder(AlloygeryConfig.class).getConfig();
+		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();
 

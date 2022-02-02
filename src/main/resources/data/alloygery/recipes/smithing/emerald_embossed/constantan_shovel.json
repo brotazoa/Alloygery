@@ -8,11 +8,11 @@
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "enableEmeraldUpgrade"
+      "config": "enable_emerald_upgrade"
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "constantanGear.enable"
+      "config": "constantan_gear.enable"
     }
   ],
   "type": "nbtcrafting:smithing",

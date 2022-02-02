@@ -9,6 +9,8 @@ public class AlloygeryModMenu implements ModMenuApi
 	@Override
 	public ConfigScreenFactory<?> getModConfigScreenFactory()
 	{
-		return parent -> AutoConfig.getConfigScreen(AlloygeryConfig.class, parent).get();
+		return parent -> AlloygeryClothConfig.getConfigBuilder().setParentScreen(parent).setSavingRunnable(() -> {
+			AlloygeryConfigSerializer.serialize(AlloygeryConfig.ALLOYGERY_CONFIG);
+		}).build();
 	}
 }

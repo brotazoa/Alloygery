@@ -2,7 +2,7 @@
   "fabric:load_conditions": [
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "titaniumGoldGear.enable"
+      "config": "titanium_gold_gear.enable"
     }
   ],
   "type": "minecraft:crafting_shaped",

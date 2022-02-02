@@ -1,6 +1,5 @@
 package amorphia.alloygery.content.item;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.registry.ModItems;
 import net.minecraft.item.Items;
@@ -9,19 +8,21 @@ import net.minecraft.recipe.Ingredient;
 
 public enum ModToolMaterials implements ToolMaterial
 {
-	COPPER(Alloygery.CONFIG.copperGear.miningLevel, Alloygery.CONFIG.copperGear.uses, Alloygery.CONFIG.copperGear.speed, Alloygery.CONFIG.copperGear.damage, Alloygery.CONFIG.copperGear.enchantability, Ingredient.ofItems(Items.COPPER_INGOT)),
-	BRONZE(Alloygery.CONFIG.bronzeGear.miningLevel, Alloygery.CONFIG.bronzeGear.uses, Alloygery.CONFIG.bronzeGear.speed, Alloygery.CONFIG.bronzeGear.damage, Alloygery.CONFIG.bronzeGear.enchantability, Ingredient.ofItems(ModItems.BRONZE_INGOT)),
-	IRON(Alloygery.CONFIG.ironGear.miningLevel, Alloygery.CONFIG.ironGear.uses, Alloygery.CONFIG.ironGear.speed, Alloygery.CONFIG.ironGear.damage, Alloygery.CONFIG.ironGear.enchantability, Ingredient.ofItems(Items.IRON_INGOT)),
-	ANTANIUM(Alloygery.CONFIG.antaniumGear.miningLevel, Alloygery.CONFIG.antaniumGear.uses, Alloygery.CONFIG.antaniumGear.speed, Alloygery.CONFIG.antaniumGear.damage, Alloygery.CONFIG.antaniumGear.enchantability, Ingredient.ofItems(ModItems.ANTANIUM_INGOT)),
-	STEEL(Alloygery.CONFIG.steelGear.miningLevel, Alloygery.CONFIG.steelGear.uses, Alloygery.CONFIG.steelGear.speed, Alloygery.CONFIG.steelGear.damage, Alloygery.CONFIG.steelGear.enchantability, Ingredient.ofItems(ModItems.STEEL_INGOT)),
-	NICKEL(Alloygery.CONFIG.nickelGear.miningLevel, Alloygery.CONFIG.nickelGear.uses, Alloygery.CONFIG.nickelGear.speed, Alloygery.CONFIG.nickelGear.damage, Alloygery.CONFIG.nickelGear.enchantability, Ingredient.ofItems(ModItems.NICKEL_INGOT)),
-	INVAR(Alloygery.CONFIG.invarGear.miningLevel, Alloygery.CONFIG.invarGear.uses, Alloygery.CONFIG.invarGear.speed, Alloygery.CONFIG.invarGear.damage, Alloygery.CONFIG.invarGear.enchantability, Ingredient.ofItems(ModItems.INVAR_INGOT)),
-	CONSTANTAN(Alloygery.CONFIG.constantanGear.miningLevel, Alloygery.CONFIG.constantanGear.uses, Alloygery.CONFIG.constantanGear.speed, Alloygery.CONFIG.constantanGear.damage, Alloygery.CONFIG.constantanGear.enchantability, Ingredient.ofItems(ModItems.CONSTANTAN_INGOT)),
-	CUPRONICKEL(Alloygery.CONFIG.cupronickelGear.miningLevel, Alloygery.CONFIG.cupronickelGear.uses, Alloygery.CONFIG.cupronickelGear.speed, Alloygery.CONFIG.cupronickelGear.damage, Alloygery.CONFIG.cupronickelGear.enchantability, Ingredient.ofItems(ModItems.CUPRONICKEL_INGOT)),
-	TITANIUM(Alloygery.CONFIG.titaniumGear.miningLevel, Alloygery.CONFIG.titaniumGear.uses, Alloygery.CONFIG.titaniumGear.speed, Alloygery.CONFIG.titaniumGear.damage, Alloygery.CONFIG.titaniumGear.enchantability, Ingredient.ofItems(ModItems.TITANIUM_INGOT)),
-	TITANIUM_GOLD(Alloygery.CONFIG.titaniumGoldGear.miningLevel, Alloygery.CONFIG.titaniumGoldGear.uses, Alloygery.CONFIG.titaniumGoldGear.speed, Alloygery.CONFIG.titaniumGoldGear.damage, Alloygery.CONFIG.titaniumGoldGear.enchantability, Ingredient.ofItems(ModItems.TITANIUM_GOLD_INGOT)),
-	NITINOL(Alloygery.CONFIG.nitinolGear.miningLevel, Alloygery.CONFIG.nitinolGear.uses, Alloygery.CONFIG.nitinolGear.speed, Alloygery.CONFIG.nitinolGear.damage, Alloygery.CONFIG.nitinolGear.enchantability, Ingredient.ofItems(ModItems.NITINOL_INGOT)),
+	//@formatter:off
+	COPPER(AlloygeryConfig.copperGear, Ingredient.ofItems(Items.COPPER_INGOT)),
+	BRONZE(AlloygeryConfig.bronzeGear, Ingredient.ofItems(ModItems.BRONZE_INGOT)),
+	IRON(AlloygeryConfig.ironGear, Ingredient.ofItems(Items.IRON_INGOT)),
+	ANTANIUM(AlloygeryConfig.antaniumGear, Ingredient.ofItems(ModItems.ANTANIUM_INGOT)),
+	STEEL(AlloygeryConfig.steelGear, Ingredient.ofItems(ModItems.STEEL_INGOT)),
+	NICKEL(AlloygeryConfig.nickelGear, Ingredient.ofItems(ModItems.NICKEL_INGOT)),
+	INVAR(AlloygeryConfig.invarGear, Ingredient.ofItems(ModItems.INVAR_INGOT)),
+	CONSTANTAN(AlloygeryConfig.constantanGear, Ingredient.ofItems(ModItems.CONSTANTAN_INGOT)),
+	CUPRONICKEL(AlloygeryConfig.cupronickelGear, Ingredient.ofItems(ModItems.CUPRONICKEL_INGOT)),
+	TITANIUM(AlloygeryConfig.titaniumGear, Ingredient.ofItems(ModItems.TITANIUM_INGOT)),
+	TITANIUM_GOLD(AlloygeryConfig.titaniumGoldGear, Ingredient.ofItems(ModItems.TITANIUM_GOLD_INGOT)),
+	NITINOL(AlloygeryConfig.nitinolGear, Ingredient.ofItems(ModItems.NITINOL_INGOT)),
 	;
+	//@formatter:on
 
 	private final int level;
 	private final int uses;
@@ -29,6 +30,19 @@ public enum ModToolMaterials implements ToolMaterial
 	private final float damage;
 	private final int enchantmentValue;
 	private final Ingredient repairIngredient;
+
+	ModToolMaterials(AlloygeryConfig.GearStatsConfigGroup config, Ingredient repairIngredient)
+	{
+		assert config != null;
+		assert repairIngredient != null;
+
+		this.level = config.miningLevel.getValue();
+		this.uses = config.uses.getValue();
+		this.speed = config.speed.getValue();
+		this.damage = config.damage.getValue();
+		this.enchantmentValue = config.enchantability.getValue();
+		this.repairIngredient = repairIngredient;
+	}
 
 	ModToolMaterials(int level, int uses, float speed, float damage, int enchantmentValue, Ingredient repairIngredient)
 	{

@@ -8,7 +8,7 @@
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "enableEmeraldUpgrade"
+      "config": "enable_emerald_upgrade"
     }
   ],
   "type": "nbtcrafting:smithing",

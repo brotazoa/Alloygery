@@ -2,7 +2,7 @@
   "fabric:load_conditions": [
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "bronzeGear.enable"
+      "config": "bronze_gear.enable"
     }
   ],
   "type": "minecraft:crafting_shaped",

@@ -2,8 +2,6 @@ package amorphia.alloygery;
 
 import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.registry.*;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -40,9 +38,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	@Override
 	public void onInitialize()
 	{
-		AutoConfig.register(AlloygeryConfig.class, JanksonConfigSerializer::new);
-		AutoConfig.getConfigHolder(AlloygeryConfig.class).load();
-		Alloygery.CONFIG = AutoConfig.getConfigHolder(AlloygeryConfig.class).getConfig();
+		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();
 

@@ -8,11 +8,11 @@
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "enableDiamondUpgrade"
+      "config": "enable_diamond_upgrade"
     },
     {
       "condition": "alloygery:config_boolean_condition",
-      "config": "constantanGear.enable"
+      "config": "constantan_gear.enable"
     }
   ],
   "type": "nbtcrafting:smithing",

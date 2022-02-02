@@ -1,6 +1,7 @@
 package amorphia.alloygery.registry;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.config.AlloygeryConfig;
 import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.util.Identifier;
@@ -32,7 +33,7 @@ public class ModResourceConditions
 	 *       // the identifier of the condition
 	 *       "condition": "alloygery:config_boolean_condition",
 	 *       // the config to test. Note you can target values in inner classes by specifying the path
-	 *       "config": "copperGear.enable"
+	 *       "config": "copper_gear.enable"
 	 *       // this will make a condition where the resource is only loaded if copper gear is enabled in the config
 	 *     }
 	 *   ]
@@ -41,7 +42,7 @@ public class ModResourceConditions
 	 */
 	public static boolean configBooleanConditionImpl(JsonObject json)
 	{
-		return Alloygery.CONFIG.getBooleanValue(JsonHelper.getString(json, "config"), false);
+		return AlloygeryConfig.getConfigValue(JsonHelper.getString(json, "config")).getValue();
 	}
 
 	/**
@@ -57,7 +58,7 @@ public class ModResourceConditions
 	 *       // the identifier of the condition
 	 *       "condition": "alloygery:config_integer_condition",
 	 *       // the config to test. Note you can target values in inner classes by specifying the path
-	 *       "config": "copperGear.miningLevel",
+	 *       "config": "copper_gear.mining_level",
 	 *       // matches can be one of "equals", "=", "greaterThan", ">", "lessThan", ">", "greaterThanOrEqual", ">=", "lessThanOrEqual", or "<=".
 	 *       "matches": "equals",
 	 *       "value": 1
@@ -73,7 +74,7 @@ public class ModResourceConditions
 		String matchString = JsonHelper.getString(json, "matches");
 		int valueInteger = JsonHelper.getInt(json, "value");
 
-		int configValue = Alloygery.CONFIG.getIntegerValue(configString, 0);
+		int configValue = AlloygeryConfig.getConfigValue(configString).getValue();
 
 		return switch (matchString)
 		{
@@ -99,7 +100,7 @@ public class ModResourceConditions
 	 *       // the identifier of the condition
 	 *       "condition": "alloygery:config_float_condition",
 	 *       // the config to test. Note you can target values in inner classes by specifying the path
-	 *       "config": "copperGear.knockback",
+	 *       "config": "copper_gear.knockback",
 	 *       // matches can be one of "equals", "=", "greaterThan", ">", "lessThan", ">", "greaterThanOrEqual", ">=", "lessThanOrEqual", or "<=".
 	 *       "matches": "<=",
 	 *       "value": 4.0
@@ -115,7 +116,7 @@ public class ModResourceConditions
 		String matchString = JsonHelper.getString(json, "matches");
 		float valueFloat = JsonHelper.getFloat(json, "value");
 
-		float configValue = Alloygery.CONFIG.getFloatValue(configString, 0.0f);
+		float configValue = AlloygeryConfig.getConfigValue(configString).getValue();
 
 		return switch (matchString)
 		{

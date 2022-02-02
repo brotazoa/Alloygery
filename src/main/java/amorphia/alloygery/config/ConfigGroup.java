@@ -6,6 +6,8 @@ public class ConfigGroup extends LinkedHashMap<String, ConfigValue>
 {
 	public <T extends ConfigValue> T register(String name, T value)
 	{
+
+		//TODO: String validation
 		put(name, value);
 		return value;
 	}

@@ -1,7 +1,6 @@
 package amorphia.alloygery;
 
 import amorphia.alloygery.config.AlloygeryConfig;
-import amorphia.alloygery.config.AlloygeryConfigSerializer;
 import amorphia.alloygery.registry.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;

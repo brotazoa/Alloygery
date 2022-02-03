@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "alloygery:anvil_hammer",
+      "remainder": {
+        "item": "alloygery:anvil_hammer",
+        "data": {
+          "Damage": "$i0.Damage + 2"
+        }
+      }
+    },
+    {
+      "item": "alloygery:invar_ingot"
+    }
+  ],
+  "result": {
+    "item": "alloygery:invar_plate"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:hoe_head_pattern",
+    "remainder": {
+      "item": "alloygery:hoe_head_pattern"
+    }
+  },
+  "ingredient": {
+    "item": "alloygery:titanium_double_ingot"
+  },
+  "result": {
+    "item": "alloygery:titanium_hoe_head"
+  }
+}

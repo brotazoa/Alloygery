@@ -1,0 +1,15 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:hoe_head_pattern",
+    "remainder": {
+      "item": "alloygery:hoe_head_pattern"
+    }
+  },
+  "ingredient": {
+    "item": "alloygery:invar_double_ingot"
+  },
+  "result": {
+    "item": "alloygery:invar_hoe_head"
+  }
+}

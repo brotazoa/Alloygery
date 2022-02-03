@@ -1,0 +1,13 @@
+{
+  "type": "nbtcrafting:anvil",
+  "base": {
+    "item": "alloygery:cupronickel_ingot"
+  },
+  "ingredient": {
+    "item": "alloygery:cupronickel_ingot"
+  },
+  "result": {
+    "item": "alloygery:cupronickel_double_ingot"
+  },
+  "levels": 0
+}

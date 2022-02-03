@@ -1,0 +1,15 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:axe_head_pattern",
+    "remainder": {
+      "item": "alloygery:axe_head_pattern"
+    }
+  },
+  "ingredient": {
+    "item": "alloygery:titanium_gold_double_ingot"
+  },
+  "result": {
+    "item": "alloygery:titanium_gold_axe_head"
+  }
+}

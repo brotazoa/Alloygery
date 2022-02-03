@@ -1,0 +1,15 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:sword_blade_pattern",
+    "remainder": {
+      "item": "alloygery:sword_blade_pattern"
+    }
+  },
+  "ingredient": {
+    "item": "alloygery:antanium_double_ingot"
+  },
+  "result": {
+    "item": "alloygery:antanium_sword_blade"
+  }
+}

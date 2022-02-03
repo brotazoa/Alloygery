@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:nickel_axe_head"
+    },
+    "b": {
+      "item": "minecraft:string"
+    },
+    "h": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:nickel_axe"
+  }
+}

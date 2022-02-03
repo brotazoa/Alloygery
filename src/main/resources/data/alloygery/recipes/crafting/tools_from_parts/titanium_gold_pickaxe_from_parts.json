@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:titanium_gold_pickaxe_head"
+    },
+    "b": {
+      "item": "minecraft:string"
+    },
+    "h": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:titanium_gold_pickaxe"
+  }
+}

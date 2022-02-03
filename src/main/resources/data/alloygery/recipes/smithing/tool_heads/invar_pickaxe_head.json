@@ -1,0 +1,15 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:pickaxe_head_pattern",
+    "remainder": {
+      "item": "alloygery:pickaxe_head_pattern"
+    }
+  },
+  "ingredient": {
+    "item": "alloygery:invar_double_ingot"
+  },
+  "result": {
+    "item": "alloygery:invar_pickaxe_head"
+  }
+}

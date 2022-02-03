@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:copper_sword_blade"
+    },
+    "b": {
+      "item": "minecraft:string"
+    },
+    "h": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:copper_sword"
+  }
+}

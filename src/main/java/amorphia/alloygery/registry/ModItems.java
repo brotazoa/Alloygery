@@ -362,6 +362,9 @@ public class ModItems
 	public static final Item SHOVEL_HEAD_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
 	public static final Item SWORD_BLADE_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
 
+	//crafting tools
+	public static final Item ANVIL_HAMMER = new Item(new Item.Settings().maxDamage(AlloygeryConfig.ironGear.uses.getValue()).group(Alloygery.ALLOYGERY_GROUP_PARTS));
+	public static final Item SMITHING_HAMMER = new Item(new Item.Settings().maxDamage(AlloygeryConfig.steelGear.uses.getValue()).group(Alloygery.ALLOYGERY_GROUP_PARTS));
 
 	// @formatter:on
 
@@ -597,6 +600,10 @@ public class ModItems
 		register("pickaxe_head_pattern", PICKAXE_HEAD_PATTERN);
 		register("shovel_head_pattern", SHOVEL_HEAD_PATTERN);
 		register("sword_blade_pattern", SWORD_BLADE_PATTERN);
+
+		//crafting tools
+		register("anvil_hammer", ANVIL_HAMMER);
+		register("smithing_hammer", SMITHING_HAMMER);
 
 		//copper parts
 		register("copper_axe_head", COPPER_AXE_HEAD);

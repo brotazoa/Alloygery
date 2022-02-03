@@ -1,0 +1,15 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:sword_blade_pattern",
+    "remainder": {
+      "item": "alloygery:sword_blade_pattern"
+    }
+  },
+  "ingredient": {
+    "item": "alloygery:nickel_double_ingot"
+  },
+  "result": {
+    "item": "alloygery:nickel_sword_blade"
+  }
+}

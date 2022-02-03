@@ -4,31 +4,15 @@ Alloygery adds new metals and alloys to change up tools and armor while preservi
 </p>
 
 <p align="center">
-<img src="readmeAssets/copper_armor.png" width="128">
-<img src="readmeAssets/bronze_armor.png" width="128">
-<img src="readmeAssets/nickel_armor.png" width="128">
-<img src="readmeAssets/titanium_armor.png" width="128">
+<img src="readmeAssets/armors.png"/>
 </p>
 
-<p align="center">two alloy kilns for processing ores and ingots into alloys</p>
-<p align="center">
-<img src="readmeAssets/alloy_kiln.png" width="150">
-<img src="readmeAssets/alloying.png" width="600">
-</p>
-
-<p align="center">
-<img src="readmeAssets/blast_alloy_kiln.png" width="150">
-<img src="readmeAssets/blast_alloying.png" width="600">
-</p>
-
-<p align="center">as well as a handful of ores</p>
-<p align="center">
-<img src="readmeAssets/ores.png">
-</p>
-
-<p align="center">Alloygery also expands the upgrade options at the smithing table</p>
-<p align="center">
-<img src="readmeAssets/diamond_upgrade.png" height="200">
-<img src="readmeAssets/netherite_upgrade.png" height="220">
-<img src="readmeAssets/emerald_upgrade.png" height="200">
-</p>
+<h2 align="left">Extra Materials and Tool Parts</h2>
+<p>New feature in development.</p>
+<p>Adds extra materials for vanilla and Alloygery metal types:</p>
+<p><img src="readmeAssets/materials.png"/></p>
+<p>With the goal of having an alternative way to craft tools and armor</p>
+<p><img src="readmeAssets/tool_heads.png"/></p>
+<p>Anvil recipes for materials and tool heads are pending <a href="https://github.com/Siphalor/nbt-crafting/pull/92">this pull request</a></p>
+<p><img src="readmeAssets/anvil_material_crafting.png"/>
+<img src="readmeAssets/anvil_tool_head_crafting.png"/></p>

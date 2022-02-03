@@ -1,0 +1,13 @@
+{
+  "type": "nbtcrafting:anvil",
+  "base": {
+    "item": "alloygery:bronze_ingot"
+  },
+  "ingredient": {
+    "item": "alloygery:bronze_ingot"
+  },
+  "result": {
+    "item": "alloygery:bronze_double_ingot"
+  },
+  "levels": 0
+}

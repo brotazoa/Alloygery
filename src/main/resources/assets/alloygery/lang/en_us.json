@@ -5,6 +5,7 @@
 
   "item.alloygery.alloy_kiln": "Alloy Kiln",
   "item.alloygery.blast_alloy_kiln": "Blast Alloy Kiln",
+  "item.alloygery.smithing_anvil": "Smithing Anvil",
   "item.alloygery.tin_ore": "Tin Ore",
   "item.alloygery.nickel_ore": "Nickel Ore",
   "item.alloygery.titanium_ore": "Titanium Ore",
@@ -179,13 +180,6 @@
   "item.alloygery.nitinol_plate": "Nitinol Plate",
   "item.alloygery.nitinol_heavy_plate": "Nitinol Heavy Plate",
 
-  "item.alloygery.blank_pattern": "Blank Pattern",
-  "item.alloygery.axe_head_pattern": "Axe Head Pattern",
-  "item.alloygery.hoe_head_pattern": "Hoe Head Pattern",
-  "item.alloygery.pickaxe_head_pattern": "Pickaxe Head Pattern",
-  "item.alloygery.shovel_head_pattern": "Shovel Head Pattern",
-  "item.alloygery.sword_blade_pattern": "Sword Blade Pattern",
-
   "item.alloygery.copper_axe_head": "Copper Axe Head",
   "item.alloygery.copper_hoe_head": "Copper Hoe Head",
   "item.alloygery.copper_pickaxe_head": "Copper Pickaxe Head",
@@ -252,8 +246,12 @@
   "item.alloygery.nitinol_shovel_head": "Nitinol Shovel Head",
   "item.alloygery.nitinol_sword_blade": "Nitinol Sword Blade",
 
+  "item.alloygery.anvil_hammer": "Anvil Hammer",
+  "item.alloygery.smithing_hammer": "Smithing Hammer",
+
   "block.alloygery.alloy_kiln": "Alloy Kiln",
   "block.alloygery.blast_alloy_kiln": "Blast Alloy Kiln",
+  "block.alloygery.smithing_anvil": "Smithing Anvil",
   "block.alloygery.tin_ore": "Tin Ore",
   "block.alloygery.deepslate_tin_ore": "Deepslate Tin Ore",
   "block.alloygery.nickel_ore": "Nickel Ore",
@@ -275,6 +273,7 @@
 
   "container.alloygery.alloy_kiln": "Alloy Kiln",
   "container.alloygery.blast_alloy_kiln": "Blast Alloy Kiln",
+  "container.alloygery.smithing_anvil": "Smithing Anvil",
 
   "tooltip.alloygery.shift_for_info": "Hold Shift For More Info",
   "tooltip.alloygery.modifiers.diamond": "Diamond Tipped",
@@ -297,6 +296,7 @@
 
   "rei.alloygery.alloying": "Alloy Kiln",
   "rei.alloygery.blast_alloying": "Blast Alloy Kiln",
+  "rei.alloygery.smithing_anvil": "Smithing Anvil",
 
   "itemGroup.alloygery.blocks": "Alloygery Blocks",
   "itemGroup.alloygery.materials": "Alloygery Materials",
@@ -305,6 +305,7 @@
 
   "stat.alloygery.interact_with_alloy_kiln": "Interact With Alloy Kiln",
   "stat.alloygery.interact_with_blast_alloy_kiln": "Interact With Blast Alloy Kiln",
+  "stat.alloygery.interact_with_smithing_anvil": "Interact With Smithing Anvil",
 
   "text.config.alloygery.title": "Alloygery Config",
   "text.config.alloygery.option.disable_diamond_gear": "Disable vanilla crafting recipes for diamond tools and armor",
@@ -332,6 +333,7 @@
 
   "text.config.alloygery.option.copper_gear": "Copper gear stats",
   "text.config.alloygery.option.copper_gear.enable": "Enable copper gear",
+  "text.config.alloygery.option.copper_gear.enable_simple_recipes": "Enable vanilla like recipes for copper gear",
   "text.config.alloygery.option.copper_gear.mining_level": "Mining level for copper tools",
   "text.config.alloygery.option.copper_gear.uses": "Durability for copper tools",
   "text.config.alloygery.option.copper_gear.speed": "Mining and attack speed for copper tools",
@@ -347,6 +349,7 @@
 
   "text.config.alloygery.option.bronze_gear": "Bronze gear stats",
   "text.config.alloygery.option.bronze_gear.enable": "Enable bronze gear",
+  "text.config.alloygery.option.bronze_gear.enable_simple_recipes": "Enable vanilla like recipes for bronze gear",
   "text.config.alloygery.option.bronze_gear.mining_level": "Mining level for bronze tools",
   "text.config.alloygery.option.bronze_gear.uses": "Durability for bronze tools",
   "text.config.alloygery.option.bronze_gear.speed": "Mining and attack speed for bronze tools",
@@ -362,6 +365,7 @@
 
   "text.config.alloygery.option.iron_gear": "Iron gear stats",
   "text.config.alloygery.option.iron_gear.enable": "Enable iron gear override",
+  "text.config.alloygery.option.iron_gear.enable_simple_recipes": "Enable vanilla like recipes for iron gear",
   "text.config.alloygery.option.iron_gear.mining_level": "Mining level for iron tools",
   "text.config.alloygery.option.iron_gear.uses": "Durability for iron tools",
   "text.config.alloygery.option.iron_gear.speed": "Mining and attack speed for iron tools",
@@ -375,8 +379,25 @@
   "text.config.alloygery.option.iron_gear.toughness": "Toughness points provided by iron armor",
   "text.config.alloygery.option.iron_gear.knockback": "Knockback resistance provided by iron armor",
 
+  "text.config.alloygery.option.gold_gear": "Gold gear stats",
+  "text.config.alloygery.option.gold_gear.enable": "Enable gold gear override",
+  "text.config.alloygery.option.gold_gear.enable_simple_recipes": "Enable vanilla like recipes for gold gear",
+  "text.config.alloygery.option.gold_gear.mining_level": "Mining level for gold tools",
+  "text.config.alloygery.option.gold_gear.uses": "Durability for gold tools",
+  "text.config.alloygery.option.gold_gear.speed": "Mining and attack speed for gold tools",
+  "text.config.alloygery.option.gold_gear.damage": "Base attack damage for gold tools",
+  "text.config.alloygery.option.gold_gear.enchantability": "Enchantability for gold tools",
+  "text.config.alloygery.option.gold_gear.durability_multiplier": "Durability multiplier for gold armor",
+  "text.config.alloygery.option.gold_gear.helmet_armor": "Armor points provided by gold helmets",
+  "text.config.alloygery.option.gold_gear.chestplate_armor": "Armor points provided by gold chestplates",
+  "text.config.alloygery.option.gold_gear.leggings_armor": "Armor points provided by gold leggings",
+  "text.config.alloygery.option.gold_gear.boots_armor": "Armor points provided by gold boots",
+  "text.config.alloygery.option.gold_gear.toughness": "Toughness points provided by gold armor",
+  "text.config.alloygery.option.gold_gear.knockback": "Knockback resistance provided by gold armor",
+
   "text.config.alloygery.option.antanium_gear": "Antanium gear stats",
   "text.config.alloygery.option.antanium_gear.enable": "Enable antanium gear",
+  "text.config.alloygery.option.antanium_gear.enable_simple_recipes": "Enable vanilla like recipes for antanium gear",
   "text.config.alloygery.option.antanium_gear.mining_level": "Mining level for antanium tools",
   "text.config.alloygery.option.antanium_gear.uses": "Durability for antanium tools",
   "text.config.alloygery.option.antanium_gear.speed": "Mining and attack speed for antanium tools",
@@ -392,6 +413,7 @@
 
   "text.config.alloygery.option.steel_gear": "Steel gear stats",
   "text.config.alloygery.option.steel_gear.enable": "Enable steel gear",
+  "text.config.alloygery.option.steel_gear.enable_simple_recipes": "Enable vanilla like recipes for steel gear",
   "text.config.alloygery.option.steel_gear.mining_level": "Mining level for steel tools",
   "text.config.alloygery.option.steel_gear.uses": "Durability for steel tools",
   "text.config.alloygery.option.steel_gear.speed": "Mining and attack speed for steel tools",
@@ -407,6 +429,7 @@
 
   "text.config.alloygery.option.nickel_gear": "Nickel gear stats",
   "text.config.alloygery.option.nickel_gear.enable": "Enable nickel gear",
+  "text.config.alloygery.option.nickel_gear.enable_simple_recipes": "Enable vanilla like recipes for nickel gear",
   "text.config.alloygery.option.nickel_gear.mining_level": "Mining level for nickel tools",
   "text.config.alloygery.option.nickel_gear.uses": "Durability for nickel tools",
   "text.config.alloygery.option.nickel_gear.speed": "Mining and attack speed for nickel tools",
@@ -422,6 +445,7 @@
 
   "text.config.alloygery.option.invar_gear": "Invar gear stats",
   "text.config.alloygery.option.invar_gear.enable": "Enable invar gear",
+  "text.config.alloygery.option.invar_gear.enable_simple_recipes": "Enable vanilla like recipes for invar gear",
   "text.config.alloygery.option.invar_gear.mining_level": "Mining level for invar tools",
   "text.config.alloygery.option.invar_gear.uses": "Durability for invar tools",
   "text.config.alloygery.option.invar_gear.speed": "Mining and attack speed for invar tools",
@@ -437,6 +461,7 @@
 
   "text.config.alloygery.option.constantan_gear": "Constantan gear stats",
   "text.config.alloygery.option.constantan_gear.enable": "Enable constantan gear",
+  "text.config.alloygery.option.constantan_gear.enable_simple_recipes": "Enable vanilla like recipes for constantan gear",
   "text.config.alloygery.option.constantan_gear.mining_level": "Mining level for constantan tools",
   "text.config.alloygery.option.constantan_gear.uses": "Durability for constantan tools",
   "text.config.alloygery.option.constantan_gear.speed": "Mining and attack speed for constantan tools",
@@ -452,6 +477,7 @@
 
   "text.config.alloygery.option.cupronickel_gear": "Cupronickel gear stats",
   "text.config.alloygery.option.cupronickel_gear.enable": "Enable cupronickel gear",
+  "text.config.alloygery.option.cupronickel_gear.enable_simple_recipes": "Enable vanilla like recipes for cupronickel gear",
   "text.config.alloygery.option.cupronickel_gear.mining_level": "Mining level for cupronickel tools",
   "text.config.alloygery.option.cupronickel_gear.uses": "Durability for cupronickel tools",
   "text.config.alloygery.option.cupronickel_gear.speed": "Mining and attack speed for cupronickel tools",
@@ -467,6 +493,7 @@
 
   "text.config.alloygery.option.titanium_gear": "Titanium gear stats",
   "text.config.alloygery.option.titanium_gear.enable": "Enable titanium gear",
+  "text.config.alloygery.option.titanium_gear.enable_simple_recipes": "Enable vanilla like recipes for titanium gear",
   "text.config.alloygery.option.titanium_gear.mining_level": "Mining level for titanium tools",
   "text.config.alloygery.option.titanium_gear.uses": "Durability for titanium tools",
   "text.config.alloygery.option.titanium_gear.speed": "Mining and attack speed for titanium tools",
@@ -482,6 +509,7 @@
 
   "text.config.alloygery.option.titanium_gold_gear": "Titanium Gold gear stats",
   "text.config.alloygery.option.titanium_gold_gear.enable": "Enable titanium gold gear",
+  "text.config.alloygery.option.titanium_gold_gear.enable_simple_recipes": "Enable vanilla like recipes for titanium gold gear",
   "text.config.alloygery.option.titanium_gold_gear.mining_level": "Mining level for titanium gold tools",
   "text.config.alloygery.option.titanium_gold_gear.uses": "Durability for titanium gold tools",
   "text.config.alloygery.option.titanium_gold_gear.speed": "Mining and attack speed for titanium gold tools",
@@ -497,6 +525,7 @@
 
   "text.config.alloygery.option.nitinol_gear": "Nitinol gear stats",
   "text.config.alloygery.option.nitinol_gear.enable": "Enable nitinol gear",
+  "text.config.alloygery.option.nitinol_gear.enable_simple_recipes": "Enable vanilla like recipes for nitinol gear",
   "text.config.alloygery.option.nitinol_gear.mining_level": "Mining level for nitinol tools",
   "text.config.alloygery.option.nitinol_gear.uses": "Durability for nitinol tools",
   "text.config.alloygery.option.nitinol_gear.speed": "Mining and attack speed for nitinol tools",

@@ -1,0 +1,19 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "cupronickel_materials",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 5"
+      }
+    }
+  },
+  "material": {
+    "item": "alloygery:cupronickel_double_ingot"
+  },
+  "result": {
+    "item": "alloygery:cupronickel_heavy_plate"
+  }
+}

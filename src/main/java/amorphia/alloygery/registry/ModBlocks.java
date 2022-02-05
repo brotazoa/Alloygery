@@ -3,6 +3,7 @@ package amorphia.alloygery.registry;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.block.AlloyKilnBlock;
 import amorphia.alloygery.content.block.BlastAlloyKilnBlock;
+import amorphia.alloygery.content.block.SmithingAnvilBlock;
 import amorphia.alloygery.content.block.entity.AlloyKilnBlockEntity;
 import amorphia.alloygery.content.block.entity.BlastAlloyKilnBlockEntity;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -21,6 +22,8 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlocks
 {
+	//@formatter:off
+
 	//ore blocks
 	public static final Block TIN_ORE = new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f));
 	public static final Block DEEPSLATE_TIN_ORE = new OreBlock(FabricBlockSettings.copy(TIN_ORE).mapColor(MapColor.DEEPSLATE_GRAY).strength(4.5f, 3.0f).sounds(BlockSoundGroup.DEEPSLATE));
@@ -52,6 +55,11 @@ public class ModBlocks
 	//alloy kiln entities
 	public static BlockEntityType<AlloyKilnBlockEntity> ALLOY_KILN_BLOCK_ENTITY;
 	public static BlockEntityType<BlastAlloyKilnBlockEntity> BLAST_ALLOY_KILN_BLOCK_ENTITY;
+
+	//smithing anvil
+	public static final Block SMITHING_ANVIL = new SmithingAnvilBlock(FabricBlockSettings.of(Material.REPAIR_STATION, MapColor.IRON_GRAY).requiresTool().strength(5.0f, 1200.0f).sounds(BlockSoundGroup.ANVIL));
+
+	//@formatter:on
 
 	public static void register()
 	{
@@ -88,6 +96,9 @@ public class ModBlocks
 				FabricBlockEntityTypeBuilder.create(AlloyKilnBlockEntity::new, ALLOY_KILN).build(null));
 		BLAST_ALLOY_KILN_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, Alloygery.identifier("blast_alloy_kiln_block_entity"),
 				FabricBlockEntityTypeBuilder.create(BlastAlloyKilnBlockEntity::new, BLAST_ALLOY_KILN).build(null));
+
+		//smithing anvil
+		register("smithing_anvil", SMITHING_ANVIL);
 	}
 
 	private static void register(String path, Block block)

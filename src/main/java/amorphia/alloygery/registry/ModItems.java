@@ -80,6 +80,13 @@ public class ModItems
 	public static final Item IRON_SHOVEL = new ShovelItem(ModToolMaterials.IRON, 1.5f, -3.0f, new Item.Settings().group(ItemGroup.TOOLS));
 	public static final Item IRON_SWORD = new ModSwordItem(ModToolMaterials.IRON, 3, -2.4f, new Item.Settings().group(ItemGroup.COMBAT));
 
+	//gold tools
+	public static final Item GOLD_AXE = new ModAxeItem(ModToolMaterials.GOLD, 5.0f, -3.0f, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item GOLD_HOE = new ModHoeItem(ModToolMaterials.GOLD, -2, -2.8f, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item GOLD_PICKAXE = new ModPickaxeItem(ModToolMaterials.GOLD, 1, -2.8f, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item GOLD_SHOVEL = new ShovelItem(ModToolMaterials.GOLD, 1.5f, -3.0f, new Item.Settings().group(ItemGroup.TOOLS));
+	public static final Item GOLD_SWORD = new ModSwordItem(ModToolMaterials.GOLD, 3, -2.4f, new Item.Settings().group(ItemGroup.COMBAT));
+
 	//antanium tools
 	public static final Item ANTANIUM_AXE = new ModAxeItem(ModToolMaterials.ANTANIUM, 5.0f, -3.0f, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
 	public static final Item ANTANIUM_HOE = new ModHoeItem(ModToolMaterials.ANTANIUM, -2, -2.8f, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
@@ -355,16 +362,12 @@ public class ModItems
 	public static final Item NITINOL_SHOVEL_HEAD = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
 	public static final Item NITINOL_SWORD_BLADE = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
 
-	public static final Item BLANK_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
-	public static final Item AXE_HEAD_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
-	public static final Item HOE_HEAD_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
-	public static final Item PICKAXE_HEAD_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
-	public static final Item SHOVEL_HEAD_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
-	public static final Item SWORD_BLADE_PATTERN = new Item(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
-
 	//crafting tools
-	public static final Item ANVIL_HAMMER = new Item(new Item.Settings().maxDamage(AlloygeryConfig.ironGear.uses.getValue()).group(Alloygery.ALLOYGERY_GROUP_PARTS));
-	public static final Item SMITHING_HAMMER = new Item(new Item.Settings().maxDamage(AlloygeryConfig.steelGear.uses.getValue()).group(Alloygery.ALLOYGERY_GROUP_PARTS));
+	public static final Item ANVIL_HAMMER = new BaseCraftingItem(new Item.Settings().maxDamage(AlloygeryConfig.ironGear.uses.getValue()).group(Alloygery.ALLOYGERY_GROUP_PARTS));
+	public static final Item SMITHING_HAMMER = new BaseCraftingItem(new Item.Settings().maxDamage(AlloygeryConfig.steelGear.uses.getValue()).group(Alloygery.ALLOYGERY_GROUP_PARTS));
+
+	//smithing anvil
+	public static final Item SMITHING_ANVIL = new BlockItem(ModBlocks.SMITHING_ANVIL, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
 
 	// @formatter:on
 
@@ -373,6 +376,9 @@ public class ModItems
 		//kilns
 		register("alloy_kiln", ALLOY_KILN);
 		register("blast_alloy_kiln", BLAST_ALLOY_KILN);
+
+		//smithing anvil
+		register("smithing_anvil", SMITHING_ANVIL);
 
 		//ores
 		register("tin_ore", TIN_ORE);
@@ -593,14 +599,6 @@ public class ModItems
 		register("nitinol_leggings", NITINOL_LEGGINGS);
 		register("nitinol_boots", NITINOL_BOOTS);
 
-		//patterns
-		register("blank_pattern", BLANK_PATTERN);
-		register("axe_head_pattern", AXE_HEAD_PATTERN);
-		register("hoe_head_pattern", HOE_HEAD_PATTERN);
-		register("pickaxe_head_pattern", PICKAXE_HEAD_PATTERN);
-		register("shovel_head_pattern", SHOVEL_HEAD_PATTERN);
-		register("sword_blade_pattern", SWORD_BLADE_PATTERN);
-
 		//crafting tools
 		register("anvil_hammer", ANVIL_HAMMER);
 		register("smithing_hammer", SMITHING_HAMMER);
@@ -710,6 +708,16 @@ public class ModItems
 			override(Items.IRON_CHESTPLATE, IRON_CHESTPLATE);
 			override(Items.IRON_LEGGINGS, IRON_LEGGINGS);
 			override(Items.IRON_BOOTS, IRON_BOOTS);
+		}
+
+		if (AlloygeryConfig.goldGear.enable.getValue())
+		{
+			//gold tool overrides
+			override(Items.GOLDEN_AXE, GOLD_AXE);
+			override(Items.GOLDEN_HOE, GOLD_HOE);
+			override(Items.GOLDEN_PICKAXE, GOLD_PICKAXE);
+			override(Items.GOLDEN_SHOVEL, GOLD_SHOVEL);
+			override(Items.GOLDEN_SWORD, GOLD_SWORD);
 		}
 
 		//ineffective diamond gear overrides

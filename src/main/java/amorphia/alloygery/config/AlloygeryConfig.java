@@ -1,6 +1,7 @@
 package amorphia.alloygery.config;
 
 import amorphia.alloygery.content.item.ModMiningLevels;
+import net.fabricmc.yarn.constants.MiningLevels;
 
 public class AlloygeryConfig
 {
@@ -51,6 +52,7 @@ public class AlloygeryConfig
 	public static final GearStatsConfigGroup copperGear;
 	public static final GearStatsConfigGroup bronzeGear;
 	public static final GearStatsConfigGroup ironGear;
+	public static final GearStatsConfigGroup goldGear;
 	public static final GearStatsConfigGroup antaniumGear;
 	public static final GearStatsConfigGroup steelGear;
 	public static final GearStatsConfigGroup nickelGear;
@@ -78,18 +80,19 @@ public class AlloygeryConfig
 		nickelOre = ALLOYGERY_CONFIG.register("nickel_ore", new OreGenerationConfigGroup(true, 8, 10));
 		titaniumOre = ALLOYGERY_CONFIG.register("titanium_ore", new OreGenerationConfigGroup(true, 6, 10));
 
-		copperGear = ALLOYGERY_CONFIG.register("copper_gear", new GearStatsConfigGroup(true, ModMiningLevels.STONE, 190, 4.0f, 1.0f, 5, 10, 1, 4, 3, 1, 0.0f, 0.0f));
-		bronzeGear = ALLOYGERY_CONFIG.register("bronze_gear", new GearStatsConfigGroup(true, ModMiningLevels.BRONZE, 250, 5.0f, 2.0f, 14, 15, 2, 6, 5, 2, 0.0f, 0.0f));
-		ironGear = ALLOYGERY_CONFIG.register("iron_gear", new GearStatsConfigGroup(true, ModMiningLevels.IRON, 700, 6.0f, 2.0f, 14, 15, 2, 6, 5, 2, 0.0f, 0.0f));
-		antaniumGear = ALLOYGERY_CONFIG.register("antanium_gear", new GearStatsConfigGroup(true, ModMiningLevels.BRONZE, 858, 10.0f, 1.0f, 20, 20, 2, 5, 4, 2, 0.0f, 0.0f));
-		steelGear = ALLOYGERY_CONFIG.register("steel_gear", new GearStatsConfigGroup(true, ModMiningLevels.STEEL, 1461, 8.0f, 3.0f, 10, 33, 3, 8, 6, 3, 2.0f, 0.0f));
-		nickelGear = ALLOYGERY_CONFIG.register("nickel_gear", new GearStatsConfigGroup(true, ModMiningLevels.NICKEL, 2031, 9.0f, 4.0f, 15, 37, 3, 8, 6, 3, 2.0f, 0.1f));
-		invarGear = ALLOYGERY_CONFIG.register("invar_gear", new GearStatsConfigGroup(true, ModMiningLevels.NICKEL, 2731, 9.0f, 4.0f, 15, 50, 3, 9, 7, 3, 3.0f, 0.5f));
-		constantanGear = ALLOYGERY_CONFIG.register("constantan_gear", new GearStatsConfigGroup(true, ModMiningLevels.NICKEL, 2221, 9.0f, 4.0f, 15, 40, 3, 8, 6, 3, 2.0f, 0.0f));
-		cupronickelGear = ALLOYGERY_CONFIG.register("cupronickel_gear", new GearStatsConfigGroup(true, ModMiningLevels.NICKEL, 2471, 9.0f, 4.0f, 15, 45, 3, 8, 6, 3, 2.0f, 0.0f));
-		titaniumGear = ALLOYGERY_CONFIG.register("titanium_gear", new GearStatsConfigGroup(true, ModMiningLevels.TITANIUM, 2892, 10.0f, 5.0f, 18, 53, 4, 9, 7, 4, 3.0f, 0.0f));
-		titaniumGoldGear = ALLOYGERY_CONFIG.register("titanium_gold_gear", new GearStatsConfigGroup(true, ModMiningLevels.TITANIUM, 3127, 12.0f, 5.0f, 28, 57, 4, 9, 7, 4, 3.0f, 0.0f));
-		nitinolGear = ALLOYGERY_CONFIG.register("nitinol_gear", new GearStatsConfigGroup(true, ModMiningLevels.TITANIUM, 3362, 10.0f, 5.0f, 18, 62, 4, 9, 7, 4, 3.0f, 0.1f));
+		copperGear = ALLOYGERY_CONFIG.register("copper_gear", new GearStatsConfigGroup(true, true, ModMiningLevels.STONE, 190, 4.0f, 1.0f, 5, 10, 1, 4, 3, 1, 0.0f, 0.0f));
+		bronzeGear = ALLOYGERY_CONFIG.register("bronze_gear", new GearStatsConfigGroup(true, true, ModMiningLevels.BRONZE, 250, 5.0f, 2.0f, 14, 15, 2, 6, 5, 2, 0.0f, 0.0f));
+		ironGear = ALLOYGERY_CONFIG.register("iron_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.IRON, 700, 6.0f, 2.0f, 14, 15, 2, 6, 5, 2, 0.0f, 0.0f));
+		goldGear = ALLOYGERY_CONFIG.register("gold_gear", new GearStatsConfigGroup(true, false, MiningLevels.WOOD, 32, 12.0f, 0.0f, 22, 7, 2, 5, 3, 1, 0.0f, 0.0f));
+		antaniumGear = ALLOYGERY_CONFIG.register("antanium_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.BRONZE, 858, 10.0f, 1.0f, 20, 20, 2, 5, 4, 2, 0.0f, 0.0f));
+		steelGear = ALLOYGERY_CONFIG.register("steel_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.STEEL, 1461, 8.0f, 3.0f, 10, 33, 3, 8, 6, 3, 2.0f, 0.0f));
+		nickelGear = ALLOYGERY_CONFIG.register("nickel_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.NICKEL, 2031, 9.0f, 4.0f, 15, 37, 3, 8, 6, 3, 2.0f, 0.1f));
+		invarGear = ALLOYGERY_CONFIG.register("invar_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.NICKEL, 2731, 9.0f, 4.0f, 15, 50, 3, 9, 7, 3, 3.0f, 0.5f));
+		constantanGear = ALLOYGERY_CONFIG.register("constantan_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.NICKEL, 2221, 9.0f, 4.0f, 15, 40, 3, 8, 6, 3, 2.0f, 0.0f));
+		cupronickelGear = ALLOYGERY_CONFIG.register("cupronickel_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.NICKEL, 2471, 9.0f, 4.0f, 15, 45, 3, 8, 6, 3, 2.0f, 0.0f));
+		titaniumGear = ALLOYGERY_CONFIG.register("titanium_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.TITANIUM, 2892, 10.0f, 5.0f, 18, 53, 4, 9, 7, 4, 3.0f, 0.0f));
+		titaniumGoldGear = ALLOYGERY_CONFIG.register("titanium_gold_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.TITANIUM, 3127, 12.0f, 5.0f, 28, 57, 4, 9, 7, 4, 3.0f, 0.0f));
+		nitinolGear = ALLOYGERY_CONFIG.register("nitinol_gear", new GearStatsConfigGroup(true, false, ModMiningLevels.TITANIUM, 3362, 10.0f, 5.0f, 18, 62, 4, 9, 7, 4, 3.0f, 0.1f));
 		//@formatter:on
 	}
 
@@ -110,6 +113,7 @@ public class AlloygeryConfig
 	public static class GearStatsConfigGroup extends ConfigGroup
 	{
 		public final ConfigValue enable;
+		public final ConfigValue enableSimpleRecipes;
 		public final ConfigValue miningLevel;
 		public final ConfigValue uses;
 		public final ConfigValue speed;
@@ -123,10 +127,11 @@ public class AlloygeryConfig
 		public final ConfigValue toughness;
 		public final ConfigValue knockback;
 
-		public GearStatsConfigGroup(boolean enable, int miningLevel, int uses, float speed, float damage, int enchantability,
+		public GearStatsConfigGroup(boolean enable, boolean enableSimple, int miningLevel, int uses, float speed, float damage, int enchantability,
 				int durabilityMultiplier, int helmetArmor, int chestplateArmor, int leggingsArmor, int bootsArmor, float toughness, float knockback)
 		{
 			this.enable = register("enable", new ConfigValue(enable));
+			this.enableSimpleRecipes = register("enable_simple_recipes", new ConfigValue(enableSimple));
 			this.miningLevel = register("mining_level", new ConfigValue(miningLevel));
 			this.uses = register("uses", new ConfigValue(uses));
 			this.speed = register("speed", new ConfigValue(speed));

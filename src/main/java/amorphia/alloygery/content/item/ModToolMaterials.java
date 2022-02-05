@@ -1,5 +1,6 @@
 package amorphia.alloygery.content.item;
 
+import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.registry.ModItems;
 import net.minecraft.item.Items;
@@ -12,6 +13,7 @@ public enum ModToolMaterials implements ToolMaterial
 	COPPER(AlloygeryConfig.copperGear, Ingredient.ofItems(Items.COPPER_INGOT)),
 	BRONZE(AlloygeryConfig.bronzeGear, Ingredient.ofItems(ModItems.BRONZE_INGOT)),
 	IRON(AlloygeryConfig.ironGear, Ingredient.ofItems(Items.IRON_INGOT)),
+	GOLD(AlloygeryConfig.goldGear, Ingredient.ofItems(Items.GOLD_INGOT)),
 	ANTANIUM(AlloygeryConfig.antaniumGear, Ingredient.ofItems(ModItems.ANTANIUM_INGOT)),
 	STEEL(AlloygeryConfig.steelGear, Ingredient.ofItems(ModItems.STEEL_INGOT)),
 	NICKEL(AlloygeryConfig.nickelGear, Ingredient.ofItems(ModItems.NICKEL_INGOT)),

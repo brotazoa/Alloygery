@@ -14,3 +14,4 @@ Alloygery adds new metals and alloys to change up tools and armor while preservi
 <p>With the goal of having an alternative way to craft tools and armor, using a new crafting interface</p>
 <p><img src="readmeAssets/smithing_anvil_crafting_banner.png"/></p>
 <p><img src="readmeAssets/double_ingot_crafting.png"/>
+<p>Alpha builds are available on CurseForge if you want to play with these features. Be aware that the branch is in active development and likely to change, and/or be buggy. Make world backups often.</p>

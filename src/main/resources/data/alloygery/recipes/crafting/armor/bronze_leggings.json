@@ -3,6 +3,10 @@
     {
       "condition": "alloygery:config_boolean_condition",
       "config": "bronze_gear.enable"
+    },
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "bronze_gear.enable_simple_recipes"
     }
   ],
   "type": "minecraft:crafting_shaped",

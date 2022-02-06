@@ -44,7 +44,7 @@ dependencies {
 
     //rei
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 
     //nbtcrafting
     modImplementation "de.siphalor:nbtcrafting-1.18:${project.nbtcrafting_version}"

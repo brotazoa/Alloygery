@@ -1,0 +1,19 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "bronze_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 5"
+      }
+    }
+  },
+  "material": {
+    "item": "alloygery:bronze_heavy_plate"
+  },
+  "result": {
+    "item": "alloygery:bronze_leggings"
+  }
+}

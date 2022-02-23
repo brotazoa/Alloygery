@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:tool_render_parts/wooden_tool_handle_template",
+    "layer1": "alloygery:tool_render_parts/metal_shovel_head_template"
+  }
+}

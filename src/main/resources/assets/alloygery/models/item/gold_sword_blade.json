@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alloygery:item/gold_sword_blade"
+    "layer0": "alloygery:item/empty",
+    "layer1": "alloygery:item/gold_sword_blade"
   }
 }

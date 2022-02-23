@@ -1,6 +1,7 @@
 package amorphia.alloygery;
 
 import amorphia.alloygery.config.AlloygeryConfig;
+import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.registry.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -15,10 +16,10 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 {
 	public static final String MOD_ID = "alloygery";
 
-	public static ItemGroup ALLOYGERY_GROUP_BLOCKS = FabricItemGroupBuilder.create(Alloygery.identifier("blocks")).icon(() -> new ItemStack(ModItems.BLAST_ALLOY_KILN)).build();
-	public static ItemGroup ALLOYGERY_GROUP_MATERIALS = FabricItemGroupBuilder.create(Alloygery.identifier("materials")).icon(() -> new ItemStack(ModItems.BRONZE_INGOT)).build();
-	public static ItemGroup ALLOYGERY_GROUP_GEAR = FabricItemGroupBuilder.create(Alloygery.identifier("gear")).icon(() -> new ItemStack(ModItems.BRONZE_CHESTPLATE)).build();
-	public static ItemGroup ALLOYGERY_GROUP_PARTS = FabricItemGroupBuilder.create(Alloygery.identifier("parts")).icon(() -> new ItemStack(ModItems.BRONZE_AXE_HEAD)).build();
+	public static ItemGroup ALLOYGERY_GROUP_BLOCKS = FabricItemGroupBuilder.create(Alloygery.identifier("blocks")).icon(() -> new ItemStack(ModItems.BLOCKS_TAB_ITEM)).build();
+	public static ItemGroup ALLOYGERY_GROUP_MATERIALS = FabricItemGroupBuilder.create(Alloygery.identifier("materials")).icon(() -> new ItemStack(ModItems.MATERIALS_TAB_ITEM)).build();
+	public static ItemGroup ALLOYGERY_GROUP_GEAR = FabricItemGroupBuilder.create(Alloygery.identifier("gear")).icon(() -> new ItemStack(ModItems.GEAR_TAB_ITEM)).build();
+	public static ItemGroup ALLOYGERY_GROUP_PARTS = FabricItemGroupBuilder.create(Alloygery.identifier("parts")).icon(() -> new ItemStack(ModItems.PARTS_TAB_ITEM)).build();
 
 	public static final String NBT_KEY = "AlloygeryProperties";
 	public static final String DIAMOND_TIPPED_KEY = "DiamondTipped";
@@ -30,6 +31,8 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	public void onInitializeClient()
 	{
 		ModScreens.registerClient();
+
+		ModColorProviders.registerClient();
 	}
 
 	@Override
@@ -38,6 +41,8 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();
+
+		AlloygeryMaterials.init();
 
 		ModBlocks.register();
 		ModItems.register();

@@ -9,7 +9,8 @@
     "ItemEntityMixin",
     "ItemMixin",
     "ItemStackMixin",
-    "MiningToolItemAccessor"
+    "MiningToolItemAccessor",
+    "ModelLoaderMixin"
   ],
   "client": [
   ],

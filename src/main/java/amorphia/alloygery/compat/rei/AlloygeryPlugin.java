@@ -7,8 +7,13 @@ import amorphia.alloygery.registry.ModItems;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
+import me.shedaniel.rei.api.client.registry.entry.EntryRegistry;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
+import me.shedaniel.rei.api.common.entry.EntryStack;
+import me.shedaniel.rei.api.common.entry.type.BuiltinEntryTypes;
+import me.shedaniel.rei.api.common.entry.type.EntryType;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+import net.minecraft.item.ItemStack;
 
 public class AlloygeryPlugin implements REIClientPlugin
 {
@@ -34,5 +39,14 @@ public class AlloygeryPlugin implements REIClientPlugin
 		registry.registerFiller(AlloyingRecipe.class, AlloyingDisplay::new);
 		registry.registerFiller(BlastAlloyingRecipe.class, BlastAlloyingDisplay::new);
 		registry.registerFiller(SmithingAnvilRecipe.class, SmithingAnvilDisplay::new);
+	}
+
+	@Override
+	public void registerEntries(EntryRegistry registry)
+	{
+		registry.removeEntry(EntryStacks.of(new ItemStack(ModItems.BLOCKS_TAB_ITEM)));
+		registry.removeEntry(EntryStacks.of(new ItemStack(ModItems.MATERIALS_TAB_ITEM)));
+		registry.removeEntry(EntryStacks.of(new ItemStack(ModItems.GEAR_TAB_ITEM)));
+		registry.removeEntry(EntryStacks.of(new ItemStack(ModItems.PARTS_TAB_ITEM)));
 	}
 }

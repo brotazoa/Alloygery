@@ -1,6 +1,6 @@
 package amorphia.alloygery.content.screen;
 
-import amorphia.alloygery.content.item.BaseCraftingItem;
+import amorphia.alloygery.content.item.BaseCraftingToolItem;
 import amorphia.alloygery.content.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.registry.ModBlocks;
 import amorphia.alloygery.registry.ModScreens;
@@ -257,7 +257,7 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 					return ItemStack.EMPTY;
 				}
 			}
-			else if (slotStack.getItem() instanceof BaseCraftingItem) // inventory to hammer slot
+			else if (slotStack.getItem() instanceof BaseCraftingToolItem) // inventory to hammer slot
 			{
 				if (!this.insertItem(slotStack, 0, 1, false))
 				{

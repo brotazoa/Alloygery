@@ -14,9 +14,9 @@ public class AlloygeryPickaxeItem extends PickaxeItem
 
 	private final AlloygeryMaterial alloygeryMaterial;
 
-	public AlloygeryPickaxeItem(AlloygeryMaterial material)
+	public AlloygeryPickaxeItem(AlloygeryMaterial material, Item.Settings settings)
 	{
-		super(new DynamicToolMaterial(material), 1, -2.8f, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
+		super(new DynamicToolMaterial(material), 1, -2.8f, settings);
 		this.alloygeryMaterial = material;
 		PICKAXE_ITEMS.add(this);
 	}

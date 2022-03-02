@@ -2,24 +2,25 @@ package amorphia.alloygery.content.material;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.ModMiningLevels;
-import amorphia.alloygery.registry.ModItems;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
+import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
 import net.fabricmc.yarn.constants.MiningLevels;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.registry.DefaultedRegistry;
 import net.minecraft.util.registry.Registry;
 
 public class AlloygeryMaterials
 {
-	public static final DefaultedRegistry<AlloygeryMaterial> ALLOYGERY_MATERIALS = FabricRegistryBuilder.createDefaulted(AlloygeryMaterial.class, Alloygery.identifier("materials"), Alloygery.identifier("unknown")).buildAndRegister();
+	public static final DefaultedRegistry<AlloygeryMaterial> ALLOYGERY_MATERIALS = FabricRegistryBuilder
+			.createDefaulted(AlloygeryMaterial.class, Alloygery.identifier("materials"), Alloygery.identifier("unknown"))
+			.attribute(RegistryAttribute.SYNCED)
+			.buildAndRegister();
 
 	public static final AlloygeryMaterial UNKNOWN = registerMaterial("unknown", new AlloygeryMaterial("unknown"));
 	public static final AlloygeryMaterial TIN;
 	public static final AlloygeryMaterial COPPER;
 	public static final AlloygeryMaterial BRONZE;
-	public static final AlloygeryMaterial IRON_OVERRIDE;
-	public static final AlloygeryMaterial GOLD_OVERRIDE;
+	public static final AlloygeryMaterial IRON;
+	public static final AlloygeryMaterial GOLD;
 	public static final AlloygeryMaterial ANTANIUM;
 	public static final AlloygeryMaterial STEEL;
 	public static final AlloygeryMaterial NICKEL;
@@ -50,17 +51,16 @@ public class AlloygeryMaterials
 				.category("metal")
 				.color(15433553)
 				.level(ModMiningLevels.STONE)
-				.head_durability(190)
+				.head_durability(150)
 				.speed(4.0f)
-				.damage(1.0f)
-				.enchantability(5)
-				.armor_durability(10)
+				.damage(2.0f)
+				.tool_enchantability(10)
+				.armor_enchantability(15)
+				.armor_durability(5)
 				.helmet_armor(1)
-				.chestplate_armor(4)
-				.leggings_armor(3)
+				.chestplate_armor(3)
+				.leggings_armor(2)
 				.boots_armor(1)
-				.toughness(0.0f)
-				.knockback(0.0f)
 				.build());
 
 		BRONZE = registerMaterial("bronze", new AlloygeryMaterial.AlloygeryMaterialBuilder("bronze")
@@ -70,48 +70,47 @@ public class AlloygeryMaterials
 				.head_durability(250)
 				.speed(5.0f)
 				.damage(2.0f)
-				.enchantability(14)
+				.tool_enchantability(15)
+				.armor_enchantability(12)
 				.armor_durability(15)
 				.helmet_armor(2)
 				.chestplate_armor(6)
 				.leggings_armor(5)
 				.boots_armor(2)
-				.toughness(0.0f)
-				.knockback(0.0f)
 				.build());
 
-		IRON_OVERRIDE = registerMaterial("iron", new AlloygeryMaterial.AlloygeryMaterialBuilder("iron")
+		//vanilla stats
+		IRON = registerMaterial("iron", new AlloygeryMaterial.AlloygeryMaterialBuilder("iron")
 				.category("metal")
 				.level(ModMiningLevels.IRON)
 				.color(15198183)
-				.head_durability(700)
+				.head_durability(250)
 				.speed(6.0f)
 				.damage(2.0f)
-				.enchantability(14)
+				.tool_enchantability(14)
+				.armor_enchantability(9)
 				.armor_durability(15)
 				.helmet_armor(2)
 				.chestplate_armor(6)
 				.leggings_armor(5)
 				.boots_armor(2)
-				.toughness(0.0f)
-				.knockback(0.0f)
 				.build());
 
-		GOLD_OVERRIDE = registerMaterial("gold", new AlloygeryMaterial.AlloygeryMaterialBuilder("gold")
+		//vanilla stats
+		GOLD = registerMaterial("gold", new AlloygeryMaterial.AlloygeryMaterialBuilder("gold")
 				.category("metal")
 				.color(16573743)
 				.level(MiningLevels.WOOD)
 				.head_durability(32)
 				.speed(12.0f)
 				.damage(0.0f)
-				.enchantability(22)
+				.tool_enchantability(22)
+				.armor_enchantability(25)
 				.armor_durability(7)
 				.helmet_armor(2)
 				.chestplate_armor(5)
 				.leggings_armor(3)
 				.boots_armor(1)
-				.toughness(0.0f)
-				.knockback(0.0f)
 				.build());
 
 		ANTANIUM = registerMaterial("antanium", new AlloygeryMaterial.AlloygeryMaterialBuilder("antanium")
@@ -121,48 +120,47 @@ public class AlloygeryMaterials
 				.head_durability(858)
 				.speed(10.0f)
 				.damage(1.0f)
-				.enchantability(20)
+				.tool_enchantability(20)
+				.armor_enchantability(20)
 				.armor_durability(20)
 				.helmet_armor(2)
 				.chestplate_armor(5)
 				.leggings_armor(4)
 				.boots_armor(2)
-				.toughness(0.0f)
-				.knockback(0.0f)
 				.build());
 
 		STEEL = registerMaterial("steel", new AlloygeryMaterial.AlloygeryMaterialBuilder("steel")
 				.category("metal")
 				.level(ModMiningLevels.STEEL)
 				.color(4408907)
-				.head_durability(1561)
+				.head_durability(1600)
 				.speed(8.0f)
 				.damage(3.0f)
-				.enchantability(10)
-				.armor_durability(33)
+				.tool_enchantability(15)
+				.armor_enchantability(11)
+				.armor_durability(35)
 				.helmet_armor(3)
 				.chestplate_armor(8)
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(2.0f)
-				.knockback(0.0f)
 				.build());
 
 		NICKEL = registerMaterial("nickel", new AlloygeryMaterial.AlloygeryMaterialBuilder("nickel")
 				.category("metal")
 				.level(ModMiningLevels.NICKEL)
 				.color(6314062)
-				.head_durability(2031)
+				.head_durability(2121)
 				.speed(9.0f)
-				.damage(4.0f)
-				.enchantability(15)
+				.damage(3.0f)
+				.tool_enchantability(15)
+				.armor_enchantability(12)
 				.armor_durability(37)
 				.helmet_armor(3)
 				.chestplate_armor(8)
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(3.0f)
-				.knockback(0.1f)
 				.ore_hardness(3.0f)
 				.ore_resistance(9.0f)
 				.build());
@@ -174,14 +172,15 @@ public class AlloygeryMaterials
 				.head_durability(2731)
 				.speed(9.0f)
 				.damage(4.0f)
-				.enchantability(15)
-				.armor_durability(50)
+				.tool_enchantability(15)
+				.armor_enchantability(10)
+				.armor_durability(45)
 				.helmet_armor(3)
 				.chestplate_armor(9)
 				.leggings_armor(7)
 				.boots_armor(3)
 				.toughness(3.0f)
-				.knockback(0.5f)
+				.knockback(0.1f)
 				.build());
 
 		CONSTANTAN = registerMaterial("constantan", new AlloygeryMaterial.AlloygeryMaterialBuilder("constantan")
@@ -191,14 +190,14 @@ public class AlloygeryMaterials
 				.head_durability(2221)
 				.speed(9.0f)
 				.damage(4.0f)
-				.enchantability(15)
+				.tool_enchantability(15)
+				.armor_enchantability(15)
 				.armor_durability(40)
 				.helmet_armor(3)
 				.chestplate_armor(8)
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(3.0f)
-				.knockback(0.0f)
 				.build());
 
 		CUPRONICKEL = registerMaterial("cupronickel", new AlloygeryMaterial.AlloygeryMaterialBuilder("cupronickel")
@@ -208,14 +207,14 @@ public class AlloygeryMaterials
 				.head_durability(2471)
 				.speed(9.0f)
 				.damage(4.0f)
-				.enchantability(15)
-				.armor_durability(45)
+				.tool_enchantability(15)
+				.armor_enchantability(15)
+				.armor_durability(40)
 				.helmet_armor(3)
 				.chestplate_armor(9)
-				.leggings_armor(7)
+				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(3.0f)
-				.knockback(0.0f)
 				.build());
 
 		TITANIUM = registerMaterial("titanium", new AlloygeryMaterial.AlloygeryMaterialBuilder("titanium")
@@ -225,14 +224,14 @@ public class AlloygeryMaterials
 				.head_durability(2892)
 				.speed(10.0f)
 				.damage(5.0f)
-				.enchantability(18)
-				.armor_durability(53)
+				.tool_enchantability(18)
+				.armor_enchantability(18)
+				.armor_durability(45)
 				.helmet_armor(4)
 				.chestplate_armor(9)
 				.leggings_armor(7)
 				.boots_armor(4)
 				.toughness(2.0f)
-				.knockback(0.0f)
 				.ore_hardness(3.0f)
 				.ore_resistance(12.0f)
 				.build());
@@ -244,14 +243,14 @@ public class AlloygeryMaterials
 				.head_durability(3127)
 				.speed(12.0f)
 				.damage(5.0f)
-				.enchantability(25)
-				.armor_durability(57)
+				.tool_enchantability(25)
+				.armor_enchantability(25)
+				.armor_durability(47)
 				.helmet_armor(4)
 				.chestplate_armor(9)
 				.leggings_armor(7)
 				.boots_armor(4)
 				.toughness(3.0f)
-				.knockback(0.0f)
 				.build());
 
 		NITINOL = registerMaterial("nitinol", new AlloygeryMaterial.AlloygeryMaterialBuilder("nitinol")
@@ -261,8 +260,9 @@ public class AlloygeryMaterials
 				.head_durability(3362)
 				.speed(10.0f)
 				.damage(5.0f)
-				.enchantability(18)
-				.armor_durability(62)
+				.tool_enchantability(18)
+				.armor_enchantability(18)
+				.armor_durability(50)
 				.helmet_armor(4)
 				.chestplate_armor(9)
 				.leggings_armor(7)

@@ -1,0 +1,15 @@
+{
+  "name": "antanium",
+  "category": "metal",
+  "color": 14329677,
+  "level": "bronze",
+  "enchantability": 20,
+  "head_durability": 858,
+  "armor_durability": 20,
+  "helmet_armor": 2,
+  "chestplate_armor": 5,
+  "leggings_armor": 4,
+  "boots_armor": 2,
+  "speed": 10.0,
+  "damage": 1.0
+}

@@ -1,17 +1,11 @@
 {
   "replace": false,
   "values": [
-    "minecraft:diamond_block",
-    "minecraft:diamond_ore",
-    "minecraft:deepslate_diamond_ore",
-    "minecraft:emerald_ore",
-    "minecraft:deepslate_emerald_ore",
-    "minecraft:emerald_block",
-    "minecraft:gold_block",
-    "minecraft:raw_gold_block",
-    "minecraft:gold_ore",
-    "minecraft:deepslate_gold_ore",
-    "minecraft:redstone_ore",
-    "minecraft:deepslate_redstone_ore"
+    "alloygery:raw_nickel_block",
+    "alloygery:nickel_block",
+    "alloygery:nickel_ore",
+    "alloygery:invar_block",
+    "alloygery:constantan_block",
+    "alloygery:cupronickel_block"
   ]
 }

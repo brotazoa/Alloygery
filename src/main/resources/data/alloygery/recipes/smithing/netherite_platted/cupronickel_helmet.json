@@ -9,10 +9,6 @@
     {
       "condition": "alloygery:config_boolean_condition",
       "config": "enable_netherite_upgrade"
-    },
-    {
-      "condition": "alloygery:config_boolean_condition",
-      "config": "cupronickel_gear.enable"
     }
   ],
   "type": "nbtcrafting:smithing",

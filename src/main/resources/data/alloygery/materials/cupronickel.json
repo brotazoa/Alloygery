@@ -1,0 +1,16 @@
+{
+  "name": "cupronickel",
+  "category": "metal",
+  "color": 5257772,
+  "level": "nickel",
+  "enchantability": 15,
+  "head_durability": 2471,
+  "armor_durability": 45,
+  "helmet_armor": 3,
+  "chestplate_armor": 9,
+  "leggings_armor": 7,
+  "boots_armor": 3,
+  "speed": 9.0,
+  "damage": 4.0,
+  "toughness": 3.0
+}

@@ -41,7 +41,7 @@ public class DynamicToolMaterial implements ToolMaterial
 	@Override
 	public int getEnchantability()
 	{
-		return alloygeryMaterial.enchantability;
+		return alloygeryMaterial.tool_enchantability;
 	}
 
 	@Override

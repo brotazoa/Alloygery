@@ -1,20 +1,22 @@
 package amorphia.alloygery.content.material;
 
+import amorphia.alloygery.content.item.ModMiningLevels;
 import com.google.gson.*;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.ShapelessRecipe;
 import net.minecraft.util.Identifier;
 
 import java.lang.reflect.Type;
 
 public class AlloygeryMaterial
 {
+	public static final Gson GSON = new GsonBuilder().registerTypeAdapter(AlloygeryMaterial.class, new AlloygeryMaterialSerializer()).create();
+
 	public String name;
 	public String category = "misc";
 	public int color = 16253176;
 
 	public int level = -1;
-	public int enchantability = 0;
+	public int tool_enchantability = 0;
+	public int armor_enchantability = 0;
 
 	public int head_durability = 0;
 	public int armor_durability = 0;
@@ -54,7 +56,8 @@ public class AlloygeryMaterial
 		original.category = other.category;
 		original.color = other.color;
 		original.level = other.level;
-		original.enchantability = other.enchantability;
+		original.tool_enchantability = other.tool_enchantability;
+		original.armor_enchantability = other.armor_enchantability;
 		original.head_durability = other.head_durability;
 		original.armor_durability = other.armor_durability;
 		original.helmet_armor = other.helmet_armor;
@@ -71,7 +74,7 @@ public class AlloygeryMaterial
 		return original;
 	}
 
-	public static class Deserializer implements JsonDeserializer<AlloygeryMaterial>
+	public static class AlloygeryMaterialSerializer implements JsonDeserializer<AlloygeryMaterial>, JsonSerializer<AlloygeryMaterial>
 	{
 		@Override
 		public AlloygeryMaterial deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException
@@ -90,10 +93,25 @@ public class AlloygeryMaterial
 				builder.color(jsonObject.get("color").getAsInt());
 
 			if(jsonObject.has("level"))
-				builder.level(jsonObject.get("level").getAsInt());
+			{
+				String levelAsString = jsonObject.get("level").getAsString();
+				int levelFromString = ModMiningLevels.levelFromString(levelAsString);
+				if(levelFromString != -2)
+					builder.level(levelFromString);
+				else
+				{
+					builder.level(jsonObject.get("level").getAsInt());
+				}
+			}
 
 			if(jsonObject.has("enchantability"))
 				builder.enchantability(jsonObject.get("enchantability").getAsInt());
+
+			if(jsonObject.has("tool_enchantability"))
+				builder.tool_enchantability(jsonObject.get("tool_enchantability").getAsInt());
+
+			if(jsonObject.has("armor_enchantability"))
+				builder.armor_enchantability(jsonObject.get("armor_enchantability").getAsInt());
 
 			if(jsonObject.has("head_durability"))
 				builder.head_durability(jsonObject.get("head_durability").getAsInt());
@@ -133,6 +151,33 @@ public class AlloygeryMaterial
 
 			return builder.build();
 		}
+
+		@Override
+		public JsonElement serialize(AlloygeryMaterial material, Type typeOfT, JsonSerializationContext context)
+		{
+			JsonObject json = new JsonObject();
+
+			json.addProperty("name", material.name);
+			json.addProperty("category", material.category);
+			json.addProperty("color", material.color);
+			json.addProperty("level", material.level);
+			json.addProperty("tool_enchantability", material.tool_enchantability);
+			json.addProperty("armor_enchantability", material.armor_enchantability);
+			json.addProperty("head_durability", material.head_durability);
+			json.addProperty("armor_durability", material.armor_durability);
+			json.addProperty("helmet_armor", material.helmet_armor);
+			json.addProperty("chestplate_armor", material.chestplate_armor);
+			json.addProperty("leggings_armor", material.leggings_armor);
+			json.addProperty("boots_armor", material.boots_armor);
+			json.addProperty("speed", material.speed);
+			json.addProperty("damage", material.damage);
+			json.addProperty("toughness", material.toughness);
+			json.addProperty("knockback", material.knockback);
+			json.addProperty("ore_hardness", material.ore_hardness);
+			json.addProperty("ore_resistance", material.ore_resistance);
+
+			return json;
+		}
 	}
 
 	public static class AlloygeryMaterialBuilder
@@ -164,7 +209,20 @@ public class AlloygeryMaterial
 
 		public AlloygeryMaterialBuilder enchantability(int enchantability)
 		{
-			this.material.enchantability = enchantability;
+			this.material.tool_enchantability = enchantability;
+			this.material.armor_enchantability = enchantability;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder tool_enchantability(int tool_enchantability)
+		{
+			this.material.tool_enchantability = tool_enchantability;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder armor_enchantability(int armor_enchantability)
+		{
+			this.material.armor_enchantability = armor_enchantability;
 			return this;
 		}
 

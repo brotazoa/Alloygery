@@ -1,6 +1,7 @@
 package amorphia.alloygery.content.material;
 
 import com.google.common.collect.Maps;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
@@ -28,7 +29,7 @@ public class AlloygeryMaterialHelper
 	public static int getEnchantability(ItemStack stack)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(stack);
-		return headMaterial.enchantability;
+		return stack.getItem() instanceof ArmorItem ? headMaterial.armor_enchantability : headMaterial.tool_enchantability;
 	}
 
 	public static float getMiningSpeed(ItemStack stack)

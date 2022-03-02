@@ -13,9 +13,9 @@ public class AlloygeryPartItem extends Item
 
 	private final AlloygeryMaterial material;
 
-	public AlloygeryPartItem(AlloygeryMaterial material)
+	public AlloygeryPartItem(AlloygeryMaterial material, Item.Settings settings)
 	{
-		super(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS));
+		super(settings);
 		this.material = material;
 		PART_ITEMS.add(this);
 	}

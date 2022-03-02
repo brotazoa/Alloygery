@@ -13,9 +13,9 @@ public class AlloygeryCraftingItem extends Item
 
 	private final AlloygeryMaterial material;
 
-	public AlloygeryCraftingItem(AlloygeryMaterial material)
+	public AlloygeryCraftingItem(AlloygeryMaterial material, Item.Settings settings)
 	{
-		super(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS));
+		super(settings);
 		this.material = material;
 		CRAFTING_ITEMS.add(this);
 	}

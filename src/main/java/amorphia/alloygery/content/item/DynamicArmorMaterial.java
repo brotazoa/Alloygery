@@ -41,7 +41,7 @@ public class DynamicArmorMaterial implements ArmorMaterial
 	@Override
 	public int getEnchantability()
 	{
-		return alloygeryMaterial.enchantability;
+		return alloygeryMaterial.armor_enchantability;
 	}
 
 	@Override

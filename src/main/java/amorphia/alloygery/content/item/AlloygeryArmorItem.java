@@ -15,9 +15,9 @@ public class AlloygeryArmorItem extends ArmorItem
 
 	private final AlloygeryMaterial alloygeryMaterial;
 
-	public AlloygeryArmorItem(AlloygeryMaterial material, EquipmentSlot slot)
+	public AlloygeryArmorItem(AlloygeryMaterial material, EquipmentSlot slot, Item.Settings settings)
 	{
-		super(new DynamicArmorMaterial(material), slot, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
+		super(new DynamicArmorMaterial(material), slot, settings);
 		this.alloygeryMaterial = material;
 		ARMOR_ITEMS.add(this);
 	}

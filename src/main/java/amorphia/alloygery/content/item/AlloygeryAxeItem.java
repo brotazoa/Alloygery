@@ -14,9 +14,9 @@ public class AlloygeryAxeItem extends AxeItem
 
 	private final AlloygeryMaterial alloygeryMaterial;
 
-	public AlloygeryAxeItem(AlloygeryMaterial material)
+	public AlloygeryAxeItem(AlloygeryMaterial material, Item.Settings settings)
 	{
-		super(new DynamicToolMaterial(material), 5.0f, -3.0f, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
+		super(new DynamicToolMaterial(material), 5.0f, -3.0f, settings);
 		this.alloygeryMaterial = material;
 		AXE_ITEMS.add(this);
 	}

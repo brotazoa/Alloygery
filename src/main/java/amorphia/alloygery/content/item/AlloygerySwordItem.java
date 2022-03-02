@@ -14,9 +14,9 @@ public class AlloygerySwordItem extends SwordItem
 
 	private final AlloygeryMaterial alloygeryMaterial;
 
-	public AlloygerySwordItem(AlloygeryMaterial material)
+	public AlloygerySwordItem(AlloygeryMaterial material, Item.Settings settings)
 	{
-		super(new DynamicToolMaterial(material), 3, -2.4f, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
+		super(new DynamicToolMaterial(material), 3, -2.4f, settings);
 		this.alloygeryMaterial = material;
 		SWORD_ITEMS.add(this);
 	}

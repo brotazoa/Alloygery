@@ -1,0 +1,15 @@
+{
+  "name": "bronze",
+  "category": "metal",
+  "color": 7556410,
+  "level": "bronze",
+  "enchantability": 14,
+  "head_durability": 250,
+  "armor_durability": 15,
+  "helmet_armor": 2,
+  "chestplate_armor": 6,
+  "leggings_armor": 5,
+  "boots_armor": 2,
+  "speed": 5.0,
+  "damage": 2.0
+}

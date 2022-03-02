@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:gold_dusts"
+    },
+    {
+      "tag": "c:iron_dusts"
+    },
+    {
+      "tag": "c:iron_dusts"
+    },
+    {
+      "tag": "c:copper_dusts"
+    }
+  ],
+  "output":{
+    "id": "alloygery:antanium_ingot",
+    "count": 4
+  },
+  "smelting_time": 400,
+  "experience": 0.7
+}

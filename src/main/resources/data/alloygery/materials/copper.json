@@ -1,0 +1,15 @@
+{
+  "name": "copper",
+  "category": "metal",
+  "color": 15433553,
+  "level": "stone",
+  "enchantability": 5,
+  "head_durability": 190,
+  "armor_durability": 10,
+  "helmet_armor": 1,
+  "chestplate_armor": 4,
+  "leggings_armor": 3,
+  "boots_armor": 1,
+  "speed": 4.0,
+  "damage": 1.0
+}

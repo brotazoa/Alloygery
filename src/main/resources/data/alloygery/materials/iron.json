@@ -1,0 +1,15 @@
+{
+  "name": "iron",
+  "category": "metal",
+  "color": 15198183,
+  "level": "iron",
+  "enchantability": 14,
+  "head_durability": 700,
+  "armor_durability": 15,
+  "helmet_armor": 2,
+  "chestplate_armor": 6,
+  "leggings_armor": 5,
+  "boots_armor": 2,
+  "speed": 6.0,
+  "damage": 2.0
+}

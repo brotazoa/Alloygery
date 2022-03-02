@@ -1,0 +1,17 @@
+{
+  "name": "invar",
+  "category": "metal",
+  "color": 10789019,
+  "level": "nickel",
+  "enchantability": 15,
+  "head_durability": 2731,
+  "armor_durability": 50,
+  "helmet_armor": 3,
+  "chestplate_armor": 9,
+  "leggings_armor": 7,
+  "boots_armor": 3,
+  "speed": 9.0,
+  "damage": 4.0,
+  "toughness": 3.0,
+  "knockback": 0.5
+}

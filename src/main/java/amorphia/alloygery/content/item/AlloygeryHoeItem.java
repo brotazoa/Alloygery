@@ -14,9 +14,9 @@ public class AlloygeryHoeItem extends HoeItem
 
 	private final AlloygeryMaterial alloygeryMaterial;
 
-	public AlloygeryHoeItem(AlloygeryMaterial material)
+	public AlloygeryHoeItem(AlloygeryMaterial material, Item.Settings settings)
 	{
-		super(new DynamicToolMaterial(material), -2, -2.8f, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
+		super(new DynamicToolMaterial(material), -2, -2.8f, settings);
 		this.alloygeryMaterial = material;
 		HOE_ITEMS.add(this);
 	}

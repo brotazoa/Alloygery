@@ -14,9 +14,9 @@ public class AlloygeryShovelItem extends ShovelItem
 
 	private final AlloygeryMaterial alloygeryMaterial;
 
-	public AlloygeryShovelItem(AlloygeryMaterial material)
+	public AlloygeryShovelItem(AlloygeryMaterial material, Item.Settings settings)
 	{
-		super(new DynamicToolMaterial(material), 1.5f, -3.0f, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR));
+		super(new DynamicToolMaterial(material), 1.5f, -3.0f, settings);
 		this.alloygeryMaterial = material;
 		SHOVEL_ITEMS.add(this);
 	}

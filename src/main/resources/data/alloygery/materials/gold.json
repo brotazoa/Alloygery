@@ -1,0 +1,15 @@
+{
+  "name": "gold",
+  "category": "metal",
+  "color": 16573743,
+  "level": "wood",
+  "enchantability": 22,
+  "head_durability": 32,
+  "armor_durability": 7,
+  "helmet_armor": 2,
+  "chestplate_armor": 5,
+  "leggings_armor": 3,
+  "boots_armor": 1,
+  "speed": 12.0,
+  "damage": 0.0
+}

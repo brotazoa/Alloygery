@@ -1,0 +1,16 @@
+{
+  "name": "constantan",
+  "category": "metal",
+  "color": 11558984,
+  "level": "nickel",
+  "enchantability": 15,
+  "head_durability": 2221,
+  "armor_durability": 40,
+  "helmet_armor": 3,
+  "chestplate_armor": 8,
+  "leggings_armor": 6,
+  "boots_armor": 3,
+  "speed": 9.0,
+  "damage": 4.0,
+  "toughness": 3.0
+}

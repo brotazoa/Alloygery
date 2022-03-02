@@ -1,0 +1,18 @@
+{
+  "name": "titanium",
+  "category": "metal",
+  "color": 5990506,
+  "level": "titanium",
+  "enchantability": 18,
+  "head_durability": 2892,
+  "armor_durability": 53,
+  "helmet_armor": 4,
+  "chestplate_armor": 9,
+  "leggings_armor": 7,
+  "boots_armor": 4,
+  "speed": 10.0,
+  "damage": 5.0,
+  "toughness": 2.0,
+  "ore_hardness": 3.0,
+  "ore_resistance": 12.0
+}

@@ -2,6 +2,8 @@ package amorphia.alloygery.mixins;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.data.GeneratedModelBuilder;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.render.model.ModelLoader;
 import net.minecraft.client.render.model.json.JsonUnbakedModel;
 import net.minecraft.resource.Resource;
@@ -27,6 +29,7 @@ public class ModelLoaderMixin
 {
 	@Shadow @Final private ResourceManager resourceManager;
 
+	@Environment(EnvType.CLIENT)
 	@Inject(method = "loadModelFromJson", at = @At("HEAD"), cancellable = true)
 	public void loadModelFromJson(Identifier id, CallbackInfoReturnable<JsonUnbakedModel> cir) throws IOException
 	{

@@ -8,7 +8,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygeryHoeItem extends HoeItem
+public class AlloygeryHoeItem extends HoeItem implements IMaterialItem
 {
 	public static final List<AlloygeryHoeItem> HOE_ITEMS = Lists.newArrayList();
 

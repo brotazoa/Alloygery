@@ -1,8 +1,13 @@
 package amorphia.alloygery.content.material;
 
+import amorphia.alloygery.content.item.AlloygeryCraftingItem;
+import amorphia.alloygery.content.item.AlloygeryPartItem;
+import amorphia.alloygery.content.item.BaseCraftingToolItem;
+import amorphia.alloygery.content.item.IMaterialItem;
 import com.google.common.collect.Maps;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
@@ -151,6 +156,7 @@ public class AlloygeryMaterialHelper
 		HEAD_MATERIAL("HeadMaterial"),
 		HANDLE_MATERIAL("HandleMaterial"),
 		BINDING_MATERIAL("BindingMaterial"),
+		PART_MATERIAL("PartMaterial")
 		;
 
 		final String value;

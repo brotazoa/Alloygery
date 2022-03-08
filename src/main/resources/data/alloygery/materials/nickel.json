@@ -13,7 +13,5 @@
   "speed": 9.0,
   "damage": 4.0,
   "toughness": 3.0,
-  "knockback": 0.1,
-  "ore_hardness": 3.0,
-  "ore_resistance": 9.0
+  "knockback": 0.1
 }

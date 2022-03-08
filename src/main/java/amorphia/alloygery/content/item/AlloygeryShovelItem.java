@@ -8,7 +8,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygeryShovelItem extends ShovelItem
+public class AlloygeryShovelItem extends ShovelItem implements IMaterialItem
 {
 	public static final List<AlloygeryShovelItem> SHOVEL_ITEMS = Lists.newArrayList();
 

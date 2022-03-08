@@ -12,12 +12,15 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.tag.TagKey;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.stream.Stream;
 
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin
@@ -31,6 +34,8 @@ public abstract class ItemStackMixin
 	@Shadow
 	@Nullable
 	public abstract NbtCompound getSubNbt(String key);
+
+	@Shadow public abstract Stream<TagKey<Item>> streamTags();
 
 	@Inject(method = "getMaxDamage", at = @At("HEAD"), cancellable = true)
 	public void getMaxDamage(CallbackInfoReturnable<Integer> cir)
@@ -65,7 +70,7 @@ public abstract class ItemStackMixin
 	public void getMiningSpeedMultiplier(BlockState state, CallbackInfoReturnable<Float> cir)
 	{
 		float mineSpeed = 1f;
-		if (getItem() instanceof MiningToolItem && ((MiningToolItemAccessor) getItem()).getEffectiveBlocks().contains(state.getBlock()))
+		if (getItem() instanceof MiningToolItem && state.isIn(((MiningToolItemAccessor) getItem()).getEffectiveBlocks()))
 		{
 			mineSpeed = ((MiningToolItemAccessor) getItem()).getMiningSpeed();
 

@@ -12,7 +12,5 @@
   "boots_armor": 4,
   "speed": 10.0,
   "damage": 5.0,
-  "toughness": 2.0,
-  "ore_hardness": 3.0,
-  "ore_resistance": 12.0
+  "toughness": 2.0
 }

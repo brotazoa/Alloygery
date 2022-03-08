@@ -7,7 +7,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygeryCraftingItem extends Item
+public class AlloygeryCraftingItem extends Item implements IMaterialItem
 {
 	public static final List<AlloygeryCraftingItem> CRAFTING_ITEMS = Lists.newArrayList();
 

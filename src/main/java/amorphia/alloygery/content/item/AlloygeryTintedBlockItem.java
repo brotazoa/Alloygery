@@ -7,7 +7,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygeryTintedBlockItem extends BlockItem
+public class AlloygeryTintedBlockItem extends BlockItem implements IMaterialItem
 {
 	public static final List<AlloygeryTintedBlockItem> TINTED_BLOCK_ITEMS = Lists.newArrayList();
 

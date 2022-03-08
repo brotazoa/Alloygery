@@ -1,6 +1,8 @@
 package amorphia.alloygery.content.screen;
 
 import amorphia.alloygery.content.item.BaseCraftingToolItem;
+import amorphia.alloygery.content.item.IMaterialItem;
+import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
 import amorphia.alloygery.content.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.registry.ModBlocks;
 import amorphia.alloygery.registry.ModScreens;

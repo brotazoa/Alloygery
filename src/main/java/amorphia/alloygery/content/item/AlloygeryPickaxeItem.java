@@ -8,7 +8,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygeryPickaxeItem extends PickaxeItem
+public class AlloygeryPickaxeItem extends PickaxeItem implements IMaterialItem
 {
 	public static final List<AlloygeryPickaxeItem> PICKAXE_ITEMS = Lists.newArrayList();
 

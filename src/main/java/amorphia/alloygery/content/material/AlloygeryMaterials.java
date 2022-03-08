@@ -43,8 +43,6 @@ public class AlloygeryMaterials
 		TIN = registerMaterial("tin", new AlloygeryMaterial.AlloygeryMaterialBuilder("tin")
 				.category("metal")
 				.color(14547455)
-				.ore_hardness(3.0f)
-				.ore_resistance(3.0f)
 				.build());
 
 		COPPER = registerMaterial("copper", new AlloygeryMaterial.AlloygeryMaterialBuilder("copper")
@@ -161,8 +159,6 @@ public class AlloygeryMaterials
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(3.0f)
-				.ore_hardness(3.0f)
-				.ore_resistance(9.0f)
 				.build());
 
 		INVAR = registerMaterial("invar", new AlloygeryMaterial.AlloygeryMaterialBuilder("invar")
@@ -232,8 +228,6 @@ public class AlloygeryMaterials
 				.leggings_armor(7)
 				.boots_armor(4)
 				.toughness(2.0f)
-				.ore_hardness(3.0f)
-				.ore_resistance(12.0f)
 				.build());
 
 		TITANIUM_GOLD = registerMaterial("titanium_gold", new AlloygeryMaterial.AlloygeryMaterialBuilder("titanium_gold")

@@ -8,7 +8,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygerySwordItem extends SwordItem
+public class AlloygerySwordItem extends SwordItem implements IMaterialItem
 {
 	public static final List<AlloygerySwordItem> SWORD_ITEMS = Lists.newArrayList();
 

@@ -7,7 +7,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygeryPartItem extends Item
+public class AlloygeryPartItem extends Item implements IMaterialItem
 {
 	public static final List<AlloygeryPartItem> PART_ITEMS = Lists.newArrayList();
 

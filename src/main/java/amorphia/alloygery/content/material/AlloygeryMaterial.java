@@ -32,9 +32,6 @@ public class AlloygeryMaterial
 	public float toughness = 0.0f;
 	public float knockback = 0.0f;
 
-	public float ore_hardness = 0.0f;
-	public float ore_resistance = 0.0f;
-
 	AlloygeryMaterial(String name)
 	{
 		this.name = name;
@@ -68,8 +65,6 @@ public class AlloygeryMaterial
 		original.damage = other.damage;
 		original.toughness = other.toughness;
 		original.knockback = other.knockback;
-		original.ore_hardness = other.ore_hardness;
-		original.ore_resistance = other.ore_resistance;
 
 		return original;
 	}
@@ -143,12 +138,6 @@ public class AlloygeryMaterial
 			if(jsonObject.has("knockback"))
 				builder.knockback(jsonObject.get("knockback").getAsFloat());
 
-			if(jsonObject.has("ore_hardness"))
-				builder.ore_hardness(jsonObject.get("ore_hardness").getAsFloat());
-
-			if(jsonObject.has("ore_resistance"))
-				builder.ore_resistance(jsonObject.get("ore_resistance").getAsFloat());
-
 			return builder.build();
 		}
 
@@ -173,8 +162,6 @@ public class AlloygeryMaterial
 			json.addProperty("damage", material.damage);
 			json.addProperty("toughness", material.toughness);
 			json.addProperty("knockback", material.knockback);
-			json.addProperty("ore_hardness", material.ore_hardness);
-			json.addProperty("ore_resistance", material.ore_resistance);
 
 			return json;
 		}
@@ -283,18 +270,6 @@ public class AlloygeryMaterial
 		public AlloygeryMaterialBuilder knockback(float knockback)
 		{
 			this.material.knockback = knockback;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder ore_hardness(float ore_hardness)
-		{
-			this.material.ore_hardness = ore_hardness;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder ore_resistance(float ore_resistance)
-		{
-			this.material.ore_resistance = ore_resistance;
 			return this;
 		}
 

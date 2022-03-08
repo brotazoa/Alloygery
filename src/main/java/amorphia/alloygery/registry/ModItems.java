@@ -97,6 +97,13 @@ public class ModItems
 	public static Map<String, Item> ALLOYGERY_ITEMS = new LinkedHashMap<>();
 
 	// @formatter:off
+
+	//ore block items
+	public static final Item TIN_ORE = new BlockItem(ModBlocks.TIN_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
+	public static final Item DEEPSLATE_TIN_ORE = new BlockItem(ModBlocks.DEEPSLATE_TIN_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
+	public static final Item NICKEL_ORE = new BlockItem(ModBlocks.NICKEL_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
+	public static final Item TITANIUM_ORE = new BlockItem(ModBlocks.TITANIUM_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
+
 	//creative tab items
 	public static final Item BLOCKS_TAB_ITEM = new Item(new Item.Settings());
 	public static final Item MATERIALS_TAB_ITEM = new Item(new Item.Settings());
@@ -115,26 +122,6 @@ public class ModItems
 	public static final Item SMITHING_ANVIL = new BlockItem(ModBlocks.SMITHING_ANVIL, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
 
 	// @formatter:on
-
-	static void makeOreBlockItem(AlloygeryMaterial material)
-	{
-		Block block = ModBlocks.ALLOYGERY_BLOCKS.get(material.name + "_ore");
-		if (block != null)
-		{
-			putGeneratedItem(material.name + "_ore", new BlockItem(block, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS)),
-					() -> GeneratedModelBuilder.createBlockItemModelJson(material.name + "_ore"));
-		}
-
-		if (ModBlocks.DEEPSLATE_ORE_VARIANTS.contains(material))
-		{
-			Block deepslateBlock = ModBlocks.ALLOYGERY_BLOCKS.get("deepslate_" + material.name + "_ore");
-			if (deepslateBlock != null)
-			{
-				putGeneratedItem("deepslate_" + material.name + "_ore", new BlockItem(deepslateBlock, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS)),
-						() -> GeneratedModelBuilder.createBlockItemModelJson("deepslate_" + material.name + "_ore"));
-			}
-		}
-	}
 
 	static void makeRawOreItem(AlloygeryMaterial material)
 	{
@@ -229,7 +216,6 @@ public class ModItems
 
 	public static void register()
 	{
-		ModBlocks.ORE_BLOCKS_FOR_MATERIAL.forEach(ModItems::makeOreBlockItem);
 		ModBlocks.RAW_ORE_BLOCKS_FOR_MATERIAL.forEach(ModItems::makeRawOreBlockItem);
 		ModBlocks.RAW_ORE_BLOCKS_FOR_MATERIAL.forEach(ModItems::makeRawOreItem);
 		ModBlocks.METAL_BLOCKS_FOR_MATERIAL.forEach(ModItems::makeMetalBlockItem);
@@ -244,6 +230,12 @@ public class ModItems
 
 		//smithing anvil
 		register("smithing_anvil", SMITHING_ANVIL);
+
+		//ore blocks
+		register("tin_ore", TIN_ORE);
+		register("deepslate_tin_ore", DEEPSLATE_TIN_ORE);
+		register("nickel_ore", NICKEL_ORE);
+		register("titanium_ore", TITANIUM_ORE);
 
 		//crafting tools
 		register("anvil_hammer", ANVIL_HAMMER);

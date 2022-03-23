@@ -18,6 +18,7 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.apache.commons.compress.utils.Lists;
 
@@ -26,6 +27,18 @@ import java.util.List;
 public interface IAlloygeryTool
 {
 	List<Item> ITEMS = Lists.newArrayList();
+
+	static int getModifiedItemBarStep(ItemStack stack)
+	{
+		return Math.round(13.0f - (float) stack.getDamage() * 13.0f / (float) AlloygeryMaterialHelper.getMaxDurability(stack.getNbt()));
+	}
+
+	static int getModifierItemBarColor(ItemStack stack)
+	{
+		final float maxDamage = (float) AlloygeryMaterialHelper.getMaxDurability(stack.getNbt());
+		float f = Math.max(0.0f, (maxDamage - stack.getDamage()) / maxDamage);
+		return MathHelper.hsvToRgb(f / 3.0f, 1.0f, 1.0f);
+	}
 
 	static void appendToTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context)
 	{
@@ -46,8 +59,8 @@ public interface IAlloygeryTool
 					if(alloygeryTool instanceof MiningToolItem)
 						tooltip.add(new TranslatableText("tooltip.alloygery.info.level").append(new LiteralText(": ").append(new TranslatableText("tooltip.alloygery.info.level.enum_" + Math.min(AlloygeryMaterialHelper.getMiningLevel(compound), 5)))).formatted(Formatting.GRAY));
 
-					tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + AlloygeryMaterialHelper.getMiningSpeed(compound))).formatted(Formatting.GRAY));
-					tooltip.add(new TranslatableText("tooltip.alloygery.info.damage").append(new LiteralText(": " + AlloygeryMaterialHelper.getAttackDamage(compound))).formatted(Formatting.GRAY));
+					tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + String.format("%.1f", AlloygeryMaterialHelper.getMiningSpeed(compound)))).formatted(Formatting.GRAY));
+					tooltip.add(new TranslatableText("tooltip.alloygery.info.damage").append(new LiteralText(": " + String.format("%.1f", AlloygeryMaterialHelper.getAttackDamage(compound)))).formatted(Formatting.GRAY));
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability").append(new LiteralText(": " + AlloygeryMaterialHelper.getEnchantability(compound))).formatted(Formatting.GRAY));
 
 					if(upgradeMaterial == AlloygeryMaterials.NETHERITE_UPGRADE)
@@ -71,7 +84,14 @@ public interface IAlloygeryTool
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability").append(new LiteralText(": " + headMaterial.tool_enchantability)).formatted(Formatting.GRAY));
 
 					//tool stats from binding
-					tooltip.add(new TranslatableText("tooltip.alloygery.info.binding").append(new LiteralText(": ").append(new TranslatableText("item.alloygery." + bindingMaterial.name + "_binding"))));
+					if(alloygeryTool instanceof SwordItem)
+					{
+						tooltip.add(new TranslatableText("tooltip.alloygery.info.sword_guard").append(new LiteralText(": ").append(new TranslatableText("item.alloygery." + bindingMaterial.name + "_sword_guard"))));
+					}
+					else
+					{
+						tooltip.add(new TranslatableText("tooltip.alloygery.info.binding").append(new LiteralText(": ").append(new TranslatableText("item.alloygery." + bindingMaterial.name + "_binding"))));
+					}
 
 					final int modifiedDurability = (int) ((headMaterial.head_durability * bindingMaterial.durability_multiplier) - headMaterial.head_durability);
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.uses").append(new LiteralText(": " + modifiedDurability)).formatted(Formatting.GRAY));
@@ -83,10 +103,10 @@ public interface IAlloygeryTool
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.handle").append(new LiteralText(": ")).append(new TranslatableText("item.alloygery." + handleMaterial.name + "_handle")));
 
 					final float modifiedSpeed = headMaterial.speed * handleMaterial.speed_multiplier - headMaterial.speed;
-					tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + modifiedSpeed)).formatted(Formatting.GRAY));
+					tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + String.format("%.1f", modifiedSpeed))).formatted(Formatting.GRAY));
 
 					final float modifiedDamage = headMaterial.damage * handleMaterial.damage_multiplier - headMaterial.damage;
-					tooltip.add(new TranslatableText("tooltip.alloygery.info.damage").append(new LiteralText(": " + modifiedDamage)).formatted(Formatting.GRAY));
+					tooltip.add(new TranslatableText("tooltip.alloygery.info.damage").append(new LiteralText(": " + String.format("%.1f", modifiedDamage))).formatted(Formatting.GRAY));
 
 					if (upgradeMaterial != AlloygeryMaterials.UNKNOWN && upgradeMaterial.category.equals("upgrade"))
 					{
@@ -94,7 +114,7 @@ public interface IAlloygeryTool
 
 						if (upgradeMaterial.head_durability != 0 || upgradeMaterial.durability_multiplier != 1.0f)
 						{
-							final int base = (int) (headMaterial.head_durability * bindingMaterial.durability_multiplier + headMaterial.head_durability);
+							final int base = (int) (headMaterial.head_durability * bindingMaterial.durability_multiplier);
 							final int upgrade = (int) (base * upgradeMaterial.durability_multiplier + upgradeMaterial.head_durability) - base;
 							tooltip.add(new TranslatableText("tooltip.alloygery.info.uses").append(new LiteralText(": " + upgrade)).formatted(Formatting.GRAY));
 						}
@@ -106,21 +126,21 @@ public interface IAlloygeryTool
 
 						if (upgradeMaterial.speed != 0 || upgradeMaterial.speed_multiplier != 1.0f)
 						{
-							final float base = headMaterial.speed * handleMaterial.speed_multiplier + headMaterial.speed;
+							final float base = headMaterial.speed * handleMaterial.speed_multiplier;
 							final float upgrade = (base * upgradeMaterial.speed_multiplier + upgradeMaterial.speed) - base;
-							tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + upgrade)).formatted(Formatting.GRAY));
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + String.format("%.1f", upgrade))).formatted(Formatting.GRAY));
 						}
 
 						if (upgradeMaterial.damage != 0 || upgradeMaterial.damage_multiplier != 1.0f)
 						{
-							final float base = headMaterial.damage * handleMaterial.damage_multiplier + headMaterial.damage;
+							final float base = headMaterial.damage * handleMaterial.damage_multiplier;
 							final float upgrade = (base * upgradeMaterial.damage_multiplier + upgradeMaterial.damage) - base;
-							tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + upgrade)).formatted(Formatting.GRAY));
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.damage").append(new LiteralText(": " + String.format("%.1f", upgrade))).formatted(Formatting.GRAY));
 						}
 
 						if (upgradeMaterial.tool_enchantability != 0 || upgradeMaterial.enchantability_multiplier != 1.0f)
 						{
-							final int base = (int) (headMaterial.tool_enchantability * bindingMaterial.enchantability_multiplier + headMaterial.tool_enchantability);
+							final int base = (int) (headMaterial.tool_enchantability * bindingMaterial.enchantability_multiplier);
 							final int upgrade = (int) (base * upgradeMaterial.enchantability_multiplier + upgradeMaterial.tool_enchantability) - base;
 							tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability").append(new LiteralText(": " + upgrade)).formatted(Formatting.GRAY));
 						}

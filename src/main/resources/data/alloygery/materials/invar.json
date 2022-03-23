@@ -14,8 +14,8 @@
   "damage": 4.0,
   "toughness": 3.0,
   "knockback": 0.5,
-  "durability_multiplier": 1.0,
-  "enchantability_multiplier": 1.0,
-  "speed_multiplier": 1.0,
-  "damage_multiplier": 1.0
+  "durability_multiplier": 2.2,
+  "enchantability_multiplier": 0.01,
+  "speed_multiplier": 0.2,
+  "damage_multiplier": 1.8
 }

@@ -46,6 +46,18 @@ public class AlloygeryHoeItem extends HoeItem implements IAlloygeryTool
 	}
 
 	@Override
+	public int getItemBarStep(ItemStack stack)
+	{
+		return IAlloygeryTool.getModifiedItemBarStep(stack);
+	}
+
+	@Override
+	public int getItemBarColor(ItemStack stack)
+	{
+		return IAlloygeryTool.getModifierItemBarColor(stack);
+	}
+
+	@Override
 	public void appendStacks(ItemGroup group, DefaultedList<ItemStack> stacks)
 	{
 		if (this.isIn(group))

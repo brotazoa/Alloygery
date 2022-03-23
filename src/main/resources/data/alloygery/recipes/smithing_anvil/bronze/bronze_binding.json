@@ -11,7 +11,7 @@
     }
   },
   "material": {
-    "tag": "c:bronze_ingot"
+    "tag": "c:bronze_ingots"
   },
   "material_cost": 1,
   "result": {

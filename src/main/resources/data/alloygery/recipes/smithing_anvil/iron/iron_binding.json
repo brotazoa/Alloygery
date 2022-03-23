@@ -11,7 +11,7 @@
     }
   },
   "material": {
-    "tag": "c:iron_ingot"
+    "tag": "c:iron_ingots"
   },
   "material_cost": 1,
   "result": {

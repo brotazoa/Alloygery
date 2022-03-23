@@ -243,6 +243,8 @@ public class ModItems
 		{
 			putGeneratedItem(material.name + "_binding", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
 					() -> GeneratedModelBuilder.createPartItemModelJson("binding"));
+			putGeneratedItem(material.name + "_sword_guard", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("sword_guard"));
 		}
 	}
 

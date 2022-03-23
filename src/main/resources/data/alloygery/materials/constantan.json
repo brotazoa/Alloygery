@@ -13,8 +13,8 @@
   "speed": 9.0,
   "damage": 4.0,
   "toughness": 3.0,
-  "durability_multiplier": 1.0,
-  "enchantability_multiplier": 1.0,
-  "speed_multiplier": 1.0,
+  "durability_multiplier": 0.7,
+  "enchantability_multiplier": 0.6,
+  "speed_multiplier": 0.7,
   "damage_multiplier": 1.0
 }

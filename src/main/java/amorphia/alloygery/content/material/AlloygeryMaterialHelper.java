@@ -29,10 +29,10 @@ public class AlloygeryMaterialHelper
 		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
 
-		final float base = headMaterial.head_durability * bindingMaterial.durability_multiplier;
-		final float upgrade = base * upgradeMaterial.durability_multiplier + upgradeMaterial.head_durability;
+		final int base = (int) (headMaterial.head_durability * bindingMaterial.durability_multiplier);
+		final int upgrade = (int) (base * upgradeMaterial.durability_multiplier + upgradeMaterial.head_durability);
 
-		return (int) upgrade;
+		return upgrade;
 	}
 
 	public static int getEnchantability(NbtCompound compound)

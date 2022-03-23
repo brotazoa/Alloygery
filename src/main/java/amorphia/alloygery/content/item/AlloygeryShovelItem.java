@@ -46,6 +46,18 @@ public class AlloygeryShovelItem extends ShovelItem implements IAlloygeryTool
 	}
 
 	@Override
+	public int getItemBarStep(ItemStack stack)
+	{
+		return IAlloygeryTool.getModifiedItemBarStep(stack);
+	}
+
+	@Override
+	public int getItemBarColor(ItemStack stack)
+	{
+		return IAlloygeryTool.getModifierItemBarColor(stack);
+	}
+
+	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
 	{
 		IAlloygeryTool.appendToTooltip(stack, world, tooltip, context);

@@ -13,7 +13,7 @@
   "material": {
     "tag": "c:bronze_ingots"
   },
-  "material_cost": 2,
+  "material_cost": 1,
   "result": {
     "item": "alloygery:bronze_hoe_head",
     "data": {

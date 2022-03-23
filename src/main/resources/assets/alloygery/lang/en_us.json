@@ -100,6 +100,7 @@
   "item.alloygery.copper_sword_blade": "Copper Sword Blade",
   "item.alloygery.copper_binding": "Copper Binding",
   "item.alloygery.copper_handle": "Copper Handle",
+  "item.alloygery.copper_sword_guard": "Copper Sword Guard",
 
   "item.alloygery.bronze_axe_head": "Bronze Axe Head",
   "item.alloygery.bronze_hoe_head": "Bronze Hoe Head",
@@ -108,6 +109,7 @@
   "item.alloygery.bronze_sword_blade": "Bronze Sword Blade",
   "item.alloygery.bronze_binding": "Bronze Binding",
   "item.alloygery.bronze_handle": "Bronze Handle",
+  "item.alloygery.bronze_sword_guard": "Bronze Sword Guard",
 
   "item.alloygery.iron_axe_head": "Iron Axe Head",
   "item.alloygery.iron_hoe_head": "Iron Hoe Head",
@@ -116,6 +118,7 @@
   "item.alloygery.iron_sword_blade": "Iron Sword Blade",
   "item.alloygery.iron_binding": "Iron Binding",
   "item.alloygery.iron_handle": "Iron Handle",
+  "item.alloygery.iron_sword_guard": "Iron Sword Guard",
 
   "item.alloygery.gold_axe_head": "Gold Axe Head",
   "item.alloygery.gold_hoe_head": "Gold Hoe Head",
@@ -124,6 +127,7 @@
   "item.alloygery.gold_sword_blade": "Gold Sword Blade",
   "item.alloygery.gold_binding": "Gold Binding",
   "item.alloygery.gold_handle": "Gold Handle",
+  "item.alloygery.gold_sword_guard": "Gold Sword Guard",
 
   "item.alloygery.antanium_axe_head": "Antanium Axe Head",
   "item.alloygery.antanium_hoe_head": "Antanium Hoe Head",
@@ -132,6 +136,7 @@
   "item.alloygery.antanium_sword_blade": "Antanium Sword Blade",
   "item.alloygery.antanium_binding": "Antanium Binding",
   "item.alloygery.antanium_handle": "Antanium Handle",
+  "item.alloygery.antanium_sword_guard": "Antanium Sword Guard",
 
   "item.alloygery.steel_axe_head": "Steel Axe Head",
   "item.alloygery.steel_hoe_head": "Steel Hoe Head",
@@ -140,6 +145,7 @@
   "item.alloygery.steel_sword_blade": "Steel Sword Blade",
   "item.alloygery.steel_binding": "Steel Binding",
   "item.alloygery.steel_handle": "Steel Handle",
+  "item.alloygery.steel_sword_guard": "Steel Sword Guard",
 
   "item.alloygery.nickel_axe_head": "Nickel Axe Head",
   "item.alloygery.nickel_hoe_head": "Nickel Hoe Head",
@@ -148,6 +154,7 @@
   "item.alloygery.nickel_sword_blade": "Nickel Sword Blade",
   "item.alloygery.nickel_binding": "Nickel Binding",
   "item.alloygery.nickel_handle": "Nickel Handle",
+  "item.alloygery.nickel_sword_guard": "Nickel Sword Guard",
 
   "item.alloygery.invar_axe_head": "Invar Axe Head",
   "item.alloygery.invar_hoe_head": "Invar Hoe Head",
@@ -156,6 +163,7 @@
   "item.alloygery.invar_sword_blade": "Invar Sword Blade",
   "item.alloygery.invar_binding": "Invar Binding",
   "item.alloygery.invar_handle": "Invar Handle",
+  "item.alloygery.invar_sword_guard": "Invar Sword Guard",
 
   "item.alloygery.constantan_axe_head": "Constantan Axe Head",
   "item.alloygery.constantan_hoe_head": "Constantan Hoe Head",
@@ -164,6 +172,7 @@
   "item.alloygery.constantan_sword_blade": "Constantan Sword Blade",
   "item.alloygery.constantan_binding": "Constantan Binding",
   "item.alloygery.constantan_handle": "Constantan Handle",
+  "item.alloygery.constantan_sword_guard": "Constantan Sword Guard",
 
   "item.alloygery.cupronickel_axe_head": "Cupronickel Axe Head",
   "item.alloygery.cupronickel_hoe_head": "Cupronickel Hoe Head",
@@ -172,6 +181,7 @@
   "item.alloygery.cupronickel_sword_blade": "Cupronickel Sword Blade",
   "item.alloygery.cupronickel_binding": "Cupronickel Binding",
   "item.alloygery.cupronickel_handle": "Cupronickel Handle",
+  "item.alloygery.cupronickel_sword_guard": "Cupronickel Sword Guard",
 
   "item.alloygery.titanium_axe_head": "Titanium Axe Head",
   "item.alloygery.titanium_hoe_head": "Titanium Hoe Head",
@@ -180,6 +190,7 @@
   "item.alloygery.titanium_sword_blade": "Titanium Sword Blade",
   "item.alloygery.titanium_binding": "Titanium Binding",
   "item.alloygery.titanium_handle": "Titanium Handle",
+  "item.alloygery.titanium_sword_guard": "Titanium Sword Guard",
 
   "item.alloygery.titanium_gold_axe_head": "Titanium Gold Axe Head",
   "item.alloygery.titanium_gold_hoe_head": "Titanium Gold Hoe Head",
@@ -188,6 +199,7 @@
   "item.alloygery.titanium_gold_sword_blade": "Titanium Gold Sword Blade",
   "item.alloygery.titanium_gold_binding": "Titanium Gold Binding",
   "item.alloygery.titanium_gold_handle": "Titanium Gold Handle",
+  "item.alloygery.titanium_gold_sword_guard": "Titanium Gold Sword Guard",
 
   "item.alloygery.nitinol_axe_head": "Nitinol Axe Head",
   "item.alloygery.nitinol_hoe_head": "Nitinol Hoe Head",
@@ -196,6 +208,7 @@
   "item.alloygery.nitinol_sword_blade": "Nitinol Sword Blade",
   "item.alloygery.nitinol_binding": "Nitinol Binding",
   "item.alloygery.nitinol_handle": "Nitinol Handle",
+  "item.alloygery.nitinol_sword_guard": "Nitinol Sword Guard",
 
   "item.alloygery.wooden_handle": "Wooden Handle",
 
@@ -373,14 +386,23 @@
 
   "tooltip.alloygery.shift_for_info": "Hold Shift For More Info",
   "tooltip.alloygery.ctrl_for_details": "Hold Ctrl For More Details",
+  "tooltip.alloygery.when_used_in_craft": "When Used To Craft A Tool",
+
   "tooltip.alloygery.info.uses": "Durability",
   "tooltip.alloygery.info.level": "Mining Level",
-  "tooltip.alloygery.info.speed": "Speed",
-  "tooltip.alloygery.info.damage": "Damage",
+  "tooltip.alloygery.info.speed": "Mining Speed",
+  "tooltip.alloygery.info.damage": "Attack Damage",
   "tooltip.alloygery.info.enchantability": "Enchantability",
   "tooltip.alloygery.info.fireproof": "Fireproof",
+
+  "tooltip.alloygery.info.uses_multiplier": "Durability Multiplier",
+  "tooltip.alloygery.info.speed_multiplier": "Mining Speed Multiplier",
+  "tooltip.alloygery.info.damage_multiplier": "Attack Damage Multiplier",
+  "tooltip.alloygery.info.enchantability_multiplier": "Enchantability Multiplier",
+
   "tooltip.alloygery.info.head": "Head",
   "tooltip.alloygery.info.binding": "Binding",
+  "tooltip.alloygery.info.sword_guard": "Guard",
   "tooltip.alloygery.info.handle": "Handle",
   "tooltip.alloygery.info.upgrade": "Upgrade",
 

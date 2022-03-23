@@ -13,7 +13,7 @@
   "material": {
     "tag": "c:titanium_gold_ingots"
   },
-  "material_cost": 3,
+  "material_cost": 2,
   "result": {
     "item": "alloygery:titanium_gold_axe_head",
     "data": {

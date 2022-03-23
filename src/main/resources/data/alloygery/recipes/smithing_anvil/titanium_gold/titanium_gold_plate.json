@@ -1,6 +1,6 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "antanium_tool_heads",
+  "group": "titanium_gold_materials",
   "hammer": {
     "item": "alloygery:anvil_hammer",
     "remainder": {
@@ -11,9 +11,13 @@
     }
   },
   "material": {
-    "item": "alloygery:antanium_ingot"
+    "tag": "c:titanium_gold_ingots"
   },
+  "material_cost": 1,
   "result": {
-    "item": "alloygery:antanium_hoe_head"
+    "item": "alloygery:titanium_gold_plate",
+    "data": {
+      "PartMaterial": "alloygery:materials/titanium_gold"
+    }
   }
 }

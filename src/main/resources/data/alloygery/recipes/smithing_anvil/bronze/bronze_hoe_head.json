@@ -1,6 +1,6 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "cupronickel_materials",
+  "group": "bronze_tool_heads",
   "hammer": {
     "item": "alloygery:anvil_hammer",
     "remainder": {
@@ -11,9 +11,13 @@
     }
   },
   "material": {
-    "item": "alloygery:cupronickel_ingot"
+    "tag": "c:bronze_ingots"
   },
+  "material_cost": 2,
   "result": {
-    "item": "alloygery:cupronickel_plate"
+    "item": "alloygery:bronze_hoe_head",
+    "data": {
+      "PartMaterial": "alloygery:materials/bronze"
+    }
   }
 }

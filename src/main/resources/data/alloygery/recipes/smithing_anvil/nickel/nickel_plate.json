@@ -1,6 +1,6 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "gold_materials",
+  "group": "nickel_materials",
   "hammer": {
     "item": "alloygery:anvil_hammer",
     "remainder": {
@@ -11,9 +11,13 @@
     }
   },
   "material": {
-    "item": "minecraft:gold_ingot"
+    "tag": "c:nickel_ingots"
   },
+  "material_cost": 1,
   "result": {
-    "item": "alloygery:gold_plate"
+    "item": "alloygery:nickel_plate",
+    "data": {
+      "PartMaterial": "alloygery:materials/nickel"
+    }
   }
 }

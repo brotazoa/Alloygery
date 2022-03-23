@@ -1,6 +1,9 @@
 package amorphia.alloygery.mixins;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.content.material.AlloygeryMaterial;
+import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryMaterials;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -19,15 +22,11 @@ public abstract class ItemEntityMixin
 	@Inject(method = "isFireImmune", at = @At("HEAD"), cancellable = true)
 	public void isFireImmune(CallbackInfoReturnable<Boolean> cir)
 	{
-		NbtCompound nbt = getStack().getNbt();
-		if (nbt != null && nbt.contains(Alloygery.NBT_KEY))
+		AlloygeryMaterial upgradeMaterial = AlloygeryMaterialHelper.getUpgradeMaterial(getStack());
+		if(upgradeMaterial == AlloygeryMaterials.NETHERITE_UPGRADE)
 		{
-			NbtCompound tag = nbt.getCompound(Alloygery.NBT_KEY);
-			if (tag != null && tag.contains(Alloygery.NETHERITE_PLATTED))
-			{
-				cir.setReturnValue(true);
-				cir.cancel();
-			}
+			cir.setReturnValue(true);
+			cir.cancel();
 		}
 	}
 }

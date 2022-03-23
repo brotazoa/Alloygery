@@ -49,6 +49,10 @@ public interface IAlloygeryTool
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.speed").append(new LiteralText(": " + AlloygeryMaterialHelper.getMiningSpeed(compound))).formatted(Formatting.GRAY));
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.damage").append(new LiteralText(": " + AlloygeryMaterialHelper.getAttackDamage(compound))).formatted(Formatting.GRAY));
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability").append(new LiteralText(": " + AlloygeryMaterialHelper.getEnchantability(compound))).formatted(Formatting.GRAY));
+
+					if(upgradeMaterial == AlloygeryMaterials.NETHERITE_UPGRADE)
+						tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+
 					tooltip.add(new TranslatableText("tooltip.alloygery.ctrl_for_details").formatted(Formatting.DARK_GRAY));
 				}
 				else if (Screen.hasShiftDown() && Screen.hasControlDown())
@@ -120,6 +124,9 @@ public interface IAlloygeryTool
 							final int upgrade = (int) (base * upgradeMaterial.enchantability_multiplier + upgradeMaterial.tool_enchantability) - base;
 							tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability").append(new LiteralText(": " + upgrade)).formatted(Formatting.GRAY));
 						}
+
+						if(upgradeMaterial == AlloygeryMaterials.NETHERITE_UPGRADE)
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
 					}
 				}
 

@@ -27,11 +27,6 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	public static ItemGroup ALLOYGERY_GROUP_GEAR = FabricItemGroupBuilder.create(Alloygery.identifier("gear")).icon(() -> new ItemStack(ModItems.GEAR_TAB_ITEM)).build();
 	public static ItemGroup ALLOYGERY_GROUP_PARTS = FabricItemGroupBuilder.create(Alloygery.identifier("parts")).icon(() -> new ItemStack(ModItems.PARTS_TAB_ITEM)).build();
 
-	public static final String NBT_KEY = "AlloygeryProperties";
-	public static final String DIAMOND_TIPPED_KEY = "DiamondTipped";
-	public static final String EMERALD_EMBOSSED_KEY = "EmeraldEmbossed";
-	public static final String NETHERITE_PLATTED = "NetheritePlatted";
-
 	@Override
 	@Environment(EnvType.CLIENT)
 	public void onInitializeClient()

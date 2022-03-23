@@ -9,9 +9,9 @@ Alloygery adds new metals and alloys to change up tools and armor while preservi
 
 <h2 align="left">Extra Materials and Tool Parts</h2>
 <p>New feature in development.</p>
-<p>Adds extra materials for vanilla and Alloygery metal types:</p>
-<p><img src="readmeAssets/materials.png"/></p>
-<p>With the goal of having an alternative way to craft tools and armor, using a new crafting interface</p>
-<p><img src="readmeAssets/smithing_anvil_crafting_banner.png"/></p>
-<p><img src="readmeAssets/double_ingot_crafting.png"/>
+<p>Adds extra materials for vanilla and Alloygery metal types, with the goal of having an alternative way to craft tools and armor, using a new crafting interface</p>
+<p><img src="readmeAssets/tool_parts_smithing_banner.png"/></p>
+<p>Tools are crafted from a combination of a tool head (like a pickaxe head), a binding, and a handle</p>
+<p><img src="readmeAssets/tool_parts_crafting.png"/></p>
+<p><img src="readmeAssets/tool_part_upgrades.gif"/></p>
 <p>Alpha builds are available on CurseForge if you want to play with these features. Be aware that the branch is in active development and likely to change, and/or be buggy. Make world backups often.</p>

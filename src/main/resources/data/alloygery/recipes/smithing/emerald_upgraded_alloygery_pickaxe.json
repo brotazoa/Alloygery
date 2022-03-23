@@ -1,0 +1,27 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enable_emerald_upgrade"
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:alloygery_pickaxe",
+    "data": {
+      "deny": {
+        "UpgradeMaterial": ""
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:emeralds"
+  },
+  "result": {
+    "item": "alloygery:emerald_upgraded_alloygery_pickaxe",
+    "data": {
+      "$": "$ base",
+      "UpgradeMaterial": "alloygery:materials/emerald_upgraded"
+    }
+  }
+}

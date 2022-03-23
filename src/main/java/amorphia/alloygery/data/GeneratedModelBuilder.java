@@ -44,9 +44,19 @@ public class GeneratedModelBuilder
 		return "{\"parent\": \"alloygery:block/raw_ore_block_template\"}";
 	}
 
+	public static String createToolItemModelJson(String parentModel)
+	{
+		return "{\"parent\": \"alloygery:item/" + parentModel + "\"}";
+	}
+
 	public static String createAxeItemModelJson()
 	{
 		return "{\"parent\": \"alloygery:item/alloygery_axe\"}";
+	}
+
+	public static String createAxeItemModelJson(String prefix)
+	{
+		return "{\"parent\": \"alloygery:item/" + prefix + "_alloygery_axe\"}";
 	}
 
 	public static String createHoeItemModelJson()

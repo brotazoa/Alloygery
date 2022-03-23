@@ -12,5 +12,9 @@
   "boots_armor": 3,
   "speed": 8.0,
   "damage": 3.0,
-  "toughness": 2.0
+  "toughness": 2.0,
+  "durability_multiplier": 1.0,
+  "enchantability_multiplier": 1.0,
+  "speed_multiplier": 1.0,
+  "damage_multiplier": 1.0
 }

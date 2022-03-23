@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "antanium_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 2"
+      }
+    }
+  },
+  "material": {
+    "tag": "c:antanium_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:antanium_helmet",
+    "data": {
+      "HeadMaterial": "alloygery:materials/antanium"
+    }
+  }
+}

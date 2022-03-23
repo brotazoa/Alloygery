@@ -1,7 +1,8 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "alloygery:tool_render_parts/wooden_tool_handle_template",
-    "layer1": "alloygery:tool_render_parts/metal_hoe_head_template"
+    "layer0": "alloygery:tool_render_parts/pickaxe_handle_template",
+    "layer1": "alloygery:tool_render_parts/hoe_head_template",
+    "layer2": "alloygery:tool_render_parts/pickaxe_binding_template"
   }
 }

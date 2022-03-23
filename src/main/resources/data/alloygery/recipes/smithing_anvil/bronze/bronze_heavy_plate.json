@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "bronze_materials",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 2"
+      }
+    }
+  },
+  "material": {
+    "tag": "c:bronze_double_ingots"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:bronze_heavy_plate",
+    "data": {
+      "PartMaterial": "alloygery:materials/bronze"
+    }
+  }
+}

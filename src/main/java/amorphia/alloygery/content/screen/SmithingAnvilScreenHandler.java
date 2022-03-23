@@ -16,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.collection.DefaultedList;
@@ -34,6 +35,7 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 	private List<SmithingAnvilRecipe> availableRecipes;
 	private ItemStack hammerStack;
 	private ItemStack materialStack;
+	private int materialCost;
 
 	Runnable contentsChangedListener;
 	long lastTakeTime;
@@ -58,6 +60,7 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 		this.availableRecipes = Lists.newArrayList();
 		this.hammerStack = ItemStack.EMPTY;
 		this.materialStack = ItemStack.EMPTY;
+		this.materialCost = 1;
 		this.contentsChangedListener = () -> {};
 
 		this.input = new SimpleInventory(2){
@@ -86,30 +89,10 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 				stack.onCraft(player.world, player, stack.getCount());
 				SmithingAnvilScreenHandler.this.output.unlockLastRecipe(player);
 
-				//this might break
-				Optional<SmithingAnvilRecipe> match = player.world.getRecipeManager().getFirstMatch(SmithingAnvilRecipe.Type.INSTANCE, input, player.world);
-				DefaultedList<ItemStack> remainders = match.map(smithingAnvilRecipe -> smithingAnvilRecipe.getRemainder(input)).orElse(null);
+				//SmithingAnvilRecipe currentRecipe = availableRecipes.get(selectedRecipe.get());
 
-				final int lastRecipe = selectedRecipe.get();
-
-				SmithingAnvilScreenHandler.this.hammerSlot.takeStack(1);
-				SmithingAnvilScreenHandler.this.materialSlot.takeStack(1);
-
-				if (remainders != null)
-				{
-					context.run((world1, pos) -> {
-						RecipeUtil.putRemainders(remainders, input, world1, pos);
-					});
-				}
-
-				hammerStack = SmithingAnvilScreenHandler.this.hammerSlot.getStack();
-				materialStack = SmithingAnvilScreenHandler.this.materialSlot.getStack();
-
-				if (!hammerStack.isEmpty() && !materialStack.isEmpty())
-				{
-					selectedRecipe.set(lastRecipe);
-					SmithingAnvilScreenHandler.this.populateResult();
-				}
+				SmithingAnvilScreenHandler.this.hammerSlot.getStack().damage(2, player.getRandom(), player instanceof ServerPlayerEntity  serverPlayer? serverPlayer : null);
+				SmithingAnvilScreenHandler.this.materialSlot.takeStack(SmithingAnvilScreenHandler.this.materialCost);
 
 				context.run((world1, pos) -> {
 					long l = world1.getTime();
@@ -153,6 +136,14 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 		return this.availableRecipes.size();
 	}
 
+	public boolean canAffordRecipe(int recipeIndex)
+	{
+		if(!isInBounds(recipeIndex))
+			return false;
+
+		return getAvailableRecipes().get(recipeIndex).canAfford(this.input, this.world);
+	}
+
 	public boolean canCraft()
 	{
 		return this.hammerSlot.hasStack() && this.materialSlot.hasStack() && !this.availableRecipes.isEmpty();
@@ -188,31 +179,38 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 	@Override
 	public void onContentChanged(Inventory inventory)
 	{
-		ItemStack itemStack = this.materialSlot.getStack();
-		ItemStack hStack = this.hammerSlot.getStack();
+		ItemStack toolStackInInventory = inventory.getStack(0);
+		ItemStack materialStackInInventory = inventory.getStack(1);
 
-		if (!itemStack.isOf(this.materialStack.getItem()) || !hStack.isOf(this.hammerStack.getItem()))
+		if (!materialStackInInventory.isOf(this.materialStack.getItem()) || !toolStackInInventory.isOf(this.hammerStack.getItem()))
 		{
-			this.materialStack = itemStack.copy();
-			this.hammerStack = hStack.copy();
+			this.materialStack = materialStackInInventory.copy();
+			this.hammerStack = toolStackInInventory.copy();
 
 			this.availableRecipes.clear();
 			this.selectedRecipe.set(-1);
 			this.outputSlot.setStack(ItemStack.EMPTY);
-			if (!materialStack.isEmpty() && !hammerStack.isEmpty())
+			this.materialCost = 1;
+			if (!this.materialStack.isEmpty() && !this.hammerStack.isEmpty())
 			{
 				this.availableRecipes = this.world.getRecipeManager().getAllMatches(SmithingAnvilRecipe.Type.INSTANCE, inventory, this.world);
 			}
 		}
+
+		populateResult();
 	}
 
 	void populateResult()
 	{
-		if (!this.availableRecipes.isEmpty() && this.isInBounds(this.selectedRecipe.get()))
+		if (!this.availableRecipes.isEmpty() && this.isInBounds(this.selectedRecipe.get()) && this.availableRecipes.get(this.selectedRecipe.get()).canAfford(this.input, this.world))
 		{
 			SmithingAnvilRecipe recipe = this.availableRecipes.get(this.selectedRecipe.get());
 			this.output.setLastRecipe(recipe);
-			this.outputSlot.setStack(recipe.craft(this.input));
+
+			ItemStack outputStack = recipe.craft(this.input);
+			this.materialCost = recipe.getMaterialCost();
+			//AlloygeryMaterialHelper.getMaterial(outputStack, AlloygeryMaterialHelper.NBT_KEYS.PART_MATERIAL, true);
+			this.outputSlot.setStack(outputStack);
 		}
 		else
 		{

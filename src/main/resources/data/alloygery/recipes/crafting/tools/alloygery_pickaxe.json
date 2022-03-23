@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "tag": "alloygery:pickaxe_heads"
+    },
+    "b": {
+      "tag": "alloygery:bindings"
+    },
+    "h": {
+      "tag": "alloygery:handles"
+    }
+  },
+  "result": {
+    "item": "alloygery:alloygery_pickaxe",
+    "data": {
+      "HeadMaterial": "$i2.PartMaterial",
+      "BindingMaterial": "$i4.PartMaterial",
+      "HandleMaterial": "$i6.PartMaterial"
+    }
+  }
+}

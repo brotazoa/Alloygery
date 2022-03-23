@@ -5,24 +5,29 @@ import amorphia.alloygery.content.item.ModMiningLevels;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
 import net.fabricmc.yarn.constants.MiningLevels;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.DefaultedRegistry;
 import net.minecraft.util.registry.Registry;
 
 public class AlloygeryMaterials
 {
 	public static final DefaultedRegistry<AlloygeryMaterial> ALLOYGERY_MATERIALS = FabricRegistryBuilder
-			.createDefaulted(AlloygeryMaterial.class, Alloygery.identifier("materials"), Alloygery.identifier("unknown"))
+			.createDefaulted(AlloygeryMaterial.class, Alloygery.identifier("materials"), Alloygery.identifier("materials/unknown"))
 			.attribute(RegistryAttribute.SYNCED)
 			.buildAndRegister();
 
 	public static final AlloygeryMaterial UNKNOWN = registerMaterial("unknown", new AlloygeryMaterial("unknown"));
+
 	public static final AlloygeryMaterial TIN;
 	public static final AlloygeryMaterial COPPER;
 	public static final AlloygeryMaterial BRONZE;
 	public static final AlloygeryMaterial IRON;
 	public static final AlloygeryMaterial GOLD;
 	public static final AlloygeryMaterial ANTANIUM;
+	public static final AlloygeryMaterial DIAMOND;
 	public static final AlloygeryMaterial STEEL;
+	public static final AlloygeryMaterial NETHERITE;
 	public static final AlloygeryMaterial NICKEL;
 	public static final AlloygeryMaterial INVAR;
 	public static final AlloygeryMaterial CONSTANTAN;
@@ -31,11 +36,24 @@ public class AlloygeryMaterials
 	public static final AlloygeryMaterial TITANIUM_GOLD;
 	public static final AlloygeryMaterial NITINOL;
 
+	//vanilla wood materials
+	public static final AlloygeryMaterial VANILLA_STICK;
+
+	//upgrades
+	public static final AlloygeryMaterial DIAMOND_UPGRADE;
+	public static final AlloygeryMaterial EMERALD_UPGRADE;
+	public static final AlloygeryMaterial NETHERITE_UPGRADE;
+
 	public static void init(){}
 
-	public static AlloygeryMaterial registerMaterial(String name, AlloygeryMaterial material)
+	static AlloygeryMaterial registerMaterial(String name, AlloygeryMaterial material)
 	{
-		return Registry.register(ALLOYGERY_MATERIALS, Alloygery.identifier("materials/" + name), material);
+		return register(Alloygery.identifier("materials/" + name), material);
+	}
+
+	public static AlloygeryMaterial register(Identifier identifier, AlloygeryMaterial material)
+	{
+		return Registry.register(ALLOYGERY_MATERIALS, identifier, material);
 	}
 
 	static
@@ -53,12 +71,16 @@ public class AlloygeryMaterials
 				.speed(4.0f)
 				.damage(2.0f)
 				.tool_enchantability(10)
-				.armor_enchantability(15)
 				.armor_durability(5)
 				.helmet_armor(1)
 				.chestplate_armor(3)
 				.leggings_armor(2)
 				.boots_armor(1)
+				.armor_enchantability(15)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		BRONZE = registerMaterial("bronze", new AlloygeryMaterial.AlloygeryMaterialBuilder("bronze")
@@ -75,6 +97,10 @@ public class AlloygeryMaterials
 				.chestplate_armor(6)
 				.leggings_armor(5)
 				.boots_armor(2)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		//vanilla stats
@@ -92,6 +118,10 @@ public class AlloygeryMaterials
 				.chestplate_armor(6)
 				.leggings_armor(5)
 				.boots_armor(2)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		//vanilla stats
@@ -109,6 +139,10 @@ public class AlloygeryMaterials
 				.chestplate_armor(5)
 				.leggings_armor(3)
 				.boots_armor(1)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		ANTANIUM = registerMaterial("antanium", new AlloygeryMaterial.AlloygeryMaterialBuilder("antanium")
@@ -125,6 +159,31 @@ public class AlloygeryMaterials
 				.chestplate_armor(5)
 				.leggings_armor(4)
 				.boots_armor(2)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
+				.build());
+
+		DIAMOND = registerMaterial("diamond", new AlloygeryMaterial.AlloygeryMaterialBuilder("diamond")
+				.category("gem")
+				.level(ModMiningLevels.DIAMOND)
+				.color(3402699)
+				.head_durability(1561)
+				.speed(8.0f)
+				.damage(3.0f)
+				.tool_enchantability(10)
+				.armor_durability(33)
+				.helmet_armor(3)
+				.chestplate_armor(8)
+				.leggings_armor(6)
+				.boots_armor(3)
+				.armor_enchantability(10)
+				.toughness(2.0f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		STEEL = registerMaterial("steel", new AlloygeryMaterial.AlloygeryMaterialBuilder("steel")
@@ -142,6 +201,32 @@ public class AlloygeryMaterials
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(2.0f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
+				.build());
+
+		NETHERITE = registerMaterial("netherite", new AlloygeryMaterial.AlloygeryMaterialBuilder("netherite")
+				.category("metal")
+				.color(5192766)
+				.level(ModMiningLevels.NETHERITE)
+				.head_durability(2031)
+				.speed(9.0f)
+				.damage(4.0f)
+				.tool_enchantability(15)
+				.armor_durability(37)
+				.helmet_armor(3)
+				.chestplate_armor(8)
+				.leggings_armor(6)
+				.boots_armor(3)
+				.armor_enchantability(15)
+				.toughness(3.0f)
+				.knockback(0.1f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		NICKEL = registerMaterial("nickel", new AlloygeryMaterial.AlloygeryMaterialBuilder("nickel")
@@ -159,6 +244,10 @@ public class AlloygeryMaterials
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(3.0f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		INVAR = registerMaterial("invar", new AlloygeryMaterial.AlloygeryMaterialBuilder("invar")
@@ -177,6 +266,10 @@ public class AlloygeryMaterials
 				.boots_armor(3)
 				.toughness(3.0f)
 				.knockback(0.1f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		CONSTANTAN = registerMaterial("constantan", new AlloygeryMaterial.AlloygeryMaterialBuilder("constantan")
@@ -194,6 +287,10 @@ public class AlloygeryMaterials
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(3.0f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		CUPRONICKEL = registerMaterial("cupronickel", new AlloygeryMaterial.AlloygeryMaterialBuilder("cupronickel")
@@ -211,6 +308,10 @@ public class AlloygeryMaterials
 				.leggings_armor(6)
 				.boots_armor(3)
 				.toughness(3.0f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		TITANIUM = registerMaterial("titanium", new AlloygeryMaterial.AlloygeryMaterialBuilder("titanium")
@@ -228,6 +329,10 @@ public class AlloygeryMaterials
 				.leggings_armor(7)
 				.boots_armor(4)
 				.toughness(2.0f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		TITANIUM_GOLD = registerMaterial("titanium_gold", new AlloygeryMaterial.AlloygeryMaterialBuilder("titanium_gold")
@@ -245,6 +350,10 @@ public class AlloygeryMaterials
 				.leggings_armor(7)
 				.boots_armor(4)
 				.toughness(3.0f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
 				.build());
 
 		NITINOL = registerMaterial("nitinol", new AlloygeryMaterial.AlloygeryMaterialBuilder("nitinol")
@@ -263,6 +372,41 @@ public class AlloygeryMaterials
 				.boots_armor(4)
 				.toughness(3.0f)
 				.knockback(0.1f)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
+				.build());
+
+		VANILLA_STICK = registerMaterial("wooden", new AlloygeryMaterial.AlloygeryMaterialBuilder("wooden")
+				.category("wood")
+				.color(6835742)
+				.durability_multiplier(1.0f)
+				.enchantability_multiplier(1.0f)
+				.speed_multiplier(1.0f)
+				.damage_multiplier(1.0f)
+				.build());
+
+		DIAMOND_UPGRADE = registerMaterial("diamond_upgraded", new AlloygeryMaterial.AlloygeryMaterialBuilder("diamond_upgraded")
+				.category("upgrade")
+				.level(1)
+				.head_durability(500)
+				.enchantability(-5)
+				.build());
+
+		EMERALD_UPGRADE = registerMaterial("emerald_upgraded", new AlloygeryMaterial.AlloygeryMaterialBuilder("emerald_upgraded")
+				.category("upgrade")
+				.level(0)
+				.durability_multiplier(1.5f)
+				.enchantability(5)
+				.build());
+
+		NETHERITE_UPGRADE = registerMaterial("netherite_upgraded", new AlloygeryMaterial.AlloygeryMaterialBuilder("netherite_upgraded")
+				.category("upgrade")
+				.level(0)
+				.durability_multiplier(1.2f)
+				.speed_multiplier(1.1f)
+				.damage_multiplier(1.1f)
 				.build());
 	}
 }

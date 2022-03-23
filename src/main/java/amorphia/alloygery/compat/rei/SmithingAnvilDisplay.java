@@ -5,7 +5,9 @@ import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.Display;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
+import net.minecraft.item.ItemStack;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,7 +18,11 @@ public class SmithingAnvilDisplay implements Display
 
 	public SmithingAnvilDisplay(SmithingAnvilRecipe recipe)
 	{
-		inputs = recipe.getIngredients().stream().map(EntryIngredients::ofIngredient).toList();
+		EntryIngredient hammerInput = EntryIngredients.ofIngredient(recipe.getIngredients().get(0));
+
+		EntryIngredient materials = EntryIngredients.ofItemStacks(
+				Arrays.stream(recipe.getIngredients().get(1).getMatchingStacks()).peek(stack -> stack.setCount(recipe.getMaterialCost())).toList());
+		inputs = List.of(hammerInput, materials);
 		output = EntryIngredients.of(recipe.getOutput());
 	}
 

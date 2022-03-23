@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "alloygery:antanium_ingot"
+    }
+  ],
+  "result": {
+    "item": "alloygery:antanium_nugget",
+    "count": 9
+  }
+}

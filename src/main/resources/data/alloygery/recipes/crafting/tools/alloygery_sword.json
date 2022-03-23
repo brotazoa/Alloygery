@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "tag": "alloygery:sword_blades"
+    },
+    "b": {
+      "tag": "alloygery:bindings"
+    },
+    "h": {
+      "tag": "alloygery:handles"
+    }
+  },
+  "result": {
+    "item": "alloygery:alloygery_sword",
+    "data": {
+      "HeadMaterial": "$i2.PartMaterial",
+      "BindingMaterial": "$i4.PartMaterial",
+      "HandleMaterial": "$i6.PartMaterial"
+    }
+  }
+}

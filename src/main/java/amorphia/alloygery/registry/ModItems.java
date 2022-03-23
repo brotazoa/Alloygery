@@ -36,7 +36,7 @@ public class ModItems
 			AlloygeryMaterials.NITINOL
 	);
 
-	public static final List<AlloygeryMaterial> MAKE_TOOL_PARTS_FOR_MATERIAL = Lists.newArrayList(
+	public static final List<AlloygeryMaterial> MAKE_TOOL_HEADS_FOR_MATERIAL = Lists.newArrayList(
 			AlloygeryMaterials.COPPER,
 			AlloygeryMaterials.BRONZE,
 			AlloygeryMaterials.IRON,
@@ -50,6 +50,56 @@ public class ModItems
 			AlloygeryMaterials.TITANIUM,
 			AlloygeryMaterials.TITANIUM_GOLD,
 			AlloygeryMaterials.NITINOL
+	);
+
+	public static final Set<AlloygeryMaterial> MAKE_BINDINGS_FOR_MATERIAL = Set.of(
+			AlloygeryMaterials.COPPER,
+			AlloygeryMaterials.BRONZE,
+			AlloygeryMaterials.IRON,
+			AlloygeryMaterials.GOLD,
+			AlloygeryMaterials.ANTANIUM,
+			AlloygeryMaterials.STEEL,
+			AlloygeryMaterials.NICKEL,
+			AlloygeryMaterials.INVAR,
+			AlloygeryMaterials.CONSTANTAN,
+			AlloygeryMaterials.CUPRONICKEL,
+			AlloygeryMaterials.TITANIUM,
+			AlloygeryMaterials.TITANIUM_GOLD,
+			AlloygeryMaterials.NITINOL
+	);
+
+	public static final Set<AlloygeryMaterial> MAKE_HANDLES_FOR_MATERIAL = Set.of(
+			AlloygeryMaterials.COPPER,
+			AlloygeryMaterials.BRONZE,
+			AlloygeryMaterials.IRON,
+			AlloygeryMaterials.GOLD,
+			AlloygeryMaterials.ANTANIUM,
+			AlloygeryMaterials.STEEL,
+			AlloygeryMaterials.NICKEL,
+			AlloygeryMaterials.INVAR,
+			AlloygeryMaterials.CONSTANTAN,
+			AlloygeryMaterials.CUPRONICKEL,
+			AlloygeryMaterials.TITANIUM,
+			AlloygeryMaterials.TITANIUM_GOLD,
+			AlloygeryMaterials.NITINOL,
+			AlloygeryMaterials.VANILLA_STICK
+	);
+
+	public static final List<AlloygeryMaterial> MAKE_TOOL_PARTS_FOR_MATERIAL = Lists.newArrayList(
+			AlloygeryMaterials.COPPER,
+			AlloygeryMaterials.BRONZE,
+			AlloygeryMaterials.IRON,
+			AlloygeryMaterials.GOLD,
+			AlloygeryMaterials.ANTANIUM,
+			AlloygeryMaterials.STEEL,
+			AlloygeryMaterials.NICKEL,
+			AlloygeryMaterials.INVAR,
+			AlloygeryMaterials.CONSTANTAN,
+			AlloygeryMaterials.CUPRONICKEL,
+			AlloygeryMaterials.TITANIUM,
+			AlloygeryMaterials.TITANIUM_GOLD,
+			AlloygeryMaterials.NITINOL,
+			AlloygeryMaterials.VANILLA_STICK
 	);
 
 	public static final Set<AlloygeryMaterial> HAS_VANILLA_CRAFTING_MATERIALS = Set.of(
@@ -98,17 +148,17 @@ public class ModItems
 
 	// @formatter:off
 
-	//ore block items
-	public static final Item TIN_ORE = new BlockItem(ModBlocks.TIN_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
-	public static final Item DEEPSLATE_TIN_ORE = new BlockItem(ModBlocks.DEEPSLATE_TIN_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
-	public static final Item NICKEL_ORE = new BlockItem(ModBlocks.NICKEL_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
-	public static final Item TITANIUM_ORE = new BlockItem(ModBlocks.TITANIUM_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
-
 	//creative tab items
 	public static final Item BLOCKS_TAB_ITEM = new Item(new Item.Settings());
 	public static final Item MATERIALS_TAB_ITEM = new Item(new Item.Settings());
 	public static final Item GEAR_TAB_ITEM = new Item(new Item.Settings());
 	public static final Item PARTS_TAB_ITEM = new Item(new Item.Settings());
+
+	//ore block items
+	public static final Item TIN_ORE = new BlockItem(ModBlocks.TIN_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
+	public static final Item DEEPSLATE_TIN_ORE = new BlockItem(ModBlocks.DEEPSLATE_TIN_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
+	public static final Item NICKEL_ORE = new BlockItem(ModBlocks.NICKEL_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
+	public static final Item TITANIUM_ORE = new BlockItem(ModBlocks.TITANIUM_ORE, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
 
 	//alloy kiln block items
 	public static final Item ALLOY_KILN = new BlockItem(ModBlocks.ALLOY_KILN, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_BLOCKS));
@@ -155,7 +205,12 @@ public class ModItems
 		{
 			Item ingot = putGeneratedItem(material.name + "_ingot", new AlloygeryCraftingItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS)), () -> GeneratedModelBuilder.createMaterialItemModelJson("ingot"));
 			AlloygeryMaterialHelper.REPAIR_INGREDIENT_MAP.put(material, Ingredient.ofItems(ingot));
+
+			putGeneratedItem(material.name + "_nugget", new AlloygeryCraftingItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS)), () -> GeneratedModelBuilder.createMaterialItemModelJson("nugget"));
 		}
+
+		if(material.name.equals("copper")) //vanilla parity is vanilla parity
+			putGeneratedItem(material.name + "_nugget", new AlloygeryCraftingItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS)), () -> GeneratedModelBuilder.createMaterialItemModelJson("nugget"));
 
 		putGeneratedItem(material.name + "_double_ingot", new AlloygeryCraftingItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS)), () -> GeneratedModelBuilder.createMaterialItemModelJson("double_ingot"));
 		putGeneratedItem(material.name + "_plate", new AlloygeryCraftingItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS)), () -> GeneratedModelBuilder.createMaterialItemModelJson("plate"));
@@ -164,18 +219,38 @@ public class ModItems
 
 	static void makeToolParts(AlloygeryMaterial material)
 	{
-		putGeneratedItem(material.name + "_axe_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)), () -> GeneratedModelBuilder.createPartItemModelJson("axe_head"));
-		putGeneratedItem(material.name + "_hoe_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)), () -> GeneratedModelBuilder.createPartItemModelJson("hoe_head"));
-		putGeneratedItem(material.name + "_pickaxe_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)), () -> GeneratedModelBuilder.createPartItemModelJson("pickaxe_head"));
-		putGeneratedItem(material.name + "_shovel_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)), () -> GeneratedModelBuilder.createPartItemModelJson("shovel_head"));
-		putGeneratedItem(material.name + "_sword_blade", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)), () -> GeneratedModelBuilder.createPartItemModelJson("sword_blade"));
+		if(MAKE_TOOL_HEADS_FOR_MATERIAL.contains(material))
+		{
+			putGeneratedItem(material.name + "_axe_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("axe_head"));
+			putGeneratedItem(material.name + "_hoe_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("hoe_head"));
+			putGeneratedItem(material.name + "_pickaxe_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("pickaxe_head"));
+			putGeneratedItem(material.name + "_shovel_head", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("shovel_head"));
+			putGeneratedItem(material.name + "_sword_blade", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("sword_blade"));
+		}
+
+		if (MAKE_HANDLES_FOR_MATERIAL.contains(material))
+		{
+			putGeneratedItem(material.name + "_handle", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("handle"));
+		}
+
+		if(MAKE_BINDINGS_FOR_MATERIAL.contains(material))
+		{
+			putGeneratedItem(material.name + "_binding", new AlloygeryPartItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+					() -> GeneratedModelBuilder.createPartItemModelJson("binding"));
+		}
 	}
 
 	static void makeArmor(AlloygeryMaterial material)
 	{
-		//don't make armor items for vanilla
-		if(HAS_VANILLA_ARMORS.contains(material))
-			return;
+//		//don't make armor items for vanilla
+//		if(HAS_VANILLA_ARMORS.contains(material))
+//			return;
 
 		if (TOUGH_ARMOR_VARIANT.contains(material))
 		{
@@ -199,7 +274,7 @@ public class ModItems
 		if(HAS_VANILLA_TOOLS.contains(material))
 			return;
 
-		putGeneratedItem(material.name + "_axe", new AlloygeryAxeItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR)), GeneratedModelBuilder::createAxeItemModelJson);
+		putGeneratedItem(material.name + "_axe", new AlloygeryAxeItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR)), () -> GeneratedModelBuilder.createToolItemModelJson("alloygery_axe"));
 		putGeneratedItem(material.name + "_hoe", new AlloygeryHoeItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR)), GeneratedModelBuilder::createHoeItemModelJson);
 		putGeneratedItem(material.name + "_pickaxe", new AlloygeryPickaxeItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR)), GeneratedModelBuilder::createPickaxeItemModelJson);
 		putGeneratedItem(material.name + "_shovel", new AlloygeryShovelItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_GEAR)), GeneratedModelBuilder::createShovelItemModelJson);
@@ -221,7 +296,33 @@ public class ModItems
 		ModBlocks.METAL_BLOCKS_FOR_MATERIAL.forEach(ModItems::makeMetalBlockItem);
 		MAKE_CRAFTING_MATERIALS_FOR_MATERIAL.forEach(ModItems::makeCraftingMaterials);
 		MAKE_TOOL_PARTS_FOR_MATERIAL.forEach(ModItems::makeToolParts);
-		MAKE_TOOL_PARTS_FOR_MATERIAL.forEach(ModItems::makeTools);
+
+		ALLOYGERY_ITEMS.put("alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+
+		ALLOYGERY_ITEMS.put("alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+
+		ALLOYGERY_ITEMS.put("alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+
+		ALLOYGERY_ITEMS.put("alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+
+		ALLOYGERY_ITEMS.put("alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+
+		//MAKE_TOOL_PARTS_FOR_MATERIAL.forEach(ModItems::makeTools);
 		MAKE_ARMOR_FOR_MATERIAL.forEach(ModItems::makeArmor);
 
 		//kilns

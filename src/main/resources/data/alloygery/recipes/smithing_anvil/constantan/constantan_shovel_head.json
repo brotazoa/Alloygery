@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "constantan_tool_heads",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 2"
+      }
+    }
+  },
+  "material": {
+    "tag": "c:constantan_ingots"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:constantan_shovel_head",
+    "data": {
+      "PartMaterial": "alloygery:materials/constantan"
+    }
+  }
+}

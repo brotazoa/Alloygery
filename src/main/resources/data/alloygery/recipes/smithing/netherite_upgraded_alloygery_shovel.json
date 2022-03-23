@@ -1,0 +1,27 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enable_netherite_upgrade"
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:alloygery_shovel",
+    "data": {
+      "deny": {
+        "UpgradeMaterial": ""
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:netherite_ingots"
+  },
+  "result": {
+    "item": "alloygery:netherite_upgraded_alloygery_shovel",
+    "data": {
+      "$": "$ base",
+      "UpgradeMaterial": "alloygery:materials/netherite_upgraded"
+    }
+  }
+}

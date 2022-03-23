@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+    "i",
+    "s"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:bronze_ingots"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:alloygery_sword",
+    "data": {
+      "HeadMaterial": "alloygery:materials/bronze",
+      "BindingMaterial": "alloygery:materials/bronze",
+      "HandleMaterial": "alloygery:materials/wooden"
+    }
+  }
+}

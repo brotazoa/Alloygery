@@ -14,7 +14,7 @@ public class AlloygeryMaterial
 	public String category = "misc";
 	public int color = 16253176;
 
-	public int level = -1;
+	public int level = 0;
 	public int tool_enchantability = 0;
 	public int armor_enchantability = 0;
 
@@ -31,6 +31,11 @@ public class AlloygeryMaterial
 
 	public float toughness = 0.0f;
 	public float knockback = 0.0f;
+
+	public float durability_multiplier = 1.0f;
+	public float enchantability_multiplier = 1.0f;
+	public float speed_multiplier = 1.0f;
+	public float damage_multiplier = 1.0f;
 
 	AlloygeryMaterial(String name)
 	{
@@ -65,6 +70,10 @@ public class AlloygeryMaterial
 		original.damage = other.damage;
 		original.toughness = other.toughness;
 		original.knockback = other.knockback;
+		original.durability_multiplier = other.durability_multiplier;
+		original.enchantability_multiplier = other.enchantability_multiplier;
+		original.speed_multiplier = other.speed_multiplier;
+		original.damage_multiplier = other.damage_multiplier;
 
 		return original;
 	}
@@ -138,6 +147,18 @@ public class AlloygeryMaterial
 			if(jsonObject.has("knockback"))
 				builder.knockback(jsonObject.get("knockback").getAsFloat());
 
+			if(jsonObject.has("durability_multiplier"))
+				builder.durability_multiplier(jsonObject.get("durability_multiplier").getAsFloat());
+
+			if(jsonObject.has("enchantability_multiplier"))
+				builder.enchantability_multiplier(jsonObject.get("enchantability_multiplier").getAsFloat());
+
+			if(jsonObject.has("speed_multiplier"))
+				builder.speed_multiplier(jsonObject.get("speed_multiplier").getAsFloat());
+
+			if(jsonObject.has("damage_multiplier"))
+				builder.damage_multiplier(jsonObject.get("damage_multiplier").getAsFloat());
+
 			return builder.build();
 		}
 
@@ -162,6 +183,10 @@ public class AlloygeryMaterial
 			json.addProperty("damage", material.damage);
 			json.addProperty("toughness", material.toughness);
 			json.addProperty("knockback", material.knockback);
+			json.addProperty("durability_multiplier", material.durability_multiplier);
+			json.addProperty("enchantability_multiplier", material.enchantability_multiplier);
+			json.addProperty("speed_multiplier", material.speed_multiplier);
+			json.addProperty("damage_multiplier", material.damage_multiplier);
 
 			return json;
 		}
@@ -270,6 +295,30 @@ public class AlloygeryMaterial
 		public AlloygeryMaterialBuilder knockback(float knockback)
 		{
 			this.material.knockback = knockback;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder durability_multiplier(float durability_multiplier)
+		{
+			this.material.durability_multiplier = durability_multiplier;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder enchantability_multiplier(float enchantability_multiplier)
+		{
+			this.material.enchantability_multiplier = enchantability_multiplier;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder speed_multiplier(float speed_multiplier)
+		{
+			this.material.speed_multiplier = speed_multiplier;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder damage_multiplier(float damage_multiplier)
+		{
+			this.material.damage_multiplier = damage_multiplier;
 			return this;
 		}
 

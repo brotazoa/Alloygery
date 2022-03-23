@@ -1,15 +1,9 @@
 {
   "replace": false,
   "values": [
-    "alloygery:copper_pickaxe",
-    "alloygery:antanium_pickaxe",
-    "alloygery:steel_pickaxe",
-    "alloygery:nickel_pickaxe",
-    "alloygery:invar_pickaxe",
-    "alloygery:constantan_pickaxe",
-    "alloygery:cupronickel_pickaxe",
-    "alloygery:titanium_pickaxe",
-    "alloygery:titanium_gold_pickaxe",
-    "alloygery:nitinol_pickaxe"
+    "alloygery:alloygery_pickaxe",
+    "alloygery:diamond_upgraded_alloygery_pickaxe",
+    "alloygery:emerald_upgraded_alloygery_pickaxe",
+    "alloygery:netherite_upgraded_alloygery_pickaxe"
   ]
 }

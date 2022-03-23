@@ -34,54 +34,51 @@ public class ModelLoaderMixin
 	public void loadModelFromJson(Identifier id, CallbackInfoReturnable<JsonUnbakedModel> cir) throws IOException
 	{
 		//TODO: is this possible without a mixin?
-		if (id.getNamespace().equals(Alloygery.MOD_ID))
+		Optional<Map.Entry<Identifier, String>> modelSupplier = GeneratedModelBuilder.MODEL_SUPPLIER_FOR_IDENTIFIER.entrySet().stream().filter(entry -> entry.getKey().equals(id)).findFirst();
+
+		//only generate models for identifiers that are registered
+		if(modelSupplier.isPresent())
 		{
-			Optional<Map.Entry<Identifier, String>> modelSupplier = GeneratedModelBuilder.MODEL_SUPPLIER_FOR_IDENTIFIER.entrySet().stream().filter(entry -> entry.getKey().equals(id)).findFirst();
+			//System.out.println(id);
 
-			//only generate models for identifiers that are registered
-			if(modelSupplier.isPresent())
+			Resource resource = null;
+			Reader reader = null;
+
+			JsonUnbakedModel model = null;
+
+			try
 			{
-				//System.out.println(id);
-
-				Resource resource = null;
-				Reader reader = null;
-
-				JsonUnbakedModel model = null;
-
-				try
+				//System.out.println("trying resource");
+				resource = resourceManager.getResource(new Identifier(id.getNamespace(), "models/" + id.getPath() + ".json"));
+				if (resource != null) //prefer hard resource
 				{
-					//System.out.println("trying resource");
-					resource = resourceManager.getResource(new Identifier(id.getNamespace(), "models/" + id.getPath() + ".json"));
-					if (resource != null) //prefer hard resource
-					{
-						//System.out.println("found resource");
-						reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
-						model = JsonUnbakedModel.deserialize(reader);
-					}
+					//System.out.println("found resource");
+					reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
+					model = JsonUnbakedModel.deserialize(reader);
 				}
-				catch (IOException thrown)
-				{
-					//dirty consume
-				}
-				finally
-				{
-					IOUtils.closeQuietly(resource);
-					IOUtils.closeQuietly(reader);
-				}
+			}
+			catch (IOException thrown)
+			{
+				//dirty consume
+			}
+			finally
+			{
+				IOUtils.closeQuietly(resource);
+				IOUtils.closeQuietly(reader);
+			}
 
-				if (model == null)
-				{
-					//System.out.println("resource failed, loading from supplier");
-					model = JsonUnbakedModel.deserialize(modelSupplier.get().getValue());
-				}
+			if (model == null)
+			{
+				//System.out.println("resource failed, loading from supplier");
+				model = JsonUnbakedModel.deserialize(modelSupplier.get().getValue());
+			}
 
-				if (model != null)
-				{
-					//System.out.println("setting model");
-					model.id = id.toString();
-					cir.setReturnValue(model);
-					cir.cancel();
-				}
+			if (model != null)
+			{
+				//System.out.println("setting model");
+				model.id = id.toString();
+				cir.setReturnValue(model);
+				cir.cancel();
 			}
 		}
 	}

@@ -1,6 +1,5 @@
 package amorphia.alloygery.content.item;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
@@ -9,7 +8,7 @@ import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 
-public class AlloygeryArmorItem extends ArmorItem implements IMaterialItem
+public class AlloygeryArmorItem extends ArmorItem
 {
 	public static final List<AlloygeryArmorItem> ARMOR_ITEMS = Lists.newArrayList();
 

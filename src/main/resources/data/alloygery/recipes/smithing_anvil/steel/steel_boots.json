@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "steel_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 2"
+      }
+    }
+  },
+  "material": {
+    "tag": "c:steel_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:steel_boots",
+    "data": {
+      "HeadMaterial": "alloygery:materials/steel"
+    }
+  }
+}

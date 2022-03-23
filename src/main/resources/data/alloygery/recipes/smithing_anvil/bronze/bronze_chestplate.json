@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "bronze_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 2"
+      }
+    }
+  },
+  "material": {
+    "tag": "c:bronze_heavy_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:bronze_chestplate",
+    "data": {
+      "HeadMaterial": "alloygery:materials/bronze"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "constantan_tool_parts",
+  "hammer": {
+    "item": "alloygery:anvil_hammer",
+    "remainder": {
+      "item": "alloygery:anvil_hammer",
+      "data": {
+        "Damage": "$hammer.Damage + 2"
+      }
+    }
+  },
+  "material": {
+    "tag": "c:constantan_ingot"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:constantan_binding",
+    "data": {
+      "PartMaterial": "alloygery:materials/constantan"
+    }
+  }
+}

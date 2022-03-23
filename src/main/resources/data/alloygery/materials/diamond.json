@@ -1,0 +1,20 @@
+{
+  "name": "diamond",
+  "category": "gem",
+  "color": 3402699,
+  "level": "steel",
+  "enchantability": 10,
+  "head_durability": 1561,
+  "armor_durability": 33,
+  "helmet_armor": 3,
+  "chestplate_armor": 8,
+  "leggings_armor": 6,
+  "boots_armor": 3,
+  "speed": 8.0,
+  "damage": 3.0,
+  "toughness": 2.0,
+  "durability_multiplier": 1.0,
+  "enchantability_multiplier": 1.0,
+  "speed_multiplier": 1.0,
+  "damage_multiplier": 1.0
+}

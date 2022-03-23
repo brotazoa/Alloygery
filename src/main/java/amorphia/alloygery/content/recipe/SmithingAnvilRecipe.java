@@ -24,17 +24,19 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 {
 	protected final Ingredient hammer;
 	protected final Ingredient material;
+	protected final int materialCount;
 	protected final ItemStack output;
 	protected final Identifier id;
 	protected final String group;
 	protected final Dollar[] resultDollars;
 
-	public SmithingAnvilRecipe(Identifier id, String group, Ingredient hammer, Ingredient material, ItemStack output)
+	public SmithingAnvilRecipe(Identifier id, String group, Ingredient hammer, Ingredient material, int materialCount, ItemStack output)
 	{
 		this.id = id;
 		this.group = group;
 		this.hammer = hammer;
 		this.material = material;
+		this.materialCount = materialCount;
 		this.output = output;
 		this.resultDollars = DollarParser.extractDollars(output.getNbt(), false);
 	}
@@ -43,6 +45,11 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 	public boolean matches(Inventory inventory, World world)
 	{
 		return this.hammer.test(inventory.getStack(0)) && this.material.test(inventory.getStack(1));
+	}
+
+	public boolean canAfford(Inventory inventory, World world)
+	{
+		return this.matches(inventory, world) && inventory.getStack(1).getCount() >= materialCount;
 	}
 
 	@Override
@@ -100,6 +107,11 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 		return this.group;
 	}
 
+	public int getMaterialCost()
+	{
+		return this.materialCount;
+	}
+
 	@Override
 	public ItemStack createIcon()
 	{
@@ -138,18 +150,20 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 			final String group = JsonHelper.getString(json, "group", "");
 			Ingredient hammer = Ingredient.fromJson(json.get("hammer"));
 			Ingredient material = Ingredient.fromJson(json.get("material"));
+			final int count = JsonHelper.getInt(json,"material_cost", 1);
 			ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
-			return new SmithingAnvilRecipe(id, group, hammer, material, output);
+			return new SmithingAnvilRecipe(id, group, hammer, material, count, output);
 		}
 
 		@Override
 		public SmithingAnvilRecipe read(Identifier id, PacketByteBuf buf)
 		{
-			final String group =buf.readString();
+			final String group = buf.readString();
 			Ingredient hammer = Ingredient.fromPacket(buf);
 			Ingredient material = Ingredient.fromPacket(buf);
+			final int count = buf.readInt();
 			ItemStack output = buf.readItemStack();
-			return new SmithingAnvilRecipe(id, group, hammer, material, output);
+			return new SmithingAnvilRecipe(id, group, hammer, material, count, output);
 		}
 
 		@Override
@@ -158,6 +172,7 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 			buf.writeString(recipe.group);
 			recipe.hammer.write(buf);
 			recipe.material.write(buf);
+			buf.writeInt(recipe.materialCount);
 			buf.writeItemStack(recipe.output);
 		}
 	}

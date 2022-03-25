@@ -1,0 +1,22 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:smithing_hammer",
+    "remainder": {
+      "item": "alloygery:smithing_hammer",
+      "data": {
+        "Damage": "$base.Damage + 5"
+      }
+    }
+  },
+  "ingredient": {
+    "item": "minecraft:diamond_pickaxe"
+  },
+  "result": {
+    "item": "alloygery:diamond_pickaxe_head",
+    "data": {
+      "$": "$ ingredient",
+      "PartMaterial": "alloygery:materials/diamond"
+    }
+  }
+}

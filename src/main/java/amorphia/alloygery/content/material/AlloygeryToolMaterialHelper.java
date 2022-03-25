@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 import java.util.Map;
 import java.util.Objects;
 
-public class AlloygeryMaterialHelper
+public class AlloygeryToolMaterialHelper
 {
 	public static final Map<AlloygeryMaterial, Ingredient> REPAIR_INGREDIENT_MAP = Maps.newIdentityHashMap();
 
@@ -23,29 +23,40 @@ public class AlloygeryMaterialHelper
 		return REPAIR_INGREDIENT_MAP.getOrDefault(headMaterial, Ingredient.EMPTY);
 	}
 
+	public static int getMiningLevel(NbtCompound compound)
+	{
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final int base = headMaterial.tool_base.mining_level + upgradeMaterial.tool_upgrade.mining_level;
+
+		return base;
+	}
+
 	public static int getMaxDurability(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
 		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
 
-		final int base = (int) (headMaterial.head_durability * bindingMaterial.durability_multiplier);
-		final int upgrade = (int) (base * upgradeMaterial.durability_multiplier + upgradeMaterial.head_durability);
+		final float base = headMaterial.tool_base.durability * bindingMaterial.tool_binding.durability_multiplier + bindingMaterial.tool_binding.durability;
+		final float handle = base * handleMaterial.tool_handle.durability_multiplier + handleMaterial.tool_handle.durability;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.durability_multiplier + upgradeMaterial.tool_upgrade.durability;
 
-		return upgrade;
+		return (int) upgrade;
 	}
 
 	public static int getEnchantability(NbtCompound compound)
 	{
-		ItemStack itemStack = ItemStack.fromNbt(compound);
-		boolean armor = itemStack.getItem() instanceof ArmorItem;
-
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
 		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
 
-		final float base = (armor ? headMaterial.armor_enchantability : headMaterial.tool_enchantability) * bindingMaterial.enchantability_multiplier;
-		final float upgrade = base * upgradeMaterial.enchantability_multiplier + (armor ? upgradeMaterial.armor_enchantability : upgradeMaterial.tool_enchantability);
+		final float base = headMaterial.tool_base.enchantability * bindingMaterial.tool_binding.enchantability_multiplier + bindingMaterial.tool_binding.enchantability;
+		final float handle = base * handleMaterial.tool_handle.enchantability_multiplier + handleMaterial.tool_handle.enchantability;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.enchantability_multiplier + upgradeMaterial.tool_upgrade.enchantability;
 
 		return (int) upgrade;
 	}
@@ -53,11 +64,27 @@ public class AlloygeryMaterialHelper
 	public static float getMiningSpeed(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
 		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
 
-		final float base = headMaterial.speed * handleMaterial.speed_multiplier;
-		final float upgrade = base * upgradeMaterial.speed_multiplier + upgradeMaterial.speed;
+		final float base = headMaterial.tool_base.mining_speed * bindingMaterial.tool_binding.mining_speed_multiplier + bindingMaterial.tool_binding.mining_speed;
+		final float handle = base * handleMaterial.tool_handle.mining_speed_multiplier + handleMaterial.tool_handle.mining_speed;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.mining_speed_multiplier + upgradeMaterial.tool_upgrade.mining_speed;
+
+		return upgrade;
+	}
+
+	public static float getAttackSpeed(NbtCompound compound)
+	{
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final float base = headMaterial.tool_base.attack_speed * bindingMaterial.tool_binding.attack_speed_multiplier + bindingMaterial.tool_binding.attack_speed;
+		final float handle = base * handleMaterial.tool_handle.attack_speed_multiplier + handleMaterial.tool_handle.attack_speed;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.attack_speed_multiplier + upgradeMaterial.tool_upgrade.attack_speed;
 
 		return upgrade;
 	}
@@ -65,24 +92,39 @@ public class AlloygeryMaterialHelper
 	public static float getAttackDamage(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
 		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
 
-		final float base = headMaterial.damage * handleMaterial.damage_multiplier;
-		final float upgrade = base * upgradeMaterial.damage_multiplier + upgradeMaterial.damage;
+		final float base = headMaterial.tool_base.attack_damage * bindingMaterial.tool_binding.attack_damage_multiplier + bindingMaterial.tool_binding.attack_damage;
+		final float handle = base * handleMaterial.tool_handle.attack_damage_multiplier + handleMaterial.tool_handle.attack_damage;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.attack_damage_multiplier + upgradeMaterial.tool_upgrade.attack_damage;
 
 		return upgrade;
 	}
 
-	public static int getMiningLevel(NbtCompound compound)
+	public static float getLuck(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
 
-		final int base = headMaterial.level;
-		final int upgrade = base + upgradeMaterial.level;
+		final float base = headMaterial.tool_base.luck * bindingMaterial.tool_binding.luck_multiplier + bindingMaterial.tool_binding.luck;
+		final float handle = base * handleMaterial.tool_handle.luck_multiplier + handleMaterial.tool_handle.luck;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.luck_multiplier + upgradeMaterial.tool_upgrade.luck;
 
 		return upgrade;
+	}
+
+	public static boolean isFireproof(NbtCompound compound)
+	{
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		return headMaterial.tool_base.fireproof || bindingMaterial.tool_binding.fireproof || handleMaterial.tool_handle.fireproof || upgradeMaterial.tool_upgrade.fireproof;
 	}
 
 	public static AlloygeryMaterial getMaterial(ItemStack stack, NBT_KEYS key, boolean setMaterialNbtIfAbsent)

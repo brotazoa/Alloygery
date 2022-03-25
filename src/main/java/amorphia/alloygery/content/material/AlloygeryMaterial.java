@@ -8,34 +8,18 @@ import java.lang.reflect.Type;
 
 public class AlloygeryMaterial
 {
-	public static final Gson GSON = new GsonBuilder().registerTypeAdapter(AlloygeryMaterial.class, new AlloygeryMaterialSerializer()).create();
+	public static final Gson GSON = new GsonBuilder().registerTypeAdapter(AlloygeryMaterial.class, new AlloygeryMaterialSerializer()).setPrettyPrinting().create();
 
 	public String name;
 	public String category = "misc";
 	public int color = 16253176;
 
-	public int level = 0;
-	public int tool_enchantability = 0;
-	public int armor_enchantability = 0;
+	public ToolPartSettings tool_base = new ToolPartSettings();
+	public ToolPartSettings tool_binding = new ToolPartSettings();
+	public ToolPartSettings tool_handle = new ToolPartSettings();
+	public ToolPartSettings tool_upgrade = new ToolPartSettings();
 
-	public int head_durability = 0;
-	public int armor_durability = 0;
-
-	public int helmet_armor = 0;
-	public int chestplate_armor = 0;
-	public int leggings_armor = 0;
-	public int boots_armor = 0;
-
-	public float speed = 0.0f;
-	public float damage = 0.0f;
-
-	public float toughness = 0.0f;
-	public float knockback = 0.0f;
-
-	public float durability_multiplier = 1.0f;
-	public float enchantability_multiplier = 1.0f;
-	public float speed_multiplier = 1.0f;
-	public float damage_multiplier = 1.0f;
+	public ArmorPartSettings armor = new ArmorPartSettings();
 
 	AlloygeryMaterial(String name)
 	{
@@ -57,23 +41,13 @@ public class AlloygeryMaterial
 
 		original.category = other.category;
 		original.color = other.color;
-		original.level = other.level;
-		original.tool_enchantability = other.tool_enchantability;
-		original.armor_enchantability = other.armor_enchantability;
-		original.head_durability = other.head_durability;
-		original.armor_durability = other.armor_durability;
-		original.helmet_armor = other.helmet_armor;
-		original.chestplate_armor = other.chestplate_armor;
-		original.leggings_armor = other.leggings_armor;
-		original.boots_armor = other.boots_armor;
-		original.speed = other.speed;
-		original.damage = other.damage;
-		original.toughness = other.toughness;
-		original.knockback = other.knockback;
-		original.durability_multiplier = other.durability_multiplier;
-		original.enchantability_multiplier = other.enchantability_multiplier;
-		original.speed_multiplier = other.speed_multiplier;
-		original.damage_multiplier = other.damage_multiplier;
+
+		original.tool_base.merge(other.tool_base);
+		original.tool_binding.merge(other.tool_binding);
+		original.tool_handle.merge(other.tool_handle);
+		original.tool_upgrade.merge(other.tool_upgrade);
+
+		original.armor.merge(other.armor);
 
 		return original;
 	}
@@ -85,6 +59,7 @@ public class AlloygeryMaterial
 		{
 			JsonObject jsonObject = json.getAsJsonObject();
 
+			//meta
 			if(!jsonObject.has("name"))
 				throw new JsonParseException("missing name");
 
@@ -96,68 +71,30 @@ public class AlloygeryMaterial
 			if(jsonObject.has("color"))
 				builder.color(jsonObject.get("color").getAsInt());
 
-			if(jsonObject.has("level"))
+			if(jsonObject.has("tool_base"))
 			{
-				String levelAsString = jsonObject.get("level").getAsString();
-				int levelFromString = ModMiningLevels.levelFromString(levelAsString);
-				if(levelFromString != -2)
-					builder.level(levelFromString);
-				else
-				{
-					builder.level(jsonObject.get("level").getAsInt());
-				}
+				builder.tool_base(ToolPartSettings.Serializer.deserialize(jsonObject.get("tool_base").getAsJsonObject()));
 			}
 
-			if(jsonObject.has("enchantability"))
-				builder.enchantability(jsonObject.get("enchantability").getAsInt());
+			if(jsonObject.has("tool_binding"))
+			{
+				builder.tool_binding(ToolPartSettings.Serializer.deserialize(jsonObject.get("tool_binding").getAsJsonObject()));
+			}
 
-			if(jsonObject.has("tool_enchantability"))
-				builder.tool_enchantability(jsonObject.get("tool_enchantability").getAsInt());
+			if(jsonObject.has("tool_handle"))
+			{
+				builder.tool_handle(ToolPartSettings.Serializer.deserialize(jsonObject.get("tool_handle").getAsJsonObject()));
+			}
 
-			if(jsonObject.has("armor_enchantability"))
-				builder.armor_enchantability(jsonObject.get("armor_enchantability").getAsInt());
+			if(jsonObject.has("tool_upgrade"))
+			{
+				builder.tool_upgrade(ToolPartSettings.Serializer.deserialize(jsonObject.get("tool_upgrade").getAsJsonObject()));
+			}
 
-			if(jsonObject.has("head_durability"))
-				builder.head_durability(jsonObject.get("head_durability").getAsInt());
-
-			if(jsonObject.has("armor_durability"))
-				builder.armor_durability(jsonObject.get("armor_durability").getAsInt());
-
-			if(jsonObject.has("helmet_armor"))
-				builder.helmet_armor(jsonObject.get("helmet_armor").getAsInt());
-
-			if(jsonObject.has("chestplate_armor"))
-				builder.chestplate_armor(jsonObject.get("chestplate_armor").getAsInt());
-
-			if(jsonObject.has("leggings_armor"))
-				builder.leggings_armor(jsonObject.get("leggings_armor").getAsInt());
-
-			if(jsonObject.has("boots_armor"))
-				builder.boots_armor(jsonObject.get("boots_armor").getAsInt());
-
-			if(jsonObject.has("speed"))
-				builder.speed(jsonObject.get("speed").getAsFloat());
-
-			if(jsonObject.has("damage"))
-				builder.damage(jsonObject.get("damage").getAsFloat());
-
-			if(jsonObject.has("toughness"))
-				builder.toughness(jsonObject.get("toughness").getAsFloat());
-
-			if(jsonObject.has("knockback"))
-				builder.knockback(jsonObject.get("knockback").getAsFloat());
-
-			if(jsonObject.has("durability_multiplier"))
-				builder.durability_multiplier(jsonObject.get("durability_multiplier").getAsFloat());
-
-			if(jsonObject.has("enchantability_multiplier"))
-				builder.enchantability_multiplier(jsonObject.get("enchantability_multiplier").getAsFloat());
-
-			if(jsonObject.has("speed_multiplier"))
-				builder.speed_multiplier(jsonObject.get("speed_multiplier").getAsFloat());
-
-			if(jsonObject.has("damage_multiplier"))
-				builder.damage_multiplier(jsonObject.get("damage_multiplier").getAsFloat());
+			if(jsonObject.has("armor"))
+			{
+				builder.armor(ArmorPartSettings.Serializer.deserialize(jsonObject.get("armor").getAsJsonObject()));
+			}
 
 			return builder.build();
 		}
@@ -170,23 +107,13 @@ public class AlloygeryMaterial
 			json.addProperty("name", material.name);
 			json.addProperty("category", material.category);
 			json.addProperty("color", material.color);
-			json.addProperty("level", material.level);
-			json.addProperty("tool_enchantability", material.tool_enchantability);
-			json.addProperty("armor_enchantability", material.armor_enchantability);
-			json.addProperty("head_durability", material.head_durability);
-			json.addProperty("armor_durability", material.armor_durability);
-			json.addProperty("helmet_armor", material.helmet_armor);
-			json.addProperty("chestplate_armor", material.chestplate_armor);
-			json.addProperty("leggings_armor", material.leggings_armor);
-			json.addProperty("boots_armor", material.boots_armor);
-			json.addProperty("speed", material.speed);
-			json.addProperty("damage", material.damage);
-			json.addProperty("toughness", material.toughness);
-			json.addProperty("knockback", material.knockback);
-			json.addProperty("durability_multiplier", material.durability_multiplier);
-			json.addProperty("enchantability_multiplier", material.enchantability_multiplier);
-			json.addProperty("speed_multiplier", material.speed_multiplier);
-			json.addProperty("damage_multiplier", material.damage_multiplier);
+
+			json.add("tool_base", ToolPartSettings.Serializer.serialize(material.tool_base));
+			json.add("tool_binding", ToolPartSettings.Serializer.serialize(material.tool_binding));
+			json.add("tool_handle", ToolPartSettings.Serializer.serialize(material.tool_handle));
+			json.add("tool_upgrade", ToolPartSettings.Serializer.serialize(material.tool_upgrade));
+
+			json.add("armor", ArmorPartSettings.Serializer.serialize(material.armor));
 
 			return json;
 		}
@@ -213,118 +140,451 @@ public class AlloygeryMaterial
 			return this;
 		}
 
-		public AlloygeryMaterialBuilder level(int level)
+		public AlloygeryMaterialBuilder tool_base(ToolPartSettings tool_base)
 		{
-			this.material.level = level;
+			this.material.tool_base = tool_base;
 			return this;
 		}
 
-		public AlloygeryMaterialBuilder enchantability(int enchantability)
+		public AlloygeryMaterialBuilder tool_binding(ToolPartSettings tool_binding)
 		{
-			this.material.tool_enchantability = enchantability;
-			this.material.armor_enchantability = enchantability;
+			this.material.tool_binding = tool_binding;
 			return this;
 		}
 
-		public AlloygeryMaterialBuilder tool_enchantability(int tool_enchantability)
+		public AlloygeryMaterialBuilder tool_handle(ToolPartSettings tool_handle)
 		{
-			this.material.tool_enchantability = tool_enchantability;
+			this.material.tool_handle = tool_handle;
 			return this;
 		}
 
-		public AlloygeryMaterialBuilder armor_enchantability(int armor_enchantability)
+		public AlloygeryMaterialBuilder tool_upgrade(ToolPartSettings tool_upgrade)
 		{
-			this.material.armor_enchantability = armor_enchantability;
+			this.material.tool_upgrade = tool_upgrade;
 			return this;
 		}
 
-		public AlloygeryMaterialBuilder head_durability(int head_durability)
+		public AlloygeryMaterialBuilder armor(ArmorPartSettings armor)
 		{
-			this.material.head_durability = head_durability;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder armor_durability(int armor_durability)
-		{
-			this.material.armor_durability = armor_durability;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder helmet_armor(int helmet_armor)
-		{
-			this.material.helmet_armor = helmet_armor;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder chestplate_armor(int chestplate_armor)
-		{
-			this.material.chestplate_armor = chestplate_armor;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder leggings_armor(int leggings_armor)
-		{
-			this.material.leggings_armor = leggings_armor;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder boots_armor(int boots_armor)
-		{
-			this.material.boots_armor = boots_armor;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder speed(float speed)
-		{
-			this.material.speed = speed;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder damage(float damage)
-		{
-			this.material.damage = damage;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder toughness(float toughness)
-		{
-			this.material.toughness = toughness;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder knockback(float knockback)
-		{
-			this.material.knockback = knockback;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder durability_multiplier(float durability_multiplier)
-		{
-			this.material.durability_multiplier = durability_multiplier;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder enchantability_multiplier(float enchantability_multiplier)
-		{
-			this.material.enchantability_multiplier = enchantability_multiplier;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder speed_multiplier(float speed_multiplier)
-		{
-			this.material.speed_multiplier = speed_multiplier;
-			return this;
-		}
-
-		public AlloygeryMaterialBuilder damage_multiplier(float damage_multiplier)
-		{
-			this.material.damage_multiplier = damage_multiplier;
+			this.material.armor = armor;
 			return this;
 		}
 
 		public AlloygeryMaterial build()
 		{
 			return this.material;
+		}
+	}
+
+	public static class ToolPartSettings
+	{
+		//base
+		public int mining_level = 0;
+		public int durability = 0;
+		public int enchantability = 0;
+		public float mining_speed = 0.0f;
+		public float attack_speed = 0.0f;
+		public float attack_damage = 0.0f;
+		public float luck = 0.0f;
+
+		//multiplier
+		public float durability_multiplier = 1.0f;
+		public float enchantability_multiplier = 1.0f;
+		public float mining_speed_multiplier = 1.0f;
+		public float attack_speed_multiplier = 1.0f;
+		public float attack_damage_multiplier = 1.0f;
+		public float luck_multiplier = 1.0f;
+
+		//
+		public boolean fireproof = false;
+		public boolean piglin_loved = false;
+
+		public void merge(ToolPartSettings other)
+		{
+			this.mining_level = other.mining_level;
+			this.durability = other.durability;
+			this.enchantability = other.enchantability;
+			this.mining_speed = other.mining_speed;
+			this.attack_speed = other.attack_speed;
+			this.attack_damage = other.attack_damage;
+			this.luck = other.luck;
+
+			this.durability_multiplier = other.durability_multiplier;
+			this.enchantability_multiplier = other.enchantability_multiplier;
+			this.mining_speed_multiplier = other.mining_speed_multiplier;
+			this.attack_speed_multiplier = other.attack_speed_multiplier;
+			this.attack_damage_multiplier = other.attack_damage_multiplier;
+			this.luck_multiplier = other.luck_multiplier;
+
+			this.fireproof = other.fireproof;
+			this.piglin_loved = other.piglin_loved;
+		}
+
+		public static class Serializer
+		{
+			public static ToolPartSettings deserialize(JsonObject jsonObject)
+			{
+				ToolPartSettingsBuilder builder = new ToolPartSettingsBuilder();
+
+				if(jsonObject.has("mining_level"))
+				{
+					String levelAsString = jsonObject.get("mining_level").getAsString();
+					int levelFromString = ModMiningLevels.levelFromString(levelAsString);
+					if(levelFromString != -2)
+						builder.mining_level(levelFromString);
+					else
+					{
+						builder.mining_level(jsonObject.get("mining_level").getAsInt());
+					}
+				}
+
+				if(jsonObject.has("durability"))
+					builder.durability(jsonObject.get("durability").getAsInt());
+
+				if(jsonObject.has("enchantability"))
+					builder.enchantability(jsonObject.get("enchantability").getAsInt());
+
+				if(jsonObject.has("mining_speed"))
+					builder.mining_speed(jsonObject.get("mining_speed").getAsFloat());
+
+				if(jsonObject.has("attack_speed"))
+					builder.attack_speed(jsonObject.get("attack_speed").getAsFloat());
+
+				if(jsonObject.has("attack_damage"))
+					builder.attack_damage(jsonObject.get("attack_damage").getAsFloat());
+
+				if(jsonObject.has("luck"))
+					builder.luck(jsonObject.get("luck").getAsFloat());
+
+				if(jsonObject.has("durability_multiplier"))
+					builder.durability_multiplier(jsonObject.get("durability_multiplier").getAsFloat());
+
+				if(jsonObject.has("enchantability_multiplier"))
+					builder.enchantability_multiplier(jsonObject.get("enchantability_multiplier").getAsFloat());
+
+				if(jsonObject.has("mining_speed_multiplier"))
+					builder.mining_speed_multiplier(jsonObject.get("mining_speed_multiplier").getAsFloat());
+
+				if(jsonObject.has("attack_speed_multiplier"))
+					builder.attack_speed_multiplier(jsonObject.get("attack_speed_multiplier").getAsFloat());
+
+				if(jsonObject.has("attack_damage_multiplier"))
+					builder.attack_damage_multiplier(jsonObject.get("attack_damage_multiplier").getAsFloat());
+
+				if(jsonObject.has("luck_multiplier"))
+					builder.luck_multiplier(jsonObject.get("luck_multiplier").getAsFloat());
+
+				if(jsonObject.has("fireproof"))
+					builder.fireproof(jsonObject.get("fireproof").getAsBoolean());
+
+				if(jsonObject.has("piglin_loved"))
+					builder.piglin_loved(jsonObject.get("piglin_loved").getAsBoolean());
+
+				return builder.build();
+			}
+
+			public static JsonElement serialize(ToolPartSettings settings)
+			{
+				JsonObject jsonObject = new JsonObject();
+
+				jsonObject.addProperty("mining_level", settings.mining_level);
+				jsonObject.addProperty("durability", settings.durability);
+				jsonObject.addProperty("enchantability", settings.enchantability);
+				jsonObject.addProperty("mining_speed", settings.mining_speed);
+				jsonObject.addProperty("attack_speed", settings.attack_speed);
+				jsonObject.addProperty("attack_damage", settings.attack_damage);
+				jsonObject.addProperty("luck", settings.luck);
+				jsonObject.addProperty("durability_multiplier", settings.durability_multiplier);
+				jsonObject.addProperty("enchantability_multiplier", settings.enchantability_multiplier);
+				jsonObject.addProperty("mining_speed_multiplier", settings.mining_speed_multiplier);
+				jsonObject.addProperty("attack_speed_multiplier", settings.attack_speed_multiplier);
+				jsonObject.addProperty("attack_damage_multiplier", settings.attack_damage_multiplier);
+				jsonObject.addProperty("luck_multiplier", settings.luck_multiplier);
+				jsonObject.addProperty("fireproof", settings.fireproof);
+				jsonObject.addProperty("piglin_loved", settings.piglin_loved);
+
+				return jsonObject;
+			}
+		}
+
+		public static class ToolPartSettingsBuilder
+		{
+			private final ToolPartSettings settings;
+
+			public ToolPartSettingsBuilder()
+			{
+				this.settings = new ToolPartSettings();
+			}
+
+			public ToolPartSettingsBuilder mining_level(int level)
+			{
+				this.settings.mining_level = level;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder durability(int durability)
+			{
+				this.settings.durability = durability;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder enchantability(int enchantability)
+			{
+				this.settings.enchantability = enchantability;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder mining_speed(float mining_speed)
+			{
+				this.settings.mining_speed = mining_speed;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder attack_speed(float attack_speed)
+			{
+				this.settings.attack_speed = attack_speed;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder attack_damage(float attack_damage)
+			{
+				this.settings.attack_damage = attack_damage;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder luck(float luck)
+			{
+				this.settings.luck = luck;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder durability_multiplier(float durability_multiplier)
+			{
+				this.settings.durability_multiplier = durability_multiplier;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder enchantability_multiplier(float enchantability_multiplier)
+			{
+				this.settings.enchantability_multiplier = enchantability_multiplier;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder mining_speed_multiplier(float mining_speed_multiplier)
+			{
+				this.settings.mining_speed_multiplier = mining_speed_multiplier;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder attack_speed_multiplier(float attack_speed_multiplier)
+			{
+				this.settings.attack_speed_multiplier = attack_speed_multiplier;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder attack_damage_multiplier(float attack_damage_multiplier)
+			{
+				this.settings.attack_damage_multiplier = attack_damage_multiplier;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder luck_multiplier(float luck_multiplier)
+			{
+				this.settings.luck_multiplier = luck_multiplier;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder fireproof(boolean fireproof)
+			{
+				this.settings.fireproof = fireproof;
+				return this;
+			}
+
+			public ToolPartSettingsBuilder piglin_loved(boolean piglin_loved)
+			{
+				this.settings.piglin_loved = piglin_loved;
+				return this;
+			}
+
+			public ToolPartSettings build()
+			{
+				return this.settings;
+			}
+		}
+	}
+
+	public static class ArmorPartSettings
+	{
+		public int durability = 0;
+		public int helmet = 0;
+		public int chestplate = 0;
+		public int leggings = 0;
+		public int boots = 0;
+		public int enchantability = 0;
+		public float toughness = 0.0f;
+		public float knockback_resistance = 0.0f;
+
+		public boolean fireproof = false;
+		public boolean piglin_loved = false;
+		public boolean freeze_immune = false;
+
+		public void merge(ArmorPartSettings other)
+		{
+			this.durability = other.durability;
+			this.helmet = other.helmet;
+			this.chestplate = other.chestplate;
+			this.leggings = other.leggings;
+			this.boots = other.boots;
+			this.enchantability = other.enchantability;
+			this.toughness = other.toughness;
+			this.knockback_resistance = other.knockback_resistance;
+
+			this.fireproof = other.fireproof;
+			this.piglin_loved = other.piglin_loved;
+			this.freeze_immune = other.freeze_immune;
+		}
+
+		public static class ArmorPartSettingsBuilder
+		{
+			private final ArmorPartSettings settings;
+
+			public ArmorPartSettingsBuilder()
+			{
+				this.settings = new ArmorPartSettings();
+			}
+
+			public ArmorPartSettingsBuilder durability(int durability)
+			{
+				this.settings.durability = durability;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder helmet(int helmet)
+			{
+				this.settings.helmet = helmet;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder chestplate(int chestplate)
+			{
+				this.settings.chestplate = chestplate;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder leggings(int leggings)
+			{
+				this.settings.leggings = leggings;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder boots(int boots)
+			{
+				this.settings.boots = boots;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder enchantability(int enchantability)
+			{
+				this.settings.enchantability = enchantability;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder toughness(float toughness)
+			{
+				this.settings.toughness = toughness;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder knockback_resistance(float knockback_resistance)
+			{
+				this.settings.knockback_resistance = knockback_resistance;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder fireproof(boolean fireproof)
+			{
+				this.settings.fireproof = fireproof;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder piglin_loved(boolean piglin_loved)
+			{
+				this.settings.piglin_loved = piglin_loved;
+				return this;
+			}
+
+			public ArmorPartSettingsBuilder freeze_immune(boolean freeze_immune)
+			{
+				this.settings.freeze_immune = freeze_immune;
+				return this;
+			}
+
+			public ArmorPartSettings build()
+			{
+				return this.settings;
+			}
+		}
+
+		public static class Serializer
+		{
+			public static ArmorPartSettings deserialize(JsonObject jsonObject)
+			{
+				ArmorPartSettingsBuilder builder = new ArmorPartSettingsBuilder();
+
+				if(jsonObject.has("durability"))
+					builder.durability(jsonObject.get("durability").getAsInt());
+
+				if(jsonObject.has("helmet"))
+					builder.helmet(jsonObject.get("helmet").getAsInt());
+
+				if(jsonObject.has("chestplate"))
+					builder.chestplate(jsonObject.get("chestplate").getAsInt());
+
+				if(jsonObject.has("leggings"))
+					builder.leggings(jsonObject.get("leggings").getAsInt());
+
+				if(jsonObject.has("boots"))
+					builder.boots(jsonObject.get("boots").getAsInt());
+
+				if(jsonObject.has("enchantability"))
+					builder.enchantability(jsonObject.get("enchantability").getAsInt());
+
+				if(jsonObject.has("toughness"))
+					builder.toughness(jsonObject.get("toughness").getAsFloat());
+
+				if(jsonObject.has("knockback_resistance"))
+					builder.knockback_resistance(jsonObject.get("knockback_resistance").getAsFloat());
+
+				if(jsonObject.has("fireproof"))
+					builder.fireproof(jsonObject.get("fireproof").getAsBoolean());
+
+				if(jsonObject.has("piglin_loved"))
+					builder.piglin_loved(jsonObject.get("piglin_loved").getAsBoolean());
+
+				if(jsonObject.has("freeze_immune"))
+					builder.freeze_immune(jsonObject.get("freeze_immune").getAsBoolean());
+
+				return builder.build();
+			}
+
+			public static JsonElement serialize(ArmorPartSettings settings)
+			{
+				JsonObject jsonObject = new JsonObject();
+
+				jsonObject.addProperty("durability", settings.durability);
+				jsonObject.addProperty("helmet", settings.helmet);
+				jsonObject.addProperty("chestplate", settings.chestplate);
+				jsonObject.addProperty("leggings", settings.leggings);
+				jsonObject.addProperty("boots", settings.boots);
+				jsonObject.addProperty("enchantability", settings.enchantability);
+				jsonObject.addProperty("toughness", settings.toughness);
+				jsonObject.addProperty("knockback_resistance", settings.knockback_resistance);
+				jsonObject.addProperty("fireproof", settings.fireproof);
+				jsonObject.addProperty("piglin_loved", settings.piglin_loved);
+				jsonObject.addProperty("freeze_immune", settings.freeze_immune);
+
+				return jsonObject;
+			}
 		}
 	}
 }

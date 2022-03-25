@@ -3,7 +3,7 @@ package amorphia.alloygery.registry;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.*;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.data.GeneratedModelBuilder;
 import com.google.common.collect.Lists;
@@ -42,7 +42,9 @@ public class ModItems
 			AlloygeryMaterials.IRON,
 			AlloygeryMaterials.GOLD,
 			AlloygeryMaterials.ANTANIUM,
+			AlloygeryMaterials.DIAMOND,
 			AlloygeryMaterials.STEEL,
+			AlloygeryMaterials.NETHERITE,
 			AlloygeryMaterials.NICKEL,
 			AlloygeryMaterials.INVAR,
 			AlloygeryMaterials.CONSTANTAN,
@@ -91,7 +93,9 @@ public class ModItems
 			AlloygeryMaterials.IRON,
 			AlloygeryMaterials.GOLD,
 			AlloygeryMaterials.ANTANIUM,
+			AlloygeryMaterials.DIAMOND,
 			AlloygeryMaterials.STEEL,
+			AlloygeryMaterials.NETHERITE,
 			AlloygeryMaterials.NICKEL,
 			AlloygeryMaterials.INVAR,
 			AlloygeryMaterials.CONSTANTAN,
@@ -204,7 +208,7 @@ public class ModItems
 		if(!HAS_VANILLA_CRAFTING_MATERIALS.contains(material))
 		{
 			Item ingot = putGeneratedItem(material.name + "_ingot", new AlloygeryCraftingItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS)), () -> GeneratedModelBuilder.createMaterialItemModelJson("ingot"));
-			AlloygeryMaterialHelper.REPAIR_INGREDIENT_MAP.put(material, Ingredient.ofItems(ingot));
+			AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.put(material, Ingredient.ofItems(ingot));
 
 			putGeneratedItem(material.name + "_nugget", new AlloygeryCraftingItem(material, new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_MATERIALS)), () -> GeneratedModelBuilder.createMaterialItemModelJson("nugget"));
 		}
@@ -351,8 +355,8 @@ public class ModItems
 		register("gear_tab_item", GEAR_TAB_ITEM);
 		register("parts_tab_item", PARTS_TAB_ITEM);
 
-		AlloygeryMaterialHelper.REPAIR_INGREDIENT_MAP.put(AlloygeryMaterials.IRON, Ingredient.ofItems(Items.IRON_INGOT));
-		AlloygeryMaterialHelper.REPAIR_INGREDIENT_MAP.put(AlloygeryMaterials.GOLD, Ingredient.ofItems(Items.GOLD_INGOT));
+		AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.put(AlloygeryMaterials.IRON, Ingredient.ofItems(Items.IRON_INGOT));
+		AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.put(AlloygeryMaterials.GOLD, Ingredient.ofItems(Items.GOLD_INGOT));
 	}
 
 	private static void register(String path, Item item)

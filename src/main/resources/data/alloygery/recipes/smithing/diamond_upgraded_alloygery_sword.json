@@ -21,7 +21,7 @@
     "item": "alloygery:diamond_upgraded_alloygery_sword",
     "data": {
       "$": "$ base",
-      "UpgradeMaterial": "alloygery:materials/diamond_upgraded"
+      "UpgradeMaterial": "alloygery:materials/diamond"
     }
   }
 }

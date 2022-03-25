@@ -10,7 +10,8 @@
     "item": "alloygery:alloygery_axe",
     "data": {
       "deny": {
-        "UpgradeMaterial": ""
+        "UpgradeMaterial": "",
+        "HeadMaterial": "alloygery:materials/netherite"
       }
     }
   },
@@ -21,7 +22,7 @@
     "item": "alloygery:netherite_upgraded_alloygery_axe",
     "data": {
       "$": "$ base",
-      "UpgradeMaterial": "alloygery:materials/netherite_upgraded"
+      "UpgradeMaterial": "alloygery:materials/netherite"
     }
   }
 }

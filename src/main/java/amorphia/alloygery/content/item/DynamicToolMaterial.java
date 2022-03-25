@@ -1,7 +1,7 @@
 package amorphia.alloygery.content.item;
 
 import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -17,36 +17,36 @@ public class DynamicToolMaterial implements ToolMaterial
 	@Override
 	public int getDurability()
 	{
-		return alloygeryMaterial.head_durability;
+		return alloygeryMaterial.tool_base.durability;
 	}
 
 	@Override
 	public float getMiningSpeedMultiplier()
 	{
-		return alloygeryMaterial.speed;
+		return alloygeryMaterial.tool_base.mining_speed;
 	}
 
 	@Override
 	public float getAttackDamage()
 	{
-		return alloygeryMaterial.damage;
+		return alloygeryMaterial.tool_base.attack_damage;
 	}
 
 	@Override
 	public int getMiningLevel()
 	{
-		return alloygeryMaterial.level;
+		return alloygeryMaterial.tool_base.mining_level;
 	}
 
 	@Override
 	public int getEnchantability()
 	{
-		return alloygeryMaterial.tool_enchantability;
+		return alloygeryMaterial.tool_base.enchantability;
 	}
 
 	@Override
 	public Ingredient getRepairIngredient()
 	{
-		return AlloygeryMaterialHelper.REPAIR_INGREDIENT_MAP.get(alloygeryMaterial);
+		return AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.get(alloygeryMaterial);
 	}
 }

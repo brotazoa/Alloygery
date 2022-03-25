@@ -138,6 +138,12 @@
   "item.alloygery.antanium_handle": "Antanium Handle",
   "item.alloygery.antanium_sword_guard": "Antanium Sword Guard",
 
+  "item.alloygery.diamond_axe_head": "Diamond Axe Head",
+  "item.alloygery.diamond_hoe_head": "Diamond Hoe Head",
+  "item.alloygery.diamond_pickaxe_head": "Diamond Pickaxe Head",
+  "item.alloygery.diamond_shovel_head": "Diamond Shovel Head",
+  "item.alloygery.diamond_sword_blade": "Diamond Sword Blade",
+
   "item.alloygery.steel_axe_head": "Steel Axe Head",
   "item.alloygery.steel_hoe_head": "Steel Hoe Head",
   "item.alloygery.steel_pickaxe_head": "Steel Pickaxe Head",
@@ -146,6 +152,12 @@
   "item.alloygery.steel_binding": "Steel Binding",
   "item.alloygery.steel_handle": "Steel Handle",
   "item.alloygery.steel_sword_guard": "Steel Sword Guard",
+
+  "item.alloygery.netherite_axe_head": "Netherite Axe Head",
+  "item.alloygery.netherite_hoe_head": "Netherite Hoe Head",
+  "item.alloygery.netherite_pickaxe_head": "Netherite Pickaxe Head",
+  "item.alloygery.netherite_shovel_head": "Netherite Shovel Head",
+  "item.alloygery.netherite_sword_blade": "Netherite Sword Blade",
 
   "item.alloygery.nickel_axe_head": "Nickel Axe Head",
   "item.alloygery.nickel_hoe_head": "Nickel Hoe Head",
@@ -388,17 +400,21 @@
   "tooltip.alloygery.ctrl_for_details": "Hold Ctrl For More Details",
   "tooltip.alloygery.when_used_in_craft": "When Used To Craft A Tool",
 
-  "tooltip.alloygery.info.uses": "Durability",
-  "tooltip.alloygery.info.level": "Mining Level",
-  "tooltip.alloygery.info.speed": "Mining Speed",
-  "tooltip.alloygery.info.damage": "Attack Damage",
+  "tooltip.alloygery.info.durability": "Durability",
+  "tooltip.alloygery.info.mining_level": "Mining Level",
+  "tooltip.alloygery.info.mining_speed": "Mining Speed",
+  "tooltip.alloygery.info.attack_speed": "Attack Speed",
+  "tooltip.alloygery.info.attack_damage": "Attack Damage",
   "tooltip.alloygery.info.enchantability": "Enchantability",
+  "tooltip.alloygery.info.luck": "Luck",
   "tooltip.alloygery.info.fireproof": "Fireproof",
 
-  "tooltip.alloygery.info.uses_multiplier": "Durability Multiplier",
-  "tooltip.alloygery.info.speed_multiplier": "Mining Speed Multiplier",
-  "tooltip.alloygery.info.damage_multiplier": "Attack Damage Multiplier",
+  "tooltip.alloygery.info.durability_multiplier": "Durability Multiplier",
+  "tooltip.alloygery.info.mining_speed_multiplier": "Mining Speed Multiplier",
+  "tooltip.alloygery.info.attack_damage_multiplier": "Attack Damage Multiplier",
+  "tooltip.alloygery.info.attack_speed_multiplier": "Attack Speed Multiplier",
   "tooltip.alloygery.info.enchantability_multiplier": "Enchantability Multiplier",
+  "tooltip.alloygery.info.luck_multiplier": "Luck Multiplier",
 
   "tooltip.alloygery.info.head": "Head",
   "tooltip.alloygery.info.binding": "Binding",
@@ -416,7 +432,7 @@
 
   "tooltip.alloygery.upgrade.diamond_upgraded": "Diamond Tipped",
   "tooltip.alloygery.upgrade.emerald_upgraded": "Emerald Embossed",
-  "tooltip.alloygery.upgrade.netherite_upgraded": "Netherite Platted",
+  "tooltip.alloygery.upgrade.netherite_upgraded": "Netherite Plated",
 
   "rei.alloygery.alloying": "Alloy Kiln",
   "rei.alloygery.blast_alloying": "Blast Alloy Kiln",

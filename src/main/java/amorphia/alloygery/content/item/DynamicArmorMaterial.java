@@ -1,7 +1,7 @@
 package amorphia.alloygery.content.item;
 
 import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -22,7 +22,7 @@ public class DynamicArmorMaterial implements ArmorMaterial
 	@Override
 	public int getDurability(EquipmentSlot slot)
 	{
-		return BASE_DURABILITY[slot.getEntitySlotId()] * alloygeryMaterial.armor_durability;
+		return BASE_DURABILITY[slot.getEntitySlotId()] * alloygeryMaterial.armor.durability;
 	}
 
 	@Override
@@ -30,10 +30,10 @@ public class DynamicArmorMaterial implements ArmorMaterial
 	{
 		return switch (slot)
 		{
-			case HEAD -> alloygeryMaterial.helmet_armor;
-			case CHEST -> alloygeryMaterial.chestplate_armor;
-			case LEGS -> alloygeryMaterial.leggings_armor;
-			case FEET -> alloygeryMaterial.boots_armor;
+			case HEAD -> alloygeryMaterial.armor.helmet;
+			case CHEST -> alloygeryMaterial.armor.chestplate;
+			case LEGS -> alloygeryMaterial.armor.leggings;
+			case FEET -> alloygeryMaterial.armor.boots;
 			default -> 0;
 		};
 	}
@@ -41,7 +41,7 @@ public class DynamicArmorMaterial implements ArmorMaterial
 	@Override
 	public int getEnchantability()
 	{
-		return alloygeryMaterial.armor_enchantability;
+		return alloygeryMaterial.armor.enchantability;
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class DynamicArmorMaterial implements ArmorMaterial
 	@Override
 	public Ingredient getRepairIngredient()
 	{
-		return AlloygeryMaterialHelper.REPAIR_INGREDIENT_MAP.get(alloygeryMaterial);
+		return AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.get(alloygeryMaterial);
 	}
 
 	@Override
@@ -65,12 +65,12 @@ public class DynamicArmorMaterial implements ArmorMaterial
 	@Override
 	public float getToughness()
 	{
-		return alloygeryMaterial.toughness;
+		return alloygeryMaterial.armor.toughness;
 	}
 
 	@Override
 	public float getKnockbackResistance()
 	{
-		return alloygeryMaterial.knockback;
+		return alloygeryMaterial.armor.knockback_resistance;
 	}
 }

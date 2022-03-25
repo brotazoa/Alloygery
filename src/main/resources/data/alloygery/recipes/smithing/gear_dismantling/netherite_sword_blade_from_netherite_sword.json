@@ -1,0 +1,22 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:smithing_hammer",
+    "remainder": {
+      "item": "alloygery:smithing_hammer",
+      "data": {
+        "Damage": "$base.Damage + 5"
+      }
+    }
+  },
+  "ingredient": {
+    "item": "minecraft:netherite_sword"
+  },
+  "result": {
+    "item": "alloygery:netherite_sword_blade",
+    "data": {
+      "$": "$ ingredient",
+      "PartMaterial": "alloygery:materials/netherite"
+    }
+  }
+}

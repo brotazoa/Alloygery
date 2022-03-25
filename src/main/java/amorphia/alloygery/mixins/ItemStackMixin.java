@@ -1,14 +1,12 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.IAlloygeryMeleeWeapon;
 import amorphia.alloygery.content.item.IAlloygeryTool;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -45,7 +43,7 @@ public abstract class ItemStackMixin
 	{
 		if (getItem() instanceof IAlloygeryTool)
 		{
-			cir.setReturnValue(AlloygeryMaterialHelper.getMaxDurability(nbt));
+			cir.setReturnValue(AlloygeryToolMaterialHelper.getMaxDurability(nbt));
 			cir.cancel();
 		}
 	}
@@ -57,7 +55,7 @@ public abstract class ItemStackMixin
 		{
 			if(getItem() instanceof MiningToolItem && state.isIn(((MiningToolItemAccessor) getItem()).getEffectiveBlocks()))
 			{
-				cir.setReturnValue(AlloygeryMaterialHelper.getMiningSpeed(nbt));
+				cir.setReturnValue(AlloygeryToolMaterialHelper.getMiningSpeed(nbt));
 				cir.cancel();
 			}
 		}
@@ -68,7 +66,7 @@ public abstract class ItemStackMixin
 	{
 		if (getItem() instanceof IAlloygeryTool && getItem() instanceof MiningToolItem)
 		{
-			final int level = AlloygeryMaterialHelper.getMiningLevel(nbt);
+			final int level = AlloygeryToolMaterialHelper.getMiningLevel(nbt);
 			cir.setReturnValue(level >= MiningLevelManager.getRequiredMiningLevel(state));
 			cir.cancel();
 		}
@@ -79,8 +77,8 @@ public abstract class ItemStackMixin
 	{
 		if(getItem() instanceof IAlloygeryTool alloygeryTool && slot == EquipmentSlot.MAINHAND && nbt != null)
 		{
-			final float damage = AlloygeryMaterialHelper.getAttackDamage(nbt) + alloygeryTool.getAttackDamageModifier();
-			final float speed = alloygeryTool.getAttackSpeedModifier();
+			final float damage = AlloygeryToolMaterialHelper.getAttackDamage(nbt) + alloygeryTool.getAttackDamageModifier();
+			final float speed = AlloygeryToolMaterialHelper.getAttackSpeed(nbt) + alloygeryTool.getAttackSpeedModifier();
 
 			ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
 			builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(((ItemAccessor) getItem()).getAttackDamageModifierId(),

@@ -1,12 +1,13 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.content.item.IAlloygeryTool;
+import amorphia.alloygery.content.material.AlloygeryArmorMaterialHelper;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,8 +23,13 @@ public abstract class ItemEntityMixin
 	@Inject(method = "isFireImmune", at = @At("HEAD"), cancellable = true)
 	public void isFireImmune(CallbackInfoReturnable<Boolean> cir)
 	{
-		AlloygeryMaterial upgradeMaterial = AlloygeryMaterialHelper.getUpgradeMaterial(getStack());
-		if(upgradeMaterial == AlloygeryMaterials.NETHERITE_UPGRADE)
+		if(getStack().getItem() instanceof IAlloygeryTool && AlloygeryToolMaterialHelper.isFireproof(getStack().getNbt()))
+		{
+			cir.setReturnValue(true);
+			cir.cancel();
+		}
+
+		if(getStack().getItem() instanceof ArmorItem && AlloygeryArmorMaterialHelper.isFireproof(getStack().getNbt()))
 		{
 			cir.setReturnValue(true);
 			cir.cancel();

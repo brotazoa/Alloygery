@@ -1,20 +1,15 @@
 package amorphia.alloygery.content.item;
 
 import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.registry.ModItems;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class AlloygeryHoeItem extends HoeItem implements IAlloygeryTool
 {
@@ -64,9 +59,9 @@ public class AlloygeryHoeItem extends HoeItem implements IAlloygeryTool
 		{
 			ModItems.MAKE_TOOL_HEADS_FOR_MATERIAL.forEach(material -> {
 				ItemStack stack = new ItemStack(this);
-				AlloygeryMaterialHelper.setHeadMaterial(stack, material);
-				AlloygeryMaterialHelper.setBindingMaterial(stack, material);
-				AlloygeryMaterialHelper.setHandleMaterial(stack, AlloygeryMaterials.VANILLA_STICK);
+				AlloygeryToolMaterialHelper.setHeadMaterial(stack, material);
+				AlloygeryToolMaterialHelper.setBindingMaterial(stack, material);
+				AlloygeryToolMaterialHelper.setHandleMaterial(stack, AlloygeryMaterials.VANILLA_STICK);
 				stacks.add(stack);
 			});
 		}
@@ -75,7 +70,7 @@ public class AlloygeryHoeItem extends HoeItem implements IAlloygeryTool
 	@Override
 	public boolean canRepair(ItemStack stack, ItemStack ingredient)
 	{
-		return AlloygeryMaterialHelper.getRepairIngredient(stack).test(ingredient) || super.canRepair(stack, ingredient);
+		return AlloygeryToolMaterialHelper.getRepairIngredient(stack).test(ingredient);
 	}
 
 	@Override

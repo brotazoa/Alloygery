@@ -21,7 +21,7 @@
     "item": "alloygery:emerald_upgraded_alloygery_sword",
     "data": {
       "$": "$ base",
-      "UpgradeMaterial": "alloygery:materials/emerald_upgraded"
+      "UpgradeMaterial": "alloygery:materials/emerald"
     }
   }
 }

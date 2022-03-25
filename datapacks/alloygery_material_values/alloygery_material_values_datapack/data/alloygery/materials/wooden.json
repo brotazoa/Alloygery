@@ -1,0 +1,22 @@
+{
+  "name": "wooden",
+  "category": "wood",
+  "color": 6835742,
+  "tool_handle": {
+    "mining_level": 0,
+    "durability": 0,
+    "enchantability": 0,
+    "mining_speed": 0.0,
+    "attack_speed": 0.0,
+    "attack_damage": 0.0,
+    "luck": 0.0,
+    "durability_multiplier": 1.0,
+    "enchantability_multiplier": 1.0,
+    "mining_speed_multiplier": 1.0,
+    "attack_speed_multiplier": 1.0,
+    "attack_damage_multiplier": 1.0,
+    "luck_multiplier": 1.0,
+    "fireproof": false,
+    "piglin_loved": false
+  }
+}

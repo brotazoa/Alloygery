@@ -21,7 +21,7 @@
     "item": "alloygery:emerald_upgraded_alloygery_axe",
     "data": {
       "$": "$ base",
-      "UpgradeMaterial": "alloygery:materials/emerald_upgraded"
+      "UpgradeMaterial": "alloygery:materials/emerald"
     }
   }
 }

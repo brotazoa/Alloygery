@@ -1,8 +1,7 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.IAlloygeryTool;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.item.ItemStack;
@@ -22,7 +21,7 @@ public class EnchantmentHelperMixin
 	{
 		if(stack.getItem() instanceof IAlloygeryTool alloygeryTool)
 		{
-			alloygeryTool.setCalculatedEnchantability(AlloygeryMaterialHelper.getEnchantability(stack.getNbt()));
+			alloygeryTool.setCalculatedEnchantability(AlloygeryToolMaterialHelper.getEnchantability(stack.getNbt()));
 		}
 	}
 
@@ -31,7 +30,7 @@ public class EnchantmentHelperMixin
 	{
 		if(stack.getItem() instanceof IAlloygeryTool alloygeryTool)
 		{
-			alloygeryTool.setCalculatedEnchantability(AlloygeryMaterialHelper.getEnchantability(stack.getNbt()));
+			alloygeryTool.setCalculatedEnchantability(AlloygeryToolMaterialHelper.getEnchantability(stack.getNbt()));
 		}
 	}
 }

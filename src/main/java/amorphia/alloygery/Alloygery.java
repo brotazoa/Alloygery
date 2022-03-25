@@ -1,6 +1,7 @@
 package amorphia.alloygery;
 
 import amorphia.alloygery.config.AlloygeryConfig;
+import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.data.AlloygeryMaterialDataLoader;
 import amorphia.alloygery.registry.*;
@@ -10,12 +11,19 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Alloygery implements ModInitializer, ClientModInitializer
 {

@@ -1,12 +1,9 @@
 package amorphia.alloygery.content.screen;
 
 import amorphia.alloygery.content.item.BaseCraftingToolItem;
-import amorphia.alloygery.content.item.IMaterialItem;
-import amorphia.alloygery.content.material.AlloygeryMaterialHelper;
 import amorphia.alloygery.content.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.registry.ModBlocks;
 import amorphia.alloygery.registry.ModScreens;
-import de.siphalor.nbtcrafting.api.RecipeUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -19,12 +16,10 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
-import java.util.Optional;
 
 public class SmithingAnvilScreenHandler extends ScreenHandler
 {

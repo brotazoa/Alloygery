@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:tool_render_parts/axe_handle_template",
+    "layer1": "alloygery:tool_render_parts/axe_head_template",
+    "layer2": "alloygery:tool_render_parts/axe_binding_template",
+    "layer3": "alloygery:tool_render_parts/plated_axe"
+  }
+}

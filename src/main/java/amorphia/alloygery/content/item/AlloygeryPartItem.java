@@ -99,6 +99,8 @@ public class AlloygeryPartItem extends Item implements IMaterialItem
 
 			if(settings.luck_multiplier != 1.0f)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.luck_multiplier").append(new LiteralText(": " + settings.luck_multiplier)).formatted(Formatting.GRAY));
+
+			if(settings.fireproof) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
 		}
 	}
 }

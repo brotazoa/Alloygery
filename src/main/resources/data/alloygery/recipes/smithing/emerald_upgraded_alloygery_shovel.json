@@ -18,7 +18,7 @@
     "tag": "c:emeralds"
   },
   "result": {
-    "item": "alloygery:emerald_upgraded_alloygery_shovel",
+    "item": "alloygery:embossed_alloygery_shovel",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/emerald"

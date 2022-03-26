@@ -65,10 +65,35 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 		ModStatistics.register();
 
 		ModNetworking.register();
+
+//		//FIXME: remove this
+//		dumpMaterialData();
 	}
 
 	public static Identifier identifier(String path)
 	{
 		return new Identifier(MOD_ID, path);
 	}
+
+//	//FIXME: remove this
+//	//this is just for development purposes, so I don't have to handwrite the files
+//	private static void dumpMaterialData()
+//	{
+//		AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
+//			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+//
+//			Path materialPath = FabricLoader.getInstance().getConfigDir().resolve(id.getNamespace() + "/" + id.getPath() + ".json");
+//			try
+//			{
+//				Files.createDirectories(materialPath.getParent());
+//				BufferedWriter writer = Files.newBufferedWriter(materialPath);
+//				AlloygeryMaterial.GSON.toJson(material, writer);
+//				writer.close();
+//			}
+//			catch (IOException e)
+//			{
+//				e.printStackTrace();
+//			}
+//		});
+//	}
 }

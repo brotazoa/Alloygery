@@ -19,7 +19,7 @@
     "tag": "c:diamonds"
   },
   "result": {
-    "item": "alloygery:diamond_upgraded_alloygery_axe",
+    "item": "alloygery:tipped_alloygery_axe",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/diamond"

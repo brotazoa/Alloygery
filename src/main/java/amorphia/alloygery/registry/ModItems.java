@@ -304,29 +304,29 @@ public class ModItems
 		MAKE_TOOL_PARTS_FOR_MATERIAL.forEach(ModItems::makeToolParts);
 
 		ALLOYGERY_ITEMS.put("alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_axe", new AlloygeryAxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
 
 		ALLOYGERY_ITEMS.put("alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_hoe", new AlloygeryHoeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
 
 		ALLOYGERY_ITEMS.put("alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
 
 		ALLOYGERY_ITEMS.put("alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_shovel", new AlloygeryShovelItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
 
 		ALLOYGERY_ITEMS.put("alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("diamond_upgraded_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("emerald_upgraded_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("netherite_upgraded_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_sword", new AlloygerySwordItem(AlloygeryMaterials.UNKNOWN, new Item.Settings().maxCount(1).maxDamage(1)));
 
 		//MAKE_TOOL_PARTS_FOR_MATERIAL.forEach(ModItems::makeTools);
 		MAKE_ARMOR_FOR_MATERIAL.forEach(ModItems::makeArmor);

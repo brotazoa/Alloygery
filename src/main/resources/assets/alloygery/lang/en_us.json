@@ -282,6 +282,12 @@
   "item.alloygery.cupronickel_leggings": "Cupronickel Leggings",
   "item.alloygery.cupronickel_boots": "Cupronickel Boots",
 
+  "item.alloygery.diamond_axe": "Diamond Axe",
+  "item.alloygery.diamond_hoe": "Diamond Hoe",
+  "item.alloygery.diamond_pickaxe": "Diamond Pickaxe",
+  "item.alloygery.diamond_shovel": "Diamond Shovel",
+  "item.alloygery.diamond_sword": "Diamond Sword",
+
   "item.alloygery.gold_axe": "Gold Axe",
   "item.alloygery.gold_hoe": "Gold Hoe",
   "item.alloygery.gold_pickaxe": "Gold Pickaxe",
@@ -314,6 +320,12 @@
   "item.alloygery.iron_chestplate": "Iron Chestplate",
   "item.alloygery.iron_leggings": "Iron Leggings",
   "item.alloygery.iron_boots": "Iron Boots",
+
+  "item.alloygery.netherite_axe": "Netherite Axe",
+  "item.alloygery.netherite_hoe": "Netherite Hoe",
+  "item.alloygery.netherite_pickaxe": "Netherite Pickaxe",
+  "item.alloygery.netherite_shovel": "Netherite Shovel",
+  "item.alloygery.netherite_sword": "Netherite Sword",
 
   "item.alloygery.nickel_axe": "Nickel Axe",
   "item.alloygery.nickel_hoe": "Nickel Hoe",
@@ -430,9 +442,9 @@
   "tooltip.alloygery.info.level.enum_4": "Titanium",
   "tooltip.alloygery.info.level.enum_5": "Titanium+",
 
-  "tooltip.alloygery.upgrade.diamond_upgraded": "Diamond Tipped",
-  "tooltip.alloygery.upgrade.emerald_upgraded": "Emerald Embossed",
-  "tooltip.alloygery.upgrade.netherite_upgraded": "Netherite Plated",
+  "tooltip.alloygery.upgrade.diamond": "Diamond Tipped",
+  "tooltip.alloygery.upgrade.emerald": "Emerald Embossed",
+  "tooltip.alloygery.upgrade.netherite": "Netherite Plated",
 
   "rei.alloygery.alloying": "Alloy Kiln",
   "rei.alloygery.blast_alloying": "Blast Alloy Kiln",
@@ -451,6 +463,9 @@
   "text.config.alloygery.option.enable_diamond_upgrade": "Enable the diamond upgrade at the smithing table",
   "text.config.alloygery.option.enable_emerald_upgrade": "Enable the emerald upgrade at the smithing table",
   "text.config.alloygery.option.enable_netherite_upgrade": "Enable the netherite upgrade at the smithing table",
+
+  "text.config.alloygery.option.disable_diamond_crafting": "Disable vanilla diamond tool crafting recipes",
+  "text.config.alloygery.option.disable_iron_crafting": "Disable vanilla iron tool crafting recipes",
 
   "text.config.alloygery.option.tin_ore": "Tin ore generation",
   "text.config.alloygery.option.tin_ore.should_generate": "Generate tin ore",

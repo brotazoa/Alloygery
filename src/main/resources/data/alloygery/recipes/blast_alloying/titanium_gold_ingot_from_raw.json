@@ -2,10 +2,10 @@
   "type": "alloygery:blast_alloying",
   "inputs": [
     {
-      "tag": "c:titanium_dusts"
+      "tag": "c:titanium_raw_ores"
     },
     {
-      "tag": "c:gold_dusts"
+      "tag": "c:gold_raw_ores"
     }
   ],
   "output":{

@@ -18,7 +18,7 @@
     "tag": "c:diamonds"
   },
   "result": {
-    "item": "alloygery:diamond_upgraded_alloygery_pickaxe",
+    "item": "alloygery:tipped_alloygery_pickaxe",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/diamond"

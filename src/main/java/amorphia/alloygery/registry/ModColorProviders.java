@@ -39,36 +39,6 @@ public class ModColorProviders
 
 		IAlloygeryTool.ITEMS.forEach(item -> ColorProviderRegistry.ITEM.register(ModColorProviders::getMaterialColorFromToolStack, item));
 
-//		AlloygeryAxeItem.AXE_ITEMS.forEach(item -> {
-//			ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-//				return getMaterialColorFromToolStack(stack, tintIndex);
-//			}, item);
-//		});
-//
-//		AlloygeryHoeItem.HOE_ITEMS.forEach(item -> {
-//			ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-//				return getMaterialColorFromToolStack(stack, tintIndex);
-//			}, item);
-//		});
-//
-//		AlloygeryPickaxeItem.PICKAXE_ITEMS.forEach(item -> {
-//			ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-//				return getMaterialColorFromToolStack(stack, tintIndex);
-//			}, item);
-//		});
-//
-//		AlloygeryShovelItem.SHOVEL_ITEMS.forEach(item -> {
-//			ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-//				return getMaterialColorFromToolStack(stack, tintIndex);
-//			}, item);
-//		});
-//
-//		AlloygerySwordItem.SWORD_ITEMS.forEach(item -> {
-//			ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-//				return getMaterialColorFromToolStack(stack, tintIndex);
-//			}, item);
-//		});
-//
 		AlloygeryArmorItem.ARMOR_ITEMS.forEach(item -> {
 			ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
 				return tintIndex == 0 ? item.getAlloygeryMaterial().color : -1;
@@ -83,6 +53,7 @@ public class ModColorProviders
 			case 0 -> AlloygeryToolMaterialHelper.getHandleMaterial(stack).color;
 			case 1 -> AlloygeryToolMaterialHelper.getHeadMaterial(stack).color;
 			case 2 -> AlloygeryToolMaterialHelper.getBindingMaterial(stack).color;
+			case 3 -> AlloygeryToolMaterialHelper.getUpgradeMaterial(stack).color;
 			default -> -1;
 		};
 	}

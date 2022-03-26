@@ -18,7 +18,7 @@
     "tag": "c:emeralds"
   },
   "result": {
-    "item": "alloygery:emerald_upgraded_alloygery_hoe",
+    "item": "alloygery:embossed_alloygery_hoe",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/emerald"

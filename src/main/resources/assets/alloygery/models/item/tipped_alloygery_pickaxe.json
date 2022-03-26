@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:tool_render_parts/pickaxe_handle_template",
+    "layer1": "alloygery:tool_render_parts/pickaxe_head_template",
+    "layer2": "alloygery:tool_render_parts/pickaxe_binding_template",
+    "layer3": "alloygery:tool_render_parts/tipped_pickaxe"
+  }
+}

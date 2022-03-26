@@ -18,7 +18,7 @@
     "tag": "c:netherite_ingots"
   },
   "result": {
-    "item": "alloygery:netherite_upgraded_alloygery_hoe",
+    "item": "alloygery:plated_alloygery_hoe",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/netherite"

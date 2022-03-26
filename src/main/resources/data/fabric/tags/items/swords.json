@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "alloygery:alloygery_sword",
-    "alloygery:diamond_upgraded_alloygery_sword",
-    "alloygery:emerald_upgraded_alloygery_sword",
-    "alloygery:netherite_upgraded_alloygery_sword"
+    "alloygery:tipped_alloygery_sword",
+    "alloygery:embossed_alloygery_sword",
+    "alloygery:plated_alloygery_sword"
   ]
 }

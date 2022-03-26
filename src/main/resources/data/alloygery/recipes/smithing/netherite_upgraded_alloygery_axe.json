@@ -19,7 +19,7 @@
     "tag": "c:netherite_ingots"
   },
   "result": {
-    "item": "alloygery:netherite_upgraded_alloygery_axe",
+    "item": "alloygery:plated_alloygery_axe",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/netherite"

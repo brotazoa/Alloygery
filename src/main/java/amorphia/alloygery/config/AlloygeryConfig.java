@@ -40,6 +40,9 @@ public class AlloygeryConfig
 	public static final ConfigValue enableEmeraldUpgrade;
 	public static final ConfigValue enableNetheriteUpgrade;
 
+	public static final ConfigValue disableVanillaDiamondCrafting;
+	public static final ConfigValue disableVanillaIronCrafting;
+
 	public static final OreGenerationConfigGroup tinOre;
 	public static final OreGenerationConfigGroup nickelOre;
 	public static final OreGenerationConfigGroup titaniumOre;
@@ -50,6 +53,9 @@ public class AlloygeryConfig
 		enableDiamondUpgrade = ALLOYGERY_CONFIG.register("enable_diamond_upgrade", new ConfigValue(true));
 		enableEmeraldUpgrade = ALLOYGERY_CONFIG.register("enable_emerald_upgrade", new ConfigValue(true));
 		enableNetheriteUpgrade = ALLOYGERY_CONFIG.register("enable_netherite_upgrade", new ConfigValue(true));
+
+		disableVanillaDiamondCrafting = ALLOYGERY_CONFIG.register("disable_diamond_crafting", new ConfigValue(true));
+		disableVanillaIronCrafting = ALLOYGERY_CONFIG.register("disable_iron_crafting", new ConfigValue(true));
 
 		tinOre = ALLOYGERY_CONFIG.register("tin_ore", new OreGenerationConfigGroup(true, 9, 50));
 		nickelOre = ALLOYGERY_CONFIG.register("nickel_ore", new OreGenerationConfigGroup(true, 8, 10));

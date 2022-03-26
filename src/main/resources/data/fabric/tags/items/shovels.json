@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "alloygery:alloygery_shovel",
-    "alloygery:diamond_upgraded_alloygery_shovel",
-    "alloygery:emerald_upgraded_alloygery_shovel",
-    "alloygery:netherite_upgraded_alloygery_shovel"
+    "alloygery:tipped_alloygery_shovel",
+    "alloygery:embossed_alloygery_shovel",
+    "alloygery:plated_alloygery_shovel"
   ]
 }

@@ -18,7 +18,7 @@
     "tag": "c:emeralds"
   },
   "result": {
-    "item": "alloygery:emerald_upgraded_alloygery_axe",
+    "item": "alloygery:embossed_alloygery_axe",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/emerald"

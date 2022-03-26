@@ -26,11 +26,38 @@ public class AlloygeryToolMaterialHelper
 	public static int getMiningLevel(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
 
-		final int base = headMaterial.tool_base.mining_level + upgradeMaterial.tool_upgrade.mining_level;
+		final int base = headMaterial.tool_base.mining_level;
+		final int binding = base + bindingMaterial.tool_binding.mining_level;
+		final int handle = binding + handleMaterial.tool_handle.mining_level;
+		final int upgrade = handle + upgradeMaterial.tool_upgrade.mining_level;
 
-		return base;
+		return upgrade;
+	}
+
+	public static int getMiningLevelByPart(NbtCompound compound, int[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final int base = headMaterial.tool_base.mining_level;
+		final int binding = base + bindingMaterial.tool_binding.mining_level;
+		final int handle = binding + handleMaterial.tool_handle.mining_level;
+		final int upgrade = handle + upgradeMaterial.tool_upgrade.mining_level;
+
+		returnArray[0] = base;
+		returnArray[1] = binding;
+		returnArray[2] = handle;
+		returnArray[3] = upgrade;
+
+		return upgrade;
 	}
 
 	public static int getMaxDurability(NbtCompound compound)
@@ -43,6 +70,28 @@ public class AlloygeryToolMaterialHelper
 		final float base = headMaterial.tool_base.durability * bindingMaterial.tool_binding.durability_multiplier + bindingMaterial.tool_binding.durability;
 		final float handle = base * handleMaterial.tool_handle.durability_multiplier + handleMaterial.tool_handle.durability;
 		final float upgrade = handle * upgradeMaterial.tool_upgrade.durability_multiplier + upgradeMaterial.tool_upgrade.durability;
+
+		return (int) upgrade;
+	}
+
+	public static int getMaxDurabilityByPart(NbtCompound compound, int[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final float base = headMaterial.tool_base.durability;
+		final float binding = base * bindingMaterial.tool_binding.durability_multiplier + bindingMaterial.tool_binding.durability;
+		final float handle = binding * handleMaterial.tool_handle.durability_multiplier + handleMaterial.tool_handle.durability;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.durability_multiplier + upgradeMaterial.tool_upgrade.durability;
+
+		returnArray[0] = (int) base;
+		returnArray[1] = (int) binding;
+		returnArray[2] = (int) handle;
+		returnArray[3] = (int) upgrade;
 
 		return (int) upgrade;
 	}
@@ -61,6 +110,28 @@ public class AlloygeryToolMaterialHelper
 		return (int) upgrade;
 	}
 
+	public static int getEnchantabilityByPart(NbtCompound compound, int[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final float base = headMaterial.tool_base.enchantability;
+		final float binding = base * bindingMaterial.tool_binding.enchantability_multiplier + bindingMaterial.tool_binding.enchantability;
+		final float handle = binding * handleMaterial.tool_handle.enchantability_multiplier + handleMaterial.tool_handle.enchantability;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.enchantability_multiplier + upgradeMaterial.tool_upgrade.enchantability;
+
+		returnArray[0] = (int) base;
+		returnArray[1] = (int) binding;
+		returnArray[2] = (int) handle;
+		returnArray[3] = (int) upgrade;
+
+		return (int) upgrade;
+	}
+
 	public static float getMiningSpeed(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
@@ -71,6 +142,28 @@ public class AlloygeryToolMaterialHelper
 		final float base = headMaterial.tool_base.mining_speed * bindingMaterial.tool_binding.mining_speed_multiplier + bindingMaterial.tool_binding.mining_speed;
 		final float handle = base * handleMaterial.tool_handle.mining_speed_multiplier + handleMaterial.tool_handle.mining_speed;
 		final float upgrade = handle * upgradeMaterial.tool_upgrade.mining_speed_multiplier + upgradeMaterial.tool_upgrade.mining_speed;
+
+		return upgrade;
+	}
+
+	public static float getMiningSpeedByPart(NbtCompound compound, float[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final float base = headMaterial.tool_base.mining_speed;
+		final float binding = base * bindingMaterial.tool_binding.mining_speed_multiplier + bindingMaterial.tool_binding.mining_speed;
+		final float handle = binding * handleMaterial.tool_handle.mining_speed_multiplier + handleMaterial.tool_handle.mining_speed;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.mining_speed_multiplier + upgradeMaterial.tool_upgrade.mining_speed;
+
+		returnArray[0] = base;
+		returnArray[1] = binding;
+		returnArray[2] = handle;
+		returnArray[3] = upgrade;
 
 		return upgrade;
 	}
@@ -89,6 +182,28 @@ public class AlloygeryToolMaterialHelper
 		return upgrade;
 	}
 
+	public static float getAttackSpeedByPart(NbtCompound compound, float[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final float base = headMaterial.tool_base.attack_speed;
+		final float binding = base * bindingMaterial.tool_binding.attack_speed_multiplier + bindingMaterial.tool_binding.attack_speed;
+		final float handle = binding * handleMaterial.tool_handle.attack_speed_multiplier + handleMaterial.tool_handle.attack_speed;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.attack_speed_multiplier + upgradeMaterial.tool_upgrade.attack_speed;
+
+		returnArray[0] = base;
+		returnArray[1] = binding;
+		returnArray[2] = handle;
+		returnArray[3] = upgrade;
+
+		return upgrade;
+	}
+
 	public static float getAttackDamage(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
@@ -99,6 +214,28 @@ public class AlloygeryToolMaterialHelper
 		final float base = headMaterial.tool_base.attack_damage * bindingMaterial.tool_binding.attack_damage_multiplier + bindingMaterial.tool_binding.attack_damage;
 		final float handle = base * handleMaterial.tool_handle.attack_damage_multiplier + handleMaterial.tool_handle.attack_damage;
 		final float upgrade = handle * upgradeMaterial.tool_upgrade.attack_damage_multiplier + upgradeMaterial.tool_upgrade.attack_damage;
+
+		return upgrade;
+	}
+
+	public static float getAttackDamageByPart(NbtCompound compound, float[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final float base = headMaterial.tool_base.attack_damage;
+		final float binding = base * bindingMaterial.tool_binding.attack_damage_multiplier + bindingMaterial.tool_binding.attack_damage;
+		final float handle = binding * handleMaterial.tool_handle.attack_damage_multiplier + handleMaterial.tool_handle.attack_damage;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.attack_damage_multiplier + upgradeMaterial.tool_upgrade.attack_damage;
+
+		returnArray[0] = base;
+		returnArray[1] = binding;
+		returnArray[2] = handle;
+		returnArray[3] = upgrade;
 
 		return upgrade;
 	}
@@ -117,12 +254,51 @@ public class AlloygeryToolMaterialHelper
 		return upgrade;
 	}
 
+	public static float getLuckByPart(NbtCompound compound, float[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		final float base = headMaterial.tool_base.luck;
+		final float binding = base * bindingMaterial.tool_binding.luck_multiplier + bindingMaterial.tool_binding.luck;
+		final float handle = binding * handleMaterial.tool_handle.luck_multiplier + handleMaterial.tool_handle.luck;
+		final float upgrade = handle * upgradeMaterial.tool_upgrade.luck_multiplier + upgradeMaterial.tool_upgrade.luck;
+
+		returnArray[0] = base;
+		returnArray[1] = binding;
+		returnArray[2] = handle;
+		returnArray[3] = upgrade;
+
+		return upgrade;
+	}
+
 	public static boolean isFireproof(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
 		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
 		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
 		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		return headMaterial.tool_base.fireproof || bindingMaterial.tool_binding.fireproof || handleMaterial.tool_handle.fireproof || upgradeMaterial.tool_upgrade.fireproof;
+	}
+
+	public static boolean isFireproofByPart(NbtCompound compound, boolean[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		returnArray[0] = headMaterial.tool_base.fireproof;
+		returnArray[1] = bindingMaterial.tool_binding.fireproof;
+		returnArray[2] = handleMaterial.tool_handle.fireproof;
+		returnArray[3] = upgradeMaterial.tool_upgrade.fireproof;
 
 		return headMaterial.tool_base.fireproof || bindingMaterial.tool_binding.fireproof || handleMaterial.tool_handle.fireproof || upgradeMaterial.tool_upgrade.fireproof;
 	}
@@ -263,6 +439,10 @@ public class AlloygeryToolMaterialHelper
 	public static AlloygeryMaterial getMaterialFromIdentifier(ItemStack stack)
 	{
 		Item item = stack.getItem();
+
+		if(item instanceof IMaterialItem materialItem)
+			return materialItem.getAlloygeryMaterial();
+
 		Identifier identifier = Registry.ITEM.getId(item);
 		String namespace = identifier.getNamespace();
 		String path = identifier.getPath();

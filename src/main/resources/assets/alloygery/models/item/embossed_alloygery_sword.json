@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:tool_render_parts/sword_handle_template",
+    "layer1": "alloygery:tool_render_parts/sword_blade_template",
+    "layer2": "alloygery:tool_render_parts/sword_guard_template",
+    "layer3": "alloygery:tool_render_parts/embossed_sword"
+  }
+}

@@ -2,7 +2,7 @@
   "type": "minecraft:blasting",
   "group": "nickel_ingot",
   "ingredient": {
-    "tag": "c:nickel_dusts"
+    "tag": "c:nickel_raw_ores"
   },
   "result": "alloygery:nickel_ingot",
   "experience": 0.7,

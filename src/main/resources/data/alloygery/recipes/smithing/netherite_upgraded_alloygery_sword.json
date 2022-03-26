@@ -18,7 +18,7 @@
     "tag": "c:netherite_ingots"
   },
   "result": {
-    "item": "alloygery:netherite_upgraded_alloygery_sword",
+    "item": "alloygery:plated_alloygery_sword",
     "data": {
       "$": "$ base",
       "UpgradeMaterial": "alloygery:materials/netherite"

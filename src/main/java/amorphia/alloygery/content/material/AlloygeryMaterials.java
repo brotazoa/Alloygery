@@ -144,6 +144,8 @@ public class AlloygeryMaterials
 				.build());
 
 		EMERALD = registerMaterial("emerald", new AlloygeryMaterial.AlloygeryMaterialBuilder("emerald")
+				.category("gem")
+				.color(1564002)
 				.tool_upgrade(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.durability_multiplier(1.5f)
 						.enchantability(5)

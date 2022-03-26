@@ -2,7 +2,7 @@
   "type": "alloygery:blast_alloying",
   "inputs": [
     {
-      "tag": "c:iron_dusts"
+      "tag": "c:iron_raw_ores"
     },
     {
       "tag": "c:charcoal"

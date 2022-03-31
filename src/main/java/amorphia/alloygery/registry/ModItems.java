@@ -166,29 +166,33 @@ public class ModItems
 
 	static void makeTools()
 	{
-		ALLOYGERY_ITEMS.put("alloygery_axe", new AlloygeryAxeItem(new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("alloygery_hoe", new AlloygeryHoeItem(new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("alloygery_pickaxe", new AlloygeryPickaxeItem(new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("alloygery_shovel", new AlloygeryShovelItem(new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
-		ALLOYGERY_ITEMS.put("alloygery_sword", new AlloygerySwordItem(new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		//formatter:off
 
-		ALLOYGERY_ITEMS.put("tipped_alloygery_axe", new AlloygeryAxeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("tipped_alloygery_hoe", new AlloygeryHoeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("tipped_alloygery_pickaxe", new AlloygeryPickaxeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("tipped_alloygery_shovel", new AlloygeryShovelItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("tipped_alloygery_sword", new AlloygerySwordItem(new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("alloygery_axe", new AlloygeryAxeItem(AlloygeryAxeItem.ATTACK_DAMAGE, AlloygeryAxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("alloygery_hoe", new AlloygeryHoeItem(AlloygeryHoeItem.ATTACK_DAMAGE, AlloygeryHoeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryPickaxeItem.ATTACK_DAMAGE, AlloygeryPickaxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("alloygery_shovel", new AlloygeryShovelItem(AlloygeryShovelItem.ATTACK_DAMAGE, AlloygeryShovelItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
+		ALLOYGERY_ITEMS.put("alloygery_sword", new AlloygerySwordItem(AlloygerySwordItem.ATTACK_DAMAGE, AlloygerySwordItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_GROUP_GEAR)));
 
-		ALLOYGERY_ITEMS.put("embossed_alloygery_axe", new AlloygeryAxeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("embossed_alloygery_hoe", new AlloygeryHoeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("embossed_alloygery_pickaxe", new AlloygeryPickaxeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("embossed_alloygery_shovel", new AlloygeryShovelItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("embossed_alloygery_sword", new AlloygerySwordItem(new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_axe", new AlloygeryAxeItem(AlloygeryAxeItem.ATTACK_DAMAGE, AlloygeryAxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_hoe", new AlloygeryHoeItem(AlloygeryHoeItem.ATTACK_DAMAGE, AlloygeryHoeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryPickaxeItem.ATTACK_DAMAGE, AlloygeryPickaxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_shovel", new AlloygeryShovelItem(AlloygeryShovelItem.ATTACK_DAMAGE, AlloygeryShovelItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("tipped_alloygery_sword", new AlloygerySwordItem(AlloygerySwordItem.ATTACK_DAMAGE, AlloygerySwordItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
 
-		ALLOYGERY_ITEMS.put("plated_alloygery_axe", new AlloygeryAxeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("plated_alloygery_hoe", new AlloygeryHoeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("plated_alloygery_pickaxe", new AlloygeryPickaxeItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("plated_alloygery_shovel", new AlloygeryShovelItem(new Item.Settings().maxCount(1).maxDamage(1)));
-		ALLOYGERY_ITEMS.put("plated_alloygery_sword", new AlloygerySwordItem(new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_axe", new AlloygeryAxeItem(AlloygeryAxeItem.ATTACK_DAMAGE, AlloygeryAxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_hoe", new AlloygeryHoeItem(AlloygeryHoeItem.ATTACK_DAMAGE, AlloygeryHoeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryPickaxeItem.ATTACK_DAMAGE, AlloygeryPickaxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_shovel", new AlloygeryShovelItem(AlloygeryShovelItem.ATTACK_DAMAGE, AlloygeryShovelItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("embossed_alloygery_sword", new AlloygerySwordItem(AlloygerySwordItem.ATTACK_DAMAGE, AlloygerySwordItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+
+		ALLOYGERY_ITEMS.put("plated_alloygery_axe", new AlloygeryAxeItem(AlloygeryAxeItem.ATTACK_DAMAGE, AlloygeryAxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_hoe", new AlloygeryHoeItem(AlloygeryHoeItem.ATTACK_DAMAGE, AlloygeryHoeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_pickaxe", new AlloygeryPickaxeItem(AlloygeryPickaxeItem.ATTACK_DAMAGE, AlloygeryPickaxeItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_shovel", new AlloygeryShovelItem(AlloygeryShovelItem.ATTACK_DAMAGE, AlloygeryShovelItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+		ALLOYGERY_ITEMS.put("plated_alloygery_sword", new AlloygerySwordItem(AlloygerySwordItem.ATTACK_DAMAGE, AlloygerySwordItem.ATTACK_SPEED, new Item.Settings().maxCount(1).maxDamage(1)));
+
+		//formatter:on
 	}
 
 	static void makeArmor(AlloygeryMaterial material)
@@ -216,6 +220,7 @@ public class ModItems
 		AlloygeryGeneratedModelBuilder.register(identifier, generatedModelJsonSupplier);
 
 		ALLOYGERY_ITEMS.put(path, item);
+
 		return item;
 	}
 

@@ -18,10 +18,14 @@ public class AlloygeryPickaxeItem extends PickaxeItem implements IAlloygeryTool
 	public static final float ATTACK_SPEED = -2.8f;
 
 	private int calculatedEnchantability = 0;
+	private final float attackDamage;
+	private final float attackSpeed;
 
-	public AlloygeryPickaxeItem(Item.Settings settings)
+	public AlloygeryPickaxeItem(float attackDamage, float attackSpeed, Item.Settings settings)
 	{
-		super(ToolMaterials.WOOD, (int) ATTACK_DAMAGE, ATTACK_SPEED, settings);
+		super(ToolMaterials.WOOD, (int) attackDamage, attackSpeed, settings);
+		this.attackDamage = attackDamage;
+		this.attackSpeed = attackSpeed;
 		TOOL_ITEMS.add(this);
 	}
 
@@ -106,12 +110,12 @@ public class AlloygeryPickaxeItem extends PickaxeItem implements IAlloygeryTool
 	@Override
 	public float getAttackDamageModifier()
 	{
-		return ATTACK_DAMAGE;
+		return attackDamage;
 	}
 
 	@Override
 	public float getAttackSpeedModifier()
 	{
-		return ATTACK_SPEED;
+		return attackSpeed;
 	}
 }

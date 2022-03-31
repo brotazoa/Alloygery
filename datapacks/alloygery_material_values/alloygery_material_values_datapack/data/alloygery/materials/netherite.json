@@ -2,6 +2,10 @@
   "name": "netherite",
   "category": "metal",
   "color": 5192766,
+  "make_tool_heads": true,
+  "make_tool_bindings": false,
+  "make_tool_handles": false,
+  "repair_ingredient": "minecraft:netherite_ingot",
   "tool_base": {
     "mining_level": 4,
     "durability": 2031,

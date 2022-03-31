@@ -2,6 +2,10 @@
   "name": "nickel",
   "category": "metal",
   "color": 6314062,
+  "make_tool_heads": true,
+  "make_tool_bindings": true,
+  "make_tool_handles": true,
+  "repair_ingredient": "alloygery:nickel_ingot",
   "tool_base": {
     "mining_level": 4,
     "durability": 2121,
@@ -37,6 +41,23 @@
     "piglin_loved": false
   },
   "tool_handle": {
+    "mining_level": 0,
+    "durability": 0,
+    "enchantability": 0,
+    "mining_speed": 0.0,
+    "attack_speed": 0.0,
+    "attack_damage": 0.0,
+    "luck": 0.0,
+    "durability_multiplier": 1.0,
+    "enchantability_multiplier": 1.0,
+    "mining_speed_multiplier": 1.0,
+    "attack_speed_multiplier": 1.0,
+    "attack_damage_multiplier": 1.0,
+    "luck_multiplier": 1.0,
+    "fireproof": false,
+    "piglin_loved": false
+  },
+  "tool_upgrade": {
     "mining_level": 0,
     "durability": 0,
     "enchantability": 0,

@@ -2,6 +2,10 @@
   "name": "nitinol",
   "category": "metal",
   "color": 6185051,
+  "make_tool_heads": true,
+  "make_tool_bindings": true,
+  "make_tool_handles": true,
+  "repair_ingredient": "alloygery:nitinol_ingot",
   "tool_base": {
     "mining_level": 5,
     "durability": 3362,
@@ -16,7 +20,7 @@
     "attack_speed_multiplier": 1.0,
     "attack_damage_multiplier": 1.0,
     "luck_multiplier": 1.0,
-    "fireproof": true,
+    "fireproof": false,
     "piglin_loved": false
   },
   "tool_binding": {
@@ -53,6 +57,23 @@
     "fireproof": false,
     "piglin_loved": false
   },
+  "tool_upgrade": {
+    "mining_level": 0,
+    "durability": 0,
+    "enchantability": 0,
+    "mining_speed": 0.0,
+    "attack_speed": 0.0,
+    "attack_damage": 0.0,
+    "luck": 0.0,
+    "durability_multiplier": 1.0,
+    "enchantability_multiplier": 1.0,
+    "mining_speed_multiplier": 1.0,
+    "attack_speed_multiplier": 1.0,
+    "attack_damage_multiplier": 1.0,
+    "luck_multiplier": 1.0,
+    "fireproof": false,
+    "piglin_loved": false
+  },
   "armor": {
     "durability": 50,
     "helmet": 4,
@@ -62,7 +83,7 @@
     "enchantability": 18,
     "toughness": 3.0,
     "knockback_resistance": 0.1,
-    "fireproof": true,
+    "fireproof": false,
     "piglin_loved": false,
     "freeze_immune": false
   }

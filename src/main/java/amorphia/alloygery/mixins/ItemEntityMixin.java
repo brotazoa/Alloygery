@@ -1,10 +1,8 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.content.item.IAlloygeryTool;
+import amorphia.alloygery.content.item.tool.IAlloygeryTool;
 import amorphia.alloygery.content.material.AlloygeryArmorMaterialHelper;
-import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
-import amorphia.alloygery.content.material.AlloygeryMaterials;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;

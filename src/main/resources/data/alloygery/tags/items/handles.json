@@ -1,19 +1,6 @@
 {
   "replace": false,
   "values": [
-    "alloygery:copper_handle",
-    "alloygery:bronze_handle",
-    "alloygery:iron_handle",
-    "alloygery:gold_handle",
-    "alloygery:antanium_handle",
-    "alloygery:steel_handle",
-    "alloygery:nickel_handle",
-    "alloygery:invar_handle",
-    "alloygery:constantan_handle",
-    "alloygery:cupronickel_handle",
-    "alloygery:titanium_handle",
-    "alloygery:titanium_gold_handle",
-    "alloygery:nitinol_handle",
-    "alloygery:wooden_handle"
+    "alloygery:alloygery_handle"
   ]
 }

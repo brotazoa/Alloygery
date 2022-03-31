@@ -1,6 +1,6 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.content.item.IAlloygeryTool;
+import amorphia.alloygery.content.item.tool.IAlloygeryTool;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentLevelEntry;

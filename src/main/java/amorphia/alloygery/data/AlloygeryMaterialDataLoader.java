@@ -14,7 +14,11 @@ import java.io.InputStreamReader;
 
 public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceReloadListener
 {
+	public static final AlloygeryMaterialDataLoader INSTANCE = new AlloygeryMaterialDataLoader();
+
 	public static final Identifier ALLOYGERY_MATERIAL_LOADER = Alloygery.identifier("material_loader");
+
+	private AlloygeryMaterialDataLoader() {}
 
 	@Override
 	public Identifier getFabricId()
@@ -36,10 +40,18 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 				AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(new JsonReader(new InputStreamReader(is)), AlloygeryMaterial.class);
 				AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.get(trimmedIdentifier);
 
-				if (registeredMaterial != AlloygeryMaterials.UNKNOWN && material != null)
+				if(material == null)
+					continue;
+
+				if (registeredMaterial != AlloygeryMaterials.UNKNOWN)
 				{
 					//try merge
 					AlloygeryMaterial.merge(registeredMaterial, material);
+				}
+				else
+				{
+					//register new
+					AlloygeryMaterials.register(trimmedIdentifier, material);
 				}
 			}
 			catch (IOException thrown)

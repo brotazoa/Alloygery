@@ -9,7 +9,7 @@ import amorphia.alloygery.content.block.entity.AlloyKilnBlockEntity;
 import amorphia.alloygery.content.block.entity.BlastAlloyKilnBlockEntity;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
-import amorphia.alloygery.data.GeneratedModelBuilder;
+import amorphia.alloygery.data.AlloygeryGeneratedModelBuilder;
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
@@ -76,20 +76,20 @@ public class ModBlocks
 	{
 		putGeneratedBlock("raw_" + material.name + "_block",
 				new AlloygeryTintedBlock(material, FabricBlockSettings.of(Material.STONE).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f)),
-				GeneratedModelBuilder::createRawOreBlockModelJson);
+				AlloygeryGeneratedModelBuilder::createRawOreBlockModelJson);
 	}
 
 	static void makeMetalBlock(AlloygeryMaterial material)
 	{
 		putGeneratedBlock(material.name + "_block",
 				new AlloygeryTintedBlock(material, FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL)),
-				GeneratedModelBuilder::createMetalBlockModelJson);
+				AlloygeryGeneratedModelBuilder::createMetalBlockModelJson);
 	}
 
 	static void putGeneratedBlock(String path, Block block, Supplier<String> modelJsonSupplier)
 	{
 		Identifier identifier = Alloygery.identifier("block/" + path);
-		GeneratedModelBuilder.MODEL_SUPPLIER_FOR_IDENTIFIER.put(identifier, modelJsonSupplier.get());
+		AlloygeryGeneratedModelBuilder.register(identifier, modelJsonSupplier);
 		ALLOYGERY_BLOCKS.put(path, block);
 	}
 

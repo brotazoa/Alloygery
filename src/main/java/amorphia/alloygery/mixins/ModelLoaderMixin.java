@@ -1,7 +1,6 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.data.GeneratedModelBuilder;
+import amorphia.alloygery.data.AlloygeryGeneratedModelBuilder;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.model.ModelLoader;
@@ -23,6 +22,7 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 @Mixin(ModelLoader.class)
 public class ModelLoaderMixin
@@ -34,7 +34,7 @@ public class ModelLoaderMixin
 	public void loadModelFromJson(Identifier id, CallbackInfoReturnable<JsonUnbakedModel> cir) throws IOException
 	{
 		//TODO: is this possible without a mixin?
-		Optional<Map.Entry<Identifier, String>> modelSupplier = GeneratedModelBuilder.MODEL_SUPPLIER_FOR_IDENTIFIER.entrySet().stream().filter(entry -> entry.getKey().equals(id)).findFirst();
+		Optional<Map.Entry<Identifier, Supplier<String>>> modelSupplier = AlloygeryGeneratedModelBuilder.getModelSupplierForIdentifier(id);
 
 		//only generate models for identifiers that are registered
 		if(modelSupplier.isPresent())
@@ -70,7 +70,7 @@ public class ModelLoaderMixin
 			if (model == null)
 			{
 				//System.out.println("resource failed, loading from supplier");
-				model = JsonUnbakedModel.deserialize(modelSupplier.get().getValue());
+				model = JsonUnbakedModel.deserialize(modelSupplier.get().getValue().get());
 			}
 
 			if (model != null)

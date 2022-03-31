@@ -1,20 +1,6 @@
 {
   "replace": false,
   "values": [
-    "alloygery:copper_hoe_head",
-    "alloygery:bronze_hoe_head",
-    "alloygery:iron_hoe_head",
-    "alloygery:gold_hoe_head",
-    "alloygery:antanium_hoe_head",
-    "alloygery:diamond_hoe_head",
-    "alloygery:steel_hoe_head",
-    "alloygery:netherite_hoe_head",
-    "alloygery:nickel_hoe_head",
-    "alloygery:invar_hoe_head",
-    "alloygery:constantan_hoe_head",
-    "alloygery:cupronickel_hoe_head",
-    "alloygery:titanium_hoe_head",
-    "alloygery:titanium_gold_hoe_head",
-    "alloygery:nitinol_hoe_head"
+    "alloygery:alloygery_hoe_head"
   ]
 }

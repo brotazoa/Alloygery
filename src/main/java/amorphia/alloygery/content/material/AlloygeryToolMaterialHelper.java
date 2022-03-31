@@ -2,7 +2,6 @@ package amorphia.alloygery.content.material;
 
 import amorphia.alloygery.content.item.IMaterialItem;
 import com.google.common.collect.Maps;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -20,7 +19,15 @@ public class AlloygeryToolMaterialHelper
 	public static Ingredient getRepairIngredient(ItemStack stack)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(stack);
-		return REPAIR_INGREDIENT_MAP.getOrDefault(headMaterial, Ingredient.EMPTY);
+		Ingredient repairIngredient = REPAIR_INGREDIENT_MAP.getOrDefault(headMaterial, null);
+
+		if (repairIngredient == null)
+		{
+			repairIngredient = Ingredient.ofItems(Registry.ITEM.get(headMaterial.repair_ingredient));
+			REPAIR_INGREDIENT_MAP.put(headMaterial, repairIngredient);
+		}
+
+		return repairIngredient;
 	}
 
 	public static int getMiningLevel(NbtCompound compound)
@@ -303,7 +310,7 @@ public class AlloygeryToolMaterialHelper
 		return headMaterial.tool_base.fireproof || bindingMaterial.tool_binding.fireproof || handleMaterial.tool_handle.fireproof || upgradeMaterial.tool_upgrade.fireproof;
 	}
 
-	public static AlloygeryMaterial getMaterial(ItemStack stack, NBT_KEYS key, boolean setMaterialNbtIfAbsent)
+	public static AlloygeryMaterial getMaterial(ItemStack stack, NBT_KEYS key)
 	{
 		NbtCompound compound = stack.getNbt();
 
@@ -313,17 +320,8 @@ public class AlloygeryToolMaterialHelper
 		}
 		else
 		{
-			AlloygeryMaterial material = stack.getItem() instanceof IMaterialItem materialItem ? materialItem.getAlloygeryMaterial() : getMaterialFromIdentifier(stack);
-			if(setMaterialNbtIfAbsent && material != AlloygeryMaterials.UNKNOWN)
-				setMaterial(stack, material, key);
-
-			return material;
+			return stack.getItem() instanceof IMaterialItem materialItem ? materialItem.getAlloygeryMaterial() : getMaterialFromIdentifier(stack);
 		}
-	}
-
-	public static AlloygeryMaterial getMaterial(ItemStack stack, NBT_KEYS key)
-	{
-		return getMaterial(stack, key, false);
 	}
 
 	public static ItemStack setMaterial(ItemStack stack, AlloygeryMaterial material, NBT_KEYS key)

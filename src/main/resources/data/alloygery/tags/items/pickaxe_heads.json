@@ -1,20 +1,6 @@
 {
   "replace": false,
   "values": [
-    "alloygery:copper_pickaxe_head",
-    "alloygery:bronze_pickaxe_head",
-    "alloygery:iron_pickaxe_head",
-    "alloygery:gold_pickaxe_head",
-    "alloygery:antanium_pickaxe_head",
-    "alloygery:diamond_pickaxe_head",
-    "alloygery:steel_pickaxe_head",
-    "alloygery:netherite_pickaxe_head",
-    "alloygery:nickel_pickaxe_head",
-    "alloygery:invar_pickaxe_head",
-    "alloygery:constantan_pickaxe_head",
-    "alloygery:cupronickel_pickaxe_head",
-    "alloygery:titanium_pickaxe_head",
-    "alloygery:titanium_gold_pickaxe_head",
-    "alloygery:nitinol_pickaxe_head"
+    "alloygery:alloygery_pickaxe_head"
   ]
 }

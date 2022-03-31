@@ -14,6 +14,12 @@ public class AlloygeryMaterial
 	public String category = "misc";
 	public int color = 16253176;
 
+	public boolean make_tool_heads = false;
+	public boolean make_tool_bindings = false;
+	public boolean make_tool_handles = false;
+
+	public Identifier repair_ingredient = null;
+
 	public ToolPartSettings tool_base = new ToolPartSettings();
 	public ToolPartSettings tool_binding = new ToolPartSettings();
 	public ToolPartSettings tool_handle = new ToolPartSettings();
@@ -41,6 +47,12 @@ public class AlloygeryMaterial
 
 		original.category = other.category;
 		original.color = other.color;
+
+		original.make_tool_heads = other.make_tool_heads;
+		original.make_tool_bindings = other.make_tool_bindings;
+		original.make_tool_handles = other.make_tool_handles;
+
+		original.repair_ingredient = other.repair_ingredient;
 
 		original.tool_base.merge(other.tool_base);
 		original.tool_binding.merge(other.tool_binding);
@@ -70,6 +82,18 @@ public class AlloygeryMaterial
 
 			if(jsonObject.has("color"))
 				builder.color(jsonObject.get("color").getAsInt());
+
+			if(jsonObject.has("make_tool_heads"))
+				builder.make_tool_heads(jsonObject.get("make_tool_heads").getAsBoolean());
+
+			if(jsonObject.has("make_tool_bindings"))
+				builder.make_tool_bindings(jsonObject.get("make_tool_bindings").getAsBoolean());
+
+			if(jsonObject.has("make_tool_handles"))
+				builder.make_tool_handles(jsonObject.get("make_tool_handles").getAsBoolean());
+
+			if(jsonObject.has("repair_ingredient"))
+				builder.repair_ingredient(jsonObject.get("repair_ingredient").getAsString());
 
 			if(jsonObject.has("tool_base"))
 			{
@@ -108,6 +132,12 @@ public class AlloygeryMaterial
 			json.addProperty("category", material.category);
 			json.addProperty("color", material.color);
 
+			json.addProperty("make_tool_heads", material.make_tool_heads);
+			json.addProperty("make_tool_bindings", material.make_tool_bindings);
+			json.addProperty("make_tool_handles", material.make_tool_handles);
+
+			json.addProperty("repair_ingredient", (material.repair_ingredient == null ? "null" : material.repair_ingredient.toString()));
+
 			json.add("tool_base", ToolPartSettings.Serializer.serialize(material.tool_base));
 			json.add("tool_binding", ToolPartSettings.Serializer.serialize(material.tool_binding));
 			json.add("tool_handle", ToolPartSettings.Serializer.serialize(material.tool_handle));
@@ -137,6 +167,35 @@ public class AlloygeryMaterial
 		public AlloygeryMaterialBuilder color(int color)
 		{
 			this.material.color = color;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder make_tool_heads(boolean make_tool_heads)
+		{
+			this.material.make_tool_heads = make_tool_heads;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder make_tool_bindings(boolean make_tool_bindings)
+		{
+			this.material.make_tool_bindings = make_tool_bindings;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder make_tool_handles(boolean make_tool_handles)
+		{
+			this.material.make_tool_handles = make_tool_handles;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder repair_ingredient(String identifier)
+		{
+			return repair_ingredient(Identifier.tryParse(identifier));
+		}
+
+		public AlloygeryMaterialBuilder repair_ingredient(Identifier identifier)
+		{
+			this.material.repair_ingredient = identifier;
 			return this;
 		}
 

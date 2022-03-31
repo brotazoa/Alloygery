@@ -43,9 +43,16 @@ public class ModNetworking
 					AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(new JsonReader(new StringReader(jsonString)), AlloygeryMaterial.class);
 					AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.get(id);
 
-					if (registeredMaterial != AlloygeryMaterials.UNKNOWN && material != null)
+					if(material == null)
+						continue;
+
+					if (registeredMaterial != AlloygeryMaterials.UNKNOWN)
 					{
 						AlloygeryMaterial.merge(registeredMaterial, material);
+					}
+					else
+					{
+						AlloygeryMaterials.register(id, material);
 					}
 				}
 			}

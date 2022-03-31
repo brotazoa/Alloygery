@@ -13,7 +13,6 @@
     "PlayerManagerMixin"
   ],
   "client": [
-    "ItemMixin",
     "ModelLoaderMixin"
   ],
   "injectors": {

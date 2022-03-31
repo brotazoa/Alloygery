@@ -1,7 +1,7 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.content.item.IAlloygeryMeleeWeapon;
-import amorphia.alloygery.content.item.IAlloygeryTool;
+import amorphia.alloygery.content.item.tool.IAlloygeryMeleeWeapon;
+import amorphia.alloygery.content.item.tool.IAlloygeryTool;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;

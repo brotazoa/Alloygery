@@ -2,20 +2,14 @@
   "type": "alloygery:smithing_anvil",
   "group": "titanium_gold_tool_heads",
   "hammer": {
-    "item": "alloygery:anvil_hammer",
-    "remainder": {
-      "item": "alloygery:anvil_hammer",
-      "data": {
-        "Damage": "$hammer.Damage + 2"
-      }
-    }
+    "item": "alloygery:anvil_hammer"
   },
   "material": {
     "tag": "c:titanium_gold_ingots"
   },
   "material_cost": 2,
   "result": {
-    "item": "alloygery:titanium_gold_pickaxe_head",
+    "item": "alloygery:alloygery_pickaxe_head",
     "data": {
       "PartMaterial": "alloygery:materials/titanium_gold"
     }

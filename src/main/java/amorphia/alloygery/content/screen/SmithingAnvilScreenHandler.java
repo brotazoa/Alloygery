@@ -84,9 +84,7 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 				stack.onCraft(player.world, player, stack.getCount());
 				SmithingAnvilScreenHandler.this.output.unlockLastRecipe(player);
 
-				//SmithingAnvilRecipe currentRecipe = availableRecipes.get(selectedRecipe.get());
-
-				SmithingAnvilScreenHandler.this.hammerSlot.getStack().damage(2, player.getRandom(), player instanceof ServerPlayerEntity  serverPlayer? serverPlayer : null);
+				SmithingAnvilScreenHandler.this.hammerSlot.getStack().damage(2, player.getRandom(), player instanceof ServerPlayerEntity  serverPlayer ? serverPlayer : null);
 				SmithingAnvilScreenHandler.this.materialSlot.takeStack(SmithingAnvilScreenHandler.this.materialCost);
 
 				context.run((world1, pos) -> {
@@ -204,7 +202,6 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 
 			ItemStack outputStack = recipe.craft(this.input);
 			this.materialCost = recipe.getMaterialCost();
-			//AlloygeryMaterialHelper.getMaterial(outputStack, AlloygeryMaterialHelper.NBT_KEYS.PART_MATERIAL, true);
 			this.outputSlot.setStack(outputStack);
 		}
 		else

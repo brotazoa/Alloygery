@@ -2,13 +2,7 @@
   "type": "alloygery:smithing_anvil",
   "group": "titanium_armor",
   "hammer": {
-    "item": "alloygery:anvil_hammer",
-    "remainder": {
-      "item": "alloygery:anvil_hammer",
-      "data": {
-        "Damage": "$hammer.Damage + 2"
-      }
-    }
+    "item": "alloygery:anvil_hammer"
   },
   "material": {
     "tag": "c:titanium_heavy_plates"

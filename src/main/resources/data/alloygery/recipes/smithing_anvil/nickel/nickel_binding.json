@@ -2,20 +2,14 @@
   "type": "alloygery:smithing_anvil",
   "group": "nickel_tool_parts",
   "hammer": {
-    "item": "alloygery:anvil_hammer",
-    "remainder": {
-      "item": "alloygery:anvil_hammer",
-      "data": {
-        "Damage": "$hammer.Damage + 2"
-      }
-    }
+    "item": "alloygery:anvil_hammer"
   },
   "material": {
     "tag": "c:nickel_ingots"
   },
   "material_cost": 1,
   "result": {
-    "item": "alloygery:nickel_binding",
+    "item": "alloygery:alloygery_binding",
     "data": {
       "PartMaterial": "alloygery:materials/nickel"
     }

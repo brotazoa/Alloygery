@@ -1,6 +1,7 @@
 package amorphia.alloygery;
 
 import amorphia.alloygery.config.AlloygeryConfig;
+import amorphia.alloygery.content.client.AlloygeryColorProviderReloadListener;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.data.AlloygeryMaterialDataLoader;
@@ -19,7 +20,6 @@ import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -41,9 +41,9 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	{
 		ModScreens.registerClient();
 
-		ModColorProviders.registerClient();
-
 		ModNetworking.registerClient();
+
+		ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(AlloygeryColorProviderReloadListener.INSTANCE);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 
 		ModResourceConditions.register();
 
-		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new AlloygeryMaterialDataLoader());
+		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(AlloygeryMaterialDataLoader.INSTANCE);
 
 		AlloygeryMaterials.init();
 
@@ -66,8 +66,8 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 
 		ModNetworking.register();
 
-//		//FIXME: remove this
-//		dumpMaterialData();
+		//FIXME: remove this
+		//dumpMaterialData();
 	}
 
 	public static Identifier identifier(String path)
@@ -75,25 +75,25 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 		return new Identifier(MOD_ID, path);
 	}
 
-//	//FIXME: remove this
-//	//this is just for development purposes, so I don't have to handwrite the files
-//	private static void dumpMaterialData()
-//	{
-//		AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
-//			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
-//
-//			Path materialPath = FabricLoader.getInstance().getConfigDir().resolve(id.getNamespace() + "/" + id.getPath() + ".json");
-//			try
-//			{
-//				Files.createDirectories(materialPath.getParent());
-//				BufferedWriter writer = Files.newBufferedWriter(materialPath);
-//				AlloygeryMaterial.GSON.toJson(material, writer);
-//				writer.close();
-//			}
-//			catch (IOException e)
-//			{
-//				e.printStackTrace();
-//			}
-//		});
-//	}
+	//FIXME: remove this
+	//this is just for development purposes, so I don't have to handwrite the files
+	private static void dumpMaterialData()
+	{
+		AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
+			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+
+			Path materialPath = FabricLoader.getInstance().getConfigDir().resolve(id.getNamespace() + "/" + id.getPath() + ".json");
+			try
+			{
+				Files.createDirectories(materialPath.getParent());
+				BufferedWriter writer = Files.newBufferedWriter(materialPath);
+				AlloygeryMaterial.GSON.toJson(material, writer);
+				writer.close();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		});
+	}
 }

@@ -223,6 +223,7 @@
   "item.alloygery.nitinol_sword_guard": "Nitinol Sword Guard",
 
   "item.alloygery.wooden_handle": "Wooden Handle",
+  "item.alloygery.leather_binding": "Leather Binding",
 
   "item.alloygery.anvil_hammer": "Anvil Hammer",
   "item.alloygery.smithing_hammer": "Smithing Hammer",
@@ -420,6 +421,7 @@
   "tooltip.alloygery.info.enchantability": "Enchantability",
   "tooltip.alloygery.info.luck": "Luck",
   "tooltip.alloygery.info.fireproof": "Fireproof",
+  "tooltip.alloygery.info.piglin_loved": "Gilded",
 
   "tooltip.alloygery.info.durability_multiplier": "Durability Multiplier",
   "tooltip.alloygery.info.mining_speed_multiplier": "Mining Speed Multiplier",
@@ -445,6 +447,7 @@
   "tooltip.alloygery.upgrade.diamond": "Diamond Tipped",
   "tooltip.alloygery.upgrade.emerald": "Emerald Embossed",
   "tooltip.alloygery.upgrade.netherite": "Netherite Plated",
+  "tooltip.alloygery.upgrade.gold": "Gilded",
 
   "rei.alloygery.alloying": "Alloy Kiln",
   "rei.alloygery.blast_alloying": "Blast Alloy Kiln",
@@ -463,6 +466,7 @@
   "text.config.alloygery.option.enable_diamond_upgrade": "Enable the diamond upgrade at the smithing table",
   "text.config.alloygery.option.enable_emerald_upgrade": "Enable the emerald upgrade at the smithing table",
   "text.config.alloygery.option.enable_netherite_upgrade": "Enable the netherite upgrade at the smithing table",
+  "text.config.alloygery.option.enable_gold_upgrade": "Enable the gold upgrade at the smithing table",
 
   "text.config.alloygery.option.disable_diamond_crafting": "Disable vanilla diamond tool crafting recipes",
   "text.config.alloygery.option.disable_iron_crafting": "Disable vanilla iron tool crafting recipes",

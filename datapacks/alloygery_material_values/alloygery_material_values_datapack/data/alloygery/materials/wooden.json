@@ -4,6 +4,7 @@
   "color": 6835742,
   "make_tool_heads": false,
   "make_tool_bindings": false,
+  "make_sword_guards": false,
   "make_tool_handles": true,
   "repair_ingredient": "null",
   "tool_base": {

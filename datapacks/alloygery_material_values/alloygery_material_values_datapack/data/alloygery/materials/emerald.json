@@ -4,6 +4,7 @@
   "color": 1564002,
   "make_tool_heads": false,
   "make_tool_bindings": false,
+  "make_sword_guards": false,
   "make_tool_handles": false,
   "repair_ingredient": "minecraft:emerald",
   "tool_base": {

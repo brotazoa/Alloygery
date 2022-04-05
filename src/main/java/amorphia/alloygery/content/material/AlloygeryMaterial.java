@@ -16,6 +16,7 @@ public class AlloygeryMaterial
 
 	public boolean make_tool_heads = false;
 	public boolean make_tool_bindings = false;
+	public boolean make_sword_guards = false;
 	public boolean make_tool_handles = false;
 
 	public Identifier repair_ingredient = null;
@@ -34,7 +35,7 @@ public class AlloygeryMaterial
 
 	public static AlloygeryMaterial getById(String id)
 	{
-		return AlloygeryMaterials.ALLOYGERY_MATERIALS.get(Identifier.tryParse(id));
+		return AlloygeryMaterials.ALLOYGERY_MATERIALS.getOrDefault(Identifier.tryParse(id), AlloygeryMaterials.UNKNOWN);
 	}
 
 	public static AlloygeryMaterial merge(AlloygeryMaterial original, AlloygeryMaterial other)
@@ -50,6 +51,7 @@ public class AlloygeryMaterial
 
 		original.make_tool_heads = other.make_tool_heads;
 		original.make_tool_bindings = other.make_tool_bindings;
+		original.make_sword_guards = other.make_sword_guards;
 		original.make_tool_handles = other.make_tool_handles;
 
 		original.repair_ingredient = other.repair_ingredient;
@@ -88,6 +90,9 @@ public class AlloygeryMaterial
 
 			if(jsonObject.has("make_tool_bindings"))
 				builder.make_tool_bindings(jsonObject.get("make_tool_bindings").getAsBoolean());
+
+			if(jsonObject.has("make_sword_guards"))
+				builder.make_sword_guards(jsonObject.get("make_sword_guards").getAsBoolean());
 
 			if(jsonObject.has("make_tool_handles"))
 				builder.make_tool_handles(jsonObject.get("make_tool_handles").getAsBoolean());
@@ -134,6 +139,7 @@ public class AlloygeryMaterial
 
 			json.addProperty("make_tool_heads", material.make_tool_heads);
 			json.addProperty("make_tool_bindings", material.make_tool_bindings);
+			json.addProperty("make_sword_guards", material.make_sword_guards);
 			json.addProperty("make_tool_handles", material.make_tool_handles);
 
 			json.addProperty("repair_ingredient", (material.repair_ingredient == null ? "null" : material.repair_ingredient.toString()));
@@ -179,6 +185,12 @@ public class AlloygeryMaterial
 		public AlloygeryMaterialBuilder make_tool_bindings(boolean make_tool_bindings)
 		{
 			this.material.make_tool_bindings = make_tool_bindings;
+			return this;
+		}
+
+		public AlloygeryMaterialBuilder make_sword_guards(boolean make_sword_guards)
+		{
+			this.material.make_sword_guards = make_sword_guards;
 			return this;
 		}
 
@@ -245,6 +257,7 @@ public class AlloygeryMaterial
 		public float attack_speed = 0.0f;
 		public float attack_damage = 0.0f;
 		public float luck = 0.0f;
+		public float crit_chance = 0.0f;
 
 		//multiplier
 		public float durability_multiplier = 1.0f;
@@ -253,6 +266,7 @@ public class AlloygeryMaterial
 		public float attack_speed_multiplier = 1.0f;
 		public float attack_damage_multiplier = 1.0f;
 		public float luck_multiplier = 1.0f;
+		public float crit_chance_multiplier = 1.0f;
 
 		//
 		public boolean fireproof = false;
@@ -486,6 +500,7 @@ public class AlloygeryMaterial
 		public boolean fireproof = false;
 		public boolean piglin_loved = false;
 		public boolean freeze_immune = false;
+		public boolean quiet = false;
 
 		public void merge(ArmorPartSettings other)
 		{

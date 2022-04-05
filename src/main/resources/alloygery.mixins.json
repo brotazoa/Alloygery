@@ -10,6 +10,7 @@
     "ItemEntityMixin",
     "ItemStackMixin",
     "MiningToolItemAccessor",
+    "PiglinBrainMixin",
     "PlayerManagerMixin"
   ],
   "client": [

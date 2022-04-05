@@ -1,11 +1,13 @@
 package amorphia.alloygery.content.item.tool;
 
 import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.MiningToolItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
@@ -60,12 +62,17 @@ public interface IAlloygeryTool
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_damage").append(new LiteralText(": " + String.format("%.2f", AlloygeryToolMaterialHelper.getAttackDamage(compound)))).formatted(Formatting.GRAY));
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.luck").append(new LiteralText(": " + String.format("%.2f", AlloygeryToolMaterialHelper.getLuck(compound)))).formatted(Formatting.GRAY));
 
-					tooltip.add(new LiteralText(""));
-
 					if(AlloygeryToolMaterialHelper.isFireproof(compound))
+					{
 						tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+					}
+					if (AlloygeryToolMaterialHelper.isPiglinLoved(compound))
+					{
+						tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
+					}
 
-					tooltip.add(new LiteralText(""));
+					if(stack.hasEnchantments())
+						tooltip.add(new LiteralText(""));
 				}
 				else if (Screen.hasShiftDown() && Screen.hasControlDown())
 				{
@@ -86,6 +93,7 @@ public interface IAlloygeryTool
 					final float[] attackDamageByParts = new float[4];
 					final float[] luckByParts = new float[4];
 					final boolean[] fireproofByParts = new boolean[4];
+					final boolean[] piglinLovedByParts = new boolean[4];
 
 					AlloygeryToolMaterialHelper.getMiningLevelByPart(compound, miningLevelByParts);
 					AlloygeryToolMaterialHelper.getMaxDurabilityByPart(compound, durabilityByParts);
@@ -95,6 +103,7 @@ public interface IAlloygeryTool
 					AlloygeryToolMaterialHelper.getAttackDamageByPart(compound, attackDamageByParts);
 					AlloygeryToolMaterialHelper.getLuckByPart(compound, luckByParts);
 					AlloygeryToolMaterialHelper.isFireproofByPart(compound, fireproofByParts);
+					AlloygeryToolMaterialHelper.isPiglinLovedByPart(compound, piglinLovedByParts);
 
 					//head
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.head")
@@ -126,7 +135,9 @@ public interface IAlloygeryTool
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.luck")
 							.append(new LiteralText(": " + String.format("%.2f", luckByParts[0])))
 							.formatted(Formatting.GRAY));
+
 					if(fireproofByParts[0]) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+					if(piglinLovedByParts[0]) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
 
 					//binding
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.binding")
@@ -183,7 +194,9 @@ public interface IAlloygeryTool
 								.append(new LiteralText(": " + String.format("%.2f", binding_luck)))
 								.formatted(Formatting.GRAY));
 					}
+
 					if(fireproofByParts[1]) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+					if(piglinLovedByParts[1]) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
 
 					//handle
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.handle")
@@ -240,7 +253,9 @@ public interface IAlloygeryTool
 								.append(new LiteralText(": " + String.format("%.2f", handle_luck)))
 								.formatted(Formatting.GRAY));
 					}
+
 					if(fireproofByParts[2]) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+					if(piglinLovedByParts[2]) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
 
 					if (upgradeMaterial != AlloygeryMaterials.UNKNOWN)
 					{
@@ -299,17 +314,27 @@ public interface IAlloygeryTool
 									.append(new LiteralText(": " + String.format("%.2f", upgrade_luck)))
 									.formatted(Formatting.GRAY));
 						}
+
 						if(fireproofByParts[3]) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+						if(piglinLovedByParts[3]) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
 					}
 
-					tooltip.add(new LiteralText(""));
+					if(stack.hasEnchantments())
+						tooltip.add(new LiteralText(""));
 				}
 				else
 				{
 					tooltip.add(new TranslatableText("tooltip.alloygery.shift_for_info").formatted(Formatting.DARK_GRAY));
 
 					if (AlloygeryToolMaterialHelper.isFireproof(compound))
+					{
 						tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+					}
+
+					if (AlloygeryToolMaterialHelper.isPiglinLoved(compound))
+					{
+						tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
+					}
 				}
 			}
 		}

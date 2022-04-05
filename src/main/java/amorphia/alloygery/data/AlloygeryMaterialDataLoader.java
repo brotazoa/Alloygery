@@ -38,10 +38,13 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 				Identifier trimmedIdentifier = new Identifier(id.getNamespace(), id.getPath().substring(0, id.getPath().length() - ".json".length()));
 
 				AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(new JsonReader(new InputStreamReader(is)), AlloygeryMaterial.class);
-				AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.get(trimmedIdentifier);
+				AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.getOrDefault(trimmedIdentifier, AlloygeryMaterials.UNKNOWN);
 
 				if(material == null)
+				{
+					Alloygery.LOGGER.warn("Null material from loading " + id);
 					continue;
+				}
 
 				if (registeredMaterial != AlloygeryMaterials.UNKNOWN)
 				{

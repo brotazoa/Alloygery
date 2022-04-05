@@ -29,7 +29,7 @@ public class AlloygeryToolHandle extends AlloygeryPartItem
 	{
 		if (this.isIn(group))
 		{
-			AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
+			AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
 				if (material.make_tool_handles)
 				{
 					ItemStack stack = new ItemStack(this);

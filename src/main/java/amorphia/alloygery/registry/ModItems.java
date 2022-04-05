@@ -2,6 +2,7 @@ package amorphia.alloygery.registry;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.*;
+import amorphia.alloygery.content.item.part.AlloygerySwordGuard;
 import amorphia.alloygery.content.item.part.AlloygeryToolBinding;
 import amorphia.alloygery.content.item.part.AlloygeryToolHandle;
 import amorphia.alloygery.content.item.part.AlloygeryToolHead;
@@ -157,7 +158,7 @@ public class ModItems
 		putGeneratedItem("alloygery_binding", new AlloygeryToolBinding(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
 				() -> AlloygeryGeneratedModelBuilder.createPartItemModelJson("binding"));
 
-		putGeneratedItem("alloygery_sword_guard", new AlloygeryToolBinding("sword_guard", new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
+		putGeneratedItem("alloygery_sword_guard", new AlloygerySwordGuard(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),
 				() -> AlloygeryGeneratedModelBuilder.createPartItemModelJson("sword_guard"));
 
 		putGeneratedItem("alloygery_handle", new AlloygeryToolHandle(new Item.Settings().group(Alloygery.ALLOYGERY_GROUP_PARTS)),

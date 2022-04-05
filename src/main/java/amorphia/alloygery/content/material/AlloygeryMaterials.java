@@ -2,6 +2,8 @@ package amorphia.alloygery.content.material;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.ModMiningLevels;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute;
 import net.fabricmc.yarn.constants.MiningLevels;
@@ -9,13 +11,20 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.DefaultedRegistry;
 import net.minecraft.util.registry.Registry;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class AlloygeryMaterials
 {
-	public static final DefaultedRegistry<AlloygeryMaterial> ALLOYGERY_MATERIALS = FabricRegistryBuilder
-			.createDefaulted(AlloygeryMaterial.class, Alloygery.identifier("materials"), Alloygery.identifier("materials/unknown"))
-			.attribute(RegistryAttribute.SYNCED)
-			.buildAndRegister();
+//	public static final DefaultedRegistry<AlloygeryMaterial> ALLOYGERY_MATERIALS = FabricRegistryBuilder
+//			.createDefaulted(AlloygeryMaterial.class, Alloygery.identifier("materials"), Alloygery.identifier("materials/unknown"))
+//			.attribute(RegistryAttribute.SYNCED)
+//			.buildAndRegister();
+
+	public static final BiMap<Identifier, AlloygeryMaterial> ALLOYGERY_MATERIALS = HashBiMap.create();
 
 	public static final AlloygeryMaterial UNKNOWN = registerMaterial("unknown", new AlloygeryMaterial("unknown"));
 
@@ -37,8 +46,8 @@ public class AlloygeryMaterials
 	public static final AlloygeryMaterial TITANIUM_GOLD;
 	public static final AlloygeryMaterial NITINOL;
 
-	//vanilla wood materials
 	public static final AlloygeryMaterial VANILLA_STICK;
+	public static final AlloygeryMaterial LEATHER;
 
 	public static void init(){}
 
@@ -49,7 +58,8 @@ public class AlloygeryMaterials
 
 	public static AlloygeryMaterial register(Identifier identifier, AlloygeryMaterial material)
 	{
-		return Registry.register(ALLOYGERY_MATERIALS, identifier, material);
+		ALLOYGERY_MATERIALS.put(identifier, material);
+		return material;
 	}
 
 	static
@@ -66,6 +76,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("minecraft:copper_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.STONE)
@@ -90,6 +101,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:bronze_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.BRONZE)
@@ -115,6 +127,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("minecraft:iron_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.IRON)
@@ -140,6 +153,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("minecraft:gold_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.WOOD)
@@ -147,6 +161,13 @@ public class AlloygeryMaterials
 						.mining_speed(12.0f)
 						.attack_damage(0.0f)
 						.enchantability(22)
+						.piglin_loved(true)
+						.build())
+				.tool_upgrade(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
+						.attack_damage_multiplier(0.5f)
+						.attack_speed_multiplier(1.2f)
+						.mining_speed_multiplier(1.5f)
+						.enchantability_multiplier(1.8f)
 						.piglin_loved(true)
 						.build())
 				.armor(new AlloygeryMaterial.ArmorPartSettings.ArmorPartSettingsBuilder()
@@ -176,6 +197,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:antanium_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.STONE)
@@ -230,6 +252,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:steel_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.STEEL)
@@ -287,6 +310,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:nickel_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.NICKEL)
@@ -312,6 +336,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:invar_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.NICKEL)
@@ -338,6 +363,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:constantan_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.NICKEL)
@@ -363,6 +389,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:cupronickel_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.NICKEL)
@@ -388,6 +415,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:titanium_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.TITANIUM)
@@ -413,6 +441,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:titanium_gold_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.TITANIUM)
@@ -440,6 +469,7 @@ public class AlloygeryMaterials
 				.repair_ingredient("alloygery:nitinol_ingot")
 				.make_tool_heads(true)
 				.make_tool_bindings(true)
+				.make_sword_guards(true)
 				.make_tool_handles(true)
 				.tool_base(new AlloygeryMaterial.ToolPartSettings.ToolPartSettingsBuilder()
 						.mining_level(ModMiningLevels.TITANIUM)
@@ -464,6 +494,12 @@ public class AlloygeryMaterials
 				.category("wood")
 				.color(6835742)
 				.make_tool_handles(true)
+				.build());
+
+		LEATHER = registerMaterial("leather", new AlloygeryMaterial.AlloygeryMaterialBuilder("leather")
+				.category("hide")
+				.color(14117699)
+				.make_tool_bindings(true)
 				.build());
 	}
 }

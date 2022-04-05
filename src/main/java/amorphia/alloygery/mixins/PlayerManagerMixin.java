@@ -27,10 +27,10 @@ public class PlayerManagerMixin
 		NbtCompound dataTag = new NbtCompound();
 
 		NbtCompound materialsTag = new NbtCompound();
-		AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
+		AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
 			if(material == AlloygeryMaterials.UNKNOWN) return;
 
-			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 			String jsonString = AlloygeryMaterial.GSON.toJson(material);
 			materialsTag.putString(id.toString(), jsonString);
 		});

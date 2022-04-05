@@ -1,5 +1,6 @@
 package amorphia.alloygery.content.material;
 
+import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.IMaterialItem;
 import com.google.common.collect.Maps;
 import net.minecraft.item.Item;
@@ -310,6 +311,38 @@ public class AlloygeryToolMaterialHelper
 		return headMaterial.tool_base.fireproof || bindingMaterial.tool_binding.fireproof || handleMaterial.tool_handle.fireproof || upgradeMaterial.tool_upgrade.fireproof;
 	}
 
+	public static boolean isPiglinLoved(NbtCompound compound)
+	{
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		return headMaterial.tool_base.piglin_loved || bindingMaterial.tool_binding.piglin_loved || handleMaterial.tool_handle.piglin_loved || upgradeMaterial.tool_upgrade.piglin_loved;
+	}
+
+	public static boolean isPiglinLovedByPart(NbtCompound compound, boolean[] returnArray)
+	{
+		assert returnArray.length == 4;
+
+		AlloygeryMaterial headMaterial = getHeadMaterial(compound);
+		AlloygeryMaterial bindingMaterial = getBindingMaterial(compound);
+		AlloygeryMaterial handleMaterial = getHandleMaterial(compound);
+		AlloygeryMaterial upgradeMaterial = getUpgradeMaterial(compound);
+
+		returnArray[0] = headMaterial.tool_base.piglin_loved;
+		returnArray[1] = bindingMaterial.tool_binding.piglin_loved;
+		returnArray[2] = handleMaterial.tool_handle.piglin_loved;
+		returnArray[3] = upgradeMaterial.tool_upgrade.piglin_loved;
+
+		return returnArray[0] || returnArray[1] || returnArray[2] || returnArray[3];
+	}
+
+	public static AlloygeryMaterial getMaterial(NbtCompound compound, NBT_KEYS keys)
+	{
+		return getMaterial(ItemStack.fromNbt(compound), keys);
+	}
+
 	public static AlloygeryMaterial getMaterial(ItemStack stack, NBT_KEYS key)
 	{
 		NbtCompound compound = stack.getNbt();
@@ -326,7 +359,7 @@ public class AlloygeryToolMaterialHelper
 
 	public static ItemStack setMaterial(ItemStack stack, AlloygeryMaterial material, NBT_KEYS key)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 		if (material == AlloygeryMaterials.UNKNOWN)
 		{
 			stack.removeSubNbt(key.value);
@@ -350,7 +383,7 @@ public class AlloygeryToolMaterialHelper
 
 	public static ItemStack setHeadMaterial(ItemStack stack, AlloygeryMaterial material)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 		if (material == AlloygeryMaterials.UNKNOWN)
 		{
 			stack.removeSubNbt(NBT_KEYS.HEAD_MATERIAL.value);
@@ -374,7 +407,7 @@ public class AlloygeryToolMaterialHelper
 
 	public static ItemStack setHandleMaterial(ItemStack stack, AlloygeryMaterial material)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 		if (material == AlloygeryMaterials.UNKNOWN)
 		{
 			stack.removeSubNbt(NBT_KEYS.HANDLE_MATERIAL.value);
@@ -398,7 +431,7 @@ public class AlloygeryToolMaterialHelper
 
 	public static ItemStack setBindingMaterial(ItemStack stack, AlloygeryMaterial material)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 		if (material == AlloygeryMaterials.UNKNOWN)
 		{
 			stack.removeSubNbt(NBT_KEYS.BINDING_MATERIAL.value);
@@ -422,7 +455,7 @@ public class AlloygeryToolMaterialHelper
 
 	public static ItemStack setUpgradeMaterial(ItemStack stack, AlloygeryMaterial material)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 		if(material == AlloygeryMaterials.UNKNOWN)
 		{
 			stack.removeSubNbt(NBT_KEYS.UPGRADE_MATERIAL.value);

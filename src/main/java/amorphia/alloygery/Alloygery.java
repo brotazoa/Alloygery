@@ -79,8 +79,8 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	//this is just for development purposes, so I don't have to handwrite the files
 	private static void dumpMaterialData()
 	{
-		AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
-			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.getId(material);
+		AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
+			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 
 			Path materialPath = FabricLoader.getInstance().getConfigDir().resolve(id.getNamespace() + "/" + id.getPath() + ".json");
 			try

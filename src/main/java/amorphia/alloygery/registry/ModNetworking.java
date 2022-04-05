@@ -41,7 +41,7 @@ public class ModNetworking
 					Alloygery.LOGGER.info("Reading material from server packet: " + id);
 
 					AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(new JsonReader(new StringReader(jsonString)), AlloygeryMaterial.class);
-					AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.get(id);
+					AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.getOrDefault(id, AlloygeryMaterials.UNKNOWN);
 
 					if(material == null)
 						continue;

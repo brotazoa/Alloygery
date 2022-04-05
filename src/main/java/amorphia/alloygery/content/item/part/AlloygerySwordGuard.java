@@ -17,9 +17,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class AlloygeryToolBinding extends AlloygeryPartItem
+public class AlloygerySwordGuard extends AlloygeryPartItem
 {
-	public AlloygeryToolBinding(Settings settings)
+	public AlloygerySwordGuard(Settings settings)
 	{
 		super(settings);
 	}
@@ -30,7 +30,7 @@ public class AlloygeryToolBinding extends AlloygeryPartItem
 		if (this.isIn(group))
 		{
 			AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
-				if (material.make_tool_bindings)
+				if (material.make_sword_guards)
 				{
 					ItemStack stack = new ItemStack(this);
 					AlloygeryToolMaterialHelper.setMaterial(stack, material, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
@@ -45,7 +45,7 @@ public class AlloygeryToolBinding extends AlloygeryPartItem
 	{
 		AlloygeryMaterial material = AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
 
-		return new TranslatableText("item.alloygery." + material.name + "_binding");
+		return new TranslatableText("item.alloygery." + material.name + "_sword_guard");
 	}
 
 	@Override

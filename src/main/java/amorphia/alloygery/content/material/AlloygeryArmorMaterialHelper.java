@@ -8,4 +8,9 @@ public class AlloygeryArmorMaterialHelper
 	{
 		return AlloygeryToolMaterialHelper.getHeadMaterial(compound).armor.fireproof;
 	}
+
+	public static boolean isPiglinLoved(NbtCompound compound)
+	{
+		return AlloygeryToolMaterialHelper.getMaterial(compound, AlloygeryToolMaterialHelper.NBT_KEYS.HEAD_MATERIAL).armor.piglin_loved;
+	}
 }

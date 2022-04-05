@@ -64,7 +64,7 @@ public class AlloygerySwordItem extends SwordItem implements IAlloygeryTool, IAl
 	{
 		if (this.isIn(group))
 		{
-			AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
+			AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
 				if (material.make_tool_heads)
 				{
 					ItemStack stack = new ItemStack(this);

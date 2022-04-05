@@ -4,6 +4,7 @@
   "color": 15198183,
   "make_tool_heads": true,
   "make_tool_bindings": true,
+  "make_sword_guards": true,
   "make_tool_handles": true,
   "repair_ingredient": "minecraft:iron_ingot",
   "tool_base": {
@@ -25,7 +26,7 @@
   },
   "tool_binding": {
     "mining_level": 0,
-    "durability": 0,
+    "durability": 24,
     "enchantability": 0,
     "mining_speed": 0.0,
     "attack_speed": 0.0,
@@ -33,7 +34,7 @@
     "luck": 0.0,
     "durability_multiplier": 1.0,
     "enchantability_multiplier": 1.0,
-    "mining_speed_multiplier": 1.0,
+    "mining_speed_multiplier": 0.9,
     "attack_speed_multiplier": 1.0,
     "attack_damage_multiplier": 1.0,
     "luck_multiplier": 1.0,

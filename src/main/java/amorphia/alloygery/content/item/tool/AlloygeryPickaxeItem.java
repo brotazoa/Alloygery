@@ -64,12 +64,12 @@ public class AlloygeryPickaxeItem extends PickaxeItem implements IAlloygeryTool
 	{
 		if (this.isIn(group))
 		{
-			AlloygeryMaterials.ALLOYGERY_MATERIALS.forEach(material -> {
+			AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
 				if (material.make_tool_heads)
 				{
 					ItemStack stack = new ItemStack(this);
 					AlloygeryToolMaterialHelper.setHeadMaterial(stack, material);
-					AlloygeryToolMaterialHelper.setBindingMaterial(stack, material);
+					AlloygeryToolMaterialHelper.setBindingMaterial(stack, AlloygeryMaterials.LEATHER);
 					AlloygeryToolMaterialHelper.setHandleMaterial(stack, AlloygeryMaterials.VANILLA_STICK);
 					stacks.add(stack);
 				}

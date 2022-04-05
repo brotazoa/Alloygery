@@ -4,6 +4,7 @@
   "color": 3402699,
   "make_tool_heads": true,
   "make_tool_bindings": false,
+  "make_sword_guards": false,
   "make_tool_handles": false,
   "repair_ingredient": "minecraft:diamond",
   "tool_base": {

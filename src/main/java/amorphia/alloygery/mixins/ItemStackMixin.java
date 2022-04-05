@@ -77,8 +77,8 @@ public abstract class ItemStackMixin
 	{
 		if(getItem() instanceof IAlloygeryTool alloygeryTool && slot == EquipmentSlot.MAINHAND && nbt != null)
 		{
-			final float damage = AlloygeryToolMaterialHelper.getAttackDamage(nbt) + alloygeryTool.getAttackDamageModifier();
-			final float speed = AlloygeryToolMaterialHelper.getAttackSpeed(nbt) + alloygeryTool.getAttackSpeedModifier();
+			final float damage = Math.max(0.0f, AlloygeryToolMaterialHelper.getAttackDamage(nbt) + alloygeryTool.getAttackDamageModifier());
+			final float speed = Math.max(-3.9f, AlloygeryToolMaterialHelper.getAttackSpeed(nbt) + alloygeryTool.getAttackSpeedModifier());
 
 			ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
 			builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(((ItemAccessor) getItem()).getAttackDamageModifierId(),

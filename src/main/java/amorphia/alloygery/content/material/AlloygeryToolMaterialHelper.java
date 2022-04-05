@@ -1,6 +1,5 @@
 package amorphia.alloygery.content.material;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.IMaterialItem;
 import com.google.common.collect.Maps;
 import net.minecraft.item.Item;

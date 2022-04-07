@@ -4,9 +4,12 @@ import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import com.google.gson.stream.JsonReader;
+import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
 
 import java.io.StringReader;
@@ -16,7 +19,25 @@ public class ModNetworking
 {
 	public static void register()
 	{
+		ServerPlayConnectionEvents.JOIN.register((network, packetSender, server) -> {
+			PacketByteBuf packet = new PacketByteBuf(Unpooled.buffer());
+			NbtCompound compound = new NbtCompound();
 
+			NbtCompound materialsTag = new NbtCompound();
+			AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
+				if(material == AlloygeryMaterials.UNKNOWN)
+					return;
+
+				Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
+				String jsonString = AlloygeryMaterial.GSON.toJson(material);
+				materialsTag.putString(id.toString(), jsonString);
+			});
+
+			compound.put("AlloygeryMaterials", materialsTag);
+
+			packet.writeNbt(compound);
+			packetSender.sendPacket(Alloygery.identifier("connect_packet"), packet);
+		});
 	}
 
 	public static void registerClient()

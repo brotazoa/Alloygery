@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -19,15 +20,7 @@ public class AlloygeryToolMaterialHelper
 	public static Ingredient getRepairIngredient(ItemStack stack)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(stack);
-		Ingredient repairIngredient = REPAIR_INGREDIENT_MAP.getOrDefault(headMaterial, null);
-
-		if (repairIngredient == null)
-		{
-			repairIngredient = Ingredient.ofItems(Registry.ITEM.get(headMaterial.repair_ingredient));
-			REPAIR_INGREDIENT_MAP.put(headMaterial, repairIngredient);
-		}
-
-		return repairIngredient;
+		return REPAIR_INGREDIENT_MAP.computeIfAbsent(headMaterial, material -> Ingredient.fromJson(material.repair_ingredient));
 	}
 
 	public static int getMiningLevel(NbtCompound compound)

@@ -6,7 +6,9 @@
   "make_tool_bindings": false,
   "make_sword_guards": false,
   "make_tool_handles": false,
-  "repair_ingredient": "minecraft:diamond",
+  "repair_ingredient": {
+    "tag": "c:diamonds"
+  },
   "tool_base": {
     "mining_level": 3,
     "durability": 1561,
@@ -15,12 +17,6 @@
     "attack_speed": 0.0,
     "attack_damage": 3.0,
     "luck": 0.0,
-    "durability_multiplier": 1.0,
-    "enchantability_multiplier": 1.0,
-    "mining_speed_multiplier": 1.0,
-    "attack_speed_multiplier": 1.0,
-    "attack_damage_multiplier": 1.0,
-    "luck_multiplier": 1.0,
     "fireproof": false,
     "piglin_loved": false
   },

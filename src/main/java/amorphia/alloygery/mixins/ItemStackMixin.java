@@ -3,6 +3,7 @@ package amorphia.alloygery.mixins;
 import amorphia.alloygery.content.item.tool.IAlloygeryMeleeWeapon;
 import amorphia.alloygery.content.item.tool.IAlloygeryTool;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
+import amorphia.alloygery.registry.ModAttributes;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
@@ -79,6 +80,7 @@ public abstract class ItemStackMixin
 		{
 			final float damage = Math.max(0.0f, AlloygeryToolMaterialHelper.getAttackDamage(nbt) + alloygeryTool.getAttackDamageModifier());
 			final float speed = Math.max(-3.9f, AlloygeryToolMaterialHelper.getAttackSpeed(nbt) + alloygeryTool.getAttackSpeedModifier());
+			final float luck = AlloygeryToolMaterialHelper.getLuck(nbt);
 
 			ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
 			builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(((ItemAccessor) getItem()).getAttackDamageModifierId(),
@@ -86,6 +88,9 @@ public abstract class ItemStackMixin
 					EntityAttributeModifier.Operation.ADDITION));
 			builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(((ItemAccessor) getItem()).getAttackSpeedModifierId(),
 					getItem() instanceof IAlloygeryMeleeWeapon ? "Weapon Modifier" : "Tool Modifier", (double) speed,
+					EntityAttributeModifier.Operation.ADDITION));
+			builder.put(EntityAttributes.GENERIC_LUCK, new EntityAttributeModifier(ModAttributes.ALLOYGERY_LUCK_MODIFIER,
+					getItem() instanceof IAlloygeryMeleeWeapon ? "Weapon Modifier" : "Tool Modifier", (double) luck,
 					EntityAttributeModifier.Operation.ADDITION));
 
 			cir.setReturnValue(builder.build());

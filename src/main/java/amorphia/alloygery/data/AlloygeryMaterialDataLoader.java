@@ -3,6 +3,7 @@ package amorphia.alloygery.data;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import com.google.gson.stream.JsonReader;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.ResourceManager;
@@ -29,6 +30,9 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 	@Override
 	public void reload(ResourceManager manager)
 	{
+		//clear repair ingredient map
+		AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.clear();
+
 		for (Identifier id : manager.findResources("materials", path -> path.endsWith(".json")))
 		{
 			Alloygery.LOGGER.info("Reading material from datapack: " + id);

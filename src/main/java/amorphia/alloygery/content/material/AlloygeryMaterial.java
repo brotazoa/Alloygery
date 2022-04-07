@@ -2,6 +2,7 @@ package amorphia.alloygery.content.material;
 
 import amorphia.alloygery.content.item.ModMiningLevels;
 import com.google.gson.*;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 
 import java.lang.reflect.Type;
@@ -19,7 +20,7 @@ public class AlloygeryMaterial
 	public boolean make_sword_guards = false;
 	public boolean make_tool_handles = false;
 
-	public Identifier repair_ingredient = null;
+	public JsonElement repair_ingredient = null;
 
 	public ToolPartSettings tool_base = new ToolPartSettings();
 	public ToolPartSettings tool_binding = new ToolPartSettings();
@@ -97,8 +98,14 @@ public class AlloygeryMaterial
 			if(jsonObject.has("make_tool_handles"))
 				builder.make_tool_handles(jsonObject.get("make_tool_handles").getAsBoolean());
 
-			if(jsonObject.has("repair_ingredient"))
-				builder.repair_ingredient(jsonObject.get("repair_ingredient").getAsString());
+			if(jsonObject.has("repair_ingredient") && jsonObject.get("repair_ingredient").isJsonObject())
+			{
+				builder.repair_ingredient(jsonObject.get("repair_ingredient").getAsJsonObject());
+			}
+			else
+			{
+				builder.repair_ingredient(null);
+			}
 
 			if(jsonObject.has("tool_base"))
 			{
@@ -142,7 +149,7 @@ public class AlloygeryMaterial
 			json.addProperty("make_sword_guards", material.make_sword_guards);
 			json.addProperty("make_tool_handles", material.make_tool_handles);
 
-			json.addProperty("repair_ingredient", (material.repair_ingredient == null ? "null" : material.repair_ingredient.toString()));
+			json.add("repair_ingredient", material.repair_ingredient == null ? JsonNull.INSTANCE : material.repair_ingredient);
 
 			json.add("tool_base", ToolPartSettings.Serializer.serialize(material.tool_base));
 			json.add("tool_binding", ToolPartSettings.Serializer.serialize(material.tool_binding));
@@ -200,14 +207,23 @@ public class AlloygeryMaterial
 			return this;
 		}
 
-		public AlloygeryMaterialBuilder repair_ingredient(String identifier)
+		public AlloygeryMaterialBuilder repair_ingredient_tag(String tagIdentifier)
 		{
-			return repair_ingredient(Identifier.tryParse(identifier));
+			JsonObject tag = new JsonObject();
+			tag.addProperty("tag", tagIdentifier);
+			return repair_ingredient(tag);
 		}
 
-		public AlloygeryMaterialBuilder repair_ingredient(Identifier identifier)
+		public AlloygeryMaterialBuilder repair_ingredient_item(String itemIdentifier)
 		{
-			this.material.repair_ingredient = identifier;
+			JsonObject item = new JsonObject();
+			item.addProperty("item", itemIdentifier);
+			return repair_ingredient(item);
+		}
+
+		public AlloygeryMaterialBuilder repair_ingredient(JsonElement element)
+		{
+			this.material.repair_ingredient = element;
 			return this;
 		}
 

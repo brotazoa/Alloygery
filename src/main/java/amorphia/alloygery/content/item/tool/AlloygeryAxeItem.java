@@ -1,8 +1,7 @@
 package amorphia.alloygery.content.item.tool;
 
-import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.*;
 import net.minecraft.text.Text;
@@ -63,7 +62,7 @@ public class AlloygeryAxeItem extends AxeItem implements IAlloygeryTool
 				{
 					ItemStack stack = new ItemStack(this);
 					AlloygeryToolMaterialHelper.setHeadMaterial(stack, material);
-					AlloygeryToolMaterialHelper.setBindingMaterial(stack, AlloygeryMaterials.LEATHER);
+					AlloygeryToolMaterialHelper.setBindingMaterial(stack, AlloygeryMaterials.HIDDEN);
 					AlloygeryToolMaterialHelper.setHandleMaterial(stack, AlloygeryMaterials.VANILLA_STICK);
 					stacks.add(stack);
 				}

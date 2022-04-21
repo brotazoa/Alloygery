@@ -1,8 +1,6 @@
 {
-  "parent": "minecraft:block/orientable",
+  "parent": "alloygery:block/alloy_kiln",
   "textures": {
-    "top": "minecraft:block/bricks",
-    "front": "alloygery:block/alloy_kiln_front_on",
-    "side": "minecraft:block/bricks"
+    "front": "alloygery:block/alloy_kiln_front_on_no_background"
   }
 }

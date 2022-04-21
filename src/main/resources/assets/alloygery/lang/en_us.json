@@ -484,5 +484,32 @@
   "text.config.alloygery.option.titanium_ore": "Titanium ore generation",
   "text.config.alloygery.option.titanium_ore.should_generate": "Generate titanium ore",
   "text.config.alloygery.option.titanium_ore.size": "Average Size of titanium ore patches",
-  "text.config.alloygery.option.titanium_ore.number": "Average number of titanium ore patches per chunk"
+  "text.config.alloygery.option.titanium_ore.number": "Average number of titanium ore patches per chunk",
+
+  "advancements.alloygery.adventure.single_use.title": "Single Use",
+  "advancements.alloygery.adventure.single_use.description": "Make a pickaxe with a max durability of 1",
+
+  "advancements.alloygery.story.smelt_bronze.title": "Acquire Bronzeware",
+  "advancements.alloygery.story.smelt_bronze.description": "Smelt a bronze ingot with tin and copper",
+
+  "advancements.alloygery.story.bronze_tools.title": "Bronze Age",
+  "advancements.alloygery.story.bronze_tools.description": "Construct an even better pickaxe",
+
+  "advancements.alloygery.story.smithing_anvil.title": "Hammer Time",
+  "advancements.alloygery.story.smithing_anvil.description": "Construct and place a Smithing Anvil",
+
+  "advancements.alloygery.story.blast_alloy_kiln.title": "A Blasting Good Time",
+  "advancements.alloygery.story.blast_alloy_kiln.description": "Construct and place a Blast Alloy Kiln",
+
+  "advancements.alloygery.story.smelt_steel.title": "Steeling The Show",
+  "advancements.alloygery.story.smelt_steel.description": "Smelt a steel ingot with charcoal and iron in a Blast Alloy Kiln",
+
+  "advancements.alloygery.story.dismantling.title": "Reduce, Reuse, Recycle",
+  "advancements.alloygery.story.dismantling.description": "Acquire a diamond tool head by dismantling a diamond tool at the smithing table",
+
+  "advancements.alloygery.story.diamond_tipped.title": "Diamond Tipper",
+  "advancements.alloygery.story.diamond_tipped.description": "Upgrade a tool with a diamond at the smithing table",
+
+  "advancements.alloygery.nether.netherite_platted.title": "Netherite Platting",
+  "advancements.alloygery.nether.netherite_platted.description": "Upgrade a tool with a netherite ingot at the smithing table"
 }

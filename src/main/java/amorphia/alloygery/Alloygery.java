@@ -39,6 +39,8 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	@Environment(EnvType.CLIENT)
 	public void onInitializeClient()
 	{
+		ModBlocks.registerClient();
+
 		ModScreens.registerClient();
 
 		ModNetworking.registerClient();

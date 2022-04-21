@@ -11,6 +11,7 @@ import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.data.AlloygeryGeneratedModelBuilder;
 import com.google.common.collect.Lists;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
@@ -18,6 +19,7 @@ import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -91,6 +93,12 @@ public class ModBlocks
 		Identifier identifier = Alloygery.identifier("block/" + path);
 		AlloygeryGeneratedModelBuilder.register(identifier, modelJsonSupplier);
 		ALLOYGERY_BLOCKS.put(path, block);
+	}
+
+	public static void registerClient()
+	{
+		BlockRenderLayerMap.INSTANCE.putBlock(ALLOY_KILN, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(BLAST_ALLOY_KILN, RenderLayer.getCutout());
 	}
 
 	public static void register()

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:story/smelt_iron",
+  "display": {
+    "icon": {
+      "item": "alloygery:blast_alloy_kiln"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.blast_alloy_kiln.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.blast_alloy_kiln.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "blast_alloy_kiln": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "alloygery:blast_alloy_kiln"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "blast_alloy_kiln"
+    ]
+  ]
+}

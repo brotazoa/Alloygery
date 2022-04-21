@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:story/smelt_iron",
+  "display": {
+    "icon": {
+      "item": "alloygery:smithing_anvil"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.smithing_anvil.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.smithing_anvil.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "smithing_anvil": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "alloygery:smithing_anvil"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "smithing_anvil"
+    ]
+  ]
+}

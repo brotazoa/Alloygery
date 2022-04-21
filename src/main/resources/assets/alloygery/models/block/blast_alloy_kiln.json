@@ -1,8 +1,36 @@
 {
-  "parent": "minecraft:block/orientable",
+  "parent": "minecraft:block/block",
   "textures": {
-    "top": "minecraft:block/blast_furnace_top",
-    "front": "alloygery:block/blast_alloy_kiln_front",
-    "side": "alloygery:block/blast_alloy_kiln_side"
-  }
+    "particle": "minecraft:block/bricks",
+    "base": "minecraft:block/bricks",
+    "front": "alloygery:block/blast_alloy_kiln_front_no_background",
+    "side": "alloygery:block/blast_alloy_kiln_side_no_background",
+    "top": "alloygery:block/blast_alloy_kiln_top_no_background",
+    "bottom": "alloygery:block/blast_alloy_kiln_bottom"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "down": {"texture": "#bottom", "cullface": "down"},
+        "up": {"texture": "#base", "cullface": "up"},
+        "north": {"texture": "#base", "cullface": "north"},
+        "south": {"texture": "#base", "cullface": "south"},
+        "west": {"texture": "#base", "cullface": "west"},
+        "east": {"texture": "#base", "cullface": "east"}
+      }
+    },
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "up": {"texture": "#top", "cullface": "up"},
+        "north": {"texture": "#front", "cullface": "north"},
+        "south": {"texture": "#side", "cullface": "south"},
+        "west": {"texture": "#side", "cullface": "west"},
+        "east": {"texture": "#side", "cullface": "east"}
+      }
+    }
+  ]
 }

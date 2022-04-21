@@ -1,0 +1,37 @@
+{
+  "parent": "alloygery:story/smelt_bronze",
+  "display": {
+    "icon": {
+      "item": "alloygery:alloygery_pickaxe",
+      "nbt": "{Damage:0, HeadMaterial:\"alloygery:materials/bronze\", BindingMaterial:\"alloygery:materials/hidden\", HandleMaterial:\"alloygery:materials/wooden\"}"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.bronze_tools.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.bronze_tools.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "alloygery_bronze_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "alloygery:alloygery_pickaxe",
+            "nbt": "{HeadMaterial:\"alloygery:materials/bronze\"}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "alloygery_bronze_pickaxe"
+    ]
+  ]
+}

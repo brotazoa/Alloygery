@@ -30,7 +30,7 @@ public abstract class AbstractAlloyKilnBlock extends BlockWithEntity
 
 	protected AbstractAlloyKilnBlock()
 	{
-		super(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.5f).lightLevel(state -> state.get(Properties.LIT) ? 13 : 0));
+		super(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.5f).luminance(state -> state.get(Properties.LIT) ? 13 : 0));
 		this.setDefaultState(this.getStateManager().getDefaultState().with(LIT, false));
 	}
 

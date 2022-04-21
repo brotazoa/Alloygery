@@ -17,7 +17,7 @@
     "item": "alloygery:alloygery_axe",
     "data": {
       "HeadMaterial": "alloygery:materials/copper",
-      "BindingMaterial": "alloygery:materials/copper",
+      "BindingMaterial": "alloygery:materials/hidden",
       "HandleMaterial": "alloygery:materials/wooden"
     }
   }

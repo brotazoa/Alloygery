@@ -139,64 +139,68 @@ public interface IAlloygeryTool
 					if(fireproofByParts[0]) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
 					if(piglinLovedByParts[0]) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
 
-					//binding
-					tooltip.add(new TranslatableText("tooltip.alloygery.info.binding")
-							.append(new LiteralText(": ")
-									.append(new TranslatableText("item.alloygery." + bindingMaterial.name + "_binding")))
-							.formatted(Formatting.WHITE));
+					if (bindingMaterial != AlloygeryMaterials.HIDDEN)
+					{
+						//binding
+						tooltip.add(new TranslatableText("tooltip.alloygery.info.binding")
+								.append(new LiteralText(": ")
+										.append(new TranslatableText("item.alloygery." + bindingMaterial.name + "_binding")))
+								.formatted(Formatting.WHITE));
 
-					final int binding_mining_level = miningLevelByParts[1] - miningLevelByParts[0];
-					if(binding_mining_level != 0 && miningTool)
-					{
-						tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_level")
-								.append(new LiteralText(": " + binding_mining_level))
-								.formatted(Formatting.GRAY));
-					}
-					final int binding_durability = durabilityByParts[1] - durabilityByParts[0];
-					if(binding_durability != 0)
-					{
-						tooltip.add(new TranslatableText("tooltip.alloygery.info.durability")
-								.append(new LiteralText(": " + binding_durability))
-								.formatted(Formatting.GRAY));
-					}
-					final int binding_enchantability = enchantabilityByParts[1] - enchantabilityByParts[0];
-					if(binding_enchantability != 0)
-					{
-						tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability")
-								.append(new LiteralText(": " + binding_enchantability))
-								.formatted(Formatting.GRAY));
-					}
-					final float binding_mining_speed = miningSpeedByParts[1] - miningSpeedByParts[0];
-					if(binding_mining_speed != 0)
-					{
-						tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_speed")
-								.append(new LiteralText(": " + String.format("%.2f", binding_mining_speed)))
-								.formatted(Formatting.GRAY));
-					}
-					final float binding_attack_speed = attackSpeedByParts[1] - attackSpeedByParts[0];
-					if(binding_attack_speed != 0)
-					{
-						tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_speed")
-								.append(new LiteralText(": " + String.format("%.2f", binding_attack_speed)))
-								.formatted(Formatting.GRAY));
-					}
-					final float binding_attack_damage = attackDamageByParts[1] - attackDamageByParts[0];
-					if(binding_attack_damage != 0)
-					{
-						tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_damage")
-								.append(new LiteralText(": " + String.format("%.2f", binding_attack_damage)))
-								.formatted(Formatting.GRAY));
-					}
-					final float binding_luck = luckByParts[1] - luckByParts[0];
-					if(binding_luck != 0)
-					{
-						tooltip.add(new TranslatableText("tooltip.alloygery.info.luck")
-								.append(new LiteralText(": " + String.format("%.2f", binding_luck)))
-								.formatted(Formatting.GRAY));
-					}
+						final int binding_mining_level = miningLevelByParts[1] - miningLevelByParts[0];
+						if(binding_mining_level != 0 && miningTool)
+						{
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_level")
+									.append(new LiteralText(": " + binding_mining_level))
+									.formatted(Formatting.GRAY));
+						}
+						final int binding_durability = durabilityByParts[1] - durabilityByParts[0];
+						if(binding_durability != 0)
+						{
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.durability")
+									.append(new LiteralText(": " + binding_durability))
+									.formatted(Formatting.GRAY));
+						}
+						final int binding_enchantability = enchantabilityByParts[1] - enchantabilityByParts[0];
+						if(binding_enchantability != 0)
+						{
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability")
+									.append(new LiteralText(": " + binding_enchantability))
+									.formatted(Formatting.GRAY));
+						}
+						final float binding_mining_speed = miningSpeedByParts[1] - miningSpeedByParts[0];
+						if(binding_mining_speed != 0)
+						{
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_speed")
+									.append(new LiteralText(": " + String.format("%.2f", binding_mining_speed)))
+									.formatted(Formatting.GRAY));
+						}
+						final float binding_attack_speed = attackSpeedByParts[1] - attackSpeedByParts[0];
+						if(binding_attack_speed != 0)
+						{
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_speed")
+									.append(new LiteralText(": " + String.format("%.2f", binding_attack_speed)))
+									.formatted(Formatting.GRAY));
+						}
+						final float binding_attack_damage = attackDamageByParts[1] - attackDamageByParts[0];
+						if(binding_attack_damage != 0)
+						{
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_damage")
+									.append(new LiteralText(": " + String.format("%.2f", binding_attack_damage)))
+									.formatted(Formatting.GRAY));
+						}
+						final float binding_luck = luckByParts[1] - luckByParts[0];
+						if(binding_luck != 0)
+						{
+							tooltip.add(new TranslatableText("tooltip.alloygery.info.luck")
+									.append(new LiteralText(": " + String.format("%.2f", binding_luck)))
+									.formatted(Formatting.GRAY));
+						}
 
-					if(fireproofByParts[1]) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
-					if(piglinLovedByParts[1]) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
+						if(fireproofByParts[1]) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+						if(piglinLovedByParts[1]) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
+
+					}
 
 					//handle
 					tooltip.add(new TranslatableText("tooltip.alloygery.info.handle")

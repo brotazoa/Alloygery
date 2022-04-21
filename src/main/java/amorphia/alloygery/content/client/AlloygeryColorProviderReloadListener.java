@@ -7,6 +7,8 @@ import amorphia.alloygery.content.item.AlloygeryCraftingItem;
 import amorphia.alloygery.content.item.AlloygeryTintedBlockItem;
 import amorphia.alloygery.content.item.part.AlloygeryPartItem;
 import amorphia.alloygery.content.item.tool.IAlloygeryTool;
+import amorphia.alloygery.content.material.AlloygeryMaterial;
+import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
@@ -70,7 +72,7 @@ public class AlloygeryColorProviderReloadListener implements SimpleSynchronousRe
 		{
 			case 0 -> AlloygeryToolMaterialHelper.getHandleMaterial(stack).color;
 			case 1 -> AlloygeryToolMaterialHelper.getHeadMaterial(stack).color;
-			case 2 -> AlloygeryToolMaterialHelper.getBindingMaterial(stack).color;
+			case 2 -> AlloygeryToolMaterialHelper.getBindingMaterial(stack) == AlloygeryMaterials.HIDDEN ? AlloygeryToolMaterialHelper.getHeadMaterial(stack).color : AlloygeryToolMaterialHelper.getBindingMaterial(stack).color;
 			case 3 -> AlloygeryToolMaterialHelper.getUpgradeMaterial(stack).color;
 			default -> -1;
 		};

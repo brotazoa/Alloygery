@@ -35,7 +35,7 @@ public class AlloygeryColorProviderReloadListener implements SimpleSynchronousRe
 	{
 		AlloygeryPartItem.PART_ITEMS.forEach(item -> {
 			ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
-				return tintIndex == 0 ? AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL).color : -1;
+				return tintIndex == 0 ? getMaterialColorFromPartStack(stack) : -1;
 			}, item);
 		});
 
@@ -68,6 +68,9 @@ public class AlloygeryColorProviderReloadListener implements SimpleSynchronousRe
 
 	static int getMaterialColorFromToolStack(ItemStack stack, int tintIndex)
 	{
+		if(AlloygeryToolMaterialHelper.isInfo(stack))
+			return AlloygeryMaterials.INFO.color;
+
 		return switch (tintIndex)
 		{
 			case 0 -> AlloygeryToolMaterialHelper.getHandleMaterial(stack).color;
@@ -76,5 +79,16 @@ public class AlloygeryColorProviderReloadListener implements SimpleSynchronousRe
 			case 3 -> AlloygeryToolMaterialHelper.getUpgradeMaterial(stack).color;
 			default -> -1;
 		};
+	}
+
+	static int getMaterialColorFromPartStack(ItemStack stack)
+	{
+		boolean hasMaterialKey = AlloygeryToolMaterialHelper.hasMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
+		AlloygeryMaterial material = AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
+
+		if(!hasMaterialKey && material == AlloygeryMaterials.UNKNOWN)
+			return AlloygeryMaterials.INFO.color;
+
+		return material.color;
 	}
 }

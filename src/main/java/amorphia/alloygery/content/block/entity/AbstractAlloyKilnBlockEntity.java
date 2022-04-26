@@ -40,7 +40,7 @@ public abstract class AbstractAlloyKilnBlockEntity extends LockableContainerBloc
 {
 	public static final int[] TOP_SLOTS = new int[] { 0, 1, 2, 3 };
 	public static final int[] SIDE_SLOTS = new int[] { 4 };
-	public static final int[] BOTTOM_SLOTS = new int[] { 5 };
+	public static final int[] BOTTOM_SLOTS = new int[] { 4, 5 };
 
 	public static final int FUEL_SLOT = 4;
 	public static final int OUTPUT_SLOT = 5;
@@ -158,7 +158,7 @@ public abstract class AbstractAlloyKilnBlockEntity extends LockableContainerBloc
 			return true;
 		else
 		{
-			ItemStack itemStack = this.inventory.get(4);
+			ItemStack itemStack = this.inventory.get(FUEL_SLOT);
 			return AbstractFurnaceBlockEntity.canUseAsFuel(stack) || stack.isOf(Items.BUCKET) && !itemStack.isOf(Items.BUCKET);
 		}
 	}
@@ -166,8 +166,10 @@ public abstract class AbstractAlloyKilnBlockEntity extends LockableContainerBloc
 	@Override
 	public boolean canExtract(int slot, ItemStack stack, Direction dir)
 	{
-		if(dir == Direction.DOWN && slot == 5)
+		if(dir == Direction.DOWN && slot == FUEL_SLOT)
+		{
 			return stack.isOf(Items.WATER_BUCKET) || stack.isOf(Items.BUCKET);
+		}
 		else return true;
 	}
 

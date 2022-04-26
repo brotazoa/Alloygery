@@ -38,10 +38,10 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 	private static final int SCROLLBAR_AREA_HEIGHT = 54;
 	private static final int RECIPE_LIST_OFFSET_X = 52;
 	private static final int RECIPE_LIST_OFFSET_Y = 14;
-	private float scrollAmount;
-	private boolean mouseClicked;
-	private int scrollOffset;
-	private boolean canCraft;
+	private float scrollAmount = 0.0f;
+	private boolean mouseClicked = false;
+	private int scrollOffset = 0;
+	private boolean canCraft = false;
 
 	public SmithingAnvilScreen(SmithingAnvilScreenHandler handler, PlayerInventory inventory, Text title)
 	{
@@ -85,7 +85,7 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 	protected void drawMouseoverTooltip(MatrixStack matrices, int x, int y)
 	{
 		super.drawMouseoverTooltip(matrices, x, y);
-		if (this.canCraft)
+		if (this.handler.canCraft())
 		{
 			int i = this.x + RECIPE_LIST_OFFSET_X;
 			int j = this.y + RECIPE_LIST_OFFSET_Y;
@@ -158,7 +158,7 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 	public boolean mouseClicked(double mouseX, double mouseY, int button)
 	{
 		this.mouseClicked = false;
-		if (this.canCraft)
+		if (this.handler.canCraft())
 		{
 			int recipeListX = this.x + RECIPE_LIST_OFFSET_X;
 			int recipeListY = this.y + RECIPE_LIST_OFFSET_Y;
@@ -211,7 +211,7 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 
 	private boolean shouldScroll()
 	{
-		return this.canCraft && this.handler.getAvailableRecipeCount() > RECIPE_LIST_ROWS;
+		return this.handler.canCraft() && this.handler.getAvailableRecipeCount() > RECIPE_LIST_ROWS;
 	}
 
 	protected int getMaxScroll()
@@ -221,11 +221,7 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 
 	private void onInventoryChange()
 	{
-		this.canCraft = this.handler.canCraft();
-		if (!this.canCraft)
-		{
-			this.scrollAmount = 0.0f;
-			this.scrollOffset = 0;
-		}
+		this.scrollAmount = 0.0f;
+		this.scrollOffset = 0;
 	}
 }

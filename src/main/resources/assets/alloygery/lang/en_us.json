@@ -409,6 +409,28 @@
   "container.alloygery.blast_alloy_kiln": "Blast Alloy Kiln",
   "container.alloygery.smithing_anvil": "Smithing Anvil",
 
+  "item.alloygery.info_axe": "Axe",
+  "item.alloygery.info_hoe": "Hoe",
+  "item.alloygery.info_pickaxe": "Pickaxe",
+  "item.alloygery.info_shovel": "Shovel",
+  "item.alloygery.info_sword": "Sword",
+
+  "item.alloygery.info_axe_head": "Any Axe Head",
+  "item.alloygery.info_hoe_head": "Any Hoe Head",
+  "item.alloygery.info_pickaxe_head": "Any Pickaxe Head",
+  "item.alloygery.info_shovel_head": "Any Shovel Head",
+  "item.alloygery.info_sword_blade": "Any Sword Blade",
+
+  "item.alloygery.info_binding": "Any Binding",
+  "item.alloygery.info_sword_guard": "Any Sword Guard",
+  "item.alloygery.info_handle": "Any Handle",
+
+  "tooltip.alloygery.crafting_info.axe": "Craft an Axe with any Axe Head, Binding, and Handle",
+  "tooltip.alloygery.crafting_info.hoe": "Craft a Hoe with any Hoe Head, Binding, and Handle",
+  "tooltip.alloygery.crafting_info.pickaxe": "Craft a Pickaxe with any Pickaxe Head, Binding, and Handle",
+  "tooltip.alloygery.crafting_info.shovel": "Craft a Shovel with any Shovel Head, Binding, and Handle",
+  "tooltip.alloygery.crafting_info.sword": "Craft a Sword with any Sword Blade, Sword Guard, and Handle",
+
   "tooltip.alloygery.shift_for_info": "Hold Shift For More Info",
   "tooltip.alloygery.ctrl_for_details": "Hold Ctrl For More Details",
   "tooltip.alloygery.when_used_in_craft": "When Used To Craft A Tool",

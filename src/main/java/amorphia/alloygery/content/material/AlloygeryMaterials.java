@@ -17,6 +17,7 @@ public class AlloygeryMaterials
 
 	public static final AlloygeryMaterial UNKNOWN = registerMaterial("unknown", new AlloygeryMaterial("unknown"));
 	public static final AlloygeryMaterial HIDDEN = registerMaterial("hidden", new AlloygeryMaterial("hidden"));
+	public static final AlloygeryMaterial INFO = registerMaterial("info", new AlloygeryMaterial.AlloygeryMaterialBuilder("info").color(0).build());
 
 	public static final AlloygeryMaterial TIN;
 	public static final AlloygeryMaterial COPPER;

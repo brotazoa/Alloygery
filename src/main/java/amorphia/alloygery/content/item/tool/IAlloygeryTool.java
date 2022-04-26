@@ -39,6 +39,12 @@ public interface IAlloygeryTool
 	{
 		if (stack.getItem() instanceof IAlloygeryTool alloygeryTool)
 		{
+			if (AlloygeryToolMaterialHelper.isInfo(stack))
+			{
+				tooltip.add(new TranslatableText("tooltip.alloygery.crafting_info." + alloygeryTool.getToolTypeString()).formatted(Formatting.DARK_GRAY));
+				return;
+			}
+
 			NbtCompound compound = stack.getNbt();
 			if (compound != null)
 			{
@@ -346,6 +352,11 @@ public interface IAlloygeryTool
 
 	static Text getUpgradedName(ItemStack stack, String postfix)
 	{
+		if (AlloygeryToolMaterialHelper.isInfo(stack))
+		{
+			return new TranslatableText("item.alloygery.info_" + postfix);
+		}
+
 		AlloygeryMaterial head = AlloygeryToolMaterialHelper.getHeadMaterial(stack);
 		AlloygeryMaterial upgrade = AlloygeryToolMaterialHelper.getUpgradeMaterial(stack);
 

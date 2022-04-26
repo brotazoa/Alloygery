@@ -63,7 +63,6 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 			public void markDirty()
 			{
 				SmithingAnvilScreenHandler.this.onContentChanged(input);
-				SmithingAnvilScreenHandler.this.contentsChangedListener.run();
 				super.markDirty();
 			}
 		};
@@ -139,7 +138,7 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 
 	public boolean canCraft()
 	{
-		return this.hammerSlot.hasStack() && this.materialSlot.hasStack() && !this.availableRecipes.isEmpty();
+		return !this.availableRecipes.isEmpty();
 	}
 
 	@Override
@@ -177,6 +176,8 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 
 		if (!materialStackInInventory.isOf(this.materialStack.getItem()) || !toolStackInInventory.isOf(this.hammerStack.getItem()))
 		{
+			SmithingAnvilScreenHandler.this.contentsChangedListener.run();
+
 			this.materialStack = materialStackInInventory.copy();
 			this.hammerStack = toolStackInInventory.copy();
 

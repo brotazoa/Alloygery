@@ -37,7 +37,7 @@ public class PiglinBrainMixin
 		while (armorStacks.hasNext())
 		{
 			ItemStack stack = armorStacks.next();
-			if(stack.getItem() instanceof ArmorItem && AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.HEAD_MATERIAL).armor.piglin_loved)
+			if(stack.getItem() instanceof ArmorItem && AlloygeryArmorMaterialHelper.isPiglinLoved(stack.getNbt()))
 			{
 				wearingGold = true;
 				break;

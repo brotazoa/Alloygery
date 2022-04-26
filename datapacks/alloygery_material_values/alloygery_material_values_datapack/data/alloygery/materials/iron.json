@@ -23,36 +23,25 @@
   "tool_binding": {
     "mining_level": 0,
     "durability": 0,
-    "enchantability": 0,
-    "mining_speed": -1.0,
-    "attack_speed": 0.0,
-    "attack_damage": 0.0,
-    "luck": 0.0,
-    "durability_multiplier": 1.0,
-    "enchantability_multiplier": 1.0,
-    "mining_speed_multiplier": 0.9,
-    "attack_speed_multiplier": 1.0,
-    "attack_damage_multiplier": 1.0,
-    "luck_multiplier": 1.0,
-    "fireproof": false,
-    "piglin_loved": false
-  },
-  "tool_handle": {
-    "mining_level": 0,
-    "durability": 0,
-    "enchantability": 0,
+    "enchantability": 5,
     "mining_speed": 0.0,
     "attack_speed": 0.0,
     "attack_damage": 0.0,
     "luck": 0.0,
-    "durability_multiplier": 0.9,
+    "durability_multiplier": 1.1,
+    "enchantability_multiplier": 1.0,
+    "mining_speed_multiplier": 1.0,
+    "attack_speed_multiplier": 1.0,
+    "attack_damage_multiplier": 1.0,
+    "luck_multiplier": 1.0
+  },
+  "tool_handle": {
+    "durability_multiplier": 1.1,
     "enchantability_multiplier": 1.0,
     "mining_speed_multiplier": 0.9,
-    "attack_speed_multiplier": 1.0,
+    "attack_speed_multiplier": 1.1,
     "attack_damage_multiplier": 0.9,
-    "luck_multiplier": 1.0,
-    "fireproof": false,
-    "piglin_loved": false
+    "luck_multiplier": 1.0
   },
   "armor": {
     "durability": 15,

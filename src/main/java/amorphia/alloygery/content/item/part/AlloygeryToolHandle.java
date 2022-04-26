@@ -43,21 +43,27 @@ public class AlloygeryToolHandle extends AlloygeryPartItem
 	@Override
 	public Text getName(ItemStack stack)
 	{
+		boolean hasMaterial = AlloygeryToolMaterialHelper.hasMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
 		AlloygeryMaterial material = AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
 
-		return new TranslatableText("item.alloygery." + material.name + "_handle");
+		return new TranslatableText("item.alloygery." + (!hasMaterial && material == AlloygeryMaterials.UNKNOWN ? AlloygeryMaterials.INFO.name : material.name) + "_handle");
 	}
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
 	{
+		boolean hasMaterial = AlloygeryToolMaterialHelper.hasMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
+		AlloygeryMaterial material = AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
+
+		if(!hasMaterial && material == AlloygeryMaterials.UNKNOWN)
+			return;
+
 		if (!Screen.hasShiftDown())
 		{
 			tooltip.add(new TranslatableText("tooltip.alloygery.shift_for_info").formatted(Formatting.DARK_GRAY));
 		}
 		else
 		{
-			AlloygeryMaterial material = AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
 			AlloygeryMaterial.ToolPartSettings settings = material.tool_handle;
 
 			tooltip.add(new TranslatableText("tooltip.alloygery.when_used_in_craft"));

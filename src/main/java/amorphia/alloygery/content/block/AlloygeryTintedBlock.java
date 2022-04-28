@@ -1,12 +1,10 @@
 package amorphia.alloygery.content.block;
 
 import amorphia.alloygery.content.material.AlloygeryMaterial;
-import com.google.common.collect.Maps;
+import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
-import java.util.Map;
 
 public class AlloygeryTintedBlock extends Block
 {

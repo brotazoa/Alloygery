@@ -4,6 +4,7 @@ import amorphia.alloygery.content.item.BaseCraftingToolItem;
 import amorphia.alloygery.content.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.registry.ModBlocks;
 import amorphia.alloygery.registry.ModScreens;
+import com.google.common.collect.Lists;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -17,7 +18,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 

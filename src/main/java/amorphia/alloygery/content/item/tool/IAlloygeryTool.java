@@ -3,6 +3,7 @@ package amorphia.alloygery.content.item.tool;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
+import com.google.common.collect.Lists;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -15,7 +16,6 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 

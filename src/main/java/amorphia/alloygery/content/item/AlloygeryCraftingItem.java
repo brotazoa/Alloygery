@@ -1,8 +1,8 @@
 package amorphia.alloygery.content.item;
 
 import amorphia.alloygery.content.material.AlloygeryMaterial;
+import com.google.common.collect.Lists;
 import net.minecraft.item.Item;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 

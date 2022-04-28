@@ -1,9 +1,9 @@
 package amorphia.alloygery.content.item;
 
 import amorphia.alloygery.content.material.AlloygeryMaterial;
+import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 

@@ -4,14 +4,18 @@ import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
+import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.JsonHelper;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 
 public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceReloadListener
 {
@@ -41,7 +45,17 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 			{
 				Identifier trimmedIdentifier = new Identifier(id.getNamespace(), id.getPath().substring(0, id.getPath().length() - ".json".length()));
 
-				AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(new JsonReader(new InputStreamReader(is)), AlloygeryMaterial.class);
+				InputStreamReader reader = new InputStreamReader(is);
+				JsonObject json = JsonHelper.deserialize(reader);
+				reader.close();
+
+				if(!ResourceConditions.objectMatchesConditions(json))
+				{
+					Alloygery.LOGGER.info("Load conditions failed, skipping: " + id);
+					continue;
+				}
+
+				AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(json, AlloygeryMaterial.class);
 				AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.getOrDefault(trimmedIdentifier, AlloygeryMaterials.UNKNOWN);
 
 				if(material == null)

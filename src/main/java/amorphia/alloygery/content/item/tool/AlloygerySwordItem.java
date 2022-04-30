@@ -1,5 +1,6 @@
 package amorphia.alloygery.content.item.tool;
 
+import amorphia.alloygery.content.material.AlloygeryMaterialRegistry;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
 import net.minecraft.client.item.TooltipContext;
@@ -63,11 +64,11 @@ public class AlloygerySwordItem extends SwordItem implements IAlloygeryTool, IAl
 	{
 		if (this.isIn(group))
 		{
-			AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
+			AlloygeryMaterialRegistry.forEach((identifier, material) -> {
 				if (material.make_tool_heads)
 				{
 					ItemStack stack = new ItemStack(this);
-					AlloygeryToolMaterialHelper.setHeadMaterial(stack, material);
+					AlloygeryToolMaterialHelper.setHeadMaterial(stack, identifier);
 					AlloygeryToolMaterialHelper.setBindingMaterial(stack, AlloygeryMaterials.HIDDEN);
 					AlloygeryToolMaterialHelper.setHandleMaterial(stack, AlloygeryMaterials.VANILLA_STICK);
 					stacks.add(stack);

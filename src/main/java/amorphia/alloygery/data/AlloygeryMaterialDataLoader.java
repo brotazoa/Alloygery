@@ -1,11 +1,8 @@
 package amorphia.alloygery.data;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryMaterials;
-import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
+import amorphia.alloygery.content.material.*;
 import com.google.gson.JsonObject;
-import com.google.gson.stream.JsonReader;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.minecraft.resource.ResourceManager;
@@ -15,7 +12,6 @@ import net.minecraft.util.JsonHelper;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
 
 public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceReloadListener
 {
@@ -36,6 +32,7 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 	{
 		//clear repair ingredient map
 		AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.clear();
+		AlloygeryMaterialRegistry.resetToRegisteredValues();
 
 		for (Identifier id : manager.findResources("materials", path -> path.endsWith(".json")))
 		{
@@ -56,24 +53,8 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 				}
 
 				AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(json, AlloygeryMaterial.class);
-				AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.getOrDefault(trimmedIdentifier, AlloygeryMaterials.UNKNOWN);
-
-				if(material == null)
-				{
-					Alloygery.LOGGER.warn("Null material from loading " + id);
-					continue;
-				}
-
-				if (registeredMaterial != AlloygeryMaterials.UNKNOWN)
-				{
-					//try merge
-					AlloygeryMaterial.merge(registeredMaterial, material);
-				}
-				else
-				{
-					//register new
-					AlloygeryMaterials.register(trimmedIdentifier, material);
-				}
+				AlloygeryMaterialData materialData = AlloygeryMaterialData.fromAlloygeryMaterial(material);
+				AlloygeryMaterialRegistry.load(trimmedIdentifier, materialData);
 			}
 			catch (IOException thrown)
 			{

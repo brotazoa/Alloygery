@@ -2,7 +2,6 @@ package amorphia.alloygery.content.material;
 
 import amorphia.alloygery.content.item.ModMiningLevels;
 import com.google.gson.*;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 
 import java.lang.reflect.Type;
@@ -29,6 +28,11 @@ public class AlloygeryMaterial
 
 	public ArmorPartSettings armor = new ArmorPartSettings();
 
+	AlloygeryMaterial()
+	{
+		this("unknown");
+	}
+
 	AlloygeryMaterial(String name)
 	{
 		this.name = name;
@@ -36,36 +40,36 @@ public class AlloygeryMaterial
 
 	public static AlloygeryMaterial getById(String id)
 	{
-		return AlloygeryMaterials.ALLOYGERY_MATERIALS.getOrDefault(Identifier.tryParse(id), AlloygeryMaterials.UNKNOWN);
+		return AlloygeryMaterialRegistry.get(Identifier.tryParse(id));
 	}
 
-	public static AlloygeryMaterial merge(AlloygeryMaterial original, AlloygeryMaterial other)
-	{
-		if(original == null || other == null || original == other)
-			return original;
-
-		if(!original.name.equals(other.name))
-			throw new IllegalArgumentException("Can not merge data for unlike materials");
-
-		original.category = other.category;
-		original.color = other.color;
-
-		original.make_tool_heads = other.make_tool_heads;
-		original.make_tool_bindings = other.make_tool_bindings;
-		original.make_sword_guards = other.make_sword_guards;
-		original.make_tool_handles = other.make_tool_handles;
-
-		original.repair_ingredient = other.repair_ingredient;
-
-		original.tool_base.merge(other.tool_base);
-		original.tool_binding.merge(other.tool_binding);
-		original.tool_handle.merge(other.tool_handle);
-		original.tool_upgrade.merge(other.tool_upgrade);
-
-		original.armor.merge(other.armor);
-
-		return original;
-	}
+//	public static AlloygeryMaterial merge(AlloygeryMaterial original, AlloygeryMaterial other)
+//	{
+//		if(original == null || other == null || original == other)
+//			return original;
+//
+//		if(!original.name.equals(other.name))
+//			throw new IllegalArgumentException("Can not merge data for unlike materials");
+//
+//		original.category = other.category;
+//		original.color = other.color;
+//
+//		original.make_tool_heads = other.make_tool_heads;
+//		original.make_tool_bindings = other.make_tool_bindings;
+//		original.make_sword_guards = other.make_sword_guards;
+//		original.make_tool_handles = other.make_tool_handles;
+//
+//		original.repair_ingredient = other.repair_ingredient;
+//
+//		original.tool_base.set(other.tool_base);
+//		original.tool_binding.set(other.tool_binding);
+//		original.tool_handle.set(other.tool_handle);
+//		original.tool_upgrade.set(other.tool_upgrade);
+//
+//		original.armor.set(other.armor);
+//
+//		return original;
+//	}
 
 	public static class AlloygeryMaterialSerializer implements JsonDeserializer<AlloygeryMaterial>, JsonSerializer<AlloygeryMaterial>
 	{
@@ -288,26 +292,26 @@ public class AlloygeryMaterial
 		public boolean fireproof = false;
 		public boolean piglin_loved = false;
 
-		public void merge(ToolPartSettings other)
-		{
-			this.mining_level = other.mining_level;
-			this.durability = other.durability;
-			this.enchantability = other.enchantability;
-			this.mining_speed = other.mining_speed;
-			this.attack_speed = other.attack_speed;
-			this.attack_damage = other.attack_damage;
-			this.luck = other.luck;
-
-			this.durability_multiplier = other.durability_multiplier;
-			this.enchantability_multiplier = other.enchantability_multiplier;
-			this.mining_speed_multiplier = other.mining_speed_multiplier;
-			this.attack_speed_multiplier = other.attack_speed_multiplier;
-			this.attack_damage_multiplier = other.attack_damage_multiplier;
-			this.luck_multiplier = other.luck_multiplier;
-
-			this.fireproof = other.fireproof;
-			this.piglin_loved = other.piglin_loved;
-		}
+//		public void set(ToolPartSettings other)
+//		{
+//			this.mining_level = other.mining_level;
+//			this.durability = other.durability;
+//			this.enchantability = other.enchantability;
+//			this.mining_speed = other.mining_speed;
+//			this.attack_speed = other.attack_speed;
+//			this.attack_damage = other.attack_damage;
+//			this.luck = other.luck;
+//
+//			this.durability_multiplier = other.durability_multiplier;
+//			this.enchantability_multiplier = other.enchantability_multiplier;
+//			this.mining_speed_multiplier = other.mining_speed_multiplier;
+//			this.attack_speed_multiplier = other.attack_speed_multiplier;
+//			this.attack_damage_multiplier = other.attack_damage_multiplier;
+//			this.luck_multiplier = other.luck_multiplier;
+//
+//			this.fireproof = other.fireproof;
+//			this.piglin_loved = other.piglin_loved;
+//		}
 
 		public static class Serializer
 		{
@@ -518,21 +522,21 @@ public class AlloygeryMaterial
 		public boolean freeze_immune = false;
 		public boolean quiet = false;
 
-		public void merge(ArmorPartSettings other)
-		{
-			this.durability = other.durability;
-			this.helmet = other.helmet;
-			this.chestplate = other.chestplate;
-			this.leggings = other.leggings;
-			this.boots = other.boots;
-			this.enchantability = other.enchantability;
-			this.toughness = other.toughness;
-			this.knockback_resistance = other.knockback_resistance;
-
-			this.fireproof = other.fireproof;
-			this.piglin_loved = other.piglin_loved;
-			this.freeze_immune = other.freeze_immune;
-		}
+//		public void set(ArmorPartSettings other)
+//		{
+//			this.durability = other.durability;
+//			this.helmet = other.helmet;
+//			this.chestplate = other.chestplate;
+//			this.leggings = other.leggings;
+//			this.boots = other.boots;
+//			this.enchantability = other.enchantability;
+//			this.toughness = other.toughness;
+//			this.knockback_resistance = other.knockback_resistance;
+//
+//			this.fireproof = other.fireproof;
+//			this.piglin_loved = other.piglin_loved;
+//			this.freeze_immune = other.freeze_immune;
+//		}
 
 		public static class ArmorPartSettingsBuilder
 		{

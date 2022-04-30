@@ -2,23 +2,16 @@ package amorphia.alloygery.content.material;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.ModMiningLevels;
-import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
 import net.minecraft.util.Identifier;
 
 public class AlloygeryMaterials
 {
-//	public static final DefaultedRegistry<AlloygeryMaterial> ALLOYGERY_MATERIALS = FabricRegistryBuilder
-//			.createDefaulted(AlloygeryMaterial.class, Alloygery.identifier("materials"), Alloygery.identifier("materials/unknown"))
-//			.attribute(RegistryAttribute.SYNCED)
-//			.buildAndRegister();
-
-	public static final BiMap<Identifier, AlloygeryMaterial> ALLOYGERY_MATERIALS = HashBiMap.create();
-
+	//meta materials
 	public static final AlloygeryMaterial UNKNOWN = registerMaterial("unknown", new AlloygeryMaterial("unknown"));
 	public static final AlloygeryMaterial HIDDEN = registerMaterial("hidden", new AlloygeryMaterial("hidden"));
 	public static final AlloygeryMaterial INFO = registerMaterial("info", new AlloygeryMaterial.AlloygeryMaterialBuilder("info").color(0).build());
 
+	//metals
 	public static final AlloygeryMaterial TIN;
 	public static final AlloygeryMaterial COPPER;
 	public static final AlloygeryMaterial BRONZE;
@@ -37,20 +30,20 @@ public class AlloygeryMaterials
 	public static final AlloygeryMaterial TITANIUM_GOLD;
 	public static final AlloygeryMaterial NITINOL;
 
+	//non tool head materials
 	public static final AlloygeryMaterial VANILLA_STICK;
 	public static final AlloygeryMaterial LEATHER;
 
 	public static void init(){}
 
-	static AlloygeryMaterial registerMaterial(String name, AlloygeryMaterial material)
+	private static AlloygeryMaterial registerMaterial(String name, AlloygeryMaterial material)
 	{
 		return register(Alloygery.identifier("materials/" + name), material);
 	}
 
-	public static AlloygeryMaterial register(Identifier identifier, AlloygeryMaterial material)
+	private static AlloygeryMaterial register(Identifier identifier, AlloygeryMaterial material)
 	{
-		ALLOYGERY_MATERIALS.put(identifier, material);
-		return material;
+		return AlloygeryMaterialRegistry.register(identifier, material);
 	}
 
 	static

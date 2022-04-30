@@ -1,5 +1,6 @@
 package amorphia.alloygery.content.material;
 
+import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.IMaterialItem;
 import amorphia.alloygery.content.item.part.AlloygeryPartItem;
 import amorphia.alloygery.content.item.tool.IAlloygeryTool;
@@ -8,12 +9,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 public class AlloygeryToolMaterialHelper
 {
@@ -386,7 +387,11 @@ public class AlloygeryToolMaterialHelper
 
 	public static AlloygeryMaterial getMaterial(NbtCompound compound, NBT_KEYS keys)
 	{
-		return getMaterial(ItemStack.fromNbt(compound), keys);
+		if(compound != null && compound.contains(keys.value))
+		{
+			return AlloygeryMaterial.getById(compound.getString(keys.value));
+		}
+		else return AlloygeryMaterials.UNKNOWN;
 	}
 
 	public static AlloygeryMaterial getMaterial(ItemStack stack, NBT_KEYS key)
@@ -399,118 +404,119 @@ public class AlloygeryToolMaterialHelper
 		}
 		else
 		{
-			return stack.getItem() instanceof IMaterialItem materialItem ? materialItem.getAlloygeryMaterial() : AlloygeryMaterials.UNKNOWN;
+			return stack.getItem() instanceof IMaterialItem materialItem ? materialItem.getAlloygeryMaterial() : getMaterialFromIdentifier(stack);
 		}
 	}
 
 	public static ItemStack setMaterial(ItemStack stack, AlloygeryMaterial material, NBT_KEYS key)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
-		if (material == AlloygeryMaterials.UNKNOWN)
-		{
-			stack.removeSubNbt(key.value);
-		}
-		else
-		{
-			stack.getOrCreateNbt().putString(key.value, identifier.toString());
-		}
-		return stack;
+		return setMaterial(stack, AlloygeryMaterialRegistry.identify(material), key);
 	}
 
-	public static AlloygeryMaterial getHeadMaterial(ItemStack stack)
+	public static ItemStack setMaterial(ItemStack stack, Identifier materialIdentifier, NBT_KEYS key)
 	{
-		return getHeadMaterial(stack.getNbt());
+		stack.getOrCreateNbt().putString(key.value, materialIdentifier.toString());
+		return stack;
 	}
 
 	public static AlloygeryMaterial getHeadMaterial(NbtCompound compound)
 	{
-		return compound == null ? AlloygeryMaterials.UNKNOWN : AlloygeryMaterial.getById(compound.getString(NBT_KEYS.HEAD_MATERIAL.value));
+		return getMaterial(compound, NBT_KEYS.HEAD_MATERIAL);
 	}
 
-	public static ItemStack setHeadMaterial(ItemStack stack, AlloygeryMaterial material)
+	public static AlloygeryMaterial getHeadMaterial(ItemStack stack)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
-		if (material == AlloygeryMaterials.UNKNOWN)
-		{
-			stack.removeSubNbt(NBT_KEYS.HEAD_MATERIAL.value);
-		}
-		else
-		{
-			stack.getOrCreateNbt().putString(NBT_KEYS.HEAD_MATERIAL.value, identifier.toString());
-		}
-		return stack;
-	}
-
-	public static AlloygeryMaterial getHandleMaterial(ItemStack stack)
-	{
-		return getHandleMaterial(stack.getNbt());
-	}
-
-	public static AlloygeryMaterial getHandleMaterial(NbtCompound compound)
-	{
-		return compound == null ? AlloygeryMaterials.UNKNOWN : AlloygeryMaterial.getById(compound.getString(NBT_KEYS.HANDLE_MATERIAL.value));
-	}
-
-	public static ItemStack setHandleMaterial(ItemStack stack, AlloygeryMaterial material)
-	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
-		if (material == AlloygeryMaterials.UNKNOWN)
-		{
-			stack.removeSubNbt(NBT_KEYS.HANDLE_MATERIAL.value);
-		}
-		else
-		{
-			stack.getOrCreateNbt().putString(NBT_KEYS.HANDLE_MATERIAL.value, identifier.toString());
-		}
-		return stack;
-	}
-
-	public static AlloygeryMaterial getBindingMaterial(ItemStack stack)
-	{
-		return getBindingMaterial(stack.getNbt());
+		return getMaterial(stack, NBT_KEYS.HEAD_MATERIAL);
 	}
 
 	public static AlloygeryMaterial getBindingMaterial(NbtCompound compound)
 	{
-		return compound == null ? AlloygeryMaterials.UNKNOWN : AlloygeryMaterial.getById(compound.getString(NBT_KEYS.BINDING_MATERIAL.value));
+		return getMaterial(compound, NBT_KEYS.BINDING_MATERIAL);
 	}
 
-	public static ItemStack setBindingMaterial(ItemStack stack, AlloygeryMaterial material)
+	public static AlloygeryMaterial getBindingMaterial(ItemStack stack)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
-		if (material == AlloygeryMaterials.UNKNOWN)
-		{
-			stack.removeSubNbt(NBT_KEYS.BINDING_MATERIAL.value);
-		}
-		else
-		{
-			stack.getOrCreateNbt().putString(NBT_KEYS.BINDING_MATERIAL.value, identifier.toString());
-		}
-		return stack;
+		return getMaterial(stack, NBT_KEYS.BINDING_MATERIAL);
 	}
 
-	public static AlloygeryMaterial getUpgradeMaterial(ItemStack stack)
+	public static AlloygeryMaterial getHandleMaterial(NbtCompound compound)
 	{
-		return getUpgradeMaterial(stack.getNbt());
+		return getMaterial(compound, NBT_KEYS.HANDLE_MATERIAL);
+	}
+
+	public static AlloygeryMaterial getHandleMaterial(ItemStack stack)
+	{
+		return getMaterial(stack, NBT_KEYS.HANDLE_MATERIAL);
 	}
 
 	public static AlloygeryMaterial getUpgradeMaterial(NbtCompound compound)
 	{
-		return compound == null ? AlloygeryMaterials.UNKNOWN : AlloygeryMaterial.getById(compound.getString(NBT_KEYS.UPGRADE_MATERIAL.value));
+		return getMaterial(compound, NBT_KEYS.UPGRADE_MATERIAL);
+	}
+
+	public static AlloygeryMaterial getUpgradeMaterial(ItemStack stack)
+	{
+		return getMaterial(stack, NBT_KEYS.UPGRADE_MATERIAL);
+	}
+
+	public static AlloygeryMaterial getPartMaterial(NbtCompound compound)
+	{
+		return getMaterial(compound, NBT_KEYS.PART_MATERIAL);
+	}
+
+	public static AlloygeryMaterial getPartMaterial(ItemStack stack)
+	{
+		return getMaterial(stack, NBT_KEYS.PART_MATERIAL);
+	}
+
+	public static ItemStack setHeadMaterial(ItemStack stack, Identifier material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.HEAD_MATERIAL);
+	}
+
+	public static ItemStack setHeadMaterial(ItemStack stack, AlloygeryMaterial material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.HEAD_MATERIAL);
+	}
+
+	public static ItemStack setBindingMaterial(ItemStack stack, Identifier material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.BINDING_MATERIAL);
+	}
+
+	public static ItemStack setBindingMaterial(ItemStack stack, AlloygeryMaterial material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.BINDING_MATERIAL);
+	}
+
+	public static ItemStack setHandleMaterial(ItemStack stack, Identifier material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.HANDLE_MATERIAL);
+	}
+
+	public static ItemStack setHandleMaterial(ItemStack stack, AlloygeryMaterial material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.HANDLE_MATERIAL);
+	}
+
+	public static ItemStack setUpgradeMaterial(ItemStack stack, Identifier material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.UPGRADE_MATERIAL);
 	}
 
 	public static ItemStack setUpgradeMaterial(ItemStack stack, AlloygeryMaterial material)
 	{
-		Identifier identifier = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
-		if(material == AlloygeryMaterials.UNKNOWN)
-		{
-			stack.removeSubNbt(NBT_KEYS.UPGRADE_MATERIAL.value);
-		}
-		else
-		{
-			stack.getOrCreateNbt().putString(NBT_KEYS.UPGRADE_MATERIAL.value, identifier.toString());
-		}
-		return stack;
+		return setMaterial(stack, material, NBT_KEYS.UPGRADE_MATERIAL);
+	}
+
+	public static ItemStack setPartMaterial(ItemStack stack, Identifier material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.PART_MATERIAL);
+	}
+
+	public static ItemStack setPartMaterial(ItemStack stack, AlloygeryMaterial material)
+	{
+		return setMaterial(stack, material, NBT_KEYS.PART_MATERIAL);
 	}
 
 	public static AlloygeryMaterial getMaterialFromIdentifier(ItemStack stack)

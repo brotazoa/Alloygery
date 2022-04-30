@@ -3,6 +3,7 @@ package amorphia.alloygery;
 import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.content.client.AlloygeryColorProviderReloadListener;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
+import amorphia.alloygery.content.material.AlloygeryMaterialRegistry;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
 import amorphia.alloygery.data.AlloygeryMaterialDataLoader;
 import amorphia.alloygery.registry.*;
@@ -82,10 +83,8 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	//this is just for development purposes, so I don't have to handwrite the files
 	private static void dumpMaterialData()
 	{
-		AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
-			Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
-
-			Path materialPath = FabricLoader.getInstance().getConfigDir().resolve(id.getNamespace() + "/" + id.getPath() + ".json");
+		AlloygeryMaterialRegistry.forEach((identifier, material) -> {
+			Path materialPath = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/" + identifier.getPath() + ".json");
 			try
 			{
 				Files.createDirectories(materialPath.getParent());

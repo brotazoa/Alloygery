@@ -29,15 +29,10 @@ public class AlloygeryPartItem extends Item
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
 	{
-		AlloygeryMaterial partMaterial = AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
-
-		if (!Screen.hasShiftDown())
-		{
-			tooltip.add(new TranslatableText("tooltip.alloygery.shift_for_info").formatted(Formatting.DARK_GRAY));
+		if(AlloygeryToolMaterialHelper.isInfo(stack))
 			return;
-		}
 
-		tooltip.add(new TranslatableText("tooltip.alloygery.when_used_in_craft"));
+		AlloygeryMaterial partMaterial = AlloygeryToolMaterialHelper.getPartMaterial(stack);
 
 		AlloygeryMaterial.ToolPartSettings settings = null;
 
@@ -54,13 +49,30 @@ public class AlloygeryPartItem extends Item
 			settings = partMaterial.tool_handle;
 		}
 
+		if(settings != null)
+			appendTooltipWithPartSettings(stack, world, tooltip, context, settings);
+	}
+
+	protected void appendTooltipWithPartSettings(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, AlloygeryMaterial.ToolPartSettings settings)
+	{
 		if (settings != null)
 		{
+			if (!Screen.hasShiftDown())
+			{
+				tooltip.add(new TranslatableText("tooltip.alloygery.shift_for_info").formatted(Formatting.DARK_GRAY));
+				return;
+			}
+
+			tooltip.add(new TranslatableText("tooltip.alloygery.when_used_in_craft"));
+
 			if(settings.mining_level != 0)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_level").append(new LiteralText(": " + settings.mining_level)).formatted(Formatting.GRAY));
 
 			if(settings.durability != 0)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.durability").append(new LiteralText(": " + settings.durability)).formatted(Formatting.GRAY));
+
+			if(settings.enchantability != 0)
+				tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability").append(new LiteralText(": " + settings.enchantability)).formatted(Formatting.GRAY));
 
 			if(settings.mining_speed != 0)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_speed").append(new LiteralText(": " + settings.mining_speed)).formatted(Formatting.GRAY));
@@ -77,6 +89,9 @@ public class AlloygeryPartItem extends Item
 			if(settings.durability_multiplier != 1.0f)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.durability_multiplier").append(new LiteralText(": " + settings.durability_multiplier)).formatted(Formatting.GRAY));
 
+			if(settings.enchantability_multiplier != 1.0f)
+				tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability_multiplier").append(new LiteralText(": " + settings.enchantability_multiplier)).formatted(Formatting.GRAY));
+
 			if(settings.mining_speed_multiplier != 1.0f)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_speed_multiplier").append(new LiteralText(": " + settings.mining_speed_multiplier)).formatted(Formatting.GRAY));
 
@@ -85,9 +100,6 @@ public class AlloygeryPartItem extends Item
 
 			if(settings.attack_damage_multiplier != 1.0f)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_damage_multiplier").append(new LiteralText(": " + settings.attack_damage_multiplier)).formatted(Formatting.GRAY));
-
-			if(settings.enchantability_multiplier != 1.0f)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability_multiplier").append(new LiteralText(": " + settings.enchantability_multiplier)).formatted(Formatting.GRAY));
 
 			if(settings.luck_multiplier != 1.0f)
 				tooltip.add(new TranslatableText("tooltip.alloygery.info.luck_multiplier").append(new LiteralText(": " + settings.luck_multiplier)).formatted(Formatting.GRAY));

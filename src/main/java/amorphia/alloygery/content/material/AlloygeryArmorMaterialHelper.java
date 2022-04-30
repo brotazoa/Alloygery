@@ -11,6 +11,6 @@ public class AlloygeryArmorMaterialHelper
 
 	public static boolean isPiglinLoved(NbtCompound compound)
 	{
-		return AlloygeryToolMaterialHelper.getMaterial(compound, AlloygeryToolMaterialHelper.NBT_KEYS.HEAD_MATERIAL).armor.piglin_loved;
+		return AlloygeryToolMaterialHelper.getHeadMaterial(compound).armor.piglin_loved;
 	}
 }

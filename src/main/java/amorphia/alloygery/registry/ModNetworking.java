@@ -2,8 +2,10 @@ package amorphia.alloygery.registry;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.material.AlloygeryMaterial;
+import amorphia.alloygery.content.material.AlloygeryMaterialData;
+import amorphia.alloygery.content.material.AlloygeryMaterialRegistry;
 import amorphia.alloygery.content.material.AlloygeryMaterials;
-import com.google.gson.stream.JsonReader;
+import com.google.gson.JsonObject;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
@@ -11,6 +13,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.JsonHelper;
 
 import java.io.StringReader;
 import java.util.Optional;
@@ -24,13 +27,13 @@ public class ModNetworking
 			NbtCompound compound = new NbtCompound();
 
 			NbtCompound materialsTag = new NbtCompound();
-			AlloygeryMaterials.ALLOYGERY_MATERIALS.values().forEach(material -> {
+
+			AlloygeryMaterialRegistry.forEach((identifier, material) -> {
 				if(material == AlloygeryMaterials.UNKNOWN)
 					return;
 
-				Identifier id = AlloygeryMaterials.ALLOYGERY_MATERIALS.inverse().get(material);
 				String jsonString = AlloygeryMaterial.GSON.toJson(material);
-				materialsTag.putString(id.toString(), jsonString);
+				materialsTag.putString(identifier.toString(), jsonString);
 			});
 
 			compound.put("AlloygeryMaterials", materialsTag);
@@ -50,6 +53,8 @@ public class ModNetworking
 			if(dataTagFromPacket == null)
 				return;
 
+			AlloygeryMaterialRegistry.resetToRegisteredValues();
+
 			Optional<NbtCompound> materialsOptional = Optional.ofNullable(dataTagFromPacket.getCompound("AlloygeryMaterials"));
 			if (materialsOptional.isPresent())
 			{
@@ -61,21 +66,17 @@ public class ModNetworking
 
 					Alloygery.LOGGER.info("Reading material from server packet: " + id);
 
-					AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(new JsonReader(new StringReader(jsonString)), AlloygeryMaterial.class);
-					AlloygeryMaterial registeredMaterial = AlloygeryMaterials.ALLOYGERY_MATERIALS.getOrDefault(id, AlloygeryMaterials.UNKNOWN);
+					JsonObject json = JsonHelper.deserialize(new StringReader(jsonString));
 
-					if(material == null)
-						continue;
-
-					if (registeredMaterial != AlloygeryMaterials.UNKNOWN)
-					{
-						AlloygeryMaterial.merge(registeredMaterial, material);
-					}
-					else
-					{
-						AlloygeryMaterials.register(id, material);
-					}
+					AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(json, AlloygeryMaterial.class);
+					AlloygeryMaterialData materialData = AlloygeryMaterialData.fromAlloygeryMaterial(material);
+					AlloygeryMaterialRegistry.load(id, materialData);
 				}
+
+				StringBuilder builder = new StringBuilder("Material Registry contains the following entries after receiving server packet: [").append('\n');
+				AlloygeryMaterialRegistry.forEach((identifier, material) -> builder.append('\t').append(identifier).append('\n'));
+				builder.append("]");
+				Alloygery.LOGGER.info(builder.toString());
 			}
 		});
 	}

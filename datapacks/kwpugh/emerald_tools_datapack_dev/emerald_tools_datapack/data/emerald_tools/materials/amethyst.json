@@ -1,0 +1,23 @@
+{
+  "name": "amethyst",
+  "category": "gem",
+  "color": "13343982",
+  "make_tool_heads": true,
+  "make_tool_bindings": false,
+  "make_sword_guards": false,
+  "make_tool_handles": false,
+  "repair_ingredient": {
+    "item": "minecraft:amethyst_shard"
+  },
+  "tool_base": {
+    "mining_level": 3,
+    "durability": 840,
+    "enchantability": 25,
+    "mining_speed": 8.0,
+    "attack_speed": 0.0,
+    "attack_damage": 1.5,
+    "luck": 0.0,
+    "fireproof": false,
+    "piglin_loved": false
+  }
+}

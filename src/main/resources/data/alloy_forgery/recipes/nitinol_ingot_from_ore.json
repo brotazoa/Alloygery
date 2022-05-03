@@ -1,0 +1,25 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "alloy_forgery"
+      ]
+    }
+  ],
+  "type": "alloy_forgery:forging",
+  "inputs": [
+    {
+      "item": "alloygery:titanium_ore"
+    },
+    {
+      "item": "alloygery:nickel_ore"
+    }
+  ],
+  "output": {
+    "id": "alloygery:nitinol_ingot",
+    "count": 2
+  },
+  "min_forge_tier": 3,
+  "fuel_per_tick": 5
+}

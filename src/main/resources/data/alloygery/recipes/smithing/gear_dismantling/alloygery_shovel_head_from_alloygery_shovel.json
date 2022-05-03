@@ -15,6 +15,7 @@
   "result": {
     "item": "alloygery:alloygery_shovel_head",
     "data": {
+      "$": "ingredient",
       "Enchantments": "$ ingredient.Enchantments",
       "PartMaterial": "$ ingredient.HeadMaterial"
     }

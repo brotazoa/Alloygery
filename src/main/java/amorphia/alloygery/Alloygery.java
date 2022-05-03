@@ -67,6 +67,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 		ModScreens.register();
 		ModStatistics.register();
 		ModAttributes.init();
+		ModTags.register();
 
 		ModNetworking.register();
 

@@ -19,6 +19,7 @@
   "result": {
     "item": "alloygery:alloygery_sword",
     "data": {
+      "$": "i2",
       "Enchantments": "$i2.Enchantments",
       "HeadMaterial": "$i2.PartMaterial",
       "BindingMaterial": "$i4.PartMaterial",

@@ -1,6 +1,7 @@
 package amorphia.alloygery.content.screen;
 
 import amorphia.alloygery.content.item.BaseCraftingToolItem;
+import amorphia.alloygery.registry.ModTags;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
@@ -15,6 +16,6 @@ public class SmithingAnvilHammerSlot extends Slot
 	@Override
 	public boolean canInsert(ItemStack stack)
 	{
-		return stack.getItem() instanceof BaseCraftingToolItem;
+		return stack.isIn(ModTags.CRAFTING_TOOLS);
 	}
 }

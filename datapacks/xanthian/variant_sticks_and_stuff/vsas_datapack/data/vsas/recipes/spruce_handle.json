@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+    "i "
+  ],
+  "key": {
+    "i": {
+      "item": "vsas:sticks/spruce_stick"
+    }
+  },
+  "result": {
+    "item": "alloygery:alloygery_handle",
+    "data": {
+      "PartMaterial": "vsas:materials/spruce"
+    }
+  }
+}

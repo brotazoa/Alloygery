@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "h",
+    "s",
+    "s"
+  ],
+  "key": {
+    "h": {
+      "item": "alloygery:shovel_head",
+      "data": {
+        "require": {
+          "PartMaterial": "emerald_tools:materials/amethyst"
+        }
+      }
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "emerald_tools:amethyst_shovel"
+  }
+}

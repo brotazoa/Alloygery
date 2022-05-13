@@ -26,14 +26,8 @@
     "enchantability": 2,
     "mining_speed": -1.0,
     "attack_speed": 0.0,
-    "attack_damage": 0.0,
-    "luck": 5.0,
-    "durability_multiplier": 1.1,
-    "enchantability_multiplier": 0.9,
-    "mining_speed_multiplier": 1.1,
-    "attack_speed_multiplier": 0.8,
-    "attack_damage_multiplier": 0.7,
-    "luck_multiplier": 1.5
+    "attack_damage": -1.0,
+    "luck": 5.0
   },
   "tool_handle": {
     "durability_multiplier": 0.7,

@@ -23,17 +23,11 @@
   "tool_binding": {
     "mining_level": 0,
     "durability": 55,
-    "enchantability": -1,
+    "enchantability": 0,
     "mining_speed": -1.0,
     "attack_speed": -1.0,
     "attack_damage": 2.0,
-    "luck": 0.0,
-    "durability_multiplier": 1.0,
-    "enchantability_multiplier": 1.0,
-    "mining_speed_multiplier": 0.8,
-    "attack_speed_multiplier": 1.0,
-    "attack_damage_multiplier": 1.1,
-    "luck_multiplier": 1.1
+    "luck": 0.0
   },
   "tool_handle": {
     "durability_multiplier": 1.0,

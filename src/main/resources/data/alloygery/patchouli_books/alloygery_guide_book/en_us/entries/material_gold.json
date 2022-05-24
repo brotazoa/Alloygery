@@ -1,0 +1,40 @@
+{
+  "name": "Gold",
+  "icon": "minecraft:gold_ingot",
+  "category": "alloygery:materials_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gold an uncommon metal found underground in the Overworld."
+    },
+    {
+      "type": "alloygery:metal_detail_page",
+      "input": "minecraft:raw_gold",
+      "furnace": "minecraft:furnace,minecraft:blast_furnace",
+      "output": "minecraft:gold_ingot",
+      "crafting": "alloygery:smithing_anvil",
+      "tool": "alloygery:anvil_hammer"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/gold\"}",
+      "modifier": "provides",
+      "material": "alloygery:materials/gold",
+      "part_settings": "head"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/gold\"}",
+      "modifier": "adds to",
+      "material": "alloygery:materials/gold",
+      "part_settings": "binding"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/gold\"}",
+      "modifier": "multiplies",
+      "material": "alloygery:materials/gold",
+      "part_settings": "handle"
+    }
+  ]
+}

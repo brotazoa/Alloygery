@@ -1,0 +1,40 @@
+{
+  "name": "Iron",
+  "icon": "minecraft:iron_ingot",
+  "category": "alloygery:materials_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Iron a common metal found underground in the Overworld."
+    },
+    {
+      "type": "alloygery:metal_detail_page",
+      "input": "minecraft:raw_iron",
+      "furnace": "minecraft:furnace,minecraft:blast_furnace",
+      "output": "minecraft:iron_ingot",
+      "crafting": "alloygery:smithing_anvil",
+      "tool": "alloygery:anvil_hammer"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/iron\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/iron\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/iron\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/iron\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/iron\"}",
+      "modifier": "provides",
+      "material": "alloygery:materials/iron",
+      "part_settings": "head"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/iron\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/iron\"}",
+      "modifier": "adds to",
+      "material": "alloygery:materials/iron",
+      "part_settings": "binding"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/iron\"}",
+      "modifier": "multiplies",
+      "material": "alloygery:materials/iron",
+      "part_settings": "handle"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Titanium Gold",
+  "icon": "alloygery:titanium_gold_ingot",
+  "category": "alloygery:materials_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Titanium Gold is an alloy of iron, copper, and gold."
+    },
+    {
+      "type": "alloygery:alloy_detail_page",
+      "input0": "alloygery:raw_titanium",
+      "input1": "minecraft:raw_gold",
+      "furnace": "alloygery:blast_alloy_kiln",
+      "output": "alloygery:titanium_gold_ingot",
+      "crafting": "alloygery:smithing_anvil",
+      "tool": "alloygery:anvil_hammer"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/titanium_gold\"}",
+      "modifier": "provides",
+      "material": "alloygery:materials/titanium_gold",
+      "part_settings": "head"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/titanium_gold\"}",
+      "modifier": "adds to",
+      "material": "alloygery:materials/titanium_gold",
+      "part_settings": "binding"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/titanium_gold\"}",
+      "modifier": "multiplies",
+      "material": "alloygery:materials/titanium_gold",
+      "part_settings": "handle"
+    }
+  ]
+}

@@ -23,6 +23,8 @@ repositories {
         url "https://maven.siphalor.de"
     }
     maven { url "https://jitpack.io/" }
+    //patchouli
+    maven { url 'https://maven.blamejared.com' }
 }
 
 dependencies {
@@ -49,6 +51,9 @@ dependencies {
     //nbtcrafting
     modImplementation "de.siphalor:nbtcrafting-1.18:${project.nbtcrafting_version}"
     modRuntimeOnly("com.github.astei:lazydfu:master-SNAPSHOT")
+
+    //patchouli
+    modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.

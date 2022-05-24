@@ -1,0 +1,40 @@
+{
+  "name": "Copper",
+  "icon": "minecraft:copper_ingot",
+  "category": "alloygery:materials_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Copper a common metal found underground in the Overworld."
+    },
+    {
+      "type": "alloygery:metal_detail_page",
+      "input": "minecraft:raw_copper",
+      "furnace": "minecraft:furnace,minecraft:blast_furnace",
+      "output": "minecraft:copper_ingot",
+      "crafting": "alloygery:smithing_anvil",
+      "tool": "alloygery:anvil_hammer"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/copper\"}",
+      "modifier": "provides",
+      "material": "alloygery:materials/copper",
+      "part_settings": "head"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/copper\"}",
+      "modifier": "adds to",
+      "material": "alloygery:materials/copper",
+      "part_settings": "binding"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/copper\"}",
+      "modifier": "multiplies",
+      "material": "alloygery:materials/copper",
+      "part_settings": "handle"
+    }
+  ]
+}

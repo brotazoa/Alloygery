@@ -26,6 +26,11 @@ public class AlloygeryToolMaterialHelper
 		return REPAIR_INGREDIENT_MAP.computeIfAbsent(headMaterial, material -> Ingredient.fromJson(material.repair_ingredient));
 	}
 
+	public static Ingredient getRepairIngredient(AlloygeryMaterial material)
+	{
+		return REPAIR_INGREDIENT_MAP.computeIfAbsent(material, m -> Ingredient.fromJson(material.repair_ingredient));
+	}
+
 	public static int getMiningLevel(NbtCompound compound)
 	{
 		AlloygeryMaterial headMaterial = getHeadMaterial(compound);

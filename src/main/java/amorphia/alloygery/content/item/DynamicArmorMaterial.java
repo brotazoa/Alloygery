@@ -53,7 +53,7 @@ public class DynamicArmorMaterial implements ArmorMaterial
 	@Override
 	public Ingredient getRepairIngredient()
 	{
-		return AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.get(alloygeryMaterial);
+		return AlloygeryToolMaterialHelper.getRepairIngredient(alloygeryMaterial);
 	}
 
 	@Override

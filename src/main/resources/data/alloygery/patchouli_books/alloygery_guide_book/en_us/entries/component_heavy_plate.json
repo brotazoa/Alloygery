@@ -1,0 +1,11 @@
+{
+  "name": "Heavy Plates",
+  "icon": "alloygery:invar_heavy_plate",
+  "category": "alloygery:components_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": ""
+    }
+  ]
+}

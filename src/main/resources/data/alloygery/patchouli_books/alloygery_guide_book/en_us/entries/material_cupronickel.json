@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Cupronickel is an alloy of nickel, copper, and bronze."
+      "text": "Cupronickel is an alloy of nickel, copper, and bronze; one of the only alloys to use another alloy as an ingredient.$(br2)Cupronickel is near-identical to $(l)$(l:material_constantan)constantan$(), serving as a straight upgrade in base stats with worse multipliers."
     },
     {
       "type": "alloygery:alloy_detail_page",
@@ -20,22 +20,22 @@
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/cupronickel\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/cupronickel\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/cupronickel\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/cupronickel\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/cupronickel\"}",
-      "modifier": "provides",
       "material": "alloygery:materials/cupronickel",
+      "text": "When used to craft a tool, this tool head provides the following base values:",
       "part_settings": "head"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/cupronickel\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/cupronickel\"}",
-      "modifier": "adds to",
       "material": "alloygery:materials/cupronickel",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "binding"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/cupronickel\"}",
-      "modifier": "multiplies",
       "material": "alloygery:materials/cupronickel",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "handle"
     }
   ]

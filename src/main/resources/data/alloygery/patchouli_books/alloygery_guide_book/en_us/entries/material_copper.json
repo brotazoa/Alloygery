@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Copper a common metal found underground in the Overworld."
+      "text": "Copper is an extremely common metal found underground in the Overworld.$(br2)While copper can be used to craft tools, it is strictly worse than bronze in every way."
     },
     {
       "type": "alloygery:metal_detail_page",
@@ -18,22 +18,22 @@
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/copper\"}",
-      "modifier": "provides",
       "material": "alloygery:materials/copper",
+      "text": "When used to craft a tool, this tool head provides the following base values:",
       "part_settings": "head"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/copper\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/copper\"}",
-      "modifier": "adds to",
       "material": "alloygery:materials/copper",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "binding"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/copper\"}",
-      "modifier": "multiplies",
       "material": "alloygery:materials/copper",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "handle"
     }
   ]

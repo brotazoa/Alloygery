@@ -1,0 +1,11 @@
+{
+  "name": "Sword Guard",
+  "icon": "alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Sword Guards are the $(l)$(l:part_tool_binding)Tool Bindings$() of... well, swords.$(br2)They are functionally identical, but used in crafting swords instead of tools. Pay particular attention to the $(thing)Attack Speed$() and $(thing)Attack Damage$() stats."
+    }
+  ]
+}

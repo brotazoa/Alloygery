@@ -1,0 +1,15 @@
+{
+  "name": "Alloy Kiln",
+  "icon": "alloygery:alloy_kiln",
+  "category": "alloygery:blocks_and_tools_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Alloy Kiln is where your first alloys are born.$(br2)The Alloy Kiln works much like a furnace, but there are multiple material inputs, which are melted down into a single material output.$(br2)Not all alloys can be smelted in the Alloy Kiln, though; More complex alloys require the $(l)$(l:block_blast_alloy_kiln)Blast Alloy Kiln$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/blocks/alloy_kiln"
+    }
+  ]
+}

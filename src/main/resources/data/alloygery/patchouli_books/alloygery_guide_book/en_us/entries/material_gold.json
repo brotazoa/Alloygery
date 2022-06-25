@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Gold an uncommon metal found underground in the Overworld."
+      "text": "Gold is a soft, uncommon metal found deep underground as ore in the Overworld, or commonly as loot in the Nether.$(br2)Gold has poor base durability, but excellent base stats otherwise. It is used most effectively alongside other, more durable metals like $(l)$(l:material_steel)steel$(), or as a strong multiplier in the form of a handle."
     },
     {
       "type": "alloygery:metal_detail_page",
@@ -18,22 +18,22 @@
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/gold\"}",
-      "modifier": "provides",
       "material": "alloygery:materials/gold",
+      "text": "When used to craft a tool, this tool head provides the following base values:",
       "part_settings": "head"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/gold\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/gold\"}",
-      "modifier": "adds to",
       "material": "alloygery:materials/gold",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "binding"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/gold\"}",
-      "modifier": "multiplies",
       "material": "alloygery:materials/gold",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "handle"
     }
   ]

@@ -1,0 +1,16 @@
+{
+  "name": "Tool Handle",
+  "icon": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Tool Handles can make or break a tool, giving valuable multipliers that can even out imbalanced stats, or jack an already-high stat even higher. Experimentation is key to find the right balance of modifiers for a certain tool."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/wooden_handle",
+      "text": "A simple handle can be crafted from sticks. Most other handles are crafted at the $(l:alloygery:block_smithing_anvil)Smithing Anvil$()."
+    }
+  ]
+}

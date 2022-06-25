@@ -1,0 +1,15 @@
+{
+  "name": "Shovel Head",
+  "icon": "alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Shovels can dig soft materials such as dirt, sand, and gravel extremely quickly.$(br2)Leaning more into $(thing)Durability$() is advised, as shovels can chew quickly through blocks, making their lifespans shorter than you might expect."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/tools/alloygery_shovel"
+    }
+  ]
+}

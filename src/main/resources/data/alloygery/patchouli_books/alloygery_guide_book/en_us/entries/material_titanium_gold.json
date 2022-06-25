@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Titanium Gold is an alloy of iron, copper, and gold."
+      "text": "Titanium Gold is an alloy of iron, copper, and gold.$(br2)Titanium Gold is a straight upgrade to $(l)$(l:material_gold)gold$(), featuring extremely strong base stats in near every category. However, titanium gold does not obsolete $(l)$(l:material_antanium)antanium$(), which has comparably stronger modifiers."
     },
     {
       "type": "alloygery:alloy_detail_page",
@@ -19,22 +19,22 @@
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/titanium_gold\"}",
-      "modifier": "provides",
       "material": "alloygery:materials/titanium_gold",
+      "text": "When used to craft a tool, this tool head provides the following base values:",
       "part_settings": "head"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/titanium_gold\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/titanium_gold\"}",
-      "modifier": "adds to",
       "material": "alloygery:materials/titanium_gold",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "binding"
     },
     {
       "type": "alloygery:part_settings",
       "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/titanium_gold\"}",
-      "modifier": "multiplies",
       "material": "alloygery:materials/titanium_gold",
+      "text": "When used to craft a tool, this part modifies the following values:",
       "part_settings": "handle"
     }
   ]

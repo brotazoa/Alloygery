@@ -1,0 +1,15 @@
+{
+  "name": "Sword Blade",
+  "icon": "alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Sword Blades are used to craft swords.$(br2)Aside from the obvious (focus $(thing)Attack Speed$() and $(thing)Attack Damage$()), a sword's $(thing)Mining Speed$() determines how effective it is against cobwebs, leaves, and other stringy materials."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/tools/alloygery_sword"
+    }
+  ]
+}

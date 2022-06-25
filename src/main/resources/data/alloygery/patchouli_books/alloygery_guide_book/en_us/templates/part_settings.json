@@ -7,13 +7,13 @@
     },
     {
       "type": "patchouli:text",
-      "text": "When used to craft a tool this part #modifier# the following base values:",
+      "text": "#text",
       "y": 15
     },
     {
       "type": "patchouli:text",
-      "text": "Durability: #durability# $(br)Mining Level: #mining_level# $(br)Mining Speed: #mining_speed# $(br)Attack Damage: #attack_damage# $(br)Attack Speed: #attack_speed# $(br)Enchantability: #enchantability# $(br)Luck: #luck#",
-      "x": 10,
+      "text": "#values",
+      "x": 5,
       "y": 45
     }
   ]

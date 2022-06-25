@@ -34,32 +34,36 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 		AlloygeryToolMaterialHelper.REPAIR_INGREDIENT_MAP.clear();
 		AlloygeryMaterialRegistry.resetToRegisteredValues();
 
-		for (Identifier id : manager.findResources("materials", path -> path.endsWith(".json")))
-		{
-			Alloygery.LOGGER.info("Reading material from datapack: " + id);
+		manager.findResources("materials", path -> path.getPath().endsWith(".json")).forEach((identifier, resource) -> {
 
-			try (InputStream is = manager.getResource(id).getInputStream())
+			Alloygery.LOGGER.info("Reading material from datapack: " + identifier);
+
+			try (InputStream is = resource.getInputStream())
 			{
-				Identifier trimmedIdentifier = new Identifier(id.getNamespace(), id.getPath().substring(0, id.getPath().length() - ".json".length()));
+				//trim .json off identifier
+				Identifier trimmedIdentifier = new Identifier(identifier.getNamespace(), identifier.getPath().substring(0, identifier.getPath().length() - ".json".length()));
 
+				//read json
 				InputStreamReader reader = new InputStreamReader(is);
 				JsonObject json = JsonHelper.deserialize(reader);
 				reader.close();
 
-				if(!ResourceConditions.objectMatchesConditions(json))
+				//check resource load conditions
+				if (!ResourceConditions.objectMatchesConditions(json))
 				{
-					Alloygery.LOGGER.info("Load conditions failed, skipping: " + id);
-					continue;
+					Alloygery.LOGGER.info("Load conditions failed, skipping: " + identifier);
+					return;
 				}
 
+				//load material
 				AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(json, AlloygeryMaterial.class);
 				AlloygeryMaterialData materialData = AlloygeryMaterialData.fromAlloygeryMaterial(material);
 				AlloygeryMaterialRegistry.load(trimmedIdentifier, materialData);
 			}
 			catch (IOException thrown)
 			{
-				Alloygery.LOGGER.error("Error occurred while loading material resource " + id, thrown);
+				Alloygery.LOGGER.error("Error occurred while loading material resource " + identifier, thrown);
 			}
-		}
+		});
 	}
 }

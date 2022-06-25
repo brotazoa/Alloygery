@@ -19,7 +19,6 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Hand;
@@ -34,7 +33,7 @@ import net.minecraft.world.WorldAccess;
 
 public class SmithingAnvilBlock extends Block implements Waterloggable
 {
-	private static final Text TITLE = new TranslatableText("container.alloygery.smithing_anvil");
+	private static final Text TITLE = Text.translatable("container.alloygery.smithing_anvil");
 	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 

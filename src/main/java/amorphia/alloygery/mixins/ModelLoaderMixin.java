@@ -49,7 +49,7 @@ public class ModelLoaderMixin
 			try
 			{
 				//System.out.println("trying resource");
-				resource = resourceManager.getResource(new Identifier(id.getNamespace(), "models/" + id.getPath() + ".json"));
+				resource = resourceManager.getResource(new Identifier(id.getNamespace(), "models/" + id.getPath() + ".json")).orElse(null);
 				if (resource != null) //prefer hard resource
 				{
 					//System.out.println("found resource");
@@ -63,7 +63,7 @@ public class ModelLoaderMixin
 			}
 			finally
 			{
-				IOUtils.closeQuietly(resource);
+				//IOUtils.closeQuietly(resource);
 				IOUtils.closeQuietly(reader);
 			}
 

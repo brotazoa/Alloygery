@@ -9,9 +9,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
@@ -48,7 +46,7 @@ public class AlloygeryToolHead extends AlloygeryPartItem
 	@Override
 	public Text getName(ItemStack stack)
 	{
-		return new TranslatableText("item.alloygery." + (AlloygeryToolMaterialHelper.isInfo(stack) ? AlloygeryMaterials.INFO.name : AlloygeryToolMaterialHelper.getPartMaterial(stack).name) + "_" + headType);
+		return Text.translatable("item.alloygery." + (AlloygeryToolMaterialHelper.isInfo(stack) ? AlloygeryMaterials.INFO.name : AlloygeryToolMaterialHelper.getPartMaterial(stack).name) + "_" + headType);
 	}
 
 	@Override

@@ -8,9 +8,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
@@ -47,7 +45,7 @@ public class AlloygeryToolHandle extends AlloygeryPartItem
 		boolean hasMaterial = AlloygeryToolMaterialHelper.hasMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
 		AlloygeryMaterial material = AlloygeryToolMaterialHelper.getMaterial(stack, AlloygeryToolMaterialHelper.NBT_KEYS.PART_MATERIAL);
 
-		return new TranslatableText("item.alloygery." + (!hasMaterial && material == AlloygeryMaterials.UNKNOWN ? AlloygeryMaterials.INFO.name : material.name) + "_handle");
+		return Text.translatable("item.alloygery." + (!hasMaterial && material == AlloygeryMaterials.UNKNOWN ? AlloygeryMaterials.INFO.name : material.name) + "_handle");
 	}
 
 	@Override

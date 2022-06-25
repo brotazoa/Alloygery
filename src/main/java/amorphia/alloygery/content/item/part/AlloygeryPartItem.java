@@ -7,9 +7,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -59,54 +57,54 @@ public class AlloygeryPartItem extends Item
 		{
 			if (!Screen.hasShiftDown())
 			{
-				tooltip.add(new TranslatableText("tooltip.alloygery.shift_for_info").formatted(Formatting.DARK_GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.shift_for_info").formatted(Formatting.DARK_GRAY));
 				return;
 			}
 
-			tooltip.add(new TranslatableText("tooltip.alloygery.when_used_in_craft"));
+			tooltip.add(Text.translatable("tooltip.alloygery.when_used_in_craft"));
 
 			if(settings.mining_level != 0)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_level").append(new LiteralText(": " + settings.mining_level)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.mining_level").append(Text.literal(": " + settings.mining_level)).formatted(Formatting.GRAY));
 
 			if(settings.durability != 0)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.durability").append(new LiteralText(": " + settings.durability)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.durability").append(Text.literal(": " + settings.durability)).formatted(Formatting.GRAY));
 
 			if(settings.enchantability != 0)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability").append(new LiteralText(": " + settings.enchantability)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.enchantability").append(Text.literal(": " + settings.enchantability)).formatted(Formatting.GRAY));
 
 			if(settings.mining_speed != 0)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_speed").append(new LiteralText(": " + settings.mining_speed)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.mining_speed").append(Text.literal(": " + settings.mining_speed)).formatted(Formatting.GRAY));
 
 			if(settings.attack_speed != 0)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_speed").append(new LiteralText(": " + settings.attack_speed)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.attack_speed").append(Text.literal(": " + settings.attack_speed)).formatted(Formatting.GRAY));
 
 			if(settings.attack_damage != 0)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_damage").append(new LiteralText(": " + settings.attack_damage)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.attack_damage").append(Text.literal(": " + settings.attack_damage)).formatted(Formatting.GRAY));
 
 			if(settings.luck != 0)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.luck").append(new LiteralText(": " + settings.luck)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.luck").append(Text.literal(": " + settings.luck)).formatted(Formatting.GRAY));
 
 			if(settings.durability_multiplier != 1.0f)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.durability_multiplier").append(new LiteralText(": " + settings.durability_multiplier)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.durability_multiplier").append(Text.literal(": " + settings.durability_multiplier)).formatted(Formatting.GRAY));
 
 			if(settings.enchantability_multiplier != 1.0f)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.enchantability_multiplier").append(new LiteralText(": " + settings.enchantability_multiplier)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.enchantability_multiplier").append(Text.literal(": " + settings.enchantability_multiplier)).formatted(Formatting.GRAY));
 
 			if(settings.mining_speed_multiplier != 1.0f)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.mining_speed_multiplier").append(new LiteralText(": " + settings.mining_speed_multiplier)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.mining_speed_multiplier").append(Text.literal(": " + settings.mining_speed_multiplier)).formatted(Formatting.GRAY));
 
 			if(settings.attack_speed_multiplier != 1.0f)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_speed_multiplier").append(new LiteralText(": " + settings.attack_speed_multiplier)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.attack_speed_multiplier").append(Text.literal(": " + settings.attack_speed_multiplier)).formatted(Formatting.GRAY));
 
 			if(settings.attack_damage_multiplier != 1.0f)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.attack_damage_multiplier").append(new LiteralText(": " + settings.attack_damage_multiplier)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.attack_damage_multiplier").append(Text.literal(": " + settings.attack_damage_multiplier)).formatted(Formatting.GRAY));
 
 			if(settings.luck_multiplier != 1.0f)
-				tooltip.add(new TranslatableText("tooltip.alloygery.info.luck_multiplier").append(new LiteralText(": " + settings.luck_multiplier)).formatted(Formatting.GRAY));
+				tooltip.add(Text.translatable("tooltip.alloygery.info.luck_multiplier").append(Text.literal(": " + settings.luck_multiplier)).formatted(Formatting.GRAY));
 
-			if(settings.fireproof) tooltip.add(new TranslatableText("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
+			if(settings.fireproof) tooltip.add(Text.translatable("tooltip.alloygery.info.fireproof").formatted(Formatting.RED));
 
-			if(settings.piglin_loved) tooltip.add(new TranslatableText("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
+			if(settings.piglin_loved) tooltip.add(Text.translatable("tooltip.alloygery.info.piglin_loved").formatted(Formatting.GOLD));
 		}
 	}
 }

@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "copper_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:copper_heavy_plates"
+  },
+  "material_cost": 3,
+  "result": {
+    "item": "alloygery:copper_leggings",
+    "data": {
+      "HeadMaterial": "alloygery:materials/copper"
+    }
+  }
+}

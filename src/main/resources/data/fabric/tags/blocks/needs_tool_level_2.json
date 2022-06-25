@@ -6,7 +6,6 @@
     "minecraft:iron_ore",
     "minecraft:deepslate_iron_ore",
     "alloygery:antanium_block",
-    "alloygery:bronze_block",
-    "alloygery:blast_alloy_kiln"
+    "alloygery:steel_block"
   ]
 }

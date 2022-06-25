@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "constantan_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:constantan_heavy_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:constantan_chestplate",
+    "data": {
+      "HeadMaterial": "alloygery:materials/constantan"
+    }
+  }
+}

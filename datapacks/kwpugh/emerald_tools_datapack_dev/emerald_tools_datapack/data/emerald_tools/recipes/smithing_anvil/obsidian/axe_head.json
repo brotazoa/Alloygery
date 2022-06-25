@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "obsidian_tool_heads",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "item": "minecraft:obsidian"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:alloygery_axe_head",
+    "data": {
+      "PartMaterial": "emerald_tools:materials/obsidian"
+    }
+  }
+}

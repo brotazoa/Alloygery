@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:gold_ingots"
+    },
+    {
+      "tag": "c:gold_ingots"
+    },
+    {
+      "tag": "c:netherite_raw_ores"
+    },
+    {
+      "tag": "c:netherite_raw_ores"
+    }
+  ],
+  "output":{
+    "id": "minecraft:netherite_ingot",
+    "count": 1
+  },
+  "smelting_time": 400,
+  "experience": 0.7
+}

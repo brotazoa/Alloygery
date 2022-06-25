@@ -1,0 +1,15 @@
+{
+  "name": "Hoe Head",
+  "icon": "alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Hoes are used to turn dirt or grass into farmland."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/tools/alloygery_hoe"
+    }
+  ]
+}

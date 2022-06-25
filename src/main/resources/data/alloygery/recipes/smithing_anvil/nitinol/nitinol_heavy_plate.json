@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "nitinol_materials",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:nitinol_double_ingots"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:nitinol_heavy_plate",
+    "data": {
+      "PartMaterial": "alloygery:materials/nitinol"
+    }
+  }
+}

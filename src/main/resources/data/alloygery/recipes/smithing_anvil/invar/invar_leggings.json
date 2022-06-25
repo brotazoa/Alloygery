@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "invar_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:invar_heavy_plates"
+  },
+  "material_cost": 3,
+  "result": {
+    "item": "alloygery:invar_leggings",
+    "data": {
+      "HeadMaterial": "alloygery:materials/invar"
+    }
+  }
+}

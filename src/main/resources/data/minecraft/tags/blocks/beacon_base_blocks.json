@@ -1,9 +1,13 @@
 {
   "replace": false,
   "values": [
+    "alloygery:bronze_block",
+    "alloygery:antanium_block",
     "alloygery:steel_block",
     "alloygery:nickel_block",
     "alloygery:invar_block",
+    "alloygery:constantan_block",
+    "alloygery:cupronickel_block",
     "alloygery:titanium_block",
     "alloygery:titanium_gold_block",
     "alloygery:nitinol_block"

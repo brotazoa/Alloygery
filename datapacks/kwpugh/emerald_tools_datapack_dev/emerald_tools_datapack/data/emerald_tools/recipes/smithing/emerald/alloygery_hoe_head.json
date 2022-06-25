@@ -1,0 +1,22 @@
+{
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:smithing_hammer",
+    "remainder": {
+      "item": "alloygery:smithing_hammer",
+      "data": {
+        "Damage": "$base.Damage + 5"
+      }
+    }
+  },
+  "ingredient": {
+    "item": "emerald_tools:emerald_hoe"
+  },
+  "result": {
+    "item": "alloygery:alloygery_hoe_head",
+    "data": {
+      "Enchantments": "$ ingredient.Enchantments",
+      "PartMaterial": "emerald_tools:materials/emerald"
+    }
+  }
+}

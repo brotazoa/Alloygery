@@ -1,0 +1,11 @@
+{
+  "name": "Plates",
+  "icon": "alloygery:invar_plate",
+  "category": "alloygery:components_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": ""
+    }
+  ]
+}

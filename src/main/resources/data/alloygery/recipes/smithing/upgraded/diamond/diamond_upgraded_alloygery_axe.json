@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enable_diamond_upgrade"
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:alloygery_axe",
+    "data": {
+      "deny": {
+        "UpgradeMaterial": "",
+        "HeadMaterial": "alloygery:materials/diamond"
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:diamonds"
+  },
+  "result": {
+    "item": "alloygery:tipped_alloygery_axe",
+    "data": {
+      "$": "$ base",
+      "UpgradeMaterial": "alloygery:materials/diamond"
+    }
+  }
+}

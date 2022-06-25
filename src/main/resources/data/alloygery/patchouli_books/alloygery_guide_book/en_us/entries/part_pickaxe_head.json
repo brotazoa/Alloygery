@@ -1,0 +1,15 @@
+{
+  "name": "Pickaxe Head",
+  "icon": "alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pickaxes are a Minecrafter's bread and butter. Investing in a quality pickaxe with high $(thing)Mining Speed$() and $(thing)Durability$() will save you time and effort.$(br2)Optionally, a high $(thing)Enchantability$() will allow you to squeeze useful enchantments like Fortune and Efficiency onto your tool."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/tools/alloygery_pickaxe"
+    }
+  ]
+}

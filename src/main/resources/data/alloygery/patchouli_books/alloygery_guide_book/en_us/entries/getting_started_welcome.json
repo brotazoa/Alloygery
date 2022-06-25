@@ -1,0 +1,81 @@
+{
+  "name": "Getting Started",
+  "icon": "minecraft:stone_pickaxe",
+  "category": "alloygery:getting_started_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Welcome to a new world with Alloygery!$(br2)Alloygery changes the way you play the first couple of nights, so here is what you need to know to get started.$(br2)First, you will need a pickaxe. So go punch a tree and come back here when you have a Stone Pickaxe."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stone_pickaxe",
+      "advancement": "minecraft:story/upgrade_tools",
+      "text": "Congratulations on crafting a Stone Pickaxe! As great as this pickaxe is, it will not be able to mine iron. $(br2)For that you will need a $(l:material_bronze)Bronze$() pickaxe or better. $(br2)Bronze is an alloy of copper and tin, and needs to be smelted in an $(l:block_alloy_kiln)Alloy Kiln$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "alloygery:bronze_ingot",
+      "advancement": "minecraft:story/upgrade_tools",
+      "text": "If you want to mine iron, then it is time to make some $(l:material_bronze)Bronze$()! $(br2)To do this, smelt 3 copper and 1 tin in an $(l:block_alloy_kiln)Alloy Kiln$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/tools/from_simple/bronze_pickaxe",
+      "advancement": "minecraft:story/upgrade_tools",
+      "text": "Once you have bronze, you can craft a Bronze Pickaxe which is capable of mining iron ore."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "alloygery:alloygery_pickaxe{Damage:0, HeadMaterial:\"alloygery:materials/bronze\", BindingMaterial:\"alloygery:materials/hidden\", HandleMaterial:\"alloygery:materials/wooden\"}",
+      "advancement": "alloygery:story/bronze_tools",
+      "text": "Congratulations on crafting a Bronze Pickaxe! With this new tool, you can mine iron to your hearts content! $(br2)Once you get into the $(italics)Iron Age$() things get interesting, so be sure to check back here once you have some iron."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "alloygery:smithing_anvil",
+      "advancement": "minecraft:story/smelt_iron",
+      "text": "Welcome to the Iron Age! $(br2)Tools made from iron or better need to be crafted with a tool head, a binding, and a handle. Some $(l:part_handle)Handles$() and $(l:part_binding)Bindings$() can be crafted at the Crafting Table, but tool heads need to be crafted at the $(l:block_smithing_anvil)Smithing Anvil$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/blocks/smithing_anvil",
+      "advancement": "minecraft:story/smelt_iron",
+      "text": "Craft and place a Smithing Anvil to get started making better tools"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/anvil_hammer",
+      "advancement": "alloygery:story/smithing_anvil",
+      "text": "In order to craft iron tool parts at the $(l:block_smithing_anvil)Smithing Anvil$() you will need an $(l:tool_anvil_hammer)Anvil Hammer$()."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Part Crafting",
+      "images": [
+        "alloygery:textures/gui/patchouli/tool_parts_smithing.png"
+      ],
+      "advancement": "alloygery:story/smithing_anvil",
+      "text": "Use the $(l:tool_anvil_hammer)Anvil Hammer$() and $(item)Iron Ingots$() to craft an $(item)Iron Pickaxe Head$()"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Tool Crafting",
+      "images": [
+        "alloygery:textures/gui/patchouli/pickaxe_crafting.png"
+      ],
+      "advancement": "alloygery:story/smithing_anvil",
+      "text": "Next, take your $(thing)Iron Pickaxe Head$() and combine it with any $(l:part_handle)handle$(), and any $(l:part_binding)binding$(), to create an $(item)Iron Pickaxe$()."
+    },
+    {
+      "type": "patchouli:relations",
+      "title": "Further Reading",
+      "advancement": "minecraft:story/iron_tools",
+      "entries": [
+        "alloygery:block_blast_alloy_kiln",
+        "alloygery:block_smithing_table"
+      ],
+      "text": "More advanced alloys are made at the $(l:alloygery:block_blast_alloy_kiln)Blast Alloy Kiln$(). $(br2)And be sure to check out the $(l:alloygery:block_smithing_table)Smithing Table$() to add valuable upgrades to your tools!"
+    }
+  ]
+}

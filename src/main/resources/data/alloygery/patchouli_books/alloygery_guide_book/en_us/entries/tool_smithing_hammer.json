@@ -1,0 +1,15 @@
+{
+  "name": "Smithing Hammer",
+  "icon": "alloygery:smithing_hammer",
+  "category": "alloygery:blocks_and_tools_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Smithing Hammer is used in the $(l:block_smithing_table)Smithing Table$() in the tool slot (leftmost) to remove $(l:alloygery:upgrades_category)Upgrades$() from tools, as well as disassemble tools back into their $(l:alloygery:tool_parts_category)Tool Heads$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/smithing_hammer"
+    }
+  ]
+}

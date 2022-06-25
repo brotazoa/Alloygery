@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:bronze_nugget"
+    }
+  },
+  "result": {
+    "item": "alloygery:bronze_ingot"
+  }
+}

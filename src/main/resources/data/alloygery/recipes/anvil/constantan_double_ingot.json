@@ -1,0 +1,13 @@
+{
+  "type": "nbtcrafting:anvil",
+  "base": {
+    "item": "alloygery:constantan_ingot"
+  },
+  "ingredient": {
+    "item": "alloygery:constantan_ingot"
+  },
+  "result": {
+    "item": "alloygery:constantan_double_ingot"
+  },
+  "levels": 0
+}

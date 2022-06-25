@@ -1,0 +1,13 @@
+{
+  "type": "nbtcrafting:anvil",
+  "base": {
+    "item": "alloygery:antanium_ingot"
+  },
+  "ingredient": {
+    "item": "alloygery:antanium_ingot"
+  },
+  "result": {
+    "item": "alloygery:antanium_double_ingot"
+  },
+  "levels": 0
+}

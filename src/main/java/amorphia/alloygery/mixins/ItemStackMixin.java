@@ -1,23 +1,28 @@
 package amorphia.alloygery.mixins;
 
-import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.content.item.tool.IAlloygeryMeleeWeapon;
+import amorphia.alloygery.content.item.tool.IAlloygeryTool;
+import amorphia.alloygery.content.material.AlloygeryToolMaterialHelper;
+import amorphia.alloygery.registry.ModAttributes;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.tag.TagKey;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.stream.Stream;
 
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin
@@ -32,31 +37,14 @@ public abstract class ItemStackMixin
 	@Nullable
 	public abstract NbtCompound getSubNbt(String key);
 
+	@Shadow public abstract Stream<TagKey<Item>> streamTags();
+
 	@Inject(method = "getMaxDamage", at = @At("HEAD"), cancellable = true)
 	public void getMaxDamage(CallbackInfoReturnable<Integer> cir)
 	{
-		if (nbt != null && nbt.contains(Alloygery.NBT_KEY))
+		if (getItem() instanceof IAlloygeryTool)
 		{
-			int maxDamage = getItem().getMaxDamage();
-
-			NbtCompound tag = getSubNbt(Alloygery.NBT_KEY);
-			if (tag != null)
-			{
-				if (tag.contains(Alloygery.DIAMOND_TIPPED_KEY))
-				{
-					maxDamage += 500;
-				}
-				if (tag.contains(Alloygery.EMERALD_EMBOSSED_KEY))
-				{
-					maxDamage += (int) (getItem().getMaxDamage() * 0.5f);
-				}
-				if (tag.contains(Alloygery.NETHERITE_PLATTED))
-				{
-					maxDamage += (int) (getItem().getMaxDamage() * 0.2f);
-				}
-			}
-
-			cir.setReturnValue(maxDamage);
+			cir.setReturnValue(AlloygeryToolMaterialHelper.getMaxDurability(nbt));
 			cir.cancel();
 		}
 	}
@@ -64,42 +52,48 @@ public abstract class ItemStackMixin
 	@Inject(method = "getMiningSpeedMultiplier", at = @At("HEAD"), cancellable = true)
 	public void getMiningSpeedMultiplier(BlockState state, CallbackInfoReturnable<Float> cir)
 	{
-		float mineSpeed = 1f;
-		if (getItem() instanceof MiningToolItem && ((MiningToolItemAccessor) getItem()).getEffectiveBlocks().contains(state.getBlock()))
+		if (getItem() instanceof IAlloygeryTool)
 		{
-			mineSpeed = ((MiningToolItemAccessor) getItem()).getMiningSpeed();
-
-			if (nbt != null && nbt.contains(Alloygery.NBT_KEY))
+			if(getItem() instanceof MiningToolItem && state.isIn(((MiningToolItemAccessor) getItem()).getEffectiveBlocks()))
 			{
-				NbtCompound tag = getSubNbt(Alloygery.NBT_KEY);
-				if(tag != null)
-				{
-					if (tag.contains(Alloygery.NETHERITE_PLATTED))
-					{
-						mineSpeed += ((MiningToolItemAccessor) getItem()).getMiningSpeed() * 0.1f;
-					}
-				}
+				cir.setReturnValue(AlloygeryToolMaterialHelper.getMiningSpeed(nbt));
+				cir.cancel();
 			}
-			cir.setReturnValue(mineSpeed);
-			cir.cancel();
 		}
 	}
 
 	@Inject(method = "isSuitableFor", at = @At("HEAD"), cancellable = true)
 	public void isSuitableFor(BlockState state, CallbackInfoReturnable<Boolean> cir)
 	{
-		if(nbt != null && nbt.contains(Alloygery.NBT_KEY) && getItem() instanceof MiningToolItem tool)
+		if (getItem() instanceof IAlloygeryTool && getItem() instanceof MiningToolItem)
 		{
-			int level = tool.getMaterial().getMiningLevel();
-			NbtCompound tag = getSubNbt(Alloygery.NBT_KEY);
-			if (tag != null)
-			{
-				if (tag.contains(Alloygery.DIAMOND_TIPPED_KEY))
-				{
-					level += 1;
-				}
-			}
+			final int level = AlloygeryToolMaterialHelper.getMiningLevel(nbt);
 			cir.setReturnValue(level >= MiningLevelManager.getRequiredMiningLevel(state));
+			cir.cancel();
+		}
+	}
+
+	@Inject(method = "getAttributeModifiers", at = @At("HEAD"), cancellable = true)
+	public void getAttributeModifiers(EquipmentSlot slot, CallbackInfoReturnable<Multimap<EntityAttribute, EntityAttributeModifier>> cir)
+	{
+		if(getItem() instanceof IAlloygeryTool alloygeryTool && slot == EquipmentSlot.MAINHAND && nbt != null)
+		{
+			final float damage = Math.max(0.0f, AlloygeryToolMaterialHelper.getAttackDamage(nbt) + alloygeryTool.getAttackDamageModifier());
+			final float speed = Math.max(-3.9f, AlloygeryToolMaterialHelper.getAttackSpeed(nbt) + alloygeryTool.getAttackSpeedModifier());
+			final float luck = AlloygeryToolMaterialHelper.getLuck(nbt);
+
+			ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
+			builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(((ItemAccessor) getItem()).getAttackDamageModifierId(),
+					getItem() instanceof IAlloygeryMeleeWeapon ? "Weapon Modifier" : "Tool Modifier", (double) damage,
+					EntityAttributeModifier.Operation.ADDITION));
+			builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(((ItemAccessor) getItem()).getAttackSpeedModifierId(),
+					getItem() instanceof IAlloygeryMeleeWeapon ? "Weapon Modifier" : "Tool Modifier", (double) speed,
+					EntityAttributeModifier.Operation.ADDITION));
+			builder.put(EntityAttributes.GENERIC_LUCK, new EntityAttributeModifier(ModAttributes.ALLOYGERY_LUCK_MODIFIER,
+					getItem() instanceof IAlloygeryMeleeWeapon ? "Weapon Modifier" : "Tool Modifier", (double) luck,
+					EntityAttributeModifier.Operation.ADDITION));
+
+			cir.setReturnValue(builder.build());
 			cir.cancel();
 		}
 	}

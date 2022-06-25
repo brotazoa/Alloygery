@@ -5,13 +5,15 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "ArmorItemMixin",
+    "EnchantmentHelperMixin",
     "ItemAccessor",
     "ItemEntityMixin",
-    "ItemMixin",
     "ItemStackMixin",
-    "MiningToolItemAccessor"
+    "MiningToolItemAccessor",
+    "PiglinBrainMixin"
   ],
   "client": [
+    "ModelLoaderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

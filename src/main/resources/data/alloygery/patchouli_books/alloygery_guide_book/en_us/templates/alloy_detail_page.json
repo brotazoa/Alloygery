@@ -1,0 +1,77 @@
+{
+  "components": [
+    {
+      "type": "patchouli:text",
+      "text": "Alloying"
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input0",
+      "framed": true,
+      "x": 10,
+      "y": 15
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input1",
+      "framed": true,
+      "x": 30,
+      "y": 15
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input2",
+      "framed": true,
+      "x": 10,
+      "y": 35
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input3",
+      "framed": true,
+      "x": 30,
+      "y": 35
+    },
+
+    {
+      "type": "patchouli:item",
+      "item": "#furnace",
+      "x": 60,
+      "y": 25
+    },
+
+    {
+      "type": "patchouli:item",
+      "item": "#output",
+      "framed": true,
+      "x": 90,
+      "y": 25
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Workable on:",
+      "y": 60
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#crafting",
+      "framed": false,
+      "x": 10,
+      "y": 75
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Workable by:",
+      "y": 100
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#tool",
+      "framed": false,
+      "x": 10,
+      "y": 115
+    }
+  ]
+}

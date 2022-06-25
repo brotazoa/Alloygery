@@ -1,0 +1,11 @@
+{
+  "name": "Tin",
+  "icon": "alloygery:tin_ingot",
+  "category": "alloygery:materials_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Tin is a common metal found underground in the Overworld. It cannot be used to craft tools."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "alloygery:story/blast_alloy_kiln",
+  "display": {
+    "icon": {
+      "item": "alloygery:steel_ingot"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.smelt_steel.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.smelt_steel.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "smelt_steel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "c:steel_ingots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "smelt_steel"
+    ]
+  ]
+}

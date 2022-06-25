@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "iron_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:iron_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:iron_helmet",
+    "data": {
+      "HeadMaterial": "alloygery:materials/iron"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "ruby_tool_heads",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "item": "emerald_tools:ruby"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:alloygery_pickaxe_head",
+    "data": {
+      "PartMaterial": "emerald_tools:materials/ruby"
+    }
+  }
+}

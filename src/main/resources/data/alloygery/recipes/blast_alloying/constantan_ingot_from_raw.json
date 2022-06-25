@@ -2,10 +2,10 @@
   "type": "alloygery:blast_alloying",
   "inputs": [
     {
-      "tag": "c:copper_dusts"
+      "tag": "c:copper_raw_ores"
     },
     {
-      "tag": "c:nickel_dusts"
+      "tag": "c:nickel_raw_ores"
     }
   ],
   "output":{

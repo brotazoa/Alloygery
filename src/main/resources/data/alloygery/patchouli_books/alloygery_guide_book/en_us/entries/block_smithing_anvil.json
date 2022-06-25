@@ -1,0 +1,15 @@
+{
+  "name": "Smithing Anvil",
+  "icon": "alloygery:smithing_anvil",
+  "category": "alloygery:blocks_and_tools_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Smithing Anvil is how you craft $(l:alloygery:tool_parts_category)Tool Parts$() and $(l:alloygery:components_category)Components$() from $(l:alloygery:materials_category)Materials$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/blocks/smithing_anvil"
+    }
+  ]
+}

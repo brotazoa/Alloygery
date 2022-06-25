@@ -1,0 +1,36 @@
+{
+  "parent": "alloygery:story/smelt_steel",
+  "display": {
+    "icon": {
+      "item": "alloygery:smithing_hammer"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.dismantling.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.dismantling.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "dismantling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:tool_heads",
+            "nbt": "{PartMaterial:\"alloygery:materials/diamond\"}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "dismantling"
+    ]
+  ]
+}

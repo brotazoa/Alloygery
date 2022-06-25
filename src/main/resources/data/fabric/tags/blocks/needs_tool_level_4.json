@@ -1,17 +1,10 @@
 {
   "replace": false,
   "values": [
-    "alloygery:steel_block",
-    "alloygery:raw_nickel_block",
-    "alloygery:nickel_block",
-    "alloygery:nickel_ore",
-    "alloygery:invar_block",
-    "alloygery:constantan_block",
-    "alloygery:cupronickel_block",
-    "minecraft:obsidian",
-    "minecraft:crying_obsidian",
-    "minecraft:netherite_block",
-    "minecraft:respawn_anchor",
-    "minecraft:ancient_debris"
+    "alloygery:titanium_ore",
+    "alloygery:raw_titanium_block",
+    "alloygery:titanium_block",
+    "alloygery:titanium_gold_block",
+    "alloygery:nitinol_block"
   ]
 }

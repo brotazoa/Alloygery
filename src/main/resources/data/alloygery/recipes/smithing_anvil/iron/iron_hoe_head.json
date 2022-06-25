@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "iron_tool_heads",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:iron_ingots"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:alloygery_hoe_head",
+    "data": {
+      "PartMaterial": "alloygery:materials/iron"
+    }
+  }
+}

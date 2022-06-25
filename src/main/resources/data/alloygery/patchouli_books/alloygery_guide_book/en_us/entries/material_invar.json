@@ -1,0 +1,41 @@
+{
+  "name": "Invar",
+  "icon": "alloygery:invar_ingot",
+  "category": "alloygery:materials_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Invar is comparable to steel, sharing iron as a key component.$(br2)However, invar has much higher base durability and attack damage, making it ideal for weaponry. It pairs well with alloys that raise attack speed, such as $(l)$(l:material_titanium)titanium$()$(#808080)$(t:+2.5 Attack Speed)[?]$(), or even $(l)$(l:material_iron)iron$()$(#808080)$(t:x1.1 Attack Speed)[?]$()."
+    },
+    {
+      "type": "alloygery:alloy_detail_page",
+      "input0": "alloygery:raw_nickel",
+      "input1": "minecraft:raw_iron",
+      "furnace": "alloygery:alloy_kiln,alloygery:blast_alloy_kiln",
+      "output": "alloygery:invar_ingot",
+      "crafting": "alloygery:smithing_anvil",
+      "tool": "alloygery:anvil_hammer"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/invar\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/invar\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/invar\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/invar\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/invar\"}",
+      "material": "alloygery:materials/invar",
+      "text": "When used to craft a tool, this tool head provides the following base values:",
+      "part_settings": "head"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/invar\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/invar\"}",
+      "material": "alloygery:materials/invar",
+      "text": "When used to craft a tool, this part modifies the following values:",
+      "part_settings": "binding"
+    },
+    {
+      "type": "alloygery:part_settings",
+      "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/invar\"}",
+      "material": "alloygery:materials/invar",
+      "text": "When used to craft a tool, this part modifies the following values:",
+      "part_settings": "handle"
+    }
+  ]
+}

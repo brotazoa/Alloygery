@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:copper_raw_ores"
+    },
+    {
+      "tag": "c:copper_raw_ores"
+    },
+    {
+      "tag": "c:copper_raw_ores"
+    },
+    {
+      "tag": "c:tin_raw_ores"
+    }
+  ],
+  "output":{
+    "id": "alloygery:bronze_ingot",
+    "count": 4
+  },
+  "smelting_time": 400,
+  "experience": 0.7
+}

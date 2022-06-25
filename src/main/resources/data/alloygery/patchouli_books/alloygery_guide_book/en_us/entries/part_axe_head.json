@@ -1,0 +1,15 @@
+{
+  "name": "Axe Head",
+  "icon": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Axes can be used as both a tool and a weapon, due to their unique ability to break shields.$(br2)Axes are slow, with high damage output, so focusing on upping your $(thing)Attack Speed$() is typically a priority. Alternatively, one-shot everything."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/tools/alloygery_axe"
+    }
+  ]
+}

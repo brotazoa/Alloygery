@@ -2,7 +2,7 @@
   "type": "minecraft:blasting",
   "group": "titanium_ingot",
   "ingredient": {
-    "tag": "c:titanium_dusts"
+    "tag": "c:titanium_raw_ores"
   },
   "result": "alloygery:titanium_ingot",
   "experience": 0.7,

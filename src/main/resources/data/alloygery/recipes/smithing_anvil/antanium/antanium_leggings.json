@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "antanium_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:antanium_heavy_plates"
+  },
+  "material_cost": 3,
+  "result": {
+    "item": "alloygery:antanium_leggings",
+    "data": {
+      "HeadMaterial": "alloygery:materials/antanium"
+    }
+  }
+}

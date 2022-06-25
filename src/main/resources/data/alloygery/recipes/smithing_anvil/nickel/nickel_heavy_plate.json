@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "nickel_materials",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:nickel_double_ingots"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:nickel_heavy_plate",
+    "data": {
+      "PartMaterial": "alloygery:materials/nickel"
+    }
+  }
+}

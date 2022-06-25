@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alloygery:item/empty",
+    "layer1": "alloygery:item/copper_double_ingot"
+  }
+}

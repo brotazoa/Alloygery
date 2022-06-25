@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:story/mine_diamond",
+  "display": {
+    "icon": {
+      "item": "minecraft:smithing_table"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.diamond_tipped.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.diamond_tipped.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "diamond_tipped_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:upgraded_tools",
+            "nbt": "{UpgradeMaterial:\"alloygery:materials/diamond\"}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "diamond_tipped_pickaxe"
+    ]
+  ]
+}

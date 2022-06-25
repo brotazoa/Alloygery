@@ -1,0 +1,11 @@
+{
+  "name": "Double Ingots",
+  "icon": "alloygery:invar_double_ingot",
+  "category": "alloygery:components_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": ""
+    }
+  ]
+}

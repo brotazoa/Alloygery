@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#alloygery:upgraded_axes",
+    "#alloygery:upgraded_hoes",
+    "#alloygery:upgraded_pickaxes",
+    "#alloygery:upgraded_shovels",
+    "#alloygery:upgraded_swords"
+  ]
+}

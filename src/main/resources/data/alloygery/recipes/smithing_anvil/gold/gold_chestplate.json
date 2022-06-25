@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "gold_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:gold_heavy_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:gold_chestplate",
+    "data": {
+      "HeadMaterial": "alloygery:materials/gold"
+    }
+  }
+}

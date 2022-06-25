@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "nitinol_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:nitinol_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:nitinol_boots",
+    "data": {
+      "HeadMaterial": "alloygery:materials/nitinol"
+    }
+  }
+}

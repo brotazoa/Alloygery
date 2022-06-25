@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i ",
+    " si",
+    "s  "
+  ],
+  "key": {
+    "i": {
+      "tag": "c:iron_ingots"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:anvil_hammer"
+  }
+}

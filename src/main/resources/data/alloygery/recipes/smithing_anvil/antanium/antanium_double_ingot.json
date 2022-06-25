@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "antanium_materials",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:antanium_ingots"
+  },
+  "material_cost": 2,
+  "result": {
+    "item": "alloygery:antanium_double_ingot",
+    "data": {
+      "PartMaterial": "alloygery:materials/antanium"
+    }
+  }
+}

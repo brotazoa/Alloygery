@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "bronze_tool_heads",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:bronze_ingots"
+  },
+  "material_cost": 1,
+  "result": {
+    "item": "alloygery:alloygery_shovel_head",
+    "data": {
+      "PartMaterial": "alloygery:materials/bronze"
+    }
+  }
+}

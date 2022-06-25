@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "cupronickel_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:cupronickel_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:cupronickel_boots",
+    "data": {
+      "HeadMaterial": "alloygery:materials/cupronickel"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Blast Alloy Kiln",
+  "icon": "alloygery:blast_alloy_kiln",
+  "category": "alloygery:blocks_and_tools_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Blast Alloy Kiln is the older sibling to the $(l)$(l:block_alloy_kiln)Alloy Kiln$().$(br2)It is functionally the same, but can alloy $(o)all$() materials, including ones alloyable by the regular Alloy Kiln."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/blocks/blast_alloy_kiln"
+    }
+  ]
+}

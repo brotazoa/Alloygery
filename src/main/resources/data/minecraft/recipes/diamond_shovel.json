@@ -4,7 +4,7 @@
       "condition": "fabric:not",
       "value": {
         "condition": "alloygery:config_boolean_condition",
-        "config": "disable_diamond_gear"
+        "config": "disable_diamond_crafting"
       }
     }
   ],

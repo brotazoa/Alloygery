@@ -10,8 +10,8 @@ import java.util.UUID;
 public interface ItemAccessor
 {
 	@Accessor("ATTACK_DAMAGE_MODIFIER_ID")
-	public UUID getAttackDamageModifierId();
+	UUID getAttackDamageModifierId();
 
 	@Accessor("ATTACK_SPEED_MODIFIER_ID")
-	public UUID getAttackSpeedModifierId();
+	UUID getAttackSpeedModifierId();
 }

@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "bronze_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:bronze_plates"
+  },
+  "material_cost": 4,
+  "result": {
+    "item": "alloygery:bronze_helmet",
+    "data": {
+      "HeadMaterial": "alloygery:materials/bronze"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "group": "titanium_armor",
+  "hammer": {
+    "item": "alloygery:anvil_hammer"
+  },
+  "material": {
+    "tag": "c:titanium_heavy_plates"
+  },
+  "material_cost": 3,
+  "result": {
+    "item": "alloygery:titanium_leggings",
+    "data": {
+      "HeadMaterial": "alloygery:materials/titanium"
+    }
+  }
+}

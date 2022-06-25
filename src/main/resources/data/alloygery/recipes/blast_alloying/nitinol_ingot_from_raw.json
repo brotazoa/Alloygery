@@ -2,10 +2,10 @@
   "type": "alloygery:blast_alloying",
   "inputs": [
     {
-      "tag": "c:nickel_dusts"
+      "tag": "c:nickel_raw_ores"
     },
     {
-      "tag": "c:titanium_dusts"
+      "tag": "c:titanium_raw_ores"
     }
   ],
   "output":{

@@ -2,16 +2,16 @@
   "type": "alloygery:alloying",
   "inputs": [
     {
-      "tag": "c:gold_dusts"
+      "tag": "c:gold_raw_ores"
     },
     {
-      "tag": "c:iron_dusts"
+      "tag": "c:iron_raw_ores"
     },
     {
-      "tag": "c:iron_dusts"
+      "tag": "c:iron_raw_ores"
     },
     {
-      "tag": "c:copper_dusts"
+      "tag": "c:copper_raw_ores"
     }
   ],
   "output":{

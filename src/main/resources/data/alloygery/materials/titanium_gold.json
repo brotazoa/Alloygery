@@ -1,0 +1,53 @@
+{
+  "name": "titanium_gold",
+  "category": "metal",
+  "color": 13086590,
+  "make_tool_heads": true,
+  "make_tool_bindings": true,
+  "make_sword_guards": true,
+  "make_tool_handles": true,
+  "repair_ingredient": {
+    "tag": "c:titanium_gold_ingots"
+  },
+  "tool_base": {
+    "mining_level": 4,
+    "durability": 1600,
+    "enchantability": 25,
+    "mining_speed": 14.0,
+    "attack_speed": 2.0,
+    "attack_damage": 2.0,
+    "luck": 0.0,
+    "fireproof": false,
+    "piglin_loved": true
+  },
+  "tool_binding": {
+    "mining_level": 0,
+    "durability": -75,
+    "enchantability": 12,
+    "mining_speed": 3.0,
+    "attack_speed": 2.0,
+    "attack_damage": 0.0,
+    "luck": 0.0
+  },
+  "tool_handle": {
+    "durability_multiplier": 0.9,
+    "enchantability_multiplier": 1.2,
+    "mining_speed_multiplier": 1.4,
+    "attack_speed_multiplier": 1.2,
+    "attack_damage_multiplier": 0.7,
+    "luck_multiplier": 1.0
+  },
+  "armor": {
+    "durability": 47,
+    "helmet": 4,
+    "chestplate": 9,
+    "leggings": 7,
+    "boots": 4,
+    "enchantability": 25,
+    "toughness": 3.0,
+    "knockback_resistance": 0.0,
+    "fireproof": false,
+    "piglin_loved": true,
+    "freeze_immune": false
+  }
+}

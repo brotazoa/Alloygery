@@ -1,0 +1,5 @@
+{
+    "name": "Tool Parts",
+    "description": "Learn about Alloygery's various tool parts.",
+    "icon": "alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/antanium\"}"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Binding",
+  "icon": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/antanium\"}",
+  "category": "alloygery:tool_parts_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Tool Bindings can be seen as the finishing touch for a tool.$(br2)They can be used to compensate for the shortcomings of your $(l)$(l:tool_part_category)Tool Head's$() material, or add a little extra on top of an already high stat.$(br2)Make sure to keep in mind that Tool Bindings add to tool stats $(o)before$() the stats are multiplied by the $(l)$(l:part_tool_handle)Handle$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "alloygery:crafting/leather_binding",
+      "text": "A simple binding can be crafted from leather. Most other bindings are crafted at the $(l:alloygery:block_smithing_anvil)Smithing Anvil$()."
+    }
+  ]
+}

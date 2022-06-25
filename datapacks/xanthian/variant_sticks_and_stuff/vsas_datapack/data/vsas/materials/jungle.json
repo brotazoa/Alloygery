@@ -1,0 +1,20 @@
+{
+  "name": "jungle",
+  "category": "wood",
+  "color": 12093284,
+  "make_tool_heads": false,
+  "make_tool_bindings": false,
+  "make_sword_guards": false,
+  "make_tool_handles": true,
+  "repair_ingredient": {
+    "tag": "minecraft:planks"
+  },
+  "tool_handle": {
+    "durability_multiplier": 1.0,
+    "enchantability_multiplier": 1.0,
+    "mining_speed_multiplier": 1.0,
+    "attack_speed_multiplier": 1.0,
+    "attack_damage_multiplier": 1.0,
+    "luck_multiplier": 1.0
+  }
+}

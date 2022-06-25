@@ -2,48 +2,64 @@ package amorphia.alloygery.registry;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.block.AlloyKilnBlock;
+import amorphia.alloygery.content.block.AlloygeryTintedBlock;
 import amorphia.alloygery.content.block.BlastAlloyKilnBlock;
+import amorphia.alloygery.content.block.SmithingAnvilBlock;
 import amorphia.alloygery.content.block.entity.AlloyKilnBlockEntity;
 import amorphia.alloygery.content.block.entity.BlastAlloyKilnBlockEntity;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import amorphia.alloygery.content.material.AlloygeryMaterial;
+import amorphia.alloygery.content.material.AlloygeryMaterials;
+import amorphia.alloygery.data.AlloygeryGeneratedModelBuilder;
+import com.google.common.collect.Lists;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.fabricmc.fabric.api.tag.TagFactory;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.Material;
+import net.minecraft.block.OreBlock;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.tag.Tag;
-import net.minecraft.tag.TagGroupLoader;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
 
 public class ModBlocks
 {
+	public static final List<AlloygeryMaterial> RAW_ORE_BLOCKS_FOR_MATERIAL = Lists.newArrayList(
+			AlloygeryMaterials.TIN,
+			AlloygeryMaterials.NICKEL,
+			AlloygeryMaterials.TITANIUM
+	);
+
+	public static final List<AlloygeryMaterial> METAL_BLOCKS_FOR_MATERIAL = Lists.newArrayList(
+			AlloygeryMaterials.TIN,
+			AlloygeryMaterials.BRONZE,
+			AlloygeryMaterials.ANTANIUM,
+			AlloygeryMaterials.STEEL,
+			AlloygeryMaterials.NICKEL,
+			AlloygeryMaterials.INVAR,
+			AlloygeryMaterials.CONSTANTAN,
+			AlloygeryMaterials.CUPRONICKEL,
+			AlloygeryMaterials.TITANIUM,
+			AlloygeryMaterials.TITANIUM_GOLD,
+			AlloygeryMaterials.NITINOL
+	);
+
+	public static final Map<String, Block> ALLOYGERY_BLOCKS = new LinkedHashMap<>();
+
+	//@formatter:off
+
 	//ore blocks
 	public static final Block TIN_ORE = new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 3.0f));
-	public static final Block DEEPSLATE_TIN_ORE = new OreBlock(FabricBlockSettings.copy(TIN_ORE).mapColor(MapColor.DEEPSLATE_GRAY).strength(4.5f, 3.0f).sounds(BlockSoundGroup.DEEPSLATE));
-	public static final Block NICKLE_ORE = new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 9.0f));
+	public static final Block DEEPSLATE_TIN_ORE = new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(4.5f, 3.0f));
+	public static final Block NICKEL_ORE = new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 9.0f));
 	public static final Block TITANIUM_ORE = new OreBlock(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0f, 12.0f));
-
-	//raw ore blocks
-	public static final Block RAW_TIN_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f));
-	public static final Block RAW_NICKLE_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f));
-	public static final Block RAW_TITANIUM_BLOCK = new Block(FabricBlockSettings.of(Material.STONE).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f));
-
-	//metal blocks
-	public static final Block TIN_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(3.0f, 6.0f).sounds(BlockSoundGroup.COPPER));
-	public static final Block BRONZE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.BROWN).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.COPPER));
-	public static final Block ANTANIUM_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.GOLD).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block STEEL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block NICKLE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block INVAR_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block CONSTANTAN_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.BROWN).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block CUPRONICKEL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block TITANIUM_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block TITANIUM_GOLD_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.GOLD).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
-	public static final Block NITINOL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL));
 
 	//alloy kilns
 	public static final Block ALLOY_KILN = new AlloyKilnBlock();
@@ -53,31 +69,50 @@ public class ModBlocks
 	public static BlockEntityType<AlloyKilnBlockEntity> ALLOY_KILN_BLOCK_ENTITY;
 	public static BlockEntityType<BlastAlloyKilnBlockEntity> BLAST_ALLOY_KILN_BLOCK_ENTITY;
 
+	//smithing anvil
+	public static final Block SMITHING_ANVIL = new SmithingAnvilBlock(FabricBlockSettings.of(Material.REPAIR_STATION, MapColor.IRON_GRAY).requiresTool().strength(5.0f, 1200.0f).sounds(BlockSoundGroup.ANVIL));
+
+	//@formatter:on
+
+	static void makeRawOreBlock(AlloygeryMaterial material)
+	{
+		putGeneratedBlock("raw_" + material.name + "_block",
+				new AlloygeryTintedBlock(material, FabricBlockSettings.of(Material.STONE).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f)),
+				AlloygeryGeneratedModelBuilder::createRawOreBlockModelJson);
+	}
+
+	static void makeMetalBlock(AlloygeryMaterial material)
+	{
+		putGeneratedBlock(material.name + "_block",
+				new AlloygeryTintedBlock(material, FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL)),
+				AlloygeryGeneratedModelBuilder::createMetalBlockModelJson);
+	}
+
+	static void putGeneratedBlock(String path, Block block, Supplier<String> modelJsonSupplier)
+	{
+		Identifier identifier = Alloygery.identifier("block/" + path);
+		AlloygeryGeneratedModelBuilder.register(identifier, modelJsonSupplier);
+		ALLOYGERY_BLOCKS.put(path, block);
+	}
+
+	public static void registerClient()
+	{
+		BlockRenderLayerMap.INSTANCE.putBlock(ALLOY_KILN, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(BLAST_ALLOY_KILN, RenderLayer.getCutout());
+	}
+
 	public static void register()
 	{
+		RAW_ORE_BLOCKS_FOR_MATERIAL.forEach(ModBlocks::makeRawOreBlock);
+		METAL_BLOCKS_FOR_MATERIAL.forEach(ModBlocks::makeMetalBlock);
+
+		ALLOYGERY_BLOCKS.forEach(ModBlocks::register);
+
 		//ore blocks
 		register("tin_ore", TIN_ORE);
 		register("deepslate_tin_ore", DEEPSLATE_TIN_ORE);
-		register("nickel_ore", NICKLE_ORE);
+		register("nickel_ore", NICKEL_ORE);
 		register("titanium_ore", TITANIUM_ORE);
-
-		//raw ore blocks
-		register("raw_tin_block", RAW_TIN_BLOCK);
-		register("raw_nickel_block", RAW_NICKLE_BLOCK);
-		register("raw_titanium_block", RAW_TITANIUM_BLOCK);
-
-		//metal blocks
-		register("tin_block", TIN_BLOCK);
-		register("bronze_block", BRONZE_BLOCK);
-		register("antanium_block", ANTANIUM_BLOCK);
-		register("steel_block", STEEL_BLOCK);
-		register("nickel_block", NICKLE_BLOCK);
-		register("invar_block", INVAR_BLOCK);
-		register("constantan_block", CONSTANTAN_BLOCK);
-		register("cupronickel_block", CUPRONICKEL_BLOCK);
-		register("titanium_block", TITANIUM_BLOCK);
-		register("titanium_gold_block", TITANIUM_GOLD_BLOCK);
-		register("nitinol_block", NITINOL_BLOCK);
 
 		//alloy kilns
 		register("alloy_kiln", ALLOY_KILN);
@@ -88,6 +123,9 @@ public class ModBlocks
 				FabricBlockEntityTypeBuilder.create(AlloyKilnBlockEntity::new, ALLOY_KILN).build(null));
 		BLAST_ALLOY_KILN_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, Alloygery.identifier("blast_alloy_kiln_block_entity"),
 				FabricBlockEntityTypeBuilder.create(BlastAlloyKilnBlockEntity::new, BLAST_ALLOY_KILN).build(null));
+
+		//smithing anvil
+		register("smithing_anvil", SMITHING_ANVIL);
 	}
 
 	private static void register(String path, Block block)

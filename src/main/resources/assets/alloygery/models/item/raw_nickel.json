@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alloygery:item/raw_nickel"
+    "layer0": "alloygery:item/empty",
+    "layer1": "alloygery:item/raw_nickel"
   }
 }

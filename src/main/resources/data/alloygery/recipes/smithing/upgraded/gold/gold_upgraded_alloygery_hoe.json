@@ -1,0 +1,28 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enable_gold_upgrade"
+    }
+  ],
+  "type": "nbtcrafting:smithing",
+  "base": {
+    "item": "alloygery:alloygery_hoe",
+    "data": {
+      "deny": {
+        "UpgradeMaterial": "",
+        "HeadMaterial": "alloygery:materials/gold"
+      }
+    }
+  },
+  "ingredient": {
+    "tag": "c:gold_ingots"
+  },
+  "result": {
+    "item": "alloygery:plated_alloygery_hoe",
+    "data": {
+      "$": "$ base",
+      "UpgradeMaterial": "alloygery:materials/gold"
+    }
+  }
+}

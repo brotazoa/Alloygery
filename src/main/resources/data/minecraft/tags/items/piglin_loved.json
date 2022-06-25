@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:gold_double_ingot",
+    "alloygery:gold_heavy_plate",
+    "alloygery:gold_plate",
+    "alloygery:antanium_ingot",
+    "alloygery:antanium_nugget",
+    "alloygery:antanium_block",
+    "alloygery:antanium_double_ingot",
+    "alloygery:antanium_heavy_plate",
+    "alloygery:antanium_plate",
+    "alloygery:titanium_gold_ingot",
+    "alloygery:titanium_gold_nugget",
+    "alloygery:titanium_gold_block",
+    "alloygery:titanium_gold_double_ingot",
+    "alloygery:titanium_gold_heavy_plate",
+    "alloygery:titanium_gold_plate",
+    "alloygery:gold_helmet",
+    "alloygery:gold_chestplate",
+    "alloygery:gold_leggings",
+    "alloygery:gold_boots",
+    "alloygery:antanium_helmet",
+    "alloygery:antanium_chestplate",
+    "alloygery:antanium_leggings",
+    "alloygery:antanium_boots",
+    "alloygery:titanium_gold_helmet",
+    "alloygery:titanium_gold_chestplate",
+    "alloygery:titanium_gold_leggings",
+    "alloygery:titanium_gold_boots"
+  ]
+}

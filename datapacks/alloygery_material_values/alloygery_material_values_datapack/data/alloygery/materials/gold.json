@@ -1,0 +1,76 @@
+{
+  "name": "gold",
+  "category": "metal",
+  "color": 16573743,
+  "make_tool_heads": true,
+  "make_tool_bindings": true,
+  "make_sword_guards": true,
+  "make_tool_handles": true,
+  "repair_ingredient": {
+    "tag": "c:gold_ingots"
+  },
+  "tool_base": {
+    "mining_level": 0,
+    "durability": 32,
+    "enchantability": 22,
+    "mining_speed": 12.0,
+    "attack_speed": 0.0,
+    "attack_damage": 0.0,
+    "luck": 0.0,
+    "fireproof": false,
+    "piglin_loved": true
+  },
+  "tool_binding": {
+    "mining_level": -1,
+    "durability": -200,
+    "enchantability": 10,
+    "mining_speed": 2.0,
+    "attack_speed": 0.0,
+    "attack_damage": -3.0,
+    "luck": 0.0,
+    "durability_multiplier": 0.9,
+    "enchantability_multiplier": 1.5,
+    "mining_speed_multiplier": 1.5,
+    "attack_speed_multiplier": 0.8,
+    "attack_damage_multiplier": 0.5,
+    "luck_multiplier": 1.0
+  },
+  "tool_handle": {
+    "durability_multiplier": 0.5,
+    "enchantability_multiplier": 1.4,
+    "mining_speed_multiplier": 1.3,
+    "attack_speed_multiplier": 0.8,
+    "attack_damage_multiplier": 0.3,
+    "luck_multiplier": 1.0
+  },
+  "tool_upgrade": {
+    "mining_level": -1,
+    "durability": 0,
+    "enchantability": 0,
+    "mining_speed": 0.0,
+    "attack_speed": 0.0,
+    "attack_damage": 0.0,
+    "luck": 0.0,
+    "durability_multiplier": 0.7,
+    "enchantability_multiplier": 1.8,
+    "mining_speed_multiplier": 1.5,
+    "attack_speed_multiplier": 1.2,
+    "attack_damage_multiplier": 0.5,
+    "luck_multiplier": 1.0,
+    "fireproof": false,
+    "piglin_loved": true
+  },
+  "armor": {
+    "durability": 7,
+    "helmet": 2,
+    "chestplate": 5,
+    "leggings": 3,
+    "boots": 1,
+    "enchantability": 25,
+    "toughness": 0.0,
+    "knockback_resistance": 0.0,
+    "fireproof": false,
+    "piglin_loved": true,
+    "freeze_immune": false
+  }
+}

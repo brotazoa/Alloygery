@@ -18,7 +18,7 @@
     "main": [
       "amorphia.alloygery.Alloygery"
     ],
-    "rei": [
+    "rei_client": [
       "amorphia.alloygery.compat.rei.AlloygeryPlugin"
     ],
     "modmenu": [

@@ -52,6 +52,13 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 					continue;
 				}
 
+				//validate
+				if(!AlloygeryMaterial.validate(json))
+				{
+					Alloygery.LOGGER.info("Not an Alloygery Material, or data version unsupported: " + id);
+					continue;
+				}
+
 				AlloygeryMaterial material = AlloygeryMaterial.GSON.fromJson(json, AlloygeryMaterial.class);
 				AlloygeryMaterialData materialData = AlloygeryMaterialData.fromAlloygeryMaterial(material);
 				AlloygeryMaterialRegistry.load(trimmedIdentifier, materialData);

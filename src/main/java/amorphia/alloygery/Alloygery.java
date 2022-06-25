@@ -25,11 +25,14 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Set;
 
 public class Alloygery implements ModInitializer, ClientModInitializer
 {
 	public static final String MOD_ID = "alloygery";
 	public static final Logger LOGGER = LogManager.getLogger();
+
+	public static final Set<Integer> ALLOYGERY_DATA_VERSIONS = Set.of(1);
 
 	public static ItemGroup ALLOYGERY_GROUP_BLOCKS = FabricItemGroupBuilder.create(Alloygery.identifier("blocks")).icon(() -> new ItemStack(ModItems.BLOCKS_TAB_ITEM)).build();
 	public static ItemGroup ALLOYGERY_GROUP_MATERIALS = FabricItemGroupBuilder.create(Alloygery.identifier("materials")).icon(() -> new ItemStack(ModItems.MATERIALS_TAB_ITEM)).build();

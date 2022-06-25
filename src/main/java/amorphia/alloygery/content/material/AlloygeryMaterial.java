@@ -1,10 +1,12 @@
 package amorphia.alloygery.content.material;
 
+import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.item.ModMiningLevels;
 import com.google.gson.*;
 import net.minecraft.util.Identifier;
 
 import java.lang.reflect.Type;
+import java.util.Arrays;
 
 public class AlloygeryMaterial
 {
@@ -70,6 +72,20 @@ public class AlloygeryMaterial
 //
 //		return original;
 //	}
+
+	public static boolean validate(JsonObject json)
+	{
+		if(json == null)
+			return false;
+
+		if (json.has("alloygery_data_version"))
+		{
+			int version = json.get("alloygery_data_version").getAsInt();
+			return Alloygery.ALLOYGERY_DATA_VERSIONS.contains(version);
+		}
+
+		return false;
+	}
 
 	public static class AlloygeryMaterialSerializer implements JsonDeserializer<AlloygeryMaterial>, JsonSerializer<AlloygeryMaterial>
 	{

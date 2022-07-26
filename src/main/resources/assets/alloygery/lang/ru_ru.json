@@ -200,9 +200,9 @@
   "item.alloygery.titanium_pickaxe_head": "Титановая головка кирки",
   "item.alloygery.titanium_shovel_head": "Титановая головка лопаты",
   "item.alloygery.titanium_sword_blade": "Титановое лезвие меча",
-  "item.alloygery.titanium_binding": "Татановое крепление",
-  "item.alloygery.titanium_handle": "Татановая ручка",
-  "item.alloygery.titanium_sword_guard": "Татановая гарда",
+  "item.alloygery.titanium_binding": "Титановое крепление",
+  "item.alloygery.titanium_handle": "Титановая ручка",
+  "item.alloygery.titanium_sword_guard": "Титановая гарда",
 
   "item.alloygery.titanium_gold_axe_head": "Титаново-золотая головка топора",
   "item.alloygery.titanium_gold_hoe_head": "Титаново-золотая головка мотыги",
@@ -475,10 +475,10 @@
   "rei.alloygery.blast_alloying": "Доменный печь для обжига сплавов",
   "rei.alloygery.smithing_anvil": "Кузнечная наковальня",
 
-  "itemGroup.alloygery.blocks": "Alloygery Blocks",
-  "itemGroup.alloygery.materials": "Alloygery Materials",
-  "itemGroup.alloygery.gear": "Alloygery Gear",
-  "itemGroup.alloygery.parts": "Alloygery Parts",
+  "itemGroup.alloygery.blocks": "Alloygery - Блоки",
+  "itemGroup.alloygery.materials": "Alloygery - Материалы",
+  "itemGroup.alloygery.gear": "Alloygery - Механизмы",
+  "itemGroup.alloygery.parts": "Alloygery - Части",
 
   "stat.alloygery.interact_with_alloy_kiln": "Взаимодействие с печью для обжига сплавов",
   "stat.alloygery.interact_with_blast_alloy_kiln": "Взаимодействие с доменной печью для обжига сплавов",

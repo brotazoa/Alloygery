@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:upgraded_pickaxes"
+    },
+    {
+      "tag": "alloygery:crafting_hammers"
+    }
+  ],
+  "result": {
+    "item": "alloygery:dynamic_pickaxe"
+  }
+}

@@ -1,11 +1,10 @@
 package amorphia.alloygery.compat.rei;
 
-import amorphia.alloygery.content.recipe.SmithingAnvilRecipe;
+import amorphia.alloygery.content.machines.recipe.SmithingAnvilRecipe;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.Display;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
-import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
 import java.util.Collections;

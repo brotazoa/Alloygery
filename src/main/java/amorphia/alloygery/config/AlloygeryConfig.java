@@ -1,8 +1,5 @@
 package amorphia.alloygery.config;
 
-import amorphia.alloygery.content.item.ModMiningLevels;
-import net.fabricmc.yarn.constants.MiningLevels;
-
 public class AlloygeryConfig
 {
 	protected static final ConfigGroup ALLOYGERY_CONFIG = new ConfigGroup();
@@ -39,7 +36,6 @@ public class AlloygeryConfig
 	public static final ConfigValue enableDiamondUpgrade;
 	public static final ConfigValue enableEmeraldUpgrade;
 	public static final ConfigValue enableNetheriteUpgrade;
-	public static final ConfigValue enableGoldUpgrade;
 
 	public static final ConfigValue disableVanillaDiamondCrafting;
 	public static final ConfigValue disableVanillaIronCrafting;
@@ -51,10 +47,9 @@ public class AlloygeryConfig
 	static
 	{
 		//@formatter:off
-		enableDiamondUpgrade = ALLOYGERY_CONFIG.register("enable_diamond_upgrade", new ConfigValue(true));
-		enableEmeraldUpgrade = ALLOYGERY_CONFIG.register("enable_emerald_upgrade", new ConfigValue(true));
-		enableNetheriteUpgrade = ALLOYGERY_CONFIG.register("enable_netherite_upgrade", new ConfigValue(true));
-		enableGoldUpgrade = ALLOYGERY_CONFIG.register("enable_gold_upgrade", new ConfigValue(true));
+		enableDiamondUpgrade = ALLOYGERY_CONFIG.register("enable_tipped_upgrade", new ConfigValue(true));
+		enableEmeraldUpgrade = ALLOYGERY_CONFIG.register("enable_embossed_upgrade", new ConfigValue(true));
+		enableNetheriteUpgrade = ALLOYGERY_CONFIG.register("enable_plated_upgrade", new ConfigValue(true));
 
 		disableVanillaDiamondCrafting = ALLOYGERY_CONFIG.register("disable_diamond_crafting", new ConfigValue(true));
 		disableVanillaIronCrafting = ALLOYGERY_CONFIG.register("disable_iron_crafting", new ConfigValue(true));

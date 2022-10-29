@@ -1,6 +1,6 @@
 package amorphia.alloygery.compat.rei;
 
-import amorphia.alloygery.content.recipe.AlloyingRecipe;
+import amorphia.alloygery.content.machines.recipe.AlloyingRecipe;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.Display;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;

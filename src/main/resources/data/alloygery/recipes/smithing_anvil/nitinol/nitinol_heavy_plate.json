@@ -1,17 +1,14 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "nitinol_materials",
-  "hammer": {
-    "item": "alloygery:anvil_hammer"
+  "crafting_tool": {
+    "tag": "alloygery:crafting_hammers"
   },
   "material": {
-    "tag": "c:nitinol_double_ingots"
+    "tag": "c:nitinol_plates"
   },
-  "material_cost": 1,
+  "material_cost": 2,
+  "minimum_crafting_tier": 4,
   "result": {
-    "item": "alloygery:nitinol_heavy_plate",
-    "data": {
-      "PartMaterial": "alloygery:materials/nitinol"
-    }
+    "item": "alloygery:nitinol_heavy_plate"
   }
 }

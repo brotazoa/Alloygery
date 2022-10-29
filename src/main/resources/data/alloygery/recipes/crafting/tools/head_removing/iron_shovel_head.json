@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:crafting_tool_damaging_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_shovel"
+    },
+    {
+      "tag": "alloygery:crafting_hammers"
+    }
+  ],
+  "result": {
+    "item": "alloygery:iron_shovel_head"
+  }
+}

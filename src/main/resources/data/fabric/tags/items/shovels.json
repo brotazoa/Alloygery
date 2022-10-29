@@ -1,9 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alloygery:alloygery_shovel",
-    "alloygery:tipped_alloygery_shovel",
-    "alloygery:embossed_alloygery_shovel",
-    "alloygery:plated_alloygery_shovel"
+    "alloygery:dynamic_shovel",
+    "#alloygery:upgraded_shovels"
   ]
 }

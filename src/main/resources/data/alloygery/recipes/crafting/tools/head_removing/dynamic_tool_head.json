@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_head_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:non_upgraded_tools"
+    },
+    {
+      "tag": "alloygery:crafting_hammers"
+    }
+  ],
+  "result": {
+    "item": "alloygery:copper_nugget"
+  }
+}

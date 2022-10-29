@@ -64,54 +64,6 @@
           }
         ]
       }
-    },
-    "alloygery_iron_helmet": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "alloygery:iron_helmet"
-            ]
-          }
-        ]
-      }
-    },
-    "alloygery_iron_chestplate": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "alloygery:iron_chestplate"
-            ]
-          }
-        ]
-      }
-    },
-    "alloygery_iron_leggings": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "alloygery:iron_leggings"
-            ]
-          }
-        ]
-      }
-    },
-    "alloygery_iron_boots": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "alloygery:iron_boots"
-            ]
-          }
-        ]
-      }
     }
   },
   "requirements": [
@@ -119,11 +71,7 @@
       "iron_helmet",
       "iron_chestplate",
       "iron_leggings",
-      "iron_boots",
-      "alloygery_iron_helmet",
-      "alloygery_iron_chestplate",
-      "alloygery_iron_leggings",
-      "alloygery_iron_boots"
+      "iron_boots"
     ]
   ]
 }

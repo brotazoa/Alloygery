@@ -1,9 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alloygery:alloygery_pickaxe",
-    "alloygery:tipped_alloygery_pickaxe",
-    "alloygery:embossed_alloygery_pickaxe",
-    "alloygery:plated_alloygery_pickaxe"
+    "alloygery:dynamic_pickaxe",
+    "#alloygery:upgraded_pickaxes"
   ]
 }

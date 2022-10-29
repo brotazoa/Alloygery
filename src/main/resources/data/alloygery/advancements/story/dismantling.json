@@ -2,7 +2,7 @@
   "parent": "alloygery:story/smelt_steel",
   "display": {
     "icon": {
-      "item": "alloygery:smithing_hammer"
+      "item": "alloygery:diamond_pickaxe_head"
     },
     "title": {
       "translate": "advancements.alloygery.story.dismantling.title"
@@ -21,8 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "alloygery:tool_heads",
-            "nbt": "{PartMaterial:\"alloygery:materials/diamond\"}"
+            "tag": "alloygery:diamond_tool_heads"
           }
         ]
       }

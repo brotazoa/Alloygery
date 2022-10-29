@@ -3,21 +3,9 @@
   "ingredients": [
     {
       "tag": "c:leathers"
-    },
-    {
-      "item": "minecraft:shears",
-      "remainder": {
-        "item": "minecraft:shears",
-        "data": {
-          "Damage": "$ i1.Damage + 2"
-        }
-      }
     }
   ],
   "result": {
-    "item": "alloygery:alloygery_binding",
-    "data": {
-      "PartMaterial": "alloygery:materials/leather"
-    }
+    "item": "alloygery:leather_binding"
   }
 }

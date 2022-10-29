@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "alloygery:alloygery_simple_tool_shaped",
   "pattern": [
     "ii",
     "is",
@@ -14,11 +14,12 @@
     }
   },
   "result": {
-    "item": "alloygery:alloygery_axe",
-    "data": {
-      "HeadMaterial": "alloygery:materials/bronze",
-      "BindingMaterial": "alloygery:materials/hidden",
-      "HandleMaterial": "alloygery:materials/wooden"
-    }
+    "item": "alloygery:dynamic_axe"
+  },
+  "substitute_head_part": {
+    "item": "alloygery:bronze_axe_head"
+  },
+  "substitute_handle_part": {
+    "item": "alloygery:wooden_handle"
   }
 }

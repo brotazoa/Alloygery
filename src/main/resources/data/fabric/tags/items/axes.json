@@ -1,9 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alloygery:alloygery_axe",
-    "alloygery:tipped_alloygery_axe",
-    "alloygery:embossed_alloygery_axe",
-    "alloygery:plated_alloygery_axe"
+    "alloygery:dynamic_axe",
+    "#alloygery:upgraded_axes"
   ]
 }

@@ -1,17 +1,14 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "titanium_gold_tool_heads",
-  "hammer": {
-    "item": "alloygery:anvil_hammer"
+  "crafting_tool": {
+    "tag": "alloygery:crafting_hammers"
   },
   "material": {
     "tag": "c:titanium_gold_ingots"
   },
-  "material_cost": 1,
+  "material_cost": 2,
+  "minimum_crafting_tier": 3,
   "result": {
-    "item": "alloygery:alloygery_hoe_head",
-    "data": {
-      "PartMaterial": "alloygery:materials/titanium_gold"
-    }
+    "item": "alloygery:titanium_gold_hoe_head"
   }
 }

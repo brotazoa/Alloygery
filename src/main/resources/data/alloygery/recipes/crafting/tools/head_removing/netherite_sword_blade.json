@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:crafting_tool_damaging_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_sword"
+    },
+    {
+      "tag": "alloygery:crafting_hammers"
+    }
+  ],
+  "result": {
+    "item": "alloygery:netherite_sword_blade"
+  }
+}

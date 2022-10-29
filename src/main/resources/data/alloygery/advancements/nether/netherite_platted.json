@@ -22,7 +22,7 @@
         "items": [
           {
             "tag": "alloygery:upgraded_tools",
-            "nbt": "{UpgradeMaterial:\"alloygery:materials/netherite\"}"
+            "nbt": "{alloygery_nbt_identifier:{tool_part_upgrade:{material_identifier:\"alloygery:materials/netherite\"}}}"
           }
         ]
       }

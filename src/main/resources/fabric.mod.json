@@ -26,12 +26,12 @@
     ]
   },
   "mixins": [
-    "alloygery.mixins.json"
+    "alloygery.tool.mixins.json",
+    "alloygery.metal.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.13.3",
-    "fabric": ">=0.47.10+1.18.2",
-    "minecraft": "1.18.2",
-    "nbtcrafting": ">=2.1.2+mc1.18.2"
+    "fabric": ">=0.59.1+1.18.2",
+    "minecraft": "1.18.2"
   }
 }

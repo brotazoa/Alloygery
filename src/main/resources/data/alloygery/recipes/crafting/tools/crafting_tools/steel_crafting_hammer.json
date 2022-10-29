@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+    "s "
+  ],
+  "key": {
+    "i": {
+      "tag": "c:steel_ingots"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:steel_crafting_hammer"
+  }
+}

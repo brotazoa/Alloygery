@@ -1,17 +1,13 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "gold_materials",
-  "hammer": {
-    "item": "alloygery:anvil_hammer"
+  "crafting_tool": {
+    "tag": "alloygery:crafting_hammers"
   },
   "material": {
-    "tag": "c:gold_double_ingots"
+    "tag": "c:gold_plates"
   },
-  "material_cost": 1,
+  "material_cost": 2,
   "result": {
-    "item": "alloygery:gold_heavy_plate",
-    "data": {
-      "PartMaterial": "alloygery:materials/gold"
-    }
+    "item": "alloygery:gold_heavy_plate"
   }
 }

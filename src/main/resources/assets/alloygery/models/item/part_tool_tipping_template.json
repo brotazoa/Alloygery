@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "alloygery:parts/tool_tipping_template"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "alloygery:tipped_alloygery_hoe",
-    "alloygery:embossed_alloygery_hoe",
-    "alloygery:plated_alloygery_hoe"
+    "alloygery:tipped_dynamic_hoe",
+    "alloygery:embossed_dynamic_hoe",
+    "alloygery:plated_dynamic_hoe"
   ]
 }

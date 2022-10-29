@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:copper_crafting_hammer",
+    "alloygery:bronze_crafting_hammer",
+    "alloygery:iron_crafting_hammer",
+    "alloygery:gold_crafting_hammer",
+    "alloygery:antanium_crafting_hammer",
+    "alloygery:steel_crafting_hammer",
+    "alloygery:nickel_crafting_hammer",
+    "alloygery:invar_crafting_hammer",
+    "alloygery:constantan_crafting_hammer",
+    "alloygery:cupronickel_crafting_hammer",
+    "alloygery:titanium_crafting_hammer",
+    "alloygery:titanium_gold_crafting_hammer",
+    "alloygery:nitinol_crafting_hammer"
+  ]
+}

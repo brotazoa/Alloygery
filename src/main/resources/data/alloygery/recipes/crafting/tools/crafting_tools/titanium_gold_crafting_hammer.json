@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i",
+    "s "
+  ],
+  "key": {
+    "i": {
+      "tag": "c:titanium_gold_ingots"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:titanium_gold_crafting_hammer"
+  }
+}

@@ -48,10 +48,6 @@ dependencies {
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 
-    //nbtcrafting
-    modImplementation "de.siphalor:nbtcrafting-1.18:${project.nbtcrafting_version}"
-    modRuntimeOnly("com.github.astei:lazydfu:master-SNAPSHOT")
-
     //patchouli
     modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
 

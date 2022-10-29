@@ -1,10 +1,9 @@
 package amorphia.alloygery.compat.rei;
 
-import amorphia.alloygery.content.screen.SmithingAnvilScreen;
-import amorphia.alloygery.registry.ModItems;
+import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
+import amorphia.alloygery.content.machines.screen.SmithingAnvilScreen;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
-import me.shedaniel.rei.api.client.gui.DisplayRenderer;
 import me.shedaniel.rei.api.client.gui.Renderer;
 import me.shedaniel.rei.api.client.gui.widgets.Widget;
 import me.shedaniel.rei.api.client.gui.widgets.Widgets;
@@ -23,7 +22,7 @@ import java.util.List;
 public class SmithingAnvilCategory implements DisplayCategory<SmithingAnvilDisplay>
 {
 	public static final TranslatableText TITLE = new TranslatableText("rei.alloygery.smithing_anvil");
-	public static final EntryStack<ItemStack> ICON = EntryStacks.of(ModItems.SMITHING_ANVIL);
+	public static final EntryStack<ItemStack> ICON = EntryStacks.of(MachineBlockRegistry.SMITHING_ANVIL);
 
 	@Override
 	public Renderer getIcon()

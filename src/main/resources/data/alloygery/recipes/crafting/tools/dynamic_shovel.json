@@ -1,0 +1,22 @@
+{
+  "type": "alloygery:alloygery_tool_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "tag": "alloygery:shovel_heads"
+    },
+    "b": {
+      "tag": "alloygery:bindings"
+    },
+    "h": {
+      "tag": "alloygery:handles"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_shovel"
+  }
+}

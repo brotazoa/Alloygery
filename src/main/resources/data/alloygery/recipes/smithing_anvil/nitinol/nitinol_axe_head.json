@@ -1,17 +1,14 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "nitinol_tool_heads",
-  "hammer": {
-    "item": "alloygery:anvil_hammer"
+  "crafting_tool": {
+    "tag": "alloygery:crafting_hammers"
   },
   "material": {
     "tag": "c:nitinol_ingots"
   },
-  "material_cost": 2,
+  "material_cost": 3,
+  "minimum_crafting_tier": 4,
   "result": {
-    "item": "alloygery:alloygery_axe_head",
-    "data": {
-      "PartMaterial": "alloygery:materials/nitinol"
-    }
+    "item": "alloygery:nitinol_axe_head"
   }
 }

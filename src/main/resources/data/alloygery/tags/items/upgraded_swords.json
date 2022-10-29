@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "alloygery:tipped_alloygery_sword",
-    "alloygery:embossed_alloygery_sword",
-    "alloygery:plated_alloygery_sword"
+    "alloygery:tipped_dynamic_sword",
+    "alloygery:embossed_dynamic_sword",
+    "alloygery:plated_dynamic_sword"
   ]
 }

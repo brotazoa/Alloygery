@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:dynamic_axe",
+    "alloygery:dynamic_hoe",
+    "alloygery:dynamic_pickaxe",
+    "alloygery:dynamic_shovel",
+    "alloygery:dynamic_sword"
+  ]
+}

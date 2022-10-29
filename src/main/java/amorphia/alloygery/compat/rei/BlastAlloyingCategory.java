@@ -1,6 +1,6 @@
 package amorphia.alloygery.compat.rei;
 
-import amorphia.alloygery.registry.ModItems;
+import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.Renderer;
@@ -21,7 +21,7 @@ import java.util.List;
 public class BlastAlloyingCategory implements DisplayCategory<BlastAlloyingDisplay>
 {
 	public static final TranslatableText TITLE = new TranslatableText("rei.alloygery.blast_alloying");
-	public static final EntryStack<ItemStack> ICON = EntryStacks.of(ModItems.BLAST_ALLOY_KILN);
+	public static final EntryStack<ItemStack> ICON = EntryStacks.of(MachineBlockRegistry.BLAST_ALLOY_KILN);
 
 	@Override
 	public Renderer getIcon()

@@ -1,6 +1,0 @@
-{
-  "parent": "alloygery:block/tinted_block_template",
-  "textures": {
-    "all": "alloygery:block/metal_block_template"
-  }
-}

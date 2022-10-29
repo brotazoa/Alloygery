@@ -1,17 +1,13 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "copper_materials",
-  "hammer": {
-    "item": "alloygery:anvil_hammer"
+  "crafting_tool": {
+    "tag": "alloygery:crafting_hammers"
   },
   "material": {
     "tag": "c:copper_ingots"
   },
   "material_cost": 1,
   "result": {
-    "item": "alloygery:copper_plate",
-    "data": {
-      "PartMaterial": "alloygery:materials/copper"
-    }
+    "item": "alloygery:copper_plate"
   }
 }

@@ -225,8 +225,24 @@
   "item.alloygery.wooden_handle": "Wooden Handle",
   "item.alloygery.leather_binding": "Leather Binding",
 
-  "item.alloygery.anvil_hammer": "Anvil Hammer",
-  "item.alloygery.smithing_hammer": "Smithing Hammer",
+  "item.alloygery.diamond_tool_tipping": "Diamond Tool Paste",
+  "item.alloygery.netherite_tool_plating": "Netherite Tool Plating",
+  "item.alloygery.gold_tool_plating": "Gold Tool Plating",
+  "item.alloygery.emerald_tool_inlay": "Emerald Tool Inlay",
+
+  "item.alloygery.copper_crafting_hammer": "Copper Crafting Hammer",
+  "item.alloygery.bronze_crafting_hammer": "Bronze Crafting Hammer",
+  "item.alloygery.iron_crafting_hammer": "Iron Crafting Hammer",
+  "item.alloygery.gold_crafting_hammer": "Gold Crafting Hammer",
+  "item.alloygery.antanium_crafting_hammer": "Antanium Crafting Hammer",
+  "item.alloygery.steel_crafting_hammer": "Steel Crafting Hammer",
+  "item.alloygery.nickel_crafting_hammer": "Nickel Crafting Hammer",
+  "item.alloygery.invar_crafting_hammer": "Invar Crafting Hammer",
+  "item.alloygery.constantan_crafting_hammer": "Constantan Crafting Hammer",
+  "item.alloygery.cupronickel_crafting_hammer": "Cupronickel Crafting Hammer",
+  "item.alloygery.titanium_crafting_hammer": "Titanium Crafting Hammer",
+  "item.alloygery.titanium_gold_crafting_hammer": "Titanium_gold Crafting Hammer",
+  "item.alloygery.nitinol_crafting_hammer": "Nitinol Crafting Hammer",
 
   "item.alloygery.antanium_axe": "Antanium Axe",
   "item.alloygery.antanium_hoe": "Antanium Hoe",
@@ -409,38 +425,45 @@
   "container.alloygery.blast_alloy_kiln": "Blast Alloy Kiln",
   "container.alloygery.smithing_anvil": "Smithing Anvil",
 
-  "item.alloygery.info_axe": "Axe",
-  "item.alloygery.info_hoe": "Hoe",
-  "item.alloygery.info_pickaxe": "Pickaxe",
-  "item.alloygery.info_shovel": "Shovel",
-  "item.alloygery.info_sword": "Sword",
-
-  "item.alloygery.info_axe_head": "Any Axe Head",
-  "item.alloygery.info_hoe_head": "Any Hoe Head",
-  "item.alloygery.info_pickaxe_head": "Any Pickaxe Head",
-  "item.alloygery.info_shovel_head": "Any Shovel Head",
-  "item.alloygery.info_sword_blade": "Any Sword Blade",
-
-  "item.alloygery.info_binding": "Any Binding",
-  "item.alloygery.info_sword_guard": "Any Sword Guard",
-  "item.alloygery.info_handle": "Any Handle",
-
-  "tooltip.alloygery.crafting_info.axe": "Craft an Axe with any Axe Head, Binding, and Handle",
-  "tooltip.alloygery.crafting_info.hoe": "Craft a Hoe with any Hoe Head, Binding, and Handle",
-  "tooltip.alloygery.crafting_info.pickaxe": "Craft a Pickaxe with any Pickaxe Head, Binding, and Handle",
-  "tooltip.alloygery.crafting_info.shovel": "Craft a Shovel with any Shovel Head, Binding, and Handle",
-  "tooltip.alloygery.crafting_info.sword": "Craft a Sword with any Sword Blade, Sword Guard, and Handle",
+  "tooltip.alloygery.smithing_anvil.not_enough_material": "Not enough material",
+  "tooltip.alloygery.smithing_anvil.crafting_tier_too_low": "Requires a tool with a higher crafting tier",
 
   "tooltip.alloygery.shift_for_info": "Hold Shift For More Info",
   "tooltip.alloygery.ctrl_for_details": "Hold Ctrl For More Details",
   "tooltip.alloygery.when_used_in_craft": "When Used To Craft A Tool",
+  "tooltip.alloygery.when_used_to_upgrade": "When Used To Upgrade A Tool",
+  "tooltip.alloygery.info.crafting_tier": "Crafting Tier",
+
+  "tooltip.alloygery.info.parts_list": "Parts:",
+  "tooltip.alloygery.info.head_part": "Tool Head",
+  "tooltip.alloygery.info.binding_part": "Tool Binding",
+  "tooltip.alloygery.info.handle_part": "Tool Handle",
+  "tooltip.alloygery.info.upgrade_part": "Upgraded With",
 
   "tooltip.alloygery.info.durability": "Durability",
+  "tooltip.alloygery.info.base_durability": "Base Durability",
+  "tooltip.alloygery.info.total_durability": "Total Durability",
+
   "tooltip.alloygery.info.mining_level": "Mining Level",
+  "tooltip.alloygery.info.base_mining_level": "Base Mining Level",
+  "tooltip.alloygery.info.total_mining_level": "Total Mining Level",
+
   "tooltip.alloygery.info.mining_speed": "Mining Speed",
+  "tooltip.alloygery.info.base_mining_speed": "Base Mining Speed",
+  "tooltip.alloygery.info.total_mining_speed": "Total Mining Speed",
+
   "tooltip.alloygery.info.attack_speed": "Attack Speed",
+  "tooltip.alloygery.info.base_attack_speed": "Base Attack Speed",
+  "tooltip.alloygery.info.total_attack_speed": "Total Attack Speed",
+
   "tooltip.alloygery.info.attack_damage": "Attack Damage",
+  "tooltip.alloygery.info.base_attack_damage": "Base Attack Damage",
+  "tooltip.alloygery.info.total_attack_damage": "Total Attack Damage",
+
   "tooltip.alloygery.info.enchantability": "Enchantability",
+  "tooltip.alloygery.info.base_enchantability": "Base Enchantability",
+  "tooltip.alloygery.info.total_enchantability": "Total Enchantability",
+
   "tooltip.alloygery.info.luck": "Luck",
   "tooltip.alloygery.info.fireproof": "Fireproof",
   "tooltip.alloygery.info.piglin_loved": "Gilded",
@@ -485,10 +508,9 @@
   "stat.alloygery.interact_with_smithing_anvil": "Interact With Smithing Anvil",
 
   "text.config.alloygery.title": "Alloygery Config",
-  "text.config.alloygery.option.enable_diamond_upgrade": "Enable the diamond upgrade at the smithing table",
-  "text.config.alloygery.option.enable_emerald_upgrade": "Enable the emerald upgrade at the smithing table",
-  "text.config.alloygery.option.enable_netherite_upgrade": "Enable the netherite upgrade at the smithing table",
-  "text.config.alloygery.option.enable_gold_upgrade": "Enable the gold upgrade at the smithing table",
+  "text.config.alloygery.option.enable_tipping_upgrade": "Enable the tipped upgrade at the smithing table",
+  "text.config.alloygery.option.enable_embossed_upgrade": "Enable the embossing upgrade at the smithing table",
+  "text.config.alloygery.option.enable_plated_upgrade": "Enable the plating upgrade at the smithing table",
 
   "text.config.alloygery.option.disable_diamond_crafting": "Disable vanilla diamond tool crafting recipes",
   "text.config.alloygery.option.disable_iron_crafting": "Disable vanilla iron tool crafting recipes",
@@ -508,9 +530,6 @@
   "text.config.alloygery.option.titanium_ore.size": "Average Size of titanium ore patches",
   "text.config.alloygery.option.titanium_ore.number": "Average number of titanium ore patches per chunk",
 
-  "advancements.alloygery.adventure.single_use.title": "Single Use",
-  "advancements.alloygery.adventure.single_use.description": "Make a pickaxe with a max durability of 1",
-
   "advancements.alloygery.story.smelt_bronze.title": "Acquire Bronzeware",
   "advancements.alloygery.story.smelt_bronze.description": "Smelt a bronze ingot with tin and copper",
 
@@ -527,11 +546,11 @@
   "advancements.alloygery.story.smelt_steel.description": "Smelt a steel ingot with charcoal and iron in a Blast Alloy Kiln",
 
   "advancements.alloygery.story.dismantling.title": "Reduce, Reuse, Recycle",
-  "advancements.alloygery.story.dismantling.description": "Acquire a diamond tool head by dismantling a diamond tool at the smithing table",
+  "advancements.alloygery.story.dismantling.description": "Acquire a diamond tool head by dismantling a diamond tool at the Crafting Table",
 
   "advancements.alloygery.story.diamond_tipped.title": "Diamond Tipper",
-  "advancements.alloygery.story.diamond_tipped.description": "Upgrade a tool with a diamond at the smithing table",
+  "advancements.alloygery.story.diamond_tipped.description": "Upgrade a tool with Diamond Tool Paste at the Smithing Table",
 
   "advancements.alloygery.nether.netherite_platted.title": "Netherite Platting",
-  "advancements.alloygery.nether.netherite_platted.description": "Upgrade a tool with a netherite ingot at the smithing table"
+  "advancements.alloygery.nether.netherite_platted.description": "Upgrade a tool with Netherite Tool Plating at the Smithing Table"
 }

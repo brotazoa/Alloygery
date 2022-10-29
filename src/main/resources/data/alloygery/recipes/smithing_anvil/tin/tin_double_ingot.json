@@ -1,17 +1,13 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "tin_materials",
-  "hammer": {
-    "item": "alloygery:anvil_hammer"
+  "crafting_tool": {
+    "tag": "alloygery:crafting_hammers"
   },
   "material": {
     "tag": "c:tin_ingots"
   },
-  "material_cost": 2,
+  "minimum_crafting_tier": 2,
   "result": {
-    "item": "alloygery:tin_double_ingot",
-    "data": {
-      "PartMaterial": "alloygery:materials/tin"
-    }
+    "item": "alloygery:tin_double_ingot"
   }
 }

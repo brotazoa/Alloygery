@@ -54,73 +54,19 @@ public class ToolItemRegistry
 
 	private static void makeTools()
 	{
-		makeToolSet("");
-		makeToolSet("embossed_");
-		makeToolSet("plated_");
-		//makeToolSet("tipped_");
-		makeTippedToolSet();
+		makeToolSet("", ToolUpgradeType.NONE);
+		makeToolSet("embossed_", ToolUpgradeType.EMBOSSED);
+		makeToolSet("plated_", ToolUpgradeType.PLATED);
+		makeToolSet("tipped_", ToolUpgradeType.TIPPED);
 	}
 
-	private static void makeToolSet(String setPrefix)
+	private static void makeToolSet(String setPrefix, ToolUpgradeType upgradeType)
 	{
-		register(setPrefix + "dynamic_axe", new DynamicAxeItem(new Item.Settings()));
-		register(setPrefix + "dynamic_hoe", new DynamicHoeItem(new Item.Settings()));
-		register(setPrefix + "dynamic_pickaxe", new DynamicPickaxeItem(new Item.Settings()));
-		register(setPrefix + "dynamic_shovel", new DynamicShovelItem(new Item.Settings()));
-		register(setPrefix + "dynamic_sword", new DynamicSwordItem(new Item.Settings()));
-	}
-
-	private static void makeTippedToolSet()
-	{
-		register("tipped_dynamic_axe", new DynamicAxeItem(new Item.Settings()){
-			@Override
-			public ItemStack getDefaultStack()
-			{
-				ItemStack tool = new ItemStack(this);
-				ToolNBTHelper.addAlloygeryNBTToToolStack(tool, ToolNBTHelper.createToolNBTFromMaterials(IRON, VANILLA_STICK, DIAMOND, ToolType.AXE));
-				return tool;
-			}
-		});
-
-		register("tipped_dynamic_hoe", new DynamicAxeItem(new Item.Settings()){
-			@Override
-			public ItemStack getDefaultStack()
-			{
-				ItemStack tool = new ItemStack(this);
-				ToolNBTHelper.addAlloygeryNBTToToolStack(tool, ToolNBTHelper.createToolNBTFromMaterials(IRON, VANILLA_STICK, DIAMOND, ToolType.HOE));
-				return tool;
-			}
-		});
-
-		register("tipped_dynamic_pickaxe", new DynamicAxeItem(new Item.Settings()){
-			@Override
-			public ItemStack getDefaultStack()
-			{
-				ItemStack tool = new ItemStack(this);
-				ToolNBTHelper.addAlloygeryNBTToToolStack(tool, ToolNBTHelper.createToolNBTFromMaterials(IRON, VANILLA_STICK, DIAMOND, ToolType.PICKAXE));
-				return tool;
-			}
-		});
-
-		register("tipped_dynamic_shovel", new DynamicAxeItem(new Item.Settings()){
-			@Override
-			public ItemStack getDefaultStack()
-			{
-				ItemStack tool = new ItemStack(this);
-				ToolNBTHelper.addAlloygeryNBTToToolStack(tool, ToolNBTHelper.createToolNBTFromMaterials(IRON, VANILLA_STICK, DIAMOND, ToolType.SHOVEL));
-				return tool;
-			}
-		});
-
-		register("tipped_dynamic_sword", new DynamicAxeItem(new Item.Settings()){
-			@Override
-			public ItemStack getDefaultStack()
-			{
-				ItemStack tool = new ItemStack(this);
-				ToolNBTHelper.addAlloygeryNBTToToolStack(tool, ToolNBTHelper.createToolNBTFromMaterials(IRON, VANILLA_STICK, DIAMOND, ToolType.SWORD));
-				return tool;
-			}
-		});
+		register(setPrefix + "dynamic_axe", new DynamicAxeItem(upgradeType));
+		register(setPrefix + "dynamic_hoe", new DynamicHoeItem(upgradeType));
+		register(setPrefix + "dynamic_pickaxe", new DynamicPickaxeItem(upgradeType));
+		register(setPrefix + "dynamic_shovel", new DynamicShovelItem(upgradeType));
+		register(setPrefix + "dynamic_sword", new DynamicSwordItem(upgradeType));
 	}
 
 	private static void makeToolPartsForMaterial(ToolMaterial material)

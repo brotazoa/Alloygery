@@ -2,6 +2,8 @@ package amorphia.alloygery.content.tools.item.tool;
 
 import amorphia.alloygery.content.tools.ToolPropertyHelper;
 import amorphia.alloygery.content.tools.attribute.ToolAttributes;
+import amorphia.alloygery.content.tools.item.part.ToolType;
+import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
 import amorphia.alloygery.content.tools.mixin.MiningToolItemAccessor;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Lists;
@@ -92,6 +94,10 @@ public interface IDynamicTool
 	{
 		return ToolPropertyHelper.isFireproof(tool);
 	}
+
+	ToolUpgradeType getToolUpgradeType();
+
+	ToolType getToolType();
 
 	static int getItemBarStep(ItemStack tool)
 	{

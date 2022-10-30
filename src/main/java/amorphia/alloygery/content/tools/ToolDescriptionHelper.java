@@ -3,6 +3,8 @@ package amorphia.alloygery.content.tools;
 import amorphia.alloygery.content.tools.item.part.IToolPart;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.tools.item.part.ToolType;
+import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
+import amorphia.alloygery.content.tools.item.tool.*;
 import amorphia.alloygery.content.tools.material.ToolMaterial;
 import amorphia.alloygery.content.tools.material.ToolMaterials;
 import amorphia.alloygery.content.tools.property.ToolProperty;
@@ -34,6 +36,9 @@ public class ToolDescriptionHelper
 
 	public static Text getToolStackName(ItemStack tool)
 	{
+		if(!(tool.getItem() instanceof IDynamicTool) || !ToolNBTHelper.isAlloygeryDataNBT(tool.getNbt()))
+			return tool.getItem().getName();
+
 		ToolMaterial headMaterial = ToolMaterialHelper.getHeadMaterial(tool);
 		ToolMaterial upgradeMaterial = ToolMaterialHelper.getUpgradeMaterial(tool);
 
@@ -47,19 +52,34 @@ public class ToolDescriptionHelper
 
 	public static void writeToolDescription(List<Text> tooltip, ItemStack tool, TooltipContext context)
 	{
-		if (Screen.hasShiftDown())
+		if(ToolNBTHelper.isAlloygeryDataNBT(tool.getNbt()))
 		{
-			if (context.isAdvanced())
+			if (Screen.hasShiftDown())
 			{
-				writePartsList(tooltip, tool);
-			}
+				if (context.isAdvanced())
+				{
+					writePartsList(tooltip, tool);
+				}
 
-			writeComplexToolDescription(tooltip, tool);
+				writeComplexToolDescription(tooltip, tool);
+			}
+			else
+			{
+				writeShiftPrompt(tooltip);
+				writeSimpleToolDescription(tooltip, tool);
+			}
 		}
 		else
 		{
-			writeShiftPrompt(tooltip);
-			writeSimpleToolDescription(tooltip, tool);
+			writeNoNBTToolDescription(tooltip, tool);
+		}
+	}
+
+	private static void writeNoNBTToolDescription(List<Text> tooltip, ItemStack tool)
+	{
+		if (tool != null && !tool.isEmpty() && tool.getItem() instanceof IDynamicTool dynamicTool)
+		{
+			tooltip.add(translatable("tooltip.alloygery.info.no_nbt_description." + dynamicTool.getToolType().getName()));
 		}
 	}
 

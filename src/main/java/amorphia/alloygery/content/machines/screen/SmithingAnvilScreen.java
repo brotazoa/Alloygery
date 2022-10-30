@@ -178,6 +178,7 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 
 			//render output item
 			this.client.getItemRenderer().renderInGuiWithOverrides(list.get(i).getOutput(), recipeButtonX + 46, recipeButtonY);
+			this.client.getItemRenderer().renderGuiItemOverlay(this.textRenderer, list.get(i).getOutput(), recipeButtonX + 46, recipeButtonY);
 
 			//render material item
 			final ItemStack materialStack = this.handler.materialSlot.getStack().copy();

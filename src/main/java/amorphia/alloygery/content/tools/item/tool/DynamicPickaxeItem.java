@@ -4,6 +4,7 @@ import amorphia.alloygery.content.tools.ToolDescriptionHelper;
 import amorphia.alloygery.content.tools.ToolMaterialHelper;
 import amorphia.alloygery.content.tools.ToolNBTHelper;
 import amorphia.alloygery.content.tools.item.part.ToolType;
+import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
 import amorphia.alloygery.content.tools.material.ToolMaterials;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemGroup;
@@ -20,18 +21,35 @@ public class DynamicPickaxeItem extends PickaxeItem implements IDynamicTool
 	public static final float ATTACK_DAMAGE = 1.0f;
 	public static final float ATTACK_SPEED = -2.8f;
 
-	public DynamicPickaxeItem(Settings settings)
+	protected final ToolUpgradeType upgradeType;
+
+	public DynamicPickaxeItem()
+	{
+		this(ToolUpgradeType.NONE);
+	}
+
+	public DynamicPickaxeItem(ToolUpgradeType upgradeType)
+	{
+		this(new Settings(), upgradeType);
+	}
+
+	public DynamicPickaxeItem(Settings settings, ToolUpgradeType upgradeType)
 	{
 		super(EmptyToolMaterial.INSTANCE, (int) ATTACK_DAMAGE, ATTACK_SPEED, settings);
+		this.upgradeType = upgradeType;
 		TOOL_ITEMS.add(this);
 	}
 
 	@Override
-	public ItemStack getDefaultStack()
+	public ToolUpgradeType getToolUpgradeType()
 	{
-		ItemStack tool = new ItemStack(this);
-		ToolNBTHelper.addAlloygeryNBTToToolStack(tool, ToolNBTHelper.createToolNBTFromMaterials(ToolMaterials.IRON, ToolMaterials.VANILLA_STICK, ToolType.PICKAXE));
-		return tool;
+		return this.upgradeType;
+	}
+
+	@Override
+	public ToolType getToolType()
+	{
+		return ToolType.PICKAXE;
 	}
 
 	@Override

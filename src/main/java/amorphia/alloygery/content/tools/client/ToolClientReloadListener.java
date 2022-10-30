@@ -2,6 +2,8 @@ package amorphia.alloygery.content.tools.client;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.tools.ToolMaterialHelper;
+import amorphia.alloygery.content.tools.ToolNBTHelper;
+import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
 import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
 import amorphia.alloygery.content.tools.material.ToolMaterial;
 import amorphia.alloygery.content.tools.material.ToolMaterials;
@@ -33,18 +35,48 @@ public class ToolClientReloadListener implements SimpleSynchronousResourceReload
 
 	private static int getMaterialColorFromToolStack(ItemStack tool, int tintIndex)
 	{
-		return switch (tintIndex)
-				{
-					case 0 -> getMaterialColor(ToolMaterialHelper.getHandleMaterial(tool));
-					case 1 -> getMaterialColor(ToolMaterialHelper.getHeadMaterial(tool));
-					case 2 -> ToolMaterialHelper.getBindingMaterial(tool) == ToolMaterials.HIDDEN ? getMaterialColor(ToolMaterialHelper.getHeadMaterial(tool)) : getMaterialColor(ToolMaterialHelper.getBindingMaterial(tool));
-					case 3 -> getMaterialColor(ToolMaterialHelper.getUpgradeMaterial(tool));
-					default -> -1;
-				};
+		if(tool == null || tool.isEmpty())
+			return -1;
+
+		if(ToolNBTHelper.isAlloygeryDataNBT(tool.getNbt()))
+		{
+			return switch (tintIndex)
+			{
+				case 0 -> getMaterialColor(ToolMaterialHelper.getHandleMaterial(tool));
+				case 1 -> getMaterialColor(ToolMaterialHelper.getHeadMaterial(tool));
+				case 2 -> ToolMaterialHelper.getBindingMaterial(tool) == ToolMaterials.HIDDEN ? getMaterialColor(ToolMaterialHelper.getHeadMaterial(tool)) : getMaterialColor(ToolMaterialHelper.getBindingMaterial(tool));
+				case 3 -> getMaterialColor(ToolMaterialHelper.getUpgradeMaterial(tool));
+				default -> -1;
+			};
+		}
+		else
+		{
+			return switch (tintIndex)
+			{
+				//case 0 -> getMaterialColor(ToolMaterials.VANILLA_STICK);
+				case 0, 1, 2 -> getMaterialColor(ToolMaterials.HIDDEN);
+				case 3 -> tool.getItem() instanceof IDynamicTool dynamicTool ? getMaterialColorFromUpgradeType(dynamicTool.getToolUpgradeType()) : getMaterialColor(ToolMaterials.HIDDEN);
+				default -> -1;
+			};
+		}
 	}
 
 	private static int getMaterialColor(ToolMaterial material)
 	{
 		return material == null ? ToolMaterialRegistry.get(ToolMaterialRegistry.getDefaultIdentifier()).getMaterialColor() : material.getMaterialColor();
+	}
+
+	private static int getMaterialColorFromUpgradeType(ToolUpgradeType upgradeType)
+	{
+		if(upgradeType == null)
+			return -1;
+
+		return switch (upgradeType)
+		{
+			case EMBOSSED -> getMaterialColor(ToolMaterials.EMERALD);
+			case PLATED -> getMaterialColor(ToolMaterials.NETHERITE);
+			case TIPPED -> getMaterialColor(ToolMaterials.DIAMOND);
+			case NONE -> -1;
+		};
 	}
 }

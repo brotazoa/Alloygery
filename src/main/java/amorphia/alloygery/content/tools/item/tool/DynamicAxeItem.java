@@ -1,19 +1,15 @@
 package amorphia.alloygery.content.tools.item.tool;
 
-import amorphia.alloygery.AlloygeryNBT;
 import amorphia.alloygery.content.tools.ToolDescriptionHelper;
 import amorphia.alloygery.content.tools.ToolMaterialHelper;
 import amorphia.alloygery.content.tools.ToolNBTHelper;
-import amorphia.alloygery.content.tools.item.part.*;
-import amorphia.alloygery.content.tools.item.part.head.AxeHeadItem;
+import amorphia.alloygery.content.tools.item.part.ToolType;
+import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
 import amorphia.alloygery.content.tools.material.ToolMaterials;
-import amorphia.alloygery.content.tools.registry.ToolItemRegistry;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -23,20 +19,35 @@ public class DynamicAxeItem extends AxeItem implements IDynamicTool
 	public static final float ATTACK_DAMAGE = 5.0f;
 	public static final float ATTACK_SPEED = -3.0f;
 
-	protected int cachedEnchantability = 0;
+	protected final ToolUpgradeType upgradeType;
 
-	public DynamicAxeItem(Settings settings)
+	public DynamicAxeItem()
+	{
+		this(ToolUpgradeType.NONE);
+	}
+
+	public DynamicAxeItem(ToolUpgradeType upgradeType)
+	{
+		this(new Settings(), upgradeType);
+	}
+
+	public DynamicAxeItem(Settings settings, ToolUpgradeType upgradeType)
 	{
 		super(EmptyToolMaterial.INSTANCE, ATTACK_DAMAGE, ATTACK_SPEED, settings);
+		this.upgradeType = upgradeType;
 		TOOL_ITEMS.add(this);
 	}
 
 	@Override
-	public ItemStack getDefaultStack()
+	public ToolUpgradeType getToolUpgradeType()
 	{
-		ItemStack tool = new ItemStack(this);
-		ToolNBTHelper.addAlloygeryNBTToToolStack(tool, ToolNBTHelper.createToolNBTFromMaterials(ToolMaterials.IRON, ToolMaterials.VANILLA_STICK, ToolType.AXE));
-		return tool;
+		return this.upgradeType;
+	}
+
+	@Override
+	public ToolType getToolType()
+	{
+		return ToolType.AXE;
 	}
 
 	@Override

@@ -29,7 +29,7 @@ public class SimpleToolRecipeShaped extends ShapedRecipe
 	@Override
 	public boolean isIgnoredInRecipeBook()
 	{
-		return true;
+		return false;
 	}
 
 	@Override
@@ -45,8 +45,7 @@ public class SimpleToolRecipeShaped extends ShapedRecipe
 		if(toolStack == null || toolStack.isEmpty() || !(toolStack.getItem() instanceof IDynamicTool))
 			return ItemStack.EMPTY;
 
-		//TODO: move to nbt helper
-		toolStack.getOrCreateNbt().put(AlloygeryNBT.ALLOYGERY_NBT_IDENTIFIER.getName(), ToolNBTHelper.createToolNBTFromToolPartItems((PartItem) headPart.getMatchingStacks()[0].getItem(), (PartItem) handlePart.getMatchingStacks()[0].getItem()));
+		ToolNBTHelper.addAlloygeryNBTToToolStack(toolStack, ToolNBTHelper.createToolNBTFromToolPartItems((PartItem) headPart.getMatchingStacks()[0].getItem(), (PartItem) handlePart.getMatchingStacks()[0].getItem()));
 		return toolStack;
 	}
 

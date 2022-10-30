@@ -31,28 +31,7 @@ public class ToolRecipeShaped extends ShapedRecipe
 	@Override
 	public boolean isIgnoredInRecipeBook()
 	{
-		return true;
-	}
-
-	@Override
-	public ItemStack getOutput()
-	{
-		final List<Ingredient> ingredients = super.getIngredients();
-
-		ItemStack headStack = ingredients.stream().filter(ingredient -> Arrays.stream(ingredient.getMatchingStacks()).anyMatch(itemStack -> itemStack.getItem() instanceof ToolHeadItem)).findFirst().get().getMatchingStacks()[0];
-		ItemStack bindingStack = ingredients.stream().filter(ingredient -> Arrays.stream(ingredient.getMatchingStacks()).anyMatch(itemStack -> itemStack.getItem() instanceof ToolBindingItem)).findFirst().get().getMatchingStacks()[0];
-		ItemStack handleStack = ingredients.stream().filter(ingredient -> Arrays.stream(ingredient.getMatchingStacks()).anyMatch(itemStack -> itemStack.getItem() instanceof ToolHandleItem)).findFirst().get().getMatchingStacks()[0];
-
-		if(headStack == null || headStack.isEmpty() || bindingStack == null || bindingStack.isEmpty() || handleStack == null || handleStack.isEmpty())
-			return super.getOutput().copy();
-
-		ItemStack toolStack = super.getOutput().copy();
-		if(toolStack.getItem() instanceof IDynamicTool && headStack.getItem() instanceof ToolHeadItem headItem && bindingStack.getItem() instanceof ToolBindingItem bindingItem && handleStack.getItem() instanceof ToolHandleItem handleItem)
-		{
-			ToolNBTHelper.addAlloygeryNBTToToolStack(toolStack, ToolNBTHelper.createToolNBTFromToolPartItems(headItem, bindingItem, handleItem));
-		}
-
-		return toolStack;
+		return false;
 	}
 
 	@Override

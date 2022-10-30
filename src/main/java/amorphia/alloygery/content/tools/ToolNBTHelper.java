@@ -17,7 +17,12 @@ public class ToolNBTHelper
 {
 	public static AlloygeryNBT getToolPartNBTIdentifier(IToolPart part)
 	{
-		return switch (part.getToolPartType())
+		return getToolPartNBTIdentifier(part.getToolPartType());
+	}
+
+	public static AlloygeryNBT getToolPartNBTIdentifier(ToolPartType partType)
+	{
+		return switch (partType)
 		{
 			case HEAD -> TOOL_PART_HEAD;
 			case BINDING -> TOOL_PART_BINDING;
@@ -40,7 +45,12 @@ public class ToolNBTHelper
 
 	public static AlloygeryNBT getToolTypeNBTIdentifier(IToolPartHead head)
 	{
-		return switch (head.getToolType())
+		return getToolTypeNBTIdentifier(head.getToolType());
+	}
+
+	public static AlloygeryNBT getToolTypeNBTIdentifier(ToolType toolType)
+	{
+		return switch (toolType)
 		{
 			case AXE -> TOOL_TYPE_AXE;
 			case HOE -> TOOL_TYPE_HOE;
@@ -147,10 +157,10 @@ public class ToolNBTHelper
 	{
 		NbtCompound compound = new NbtCompound();
 		compound.putString(TYPE.getName(), TOOL_PART_IDENTIFIER.getName());
-		compound.putString(TOOL_PART_TYPE_IDENTIFIER.getName(), partType.getName());
+		compound.putString(TOOL_PART_TYPE_IDENTIFIER.getName(), getToolPartNBTIdentifier(partType).getName());
 		compound.putString(MATERIAL_IDENTIFIER.getName(), ToolMaterialRegistry.identify(material).toString());
 		if(partType == ToolPartType.HEAD)
-			compound.putString(TOOL_TYPE_IDENTIFIER.getName(), toolType.getName());
+			compound.putString(TOOL_TYPE_IDENTIFIER.getName(), getToolTypeNBTIdentifier(toolType).getName());
 
 		return compound;
 	}
@@ -159,7 +169,7 @@ public class ToolNBTHelper
 	{
 		NbtCompound compound = new NbtCompound();
 		compound.putString(TYPE.getName(), TOOL_PART_IDENTIFIER.getName());
-		compound.putString(TOOL_PART_TYPE_IDENTIFIER.getName(), TOOL_PART_BINDING.getName());
+		compound.putString(TOOL_PART_TYPE_IDENTIFIER.getName(), getToolPartNBTIdentifier(ToolPartType.BINDING).getName());
 		compound.putString(TOOL_PART_ITEM_IDENTIFIER.getName(), Registry.ITEM.getId(Items.AIR).toString());
 		compound.putString(MATERIAL_IDENTIFIER.getName(), ToolMaterialRegistry.identify(ToolMaterials.HIDDEN).toString());
 		return compound;

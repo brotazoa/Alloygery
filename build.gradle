@@ -15,13 +15,22 @@ repositories {
 
     //rei maven
     maven { url "https://maven.shedaniel.me/" }
-    //modMenu maven
-    maven { url "https://maven.terraformersmc.com/" }
-    //nbtcrafting
+
+    //JEI maven
     maven {
-        name "Siphalor's Maven"
-        url "https://maven.siphalor.de"
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
     }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+
+    //modMenu, EMI maven
+    maven { url "https://maven.terraformersmc.com/" }
+
     maven { url "https://jitpack.io/" }
     //patchouli
     maven { url 'https://maven.blamejared.com' }
@@ -44,9 +53,17 @@ dependencies {
     //modMenu
     modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
 
+
     //rei
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+
+    //JEI
+    modCompileOnlyApi("mezz.jei:jei-${project.minecraft_version}-common-api:${project.jei_version}")
+    modCompileOnlyApi("mezz.jei:jei-${project.minecraft_version}-fabric-api:${project.jei_version}")
+
+    //EMI
+    modImplementation "dev.emi:emi:${project.emi_version}"
 
     //patchouli
     modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"

@@ -21,6 +21,9 @@
     "rei_client": [
       "amorphia.alloygery.compat.rei.AlloygeryPlugin"
     ],
+    "emi": [
+      "amorphia.alloygery.compat.emi.AlloygeryEmiPlugin"
+    ],
     "modmenu": [
       "amorphia.alloygery.config.AlloygeryModMenu"
     ]

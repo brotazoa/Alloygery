@@ -16,7 +16,6 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +33,7 @@ public class SmithingAnvilBlockEntity extends LockableContainerBlockEntity
 	@Override
 	protected Text getContainerName()
 	{
-		return new TranslatableText("container.alloygery.smithing_anvil");
+		return Text.translatable("container.alloygery.smithing_anvil");
 	}
 
 	@Override

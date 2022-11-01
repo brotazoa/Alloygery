@@ -8,16 +8,16 @@ import me.shedaniel.clothconfig2.impl.builders.BooleanToggleBuilder;
 import me.shedaniel.clothconfig2.impl.builders.FloatFieldBuilder;
 import me.shedaniel.clothconfig2.impl.builders.IntFieldBuilder;
 import me.shedaniel.clothconfig2.impl.builders.SubCategoryBuilder;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 
 public class AlloygeryClothConfig extends AlloygeryConfig
 {
 	private static final String localizationString = "text.config." + Alloygery.MOD_ID;
 
 	public static ConfigBuilder getConfigBuilder() {
-		ConfigBuilder builder = ConfigBuilder.create().setTitle(new TranslatableText(localizationString + ".title"));
+		ConfigBuilder builder = ConfigBuilder.create().setTitle(Text.translatable(localizationString + ".title"));
 		ConfigEntryBuilder entryBuilder = builder.entryBuilder();
-		ConfigCategory category = builder.getOrCreateCategory(new TranslatableText(localizationString + ".title"));
+		ConfigCategory category = builder.getOrCreateCategory(Text.translatable(localizationString + ".title"));
 
 		ALLOYGERY_CONFIG.forEach((name, value) -> {
 			String translationKey = localizationString + ".option." + name;
@@ -44,7 +44,7 @@ public class AlloygeryClothConfig extends AlloygeryConfig
 
 	static SubCategoryBuilder buildSubCategory(ConfigEntryBuilder entryBuilder, String groupName, ConfigGroup group)
 	{
-		SubCategoryBuilder category = entryBuilder.startSubCategory(new TranslatableText(groupName));
+		SubCategoryBuilder category = entryBuilder.startSubCategory(Text.translatable(groupName));
 		group.forEach((name, value) -> {
 			String translationKey = groupName + '.' + name;
 			if (value.getType() == ConfigValue.Type.GROUP)
@@ -69,16 +69,16 @@ public class AlloygeryClothConfig extends AlloygeryConfig
 
 	static BooleanToggleBuilder buildBooleanToggle(ConfigEntryBuilder entryBuilder, String name, ConfigValue value)
 	{
-		return entryBuilder.startBooleanToggle(new TranslatableText(name), value.getValue()).setDefaultValue(value::getDefaultValue).setSaveConsumer(value::set).requireRestart();
+		return entryBuilder.startBooleanToggle(Text.translatable(name), value.getValue()).setDefaultValue(value::getDefaultValue).setSaveConsumer(value::set).requireRestart();
 	}
 
 	static FloatFieldBuilder buildFloatField(ConfigEntryBuilder entryBuilder, String name, ConfigValue value)
 	{
-		return entryBuilder.startFloatField(new TranslatableText(name), value.getValue()).setDefaultValue(value::getDefaultValue).setSaveConsumer(value::set).requireRestart();
+		return entryBuilder.startFloatField(Text.translatable(name), value.getValue()).setDefaultValue(value::getDefaultValue).setSaveConsumer(value::set).requireRestart();
 	}
 
 	static IntFieldBuilder buildIntField(ConfigEntryBuilder entryBuilder, String name, ConfigValue value)
 	{
-		return entryBuilder.startIntField(new TranslatableText(name), value.getValue()).setDefaultValue(value::getDefaultValue).setSaveConsumer(value::set).requireRestart();
+		return entryBuilder.startIntField(Text.translatable(name), value.getValue()).setDefaultValue(value::getDefaultValue).setSaveConsumer(value::set).requireRestart();
 	}
 }

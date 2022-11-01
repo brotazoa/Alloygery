@@ -35,7 +35,7 @@ public class AlloyKilnOutputSlot extends Slot
 		super.onCrafted(stack);
 		if (this.playerEntity instanceof ServerPlayerEntity serverPlayer && this.inventory instanceof AbstractAlloyKilnBlockEntity blockEntity)
 		{
-			blockEntity.dropExperience(serverPlayer, serverPlayer.getWorld(), serverPlayer.getTrackedPosition());
+			blockEntity.dropExperience(serverPlayer, serverPlayer.getWorld(), serverPlayer.getPos());
 		}
 	}
 

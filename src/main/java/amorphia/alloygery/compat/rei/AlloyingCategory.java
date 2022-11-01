@@ -13,14 +13,13 @@ import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AlloyingCategory implements DisplayCategory<AlloyingDisplay>
 {
-	public static final TranslatableText TITLE = new TranslatableText("rei.alloygery.alloying");
+	public static final Text TITLE = Text.translatable("rei.alloygery.alloying");
 	public static final EntryStack<ItemStack> ICON = EntryStacks.of(MachineBlockRegistry.ALLOY_KILN);
 
 	@Override

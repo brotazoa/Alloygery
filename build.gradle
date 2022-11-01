@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.10-SNAPSHOT'
+    id 'fabric-loom' version '1.0-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -74,6 +74,7 @@ dependencies {
 
 processResources {
     inputs.property "version", project.version
+
     filteringCharset "UTF-8"
 
     filesMatching("fabric.mod.json") {

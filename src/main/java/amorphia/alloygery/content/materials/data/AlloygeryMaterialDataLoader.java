@@ -29,13 +29,13 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 	@Override
 	public void reload(ResourceManager manager)
 	{
-		for(Identifier id : manager.findResources("materials", path -> path.endsWith(".json")))
-		{
-			Alloygery.LOGGER.info("Reading material from datapack: " + id.toString());
+		manager.findResources("materials", path -> path.getPath().endsWith(".json")).forEach((identifier, resource) -> {
+			Alloygery.LOGGER.info("Reading material from datapack: " + identifier.toString());
 
-			try (InputStream is = manager.getResource(id).getInputStream())
+			try (InputStream is = resource.getInputStream())
 			{
-				Identifier trimmedId = new Identifier(id.getNamespace(), id.getPath().substring(0, id.getPath().length() - ".json".length()));
+				Identifier trimmedIdentifier = new Identifier(identifier.getNamespace(),
+						identifier.getPath().substring(0, identifier.getPath().length() - ".json".length()));
 
 				InputStreamReader reader = new InputStreamReader(is);
 				JsonObject jsonObject = JsonHelper.deserialize(reader);
@@ -43,17 +43,19 @@ public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceRel
 
 				if (!ResourceConditions.objectMatchesConditions(jsonObject))
 				{
-					Alloygery.LOGGER.info("Load conditions not met for " + id.toString());
-					continue;
+					Alloygery.LOGGER.info("Load conditions not met for " + identifier.toString());
+					return;
 				}
 
-				AlloygeryMaterialDataHelper.getToolMaterialDataFromJson(jsonObject).ifPresentOrElse(data -> AlloygeryMaterialRegistry.load(trimmedId, data),
-						() -> Alloygery.LOGGER.info("Could not validate resource " + id.toString() + ", it is either not an Alloygery Material, or is written using an unsupported data version."));
+				AlloygeryMaterialDataHelper.getToolMaterialDataFromJson(jsonObject)
+										   .ifPresentOrElse(data -> AlloygeryMaterialRegistry.load(trimmedIdentifier, data),
+												   () -> Alloygery.LOGGER.info("Could not validate resource " + identifier.toString()
+														   + ", it is either not an Alloygery Material, or it is written using an unsupported data version."));
 			}
 			catch (IOException thrown)
 			{
-				Alloygery.LOGGER.error("Error occurred while loading material resource " + id.toString(), thrown);
+				Alloygery.LOGGER.error("Error occurred while loading material resource " + identifier.toString(), thrown);
 			}
-		}
+		});
 	}
 }

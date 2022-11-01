@@ -1,6 +1,5 @@
 package amorphia.alloygery.content.metals.mixin;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.metals.client.CraftingItemModelBuilder;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -38,7 +37,7 @@ public abstract class CraftingItemModelLoaderMixin
 
 			try
 			{
-				resource = resourceManager.getResource(new Identifier(identifier.getNamespace(), "models/" + identifier.getPath() + ".json"));
+				resource = resourceManager.getResource(new Identifier(identifier.getNamespace(), "models/" + identifier.getPath() + ".json")).orElse(null);
 				if (resource != null)
 				{
 					reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
@@ -51,7 +50,7 @@ public abstract class CraftingItemModelLoaderMixin
 			}
 			finally
 			{
-				IOUtils.closeQuietly(reader, resource);
+				IOUtils.closeQuietly(reader);
 			}
 
 			if (model == null)

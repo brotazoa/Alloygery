@@ -3,11 +3,10 @@ package amorphia.alloygery.content.tools.mixin;
 import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.random.Random;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-
-import java.util.Random;
 
 @Mixin(EnchantmentHelper.class)
 public class ToolEnchantabilityMixin

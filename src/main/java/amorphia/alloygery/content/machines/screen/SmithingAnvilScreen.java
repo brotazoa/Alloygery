@@ -12,7 +12,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
@@ -28,8 +27,8 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 
 	public static final Identifier TEXTURE = Alloygery.identifier("textures/gui/smithing_anvil_v3.png");
 
-	public static final Text NOT_ENOUGH_MATERIALS = new TranslatableText("tooltip.alloygery.smithing_anvil.not_enough_material").formatted(Formatting.DARK_RED);
-	public static final Text TIER_TOO_LOW = new TranslatableText("tooltip.alloygery.smithing_anvil.crafting_tier_too_low").formatted(Formatting.DARK_RED);
+	public static final Text NOT_ENOUGH_MATERIALS = Text.translatable("tooltip.alloygery.smithing_anvil.not_enough_material").formatted(Formatting.DARK_RED);
+	public static final Text TIER_TOO_LOW = Text.translatable("tooltip.alloygery.smithing_anvil.crafting_tier_too_low").formatted(Formatting.DARK_RED);
 
 	private static final int SCROLLBAR_OFFSET_X = 119;
 	private static final int SCROLLBAR_OFFSET_Y = 14;

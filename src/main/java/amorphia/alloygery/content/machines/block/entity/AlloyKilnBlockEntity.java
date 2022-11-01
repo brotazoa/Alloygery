@@ -4,7 +4,6 @@ import amorphia.alloygery.content.machines.recipe.AlloyingRecipe;
 import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 
 public class AlloyKilnBlockEntity extends AbstractAlloyKilnBlockEntity
@@ -17,6 +16,6 @@ public class AlloyKilnBlockEntity extends AbstractAlloyKilnBlockEntity
 	@Override
 	public Text getDisplayName()
 	{
-		return new TranslatableText("container.alloygery.alloy_kiln");
+		return Text.translatable("container.alloygery.alloy_kiln");
 	}
 }

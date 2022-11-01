@@ -1,7 +1,7 @@
 package amorphia.alloygery.content.tools.item.part;
 
 import amorphia.alloygery.content.tools.ToolDescriptionHelper;
-import amorphia.alloygery.content.tools.material.ToolMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import com.google.common.collect.Lists;
 import net.minecraft.text.Text;
@@ -10,15 +10,15 @@ import java.util.List;
 
 public interface IToolPart
 {
-	List<PartItem> TOOL_PART_ITEMS = Lists.newArrayList();
+	List<ToolPartItem> TOOL_PART_ITEMS = Lists.newArrayList();
 
 	ToolPartType getToolPartType();
 
-	ToolMaterial getMaterial();
+	AlloygeryMaterial getMaterial();
 
 	default List<ToolProperty> getToolPartProperties()
 	{
-		return getMaterial().getPropertiesByPart(getToolPartType());
+		return getMaterial().getToolPropertiesByPart(getToolPartType());
 	}
 
 	default void writeTooltip(List<Text> tooltip)

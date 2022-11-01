@@ -14,10 +14,10 @@ public class ToolPropertyHelper
 	public static List<ToolProperty> getPropertiesForTool(ItemStack tool)
 	{
 		List<ToolProperty> toolProperties = Lists.newArrayList();
-		toolProperties.addAll(ToolMaterialHelper.getHeadMaterial(tool).getPropertiesByPart(ToolPartType.HEAD));
-		toolProperties.addAll(ToolMaterialHelper.getBindingMaterial(tool).getPropertiesByPart(ToolPartType.BINDING));
-		toolProperties.addAll(ToolMaterialHelper.getHandleMaterial(tool).getPropertiesByPart(ToolPartType.HANDLE));
-		toolProperties.addAll(ToolMaterialHelper.getUpgradeMaterial(tool).getPropertiesByPart(ToolPartType.UPGRADE));
+		toolProperties.addAll(ToolMaterialHelper.getHeadMaterial(tool).getToolPropertiesByPart(ToolPartType.HEAD));
+		toolProperties.addAll(ToolMaterialHelper.getBindingMaterial(tool).getToolPropertiesByPart(ToolPartType.BINDING));
+		toolProperties.addAll(ToolMaterialHelper.getHandleMaterial(tool).getToolPropertiesByPart(ToolPartType.HANDLE));
+		toolProperties.addAll(ToolMaterialHelper.getUpgradeMaterial(tool).getToolPropertiesByPart(ToolPartType.UPGRADE));
 		return toolProperties;
 	}
 

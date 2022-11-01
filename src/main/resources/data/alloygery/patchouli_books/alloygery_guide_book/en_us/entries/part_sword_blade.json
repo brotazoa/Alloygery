@@ -1,6 +1,6 @@
 {
   "name": "Sword Blade",
-  "icon": "alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/antanium\"}",
+  "icon": "alloygery:antanium_sword_blade",
   "category": "alloygery:tool_parts_category",
   "pages": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/alloygery_sword"
+      "recipe": "alloygery:crafting/tools/dynamic_sword"
     }
   ]
 }

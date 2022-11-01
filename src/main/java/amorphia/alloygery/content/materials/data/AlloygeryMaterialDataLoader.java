@@ -1,7 +1,7 @@
-package amorphia.alloygery.content.tools.data;
+package amorphia.alloygery.content.materials.data;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.content.tools.registry.ToolMaterialRegistry;
+import amorphia.alloygery.content.materials.registry.AlloygeryMaterialRegistry;
 import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
@@ -13,12 +13,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class ToolMaterialDataLoader implements SimpleSynchronousResourceReloadListener
+public class AlloygeryMaterialDataLoader implements SimpleSynchronousResourceReloadListener
 {
-	public static final ToolMaterialDataLoader INSTANCE = new ToolMaterialDataLoader();
-	public static final Identifier ID = Alloygery.identifier("tool_material_data_loader");
+	public static final AlloygeryMaterialDataLoader INSTANCE = new AlloygeryMaterialDataLoader();
+	public static final Identifier ID = Alloygery.identifier("alloygery_material_data_loader");
 
-	private ToolMaterialDataLoader(){} //no op
+	private AlloygeryMaterialDataLoader(){} //no op
 
 	@Override
 	public Identifier getFabricId()
@@ -47,7 +47,7 @@ public class ToolMaterialDataLoader implements SimpleSynchronousResourceReloadLi
 					continue;
 				}
 
-				ToolMaterialDataHelper.getToolMaterialDataFromJson(jsonObject).ifPresentOrElse(data -> ToolMaterialRegistry.load(trimmedId, data),
+				AlloygeryMaterialDataHelper.getToolMaterialDataFromJson(jsonObject).ifPresentOrElse(data -> AlloygeryMaterialRegistry.load(trimmedId, data),
 						() -> Alloygery.LOGGER.info("Could not validate resource " + id.toString() + ", it is either not an Alloygery Material, or is written using an unsupported data version."));
 			}
 			catch (IOException thrown)

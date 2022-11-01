@@ -1,16 +1,16 @@
 package amorphia.alloygery.content.tools;
 
-import amorphia.alloygery.content.tools.material.ToolMaterial;
-import amorphia.alloygery.content.tools.registry.ToolMaterialRegistry;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.materials.registry.AlloygeryMaterialRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
 
 public class ToolMaterialHelper
 {
-	public static ToolMaterial getMaterialFromIdentifier(Identifier identifier)
+	public static AlloygeryMaterial getMaterialFromIdentifier(Identifier identifier)
 	{
-		return ToolMaterialRegistry.get(identifier);
+		return AlloygeryMaterialRegistry.get(identifier);
 	}
 
 	public static Ingredient getRepairIngredientForStack(ItemStack tool)
@@ -18,30 +18,30 @@ public class ToolMaterialHelper
 		return getRepairIngredient(getHeadMaterial(tool));
 	}
 
-	public static Ingredient getRepairIngredient(ToolMaterial material)
+	public static Ingredient getRepairIngredient(AlloygeryMaterial material)
 	{
 		return material.getRepairIngredient();
 	}
 
-	public static ToolMaterial getHeadMaterial(ItemStack tool)
+	public static AlloygeryMaterial getHeadMaterial(ItemStack tool)
 	{
 		return getMaterialFromIdentifier(ToolNBTHelper.getMaterialIdentifierFromToolPartNBT(
 				ToolNBTHelper.getHeadPartNBTFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(tool))));
 	}
 
-	public static ToolMaterial getBindingMaterial(ItemStack tool)
+	public static AlloygeryMaterial getBindingMaterial(ItemStack tool)
 	{
 		return getMaterialFromIdentifier(ToolNBTHelper.getMaterialIdentifierFromToolPartNBT(
 				ToolNBTHelper.getBindingPartNBTFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(tool))));
 	}
 
-	public static ToolMaterial getHandleMaterial(ItemStack tool)
+	public static AlloygeryMaterial getHandleMaterial(ItemStack tool)
 	{
 		return getMaterialFromIdentifier(ToolNBTHelper.getMaterialIdentifierFromToolPartNBT(
 				ToolNBTHelper.getHandlePartNBTFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(tool))));
 	}
 
-	public static ToolMaterial getUpgradeMaterial(ItemStack tool)
+	public static AlloygeryMaterial getUpgradeMaterial(ItemStack tool)
 	{
 		return getMaterialFromIdentifier(ToolNBTHelper.getMaterialIdentifierFromToolPartNBT(
 				ToolNBTHelper.getUpgradePartNBTFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(tool))));

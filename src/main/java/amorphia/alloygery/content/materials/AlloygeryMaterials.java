@@ -1,56 +1,56 @@
-package amorphia.alloygery.content.tools.material;
+package amorphia.alloygery.content.materials;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
-import amorphia.alloygery.content.tools.registry.ToolMaterialRegistry;
+import amorphia.alloygery.content.materials.registry.AlloygeryMaterialRegistry;
 import net.minecraft.util.Identifier;
 
-public class ToolMaterials
+public class AlloygeryMaterials
 {
-	public static final ToolMaterial UNKNOWN = register(new ToolMaterial.ToolMaterialBuilder("unknown").build());
-	public static final ToolMaterial HIDDEN = register(new ToolMaterial.ToolMaterialBuilder("hidden").color(0).build());
+	public static final AlloygeryMaterial UNKNOWN = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("unknown").build());
+	public static final AlloygeryMaterial HIDDEN = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("hidden").color(0).build());
 
-	public static final ToolMaterial TIN;
-	public static final ToolMaterial COPPER;
-	public static final ToolMaterial BRONZE;
-	public static final ToolMaterial IRON;
-	public static final ToolMaterial GOLD;
-	public static final ToolMaterial EMERALD;
-	public static final ToolMaterial ANTANIUM;
-	public static final ToolMaterial DIAMOND;
-	public static final ToolMaterial STEEL;
-	public static final ToolMaterial NETHERITE;
-	public static final ToolMaterial NICKEL;
-	public static final ToolMaterial INVAR;
-	public static final ToolMaterial CONSTANTAN;
-	public static final ToolMaterial CUPRONICKEL;
-	public static final ToolMaterial TITANIUM;
-	public static final ToolMaterial TITANIUM_GOLD;
-	public static final ToolMaterial NITINOL;
+	public static final AlloygeryMaterial TIN;
+	public static final AlloygeryMaterial COPPER;
+	public static final AlloygeryMaterial BRONZE;
+	public static final AlloygeryMaterial IRON;
+	public static final AlloygeryMaterial GOLD;
+	public static final AlloygeryMaterial EMERALD;
+	public static final AlloygeryMaterial ANTANIUM;
+	public static final AlloygeryMaterial DIAMOND;
+	public static final AlloygeryMaterial STEEL;
+	public static final AlloygeryMaterial NETHERITE;
+	public static final AlloygeryMaterial NICKEL;
+	public static final AlloygeryMaterial INVAR;
+	public static final AlloygeryMaterial CONSTANTAN;
+	public static final AlloygeryMaterial CUPRONICKEL;
+	public static final AlloygeryMaterial TITANIUM;
+	public static final AlloygeryMaterial TITANIUM_GOLD;
+	public static final AlloygeryMaterial NITINOL;
 
-	public static final ToolMaterial VANILLA_STICK;
-	public static final ToolMaterial LEATHER;
+	public static final AlloygeryMaterial VANILLA_STICK;
+	public static final AlloygeryMaterial LEATHER;
 
-	private static ToolMaterial register(ToolMaterial material)
+	private static AlloygeryMaterial register(AlloygeryMaterial material)
 	{
 		return register(Alloygery.identifier("materials/" + material.getMaterialName()), material);
 	}
 
-	private static ToolMaterial register(Identifier identifier, ToolMaterial material)
+	private static AlloygeryMaterial register(Identifier identifier, AlloygeryMaterial material)
 	{
-		return ToolMaterialRegistry.register(identifier, material);
+		return AlloygeryMaterialRegistry.register(identifier, material);
 	}
 
 	static
 	{
-		TIN = register(new ToolMaterial.ToolMaterialBuilder("tin")
+		TIN = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("tin")
 				.color(14547455)
 				.repairIngredientFromTag("c:tin_ingots")
 				.build());
 
-		COPPER = register(new ToolMaterial.ToolMaterialBuilder("copper")
+		COPPER = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("copper")
 				.color(15433553)
 				.repairIngredientFromTag("c:copper_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -72,7 +72,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 0.4f).build()
 				.build());
 
-		BRONZE = register(new ToolMaterial.ToolMaterialBuilder("bronze")
+		BRONZE = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("bronze")
 				.color(7556410)
 				.repairIngredientFromTag("c:bronze_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD)
@@ -105,7 +105,7 @@ public class ToolMaterials
 					.value(0.8f).build()
 				.build());
 
-		IRON = register(new ToolMaterial.ToolMaterialBuilder("iron")
+		IRON = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("iron")
 				.color(15198183)
 				.repairIngredientFromTag("c:iron_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -123,7 +123,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 0.9f).build()
 				.build());
 
-		GOLD = register(new ToolMaterial.ToolMaterialBuilder("gold")
+		GOLD = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("gold")
 				.color(16573743)
 				.repairIngredientFromTag("c:gold_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -155,7 +155,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 0.5f).build()
 				.build());
 
-		EMERALD = register(new ToolMaterial.ToolMaterialBuilder("emerald")
+		EMERALD = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("emerald")
 				.color(1564002)
 				.repairIngredientFromTag("c:emeralds")
 				.toolProperty().forPart(ToolPartType.UPGRADE).operation(ToolPropertyOperation.ADDITION)
@@ -164,7 +164,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.DURABILITY, 1.5f).build()
 				.build());
 
-		ANTANIUM = register(new ToolMaterial.ToolMaterialBuilder("antanium")
+		ANTANIUM = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("antanium")
 				.color(14329677)
 				.repairIngredientFromTag("c:antanium_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD)
@@ -208,7 +208,7 @@ public class ToolMaterials
 					.build()
 				.build());
 
-		DIAMOND = register(new ToolMaterial.ToolMaterialBuilder("diamond")
+		DIAMOND = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("diamond")
 				.color(3402699)
 				.repairIngredientFromTag("c:diamonds")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -223,7 +223,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ENCHANTABILITY, -5).build()
 				.build());
 
-		STEEL = register(new ToolMaterial.ToolMaterialBuilder("steel")
+		STEEL = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("steel")
 				.color(4408907)
 				.repairIngredientFromTag("c:steel_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -244,7 +244,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 1.1f).build()
 				.build());
 
-		NETHERITE = register(new ToolMaterial.ToolMaterialBuilder("netherite")
+		NETHERITE = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("netherite")
 				.color(5192766)
 				.repairIngredientFromTag("c:netherite_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -261,7 +261,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.FIREPROOF, 1).build()
 				.build());
 
-		NICKEL = register(new ToolMaterial.ToolMaterialBuilder("nickel")
+		NICKEL = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("nickel")
 				.color(6314062)
 				.repairIngredientFromTag("c:nickel_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -285,7 +285,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 1.2f).build()
 				.build());
 
-		INVAR = register(new ToolMaterial.ToolMaterialBuilder("invar")
+		INVAR = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("invar")
 				.color(10789019)
 				.repairIngredientFromTag("c:invar_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -308,7 +308,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 1.4f).build()
 				.build());
 
-		CONSTANTAN = register(new ToolMaterial.ToolMaterialBuilder("constantan")
+		CONSTANTAN = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("constantan")
 				.color(11558984)
 				.repairIngredientFromTag("c:constantan_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -328,7 +328,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_SPEED, 0.7f).build()
 				.build());
 
-		CUPRONICKEL = register(new ToolMaterial.ToolMaterialBuilder("cupronickel")
+		CUPRONICKEL = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("cupronickel")
 				.color(5257772)
 				.repairIngredientFromTag("c:cupronickel_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -350,7 +350,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 1.1f).build()
 				.build());
 
-		TITANIUM = register(new ToolMaterial.ToolMaterialBuilder("titanium")
+		TITANIUM = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("titanium")
 				.color(5990506)
 				.repairIngredientFromTag("c:titanium_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -367,7 +367,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 0.9f).build()
 				.build());
 
-		TITANIUM_GOLD = register(new ToolMaterial.ToolMaterialBuilder("titanium_gold")
+		TITANIUM_GOLD = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("titanium_gold")
 				.color(13086590)
 				.repairIngredientFromTag("c:titanium_gold_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -391,7 +391,7 @@ public class ToolMaterials
 					.property(ToolPropertyType.ATTACK_DAMAGE, 0.7f).build()
 				.build());
 
-		NITINOL = register(new ToolMaterial.ToolMaterialBuilder("nitinol")
+		NITINOL = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("nitinol")
 				.color(6185051)
 				.repairIngredientFromTag("c:nitinol_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
@@ -410,12 +410,12 @@ public class ToolMaterials
 
 
 
-		VANILLA_STICK = register(new ToolMaterial.ToolMaterialBuilder("wooden")
+		VANILLA_STICK = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("wooden")
 				.color(6835742)
 				.repairIngredientFromTag("minecraft:planks")
 				.build());
 
-		LEATHER = register(new ToolMaterial.ToolMaterialBuilder("leather")
+		LEATHER = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("leather")
 				.color(14117699)
 				.repairIngredientFromTag("c:leathers")
 				.build());

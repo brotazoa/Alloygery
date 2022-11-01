@@ -14,28 +14,7 @@
       "furnace": "alloygery:blast_alloy_kiln",
       "output": "alloygery:constantan_ingot",
       "crafting": "alloygery:smithing_anvil",
-      "tool": "alloygery:anvil_hammer"
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/constantan\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/constantan\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/constantan\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/constantan\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/constantan\"}",
-      "material": "alloygery:materials/constantan",
-      "text": "When used to craft a tool, this tool head provides the following base values:",
-      "part_settings": "head"
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/constantan\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/constantan\"}",
-      "material": "alloygery:materials/constantan",
-      "text": "When used to craft a tool, this part modifies the following values:",
-      "part_settings": "binding"
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/constantan\"}",
-      "material": "alloygery:materials/constantan",
-      "text": "When used to craft a tool, this part modifies the following values:",
-      "part_settings": "handle"
+      "tool": "#alloygery:crafting_hammers"
     }
   ]
 }

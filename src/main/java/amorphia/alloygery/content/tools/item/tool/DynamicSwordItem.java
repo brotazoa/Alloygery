@@ -2,16 +2,12 @@ package amorphia.alloygery.content.tools.item.tool;
 
 import amorphia.alloygery.content.tools.ToolDescriptionHelper;
 import amorphia.alloygery.content.tools.ToolMaterialHelper;
-import amorphia.alloygery.content.tools.ToolNBTHelper;
 import amorphia.alloygery.content.tools.item.part.ToolType;
 import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
-import amorphia.alloygery.content.tools.material.ToolMaterials;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.text.Text;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 import java.util.List;

@@ -1,18 +1,11 @@
 {
   "name": "Emerald Embossed",
-  "icon": "minecraft:emerald",
+  "icon": "alloygery:emerald_tool_inlay",
   "category": "alloygery:upgrades_category",
   "pages": [
     {
       "type": "patchouli:text",
       "text": ""
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "minecraft:emerald",
-      "material": "alloygery:materials/emerald",
-      "text": "When used to upgrade a tool, this upgrade modifies the following values:",
-      "part_settings": "upgrade"
     }
   ]
 }

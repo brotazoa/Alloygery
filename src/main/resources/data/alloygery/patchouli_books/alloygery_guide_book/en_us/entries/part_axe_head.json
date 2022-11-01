@@ -1,6 +1,6 @@
 {
   "name": "Axe Head",
-  "icon": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "icon": "alloygery:antanium_axe_head",
   "category": "alloygery:tool_parts_category",
   "pages": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/alloygery_axe"
+      "recipe": "alloygery:crafting/tools/dynamic_axe"
     }
   ]
 }

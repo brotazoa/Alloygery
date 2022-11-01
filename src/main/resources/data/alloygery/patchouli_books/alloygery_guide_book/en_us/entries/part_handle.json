@@ -1,6 +1,6 @@
 {
   "name": "Tool Handle",
-  "icon": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/antanium\"}",
+  "icon": "alloygery:antanium_handle",
   "category": "alloygery:tool_parts_category",
   "pages": [
     {

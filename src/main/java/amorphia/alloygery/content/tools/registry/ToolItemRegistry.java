@@ -1,15 +1,12 @@
 package amorphia.alloygery.content.tools.registry;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.content.tools.ToolNBTHelper;
 import amorphia.alloygery.content.tools.client.ToolModelBuilder;
 import amorphia.alloygery.content.tools.item.part.*;
 import amorphia.alloygery.content.tools.item.part.head.*;
 import amorphia.alloygery.content.tools.item.tool.*;
-import amorphia.alloygery.content.tools.material.ToolMaterial;
-import amorphia.alloygery.content.tools.material.ToolMaterials;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -18,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
 
-import static amorphia.alloygery.content.tools.material.ToolMaterials.*;
+import static amorphia.alloygery.content.materials.AlloygeryMaterials.*;
 
 public class ToolItemRegistry
 {
@@ -69,12 +66,12 @@ public class ToolItemRegistry
 		register(setPrefix + "dynamic_sword", new DynamicSwordItem(upgradeType));
 	}
 
-	private static void makeToolPartsForMaterial(ToolMaterial material)
+	private static void makeToolPartsForMaterial(AlloygeryMaterial material)
 	{
 		makeToolPartsForMaterial(material, true, true, true, true);
 	}
 
-	private static void makeToolPartsForMaterial(ToolMaterial material, boolean makeHeads, boolean makeBindings, boolean makeGuards, boolean makeHandles)
+	private static void makeToolPartsForMaterial(AlloygeryMaterial material, boolean makeHeads, boolean makeBindings, boolean makeGuards, boolean makeHandles)
 	{
 		if (makeHeads)
 		{
@@ -121,19 +118,19 @@ public class ToolItemRegistry
 		}
 	}
 
-	private static void makeToolInlayUpgradePartItemsFromMaterials(Set<ToolMaterial> materials)
+	private static void makeToolInlayUpgradePartItemsFromMaterials(Set<AlloygeryMaterial> materials)
 	{
-		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_inlay", new UpgradeItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_inlay")));
+		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_inlay", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_inlay")));
 	}
 
-	private static void makeToolPlatingUpgradePartItemsForMaterials(Set<ToolMaterial> materials)
+	private static void makeToolPlatingUpgradePartItemsForMaterials(Set<AlloygeryMaterial> materials)
 	{
-		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_plating", new UpgradeItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_plating")));
+		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_plating", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_plating")));
 	}
 
-	private static void makeToolTipplingUpgradePartItemsForMaterials(Set<ToolMaterial> materials)
+	private static void makeToolTipplingUpgradePartItemsForMaterials(Set<AlloygeryMaterial> materials)
 	{
-		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_tipping", new UpgradeItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_tipping")));
+		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_tipping", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_tipping")));
 	}
 
 	private static Item registerGeneratedItem(String path, Item item, Supplier<String> modelJsonSupplier)

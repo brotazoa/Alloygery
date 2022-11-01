@@ -1,9 +1,9 @@
-package amorphia.alloygery.content.tools.data.v1;
+package amorphia.alloygery.content.materials.data.v1;
 
 import amorphia.alloygery.ModMiningLevels;
-import amorphia.alloygery.content.tools.data.IToolMaterialData;
+import amorphia.alloygery.content.materials.data.IAlloygeryMaterialData;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
-import amorphia.alloygery.content.tools.material.ToolMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
 import com.google.gson.*;
@@ -11,20 +11,20 @@ import net.minecraft.recipe.Ingredient;
 
 import java.lang.reflect.Type;
 
-public class ToolMaterialDataV1 implements IToolMaterialData
+public class AlloygeryMaterialDataV1 implements IAlloygeryMaterialData
 {
-	private ToolMaterial dataHolder = null;
+	private AlloygeryMaterial dataHolder = null;
 
 	@Override
-	public ToolMaterial apply(ToolMaterial material)
+	public AlloygeryMaterial apply(AlloygeryMaterial material)
 	{
-		return ToolMaterial.ToolMaterialMerger.override(material, dataHolder);
+		return AlloygeryMaterial.AlloygeryMaterialMerger.override(material, dataHolder);
 	}
 
-	public static class Serializer implements JsonDeserializer<ToolMaterialDataV1>
+	public static class Serializer implements JsonDeserializer<AlloygeryMaterialDataV1>
 	{
 		@Override
-		public ToolMaterialDataV1 deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext)
+		public AlloygeryMaterialDataV1 deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext)
 				throws JsonParseException
 		{
 			JsonObject json = jsonElement.getAsJsonObject();
@@ -32,7 +32,7 @@ public class ToolMaterialDataV1 implements IToolMaterialData
 			if(!json.has("name"))
 				throw new JsonParseException("missing name");
 
-			ToolMaterial.ToolMaterialBuilder builder = new ToolMaterial.ToolMaterialBuilder(json.get("name").getAsString());
+			AlloygeryMaterial.AlloygeryMaterialBuilder builder = new AlloygeryMaterial.AlloygeryMaterialBuilder(json.get("name").getAsString());
 
 			if(json.has("color"))
 				builder.color(json.get("color").getAsInt());
@@ -52,13 +52,13 @@ public class ToolMaterialDataV1 implements IToolMaterialData
 			if(json.has("tool_upgrade"))
 				deserializeToolPartSetting(json.get("tool_upgrade"), builder, ToolPartType.UPGRADE, jsonDeserializationContext);
 
-			ToolMaterialDataV1 dataV1 = new ToolMaterialDataV1();
+			AlloygeryMaterialDataV1 dataV1 = new AlloygeryMaterialDataV1();
 			dataV1.dataHolder = builder.build();
 
 			return dataV1;
 		}
 
-		private void deserializeToolPartSetting(JsonElement jsonElement, ToolMaterial.ToolMaterialBuilder builder, ToolPartType partType, JsonDeserializationContext context)
+		private void deserializeToolPartSetting(JsonElement jsonElement, AlloygeryMaterial.AlloygeryMaterialBuilder builder, ToolPartType partType, JsonDeserializationContext context)
 		{
 			JsonObject json = jsonElement.getAsJsonObject();
 

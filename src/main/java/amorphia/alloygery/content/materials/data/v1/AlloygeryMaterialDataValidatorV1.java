@@ -1,10 +1,10 @@
-package amorphia.alloygery.content.tools.data.v1;
+package amorphia.alloygery.content.materials.data.v1;
 
-import amorphia.alloygery.content.tools.data.IToolMaterialData;
-import amorphia.alloygery.content.tools.data.IToolMaterialDataValidator;
+import amorphia.alloygery.content.materials.data.IAlloygeryMaterialData;
+import amorphia.alloygery.content.materials.data.IAlloygeryMaterialDataValidator;
 import com.google.gson.JsonObject;
 
-public class ToolMaterialDataValidatorV1 implements IToolMaterialDataValidator
+public class AlloygeryMaterialDataValidatorV1 implements IAlloygeryMaterialDataValidator
 {
 	@Override
 	public boolean validate(JsonObject jsonObject)
@@ -26,8 +26,8 @@ public class ToolMaterialDataValidatorV1 implements IToolMaterialDataValidator
 	}
 
 	@Override
-	public Class<? extends IToolMaterialData> getDataVersionClass()
+	public Class<? extends IAlloygeryMaterialData> getDataVersionClass()
 	{
-		return ToolMaterialDataV1.class;
+		return AlloygeryMaterialDataV1.class;
 	}
 }

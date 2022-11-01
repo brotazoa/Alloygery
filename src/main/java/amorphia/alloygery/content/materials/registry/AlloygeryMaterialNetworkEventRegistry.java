@@ -1,7 +1,7 @@
-package amorphia.alloygery.content.tools.registry;
+package amorphia.alloygery.content.materials.registry;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.content.tools.data.ToolMaterialDataHelper;
+import amorphia.alloygery.content.materials.data.AlloygeryMaterialDataHelper;
 import com.google.gson.JsonObject;
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -15,7 +15,7 @@ import net.minecraft.util.JsonHelper;
 import java.io.StringReader;
 import java.util.Optional;
 
-public class ToolNetworkEventRegistry
+public class AlloygeryMaterialNetworkEventRegistry
 {
 	private static final Identifier CONNECT_PACKET = Alloygery.identifier("connect_packet");
 
@@ -27,7 +27,7 @@ public class ToolNetworkEventRegistry
 
 			NbtCompound materials = new NbtCompound();
 
-			ToolMaterialRegistry.forEach((identifier, material) -> ToolMaterialDataHelper.getJsonStringFromToolMaterial(material).ifPresentOrElse(
+			AlloygeryMaterialRegistry.forEach((identifier, material) -> AlloygeryMaterialDataHelper.getJsonStringFromToolMaterial(material).ifPresentOrElse(
 					jsonString -> materials.putString(identifier.toString(), jsonString),
 					() -> Alloygery.LOGGER.warn("Could not make packet for " + identifier.toString()))
 			);
@@ -49,7 +49,7 @@ public class ToolNetworkEventRegistry
 			if(dataTagFromPacket == null || dataTagFromPacket.isEmpty())
 				return;
 
-			ToolMaterialRegistry.resetToRegisteredValues();
+			AlloygeryMaterialRegistry.resetToRegisteredValues();
 
 			Optional.ofNullable(dataTagFromPacket.getCompound("AlloygeryMaterials")).ifPresentOrElse(compound -> {
 				for(String materialName : compound.getKeys())
@@ -61,14 +61,14 @@ public class ToolNetworkEventRegistry
 
 					JsonObject json = JsonHelper.deserialize(new StringReader(jsonString));
 
-					ToolMaterialDataHelper.getToolMaterialDataFromJson(json).ifPresentOrElse(toolData -> ToolMaterialRegistry.load(id, toolData),
+					AlloygeryMaterialDataHelper.getToolMaterialDataFromJson(json).ifPresentOrElse(toolData -> AlloygeryMaterialRegistry.load(id, toolData),
 							() -> Alloygery.LOGGER.warn("Could not validate resource " + id + ", it is either not an Alloygery Material, or is written using an unsupported data version.")
 					);
 				}
 			}, () -> Alloygery.LOGGER.warn("Received " + CONNECT_PACKET.toString() + " with missing or empty material data"));
 
 			StringBuilder builder = new StringBuilder("Alloygery Material Registry contains the following entries after receiving server packet: [").append('\n');
-			ToolMaterialRegistry.forEach((identifier, material) -> builder.append('\t').append(identifier).append('\n'));
+			AlloygeryMaterialRegistry.forEach((identifier, material) -> builder.append('\t').append(identifier).append('\n'));
 			builder.append("]");
 			Alloygery.LOGGER.info(builder.toString());
 		});

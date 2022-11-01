@@ -16,28 +16,7 @@
       "furnace": "alloygery:alloy_kiln,alloygery:blast_alloy_kiln",
       "output": "alloygery:bronze_ingot",
       "crafting": "alloygery:smithing_anvil",
-      "tool": "alloygery:anvil_hammer"
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "alloygery:alloygery_axe_head{PartMaterial:\"alloygery:materials/bronze\"},alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/bronze\"},alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/bronze\"},alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/bronze\"},alloygery:alloygery_sword_blade{PartMaterial:\"alloygery:materials/bronze\"}",
-      "material": "alloygery:materials/bronze",
-      "text": "When used to craft a tool, this tool head provides the following base values:",
-      "part_settings": "head"
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/bronze\"},alloygery:alloygery_sword_guard{PartMaterial:\"alloygery:materials/bronze\"}",
-      "material": "alloygery:materials/bronze",
-      "text": "When used to craft a tool, this part modifies the following values:",
-      "part_settings": "binding"
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "alloygery:alloygery_handle{PartMaterial:\"alloygery:materials/bronze\"}",
-      "material": "alloygery:materials/bronze",
-      "text": "When used to craft a tool, this part modifies the following values:",
-      "part_settings": "handle"
+      "tool": "#alloygery:crafting_hammers"
     }
   ]
 }

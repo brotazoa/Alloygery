@@ -3,10 +3,9 @@ package amorphia.alloygery.content.tools;
 import amorphia.alloygery.content.tools.item.part.IToolPart;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.tools.item.part.ToolType;
-import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
 import amorphia.alloygery.content.tools.item.tool.*;
-import amorphia.alloygery.content.tools.material.ToolMaterial;
-import amorphia.alloygery.content.tools.material.ToolMaterials;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterials;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
@@ -14,7 +13,6 @@ import com.google.common.collect.Maps;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -39,15 +37,15 @@ public class ToolDescriptionHelper
 		if(!(tool.getItem() instanceof IDynamicTool) || !ToolNBTHelper.isAlloygeryDataNBT(tool.getNbt()))
 			return tool.getItem().getName();
 
-		ToolMaterial headMaterial = ToolMaterialHelper.getHeadMaterial(tool);
-		ToolMaterial upgradeMaterial = ToolMaterialHelper.getUpgradeMaterial(tool);
+		AlloygeryMaterial headMaterial = ToolMaterialHelper.getHeadMaterial(tool);
+		AlloygeryMaterial upgradeMaterial = ToolMaterialHelper.getUpgradeMaterial(tool);
 
 		ToolType toolType = ToolNBTHelper.getToolTypeFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(tool));
 
 		MutableText toolName = translatable("item.alloygery." + headMaterial.getMaterialName() + "_" + toolType.getName());
 		MutableText upgradeName = translatable("tooltip.alloygery.upgrade." + upgradeMaterial.getMaterialName());
 
-		return upgradeMaterial == ToolMaterials.UNKNOWN ? toolName : upgradeName.append(literal(" - ")).append(toolName);
+		return upgradeMaterial == AlloygeryMaterials.UNKNOWN ? toolName : upgradeName.append(literal(" - ")).append(toolName);
 	}
 
 	public static void writeToolDescription(List<Text> tooltip, ItemStack tool, TooltipContext context)

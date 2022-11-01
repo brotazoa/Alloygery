@@ -3,7 +3,7 @@ package amorphia.alloygery.content.metals.registry;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.metals.block.TintedBlock;
 import amorphia.alloygery.content.metals.client.CraftingItemModelBuilder;
-import amorphia.alloygery.content.tools.material.ToolMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import static amorphia.alloygery.content.tools.material.ToolMaterials.*;
+import static amorphia.alloygery.content.materials.AlloygeryMaterials.*;
 
 public class MetalBlockRegistry
 {
@@ -53,17 +53,17 @@ public class MetalBlockRegistry
 		makeMetalBlock(NITINOL, MetalItemRegistry.CraftingMaterialVariantTypes.SHINY);
 	}
 
-	private static void makeMetalBlock(ToolMaterial material)
+	private static void makeMetalBlock(AlloygeryMaterial material)
 	{
 		makeMetalBlock(material, MetalItemRegistry.CraftingMaterialVariantTypes.NORMAL);
 	}
 
-	private static void makeMetalBlock(ToolMaterial material, MetalItemRegistry.CraftingMaterialVariantTypes type)
+	private static void makeMetalBlock(AlloygeryMaterial material, MetalItemRegistry.CraftingMaterialVariantTypes type)
 	{
 		registerGeneratedBlock(material.getMaterialName() + "_block", new TintedBlock(material, FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL)), CraftingItemModelBuilder.createMetalBlockModelJson(type.getName()));
 	}
 
-	private static void makeRawOreBlock(ToolMaterial material)
+	private static void makeRawOreBlock(AlloygeryMaterial material)
 	{
 		registerGeneratedBlock("raw_" + material.getMaterialName() + "_block", new TintedBlock(material, FabricBlockSettings.of(Material.STONE).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f)), CraftingItemModelBuilder::createRawOreBlockModelJson);
 	}

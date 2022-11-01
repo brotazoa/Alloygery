@@ -1,12 +1,12 @@
 package amorphia.alloygery.content.tools.item.part;
 
-import amorphia.alloygery.content.tools.material.ToolMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
 
-public class ToolHeadItem extends PartItem implements IToolPartHead
+public class ToolHeadItem extends ToolPartItem implements IToolPartHead
 {
 	protected ToolType toolType;
 
-	public ToolHeadItem(Settings settings, ToolMaterial material, ToolType toolType)
+	public ToolHeadItem(Settings settings, AlloygeryMaterial material, ToolType toolType)
 	{
 		super(settings, material, ToolPartType.HEAD);
 		this.toolType = toolType;

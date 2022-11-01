@@ -27,7 +27,7 @@
     },
     {
       "type": "patchouli:spotlight",
-      "item": "alloygery:alloygery_pickaxe{Damage:0, HeadMaterial:\"alloygery:materials/bronze\", BindingMaterial:\"alloygery:materials/hidden\", HandleMaterial:\"alloygery:materials/wooden\"}",
+      "item": "alloygery:dynamic_pickaxe{Damage:0, alloygery_nbt_identifier: {type:\"tool_identifier\", tool_part_head: {material_identifier:\"alloygery:materials/bronze\", tool_part_type_identifier:\"tool_part_head\", type:\"tool_part_identifier\", tool_type_identifier:\"tool_type_pickaxe\"}, tool_part_binding: {material_identifier:\"alloygery:materials/hidden\", tool_part_type_identifier:\"tool_part_binding\", type:\"tool_part_identifier\"}, tool_part_handle: {material_identifier:\"alloygery:materials/wooden\", tool_part_type_identifier:\"tool_part_handle\", type:\"tool_part_identifier\"}}}",
       "advancement": "alloygery:story/bronze_tools",
       "text": "Congratulations on crafting a Bronze Pickaxe! With this new tool, you can mine iron to your hearts content! $(br2)Once you get into the $(italics)Iron Age$() things get interesting, so be sure to check back here once you have some iron."
     },
@@ -45,9 +45,9 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/anvil_hammer",
+      "recipe": "alloygery:crafting/tools/crafting_tools/bronze_crafting_hammer",
       "advancement": "alloygery:story/smithing_anvil",
-      "text": "In order to craft iron tool parts at the $(l:block_smithing_anvil)Smithing Anvil$() you will need an $(l:tool_anvil_hammer)Anvil Hammer$()."
+      "text": "In order to craft iron tool parts at the $(l:block_smithing_anvil)Smithing Anvil$() you will need an Crafting Hammer."
     },
     {
       "type": "patchouli:image",
@@ -56,7 +56,7 @@
         "alloygery:textures/gui/patchouli/tool_parts_smithing.png"
       ],
       "advancement": "alloygery:story/smithing_anvil",
-      "text": "Use the $(l:tool_anvil_hammer)Anvil Hammer$() and $(item)Iron Ingots$() to craft an $(item)Iron Pickaxe Head$()"
+      "text": "Use a $(thing)Crafting Hammer$() and $(item)Iron Ingots$() to craft an $(item)Iron Pickaxe Head$()"
     },
     {
       "type": "patchouli:image",

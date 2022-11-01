@@ -2,6 +2,7 @@ package amorphia.alloygery;
 
 import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.content.machines.MachineModule;
+import amorphia.alloygery.content.materials.AlloygeryMaterialModule;
 import amorphia.alloygery.content.metals.MetalModule;
 import amorphia.alloygery.content.tools.ToolModule;
 import amorphia.alloygery.registry.ModResourceConditions;
@@ -27,12 +28,10 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	public static final String MOD_ID = "alloygery";
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	public static final Set<Integer> ALLOYGERY_DATA_VERSIONS = Set.of(1);
-
 	public static Item ALLOYGERY_TAB_ITEM = Registry.register(Registry.ITEM, Alloygery.identifier("alloygery_tab_item"), new Item(new Item.Settings()));
 	public static ItemGroup ALLOYGERY_TAB_GROUP = FabricItemGroupBuilder.create(Alloygery.identifier("alloygery_group")).icon(() -> new ItemStack(ALLOYGERY_TAB_ITEM)).build();
 
-	public static final List<IAlloygeryModule> MODULES = Lists.newArrayList(new MachineModule(), new MetalModule(), new ToolModule());
+	public static final List<IAlloygeryModule> MODULES = Lists.newArrayList(new AlloygeryMaterialModule(), new MachineModule(), new MetalModule(), new ToolModule());
 
 	@Override
 	@Environment(EnvType.CLIENT)

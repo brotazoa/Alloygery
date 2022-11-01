@@ -1,6 +1,6 @@
 package amorphia.alloygery.content.tools.item.part;
 
-import amorphia.alloygery.content.tools.material.ToolMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,12 +10,12 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public abstract class PartItem extends Item implements IToolPart
+public abstract class ToolPartItem extends Item implements IToolPart
 {
-	protected ToolMaterial material;
+	protected AlloygeryMaterial material;
 	protected ToolPartType toolPartType;
 
-	public PartItem(Settings settings, ToolMaterial material, ToolPartType toolPartType)
+	public ToolPartItem(Settings settings, AlloygeryMaterial material, ToolPartType toolPartType)
 	{
 		super(settings);
 		this.material = material;
@@ -31,7 +31,7 @@ public abstract class PartItem extends Item implements IToolPart
 	}
 
 	@Override
-	public ToolMaterial getMaterial()
+	public AlloygeryMaterial getMaterial()
 	{
 		return this.material;
 	}

@@ -1,9 +1,8 @@
 package amorphia.alloygery.content.tools.recipe;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.AlloygeryNBT;
 import amorphia.alloygery.content.tools.ToolNBTHelper;
-import amorphia.alloygery.content.tools.item.part.PartItem;
+import amorphia.alloygery.content.tools.item.part.ToolPartItem;
 import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.CraftingInventory;
@@ -35,7 +34,7 @@ public class SimpleToolRecipeShaped extends ShapedRecipe
 	@Override
 	public ItemStack getOutput()
 	{
-		return ToolNBTHelper.addAlloygeryNBTToToolStack(super.getOutput().copy(), ToolNBTHelper.createToolNBTFromToolPartItems((PartItem) headPart.getMatchingStacks()[0].getItem(), (PartItem) handlePart.getMatchingStacks()[0].getItem()));
+		return ToolNBTHelper.addAlloygeryNBTToToolStack(super.getOutput().copy(), ToolNBTHelper.createToolNBTFromToolPartItems((ToolPartItem) headPart.getMatchingStacks()[0].getItem(), (ToolPartItem) handlePart.getMatchingStacks()[0].getItem()));
 	}
 
 	@Override
@@ -45,7 +44,7 @@ public class SimpleToolRecipeShaped extends ShapedRecipe
 		if(toolStack == null || toolStack.isEmpty() || !(toolStack.getItem() instanceof IDynamicTool))
 			return ItemStack.EMPTY;
 
-		ToolNBTHelper.addAlloygeryNBTToToolStack(toolStack, ToolNBTHelper.createToolNBTFromToolPartItems((PartItem) headPart.getMatchingStacks()[0].getItem(), (PartItem) handlePart.getMatchingStacks()[0].getItem()));
+		ToolNBTHelper.addAlloygeryNBTToToolStack(toolStack, ToolNBTHelper.createToolNBTFromToolPartItems((ToolPartItem) headPart.getMatchingStacks()[0].getItem(), (ToolPartItem) handlePart.getMatchingStacks()[0].getItem()));
 		return toolStack;
 	}
 

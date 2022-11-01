@@ -5,7 +5,7 @@ import amorphia.alloygery.content.metals.client.CraftingItemModelBuilder;
 import amorphia.alloygery.content.metals.item.CraftingHammer;
 import amorphia.alloygery.content.metals.item.CraftingItem;
 import amorphia.alloygery.content.metals.item.TintedBlockItem;
-import amorphia.alloygery.content.tools.material.ToolMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 import static amorphia.alloygery.content.metals.registry.MetalItemRegistry.CraftingMaterialTypes.*;
 import static amorphia.alloygery.content.metals.registry.MetalItemRegistry.CraftingMaterialVariantTypes.*;
 import static amorphia.alloygery.content.metals.registry.MetalItemRegistry.CraftingToolTypes.*;
-import static amorphia.alloygery.content.tools.material.ToolMaterials.*;
+import static amorphia.alloygery.content.materials.AlloygeryMaterials.*;
 
 public class MetalItemRegistry
 {
@@ -112,7 +112,7 @@ public class MetalItemRegistry
 		makeCraftingTools(NITINOL, EnumSet.of(HAMMER), 4);
 	}
 
-	private static void makeCraftingMaterials(ToolMaterial material, EnumSet<CraftingMaterialTypes> materialTypes, CraftingMaterialVariantTypes variant)
+	private static void makeCraftingMaterials(AlloygeryMaterial material, EnumSet<CraftingMaterialTypes> materialTypes, CraftingMaterialVariantTypes variant)
 	{
 		if(materialTypes.contains(CraftingMaterialTypes.RAW))
 			registerGeneratedItem("raw_" + material.getMaterialName(), new CraftingItem(material), CraftingItemModelBuilder.createRawOreItemModelJson());
@@ -147,7 +147,7 @@ public class MetalItemRegistry
 		}
 	}
 
-	private static void makeCraftingTools(ToolMaterial material, EnumSet<CraftingToolTypes> toolTypes, int tier)
+	private static void makeCraftingTools(AlloygeryMaterial material, EnumSet<CraftingToolTypes> toolTypes, int tier)
 	{
 		if(toolTypes.contains(HAMMER))
 			registerGeneratedItem(material.getMaterialName() + "_crafting_hammer", new CraftingHammer(material, tier), CraftingItemModelBuilder.createCraftingHammerItemModelJson());

@@ -1,18 +1,11 @@
 {
   "name": "Gold Plated",
-  "icon": "minecraft:gold_ingot",
+  "icon": "alloygery:gold_tool_plating",
   "category": "alloygery:upgrades_category",
   "pages": [
     {
       "type": "patchouli:text",
       "text": ""
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "minecraft:gold_ingot",
-      "material": "alloygery:materials/gold",
-      "text": "When used to upgrade a tool, this upgrade modifies the following values:",
-      "part_settings": "upgrade"
     }
   ]
 }

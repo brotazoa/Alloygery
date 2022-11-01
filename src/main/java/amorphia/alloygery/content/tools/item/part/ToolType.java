@@ -12,9 +12,11 @@ public enum ToolType
 	SWORD,
 	;
 
+	public static final ToolType[] VALUES_CACHE = ToolType.values();
+
 	public static ToolType getByName(String name)
 	{
-		return Arrays.stream(ToolType.values()).filter(value -> value.getName().equals(name.toLowerCase(Locale.ROOT)) || value.getName().equals(name.toUpperCase(Locale.ROOT))).findFirst().orElseThrow();
+		return Arrays.stream(VALUES_CACHE).filter(value -> value.getName().equals(name.toLowerCase(Locale.ROOT)) || value.getName().equals(name.toUpperCase(Locale.ROOT))).findFirst().orElseThrow();
 	}
 
 	public String getName()

@@ -1,18 +1,11 @@
 {
   "name": "Netherite Plated",
-  "icon": "minecraft:netherite_ingot",
+  "icon": "alloygery:netherite_tool_plating",
   "category": "alloygery:upgrades_category",
   "pages": [
     {
       "type": "patchouli:text",
       "text": ""
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "minecraft:netherite_ingot",
-      "material": "alloygery:materials/netherite",
-      "text": "When used to upgrade a tool, this upgrade modifies the following values:",
-      "part_settings": "upgrade"
     }
   ]
 }

@@ -1,18 +1,11 @@
 {
   "name": "Diamond Tipped",
-  "icon": "minecraft:diamond",
+  "icon": "alloygery:diamond_tool_tipping",
   "category": "alloygery:upgrades_category",
   "pages": [
     {
       "type": "patchouli:text",
       "text": ""
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "minecraft:diamond",
-      "material": "alloygery:materials/diamond",
-      "text": "When used to upgrade a tool, this upgrade modifies the following values:",
-      "part_settings": "upgrade"
     }
   ]
 }

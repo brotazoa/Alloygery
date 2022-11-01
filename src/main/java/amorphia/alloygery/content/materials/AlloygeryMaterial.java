@@ -1,6 +1,6 @@
-package amorphia.alloygery.content.tools.material;
+package amorphia.alloygery.content.materials;
 
-import amorphia.alloygery.content.tools.data.IToolMaterialData;
+import amorphia.alloygery.content.materials.data.IAlloygeryMaterialData;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class ToolMaterial
+public class AlloygeryMaterial
 {
 	private static final List<ToolProperty> EMPTY = List.of();
 
@@ -29,7 +29,7 @@ public class ToolMaterial
 	private final List<ToolProperty> toolProperties = Lists.newArrayList();
 	private final Map<ToolPartType, List<ToolProperty>> toolPropertiesByPart = Maps.newHashMap();
 
-	private ToolMaterial(){} //no op
+	private AlloygeryMaterial(){} //no op
 
 	public String getMaterialName()
 	{
@@ -46,19 +46,19 @@ public class ToolMaterial
 		return repairIngredient;
 	}
 
-	public List<ToolProperty> getProperties()
+	public List<ToolProperty> getToolProperties()
 	{
 		return Collections.unmodifiableList(toolProperties);
 	}
 
-	public List<ToolProperty> getPropertiesByPart(ToolPartType partType)
+	public List<ToolProperty> getToolPropertiesByPart(ToolPartType partType)
 	{
 		final List<ToolProperty> properties = toolPropertiesByPart.get(partType);
 
 		return Collections.unmodifiableList(properties == null ? EMPTY : properties);
 	}
 
-	private void addProperty(ToolProperty property)
+	private void addToolProperty(ToolProperty property)
 	{
 		if(property == null)
 			return;
@@ -69,36 +69,36 @@ public class ToolMaterial
 		propertiesForPart.add(property);
 	}
 
-	private void addProperty(ToolPartType partType, ToolPropertyType propertyType, ToolPropertyOperation operation, float value)
+	private void addToolProperty(ToolPartType partType, ToolPropertyType propertyType, ToolPropertyOperation operation, float value)
 	{
 		assert partType != null && propertyType != null && operation != null;
-		addProperty(new ToolProperty(partType, propertyType, operation, value));
+		addToolProperty(new ToolProperty(partType, propertyType, operation, value));
 	}
 
-	private ToolMaterial copy()
+	private AlloygeryMaterial copy()
 	{
-		ToolMaterial copy = new ToolMaterial();
+		AlloygeryMaterial copy = new AlloygeryMaterial();
 		copy.materialName = this.materialName;
-		ToolMaterialMerger.override(copy, this);
+		AlloygeryMaterialMerger.override(copy, this);
 		return copy;
 	}
 
-	public static IToolMaterialData createToolMaterialDataFromToolMaterial(ToolMaterial material)
+	public static IAlloygeryMaterialData createAlloygeryMaterialDataFromAlloygeryMaterial(AlloygeryMaterial material)
 	{
-		return new IToolMaterialData() {
+		return new IAlloygeryMaterialData() {
 
-			final ToolMaterial dataHolder = material.copy();
+			final AlloygeryMaterial dataHolder = material.copy();
 			@Override
-			public ToolMaterial apply(ToolMaterial applyToMaterial)
+			public AlloygeryMaterial apply(AlloygeryMaterial applyToMaterial)
 			{
-				return ToolMaterial.ToolMaterialMerger.override(applyToMaterial, dataHolder);
+				return AlloygeryMaterialMerger.override(applyToMaterial, dataHolder);
 			}
 		};
 	}
 
-	public static class ToolMaterialMerger
+	public static class AlloygeryMaterialMerger
 	{
-		public static ToolMaterial override(ToolMaterial original, ToolMaterial other)
+		public static AlloygeryMaterial override(AlloygeryMaterial original, AlloygeryMaterial other)
 		{
 			if(other == null || original == other)
 				return original;
@@ -111,58 +111,58 @@ public class ToolMaterial
 
 			original.materialColor = other.materialColor;
 			original.repairIngredient = other.repairIngredient;
-			other.toolProperties.forEach(original::addProperty);
+			other.toolProperties.forEach(original::addToolProperty);
 
 			return original;
 		}
 	}
 
-	public static class ToolMaterialBuilder
+	public static class AlloygeryMaterialBuilder
 	{
-		private final ToolMaterial material;
+		private final AlloygeryMaterial material;
 
-		public ToolMaterialBuilder(IToolMaterialData materialData)
+		public AlloygeryMaterialBuilder(IAlloygeryMaterialData materialData)
 		{
-			this.material = materialData.apply(new ToolMaterial());
+			this.material = materialData.apply(new AlloygeryMaterial());
 		}
 
-		public ToolMaterialBuilder(String name)
+		public AlloygeryMaterialBuilder(String name)
 		{
-			this.material = new ToolMaterial();
+			this.material = new AlloygeryMaterial();
 			this.material.materialName = name;
 		}
 
-		public ToolMaterialBuilder color(int color)
+		public AlloygeryMaterialBuilder color(int color)
 		{
 			this.material.materialColor = color;
 			return this;
 		}
 
-		public ToolMaterialBuilder repairIngredientFromTag(String tagString)
+		public AlloygeryMaterialBuilder repairIngredientFromTag(String tagString)
 		{
 			JsonObject tag = new JsonObject();
 			tag.addProperty("tag", tagString);
 			return repairIngredientFromIngredient(Ingredient.fromJson(tag));
 		}
 
-		public ToolMaterialBuilder repairIngredientFromTag(TagKey<Item> tag)
+		public AlloygeryMaterialBuilder repairIngredientFromTag(TagKey<Item> tag)
 		{
 			return repairIngredientFromIngredient(Ingredient.fromTag(tag));
 		}
 
-		public ToolMaterialBuilder repairIngredientFromItem(String itemString)
+		public AlloygeryMaterialBuilder repairIngredientFromItem(String itemString)
 		{
 			JsonObject item = new JsonObject();
 			item.addProperty("item", itemString);
 			return repairIngredientFromIngredient(Ingredient.fromJson(item));
 		}
 
-		public ToolMaterialBuilder repairIngredientFromItem(ItemConvertible item)
+		public AlloygeryMaterialBuilder repairIngredientFromItem(ItemConvertible item)
 		{
 			return repairIngredientFromIngredient(Ingredient.ofItems(item));
 		}
 
-		public ToolMaterialBuilder repairIngredientFromIngredient(Ingredient ingredient)
+		public AlloygeryMaterialBuilder repairIngredientFromIngredient(Ingredient ingredient)
 		{
 			this.material.repairIngredient = ingredient == null ? Ingredient.EMPTY : ingredient;
 			return this;
@@ -173,7 +173,7 @@ public class ToolMaterial
 			return new ToolPropertyBuilder(this);
 		}
 
-		public ToolMaterial build()
+		public AlloygeryMaterial build()
 		{
 			return material;
 		}
@@ -181,14 +181,14 @@ public class ToolMaterial
 
 	public static class ToolPropertyBuilder
 	{
-		private final ToolMaterialBuilder materialBuilder;
+		private final AlloygeryMaterialBuilder materialBuilder;
 
 		private ToolPartType partType = null;
 		private ToolPropertyType propertyType = null;
 		private ToolPropertyOperation operation = ToolPropertyOperation.ADDITION;
 		private float value = 0.0f;
 
-		ToolPropertyBuilder(ToolMaterialBuilder materialBuilder)
+		ToolPropertyBuilder(AlloygeryMaterialBuilder materialBuilder)
 		{
 			this.materialBuilder = materialBuilder;
 		}
@@ -236,12 +236,12 @@ public class ToolMaterial
 			if((operation == ToolPropertyOperation.ADDITION || operation == ToolPropertyOperation.BASE) && value == 0.0f)
 				return this;
 
-			materialBuilder.material.addProperty(partType, propertyType, operation, value);
+			materialBuilder.material.addToolProperty(partType, propertyType, operation, value);
 
 			return this;
 		}
 
-		public ToolMaterialBuilder build()
+		public AlloygeryMaterialBuilder build()
 		{
 			if(propertyType == null || partType == null)
 				return materialBuilder;
@@ -252,7 +252,7 @@ public class ToolMaterial
 			if(operation == ToolPropertyOperation.ADDITION && value == 0.0f)
 				return materialBuilder;
 
-			materialBuilder.material.addProperty(partType, propertyType, operation, value);
+			materialBuilder.material.addToolProperty(partType, propertyType, operation, value);
 
 			return materialBuilder;
 		}

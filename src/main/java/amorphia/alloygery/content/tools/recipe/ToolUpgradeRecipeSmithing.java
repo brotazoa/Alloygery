@@ -3,7 +3,7 @@ package amorphia.alloygery.content.tools.recipe;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.tools.ToolMaterialHelper;
 import amorphia.alloygery.content.tools.ToolNBTHelper;
-import amorphia.alloygery.content.tools.item.part.PartItem;
+import amorphia.alloygery.content.tools.item.part.ToolPartItem;
 import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
 import amorphia.alloygery.content.tools.mixin.SmithingRecipeAccessor;
 import com.google.gson.JsonObject;
@@ -40,12 +40,12 @@ public class ToolUpgradeRecipeSmithing extends SmithingRecipe
 		if(toolStack == null || toolStack.isEmpty() || !(toolStack.getItem() instanceof IDynamicTool))
 			return ItemStack.EMPTY;
 
-		if(additionStack != null && !additionStack.isEmpty() && additionStack.getItem() instanceof  PartItem partItem)
+		if(additionStack != null && !additionStack.isEmpty() && additionStack.getItem() instanceof  ToolPartItem toolPartItem)
 		{
-			if(ToolMaterialHelper.getHeadMaterial(toolStack).equals(partItem.getMaterial()))
+			if(ToolMaterialHelper.getHeadMaterial(toolStack).equals(toolPartItem.getMaterial()))
 				return ItemStack.EMPTY;
 
-			ToolNBTHelper.modifyToolStackNBTWithUpgradePartItem(toolStack, partItem);
+			ToolNBTHelper.modifyToolStackNBTWithUpgradePartItem(toolStack, toolPartItem);
 		}
 
 		return toolStack;

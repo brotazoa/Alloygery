@@ -1,6 +1,6 @@
 {
   "name": "Shovel Head",
-  "icon": "alloygery:alloygery_shovel_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "icon": "alloygery:antanium_shovel_head",
   "category": "alloygery:tool_parts_category",
   "pages": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/alloygery_shovel"
+      "recipe": "alloygery:crafting/tools/dynamic_shovel"
     }
   ]
 }

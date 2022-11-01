@@ -14,14 +14,13 @@ import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SmithingAnvilCategory implements DisplayCategory<SmithingAnvilDisplay>
 {
-	public static final TranslatableText TITLE = new TranslatableText("rei.alloygery.smithing_anvil");
+	public static final Text TITLE = Text.translatable("rei.alloygery.smithing_anvil");
 	public static final EntryStack<ItemStack> ICON = EntryStacks.of(MachineBlockRegistry.SMITHING_ANVIL);
 
 	@Override

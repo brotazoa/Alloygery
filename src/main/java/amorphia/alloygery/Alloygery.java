@@ -5,6 +5,7 @@ import amorphia.alloygery.content.machines.MachineModule;
 import amorphia.alloygery.content.materials.AlloygeryMaterialModule;
 import amorphia.alloygery.content.metals.MetalModule;
 import amorphia.alloygery.content.tools.ToolModule;
+import amorphia.alloygery.registry.ModAdvancements;
 import amorphia.alloygery.registry.ModResourceConditions;
 import amorphia.alloygery.registry.ModTags;
 import com.google.common.collect.Lists;
@@ -51,6 +52,8 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 		ModResourceConditions.register();
 
 		ModTags.register();
+
+		ModAdvancements.init();
 
 		MODULES.forEach(module -> {
 			if(module.shouldInitialize())

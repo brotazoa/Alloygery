@@ -518,7 +518,7 @@
   "rei.alloygery.blast_alloying": "Blast Alloy Kiln",
   "rei.alloygery.smithing_anvil": "Smithing Anvil",
 
-  "itemGroup.alloygery": "Alloygery",
+  "itemGroup.alloygery_group": "Alloygery",
   "itemGroup.alloygery.blocks": "Alloygery Blocks",
   "itemGroup.alloygery.materials": "Alloygery Materials",
   "itemGroup.alloygery.gear": "Alloygery Gear",
@@ -573,5 +573,8 @@
   "advancements.alloygery.story.diamond_tipped.description": "Upgrade a tool with Diamond Tool Paste at the Smithing Table",
 
   "advancements.alloygery.nether.netherite_platted.title": "Netherite Platting",
-  "advancements.alloygery.nether.netherite_platted.description": "Upgrade a tool with Netherite Tool Plating at the Smithing Table"
+  "advancements.alloygery.nether.netherite_platted.description": "Upgrade a tool with Netherite Tool Plating at the Smithing Table",
+
+  "advancements.alloygery.story.classic_blunder.title": "Classic Blunder",
+  "advancements.alloygery.story.classic_blunder.description": "You need a Bronze pickaxe or better to mine iron ore"
 }

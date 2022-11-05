@@ -1,12 +1,12 @@
 {
   "type": "alloygery:smithing_anvil",
   "crafting_tool": {
-    "tag": "alloygery:crafting_hammers"
+    "tag": "alloygery:tools/crafting_hammers"
   },
   "material": {
-    "tag": "c:bronze_plates"
+    "tag": "c:bronze_double_ingots"
   },
-  "material_cost": 2,
+  "material_cost": 1,
   "minimum_crafting_tier": 1,
   "result": {
     "item": "alloygery:bronze_heavy_plate"

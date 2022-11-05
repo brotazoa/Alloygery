@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_head_removing_smithing_anvil",
+  "crafting_tool": {
+    "tag": "alloygery:tools/crafting_hammers"
+  },
+  "material": {
+    "tag": "alloygery:tools/antanium/antanium_pickaxes"
+  },
+  "result": {
+    "item": "alloygery:antanium_pickaxe_head"
+  }
+}

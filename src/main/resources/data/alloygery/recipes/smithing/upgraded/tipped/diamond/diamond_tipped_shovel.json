@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/diamond/diamond_shovels"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/tipped_upgrades"
+  },
+  "result": {
+    "item": "alloygery:tipped_diamond_shovel"
+  }
+}

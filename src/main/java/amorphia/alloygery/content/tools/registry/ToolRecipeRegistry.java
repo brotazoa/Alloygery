@@ -16,16 +16,13 @@ public class ToolRecipeRegistry
 		Registry.register(Registry.RECIPE_TYPE, ToolUpgradeRecipeSmithing.Type.ID, ToolUpgradeRecipeSmithing.Type.INSTANCE);
 		Registry.register(Registry.RECIPE_SERIALIZER, ToolUpgradeRecipeSmithing.Type.ID, ToolUpgradeRecipeSmithing.Serializer.INSTANCE);
 
-//		Registry.register(Registry.RECIPE_TYPE, ToolUpgradeRemovingRecipeSmithing.Type.ID, ToolUpgradeRemovingRecipeSmithing.Type.INSTANCE);
-//		Registry.register(Registry.RECIPE_SERIALIZER, ToolUpgradeRemovingRecipeSmithing.Type.ID, ToolUpgradeRemovingRecipeSmithing.Serializer.INSTANCE);
-
 		Registry.register(Registry.RECIPE_TYPE, CraftingToolDamagingRecipeShapeless.Type.ID, CraftingToolDamagingRecipeShapeless.Type.INSTANCE);
 		Registry.register(Registry.RECIPE_SERIALIZER, CraftingToolDamagingRecipeShapeless.Type.ID, CraftingToolDamagingRecipeShapeless.Serializer.INSTANCE);
 
-		Registry.register(Registry.RECIPE_TYPE, ToolUpgradeRemovingRecipeShapeless.Type.ID, ToolUpgradeRemovingRecipeShapeless.Type.INSTANCE);
-		Registry.register(Registry.RECIPE_SERIALIZER, ToolUpgradeRemovingRecipeShapeless.Type.ID, ToolUpgradeRemovingRecipeShapeless.Serializer.INSTANCE);
+		Registry.register(Registry.RECIPE_TYPE, ToolUpgradeRemovingRecipeSmithingAnvil.Type.ID, ToolUpgradeRemovingRecipeSmithingAnvil.Type.INSTANCE);
+		Registry.register(Registry.RECIPE_SERIALIZER, ToolUpgradeRemovingRecipeSmithingAnvil.Type.ID, ToolUpgradeRemovingRecipeSmithingAnvil.Serializer.INSTANCE);
 
-		Registry.register(Registry.RECIPE_TYPE, ToolHeadRemovingRecipeShapeless.Type.ID, ToolHeadRemovingRecipeShapeless.Type.INSTANCE);
-		Registry.register(Registry.RECIPE_SERIALIZER, ToolHeadRemovingRecipeShapeless.Type.ID, ToolHeadRemovingRecipeShapeless.Serializer.INSTANCE);
+		Registry.register(Registry.RECIPE_TYPE, ToolHeadRemovingRecipeSmithingAnvil.Type.ID, ToolHeadRemovingRecipeSmithingAnvil.Type.INSTANCE);
+		Registry.register(Registry.RECIPE_SERIALIZER, ToolHeadRemovingRecipeSmithingAnvil.Type.ID, ToolHeadRemovingRecipeSmithingAnvil.Serializer.INSTANCE);
 	}
 }

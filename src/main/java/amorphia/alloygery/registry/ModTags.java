@@ -11,6 +11,6 @@ public class ModTags
 
 	public static void register()
 	{
-		CRAFTING_TOOLS = TagKey.of(Registry.ITEM_KEY, Alloygery.identifier("crafting_tools"));
+		CRAFTING_TOOLS = TagKey.of(Registry.ITEM_KEY, Alloygery.identifier("tools/crafting_tools"));
 	}
 }

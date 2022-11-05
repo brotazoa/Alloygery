@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/netherite/netherite_hoes"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/tipped_upgrades"
+  },
+  "result": {
+    "item": "alloygery:tipped_netherite_hoe"
+  }
+}

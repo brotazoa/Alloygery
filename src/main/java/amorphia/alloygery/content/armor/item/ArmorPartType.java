@@ -5,9 +5,9 @@ import java.util.Locale;
 
 public enum ArmorPartType
 {
-	BACKING,
-	HEAVY_PLATE,
-	LIGHT_PLATE,
+	BASE, //chain, leather, wool, backing layer
+	LIGHT, //brigadine
+	HEAVY, //plate / scale
 	UPGRADE,
 	;
 

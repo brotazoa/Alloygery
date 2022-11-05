@@ -1,7 +1,7 @@
 {
   "type": "alloygery:smithing_anvil",
   "crafting_tool": {
-    "tag": "alloygery:crafting_hammers"
+    "tag": "alloygery:tools/crafting_hammers"
   },
   "material": {
     "tag": "c:bronze_ingots"

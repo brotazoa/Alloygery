@@ -26,4 +26,9 @@ public class ToolModelBuilder
 	{
 		return "{\"parent\": \"alloygery:item/part_" + partType + "_template\"}";
 	}
+
+	public static String createToolItemModelJson(String parent)
+	{
+		return "{\"parent\": \"alloygery:item/" + parent + "\"}";
+	}
 }

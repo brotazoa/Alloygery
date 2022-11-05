@@ -1,0 +1,23 @@
+{
+  "type": "alloygery:alloygery_tool_shaped",
+  "group": "tools",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:gold_sword_blade"
+    },
+    "b": {
+      "tag": "alloygery:tool_parts/sword_guards"
+    },
+    "h": {
+      "tag": "alloygery:tool_parts/handles"
+    }
+  },
+  "result": {
+    "item": "alloygery:gold_sword"
+  }
+}

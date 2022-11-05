@@ -2,10 +2,9 @@ package amorphia.alloygery.content.machines.recipe;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
-import amorphia.alloygery.content.metals.item.CraftingItem;
 import amorphia.alloygery.content.metals.item.CraftingTool;
-import amorphia.alloygery.registry.ModTags;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -18,19 +17,17 @@ import net.minecraft.world.World;
 
 public class SmithingAnvilRecipe implements Recipe<Inventory>
 {
-	protected final Ingredient craftingTool;
+	protected final Ingredient addition;
 	protected final Ingredient material;
 	protected final int materialCount;
 	protected final int minimumCraftingTier;
 	protected final ItemStack output;
 	protected final Identifier id;
-	protected final String group;
 
-	public SmithingAnvilRecipe(Identifier id, String group, Ingredient craftingTool, Ingredient material, int materialCount, int minimumCraftingTier, ItemStack output)
+	public SmithingAnvilRecipe(Identifier id, Ingredient addition, Ingredient material, int materialCount, int minimumCraftingTier, ItemStack output)
 	{
 		this.id = id;
-		this.group = group;
-		this.craftingTool = craftingTool;
+		this.addition = addition;
 		this.material = material;
 		this.materialCount = materialCount;
 		this.minimumCraftingTier = minimumCraftingTier;
@@ -40,7 +37,7 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 	@Override
 	public boolean matches(Inventory inventory, World world)
 	{
-		return this.craftingTool.test(inventory.getStack(0)) && this.material.test(inventory.getStack(1));
+		return !inventory.getStack(0).isEmpty() && this.addition.test(inventory.getStack(0)) && !inventory.getStack(1).isEmpty() && this.material.test(inventory.getStack(1));
 	}
 
 	public boolean canAfford(Inventory inventory, World world)
@@ -71,10 +68,22 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 		return output.copy();
 	}
 
+	public void onCraft(Inventory inventory)
+	{
+		ItemStack additionStack = inventory.getStack(0);
+		if(additionStack != null && !additionStack.isEmpty() && additionStack.isDamageable())
+		{
+			additionStack.setDamage(additionStack.getDamage() + 1);
+			if(additionStack.getDamage() > additionStack.getMaxDamage())
+				inventory.setStack(0, ItemStack.EMPTY);
+		}
+		inventory.getStack(1).decrement(this.materialCount);
+	}
+
 	@Override
 	public DefaultedList<Ingredient> getIngredients()
 	{
-		return DefaultedList.copyOf(Ingredient.EMPTY, craftingTool, material);
+		return DefaultedList.copyOf(Ingredient.EMPTY, addition, material);
 	}
 
 	@Override
@@ -95,10 +104,19 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 		return this.id;
 	}
 
-	@Override
-	public String getGroup()
+	public Ingredient getAddition()
 	{
-		return this.group;
+		return addition;
+	}
+
+	public Ingredient getMaterial()
+	{
+		return material;
+	}
+
+	public int getMinimumCraftingTier()
+	{
+		return minimumCraftingTier;
 	}
 
 	public int getMaterialCost()
@@ -140,39 +158,43 @@ public class SmithingAnvilRecipe implements Recipe<Inventory>
 
 	public static class Serializer implements RecipeSerializer<SmithingAnvilRecipe>
 	{
-		private Serializer(){}
+		protected Serializer(){}
 
 		public static Serializer INSTANCE = new Serializer();
 
 		@Override
 		public SmithingAnvilRecipe read(Identifier id, JsonObject json)
 		{
-			final String group = JsonHelper.getString(json, "group", "");
 			Ingredient hammer = Ingredient.fromJson(json.get("crafting_tool"));
 			Ingredient material = Ingredient.fromJson(json.get("material"));
+
+			if(hammer.isEmpty()) throw new JsonSyntaxException("Addition ingredient is empty");
+			if(material.isEmpty()) throw new JsonSyntaxException("Material ingredient is empty");
+
 			final int count = JsonHelper.getInt(json,"material_cost", 1);
 			final int tier = JsonHelper.getInt(json, "minimum_crafting_tier", -1);
 			ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
-			return new SmithingAnvilRecipe(id, group, hammer, material, count, tier, output);
+
+			if(output.isEmpty()) throw new JsonSyntaxException("Result stack is empty");
+
+			return new SmithingAnvilRecipe(id, hammer, material, count, tier, output);
 		}
 
 		@Override
 		public SmithingAnvilRecipe read(Identifier id, PacketByteBuf buf)
 		{
-			final String group = buf.readString();
 			Ingredient craftingTool = Ingredient.fromPacket(buf);
 			Ingredient material = Ingredient.fromPacket(buf);
 			final int count = buf.readInt();
 			final int tier = buf.readInt();
 			ItemStack output = buf.readItemStack();
-			return new SmithingAnvilRecipe(id, group, craftingTool, material, count, tier, output);
+			return new SmithingAnvilRecipe(id, craftingTool, material, count, tier, output);
 		}
 
 		@Override
 		public void write(PacketByteBuf buf, SmithingAnvilRecipe recipe)
 		{
-			buf.writeString(recipe.group);
-			recipe.craftingTool.write(buf);
+			recipe.addition.write(buf);
 			recipe.material.write(buf);
 			buf.writeInt(recipe.materialCount);
 			buf.writeInt(recipe.minimumCraftingTier);

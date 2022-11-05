@@ -1,12 +1,12 @@
 {
   "type": "alloygery:smithing_anvil",
   "crafting_tool": {
-    "tag": "alloygery:crafting_hammers"
+    "tag": "alloygery:tools/crafting_hammers"
   },
   "material": {
-    "tag": "c:titanium_gold_plates"
+    "tag": "c:titanium_gold_double_ingots"
   },
-  "material_cost": 2,
+  "material_cost": 1,
   "minimum_crafting_tier": 3,
   "result": {
     "item": "alloygery:titanium_gold_heavy_plate"

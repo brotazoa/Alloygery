@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/nickel/nickel_axes"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/embossed_upgrades"
+  },
+  "result": {
+    "item": "alloygery:embossed_nickel_axe"
+  }
+}

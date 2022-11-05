@@ -1,15 +1,18 @@
 package amorphia.alloygery.content.tools.registry;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.tools.ToolNBTHelper;
 import amorphia.alloygery.content.tools.client.ToolModelBuilder;
 import amorphia.alloygery.content.tools.item.part.*;
 import amorphia.alloygery.content.tools.item.part.head.*;
 import amorphia.alloygery.content.tools.item.tool.*;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.EnumSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -23,7 +26,21 @@ public class ToolItemRegistry
 
 	public static void init()
 	{
-		makeTools();
+		makeTooSetsForMaterial(COPPER);
+		makeTooSetsForMaterial(BRONZE);
+		makeTooSetsForMaterial(IRON);
+		makeTooSetsForMaterial(GOLD);
+		makeTooSetsForMaterial(ANTANIUM);
+		makeTooSetsForMaterial(DIAMOND);
+		makeTooSetsForMaterial(STEEL);
+		makeTooSetsForMaterial(NETHERITE);
+		makeTooSetsForMaterial(NICKEL);
+		makeTooSetsForMaterial(INVAR);
+		makeTooSetsForMaterial(CONSTANTAN);
+		makeTooSetsForMaterial(CUPRONICKEL);
+		makeTooSetsForMaterial(TITANIUM);
+		makeTooSetsForMaterial(TITANIUM_GOLD);
+		makeTooSetsForMaterial(NITINOL);
 
 		makeToolPartsForMaterial(COPPER);
 		makeToolPartsForMaterial(BRONZE);
@@ -49,21 +66,170 @@ public class ToolItemRegistry
 		makeToolTipplingUpgradePartItemsForMaterials(Set.of(DIAMOND));
 	}
 
-	private static void makeTools()
+	private static void makeTooSetsForMaterial(AlloygeryMaterial material)
 	{
-		makeToolSet("", ToolUpgradeType.NONE);
-		makeToolSet("embossed_", ToolUpgradeType.EMBOSSED);
-		makeToolSet("plated_", ToolUpgradeType.PLATED);
-		makeToolSet("tipped_", ToolUpgradeType.TIPPED);
+		makeToolSetForMaterial(material, ToolUpgradeType.NONE);
+		makeToolSetForMaterial(material, ToolUpgradeType.EMBOSSED);
+		makeToolSetForMaterial(material, ToolUpgradeType.PLATED);
+		makeToolSetForMaterial(material, ToolUpgradeType.TIPPED);
 	}
 
-	private static void makeToolSet(String setPrefix, ToolUpgradeType upgradeType)
+	private static void makeToolSetForMaterial(AlloygeryMaterial material, ToolUpgradeType upgradeType)
 	{
-		register(setPrefix + "dynamic_axe", new DynamicAxeItem(upgradeType));
-		register(setPrefix + "dynamic_hoe", new DynamicHoeItem(upgradeType));
-		register(setPrefix + "dynamic_pickaxe", new DynamicPickaxeItem(upgradeType));
-		register(setPrefix + "dynamic_shovel", new DynamicShovelItem(upgradeType));
-		register(setPrefix + "dynamic_sword", new DynamicSwordItem(upgradeType));
+		makeToolSetForMaterial(material, upgradeType, EnumSet.of(ToolType.AXE, ToolType.HOE, ToolType.PICKAXE, ToolType.SHOVEL, ToolType.SWORD));
+	}
+
+	private static void makeToolSetForMaterial(AlloygeryMaterial material, ToolUpgradeType upgradeType, EnumSet<ToolType> toolTypes)
+	{
+		if (toolTypes.contains(ToolType.AXE))
+		{
+			final String path = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + material.getMaterialName() + "_axe";
+			final String modelParent = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + "dynamic_axe";
+			final ToolType type = ToolType.AXE;
+
+			registerGeneratedItem(
+					path,
+					new DynamicAxeItem(upgradeType){
+						@Override
+						public ItemStack getDefaultStack()
+						{
+							ItemStack stack = super.getDefaultStack();
+							ToolNBTHelper.addAlloygeryNBTToToolStack(stack, upgradeType == ToolUpgradeType.NONE ?
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, type) :
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, getDefaultMaterialForUpgrade(upgradeType), type)
+							);
+							return stack;
+						}
+
+						@Override
+						public AlloygeryMaterial getDefaultHeadMaterial()
+						{
+							return material;
+						}
+					},
+					() -> ToolModelBuilder.createToolItemModelJson(modelParent)
+			);
+		}
+
+		if (toolTypes.contains(ToolType.HOE))
+		{
+			final String path = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + material.getMaterialName() + "_hoe";
+			final String modelParent = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + "dynamic_hoe";
+			final ToolType type = ToolType.HOE;
+
+			registerGeneratedItem(
+					path,
+					new DynamicHoeItem(upgradeType){
+						@Override
+						public ItemStack getDefaultStack()
+						{
+							ItemStack stack = super.getDefaultStack();
+							ToolNBTHelper.addAlloygeryNBTToToolStack(stack, upgradeType == ToolUpgradeType.NONE ?
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, type) :
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, getDefaultMaterialForUpgrade(upgradeType), type)
+							);
+							return stack;
+						}
+
+						@Override
+						public AlloygeryMaterial getDefaultHeadMaterial()
+						{
+							return material;
+						}
+					},
+					() -> ToolModelBuilder.createToolItemModelJson(modelParent)
+			);
+		}
+
+		if (toolTypes.contains(ToolType.PICKAXE))
+		{
+			final String path = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + material.getMaterialName() + "_pickaxe";
+			final String modelParent = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + "dynamic_pickaxe";
+			final ToolType type = ToolType.PICKAXE;
+
+			registerGeneratedItem(
+					path,
+					new DynamicPickaxeItem(upgradeType){
+						@Override
+						public ItemStack getDefaultStack()
+						{
+							ItemStack stack = super.getDefaultStack();
+							ToolNBTHelper.addAlloygeryNBTToToolStack(stack, upgradeType == ToolUpgradeType.NONE ?
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, type) :
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, getDefaultMaterialForUpgrade(upgradeType), type)
+							);
+							return stack;
+						}
+
+						@Override
+						public AlloygeryMaterial getDefaultHeadMaterial()
+						{
+							return material;
+						}
+					},
+					() -> ToolModelBuilder.createToolItemModelJson(modelParent)
+			);
+		}
+
+		if (toolTypes.contains(ToolType.SHOVEL))
+		{
+			final String path = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + material.getMaterialName() + "_shovel";
+			final String modelParent = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + "dynamic_shovel";
+			final ToolType type = ToolType.SHOVEL;
+
+			registerGeneratedItem(
+					path,
+					new DynamicShovelItem(upgradeType){
+						@Override
+						public ItemStack getDefaultStack()
+						{
+							ItemStack stack = super.getDefaultStack();
+							ToolNBTHelper.addAlloygeryNBTToToolStack(stack, upgradeType == ToolUpgradeType.NONE ?
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, type) :
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, getDefaultMaterialForUpgrade(upgradeType), type)
+							);
+							return stack;
+						}
+
+						@Override
+						public AlloygeryMaterial getDefaultHeadMaterial()
+						{
+							return material;
+						}
+					},
+					() -> ToolModelBuilder.createToolItemModelJson(modelParent)
+			);
+		}
+
+		if (toolTypes.contains(ToolType.SWORD))
+		{
+			final String path = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + material.getMaterialName() + "_sword";
+			final String modelParent = (upgradeType == ToolUpgradeType.NONE ? "" : upgradeType.getName() + "_") + "dynamic_sword";
+			final ToolType type = ToolType.SWORD;
+
+			registerGeneratedItem(
+					path,
+					new DynamicSwordItem(upgradeType){
+						@Override
+						public ItemStack getDefaultStack()
+						{
+							ItemStack stack = super.getDefaultStack();
+							ToolNBTHelper.addAlloygeryNBTToToolStack(stack, upgradeType == ToolUpgradeType.NONE ?
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, type) :
+									ToolNBTHelper.createToolNBTFromMaterials(material, VANILLA_STICK, getDefaultMaterialForUpgrade(upgradeType), type)
+							);
+							return stack;
+						}
+
+						@Override
+						public AlloygeryMaterial getDefaultHeadMaterial()
+						{
+							return material;
+						}
+					},
+					() -> ToolModelBuilder.createToolItemModelJson(modelParent)
+			);
+		}
 	}
 
 	private static void makeToolPartsForMaterial(AlloygeryMaterial material)
@@ -144,5 +310,17 @@ public class ToolItemRegistry
 	{
 		ITEMS.put(path, item);
 		return Registry.register(Registry.ITEM, Alloygery.identifier(path), item);
+	}
+
+	//FIXME: move this out of here
+	public static AlloygeryMaterial getDefaultMaterialForUpgrade(ToolUpgradeType upgradeType)
+	{
+		return switch (upgradeType)
+		{
+			case EMBOSSED -> EMERALD;
+			case PLATED -> NETHERITE;
+			case TIPPED -> DIAMOND;
+			default -> UNKNOWN;
+		};
 	}
 }

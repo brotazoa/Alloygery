@@ -13,12 +13,10 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.Property;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
@@ -35,7 +33,6 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 	private List<SmithingAnvilRecipe> availableRecipes;
 	private ItemStack hammerStack;
 	private ItemStack materialStack;
-	private int materialCost;
 
 	Runnable contentsChangedListener;
 	long lastTakeTime;
@@ -51,39 +48,40 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 		this(syncId, playerInventory, new SimpleInventory(2), ScreenHandlerContext.EMPTY);
 	}
 
-	public SmithingAnvilScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, ScreenHandlerContext context)
+	public SmithingAnvilScreenHandler(int syncId, PlayerInventory playerInventory, Inventory blockInventory, ScreenHandlerContext context)
 	{
 		super(MachineScreenRegistry.SMITHING_ANVIL_SCREEN_HANDLER_TYPE, syncId);
+
+		checkSize(blockInventory, 2);
+
 		this.context = context;
 		this.world = playerInventory.player.world;
 		this.selectedRecipe = Property.create();
 		this.selectedRecipe.set(-1);
 
 		this.availableRecipes = Lists.newArrayList();
-		this.hammerStack = inventory.getStack(0).copy();
-		this.materialStack = inventory.getStack(1).copy();
-		this.materialCost = 1;
+		this.hammerStack = blockInventory.getStack(0).copy();
+		this.materialStack = blockInventory.getStack(1).copy();
 		this.contentsChangedListener = () -> {};
-		this.input = inventory;
+		this.input = blockInventory;
 		this.output = new CraftingResultInventory();
 
-		checkSize(inventory, 2);
 		input.onOpen(playerInventory.player);
 
-		this.hammerSlot = this.addSlot(new SmithingAnvilHammerSlot(inventory, 0, 20, 15){
+		this.hammerSlot = this.addSlot(new Slot(SmithingAnvilScreenHandler.this.input, 0, 20, 15){
 			@Override
 			public void markDirty()
 			{
-				super.markDirty();
 				SmithingAnvilScreenHandler.this.onHammerSlotChanged(SmithingAnvilScreenHandler.this.input);
+				super.markDirty();
 			}
 		});
-		this.materialSlot = this.addSlot(new Slot(inventory, 1, 20, 53){
+		this.materialSlot = this.addSlot(new Slot(SmithingAnvilScreenHandler.this.input, 1, 20, 53){
 			@Override
 			public void markDirty()
 			{
-				super.markDirty();
 				SmithingAnvilScreenHandler.this.onMaterialSlotChanged(SmithingAnvilScreenHandler.this.input);
+				super.markDirty();
 			}
 		});
 		this.outputSlot = this.addSlot(new Slot(this.output, 2, 143, 33) {
@@ -99,12 +97,13 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 				stack.onCraft(player.world, player, stack.getCount());
 				SmithingAnvilScreenHandler.this.output.unlockLastRecipe(player);
 
-				//TODO move to recipe
-				SmithingAnvilScreenHandler.this.hammerSlot.getStack().damage(1, player.getRandom(), player instanceof ServerPlayerEntity  serverPlayer ? serverPlayer : null);
+				if(isInBounds(getSelectedRecipe()) && getAvailableRecipes().get(getSelectedRecipe()) != null)
+					getAvailableRecipes().get(getSelectedRecipe()).onCraft(SmithingAnvilScreenHandler.this.input);
 
-				ItemStack itemStack = SmithingAnvilScreenHandler.this.materialSlot.takeStack(SmithingAnvilScreenHandler.this.materialCost);
-				if(!itemStack.isEmpty())
-					SmithingAnvilScreenHandler.this.updateResult();
+				SmithingAnvilScreenHandler.this.onHammerSlotChanged(SmithingAnvilScreenHandler.this.input);
+				SmithingAnvilScreenHandler.this.onMaterialSlotChanged(SmithingAnvilScreenHandler.this.input);
+
+				SmithingAnvilScreenHandler.this.updateResult();
 
 				SmithingAnvilScreenHandler.this.context.run((world1, pos) -> {
 					long l = world1.getTime();
@@ -253,11 +252,11 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 			SmithingAnvilRecipe recipe = this.availableRecipes.get(getSelectedRecipe());
 			this.output.setLastRecipe(recipe);
 			this.outputSlot.setStack(recipe.craft(this.input));
-			this.materialCost = recipe.getMaterialCost();
 		}
 		else
 		{
 			this.outputSlot.setStack(ItemStack.EMPTY);
+
 		}
 
 		this.sendContentUpdates();
@@ -342,5 +341,6 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 		super.close(player);
 		this.input.onClose(player);
 		this.output.removeStack(2);
+		this.updateInput(this.input);
 	}
 }

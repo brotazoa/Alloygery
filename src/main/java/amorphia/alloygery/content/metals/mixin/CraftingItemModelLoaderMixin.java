@@ -1,6 +1,5 @@
 package amorphia.alloygery.content.metals.mixin;
 
-import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.metals.client.CraftingItemModelBuilder;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

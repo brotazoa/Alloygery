@@ -9,6 +9,7 @@ import amorphia.alloygery.content.materials.AlloygeryMaterials;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
+import amorphia.alloygery.content.tools.registry.ToolItemRegistry;
 import com.google.common.collect.Maps;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
@@ -34,18 +35,31 @@ public class ToolDescriptionHelper
 
 	public static Text getToolStackName(ItemStack tool)
 	{
-		if(!(tool.getItem() instanceof IDynamicTool) || !ToolNBTHelper.isAlloygeryDataNBT(tool.getNbt()))
+		if(tool.getItem() instanceof IDynamicTool dynamicTool)
+		{
+			AlloygeryMaterial headMaterial;
+			AlloygeryMaterial upgradeMaterial;
+
+			if(ToolNBTHelper.isAlloygeryDataNBT(tool.getNbt()))
+			{
+				headMaterial = ToolMaterialHelper.getHeadMaterial(tool);
+				upgradeMaterial = ToolMaterialHelper.getUpgradeMaterial(tool);
+			}
+			else
+			{
+				headMaterial = dynamicTool.getDefaultHeadMaterial();
+				upgradeMaterial = ToolItemRegistry.getDefaultMaterialForUpgrade(dynamicTool.getToolUpgradeType());
+			}
+
+			MutableText toolBaseName = translatable("item.alloygery." + headMaterial.getMaterialName() + "_" + dynamicTool.getToolType().getName());
+			MutableText toolUpgradeName = translatable("tooltip.alloygery.upgrade." + upgradeMaterial.getMaterialName());
+
+			return upgradeMaterial == AlloygeryMaterials.UNKNOWN || upgradeMaterial == AlloygeryMaterials.HIDDEN ? toolBaseName : toolUpgradeName.append(literal(" - ")).append(toolBaseName);
+		}
+		else
+		{
 			return tool.getItem().getName();
-
-		AlloygeryMaterial headMaterial = ToolMaterialHelper.getHeadMaterial(tool);
-		AlloygeryMaterial upgradeMaterial = ToolMaterialHelper.getUpgradeMaterial(tool);
-
-		ToolType toolType = ToolNBTHelper.getToolTypeFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(tool));
-
-		MutableText toolName = translatable("item.alloygery." + headMaterial.getMaterialName() + "_" + toolType.getName());
-		MutableText upgradeName = translatable("tooltip.alloygery.upgrade." + upgradeMaterial.getMaterialName());
-
-		return upgradeMaterial == AlloygeryMaterials.UNKNOWN ? toolName : upgradeName.append(literal(" - ")).append(toolName);
+		}
 	}
 
 	public static void writeToolDescription(List<Text> tooltip, ItemStack tool, TooltipContext context)

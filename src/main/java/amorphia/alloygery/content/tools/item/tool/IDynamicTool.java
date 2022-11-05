@@ -1,5 +1,7 @@
 package amorphia.alloygery.content.tools.item.tool;
 
+import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.materials.AlloygeryMaterials;
 import amorphia.alloygery.content.tools.ToolPropertyHelper;
 import amorphia.alloygery.content.tools.attribute.ToolAttributes;
 import amorphia.alloygery.content.tools.item.part.ToolType;
@@ -93,6 +95,11 @@ public interface IDynamicTool
 	default boolean isFireproof(ItemStack tool)
 	{
 		return ToolPropertyHelper.isFireproof(tool);
+	}
+
+	default AlloygeryMaterial getDefaultHeadMaterial()
+	{
+		return AlloygeryMaterials.HIDDEN;
 	}
 
 	ToolUpgradeType getToolUpgradeType();

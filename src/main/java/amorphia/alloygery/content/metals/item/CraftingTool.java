@@ -22,7 +22,6 @@ public interface CraftingTool
 		{
 			return (int) ToolPropertyHelper.computePropertyValue(craftingItem.getAlloygeryMaterial().getToolPropertiesByPart(ToolPartType.HEAD), ToolPropertyType.DURABILITY);
 		}
-
 		else return toolStack == null ? 0 : toolStack.getMaxDamage();
 	}
 

@@ -8,9 +8,11 @@ public enum ArmorPropertyType
 	ARMOR,
 	DURABILITY,
 	ENCHANTABILITY,
+	ENCUMBRANCE, // 1 / encumbrance = movement_speed_multiplier
+	KNOCKBACK_MULTIPLIER, //weight value * knockback_multiplier = +knockback_resistance
 	KNOCKBACK_RESISTANCE,
-	MOBILITY,
-	TOUGHNESS,
+	MOBILITY_MULTIPLIER, //weight value * mobility_multiplier = +encumbrance
+	TOUGHNESS_MULTIPLIER, //armor value * toughness_multiplier = toughness
 	WEIGHT,
 	;
 

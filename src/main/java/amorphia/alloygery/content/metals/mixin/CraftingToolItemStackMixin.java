@@ -1,6 +1,5 @@
 package amorphia.alloygery.content.metals.mixin;
 
-import amorphia.alloygery.content.metals.item.CraftingHammer;
 import amorphia.alloygery.content.metals.item.CraftingTool;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

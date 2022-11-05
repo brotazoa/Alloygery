@@ -103,11 +103,13 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 				if (x >= n && x < n + RECIPE_ENTRY_WIDTH && y >= o && y < o + RECIPE_ENTRY_HEIGHT)
 				{
 					boolean overOutput = x >= n + (RECIPE_ENTRY_WIDTH - (RECIPE_ENTRY_WIDTH / 3)) && x < n + RECIPE_ENTRY_WIDTH;
+					final ItemStack outputStack = list.get(l).craft(this.handler.input);
+
 					if (!this.handler.canAffordRecipe(l))
 					{
 						if(overOutput)
 						{
-							this.renderTooltip(matrices, list.get(l).getOutput(), x, y);
+							this.renderTooltip(matrices, outputStack, x, y);
 						}
 						else
 						{
@@ -118,7 +120,7 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 					{
 						if(overOutput)
 						{
-							this.renderTooltip(matrices, list.get(l).getOutput(), x, y);
+							this.renderTooltip(matrices, outputStack, x, y);
 						}
 						else
 						{
@@ -127,7 +129,7 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 					}
 					else
 					{
-						this.renderTooltip(matrices, list.get(l).getOutput(), x, y);
+						this.renderTooltip(matrices, outputStack, x, y);
 					}
 				}
 			}
@@ -177,8 +179,9 @@ public class SmithingAnvilScreen extends HandledScreen<SmithingAnvilScreenHandle
 			int recipeButtonY = y + (recipeButtonIndex * RECIPE_ENTRY_HEIGHT) + 2;
 
 			//render output item
-			this.client.getItemRenderer().renderInGuiWithOverrides(list.get(i).getOutput(), recipeButtonX + 46, recipeButtonY);
-			this.client.getItemRenderer().renderGuiItemOverlay(this.textRenderer, list.get(i).getOutput(), recipeButtonX + 46, recipeButtonY);
+			final ItemStack outputStack = list.get(i).craft(this.handler.input);
+			this.client.getItemRenderer().renderInGuiWithOverrides(outputStack, recipeButtonX + 46, recipeButtonY);
+			this.client.getItemRenderer().renderGuiItemOverlay(this.textRenderer, outputStack, recipeButtonX + 46, recipeButtonY);
 
 			//render material item
 			final ItemStack materialStack = this.handler.materialSlot.getStack().copy();

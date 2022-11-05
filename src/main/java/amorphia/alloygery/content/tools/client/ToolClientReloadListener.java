@@ -53,8 +53,8 @@ public class ToolClientReloadListener implements SimpleSynchronousResourceReload
 		{
 			return switch (tintIndex)
 			{
-				//case 0 -> getMaterialColor(ToolMaterials.VANILLA_STICK);
-				case 0, 1, 2 -> getMaterialColor(AlloygeryMaterials.HIDDEN);
+				case 0 -> getMaterialColor(AlloygeryMaterials.VANILLA_STICK);
+				case 1, 2 -> tool.getItem() instanceof IDynamicTool dynamicTool ? getMaterialColor(dynamicTool.getDefaultHeadMaterial()) : getMaterialColor(AlloygeryMaterials.HIDDEN);
 				case 3 -> tool.getItem() instanceof IDynamicTool dynamicTool ? getMaterialColorFromUpgradeType(dynamicTool.getToolUpgradeType()) : getMaterialColor(
 						AlloygeryMaterials.HIDDEN);
 				default -> -1;

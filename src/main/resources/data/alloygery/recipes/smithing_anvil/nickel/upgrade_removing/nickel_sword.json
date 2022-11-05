@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_removing_smithing_anvil",
+  "crafting_tool": {
+    "tag": "alloygery:tools/crafting_hammers"
+  },
+  "material": {
+    "tag": "alloygery:tools/nickel/nickel_upgraded_swords"
+  },
+  "result": {
+    "item": "alloygery:nickel_sword"
+  }
+}

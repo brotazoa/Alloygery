@@ -97,19 +97,19 @@ public class MetalItemRegistry
 		makeCraftingMaterials(NITINOL, EnumSet.of(NUGGET, INGOT, DOUBLE_INGOT, PLATE, HEAVY_PLATE), SHINY);
 
 		//crafting tools
-		makeCraftingTools(COPPER, EnumSet.of(HAMMER), 0);
-		makeCraftingTools(BRONZE, EnumSet.of(HAMMER), 1);
+//		makeCraftingTools(COPPER, EnumSet.of(HAMMER), 0);
+//		makeCraftingTools(BRONZE, EnumSet.of(HAMMER), 1);
 		makeCraftingTools(IRON, EnumSet.of(HAMMER), 1);
-		makeCraftingTools(GOLD, EnumSet.of(HAMMER), 0);
-		makeCraftingTools(ANTANIUM, EnumSet.of(HAMMER), 1);
+//		makeCraftingTools(GOLD, EnumSet.of(HAMMER), 0);
+//		makeCraftingTools(ANTANIUM, EnumSet.of(HAMMER), 1);
 		makeCraftingTools(STEEL, EnumSet.of(HAMMER), 2);
-		makeCraftingTools(NICKEL, EnumSet.of(HAMMER), 2);
+//		makeCraftingTools(NICKEL, EnumSet.of(HAMMER), 2);
 		makeCraftingTools(INVAR, EnumSet.of(HAMMER), 3);
-		makeCraftingTools(CONSTANTAN, EnumSet.of(HAMMER), 2);
-		makeCraftingTools(CUPRONICKEL, EnumSet.of(HAMMER), 2);
+//		makeCraftingTools(CONSTANTAN, EnumSet.of(HAMMER), 2);
+//		makeCraftingTools(CUPRONICKEL, EnumSet.of(HAMMER), 2);
 		makeCraftingTools(TITANIUM, EnumSet.of(HAMMER), 3);
-		makeCraftingTools(TITANIUM_GOLD, EnumSet.of(HAMMER), 3);
-		makeCraftingTools(NITINOL, EnumSet.of(HAMMER), 4);
+//		makeCraftingTools(TITANIUM_GOLD, EnumSet.of(HAMMER), 3);
+//		makeCraftingTools(NITINOL, EnumSet.of(HAMMER), 4);
 	}
 
 	private static void makeCraftingMaterials(AlloygeryMaterial material, EnumSet<CraftingMaterialTypes> materialTypes, CraftingMaterialVariantTypes variant)

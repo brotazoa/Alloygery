@@ -26,6 +26,7 @@ public class ToolItemRegistry
 
 	public static void init()
 	{
+		makeTooSetsForMaterial(FLINT);
 		makeTooSetsForMaterial(COPPER);
 		makeTooSetsForMaterial(BRONZE);
 		makeTooSetsForMaterial(IRON);
@@ -42,6 +43,7 @@ public class ToolItemRegistry
 		makeTooSetsForMaterial(TITANIUM_GOLD);
 		makeTooSetsForMaterial(NITINOL);
 
+		makeToolPartsForMaterial(FLINT, true, false, false, false);
 		makeToolPartsForMaterial(COPPER);
 		makeToolPartsForMaterial(BRONZE);
 		makeToolPartsForMaterial(IRON);

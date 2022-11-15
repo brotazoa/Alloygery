@@ -1,19 +1,19 @@
 package amorphia.alloygery.compat.rei;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.content.machines.recipe.AlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.BlastAlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
-import amorphia.alloygery.content.tools.recipe.ToolRecipeShaped;
-import amorphia.alloygery.content.tools.registry.ToolItemRegistry;
+import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
+import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.entry.EntryRegistry;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.util.EntryStacks;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 
 public class AlloygeryPlugin implements REIClientPlugin
@@ -47,5 +47,9 @@ public class AlloygeryPlugin implements REIClientPlugin
 	public void registerEntries(EntryRegistry registry)
 	{
 		registry.removeEntry(EntryStacks.of(new ItemStack(Alloygery.ALLOYGERY_TAB_ITEM)));
+
+		final boolean showTools = AlloygeryConfig.showDynamicToolsInRecipeViewer.getValue();
+		if(!showTools)
+			registry.removeEntryIf(entryStack -> entryStack.getValue() instanceof ItemStack itemStack && itemStack.getItem() instanceof IDynamicTool);
 	}
 }

@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/diamond/diamond_upgraded_axes"
+    }
+  ],
+  "result": {
+    "item": "alloygery:diamond_axe"
+  }
+}

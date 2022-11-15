@@ -1,5 +1,8 @@
 package amorphia.alloygery.content.materials.data.packet;
 
+import amorphia.alloygery.content.armor.item.ArmorPartType;
+import amorphia.alloygery.content.armor.property.ArmorPropertyOperation;
+import amorphia.alloygery.content.armor.property.ArmorPropertyType;
 import amorphia.alloygery.content.materials.data.IAlloygeryMaterialData;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.materials.AlloygeryMaterial;
@@ -35,17 +38,27 @@ public class AlloygeryMaterialDataPacket implements IAlloygeryMaterialData
 			json.addProperty("color", material.getMaterialColor());
 			json.add("repair_ingredient", material.getRepairIngredient().toJson());
 
-			JsonArray properties = new JsonArray();
+			JsonArray toolProperties = new JsonArray();
 			material.getToolProperties().forEach(property -> {
 				JsonObject propertyObject = new JsonObject();
 				propertyObject.addProperty("part_type", property.partType().getName());
 				propertyObject.addProperty("property_type", property.type().getName());
 				propertyObject.addProperty("operation", property.operation().getName());
 				propertyObject.addProperty("value", property.value());
-				properties.add(propertyObject);
+				toolProperties.add(propertyObject);
 			});
+			json.add("tool_properties", toolProperties);
 
-			json.add("tool_properties", properties);
+			JsonArray armorProperties = new JsonArray();
+			material.getArmorProperties().forEach(property -> {
+				JsonObject propertyObject = new JsonObject();
+				propertyObject.addProperty("part_type", property.partType().getName());
+				propertyObject.addProperty("property_type", property.type().getName());
+				propertyObject.addProperty("operation", property.operation().getName());
+				propertyObject.addProperty("value", property.value());
+				armorProperties.add(propertyObject);
+			});
+			json.add("armor_properties", armorProperties);
 
 			return json;
 		}
@@ -79,6 +92,20 @@ public class AlloygeryMaterialDataPacket implements IAlloygeryMaterialData
 							.forPart(ToolPartType.getByName(propertyObject.get("part_type").getAsString()))
 							.property(ToolPropertyType.getByName(propertyObject.get("property_type").getAsString()))
 							.operation(ToolPropertyOperation.getByName(propertyObject.get("operation").getAsString()))
+							.value(propertyObject.get("value").getAsFloat())
+							.build();
+				});
+			}
+
+			if (json.has("armor_properties") && json.get("armor_properties").isJsonArray())
+			{
+				JsonArray armorProperties = json.getAsJsonArray("armor_properties");
+				armorProperties.forEach(propertyJson -> {
+					JsonObject propertyObject = propertyJson.getAsJsonObject();
+					builder.armorProperty()
+							.forPart(ArmorPartType.getByName(propertyObject.get("part_type").getAsString()))
+							.property(ArmorPropertyType.getByName(propertyObject.get("property_type").getAsString()))
+							.operation(ArmorPropertyOperation.getByName(propertyObject.get("operation").getAsString()))
 							.value(propertyObject.get("value").getAsFloat())
 							.build();
 				});

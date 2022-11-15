@@ -13,12 +13,13 @@ import java.lang.reflect.Type;
 
 public class AlloygeryMaterialDataV1 implements IAlloygeryMaterialData
 {
+	private boolean replace = false;
 	private AlloygeryMaterial dataHolder = null;
 
 	@Override
 	public AlloygeryMaterial apply(AlloygeryMaterial material)
 	{
-		return AlloygeryMaterial.AlloygeryMaterialMerger.override(material, dataHolder);
+		return this.replace ? AlloygeryMaterial.AlloygeryMaterialMerger.override(material, dataHolder) : AlloygeryMaterial.AlloygeryMaterialMerger.merge(material, dataHolder);
 	}
 
 	public static class Serializer implements JsonDeserializer<AlloygeryMaterialDataV1>
@@ -53,6 +54,10 @@ public class AlloygeryMaterialDataV1 implements IAlloygeryMaterialData
 				deserializeToolPartSetting(json.get("tool_upgrade"), builder, ToolPartType.UPGRADE, jsonDeserializationContext);
 
 			AlloygeryMaterialDataV1 dataV1 = new AlloygeryMaterialDataV1();
+
+			if(json.has("replace"))
+				dataV1.replace = json.get("replace").getAsBoolean();
+
 			dataV1.dataHolder = builder.build();
 
 			return dataV1;

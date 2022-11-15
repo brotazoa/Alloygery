@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/constantan/constantan_upgraded_axes"
+    }
+  ],
+  "result": {
+    "item": "alloygery:constantan_axe"
+  }
+}

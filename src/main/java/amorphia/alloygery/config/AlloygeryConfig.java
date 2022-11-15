@@ -33,12 +33,11 @@ public class AlloygeryConfig
 		AlloygeryConfigSerializer.deserializeInto(ALLOYGERY_CONFIG);
 	}
 
-	public static final ConfigValue enableDiamondUpgrade;
-	public static final ConfigValue enableEmeraldUpgrade;
-	public static final ConfigValue enableNetheriteUpgrade;
-
+	public static final ConfigValue disableVanillaWoodenToolCrafting;
 	public static final ConfigValue disableVanillaDiamondCrafting;
 	public static final ConfigValue disableVanillaIronCrafting;
+
+	public static final ConfigValue showDynamicToolsInRecipeViewer;
 
 	public static final OreGenerationConfigGroup tinOre;
 	public static final OreGenerationConfigGroup nickelOre;
@@ -47,12 +46,11 @@ public class AlloygeryConfig
 	static
 	{
 		//@formatter:off
-		enableDiamondUpgrade = ALLOYGERY_CONFIG.register("enable_tipped_upgrade", new ConfigValue(true));
-		enableEmeraldUpgrade = ALLOYGERY_CONFIG.register("enable_embossed_upgrade", new ConfigValue(true));
-		enableNetheriteUpgrade = ALLOYGERY_CONFIG.register("enable_plated_upgrade", new ConfigValue(true));
-
+		disableVanillaWoodenToolCrafting = ALLOYGERY_CONFIG.register("disable_wooden_tool_crafting", new ConfigValue(false));
 		disableVanillaDiamondCrafting = ALLOYGERY_CONFIG.register("disable_diamond_crafting", new ConfigValue(true));
 		disableVanillaIronCrafting = ALLOYGERY_CONFIG.register("disable_iron_crafting", new ConfigValue(true));
+
+		showDynamicToolsInRecipeViewer = ALLOYGERY_CONFIG.register("show_tools_in_recipe_viewers", new ConfigValue(false));
 
 		tinOre = ALLOYGERY_CONFIG.register("tin_ore", new OreGenerationConfigGroup(true, 9, 50));
 		nickelOre = ALLOYGERY_CONFIG.register("nickel_ore", new OreGenerationConfigGroup(true, 8, 10));

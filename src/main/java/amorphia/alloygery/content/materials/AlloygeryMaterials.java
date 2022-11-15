@@ -5,6 +5,7 @@ import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
 import amorphia.alloygery.content.materials.registry.AlloygeryMaterialRegistry;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
 public class AlloygeryMaterials
@@ -12,6 +13,7 @@ public class AlloygeryMaterials
 	public static final AlloygeryMaterial UNKNOWN = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("unknown").build());
 	public static final AlloygeryMaterial HIDDEN = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("hidden").color(0).build());
 
+	public static final AlloygeryMaterial FLINT;
 	public static final AlloygeryMaterial TIN;
 	public static final AlloygeryMaterial COPPER;
 	public static final AlloygeryMaterial BRONZE;
@@ -45,6 +47,18 @@ public class AlloygeryMaterials
 
 	static
 	{
+		FLINT = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("flint")
+				.color(3026221)
+				.repairIngredientFromItem(Items.FLINT)
+				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
+					.property(ToolPropertyType.MINING_LEVEL, 0).next()
+					.property(ToolPropertyType.DURABILITY, 59).next()
+					.property(ToolPropertyType.ENCHANTABILITY, 5).next()
+					.property(ToolPropertyType.MINING_SPEED, 2.0f).next()
+					.property(ToolPropertyType.ATTACK_SPEED, 0.0f).next()
+					.property(ToolPropertyType.ATTACK_DAMAGE, 0.0f).build()
+				.build());
+
 		TIN = register(new AlloygeryMaterial.AlloygeryMaterialBuilder("tin")
 				.color(14547455)
 				.repairIngredientFromTag("c:tin_ingots")

@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_head_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/titanium_gold/titanium_gold_shovels"
+    }
+  ],
+  "result": {
+    "item": "alloygery:titanium_gold_shovel_head"
+  }
+}

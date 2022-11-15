@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_head_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/bronze/bronze_swords"
+    }
+  ],
+  "result": {
+    "item": "alloygery:bronze_sword_blade"
+  }
+}

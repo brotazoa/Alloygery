@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i ",
+    "si"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:titanium_plates"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:titanium_crafting_hammer"
+  }
+}

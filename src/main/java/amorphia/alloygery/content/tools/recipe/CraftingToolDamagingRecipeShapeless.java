@@ -55,7 +55,7 @@ public class CraftingToolDamagingRecipeShapeless extends ShapelessRecipe
 	{
 		public static final Serializer INSTANCE = new Serializer();
 
-		public Serializer() {}
+		protected Serializer() {}
 
 		@Override
 		public ShapelessRecipe read(Identifier identifier, PacketByteBuf packetByteBuf)

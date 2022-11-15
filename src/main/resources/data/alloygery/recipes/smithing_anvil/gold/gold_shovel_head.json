@@ -7,7 +7,7 @@
     "tag": "c:gold_ingots"
   },
   "material_cost": 1,
-  "minimum_crafting_tier": 1,
+  "minimum_crafting_tier": -1,
   "result": {
     "item": "alloygery:gold_shovel_head"
   }

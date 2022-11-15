@@ -535,6 +535,8 @@
 
   "text.config.alloygery.option.disable_diamond_crafting": "Disable vanilla diamond tool crafting recipes",
   "text.config.alloygery.option.disable_iron_crafting": "Disable vanilla iron tool crafting recipes",
+  "text.config.alloygery.option.disable_wooden_tool_crafting": "Disable vanilla wooden tool crafting recipes",
+  "text.config.alloygery.option.show_tools_in_recipe_viewers": "Show tools made from every material in item search lists like REI",
 
   "text.config.alloygery.option.tin_ore": "Tin ore generation",
   "text.config.alloygery.option.tin_ore.should_generate": "Generate tin ore",

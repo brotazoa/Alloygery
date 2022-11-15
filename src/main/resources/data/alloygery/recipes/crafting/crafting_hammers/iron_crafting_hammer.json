@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i ",
+    "si"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:iron_plates"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:iron_crafting_hammer"
+  }
+}

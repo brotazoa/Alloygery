@@ -1,11 +1,14 @@
 package amorphia.alloygery.compat.emi;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.content.machines.recipe.AlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.BlastAlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
 import amorphia.alloygery.content.machines.registry.MachineRecipeRegistry;
+import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
+import amorphia.alloygery.content.tools.registry.ToolItemRegistry;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
@@ -47,5 +50,9 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 		{
 			registry.addRecipe(new SmithingAnvilEmiRecipe(recipe));
 		}
+
+		final boolean showTools = AlloygeryConfig.showDynamicToolsInRecipeViewer.getValue();
+		if(!showTools)
+			registry.removeEmiStacks(entryStack -> entryStack.getItemStack().getItem() instanceof IDynamicTool);
 	}
 }

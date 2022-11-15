@@ -1,0 +1,25 @@
+{
+  "type": "alloygery:alloygery_simple_tool_shaped",
+  "pattern": [
+    "i",
+    "i",
+    "s"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:flint"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:flint_sword"
+  },
+  "substitute_head_part": {
+    "item": "alloygery:flint_sword_blade"
+  },
+  "substitute_handle_part": {
+    "item": "alloygery:wooden_handle"
+  }
+}

@@ -5,10 +5,10 @@ import java.util.Locale;
 
 public enum ArmorPartType
 {
-	BASE, //chain, leather, wool, backing layer
-	LIGHT, //brigadine
-	HEAVY, //plate / scale
-	UPGRADE,
+	BASE, //chain, leather, wool
+	LIGHT, //brigandine, scale
+	HEAVY, //plate
+	UPGRADE, //no idea yet
 	;
 
 	public static final ArmorPartType[] VALUES_CACHE = ArmorPartType.values();

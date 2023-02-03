@@ -31,13 +31,13 @@ public class AlloygeryToolMaterialDataLoader implements SimpleSynchronousResourc
 	{
 		AlloygeryToolMaterialRegistry.resetToRegisteredValues();
 
-		for(Identifier id : manager.findResources("tool_materials", path -> path.endsWith(".json")))
+		manager.findResources("tool_materials", id -> id.getPath().endsWith(".json")).forEach((identifier, resource) ->
 		{
-			Alloygery.LOGGER.info("Reading material from datapack: " + id.toString());
+			Alloygery.LOGGER.info("Reading material from datapack: " + identifier.toString());
 
-			try (InputStream is = manager.getResource(id).getInputStream())
+			try (InputStream is = resource.getInputStream())
 			{
-				Identifier trimmedId = new Identifier(id.getNamespace(), id.getPath().substring(0, id.getPath().length() - ".json".length()));
+				Identifier trimmedId = new Identifier(identifier.getNamespace(), identifier.getPath().substring(0, identifier.getPath().length() - ".json".length()));
 
 				InputStreamReader reader = new InputStreamReader(is);
 				JsonObject jsonObject = JsonHelper.deserialize(reader);
@@ -45,18 +45,18 @@ public class AlloygeryToolMaterialDataLoader implements SimpleSynchronousResourc
 
 				if (!ResourceConditions.objectMatchesConditions(jsonObject))
 				{
-					Alloygery.LOGGER.info("Load conditions not met for " + id.toString());
-					continue;
+					Alloygery.LOGGER.info("Load conditions not met for " + identifier.toString());
+					return;
 				}
 
 				AlloygeryToolMaterialDataHelper.getToolMaterialDataFromJson(jsonObject).ifPresentOrElse(data -> AlloygeryToolMaterialRegistry.load(trimmedId, data),
-						() -> Alloygery.LOGGER.info("Could not validate resource " + id.toString() + ", it is either not an Alloygery Material, or is written using an unsupported data version."));
+						() -> Alloygery.LOGGER.info("Could not validate resource " + identifier.toString() + ", it is either not an Alloygery Material, or is written using an unsupported data version."));
 			}
 			catch (IOException thrown)
 			{
-				Alloygery.LOGGER.error("Error occurred while loading material resource " + id.toString(), thrown);
+				Alloygery.LOGGER.error("Error occurred while loading material resource " + identifier.toString(), thrown);
 			}
-		}
+		});
 
 		StringBuilder builder = new StringBuilder("Alloygery Tool Material Registry contains the following entries after reading datapacks: [").append('\n');
 		AlloygeryToolMaterialRegistry.forEach((identifier, material) -> builder.append('\t').append(identifier).append('\n'));

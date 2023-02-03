@@ -29,7 +29,7 @@ public class ArmorModelLoaderMixin
 
 	@Environment(EnvType.CLIENT)
 	@Inject(method = "loadModelFromJson", at = @At("HEAD"), cancellable = true)
-	private void loadModelFromSupplier(Identifier identifier, CallbackInfoReturnable<JsonUnbakedModel> cir)
+	private void armor_loadModelFromSupplier(Identifier identifier, CallbackInfoReturnable<JsonUnbakedModel> cir)
 	{
 		ArmorPartModelBuilder.getModelSupplierForIdentifier(identifier).ifPresent(supplierEntry -> {
 			Resource resource = null;
@@ -38,7 +38,7 @@ public class ArmorModelLoaderMixin
 
 			try
 			{
-				resource = resourceManager.getResource(new Identifier(identifier.getNamespace(), "models/" + identifier.getPath() + ".json"));
+				resource = resourceManager.getResource(new Identifier(identifier.getNamespace(), "models/" + identifier.getPath() + ".json")).orElse(null);
 				if (resource != null)
 				{
 					reader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
@@ -51,7 +51,7 @@ public class ArmorModelLoaderMixin
 			}
 			finally
 			{
-				IOUtils.closeQuietly(reader, resource);
+				IOUtils.closeQuietly(reader);
 			}
 
 			if (model == null)

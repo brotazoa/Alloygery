@@ -1,0 +1,16 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "l l",
+    "lll",
+    "lll"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:gold_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_gold_chain_chestplate"
+  }
+}

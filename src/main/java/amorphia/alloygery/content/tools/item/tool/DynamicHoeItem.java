@@ -77,4 +77,18 @@ public class DynamicHoeItem extends HoeItem implements IDynamicTool
 	{
 		return IDynamicTool.getItemBarStep(stack);
 	}
+
+	protected int calculatedEnchantability = 0;
+
+	@Override
+	public int getEnchantability()
+	{
+		return this.calculatedEnchantability;
+	}
+
+	@Override
+	public void calculateEnchantability(ItemStack stack)
+	{
+		this.calculatedEnchantability = getEnchantability(stack);
+	}
 }

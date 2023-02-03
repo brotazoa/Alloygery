@@ -2,6 +2,7 @@ package amorphia.alloygery.compat.rei;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.config.AlloygeryConfig;
+import amorphia.alloygery.content.armor.item.IDynamicArmor;
 import amorphia.alloygery.content.machines.recipe.AlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.BlastAlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.SmithingAnvilRecipe;
@@ -51,5 +52,9 @@ public class AlloygeryPlugin implements REIClientPlugin
 		final boolean showTools = AlloygeryConfig.showDynamicToolsInRecipeViewer.getValue();
 		if(!showTools)
 			registry.removeEntryIf(entryStack -> entryStack.getValue() instanceof ItemStack itemStack && itemStack.getItem() instanceof IDynamicTool);
+
+		final boolean showArmors = AlloygeryConfig.showDynamicArmorsInRecipeViewer.getValue();
+		if(!showArmors)
+			registry.removeEntryIf(entryStack -> entryStack.getValue() instanceof ItemStack itemStack && itemStack.getItem() instanceof IDynamicArmor);
 	}
 }

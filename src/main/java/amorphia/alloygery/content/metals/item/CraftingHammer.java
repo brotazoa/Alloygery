@@ -4,7 +4,7 @@ import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.tools.ToolMaterialHelper;
 import amorphia.alloygery.content.tools.ToolPropertyHelper;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -21,7 +21,7 @@ public class CraftingHammer extends CraftingItem implements CraftingTool
 {
 	private final int tier;
 
-	public CraftingHammer(AlloygeryMaterial material, int tier)
+	public CraftingHammer(AlloygeryToolMaterial material, int tier)
 	{
 		super(material, new Item.Settings().maxCount(1).maxDamage(1).group(Alloygery.ALLOYGERY_TAB_GROUP));
 		this.tier = tier;

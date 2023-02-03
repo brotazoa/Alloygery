@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:apply_armor_part_to_armor_shapeless",
+  "ingredients": [
+    {
+      "item": "alloygery:dynamic_leather_helmet"
+    },
+    {
+      "tag": "alloygery:armor_parts/full_plate_helmet_parts"
+    }
+  ],
+  "result": {
+    "item": "alloygery:dynamic_leather_full_plate_helmet"
+  }
+}

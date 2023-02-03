@@ -29,7 +29,7 @@ public class ToolModelLoaderMixin
 
 	@Environment(EnvType.CLIENT)
 	@Inject(method = "loadModelFromJson", at = @At("HEAD"), cancellable = true)
-	private void loadModelFromSupplier(Identifier identifier, CallbackInfoReturnable<JsonUnbakedModel> cir)
+	private void tool_loadModelFromSupplier(Identifier identifier, CallbackInfoReturnable<JsonUnbakedModel> cir)
 	{
 		ToolModelBuilder.getModelSupplierForIdentifier(identifier).ifPresent(supplierEntry -> {
 			Resource resource = null;

@@ -17,6 +17,16 @@
     "hidden": false
   },
   "criteria": {
+    "any_plated_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:armors/plated_armors"
+          }
+        ]
+      }
+    },
     "iron_helmet": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
@@ -68,6 +78,7 @@
   },
   "requirements": [
     [
+      "any_plated_armor",
       "iron_helmet",
       "iron_chestplate",
       "iron_leggings",

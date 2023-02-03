@@ -38,6 +38,7 @@ public class AlloygeryConfig
 	public static final ConfigValue disableVanillaIronCrafting;
 
 	public static final ConfigValue showDynamicToolsInRecipeViewer;
+	public static final ConfigValue showDynamicArmorsInRecipeViewer;
 
 	public static final OreGenerationConfigGroup tinOre;
 	public static final OreGenerationConfigGroup nickelOre;
@@ -51,6 +52,7 @@ public class AlloygeryConfig
 		disableVanillaIronCrafting = ALLOYGERY_CONFIG.register("disable_iron_crafting", new ConfigValue(true));
 
 		showDynamicToolsInRecipeViewer = ALLOYGERY_CONFIG.register("show_tools_in_recipe_viewers", new ConfigValue(false));
+		showDynamicArmorsInRecipeViewer = ALLOYGERY_CONFIG.register("show_armors_in_recipe_viewers", new ConfigValue(false));
 
 		tinOre = ALLOYGERY_CONFIG.register("tin_ore", new OreGenerationConfigGroup(true, 9, 50));
 		nickelOre = ALLOYGERY_CONFIG.register("nickel_ore", new OreGenerationConfigGroup(true, 8, 10));
@@ -69,43 +71,6 @@ public class AlloygeryConfig
 			this.shouldGenerate = register("should_generate", new ConfigValue(shouldGenerate));
 			this.size = register("size", new ConfigValue(size));
 			this.number = register("number", new ConfigValue(number));
-		}
-	}
-
-	public static class GearStatsConfigGroup extends ConfigGroup
-	{
-		public final ConfigValue enable;
-		public final ConfigValue enableSimpleRecipes;
-		public final ConfigValue miningLevel;
-		public final ConfigValue uses;
-		public final ConfigValue speed;
-		public final ConfigValue damage;
-		public final ConfigValue enchantability;
-		public final ConfigValue durabilityMultiplier;
-		public final ConfigValue helmetArmor;
-		public final ConfigValue chestplateArmor;
-		public final ConfigValue leggingsArmor;
-		public final ConfigValue bootsArmor;
-		public final ConfigValue toughness;
-		public final ConfigValue knockback;
-
-		public GearStatsConfigGroup(boolean enable, boolean enableSimple, int miningLevel, int uses, float speed, float damage, int enchantability,
-				int durabilityMultiplier, int helmetArmor, int chestplateArmor, int leggingsArmor, int bootsArmor, float toughness, float knockback)
-		{
-			this.enable = register("enable", new ConfigValue(enable));
-			this.enableSimpleRecipes = register("enable_simple_recipes", new ConfigValue(enableSimple));
-			this.miningLevel = register("mining_level", new ConfigValue(miningLevel));
-			this.uses = register("uses", new ConfigValue(uses));
-			this.speed = register("speed", new ConfigValue(speed));
-			this.damage = register("damage", new ConfigValue(damage));
-			this.enchantability = register("enchantability", new ConfigValue(enchantability));
-			this.durabilityMultiplier = register("durability_multiplier", new ConfigValue(durabilityMultiplier));
-			this.helmetArmor = register("helmer_armor", new ConfigValue(helmetArmor));
-			this.chestplateArmor = register("chestplate_armor", new ConfigValue(chestplateArmor));
-			this.leggingsArmor = register("leggings_armor", new ConfigValue(leggingsArmor));
-			this.bootsArmor = register("boots_armor", new ConfigValue(bootsArmor));
-			this.toughness = register("toughness", new ConfigValue(toughness));
-			this.knockback = register("knockback", new ConfigValue(knockback));
 		}
 	}
 }

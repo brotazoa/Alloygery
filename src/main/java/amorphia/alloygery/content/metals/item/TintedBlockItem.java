@@ -1,6 +1,6 @@
 package amorphia.alloygery.content.metals.item;
 
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -11,17 +11,17 @@ public class TintedBlockItem extends BlockItem
 {
 	public static final List<TintedBlockItem> TINTED_BLOCK_ITEMS = Lists.newArrayList();
 
-	private final AlloygeryMaterial alloygeryMaterial;
+	private final AlloygeryToolMaterial alloygeryToolMaterial;
 
-	public TintedBlockItem(AlloygeryMaterial material, Block block, Settings settings)
+	public TintedBlockItem(AlloygeryToolMaterial material, Block block, Settings settings)
 	{
 		super(block, settings);
-		this.alloygeryMaterial = material;
+		this.alloygeryToolMaterial = material;
 		TINTED_BLOCK_ITEMS.add(this);
 	}
 
-	public AlloygeryMaterial getAlloygeryMaterial()
+	public AlloygeryToolMaterial getAlloygeryMaterial()
 	{
-		return alloygeryMaterial;
+		return alloygeryToolMaterial;
 	}
 }

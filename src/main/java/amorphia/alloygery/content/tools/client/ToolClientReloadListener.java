@@ -5,9 +5,9 @@ import amorphia.alloygery.content.tools.ToolMaterialHelper;
 import amorphia.alloygery.content.tools.ToolNBTHelper;
 import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
 import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
-import amorphia.alloygery.content.materials.AlloygeryMaterials;
-import amorphia.alloygery.content.materials.registry.AlloygeryMaterialRegistry;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterials;
+import amorphia.alloygery.content.tools.registry.AlloygeryToolMaterialRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.item.ItemStack;
@@ -44,7 +44,7 @@ public class ToolClientReloadListener implements SimpleSynchronousResourceReload
 			{
 				case 0 -> getMaterialColor(ToolMaterialHelper.getHandleMaterial(tool));
 				case 1 -> getMaterialColor(ToolMaterialHelper.getHeadMaterial(tool));
-				case 2 -> ToolMaterialHelper.getBindingMaterial(tool) == AlloygeryMaterials.HIDDEN ? getMaterialColor(ToolMaterialHelper.getHeadMaterial(tool)) : getMaterialColor(ToolMaterialHelper.getBindingMaterial(tool));
+				case 2 -> ToolMaterialHelper.getBindingMaterial(tool) == AlloygeryToolMaterials.HIDDEN ? getMaterialColor(ToolMaterialHelper.getHeadMaterial(tool)) : getMaterialColor(ToolMaterialHelper.getBindingMaterial(tool));
 				case 3 -> getMaterialColor(ToolMaterialHelper.getUpgradeMaterial(tool));
 				default -> -1;
 			};
@@ -53,18 +53,19 @@ public class ToolClientReloadListener implements SimpleSynchronousResourceReload
 		{
 			return switch (tintIndex)
 			{
-				case 0 -> getMaterialColor(AlloygeryMaterials.VANILLA_STICK);
-				case 1, 2 -> tool.getItem() instanceof IDynamicTool dynamicTool ? getMaterialColor(dynamicTool.getDefaultHeadMaterial()) : getMaterialColor(AlloygeryMaterials.HIDDEN);
+				case 0 -> getMaterialColor(AlloygeryToolMaterials.VANILLA_STICK);
+				case 1, 2 -> tool.getItem() instanceof IDynamicTool dynamicTool ? getMaterialColor(dynamicTool.getDefaultHeadMaterial()) : getMaterialColor(
+						AlloygeryToolMaterials.HIDDEN);
 				case 3 -> tool.getItem() instanceof IDynamicTool dynamicTool ? getMaterialColorFromUpgradeType(dynamicTool.getToolUpgradeType()) : getMaterialColor(
-						AlloygeryMaterials.HIDDEN);
+						AlloygeryToolMaterials.HIDDEN);
 				default -> -1;
 			};
 		}
 	}
 
-	private static int getMaterialColor(AlloygeryMaterial material)
+	private static int getMaterialColor(AlloygeryToolMaterial material)
 	{
-		return material == null ? AlloygeryMaterialRegistry.get(AlloygeryMaterialRegistry.getDefaultIdentifier()).getMaterialColor() : material.getMaterialColor();
+		return material == null ? AlloygeryToolMaterialRegistry.get(AlloygeryToolMaterialRegistry.getDefaultIdentifier()).getMaterialColor() : material.getMaterialColor();
 	}
 
 	private static int getMaterialColorFromUpgradeType(ToolUpgradeType upgradeType)
@@ -74,9 +75,9 @@ public class ToolClientReloadListener implements SimpleSynchronousResourceReload
 
 		return switch (upgradeType)
 		{
-			case EMBOSSED -> getMaterialColor(AlloygeryMaterials.EMERALD);
-			case PLATED -> getMaterialColor(AlloygeryMaterials.NETHERITE);
-			case TIPPED -> getMaterialColor(AlloygeryMaterials.DIAMOND);
+			case EMBOSSED -> getMaterialColor(AlloygeryToolMaterials.EMERALD);
+			case PLATED -> getMaterialColor(AlloygeryToolMaterials.NETHERITE);
+			case TIPPED -> getMaterialColor(AlloygeryToolMaterials.DIAMOND);
 			case NONE -> -1;
 		};
 	}

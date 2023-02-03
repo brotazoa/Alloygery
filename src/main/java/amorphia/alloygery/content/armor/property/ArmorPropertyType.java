@@ -5,15 +5,16 @@ import java.util.Locale;
 
 public enum ArmorPropertyType
 {
-	ARMOR,
+	//order maters for tooltips
 	DURABILITY,
+	ARMOR,
+	TOUGHNESS,
+	MOBILITY,
+	ENCUMBRANCE,
 	ENCHANTABILITY,
-	ENCUMBRANCE, // 1 / encumbrance = movement_speed_multiplier
-	KNOCKBACK_MULTIPLIER, //weight value * knockback_multiplier = +knockback_resistance
 	KNOCKBACK_RESISTANCE,
-	MOBILITY_MULTIPLIER, //weight value * mobility_multiplier = +encumbrance
-	TOUGHNESS_MULTIPLIER, //armor value * toughness_multiplier = toughness
-	WEIGHT,
+	FIREPROOF,
+	PIGLIN_LOVED,
 	;
 
 	public static final ArmorPropertyType[] VALUES_CACHE = ArmorPropertyType.values();

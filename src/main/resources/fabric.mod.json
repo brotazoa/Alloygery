@@ -30,6 +30,7 @@
   },
   "mixins": [
     "alloygery.tool.mixins.json",
+    "alloygery.armor.mixins.json",
     "alloygery.metal.mixins.json",
     "alloygery.advancement.mixins.json"
   ],

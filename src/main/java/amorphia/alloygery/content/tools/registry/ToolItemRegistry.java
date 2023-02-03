@@ -1,12 +1,12 @@
 package amorphia.alloygery.content.tools.registry;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
 import amorphia.alloygery.content.tools.ToolNBTHelper;
 import amorphia.alloygery.content.tools.client.ToolModelBuilder;
 import amorphia.alloygery.content.tools.item.part.*;
 import amorphia.alloygery.content.tools.item.part.head.*;
 import amorphia.alloygery.content.tools.item.tool.*;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
 
-import static amorphia.alloygery.content.materials.AlloygeryMaterials.*;
+import static amorphia.alloygery.content.tools.material.AlloygeryToolMaterials.*;
 
 public class ToolItemRegistry
 {
@@ -26,22 +26,22 @@ public class ToolItemRegistry
 
 	public static void init()
 	{
-		makeTooSetsForMaterial(FLINT);
-		makeTooSetsForMaterial(COPPER);
-		makeTooSetsForMaterial(BRONZE);
-		makeTooSetsForMaterial(IRON);
-		makeTooSetsForMaterial(GOLD);
-		makeTooSetsForMaterial(ANTANIUM);
-		makeTooSetsForMaterial(DIAMOND);
-		makeTooSetsForMaterial(STEEL);
-		makeTooSetsForMaterial(NETHERITE);
-		makeTooSetsForMaterial(NICKEL);
-		makeTooSetsForMaterial(INVAR);
-		makeTooSetsForMaterial(CONSTANTAN);
-		makeTooSetsForMaterial(CUPRONICKEL);
-		makeTooSetsForMaterial(TITANIUM);
-		makeTooSetsForMaterial(TITANIUM_GOLD);
-		makeTooSetsForMaterial(NITINOL);
+		makeToolSetForMaterial(FLINT, ToolUpgradeType.NONE, EnumSet.of(ToolType.AXE, ToolType.PICKAXE));
+		makeToolSetsForMaterial(COPPER);
+		makeToolSetsForMaterial(BRONZE);
+		makeToolSetsForMaterial(IRON);
+		makeToolSetsForMaterial(GOLD);
+		makeToolSetsForMaterial(ANTANIUM);
+		makeToolSetsForMaterial(DIAMOND);
+		makeToolSetsForMaterial(STEEL);
+		makeToolSetsForMaterial(NETHERITE);
+		makeToolSetsForMaterial(NICKEL);
+		makeToolSetsForMaterial(INVAR);
+		makeToolSetsForMaterial(CONSTANTAN);
+		makeToolSetsForMaterial(CUPRONICKEL);
+		makeToolSetsForMaterial(TITANIUM);
+		makeToolSetsForMaterial(TITANIUM_GOLD);
+		makeToolSetsForMaterial(NITINOL);
 
 		makeToolPartsForMaterial(FLINT, true, false, false, false);
 		makeToolPartsForMaterial(COPPER);
@@ -68,7 +68,7 @@ public class ToolItemRegistry
 		makeToolTipplingUpgradePartItemsForMaterials(Set.of(DIAMOND));
 	}
 
-	private static void makeTooSetsForMaterial(AlloygeryMaterial material)
+	private static void makeToolSetsForMaterial(AlloygeryToolMaterial material)
 	{
 		makeToolSetForMaterial(material, ToolUpgradeType.NONE);
 		makeToolSetForMaterial(material, ToolUpgradeType.EMBOSSED);
@@ -76,12 +76,12 @@ public class ToolItemRegistry
 		makeToolSetForMaterial(material, ToolUpgradeType.TIPPED);
 	}
 
-	private static void makeToolSetForMaterial(AlloygeryMaterial material, ToolUpgradeType upgradeType)
+	private static void makeToolSetForMaterial(AlloygeryToolMaterial material, ToolUpgradeType upgradeType)
 	{
 		makeToolSetForMaterial(material, upgradeType, EnumSet.of(ToolType.AXE, ToolType.HOE, ToolType.PICKAXE, ToolType.SHOVEL, ToolType.SWORD));
 	}
 
-	private static void makeToolSetForMaterial(AlloygeryMaterial material, ToolUpgradeType upgradeType, EnumSet<ToolType> toolTypes)
+	private static void makeToolSetForMaterial(AlloygeryToolMaterial material, ToolUpgradeType upgradeType, EnumSet<ToolType> toolTypes)
 	{
 		if (toolTypes.contains(ToolType.AXE))
 		{
@@ -104,7 +104,7 @@ public class ToolItemRegistry
 						}
 
 						@Override
-						public AlloygeryMaterial getDefaultHeadMaterial()
+						public AlloygeryToolMaterial getDefaultHeadMaterial()
 						{
 							return material;
 						}
@@ -134,7 +134,7 @@ public class ToolItemRegistry
 						}
 
 						@Override
-						public AlloygeryMaterial getDefaultHeadMaterial()
+						public AlloygeryToolMaterial getDefaultHeadMaterial()
 						{
 							return material;
 						}
@@ -164,7 +164,7 @@ public class ToolItemRegistry
 						}
 
 						@Override
-						public AlloygeryMaterial getDefaultHeadMaterial()
+						public AlloygeryToolMaterial getDefaultHeadMaterial()
 						{
 							return material;
 						}
@@ -194,7 +194,7 @@ public class ToolItemRegistry
 						}
 
 						@Override
-						public AlloygeryMaterial getDefaultHeadMaterial()
+						public AlloygeryToolMaterial getDefaultHeadMaterial()
 						{
 							return material;
 						}
@@ -224,7 +224,7 @@ public class ToolItemRegistry
 						}
 
 						@Override
-						public AlloygeryMaterial getDefaultHeadMaterial()
+						public AlloygeryToolMaterial getDefaultHeadMaterial()
 						{
 							return material;
 						}
@@ -234,12 +234,12 @@ public class ToolItemRegistry
 		}
 	}
 
-	private static void makeToolPartsForMaterial(AlloygeryMaterial material)
+	private static void makeToolPartsForMaterial(AlloygeryToolMaterial material)
 	{
 		makeToolPartsForMaterial(material, true, true, true, true);
 	}
 
-	private static void makeToolPartsForMaterial(AlloygeryMaterial material, boolean makeHeads, boolean makeBindings, boolean makeGuards, boolean makeHandles)
+	private static void makeToolPartsForMaterial(AlloygeryToolMaterial material, boolean makeHeads, boolean makeBindings, boolean makeGuards, boolean makeHandles)
 	{
 		if (makeHeads)
 		{
@@ -286,17 +286,17 @@ public class ToolItemRegistry
 		}
 	}
 
-	private static void makeToolInlayUpgradePartItemsFromMaterials(Set<AlloygeryMaterial> materials)
+	private static void makeToolInlayUpgradePartItemsFromMaterials(Set<AlloygeryToolMaterial> materials)
 	{
 		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_inlay", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_inlay")));
 	}
 
-	private static void makeToolPlatingUpgradePartItemsForMaterials(Set<AlloygeryMaterial> materials)
+	private static void makeToolPlatingUpgradePartItemsForMaterials(Set<AlloygeryToolMaterial> materials)
 	{
 		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_plating", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_plating")));
 	}
 
-	private static void makeToolTipplingUpgradePartItemsForMaterials(Set<AlloygeryMaterial> materials)
+	private static void makeToolTipplingUpgradePartItemsForMaterials(Set<AlloygeryToolMaterial> materials)
 	{
 		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_tipping", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_tipping")));
 	}
@@ -315,7 +315,7 @@ public class ToolItemRegistry
 	}
 
 	//FIXME: move this out of here
-	public static AlloygeryMaterial getDefaultMaterialForUpgrade(ToolUpgradeType upgradeType)
+	public static AlloygeryToolMaterial getDefaultMaterialForUpgrade(ToolUpgradeType upgradeType)
 	{
 		return switch (upgradeType)
 		{

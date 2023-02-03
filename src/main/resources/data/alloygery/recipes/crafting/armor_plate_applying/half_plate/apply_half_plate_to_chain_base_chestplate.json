@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:apply_armor_part_to_armor_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:armors/chain_chestplates"
+    },
+    {
+      "tag": "alloygery:armor_parts/half_plate_chestplate_parts"
+    }
+  ],
+  "result": {
+    "item": "alloygery:dynamic_chain_half_plate_chestplate"
+  }
+}

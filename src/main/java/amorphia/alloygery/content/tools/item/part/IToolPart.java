@@ -1,7 +1,7 @@
 package amorphia.alloygery.content.tools.item.part;
 
 import amorphia.alloygery.content.tools.ToolDescriptionHelper;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import com.google.common.collect.Lists;
 import net.minecraft.text.Text;
@@ -14,7 +14,7 @@ public interface IToolPart
 
 	ToolPartType getToolPartType();
 
-	AlloygeryMaterial getMaterial();
+	AlloygeryToolMaterial getMaterial();
 
 	default List<ToolProperty> getToolPartProperties()
 	{

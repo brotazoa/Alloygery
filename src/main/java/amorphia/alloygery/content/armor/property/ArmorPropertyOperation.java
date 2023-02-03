@@ -20,6 +20,6 @@ public enum ArmorPropertyOperation
 
 	public String getName()
 	{
-		return name().toUpperCase(Locale.ROOT);
+		return name().toLowerCase(Locale.ROOT);
 	}
 }

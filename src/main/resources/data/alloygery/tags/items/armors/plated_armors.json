@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:dynamic_leather_half_plate_boots",
+    "alloygery:dynamic_leather_half_plate_chestplate",
+    "alloygery:dynamic_leather_half_plate_leggings",
+    "alloygery:dynamic_leather_half_plate_boots",
+    "alloygery:dynamic_wool_half_plate_boots",
+    "alloygery:dynamic_wool_half_plate_chestplate",
+    "alloygery:dynamic_wool_half_plate_leggings",
+    "alloygery:dynamic_wool_half_plate_boots",
+    "alloygery:dynamic_chain_half_plate_boots",
+    "alloygery:dynamic_chain_half_plate_chestplate",
+    "alloygery:dynamic_chain_half_plate_leggings",
+    "alloygery:dynamic_chain_half_plate_boots",
+    "alloygery:dynamic_leather_full_plate_boots",
+    "alloygery:dynamic_leather_full_plate_chestplate",
+    "alloygery:dynamic_leather_full_plate_leggings",
+    "alloygery:dynamic_leather_full_plate_boots",
+    "alloygery:dynamic_wool_full_plate_boots",
+    "alloygery:dynamic_wool_full_plate_chestplate",
+    "alloygery:dynamic_wool_full_plate_leggings",
+    "alloygery:dynamic_wool_full_plate_boots",
+    "alloygery:dynamic_chain_full_plate_boots",
+    "alloygery:dynamic_chain_full_plate_chestplate",
+    "alloygery:dynamic_chain_full_plate_leggings",
+    "alloygery:dynamic_chain_full_plate_boots"
+  ]
+}

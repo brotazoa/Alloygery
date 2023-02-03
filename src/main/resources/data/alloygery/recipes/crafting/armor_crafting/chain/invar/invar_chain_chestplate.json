@@ -1,0 +1,16 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "l l",
+    "lll",
+    "lll"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:invar_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_invar_chain_chestplate"
+  }
+}

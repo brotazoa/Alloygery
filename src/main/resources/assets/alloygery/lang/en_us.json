@@ -250,21 +250,11 @@
   "item.alloygery.antanium_shovel": "Antanium Shovel",
   "item.alloygery.antanium_sword": "Antanium Sword",
 
-  "item.alloygery.antanium_helmet": "Antanium Helmet",
-  "item.alloygery.antanium_chestplate": "Antanium Chestplate",
-  "item.alloygery.antanium_leggings": "Antanium Leggings",
-  "item.alloygery.antanium_boots": "Antanium Boots",
-
   "item.alloygery.bronze_axe": "Bronze Axe",
   "item.alloygery.bronze_hoe": "Bronze Hoe",
   "item.alloygery.bronze_pickaxe": "Bronze Pickaxe",
   "item.alloygery.bronze_shovel": "Bronze Shovel",
   "item.alloygery.bronze_sword": "Bronze Sword",
-
-  "item.alloygery.bronze_helmet": "Bronze Helmet",
-  "item.alloygery.bronze_chestplate": "Bronze Chestplate",
-  "item.alloygery.bronze_leggings": "Bronze Leggings",
-  "item.alloygery.bronze_boots": "Bronze Boots",
 
   "item.alloygery.constantan_axe": "Constantan Axe",
   "item.alloygery.constantan_hoe": "Constantan Hoe",
@@ -272,32 +262,17 @@
   "item.alloygery.constantan_shovel": "Constantan Shovel",
   "item.alloygery.constantan_sword": "Constantan Sword",
 
-  "item.alloygery.constantan_helmet": "Constantan Helmet",
-  "item.alloygery.constantan_chestplate": "Constantan Chestplate",
-  "item.alloygery.constantan_leggings": "Constantan Leggings",
-  "item.alloygery.constantan_boots": "Constantan Boots",
-
   "item.alloygery.copper_axe": "Copper Axe",
   "item.alloygery.copper_hoe": "Copper Hoe",
   "item.alloygery.copper_pickaxe": "Copper Pickaxe",
   "item.alloygery.copper_shovel": "Copper Shovel",
   "item.alloygery.copper_sword": "Copper Sword",
 
-  "item.alloygery.copper_helmet": "Copper Helmet",
-  "item.alloygery.copper_chestplate": "Copper Chestplate",
-  "item.alloygery.copper_leggings": "Copper Leggings",
-  "item.alloygery.copper_boots": "Copper Boots",
-
   "item.alloygery.cupronickel_axe": "Cupronickel Axe",
   "item.alloygery.cupronickel_hoe": "Cupronickel Hoe",
   "item.alloygery.cupronickel_pickaxe": "Cupronickel Pickaxe",
   "item.alloygery.cupronickel_shovel": "Cupronickel Shovel",
   "item.alloygery.cupronickel_sword": "Cupronickel Sword",
-
-  "item.alloygery.cupronickel_helmet": "Cupronickel Helmet",
-  "item.alloygery.cupronickel_chestplate": "Cupronickel Chestplate",
-  "item.alloygery.cupronickel_leggings": "Cupronickel Leggings",
-  "item.alloygery.cupronickel_boots": "Cupronickel Boots",
 
   "item.alloygery.diamond_axe": "Diamond Axe",
   "item.alloygery.diamond_hoe": "Diamond Hoe",
@@ -311,32 +286,17 @@
   "item.alloygery.gold_shovel": "Gold Shovel",
   "item.alloygery.gold_sword": "Gold Sword",
 
-  "item.alloygery.gold_helmet": "Gold Helmet",
-  "item.alloygery.gold_chestplate": "Gold Chestplate",
-  "item.alloygery.gold_leggings": "Gold Leggings",
-  "item.alloygery.gold_boots": "Gold Boots",
-
   "item.alloygery.invar_axe": "Invar Axe",
   "item.alloygery.invar_hoe": "Invar Hoe",
   "item.alloygery.invar_pickaxe": "Invar Pickaxe",
   "item.alloygery.invar_shovel": "Invar Shovel",
   "item.alloygery.invar_sword": "Invar Sword",
 
-  "item.alloygery.invar_helmet": "Invar Helmet",
-  "item.alloygery.invar_chestplate": "Invar Chestplate",
-  "item.alloygery.invar_leggings": "Invar Leggings",
-  "item.alloygery.invar_boots": "Invar Boots",
-
   "item.alloygery.iron_axe": "Iron Axe",
   "item.alloygery.iron_hoe": "Iron Hoe",
   "item.alloygery.iron_pickaxe": "Iron Pickaxe",
   "item.alloygery.iron_shovel": "Iron Shovel",
   "item.alloygery.iron_sword": "Iron Sword",
-
-  "item.alloygery.iron_helmet": "Iron Helmet",
-  "item.alloygery.iron_chestplate": "Iron Chestplate",
-  "item.alloygery.iron_leggings": "Iron Leggings",
-  "item.alloygery.iron_boots": "Iron Boots",
 
   "item.alloygery.netherite_axe": "Netherite Axe",
   "item.alloygery.netherite_hoe": "Netherite Hoe",
@@ -350,21 +310,11 @@
   "item.alloygery.nickel_shovel": "Nickel Shovel",
   "item.alloygery.nickel_sword": "Nickel Sword",
 
-  "item.alloygery.nickel_helmet": "Nickel Helmet",
-  "item.alloygery.nickel_chestplate": "Nickel Chestplate",
-  "item.alloygery.nickel_leggings": "Nickel Leggings",
-  "item.alloygery.nickel_boots": "Nickel Boots",
-
   "item.alloygery.nitinol_axe": "Nitinol Axe",
   "item.alloygery.nitinol_hoe": "Nitinol Hoe",
   "item.alloygery.nitinol_pickaxe": "Nitinol Pickaxe",
   "item.alloygery.nitinol_shovel": "Nitinol Shovel",
   "item.alloygery.nitinol_sword": "Nitinol Sword",
-
-  "item.alloygery.nitinol_helmet": "Nitinol Helmet",
-  "item.alloygery.nitinol_chestplate": "Nitinol Chestplate",
-  "item.alloygery.nitinol_leggings": "Nitinol Leggings",
-  "item.alloygery.nitinol_boots": "Nitinol Boots",
 
   "item.alloygery.steel_axe": "Steel Axe",
   "item.alloygery.steel_hoe": "Steel Hoe",
@@ -372,32 +322,17 @@
   "item.alloygery.steel_shovel": "Steel Shovel",
   "item.alloygery.steel_sword": "Steel Sword",
 
-  "item.alloygery.steel_helmet": "Steel Helmet",
-  "item.alloygery.steel_chestplate": "Steel Chestplate",
-  "item.alloygery.steel_leggings": "Steel Leggings",
-  "item.alloygery.steel_boots": "Steel Boots",
-
   "item.alloygery.titanium_axe": "Titanium Axe",
   "item.alloygery.titanium_hoe": "Titanium Hoe",
   "item.alloygery.titanium_pickaxe": "Titanium Pickaxe",
   "item.alloygery.titanium_shovel": "Titanium Shovel",
   "item.alloygery.titanium_sword": "Titanium Sword",
 
-  "item.alloygery.titanium_helmet": "Titanium Helmet",
-  "item.alloygery.titanium_chestplate": "Titanium Chestplate",
-  "item.alloygery.titanium_leggings": "Titanium Leggings",
-  "item.alloygery.titanium_boots": "Titanium Boots",
-
   "item.alloygery.titanium_gold_axe": "Titanium Gold Axe",
   "item.alloygery.titanium_gold_hoe": "Titanium Gold Hoe",
   "item.alloygery.titanium_gold_pickaxe": "Titanium Gold Pickaxe",
   "item.alloygery.titanium_gold_shovel": "Titanium Gold Shovel",
   "item.alloygery.titanium_gold_sword": "Titanium Gold Sword",
-
-  "item.alloygery.titanium_gold_helmet": "Titanium Gold Helmet",
-  "item.alloygery.titanium_gold_chestplate": "Titanium Gold Chestplate",
-  "item.alloygery.titanium_gold_leggings": "Titanium Gold Leggings",
-  "item.alloygery.titanium_gold_boots": "Titanium Gold Boots",
 
   "item.alloygery.dynamic_axe": "Dynamic Axe",
   "item.alloygery.dynamic_hoe": "Dynamic Hoe",
@@ -419,6 +354,416 @@
   "item.alloygery.tipped_dynamic_pickaxe": "Tipped Dynamic Pickaxe",
   "item.alloygery.tipped_dynamic_shovel": "Tipped Dynamic Shovel",
   "item.alloygery.tipped_dynamic_sword": "Tipped Dynamic Sword",
+
+  "item.alloygery.dynamic_boots": "Dynamic Boots",
+  "item.alloygery.dynamic_chestplate": "Dynamic Chestplate",
+  "item.alloygery.dynamic_helmet": "Dynamic Helmet",
+  "item.alloygery.dynamic_leggings": "Dynamic Leggings",
+
+  "item.alloygery.dynamic_chain_boots": "Dynamic Chain Boots",
+  "item.alloygery.dynamic_chain_chestplate": "Dynamic Chain Chestplate",
+  "item.alloygery.dynamic_chain_helmet": "Dynamic Chain Helmet",
+  "item.alloygery.dynamic_chain_leggings": "Dynamic Chain Leggings",
+
+  "item.alloygery.dynamic_chain_half_plate_boots": "Dynamic Half Plate Boots",
+  "item.alloygery.dynamic_chain_half_plate_chestplate": "Dynamic Half Plate Chestplate",
+  "item.alloygery.dynamic_chain_half_plate_helmet": "Dynamic Half Plate Helmet",
+  "item.alloygery.dynamic_chain_half_plate_leggings": "Dynamic Half Plate Leggings",
+
+  "item.alloygery.dynamic_chain_full_plate_boots": "Dynamic Full Plate Boots",
+  "item.alloygery.dynamic_chain_full_plate_chestplate": "Dynamic Full Plate Chestplate",
+  "item.alloygery.dynamic_chain_full_plate_helmet": "Dynamic Full Plate Helmet",
+  "item.alloygery.dynamic_chain_full_plate_leggings": "Dynamic Full Plate Leggings",
+
+  "item.alloygery.dynamic_leather_boots": "Dynamic Leather Boots",
+  "item.alloygery.dynamic_leather_chestplate": "Dynamic Leather Chestplate",
+  "item.alloygery.dynamic_leather_helmet": "Dynamic Leather Helmet",
+  "item.alloygery.dynamic_leather_leggings": "Dynamic Leather Leggings",
+
+  "item.alloygery.dynamic_leather_half_plate_boots": "Dynamic Half Plate Boots",
+  "item.alloygery.dynamic_leather_half_plate_chestplate": "Dynamic Half Plate Chestplate",
+  "item.alloygery.dynamic_leather_half_plate_helmet": "Dynamic Half Plate Helmet",
+  "item.alloygery.dynamic_leather_half_plate_leggings": "Dynamic Half Plate Leggings",
+
+  "item.alloygery.dynamic_leather_full_plate_boots": "Dynamic Full Plate Boots",
+  "item.alloygery.dynamic_leather_full_plate_chestplate": "Dynamic Full Plate Chestplate",
+  "item.alloygery.dynamic_leather_full_plate_helmet": "Dynamic Full Plate Helmet",
+  "item.alloygery.dynamic_leather_full_plate_leggings": "Dynamic Full Plate Leggings",
+
+  "item.alloygery.dynamic_wool_boots": "Dynamic Wool Boots",
+  "item.alloygery.dynamic_wool_chestplate": "Dynamic Wool Chestplate",
+  "item.alloygery.dynamic_wool_helmet": "Dynamic Wool Helmet",
+  "item.alloygery.dynamic_wool_leggings": "Dynamic Wool Leggings",
+
+  "item.alloygery.dynamic_wool_half_plate_boots": "Dynamic Half Plate Boots",
+  "item.alloygery.dynamic_wool_half_plate_chestplate": "Dynamic Half Plate Chestplate",
+  "item.alloygery.dynamic_wool_half_plate_helmet": "Dynamic Half Plate Helmet",
+  "item.alloygery.dynamic_wool_half_plate_leggings": "Dynamic Half Plate Leggings",
+
+  "item.alloygery.dynamic_wool_full_plate_boots": "Dynamic Full Plate Boots",
+  "item.alloygery.dynamic_wool_full_plate_chestplate": "Dynamic Full Plate Chestplate",
+  "item.alloygery.dynamic_wool_full_plate_helmet": "Dynamic Full Plate Helmet",
+  "item.alloygery.dynamic_wool_full_plate_leggings": "Dynamic Full Plate Leggings",
+
+  "item.alloygery.wool_helmet": "Wool Cap",
+  "item.alloygery.wool_chestplate": "Wool Tunic",
+  "item.alloygery.wool_leggings": "Wool Trousers",
+  "item.alloygery.wool_boots": "Wool Boots",
+
+  "item.alloygery.leather_helmet": "Leather Helmet",
+  "item.alloygery.leather_chestplate": "Leather Chestplate",
+  "item.alloygery.leather_leggings": "Leather Leggings",
+  "item.alloygery.leather_boots": "Leather Boots",
+
+  "item.alloygery.iron_chain_helmet": "Iron Chain Helmet",
+  "item.alloygery.iron_chain_chestplate": "Iron Chain Chestplate",
+  "item.alloygery.iron_chain_leggings": "Iron Chain Leggings",
+  "item.alloygery.iron_chain_boots": "Iron Chain Boots",
+
+  "item.alloygery.gold_chain_helmet": "Gold Chain Helmet",
+  "item.alloygery.gold_chain_chestplate": "Gold Chain Chestplate",
+  "item.alloygery.gold_chain_leggings": "Gold Chain Leggings",
+  "item.alloygery.gold_chain_boots": "Gold Chain Boots",
+
+  "item.alloygery.antanium_chain_helmet": "Antanium Chain Helmet",
+  "item.alloygery.antanium_chain_chestplate": "Antanium Chain Chestplate",
+  "item.alloygery.antanium_chain_leggings": "Antanium Chain Leggings",
+  "item.alloygery.antanium_chain_boots": "Antanium Chain Boots",
+
+  "item.alloygery.steel_chain_helmet": "Steel Chain Helmet",
+  "item.alloygery.steel_chain_chestplate": "Steel Chain Chestplate",
+  "item.alloygery.steel_chain_leggings": "Steel Chain Leggings",
+  "item.alloygery.steel_chain_boots": "Steel Chain Boots",
+
+  "item.alloygery.netherite_chain_helmet": "Netherite Chain Helmet",
+  "item.alloygery.netherite_chain_chestplate": "Netherite Chain Chestplate",
+  "item.alloygery.netherite_chain_leggings": "Netherite Chain Leggings",
+  "item.alloygery.netherite_chain_boots": "Netherite Chain Boots",
+
+  "item.alloygery.nickel_chain_helmet": "Nickel Chain Helmet",
+  "item.alloygery.nickel_chain_chestplate": "Nickel Chain Chestplate",
+  "item.alloygery.nickel_chain_leggings": "Nickel Chain Leggings",
+  "item.alloygery.nickel_chain_boots": "Nickel Chain Boots",
+
+  "item.alloygery.invar_chain_helmet": "Invar Chain Helmet",
+  "item.alloygery.invar_chain_chestplate": "Invar Chain Chestplate",
+  "item.alloygery.invar_chain_leggings": "Invar Chain Leggings",
+  "item.alloygery.invar_chain_boots": "Invar Chain Boots",
+
+  "item.alloygery.constantan_chain_helmet": "Constantan Chain Helmet",
+  "item.alloygery.constantan_chain_chestplate": "Constantan Chain Chestplate",
+  "item.alloygery.constantan_chain_leggings": "Constantan Chain Leggings",
+  "item.alloygery.constantan_chain_boots": "Constantan Chain Boots",
+
+  "item.alloygery.cupronickel_chain_helmet": "Cupronickel Chain Helmet",
+  "item.alloygery.cupronickel_chain_chestplate": "Cupronickel Chain Chestplate",
+  "item.alloygery.cupronickel_chain_leggings": "Cupronickel Chain Leggings",
+  "item.alloygery.cupronickel_chain_boots": "Cupronickel Chain Boots",
+
+  "item.alloygery.titanium_chain_helmet": "Titanium Chain Helmet",
+  "item.alloygery.titanium_chain_chestplate": "Titanium Chain Chestplate",
+  "item.alloygery.titanium_chain_leggings": "Titanium Chain Leggings",
+  "item.alloygery.titanium_chain_boots": "Titanium Chain Boots",
+
+  "item.alloygery.titanium_gold_chain_helmet": "Titanium Gold Chain Helmet",
+  "item.alloygery.titanium_gold_chain_chestplate": "Titanium Gold Chain Chestplate",
+  "item.alloygery.titanium_gold_chain_leggings": "Titanium Gold Chain Leggings",
+  "item.alloygery.titanium_gold_chain_boots": "Titanium Gold Chain Boots",
+
+  "item.alloygery.nitinol_chain_helmet": "Nitinol Chain Helmet",
+  "item.alloygery.nitinol_chain_chestplate": "Nitinol Chain Chestplate",
+  "item.alloygery.nitinol_chain_leggings": "Nitinol Chain Leggings",
+  "item.alloygery.nitinol_chain_boots": "Nitinol Chain Boots",
+
+  "item.alloygery.leather_half_plate_helmet": "Leather Half Plate Helmet",
+  "item.alloygery.leather_half_plate_chestplate": "Leather Half Plate Chestplate",
+  "item.alloygery.leather_half_plate_leggings": "Leather Half Plate Leggings",
+  "item.alloygery.leather_half_plate_boots": "Leather Half Plate Boots",
+
+  "item.alloygery.copper_half_plate_helmet": "Copper Half Plate Helmet",
+  "item.alloygery.copper_half_plate_chestplate": "Copper Half Plate Chestplate",
+  "item.alloygery.copper_half_plate_leggings": "Copper Half Plate Leggings",
+  "item.alloygery.copper_half_plate_boots": "Copper Half Plate Boots",
+
+  "item.alloygery.bronze_half_plate_helmet": "Bronze Half Plate Helmet",
+  "item.alloygery.bronze_half_plate_chestplate": "Bronze Half Plate Chestplate",
+  "item.alloygery.bronze_half_plate_leggings": "Bronze Half Plate Leggings",
+  "item.alloygery.bronze_half_plate_boots": "Bronze Half Plate Boots",
+
+  "item.alloygery.iron_half_plate_helmet": "Iron Half Plate Helmet",
+  "item.alloygery.iron_half_plate_chestplate": "Iron Half Plate Chestplate",
+  "item.alloygery.iron_half_plate_leggings": "Iron Half Plate Leggings",
+  "item.alloygery.iron_half_plate_boots": "Iron Half Plate Boots",
+
+  "item.alloygery.gold_half_plate_helmet": "Gold Half Plate Helmet",
+  "item.alloygery.gold_half_plate_chestplate": "Gold Half Plate Chestplate",
+  "item.alloygery.gold_half_plate_leggings": "Gold Half Plate Leggings",
+  "item.alloygery.gold_half_plate_boots": "Gold Half Plate Boots",
+
+  "item.alloygery.antanium_half_plate_helmet": "Antanium Half Plate Helmet",
+  "item.alloygery.antanium_half_plate_chestplate": "Antanium Half Plate Chestplate",
+  "item.alloygery.antanium_half_plate_leggings": "Antanium Half Plate Leggings",
+  "item.alloygery.antanium_half_plate_boots": "Antanium Half Plate Boots",
+
+  "item.alloygery.diamond_half_plate_helmet": "Diamond Half Plate Helmet",
+  "item.alloygery.diamond_half_plate_chestplate": "Diamond Half Plate Chestplate",
+  "item.alloygery.diamond_half_plate_leggings": "Diamond Half Plate Leggings",
+  "item.alloygery.diamond_half_plate_boots": "Diamond Half Plate Boots",
+
+  "item.alloygery.steel_half_plate_helmet": "Steel Half Plate Helmet",
+  "item.alloygery.steel_half_plate_chestplate": "Steel Half Plate Chestplate",
+  "item.alloygery.steel_half_plate_leggings": "Steel Half Plate Leggings",
+  "item.alloygery.steel_half_plate_boots": "Steel Half Plate Boots",
+
+  "item.alloygery.netherite_half_plate_helmet": "Netherite Half Plate Helmet",
+  "item.alloygery.netherite_half_plate_chestplate": "Netherite Half Plate Chestplate",
+  "item.alloygery.netherite_half_plate_leggings": "Netherite Half Plate Leggings",
+  "item.alloygery.netherite_half_plate_boots": "Netherite Half Plate Boots",
+
+  "item.alloygery.nickel_half_plate_helmet": "Nickel Half Plate Helmet",
+  "item.alloygery.nickel_half_plate_chestplate": "Nickel Half Plate Chestplate",
+  "item.alloygery.nickel_half_plate_leggings": "Nickel Half Plate Leggings",
+  "item.alloygery.nickel_half_plate_boots": "Nickel Half Plate Boots",
+
+  "item.alloygery.invar_half_plate_helmet": "Invar Half Plate Helmet",
+  "item.alloygery.invar_half_plate_chestplate": "Invar Half Plate Chestplate",
+  "item.alloygery.invar_half_plate_leggings": "Invar Half Plate Leggings",
+  "item.alloygery.invar_half_plate_boots": "Invar Half Plate Boots",
+
+  "item.alloygery.constantan_half_plate_helmet": "Constantan Half Plate Helmet",
+  "item.alloygery.constantan_half_plate_chestplate": "Constantan Half Plate Chestplate",
+  "item.alloygery.constantan_half_plate_leggings": "Constantan Half Plate Leggings",
+  "item.alloygery.constantan_half_plate_boots": "Constantan Half Plate Boots",
+
+  "item.alloygery.cupronickel_half_plate_helmet": "Cupronickel Half Plate Helmet",
+  "item.alloygery.cupronickel_half_plate_chestplate": "Cupronickel Half Plate Chestplate",
+  "item.alloygery.cupronickel_half_plate_leggings": "Cupronickel Half Plate Leggings",
+  "item.alloygery.cupronickel_half_plate_boots": "Cupronickel Half Plate Boots",
+
+  "item.alloygery.titanium_half_plate_helmet": "Titanium Half Plate Helmet",
+  "item.alloygery.titanium_half_plate_chestplate": "Titanium Half Plate Chestplate",
+  "item.alloygery.titanium_half_plate_leggings": "Titanium Half Plate Leggings",
+  "item.alloygery.titanium_half_plate_boots": "Titanium Half Plate Boots",
+
+  "item.alloygery.titanium_gold_half_plate_helmet": "Titanium Gold Half Plate Helmet",
+  "item.alloygery.titanium_gold_half_plate_chestplate": "Titanium Gold Half Plate Chestplate",
+  "item.alloygery.titanium_gold_half_plate_leggings": "Titanium Gold Half Plate Leggings",
+  "item.alloygery.titanium_gold_half_plate_boots": "Titanium Gold Half Plate Boots",
+
+  "item.alloygery.nitinol_half_plate_helmet": "Nitinol Half Plate Helmet",
+  "item.alloygery.nitinol_half_plate_chestplate": "Nitinol Half Plate Chestplate",
+  "item.alloygery.nitinol_half_plate_leggings": "Nitinol Half Plate Leggings",
+  "item.alloygery.nitinol_half_plate_boots": "Nitinol Half Plate Boots",
+
+  "item.alloygery.leather_full_plate_helmet": "Leather Full Plate Helmet",
+  "item.alloygery.leather_full_plate_chestplate": "Leather Full Plate Chestplate",
+  "item.alloygery.leather_full_plate_leggings": "Leather Full Plate Leggings",
+  "item.alloygery.leather_full_plate_boots": "Leather Full Plate Boots",
+
+  "item.alloygery.iron_full_plate_helmet": "Iron Full Plate Helmet",
+  "item.alloygery.iron_full_plate_chestplate": "Iron Full Plate Chestplate",
+  "item.alloygery.iron_full_plate_leggings": "Iron Full Plate Leggings",
+  "item.alloygery.iron_full_plate_boots": "Iron Full Plate Boots",
+
+  "item.alloygery.antanium_full_plate_helmet": "Antanium Full Plate Helmet",
+  "item.alloygery.antanium_full_plate_chestplate": "Antanium Full Plate Chestplate",
+  "item.alloygery.antanium_full_plate_leggings": "Antanium Full Plate Leggings",
+  "item.alloygery.antanium_full_plate_boots": "Antanium Full Plate Boots",
+
+  "item.alloygery.diamond_full_plate_helmet": "Diamond Full Plate Helmet",
+  "item.alloygery.diamond_full_plate_chestplate": "Diamond Full Plate Chestplate",
+  "item.alloygery.diamond_full_plate_leggings": "Diamond Full Plate Leggings",
+  "item.alloygery.diamond_full_plate_boots": "Diamond Full Plate Boots",
+
+  "item.alloygery.steel_full_plate_helmet": "Steel Full Plate Helmet",
+  "item.alloygery.steel_full_plate_chestplate": "Steel Full Plate Chestplate",
+  "item.alloygery.steel_full_plate_leggings": "Steel Full Plate Leggings",
+  "item.alloygery.steel_full_plate_boots": "Steel Full Plate Boots",
+
+  "item.alloygery.netherite_full_plate_helmet": "Netherite Full Plate Helmet",
+  "item.alloygery.netherite_full_plate_chestplate": "Netherite Full Plate Chestplate",
+  "item.alloygery.netherite_full_plate_leggings": "Netherite Full Plate Leggings",
+  "item.alloygery.netherite_full_plate_boots": "Netherite Full Plate Boots",
+
+  "item.alloygery.nickel_full_plate_helmet": "Nickel Full Plate Helmet",
+  "item.alloygery.nickel_full_plate_chestplate": "Nickel Full Plate Chestplate",
+  "item.alloygery.nickel_full_plate_leggings": "Nickel Full Plate Leggings",
+  "item.alloygery.nickel_full_plate_boots": "Nickel Full Plate Boots",
+
+  "item.alloygery.invar_full_plate_helmet": "Invar Full Plate Helmet",
+  "item.alloygery.invar_full_plate_chestplate": "Invar Full Plate Chestplate",
+  "item.alloygery.invar_full_plate_leggings": "Invar Full Plate Leggings",
+  "item.alloygery.invar_full_plate_boots": "Invar Full Plate Boots",
+
+  "item.alloygery.constantan_full_plate_helmet": "Constantan Full Plate Helmet",
+  "item.alloygery.constantan_full_plate_chestplate": "Constantan Full Plate Chestplate",
+  "item.alloygery.constantan_full_plate_leggings": "Constantan Full Plate Leggings",
+  "item.alloygery.constantan_full_plate_boots": "Constantan Full Plate Boots",
+
+  "item.alloygery.cupronickel_full_plate_helmet": "Cupronickel Full Plate Helmet",
+  "item.alloygery.cupronickel_full_plate_chestplate": "Cupronickel Full Plate Chestplate",
+  "item.alloygery.cupronickel_full_plate_leggings": "Cupronickel Full Plate Leggings",
+  "item.alloygery.cupronickel_full_plate_boots": "Cupronickel Full Plate Boots",
+
+  "item.alloygery.titanium_full_plate_helmet": "Titanium Full Plate Helmet",
+  "item.alloygery.titanium_full_plate_chestplate": "Titanium Full Plate Chestplate",
+  "item.alloygery.titanium_full_plate_leggings": "Titanium Full Plate Leggings",
+  "item.alloygery.titanium_full_plate_boots": "Titanium Full Plate Boots",
+
+  "item.alloygery.titanium_gold_full_plate_helmet": "Titanium Gold Full Plate Helmet",
+  "item.alloygery.titanium_gold_full_plate_chestplate": "Titanium Gold Full Plate Chestplate",
+  "item.alloygery.titanium_gold_full_plate_leggings": "Titanium Gold Full Plate Leggings",
+  "item.alloygery.titanium_gold_full_plate_boots": "Titanium Gold Full Plate Boots",
+
+  "item.alloygery.nitinol_full_plate_helmet": "Nitinol Full Plate Helmet",
+  "item.alloygery.nitinol_full_plate_chestplate": "Nitinol Full Plate Chestplate",
+  "item.alloygery.nitinol_full_plate_leggings": "Nitinol Full Plate Leggings",
+  "item.alloygery.nitinol_full_plate_boots": "Nitinol Full Plate Boots",
+
+  "item.alloygery.leather_half_plate_helmet_part": "Leather Helmet Half Plate",
+  "item.alloygery.leather_half_plate_chestplate_part": "Leather Chestplate Half Plate",
+  "item.alloygery.leather_half_plate_leggings_part": "Leather Leggings Half Plate",
+  "item.alloygery.leather_half_plate_boots_part": "Leather Boots Half Plate",
+
+  "item.alloygery.copper_half_plate_helmet_part": "Copper Helmet Half Plate",
+  "item.alloygery.copper_half_plate_chestplate_part": "Copper Chestplate Half Plate",
+  "item.alloygery.copper_half_plate_leggings_part": "Copper Leggings Half Plate",
+  "item.alloygery.copper_half_plate_boots_part": "Copper Boots Half Plate",
+
+  "item.alloygery.bronze_half_plate_helmet_part": "Bronze Helmet Half Plate",
+  "item.alloygery.bronze_half_plate_chestplate_part": "Bronze Chestplate Half Plate",
+  "item.alloygery.bronze_half_plate_leggings_part": "Bronze Leggings Half Plate",
+  "item.alloygery.bronze_half_plate_boots_part": "Bronze Boots Half Plate",
+
+  "item.alloygery.iron_half_plate_helmet_part": "Iron Helmet Half Plate",
+  "item.alloygery.iron_half_plate_chestplate_part": "Iron Chestplate Half Plate",
+  "item.alloygery.iron_half_plate_leggings_part": "Iron Leggings Half Plate",
+  "item.alloygery.iron_half_plate_boots_part": "Iron Boots Half Plate",
+
+  "item.alloygery.gold_half_plate_helmet_part": "Gold Helmet Half Plate",
+  "item.alloygery.gold_half_plate_chestplate_part": "Gold Chestplate Half Plate",
+  "item.alloygery.gold_half_plate_leggings_part": "Gold Leggings Half Plate",
+  "item.alloygery.gold_half_plate_boots_part": "Gold Boots Half Plate",
+
+  "item.alloygery.antanium_half_plate_helmet_part": "Antanium Helmet Half Plate",
+  "item.alloygery.antanium_half_plate_chestplate_part": "Antanium Chestplate Half Plate",
+  "item.alloygery.antanium_half_plate_leggings_part": "Antanium Leggings Half Plate",
+  "item.alloygery.antanium_half_plate_boots_part": "Antanium Boots Half Plate",
+
+  "item.alloygery.diamond_half_plate_helmet_part": "Diamond Helmet Half Plate",
+  "item.alloygery.diamond_half_plate_chestplate_part": "Diamond Chestplate Half Plate",
+  "item.alloygery.diamond_half_plate_leggings_part": "Diamond Leggings Half Plate",
+  "item.alloygery.diamond_half_plate_boots_part": "Diamond Boots Half Plate",
+
+  "item.alloygery.steel_half_plate_helmet_part": "Steel Helmet Half Plate",
+  "item.alloygery.steel_half_plate_chestplate_part": "Steel Chestplate Half Plate",
+  "item.alloygery.steel_half_plate_leggings_part": "Steel Leggings Half Plate",
+  "item.alloygery.steel_half_plate_boots_part": "Steel Boots Half Plate",
+
+  "item.alloygery.netherite_half_plate_helmet_part": "Netherite Helmet Half Plate",
+  "item.alloygery.netherite_half_plate_chestplate_part": "Netherite Chestplate Half Plate",
+  "item.alloygery.netherite_half_plate_leggings_part": "Netherite Leggings Half Plate",
+  "item.alloygery.netherite_half_plate_boots_part": "Netherite Boots Half Plate",
+
+  "item.alloygery.nickel_half_plate_helmet_part": "Nickel Helmet Half Plate",
+  "item.alloygery.nickel_half_plate_chestplate_part": "Nickel Chestplate Half Plate",
+  "item.alloygery.nickel_half_plate_leggings_part": "Nickel Leggings Half Plate",
+  "item.alloygery.nickel_half_plate_boots_part": "Nickel Boots Half Plate",
+
+  "item.alloygery.invar_half_plate_helmet_part": "Invar Helmet Half Plate",
+  "item.alloygery.invar_half_plate_chestplate_part": "Invar Chestplate Half Plate",
+  "item.alloygery.invar_half_plate_leggings_part": "Invar Leggings Half Plate",
+  "item.alloygery.invar_half_plate_boots_part": "Invar Boots Half Plate",
+
+  "item.alloygery.constantan_half_plate_helmet_part": "Constantan Helmet Half Plate",
+  "item.alloygery.constantan_half_plate_chestplate_part": "Constantan Chestplate Half Plate",
+  "item.alloygery.constantan_half_plate_leggings_part": "Constantan Leggings Half Plate",
+  "item.alloygery.constantan_half_plate_boots_part": "Constantan Boots Half Plate",
+
+  "item.alloygery.cupronickel_half_plate_helmet_part": "Cupronickel Helmet Half Plate",
+  "item.alloygery.cupronickel_half_plate_chestplate_part": "Cupronickel Chestplate Half Plate",
+  "item.alloygery.cupronickel_half_plate_leggings_part": "Cupronickel Leggings Half Plate",
+  "item.alloygery.cupronickel_half_plate_boots_part": "Cupronickel Boots Half Plate",
+
+  "item.alloygery.titanium_half_plate_helmet_part": "Titanium Helmet Half Plate",
+  "item.alloygery.titanium_half_plate_chestplate_part": "Titanium Chestplate Half Plate",
+  "item.alloygery.titanium_half_plate_leggings_part": "Titanium Leggings Half Plate",
+  "item.alloygery.titanium_half_plate_boots_part": "Titanium Boots Half Plate",
+
+  "item.alloygery.titanium_gold_half_plate_helmet_part": "Titanium Gold Helmet Half Plate",
+  "item.alloygery.titanium_gold_half_plate_chestplate_part": "Titanium Gold Chestplate Half Plate",
+  "item.alloygery.titanium_gold_half_plate_leggings_part": "Titanium Gold Leggings Half Plate",
+  "item.alloygery.titanium_gold_half_plate_boots_part": "Titanium Gold Boots Half Plate",
+
+  "item.alloygery.nitinol_half_plate_helmet_part": "Nitinol Helmet Half Plate",
+  "item.alloygery.nitinol_half_plate_chestplate_part": "Nitinol Chestplate Half Plate",
+  "item.alloygery.nitinol_half_plate_leggings_part": "Nitinol Leggings Half Plate",
+  "item.alloygery.nitinol_half_plate_boots_part": "Nitinol Boots Half Plate",
+
+  "item.alloygery.leather_full_plate_helmet_part": "Leather Helmet Full Plate",
+  "item.alloygery.leather_full_plate_chestplate_part": "Leather Chestplate Full Plate",
+  "item.alloygery.leather_full_plate_leggings_part": "Leather Leggings Full Plate",
+  "item.alloygery.leather_full_plate_boots_part": "Leather Boots Full Plate",
+
+  "item.alloygery.iron_full_plate_helmet_part": "Iron Helmet Full Plate",
+  "item.alloygery.iron_full_plate_chestplate_part": "Iron Chestplate Full Plate",
+  "item.alloygery.iron_full_plate_leggings_part": "Iron Leggings Full Plate",
+  "item.alloygery.iron_full_plate_boots_part": "Iron Boots Full Plate",
+
+  "item.alloygery.antanium_full_plate_helmet_part": "Antanium Helmet Full Plate",
+  "item.alloygery.antanium_full_plate_chestplate_part": "Antanium Chestplate Full Plate",
+  "item.alloygery.antanium_full_plate_leggings_part": "Antanium Leggings Full Plate",
+  "item.alloygery.antanium_full_plate_boots_part": "Antanium Boots Full Plate",
+
+  "item.alloygery.diamond_full_plate_helmet_part": "Diamond Helmet Full Plate",
+  "item.alloygery.diamond_full_plate_chestplate_part": "Diamond Chestplate Full Plate",
+  "item.alloygery.diamond_full_plate_leggings_part": "Diamond Leggings Full Plate",
+  "item.alloygery.diamond_full_plate_boots_part": "Diamond Boots Full Plate",
+
+  "item.alloygery.steel_full_plate_helmet_part": "Steel Helmet Full Plate",
+  "item.alloygery.steel_full_plate_chestplate_part": "Steel Chestplate Full Plate",
+  "item.alloygery.steel_full_plate_leggings_part": "Steel Leggings Full Plate",
+  "item.alloygery.steel_full_plate_boots_part": "Steel Boots Full Plate",
+
+  "item.alloygery.netherite_full_plate_helmet_part": "Netherite Helmet Full Plate",
+  "item.alloygery.netherite_full_plate_chestplate_part": "Netherite Chestplate Full Plate",
+  "item.alloygery.netherite_full_plate_leggings_part": "Netherite Leggings Full Plate",
+  "item.alloygery.netherite_full_plate_boots_part": "Netherite Boots Full Plate",
+
+  "item.alloygery.nickel_full_plate_helmet_part": "Nickel Helmet Full Plate",
+  "item.alloygery.nickel_full_plate_chestplate_part": "Nickel Chestplate Full Plate",
+  "item.alloygery.nickel_full_plate_leggings_part": "Nickel Leggings Full Plate",
+  "item.alloygery.nickel_full_plate_boots_part": "Nickel Boots Full Plate",
+
+  "item.alloygery.invar_full_plate_helmet_part": "Invar Helmet Full Plate",
+  "item.alloygery.invar_full_plate_chestplate_part": "Invar Chestplate Full Plate",
+  "item.alloygery.invar_full_plate_leggings_part": "Invar Leggings Full Plate",
+  "item.alloygery.invar_full_plate_boots_part": "Invar Boots Full Plate",
+
+  "item.alloygery.constantan_full_plate_helmet_part": "Constantan Helmet Full Plate",
+  "item.alloygery.constantan_full_plate_chestplate_part": "Constantan Chestplate Full Plate",
+  "item.alloygery.constantan_full_plate_leggings_part": "Constantan Leggings Full Plate",
+  "item.alloygery.constantan_full_plate_boots_part": "Constantan Boots Full Plate",
+
+  "item.alloygery.cupronickel_full_plate_helmet_part": "Cupronickel Helmet Full Plate",
+  "item.alloygery.cupronickel_full_plate_chestplate_part": "Cupronickel Chestplate Full Plate",
+  "item.alloygery.cupronickel_full_plate_leggings_part": "Cupronickel Leggings Full Plate",
+  "item.alloygery.cupronickel_full_plate_boots_part": "Cupronickel Boots Full Plate",
+
+  "item.alloygery.titanium_full_plate_helmet_part": "Titanium Helmet Full Plate",
+  "item.alloygery.titanium_full_plate_chestplate_part": "Titanium Chestplate Full Plate",
+  "item.alloygery.titanium_full_plate_leggings_part": "Titanium Leggings Full Plate",
+  "item.alloygery.titanium_full_plate_boots_part": "Titanium Boots Full Plate",
+
+  "item.alloygery.titanium_gold_full_plate_helmet_part": "Titanium Gold Helmet Full Plate",
+  "item.alloygery.titanium_gold_full_plate_chestplate_part": "Titanium Gold Chestplate Full Plate",
+  "item.alloygery.titanium_gold_full_plate_leggings_part": "Titanium Gold Leggings Full Plate",
+  "item.alloygery.titanium_gold_full_plate_boots_part": "Titanium Gold Boots Full Plate",
+
+  "item.alloygery.nitinol_full_plate_helmet_part": "Nitinol Helmet Full Plate",
+  "item.alloygery.nitinol_full_plate_chestplate_part": "Nitinol Chestplate Full Plate",
+  "item.alloygery.nitinol_full_plate_leggings_part": "Nitinol Leggings Full Plate",
+  "item.alloygery.nitinol_full_plate_boots_part": "Nitinol Boots Full Plate",
 
   "block.alloygery.alloy_kiln": "Alloy Kiln",
   "block.alloygery.blast_alloy_kiln": "Blast Alloy Kiln",
@@ -451,8 +796,10 @@
 
   "tooltip.alloygery.shift_for_info": "Hold Shift For More Info",
   "tooltip.alloygery.ctrl_for_details": "Hold Ctrl For More Details",
-  "tooltip.alloygery.when_used_in_craft": "When Used To Craft A Tool",
-  "tooltip.alloygery.when_used_to_upgrade": "When Used To Upgrade A Tool",
+  "tooltip.alloygery.when_used_to_craft_tool": "When Used To Craft A Tool",
+  "tooltip.alloygery.when_used_to_upgrade_tool": "When Used To Upgrade A Tool",
+  "tooltip.alloygery.when_used_to_craft_armor": "When Used To Craft Armor",
+  "tooltip.alloygery.when_used_to_upgrade_armor": "When Used To Upgrade Armor",
   "tooltip.alloygery.info.crafting_tier": "Crafting Tier",
 
   "tooltip.alloygery.info.no_nbt_description.axe": "An Axe made from parts",
@@ -460,6 +807,11 @@
   "tooltip.alloygery.info.no_nbt_description.pickaxe": "A Pickaxe made from parts",
   "tooltip.alloygery.info.no_nbt_description.shovel": "A Shovel made from parts",
   "tooltip.alloygery.info.no_nbt_description.sword": "A Sword made from parts",
+
+  "tooltip.alloygery.info.no_nbt_description.helmet": "A Helmet made from parts",
+  "tooltip.alloygery.info.no_nbt_description.chestplate": "A Chestplate made from parts",
+  "tooltip.alloygery.info.no_nbt_description.leggings": "Leggings made from parts",
+  "tooltip.alloygery.info.no_nbt_description.boots": "Boots made from parts",
 
   "tooltip.alloygery.info.parts_list": "Parts:",
   "tooltip.alloygery.info.head_part": "Tool Head",
@@ -491,6 +843,22 @@
   "tooltip.alloygery.info.base_enchantability": "Base Enchantability",
   "tooltip.alloygery.info.total_enchantability": "Total Enchantability",
 
+  "tooltip.alloygery.info.armor": "Protection",
+  "tooltip.alloygery.info.base_armor": "Base Protection",
+  "tooltip.alloygery.info.total_armor": "Total Protection",
+
+  "tooltip.alloygery.info.toughness": "Toughness",
+  "tooltip.alloygery.info.base_toughness": "Base Toughness",
+  "tooltip.alloygery.info.total_toughness": "Total Toughness",
+
+  "tooltip.alloygery.info.mobility": "Mobility",
+  "tooltip.alloygery.info.base_mobility": "Base Mobility",
+  "tooltip.alloygery.info.total_mobility": "Total Mobility",
+
+  "tooltip.alloygery.info.knockback_resistance": "Knockback Resistance",
+  "tooltip.alloygery.info.base_knockback_resistance": "Base Knockback Resistance",
+  "tooltip.alloygery.info.total_knockback_resistance": "Total Knockback Resistance",
+
   "tooltip.alloygery.info.luck": "Luck",
   "tooltip.alloygery.info.fireproof": "Fireproof",
   "tooltip.alloygery.info.piglin_loved": "Gilded",
@@ -518,7 +886,7 @@
   "rei.alloygery.blast_alloying": "Blast Alloy Kiln",
   "rei.alloygery.smithing_anvil": "Smithing Anvil",
 
-  "itemGroup.alloygery_group": "Alloygery",
+  "itemGroup.alloygery.alloygery_group": "Alloygery",
   "itemGroup.alloygery.blocks": "Alloygery Blocks",
   "itemGroup.alloygery.materials": "Alloygery Materials",
   "itemGroup.alloygery.gear": "Alloygery Gear",

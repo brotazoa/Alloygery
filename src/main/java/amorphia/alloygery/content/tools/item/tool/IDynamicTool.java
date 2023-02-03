@@ -1,7 +1,7 @@
 package amorphia.alloygery.content.tools.item.tool;
 
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
-import amorphia.alloygery.content.materials.AlloygeryMaterials;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterials;
 import amorphia.alloygery.content.tools.ToolPropertyHelper;
 import amorphia.alloygery.content.tools.attribute.ToolAttributes;
 import amorphia.alloygery.content.tools.item.part.ToolType;
@@ -23,7 +23,6 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 
-// TODO: separate into multiple interfaces
 //stack dependent operations for tools
 public interface IDynamicTool
 {
@@ -97,14 +96,16 @@ public interface IDynamicTool
 		return ToolPropertyHelper.isFireproof(tool);
 	}
 
-	default AlloygeryMaterial getDefaultHeadMaterial()
+	default AlloygeryToolMaterial getDefaultHeadMaterial()
 	{
-		return AlloygeryMaterials.HIDDEN;
+		return AlloygeryToolMaterials.HIDDEN;
 	}
 
 	ToolUpgradeType getToolUpgradeType();
 
 	ToolType getToolType();
+
+	void calculateEnchantability(ItemStack stack);
 
 	static int getItemBarStep(ItemStack tool)
 	{

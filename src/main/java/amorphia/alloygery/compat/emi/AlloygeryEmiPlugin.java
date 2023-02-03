@@ -2,6 +2,7 @@ package amorphia.alloygery.compat.emi;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.config.AlloygeryConfig;
+import amorphia.alloygery.content.armor.item.IDynamicArmor;
 import amorphia.alloygery.content.machines.recipe.AlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.BlastAlloyingRecipe;
 import amorphia.alloygery.content.machines.recipe.SmithingAnvilRecipe;
@@ -54,5 +55,9 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 		final boolean showTools = AlloygeryConfig.showDynamicToolsInRecipeViewer.getValue();
 		if(!showTools)
 			registry.removeEmiStacks(entryStack -> entryStack.getItemStack().getItem() instanceof IDynamicTool);
+
+		final boolean showArmors = AlloygeryConfig.showDynamicArmorsInRecipeViewer.getValue();
+		if(!showArmors)
+			registry.removeEmiStacks(entryStack -> entryStack.getItemStack().getItem() instanceof IDynamicArmor);
 	}
 }

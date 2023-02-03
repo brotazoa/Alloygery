@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:dynamic_iron_chain_boots",
+    "alloygery:dynamic_gold_chain_boots",
+    "alloygery:dynamic_antanium_chain_boots",
+    "alloygery:dynamic_steel_chain_boots",
+    "alloygery:dynamic_netherite_chain_boots",
+    "alloygery:dynamic_nickel_chain_boots",
+    "alloygery:dynamic_invar_chain_boots",
+    "alloygery:dynamic_constantan_chain_boots",
+    "alloygery:dynamic_cupronickel_chain_boots",
+    "alloygery:dynamic_titanium_chain_boots",
+    "alloygery:dynamic_titanium_gold_chain_boots",
+    "alloygery:dynamic_nitinol_chain_boots"
+  ]
+}

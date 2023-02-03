@@ -1,0 +1,15 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "l l",
+    "l l"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:antanium_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_antanium_chain_boots"
+  }
+}

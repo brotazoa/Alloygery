@@ -2,7 +2,7 @@ package amorphia.alloygery.content.metals.item;
 
 import amorphia.alloygery.content.tools.ToolPropertyHelper;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
@@ -14,7 +14,7 @@ public interface CraftingTool
 		return 0;
 	}
 
-	AlloygeryMaterial getAlloygeryMaterial();
+	AlloygeryToolMaterial getAlloygeryMaterial();
 
 	static int getMaxDurability(ItemStack toolStack)
 	{

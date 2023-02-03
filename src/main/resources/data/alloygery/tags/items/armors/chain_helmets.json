@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:dynamic_iron_chain_helmet",
+    "alloygery:dynamic_gold_chain_helmet",
+    "alloygery:dynamic_antanium_chain_helmet",
+    "alloygery:dynamic_steel_chain_helmet",
+    "alloygery:dynamic_netherite_chain_helmet",
+    "alloygery:dynamic_nickel_chain_helmet",
+    "alloygery:dynamic_invar_chain_helmet",
+    "alloygery:dynamic_constantan_chain_helmet",
+    "alloygery:dynamic_cupronickel_chain_helmet",
+    "alloygery:dynamic_titanium_chain_helmet",
+    "alloygery:dynamic_titanium_gold_chain_helmet",
+    "alloygery:dynamic_nitinol_chain_helmet"
+  ]
+}

@@ -2,10 +2,9 @@ package amorphia.alloygery.content.tools;
 
 import amorphia.alloygery.content.tools.item.part.IToolPart;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
-import amorphia.alloygery.content.tools.item.part.ToolType;
 import amorphia.alloygery.content.tools.item.tool.*;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
-import amorphia.alloygery.content.materials.AlloygeryMaterials;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterials;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
@@ -37,8 +36,8 @@ public class ToolDescriptionHelper
 	{
 		if(tool.getItem() instanceof IDynamicTool dynamicTool)
 		{
-			AlloygeryMaterial headMaterial;
-			AlloygeryMaterial upgradeMaterial;
+			AlloygeryToolMaterial headMaterial;
+			AlloygeryToolMaterial upgradeMaterial;
 
 			if(ToolNBTHelper.isAlloygeryDataNBT(tool.getNbt()))
 			{
@@ -54,7 +53,7 @@ public class ToolDescriptionHelper
 			MutableText toolBaseName = translatable("item.alloygery." + headMaterial.getMaterialName() + "_" + dynamicTool.getToolType().getName());
 			MutableText toolUpgradeName = translatable("tooltip.alloygery.upgrade." + upgradeMaterial.getMaterialName());
 
-			return upgradeMaterial == AlloygeryMaterials.UNKNOWN || upgradeMaterial == AlloygeryMaterials.HIDDEN ? toolBaseName : toolUpgradeName.append(literal(" - ")).append(toolBaseName);
+			return upgradeMaterial == AlloygeryToolMaterials.UNKNOWN || upgradeMaterial == AlloygeryToolMaterials.HIDDEN ? toolBaseName : toolUpgradeName.append(literal(" - ")).append(toolBaseName);
 		}
 		else
 		{
@@ -153,12 +152,12 @@ public class ToolDescriptionHelper
 
 	private static void writeCraftPrompt(List<Text> tooltip)
 	{
-		tooltip.add(translatable("tooltip.alloygery.when_used_in_craft"));
+		tooltip.add(translatable("tooltip.alloygery.when_used_to_craft_tool"));
 	}
 
 	private static void writeUpgradePrompt(List<Text> tooltip)
 	{
-		tooltip.add(translatable("tooltip.alloygery.when_used_to_upgrade"));
+		tooltip.add(translatable("tooltip.alloygery.when_used_to_upgrade_tool"));
 	}
 
 	private static void writeShiftPrompt(List<Text> tooltip)

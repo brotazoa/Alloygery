@@ -25,7 +25,7 @@ public class BlockBrokenAdvancementTriggerMixin
 	@Inject(method = "onBreak", at = @At("HEAD"))
 	public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo ci)
 	{
-		Alloygery.LOGGER.info("on break mixin");
+		//Alloygery.LOGGER.info("on break mixin");
 
 		if(!world.isClient)
 		{

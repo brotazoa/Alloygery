@@ -2,10 +2,10 @@ package amorphia.alloygery.compat.patchouli;
 
 import amorphia.alloygery.content.tools.ToolPropertyHelper;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
-import amorphia.alloygery.content.materials.registry.AlloygeryMaterialRegistry;
+import amorphia.alloygery.content.tools.registry.AlloygeryToolMaterialRegistry;
 import com.google.common.collect.Lists;
 import net.minecraft.util.Identifier;
 import vazkii.patchouli.api.IComponentProcessor;
@@ -22,7 +22,7 @@ public class UpgradeSettingsProcessor implements IComponentProcessor
 	public void setup(IVariableProvider iVariableProvider)
 	{
 		String materialId = iVariableProvider.get("material").asString();
-		AlloygeryMaterial material = AlloygeryMaterialRegistry.get(Identifier.tryParse(materialId));
+		AlloygeryToolMaterial material = AlloygeryToolMaterialRegistry.get(Identifier.tryParse(materialId));
 		toolPropertiesByPart.addAll(material.getToolPropertiesByPart(ToolPartType.UPGRADE));
 	}
 

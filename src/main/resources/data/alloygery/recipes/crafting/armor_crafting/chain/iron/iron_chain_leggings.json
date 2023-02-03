@@ -1,0 +1,16 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "lll",
+    "l l",
+    "l l"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:iron_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_iron_chain_leggings"
+  }
+}

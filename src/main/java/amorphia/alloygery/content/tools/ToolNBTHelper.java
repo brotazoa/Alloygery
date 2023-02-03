@@ -1,26 +1,25 @@
 package amorphia.alloygery.content.tools;
 
 import amorphia.alloygery.content.tools.item.part.*;
-import amorphia.alloygery.content.materials.AlloygeryMaterial;
-import amorphia.alloygery.content.materials.AlloygeryMaterials;
-import amorphia.alloygery.content.materials.registry.AlloygeryMaterialRegistry;
-import amorphia.alloygery.AlloygeryNBT;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterials;
+import amorphia.alloygery.content.tools.registry.AlloygeryToolMaterialRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static amorphia.alloygery.AlloygeryNBT.*;
+import static amorphia.alloygery.content.tools.AlloygeryToolNBT.*;
 
 public class ToolNBTHelper
 {
-	public static AlloygeryNBT getToolPartNBTIdentifier(IToolPart part)
+	public static AlloygeryToolNBT getToolPartNBTIdentifier(IToolPart part)
 	{
 		return getToolPartNBTIdentifier(part.getToolPartType());
 	}
 
-	public static AlloygeryNBT getToolPartNBTIdentifier(ToolPartType partType)
+	public static AlloygeryToolNBT getToolPartNBTIdentifier(ToolPartType partType)
 	{
 		return switch (partType)
 		{
@@ -31,7 +30,7 @@ public class ToolNBTHelper
 		};
 	}
 
-	public static ToolPartType getToolPartTypeFromNBT(AlloygeryNBT nbt)
+	public static ToolPartType getToolPartTypeFromNBT(AlloygeryToolNBT nbt)
 	{
 		return switch (nbt)
 		{
@@ -39,16 +38,16 @@ public class ToolNBTHelper
 			case TOOL_PART_BINDING -> ToolPartType.BINDING;
 			case TOOL_PART_HANDLE -> ToolPartType.HANDLE;
 			case TOOL_PART_UPGRADE -> ToolPartType.UPGRADE;
-			default -> throw new EnumConstantNotPresentException(AlloygeryNBT.class, nbt.getName());
+			default -> throw new EnumConstantNotPresentException(AlloygeryToolNBT.class, nbt.getName());
 		};
 	}
 
-	public static AlloygeryNBT getToolTypeNBTIdentifier(IToolPartHead head)
+	public static AlloygeryToolNBT getToolTypeNBTIdentifier(IToolPartHead head)
 	{
 		return getToolTypeNBTIdentifier(head.getToolType());
 	}
 
-	public static AlloygeryNBT getToolTypeNBTIdentifier(ToolType toolType)
+	public static AlloygeryToolNBT getToolTypeNBTIdentifier(ToolType toolType)
 	{
 		return switch (toolType)
 		{
@@ -60,7 +59,7 @@ public class ToolNBTHelper
 		};
 	}
 
-	public static ToolType getToolTypeFromNBT(AlloygeryNBT nbt)
+	public static ToolType getToolTypeFromNBT(AlloygeryToolNBT nbt)
 	{
 		return switch (nbt)
 		{
@@ -69,7 +68,7 @@ public class ToolNBTHelper
 			case TOOL_TYPE_PICKAXE -> ToolType.PICKAXE;
 			case TOOL_TYPE_SHOVEL -> ToolType.SHOVEL;
 			case TOOL_TYPE_SWORD -> ToolType.SWORD;
-			default -> throw new EnumConstantNotPresentException(AlloygeryNBT.class, nbt.getName());
+			default -> throw new EnumConstantNotPresentException(AlloygeryToolNBT.class, nbt.getName());
 		};
 	}
 
@@ -121,18 +120,18 @@ public class ToolNBTHelper
 	public static NbtCompound createNBTFromToolPartItem(ToolPartItem toolPartItem)
 	{
 		NbtCompound compound = new NbtCompound();
-		compound.putString(AlloygeryNBT.TYPE.getName(), AlloygeryNBT.TOOL_PART_IDENTIFIER.getName());
-		compound.putString(AlloygeryNBT.TOOL_PART_TYPE_IDENTIFIER.getName(), getToolPartNBTIdentifier(toolPartItem).getName());
-		compound.putString(AlloygeryNBT.TOOL_PART_ITEM_IDENTIFIER.getName(), Registry.ITEM.getId(toolPartItem).toString());
-		compound.putString(AlloygeryNBT.MATERIAL_IDENTIFIER.getName(), AlloygeryMaterialRegistry.identify(toolPartItem.getMaterial()).toString());
+		compound.putString(AlloygeryToolNBT.TYPE.getName(), AlloygeryToolNBT.TOOL_PART_IDENTIFIER.getName());
+		compound.putString(AlloygeryToolNBT.TOOL_PART_TYPE_IDENTIFIER.getName(), getToolPartNBTIdentifier(toolPartItem).getName());
+		compound.putString(AlloygeryToolNBT.TOOL_PART_ITEM_IDENTIFIER.getName(), Registry.ITEM.getId(toolPartItem).toString());
+		compound.putString(AlloygeryToolNBT.MATERIAL_IDENTIFIER.getName(), AlloygeryToolMaterialRegistry.identify(toolPartItem.getMaterial()).toString());
 		if(toolPartItem instanceof IToolPartHead toolHead)
 		{
-			compound.putString(AlloygeryNBT.TOOL_TYPE_IDENTIFIER.getName(), getToolTypeNBTIdentifier(toolHead).getName());
+			compound.putString(AlloygeryToolNBT.TOOL_TYPE_IDENTIFIER.getName(), getToolTypeNBTIdentifier(toolHead).getName());
 		}
 		return compound;
 	}
 
-	public static NbtCompound createToolNBTFromMaterials(AlloygeryMaterial head, AlloygeryMaterial handle, ToolType toolType)
+	public static NbtCompound createToolNBTFromMaterials(AlloygeryToolMaterial head, AlloygeryToolMaterial handle, ToolType toolType)
 	{
 		NbtCompound compound = new NbtCompound();
 		compound.putString(TYPE.getName(), TOOL_IDENTIFIER.getName());
@@ -142,7 +141,7 @@ public class ToolNBTHelper
 		return compound;
 	}
 
-	public static NbtCompound createToolNBTFromMaterials(AlloygeryMaterial head, AlloygeryMaterial handle, AlloygeryMaterial upgrade, ToolType toolType)
+	public static NbtCompound createToolNBTFromMaterials(AlloygeryToolMaterial head, AlloygeryToolMaterial handle, AlloygeryToolMaterial upgrade, ToolType toolType)
 	{
 		NbtCompound compound = new NbtCompound();
 		compound.putString(TYPE.getName(), TOOL_IDENTIFIER.getName());
@@ -153,12 +152,12 @@ public class ToolNBTHelper
 		return compound;
 	}
 
-	public static NbtCompound createToolPartNBTFromMaterial(AlloygeryMaterial material, ToolPartType partType, ToolType toolType)
+	public static NbtCompound createToolPartNBTFromMaterial(AlloygeryToolMaterial material, ToolPartType partType, ToolType toolType)
 	{
 		NbtCompound compound = new NbtCompound();
 		compound.putString(TYPE.getName(), TOOL_PART_IDENTIFIER.getName());
 		compound.putString(TOOL_PART_TYPE_IDENTIFIER.getName(), getToolPartNBTIdentifier(partType).getName());
-		compound.putString(MATERIAL_IDENTIFIER.getName(), AlloygeryMaterialRegistry.identify(material).toString());
+		compound.putString(MATERIAL_IDENTIFIER.getName(), AlloygeryToolMaterialRegistry.identify(material).toString());
 		if(partType == ToolPartType.HEAD)
 			compound.putString(TOOL_TYPE_IDENTIFIER.getName(), getToolTypeNBTIdentifier(toolType).getName());
 
@@ -171,7 +170,7 @@ public class ToolNBTHelper
 		compound.putString(TYPE.getName(), TOOL_PART_IDENTIFIER.getName());
 		compound.putString(TOOL_PART_TYPE_IDENTIFIER.getName(), getToolPartNBTIdentifier(ToolPartType.BINDING).getName());
 		compound.putString(TOOL_PART_ITEM_IDENTIFIER.getName(), Registry.ITEM.getId(Items.AIR).toString());
-		compound.putString(MATERIAL_IDENTIFIER.getName(), AlloygeryMaterialRegistry.identify(AlloygeryMaterials.HIDDEN).toString());
+		compound.putString(MATERIAL_IDENTIFIER.getName(), AlloygeryToolMaterialRegistry.identify(AlloygeryToolMaterials.HIDDEN).toString());
 		return compound;
 	}
 
@@ -252,7 +251,7 @@ public class ToolNBTHelper
 
 	public static ToolType getToolTypeFromToolNBT(NbtCompound compound)
 	{
-		return getToolTypeFromNBT(AlloygeryNBT.getByName(getHeadPartNBTFromToolNBT(compound).getString(TOOL_TYPE_IDENTIFIER.getName())));
+		return getToolTypeFromNBT(AlloygeryToolNBT.getByName(getHeadPartNBTFromToolNBT(compound).getString(TOOL_TYPE_IDENTIFIER.getName())));
 	}
 
 	public static ItemStack createToolPartItemStackFromNBT(NbtCompound compound)
@@ -260,7 +259,7 @@ public class ToolNBTHelper
 		if(!isToolPartNBT(compound))
 			return ItemStack.EMPTY;
 
-		Identifier toolPartItemIdentifier = Identifier.tryParse(compound.getString(AlloygeryNBT.TOOL_PART_ITEM_IDENTIFIER.getName()));
+		Identifier toolPartItemIdentifier = Identifier.tryParse(compound.getString(AlloygeryToolNBT.TOOL_PART_ITEM_IDENTIFIER.getName()));
 		if(toolPartItemIdentifier == null)
 			return ItemStack.EMPTY;
 
@@ -269,7 +268,7 @@ public class ToolNBTHelper
 
 	public static Identifier getMaterialIdentifierFromToolPartNBT(NbtCompound compound)
 	{
-		return isToolPartNBT(compound) ? Identifier.tryParse(compound.getString(MATERIAL_IDENTIFIER.getName())) : AlloygeryMaterialRegistry.getDefaultIdentifier();
+		return isToolPartNBT(compound) ? Identifier.tryParse(compound.getString(MATERIAL_IDENTIFIER.getName())) : AlloygeryToolMaterialRegistry.getDefaultIdentifier();
 	}
 
 	public static boolean isAlloygeryDataNBT(NbtCompound compound)

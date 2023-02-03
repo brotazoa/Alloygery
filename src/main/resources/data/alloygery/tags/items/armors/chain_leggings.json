@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:dynamic_iron_chain_leggings",
+    "alloygery:dynamic_gold_chain_leggings",
+    "alloygery:dynamic_antanium_chain_leggings",
+    "alloygery:dynamic_steel_chain_leggings",
+    "alloygery:dynamic_netherite_chain_leggings",
+    "alloygery:dynamic_nickel_chain_leggings",
+    "alloygery:dynamic_invar_chain_leggings",
+    "alloygery:dynamic_constantan_chain_leggings",
+    "alloygery:dynamic_cupronickel_chain_leggings",
+    "alloygery:dynamic_titanium_chain_leggings",
+    "alloygery:dynamic_titanium_gold_chain_leggings",
+    "alloygery:dynamic_nitinol_chain_leggings"
+  ]
+}

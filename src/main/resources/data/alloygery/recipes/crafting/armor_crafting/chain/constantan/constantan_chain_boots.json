@@ -1,0 +1,15 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "l l",
+    "l l"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:constantan_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_constantan_chain_boots"
+  }
+}

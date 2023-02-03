@@ -1,0 +1,16 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "w w",
+    "www",
+    "www"
+  ],
+  "key": {
+    "w": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_wool_chestplate"
+  }
+}

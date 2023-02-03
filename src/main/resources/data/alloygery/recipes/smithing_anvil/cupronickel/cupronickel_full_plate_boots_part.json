@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "crafting_tool": {
+    "tag": "alloygery:tools/crafting_hammers"
+  },
+  "material": {
+    "tag": "c:cupronickel_heavy_plates"
+  },
+  "material_cost": 2,
+  "minimum_crafting_tier": 2,
+  "result": {
+    "item": "alloygery:cupronickel_full_plate_boots_part"
+  }
+}

@@ -4,7 +4,7 @@ import amorphia.alloygery.content.machines.block.entity.SmithingAnvilBlockEntity
 import amorphia.alloygery.content.machines.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
 import amorphia.alloygery.content.machines.registry.MachineScreenRegistry;
-import amorphia.alloygery.registry.ModTags;
+import amorphia.alloygery.content.machines.registry.MachineTagRegistry;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -294,7 +294,7 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 					return ItemStack.EMPTY;
 				}
 			}
-			else if (slotStack.isIn(ModTags.CRAFTING_TOOLS)) // inventory to hammer slot
+			else if (slotStack.isIn(MachineTagRegistry.CRAFTING_TOOLS)) // inventory to hammer slot
 			{
 				if (!this.insertItem(slotStack, 0, 1, false))
 				{

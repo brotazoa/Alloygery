@@ -33,17 +33,17 @@ public class ArmorItemRegistry
 		createBaseArmorSet(WOOL_BASE);
 
 		createBaseArmorSet(IRON_CHAIN_BASE);
-		createBaseArmorSet(GOLD_CHAIN_BASE);
-		createBaseArmorSet(ANTANIUM_CHAIN_BASE);
-		createBaseArmorSet(STEEL_CHAIN_BASE);
-		createBaseArmorSet(NETHERITE_CHAIN_BASE);
-		createBaseArmorSet(NICKEL_CHAIN_BASE);
-		createBaseArmorSet(INVAR_CHAIN_BASE);
-		createBaseArmorSet(CONSTANTAN_CHAIN_BASE);
-		createBaseArmorSet(CUPRONICKEL_CHAIN_BASE);
-		createBaseArmorSet(TITANIUM_CHAIN_BASE);
-		createBaseArmorSet(TITANIUM_GOLD_CHAIN_BASE);
-		createBaseArmorSet(NITINOL_CHAIN_BASE);
+//		createBaseArmorSet(GOLD_CHAIN_BASE);
+//		createBaseArmorSet(ANTANIUM_CHAIN_BASE);
+//		createBaseArmorSet(STEEL_CHAIN_BASE);
+//		createBaseArmorSet(NETHERITE_CHAIN_BASE);
+//		createBaseArmorSet(NICKEL_CHAIN_BASE);
+//		createBaseArmorSet(INVAR_CHAIN_BASE);
+//		createBaseArmorSet(CONSTANTAN_CHAIN_BASE);
+//		createBaseArmorSet(CUPRONICKEL_CHAIN_BASE);
+//		createBaseArmorSet(TITANIUM_CHAIN_BASE);
+//		createBaseArmorSet(TITANIUM_GOLD_CHAIN_BASE);
+//		createBaseArmorSet(NITINOL_CHAIN_BASE);
 
 		createArmorSetWithBase("leather_half_plate", LEATHER_BASE, IRON_HALF_PLATE);
 		createArmorSetWithBase("leather_full_plate", LEATHER_BASE, IRON_FULL_PLATE);
@@ -107,7 +107,7 @@ public class ArmorItemRegistry
 		registerGeneratedItem(
 				"dynamic_" + baseMaterial.getMaterialName() + "_helmet",
 				baseMaterial.isDyeable() ?
-						new DyeableDynamicArmorItem(ArmorType.HELMET){
+						new DyeableDynamicArmorItem(ArmorType.HELMET, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{
@@ -122,7 +122,7 @@ public class ArmorItemRegistry
 								return baseMaterial;
 							}
 						} :
-						new DynamicArmorItem(ArmorType.HELMET){
+						new DynamicArmorItem(ArmorType.HELMET, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{
@@ -144,7 +144,7 @@ public class ArmorItemRegistry
 		registerGeneratedItem(
 				"dynamic_" + baseMaterial.getMaterialName() + "_chestplate",
 				baseMaterial.isDyeable() ?
-						new DyeableDynamicArmorItem(ArmorType.CHESTPLATE){
+						new DyeableDynamicArmorItem(ArmorType.CHESTPLATE, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{
@@ -159,7 +159,7 @@ public class ArmorItemRegistry
 								return baseMaterial;
 							}
 						} :
-						new DynamicArmorItem(ArmorType.CHESTPLATE){
+						new DynamicArmorItem(ArmorType.CHESTPLATE, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{
@@ -181,7 +181,7 @@ public class ArmorItemRegistry
 		registerGeneratedItem(
 				"dynamic_" + baseMaterial.getMaterialName() + "_leggings",
 				baseMaterial.isDyeable() ?
-						new DyeableDynamicArmorItem(ArmorType.LEGGINGS){
+						new DyeableDynamicArmorItem(ArmorType.LEGGINGS, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{
@@ -196,7 +196,7 @@ public class ArmorItemRegistry
 								return baseMaterial;
 							}
 						} :
-						new DynamicArmorItem(ArmorType.LEGGINGS){
+						new DynamicArmorItem(ArmorType.LEGGINGS, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{
@@ -218,7 +218,7 @@ public class ArmorItemRegistry
 		registerGeneratedItem(
 				"dynamic_" + baseMaterial.getMaterialName() + "_boots",
 				baseMaterial.isDyeable() ?
-						new DyeableDynamicArmorItem(ArmorType.BOOTS){
+						new DyeableDynamicArmorItem(ArmorType.BOOTS, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{
@@ -233,7 +233,7 @@ public class ArmorItemRegistry
 								return baseMaterial;
 							}
 						} :
-						new DynamicArmorItem(ArmorType.BOOTS){
+						new DynamicArmorItem(ArmorType.BOOTS, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)){
 							@Override
 							public ItemStack getDefaultStack()
 							{

@@ -19,17 +19,6 @@ public class AlloygeryArmorMaterials
 	public static final AlloygeryArmorMaterial LEATHER_BASE;
 
 	public static final AlloygeryArmorMaterial IRON_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial GOLD_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial ANTANIUM_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial STEEL_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial NETHERITE_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial NICKEL_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial INVAR_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial CONSTANTAN_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial CUPRONICKEL_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial TITANIUM_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial TITANIUM_GOLD_CHAIN_BASE;
-	public static final AlloygeryArmorMaterial NITINOL_CHAIN_BASE;
 
 	public static final AlloygeryArmorMaterial LEATHER_HALF_PLATE;
 	public static final AlloygeryArmorMaterial LEATHER_FULL_PLATE;
@@ -77,7 +66,7 @@ public class AlloygeryArmorMaterials
 	public static final AlloygeryArmorMaterial NITINOL_FULL_PLATE;
 
 //	public static final AlloygeryArmorMaterial NETHERITE_REINFORCED_UPGRADE;
-//	public static final AlloygeryArmorMaterial GOLD_GUILDED_UPGRADE;
+//	public static final AlloygeryArmorMaterial GOLD_ETCHED_UPGRADE;
 
 	private static AlloygeryArmorMaterial register(AlloygeryArmorMaterial material)
 	{
@@ -189,7 +178,7 @@ public class AlloygeryArmorMaterials
 
 		IRON_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
 				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("iron_chain")
+				.name("chain")
 				.color(MaterialColor.IRON.getColor())
 				.repairIngredientFromTag("c:iron_ingots")
 
@@ -198,192 +187,6 @@ public class AlloygeryArmorMaterials
 				.makeProperty(ArmorPropertyType.ARMOR, 7.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 10.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, 5.0f)
-				.build()
-
-				.build()
-		);
-
-		GOLD_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("gold_chain")
-				.color(MaterialColor.GOLD.getColor())
-				.repairIngredientFromTag("c:gold_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 7.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 5.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 25.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 0.0f)
-				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
-				.build()
-
-				.build()
-		);
-
-		ANTANIUM_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("antanium_chain")
-				.color(MaterialColor.ANTANIUM.getColor())
-				.repairIngredientFromTag("c:antanium_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 20.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 20.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 4.0f)
-				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
-				.build()
-
-				.build()
-		);
-
-		STEEL_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("steel_chain")
-				.color(MaterialColor.STEEL.getColor())
-				.repairIngredientFromTag("c:steel_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 35.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
-				.makeProperty(ArmorPropertyType.TOUGHNESS, 1.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 8.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 0.0f)
-				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 10.0f)
-				.build()
-
-				.build()
-		);
-
-		NETHERITE_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("netherite_chain")
-				.color(MaterialColor.NETHERITE.getColor())
-				.repairIngredientFromTag("c:netherite_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 40.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
-				.makeProperty(ArmorPropertyType.TOUGHNESS, 2.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 15.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 0.0f)
-				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 20.0f)
-				.makeProperty(ArmorPropertyType.FIREPROOF, 1.0f)
-				.build()
-
-				.build()
-		);
-
-		NICKEL_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("nickel_chain")
-				.color(MaterialColor.NICKEL.getColor())
-				.repairIngredientFromTag("c:nickel_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 37.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 10.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 0.0f)
-				.build()
-
-				.build()
-		);
-
-		INVAR_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("invar_chain")
-				.color(MaterialColor.INVAR.getColor())
-				.repairIngredientFromTag("c:invar_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
-				.makeProperty(ArmorPropertyType.TOUGHNESS, 2.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 8.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, -5.0f)
-				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 20.0f)
-				.build()
-
-				.build()
-		);
-
-		CONSTANTAN_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("constantan_chain")
-				.color(MaterialColor.CONSTANTAN.getColor())
-				.repairIngredientFromTag("c:constantan_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 38.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 12.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 0.0f)
-				.build()
-
-				.build()
-		);
-
-		CUPRONICKEL_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("cupronickel_chain")
-				.color(MaterialColor.CUPRONICKEL.getColor())
-				.repairIngredientFromTag("c:cupronickel_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 40.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 10.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 0.0f)
-				.build()
-
-				.build()
-		);
-
-		TITANIUM_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("titanium_chain")
-				.color(MaterialColor.TITANIUM.getColor())
-				.repairIngredientFromTag("c:titanium_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 18.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 10.0f)
-				.build()
-
-				.build()
-		);
-
-		TITANIUM_GOLD_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("titanium_gold_chain")
-				.color(MaterialColor.TITANIUM_GOLD.getColor())
-				.repairIngredientFromTag("c:titanium_gold_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 25.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 5.0f)
-				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
-				.build()
-
-				.build()
-		);
-
-		NITINOL_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("nitinol_chain")
-				.color(MaterialColor.NITINOL.getColor())
-				.repairIngredientFromTag("c:nitinol_ingots")
-
-				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
-				.makeProperty(ArmorPropertyType.DURABILITY, 50.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
-				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 18.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, 10.0f)
 				.build()
 
 				.build()
@@ -678,6 +481,7 @@ public class AlloygeryArmorMaterials
 				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 20.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -5.0f)
+				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
 				.build()
 
 				.build()
@@ -822,6 +626,7 @@ public class AlloygeryArmorMaterials
 				.makeProperty(ArmorPropertyType.ARMOR, 22.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 20.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -2.0f)
+				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
 				.build()
 
 				.build()

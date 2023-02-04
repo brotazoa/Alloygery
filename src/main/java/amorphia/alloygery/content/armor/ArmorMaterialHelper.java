@@ -6,6 +6,7 @@ import amorphia.alloygery.content.armor.item.IDynamicArmor;
 import amorphia.alloygery.content.armor.material.AlloygeryArmorMaterial;
 import amorphia.alloygery.content.armor.material.AlloygeryArmorMaterials;
 import amorphia.alloygery.content.armor.registry.AlloygeryArmorMaterialRegistry;
+import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
@@ -60,7 +61,9 @@ public class ArmorMaterialHelper
 
 	public static int getLayerColor(ItemStack armorStack, ArmorLayer layer)
 	{
-		return isLayerColored(armorStack, layer) ? ArmorNBTHelper.getLayerColor(armorStack, layer) : getMaterialForLayer(armorStack, layer).getMaterialColor();
+		return isLayerColored(armorStack, layer) ? ArmorNBTHelper.getLayerColor(armorStack, layer) :
+				armorStack.getItem() instanceof DyeableItem dyeableItem ? dyeableItem.getColor(armorStack) :
+						getMaterialForLayer(armorStack, layer).getMaterialColor();
 	}
 
 	public static boolean isLayerColored(ItemStack armorStack, ArmorLayer layer)

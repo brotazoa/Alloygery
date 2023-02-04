@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.RecipeType;
@@ -26,26 +27,14 @@ public class ToolHeadRemovingRecipeShapeless extends CraftingToolDamagingRecipeS
 		ItemStack toolStack = null;
 		for(int i = 0; i < craftingInventory.size(); i++)
 		{
-			if(craftingInventory.getStack(i).getItem() instanceof IDynamicTool)
+			if(craftingInventory.getStack(i).getItem() instanceof IDynamicTool || craftingInventory.getStack(i).getItem() instanceof ToolItem)
 				toolStack = craftingInventory.getStack(i);
 		}
 
 		if(toolStack == null || toolStack.isEmpty())
 			return ItemStack.EMPTY;
 
-		NbtCompound compound = toolStack.getOrCreateNbt();
-		if(compound == null || compound.isEmpty() || !ToolNBTHelper.isAlloygeryDataNBT(compound))
-			return ItemStack.EMPTY;
-
-		NbtCompound toolCompound = ToolNBTHelper.getAlloygeryDataNBT(compound);
-		if(!ToolNBTHelper.isToolNBT(toolCompound))
-			return ItemStack.EMPTY;
-
-		NbtCompound headCompound = ToolNBTHelper.getHeadPartNBTFromToolNBT(toolCompound);
-		if (!ToolNBTHelper.isToolHeadPartNBT(headCompound))
-			return ItemStack.EMPTY;
-
-		ItemStack headStack = ToolNBTHelper.createToolPartItemStackFromNBT(headCompound);
+		ItemStack headStack = getOutput().copy();
 		if(headStack == null || headStack.isEmpty())
 			return ItemStack.EMPTY;
 

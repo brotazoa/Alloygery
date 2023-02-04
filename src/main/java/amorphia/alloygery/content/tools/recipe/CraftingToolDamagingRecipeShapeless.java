@@ -1,7 +1,7 @@
 package amorphia.alloygery.content.tools.recipe;
 
 import amorphia.alloygery.Alloygery;
-import amorphia.alloygery.registry.ModTags;
+import amorphia.alloygery.content.machines.registry.MachineTagRegistry;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.ItemStack;
@@ -26,7 +26,7 @@ public class CraftingToolDamagingRecipeShapeless extends ShapelessRecipe
 		for(int i = 0; i < defaultedList.size(); i++)
 		{
 			ItemStack stack = inventory.getStack(i).copy();
-			if(stack != null && !stack.isEmpty() && stack.isIn(ModTags.CRAFTING_TOOLS))
+			if(stack != null && !stack.isEmpty() && stack.isIn(MachineTagRegistry.CRAFTING_TOOLS))
 			{
 				if (stack.isDamageable())
 				{

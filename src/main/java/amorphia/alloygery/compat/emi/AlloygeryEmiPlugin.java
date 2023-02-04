@@ -58,6 +58,6 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 
 		final boolean showArmors = AlloygeryConfig.showDynamicArmorsInRecipeViewer.getValue();
 		if(!showArmors)
-			registry.removeEmiStacks(entryStack -> entryStack.getItemStack().getItem() instanceof IDynamicArmor);
+			registry.removeEmiStacks(entryStack -> entryStack.getItemStack().getItem() instanceof IDynamicArmor && entryStack.getItemStack().getItem().getGroup() == null);
 	}
 }

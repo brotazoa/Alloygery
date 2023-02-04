@@ -31,24 +31,15 @@ public class ArmorDescriptionHelper
 
 	public static Text getArmorStackName(ItemStack armor)
 	{
-		if (armor.getItem() instanceof IDynamicArmor dynamicArmor)
+		if (armor.getItem() instanceof IDynamicArmor dynamicArmor && ArmorNBTHelper.isAlloygeryDataNBT(armor.getNbt()))
 		{
 			AlloygeryArmorMaterial baseMaterial;
 			AlloygeryArmorMaterial plateMaterial;
 			AlloygeryArmorMaterial upgradeMaterial;
 
-			if(ArmorNBTHelper.isAlloygeryDataNBT(armor.getNbt()))
-			{
-				baseMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.BASE);
-				plateMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.PLATE);
-				upgradeMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.UPGRADE);
-			}
-			else
-			{
-				baseMaterial = dynamicArmor.getDefaultBaseMaterial();
-				plateMaterial = dynamicArmor.getDefaultPlateMaterial();
-				upgradeMaterial = dynamicArmor.getDefaultUpgradeMaterial();
-			}
+			baseMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.BASE);
+			plateMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.PLATE);
+			upgradeMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.UPGRADE);
 
 			MutableText armorBaseName = translatable("item.alloygery." + baseMaterial.getMaterialName() + "_" + dynamicArmor.getArmorType().getName());
 
@@ -75,21 +66,23 @@ public class ArmorDescriptionHelper
 
 	public static void writeArmorDescription(List<Text> tooltip, ItemStack armor, TooltipContext context)
 	{
-		if (ArmorNBTHelper.isAlloygeryDataNBT(armor.getNbt()))
+		ItemStack armorStackCopy = ArmorNBTHelper.isAlloygeryDataNBT(armor.getNbt()) ? armor.copy() : armor.getItem().getDefaultStack().copy();
+
+		if(armorStackCopy.getItem() instanceof IDynamicArmor)
 		{
-			if (Screen.hasShiftDown())
+			if(Screen.hasShiftDown())
 			{
-				writeComplexArmorDescription(tooltip, armor);
+				writeComplexArmorDescription(tooltip, armorStackCopy);
 			}
 			else
 			{
 				writeShiftPrompt(tooltip);
-				writeSimpleArmorDescription(tooltip, armor);
+				writeSimpleArmorDescription(tooltip, armorStackCopy);
 			}
 		}
 		else
 		{
-			writeNoNBTArmorDescription(tooltip, armor);
+			writeNoNBTArmorDescription(tooltip, armorStackCopy);
 		}
 	}
 

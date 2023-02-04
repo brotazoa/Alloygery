@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:dynamic_chain_half_plate_helmet",
+    "alloygery:dynamic_chain_half_plate_chestplate",
+    "alloygery:dynamic_chain_half_plate_leggings",
+    "alloygery:dynamic_chain_half_plate_boots",
+    "alloygery:dynamic_chain_full_plate_helmet",
+    "alloygery:dynamic_chain_full_plate_chestplate",
+    "alloygery:dynamic_chain_full_plate_leggings",
+    "alloygery:dynamic_chain_full_plate_boots"
+  ]
+}

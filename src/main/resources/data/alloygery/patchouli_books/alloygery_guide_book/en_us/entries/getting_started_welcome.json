@@ -45,9 +45,9 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/crafting_tools/bronze_crafting_hammer",
+      "recipe": "alloygery:crafting/tools/crafting_tools/iron_crafting_hammer",
       "advancement": "alloygery:story/smithing_anvil",
-      "text": "In order to craft iron tool parts at the $(l:block_smithing_anvil)Smithing Anvil$() you will need an Crafting Hammer."
+      "text": "In order to craft iron tool parts at the $(l:block_smithing_anvil)Smithing Anvil$() you will need a Crafting Hammer."
     },
     {
       "type": "patchouli:image",

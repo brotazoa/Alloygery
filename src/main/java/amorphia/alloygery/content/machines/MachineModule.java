@@ -13,6 +13,7 @@ public class MachineModule implements IAlloygeryModule
 		MachineRecipeRegistry.init();
 		MachineScreenRegistry.init();
 		MachineStatisticRegistry.init();
+		MachineTagRegistry.init();
 	}
 
 	@Override

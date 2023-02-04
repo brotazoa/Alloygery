@@ -55,6 +55,6 @@ public class AlloygeryPlugin implements REIClientPlugin
 
 		final boolean showArmors = AlloygeryConfig.showDynamicArmorsInRecipeViewer.getValue();
 		if(!showArmors)
-			registry.removeEntryIf(entryStack -> entryStack.getValue() instanceof ItemStack itemStack && itemStack.getItem() instanceof IDynamicArmor);
+			registry.removeEntryIf(entryStack -> entryStack.getValue() instanceof ItemStack itemStack && itemStack.getItem() instanceof IDynamicArmor && itemStack.getItem().getGroup() == null);
 	}
 }

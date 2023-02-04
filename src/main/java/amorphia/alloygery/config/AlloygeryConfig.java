@@ -33,9 +33,15 @@ public class AlloygeryConfig
 		AlloygeryConfigSerializer.deserializeInto(ALLOYGERY_CONFIG);
 	}
 
+	public static void saveToFile()
+	{
+		AlloygeryConfigSerializer.serialize(ALLOYGERY_CONFIG);
+	}
+
 	public static final ConfigValue disableVanillaWoodenToolCrafting;
 	public static final ConfigValue disableVanillaDiamondCrafting;
 	public static final ConfigValue disableVanillaIronCrafting;
+	public static final ConfigValue disableVanillaGoldCrafting;
 
 	public static final ConfigValue showDynamicToolsInRecipeViewer;
 	public static final ConfigValue showDynamicArmorsInRecipeViewer;
@@ -50,6 +56,7 @@ public class AlloygeryConfig
 		disableVanillaWoodenToolCrafting = ALLOYGERY_CONFIG.register("disable_wooden_tool_crafting", new ConfigValue(false));
 		disableVanillaDiamondCrafting = ALLOYGERY_CONFIG.register("disable_diamond_crafting", new ConfigValue(true));
 		disableVanillaIronCrafting = ALLOYGERY_CONFIG.register("disable_iron_crafting", new ConfigValue(true));
+		disableVanillaGoldCrafting = ALLOYGERY_CONFIG.register("disable_golden_crafting", new ConfigValue(true));
 
 		showDynamicToolsInRecipeViewer = ALLOYGERY_CONFIG.register("show_tools_in_recipe_viewers", new ConfigValue(false));
 		showDynamicArmorsInRecipeViewer = ALLOYGERY_CONFIG.register("show_armors_in_recipe_viewers", new ConfigValue(false));

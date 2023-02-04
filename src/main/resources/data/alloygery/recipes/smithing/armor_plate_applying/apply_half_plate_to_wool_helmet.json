@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:apply_armor_part_to_armor_smithing",
+  "base": {
+    "tag": "alloygery:armors/wool_helmets"
+  },
+  "addition": {
+    "tag": "alloygery:armor_parts/half_plate_helmet_parts"
+  },
+  "result": {
+    "item": "alloygery:dynamic_wool_half_plate_helmet"
+  }
+}

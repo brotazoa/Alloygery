@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:armor_part_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:armors/wool_plated_chestplates"
+    }
+  ],
+  "result": {
+    "item": "alloygery:dynamic_wool_chestplate"
+  }
+}

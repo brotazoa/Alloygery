@@ -7,7 +7,8 @@
     "ArmorEnchantablilityMixin",
     "ArmorItemEntityFireImmuneMixin",
     "ArmorItemStackMixin",
-    "ArmorPiglinLovedMixin"
+    "ArmorPiglinLovedMixin",
+    "ArmorWalkOnPowderedSnowMixin"
   ],
   "client": [
     "ArmorModelLoaderMixin"

@@ -8,6 +8,7 @@ import amorphia.alloygery.content.armor.data.AlloygeryArmorMaterialDataLoader;
 import amorphia.alloygery.content.armor.registry.ArmorItemRegistry;
 import amorphia.alloygery.content.armor.registry.ArmorNetworkEventRegistry;
 import amorphia.alloygery.content.armor.registry.ArmorRecipeRegistry;
+import amorphia.alloygery.content.armor.registry.ArmorTagRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.resource.ResourceType;
 
@@ -22,6 +23,7 @@ public class ArmorModule implements IAlloygeryModule
 
 		ArmorItemRegistry.init();
 		ArmorRecipeRegistry.init();
+		ArmorTagRegistry.init();
 	}
 
 	@Override

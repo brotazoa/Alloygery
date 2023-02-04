@@ -1,7 +1,6 @@
 package amorphia.alloygery.content.armor.item;
 
 import amorphia.alloygery.content.armor.ArmorMaterialHelper;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 
 public class DyeableDynamicArmorItem extends DynamicArmorItem implements IDyeableItemWithDefaultColor

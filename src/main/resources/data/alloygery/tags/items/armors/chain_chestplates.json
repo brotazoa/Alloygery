@@ -1,17 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alloygery:dynamic_iron_chain_chestplate",
-    "alloygery:dynamic_gold_chain_chestplate",
-    "alloygery:dynamic_antanium_chain_chestplate",
-    "alloygery:dynamic_steel_chain_chestplate",
-    "alloygery:dynamic_netherite_chain_chestplate",
-    "alloygery:dynamic_nickel_chain_chestplate",
-    "alloygery:dynamic_invar_chain_chestplate",
-    "alloygery:dynamic_constantan_chain_chestplate",
-    "alloygery:dynamic_cupronickel_chain_chestplate",
-    "alloygery:dynamic_titanium_chain_chestplate",
-    "alloygery:dynamic_titanium_gold_chain_chestplate",
-    "alloygery:dynamic_nitinol_chain_chestplate"
+    "minecraft:chainmail_chestplate",
+    "alloygery:dynamic_chain_chestplate"
   ]
 }

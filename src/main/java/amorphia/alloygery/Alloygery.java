@@ -11,9 +11,7 @@ import amorphia.alloygery.content.tools.data.AlloygeryToolMaterialDataHelper;
 import amorphia.alloygery.content.tools.registry.AlloygeryToolMaterialRegistry;
 import amorphia.alloygery.registry.ModAdvancements;
 import amorphia.alloygery.registry.ModResourceConditions;
-import amorphia.alloygery.registry.ModTags;
 import com.google.common.collect.Lists;
-import com.google.gson.JsonObject;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -32,7 +30,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.List;
 
 public class Alloygery implements ModInitializer, ClientModInitializer
 {
@@ -60,8 +58,6 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();
-
-		ModTags.register();
 
 		ModAdvancements.init();
 

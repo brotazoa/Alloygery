@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:leather_chestplate",
+    "alloygery:dynamic_leather_chestplate"
+  ]
+}

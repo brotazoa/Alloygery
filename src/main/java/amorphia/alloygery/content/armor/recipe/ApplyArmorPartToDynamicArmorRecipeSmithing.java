@@ -15,6 +15,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
@@ -54,6 +55,11 @@ public class ApplyArmorPartToDynamicArmorRecipeSmithing extends SmithingRecipe
 		if(baseStack.getItem() == Items.CHAINMAIL_BOOTS)
 			baseStack = ArmorItemRegistry.ITEMS.get("dynamic_chain_boots").getDefaultStack().copy();
 		//check for vanilla leather armors
+		//also grab any dye color the leather armor might have
+		int dyeColor = -1;
+		if(baseStack.getItem() instanceof DyeableItem dyeableItem)
+			dyeColor = dyeableItem.getColor(baseStack);
+
 		if(baseStack.getItem() == Items.LEATHER_HELMET)
 			baseStack = ArmorItemRegistry.ITEMS.get("dynamic_leather_helmet").getDefaultStack().copy();
 		if(baseStack.getItem() == Items.LEATHER_CHESTPLATE)
@@ -89,6 +95,9 @@ public class ApplyArmorPartToDynamicArmorRecipeSmithing extends SmithingRecipe
 				AlloygeryArmorMaterial plateMaterial = armorPart.getArmorMaterial();
 
 				ArmorNBTHelper.addAlloygeryNBTToArmorStack(armorStack, ArmorNBTHelper.createArmorNBT(baseMaterial, plateMaterial));
+
+				if(dyeColor != -1)
+					ArmorNBTHelper.setArmorLayerColor(armorStack, ArmorLayer.BASE, dyeColor);
 
 				if(ArmorNBTHelper.armorLayerHasColor(baseStack, ArmorLayer.BASE))
 					ArmorNBTHelper.setArmorLayerColor(armorStack, ArmorLayer.BASE, ArmorNBTHelper.getLayerColor(baseStack, ArmorLayer.BASE));

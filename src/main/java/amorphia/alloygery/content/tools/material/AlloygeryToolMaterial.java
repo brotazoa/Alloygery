@@ -26,6 +26,8 @@ public class AlloygeryToolMaterial
 
 	private Ingredient repairIngredient = Ingredient.EMPTY;
 
+	private Ingredient upgradeIngredient = Ingredient.EMPTY;
+
 	private final List<ToolProperty> toolProperties = Lists.newArrayList();
 	private final Map<ToolPartType, List<ToolProperty>> toolPropertiesByPart = Maps.newHashMap();
 
@@ -44,6 +46,11 @@ public class AlloygeryToolMaterial
 	public Ingredient getRepairIngredient()
 	{
 		return repairIngredient;
+	}
+
+	public Ingredient getUpgradeIngredient()
+	{
+		return upgradeIngredient;
 	}
 
 	public List<ToolProperty> getToolProperties()
@@ -120,6 +127,7 @@ public class AlloygeryToolMaterial
 
 			original.materialColor = other.materialColor;
 			original.repairIngredient = other.repairIngredient;
+			original.upgradeIngredient = other.upgradeIngredient;
 
 			other.toolProperties.forEach(original::addToolProperty);
 
@@ -188,6 +196,36 @@ public class AlloygeryToolMaterial
 		public AlloygeryToolMaterialBuilder repairIngredientFromIngredient(Ingredient ingredient)
 		{
 			this.material.repairIngredient = ingredient == null ? Ingredient.EMPTY : ingredient;
+			return this;
+		}
+
+		public AlloygeryToolMaterialBuilder upgradeIngredientFromTag(String tagString)
+		{
+			JsonObject tag = new JsonObject();
+			tag.addProperty("tag", tagString);
+			return upgradeIngredientFromIngredient(Ingredient.fromJson(tag));
+		}
+
+		public AlloygeryToolMaterialBuilder upgradeIngredientFromTag(TagKey<Item> tag)
+		{
+			return upgradeIngredientFromIngredient(Ingredient.fromTag(tag));
+		}
+
+		public AlloygeryToolMaterialBuilder upgradeIngredientFromItem(String itemString)
+		{
+			JsonObject item = new JsonObject();
+			item.addProperty("item", itemString);
+			return upgradeIngredientFromIngredient(Ingredient.fromJson(item));
+		}
+
+		public AlloygeryToolMaterialBuilder upgradeIngredientFromItem(ItemConvertible item)
+		{
+			return upgradeIngredientFromIngredient(Ingredient.ofItems(item));
+		}
+
+		public AlloygeryToolMaterialBuilder upgradeIngredientFromIngredient(Ingredient ingredient)
+		{
+			this.material.upgradeIngredient = ingredient == null ? Ingredient.EMPTY : ingredient;
 			return this;
 		}
 

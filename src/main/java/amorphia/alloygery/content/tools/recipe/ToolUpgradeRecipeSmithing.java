@@ -5,7 +5,10 @@ import amorphia.alloygery.content.tools.ToolMaterialHelper;
 import amorphia.alloygery.content.tools.ToolNBTHelper;
 import amorphia.alloygery.content.tools.item.part.ToolPartItem;
 import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
+import amorphia.alloygery.content.tools.material.AlloygeryToolMaterials;
 import amorphia.alloygery.content.tools.mixin.SmithingRecipeAccessor;
+import amorphia.alloygery.content.tools.registry.AlloygeryToolMaterialRegistry;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -40,13 +43,14 @@ public class ToolUpgradeRecipeSmithing extends SmithingRecipe
 		if(toolStack == null || toolStack.isEmpty() || !(toolStack.getItem() instanceof IDynamicTool))
 			return ItemStack.EMPTY;
 
-		if(additionStack != null && !additionStack.isEmpty() && additionStack.getItem() instanceof  ToolPartItem toolPartItem)
-		{
-			if(ToolMaterialHelper.getHeadMaterial(toolStack).equals(toolPartItem.getMaterial()))
-				return ItemStack.EMPTY;
+		if(additionStack == null || additionStack.isEmpty())
+			return ItemStack.EMPTY;
 
-			ToolNBTHelper.modifyToolStackNBTWithUpgradePartItem(toolStack, toolPartItem);
-		}
+		AlloygeryToolMaterial upgradeMaterial = AlloygeryToolMaterialRegistry.stream().filter(m -> m.getUpgradeIngredient().test(additionStack)).findFirst().orElse(AlloygeryToolMaterials.UNKNOWN);
+		if(upgradeMaterial == AlloygeryToolMaterials.UNKNOWN || ToolMaterialHelper.getHeadMaterial(toolStack).equals(upgradeMaterial))
+			return ItemStack.EMPTY;
+
+		ToolNBTHelper.modifyToolStackNBTWithUpgradeMaterial(toolStack, upgradeMaterial);
 
 		return toolStack;
 	}

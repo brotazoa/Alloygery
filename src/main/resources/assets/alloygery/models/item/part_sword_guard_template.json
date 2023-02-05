@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alloygery:parts/sword_guard_template"
+    "layer0": "alloygery:tool_parts/sword_guard_template"
   }
 }

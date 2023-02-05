@@ -34,6 +34,7 @@ public class AlloygeryToolMaterialDataPacket implements IAlloygeryToolMaterialDa
 			json.addProperty("name", material.getMaterialName());
 			json.addProperty("color", material.getMaterialColor());
 			json.add("repair_ingredient", material.getRepairIngredient().toJson());
+			json.add("upgrade_ingredient", material.getUpgradeIngredient().toJson());
 
 			JsonArray toolProperties = new JsonArray();
 			material.getToolProperties().forEach(property -> {
@@ -68,6 +69,9 @@ public class AlloygeryToolMaterialDataPacket implements IAlloygeryToolMaterialDa
 
 			if(json.has("repair_ingredient") && json.get("repair_ingredient").isJsonObject())
 				builder.repairIngredientFromIngredient(Ingredient.fromJson(json.get("repair_ingredient").getAsJsonObject()));
+
+			if(json.has("upgrade_ingredient") && json.get("upgrade_ingredient").isJsonObject())
+				builder.upgradeIngredientFromIngredient(Ingredient.fromJson(json.get("upgrade_ingredient").getAsJsonObject()));
 
 			if (json.has("tool_properties") && json.get("tool_properties").isJsonArray())
 			{

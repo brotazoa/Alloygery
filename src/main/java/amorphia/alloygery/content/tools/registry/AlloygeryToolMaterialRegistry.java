@@ -12,6 +12,7 @@ import org.apache.commons.compress.utils.Lists;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
+import java.util.stream.Stream;
 
 public class AlloygeryToolMaterialRegistry
 {
@@ -97,6 +98,11 @@ public class AlloygeryToolMaterialRegistry
 	public static void forEach(BiConsumer<Identifier, AlloygeryToolMaterial> forEachConsumer)
 	{
 		MATERIALS.forEach(forEachConsumer);
+	}
+
+	public static Stream<AlloygeryToolMaterial> stream()
+	{
+		return MATERIALS.values().stream();
 	}
 
 	public static void resetToRegisteredValues()

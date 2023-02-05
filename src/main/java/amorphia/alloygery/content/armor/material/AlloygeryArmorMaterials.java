@@ -150,7 +150,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
 				.makeProperty(ArmorPropertyType.DURABILITY, 5.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 4.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 5.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 15.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, 10.0f)
 				.build()
@@ -176,7 +176,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
 				.makeProperty(ArmorPropertyType.DURABILITY, 15.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 7.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 10.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, 5.0f)
 				.build()
@@ -194,7 +194,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 10.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 5.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 4.0f)
 				.build()
 
 				.build()
@@ -208,7 +208,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 15.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 7.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 5.0f)
 				.build()
 
 				.build()
@@ -222,7 +222,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 15.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 7.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 5.0f)
 				.build()
 
 				.build()
@@ -236,7 +236,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 7.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 5.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 4.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 12.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -2.0f)
 				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
@@ -253,7 +253,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 20.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 6.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 10.0f)
 				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
 				.build()
@@ -269,7 +269,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 35.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 1.0f)
 				.build()
 
@@ -284,7 +284,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 35.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 1.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 10.0f)
 				.build()
@@ -300,7 +300,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 40.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 2.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 20.0f)
 				.makeProperty(ArmorPropertyType.FIREPROOF, 1.0f)
@@ -317,7 +317,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 37.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
 				.build()
 
 				.build()
@@ -331,7 +331,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 1.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 20.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -5.0f)
@@ -348,7 +348,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 38.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
 				.build()
 
 				.build()
@@ -362,7 +362,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 40.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
 				.build()
 
 				.build()
@@ -376,7 +376,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, 2.0f)
 				.build()
 
@@ -391,7 +391,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 10.0f)
 				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
 				.build()
@@ -407,7 +407,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 50.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, 2.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 8.0f)
 				.build()
@@ -425,7 +425,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 15.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -5.0f)
 				.build()
 
@@ -440,7 +440,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 20.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 12.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 10.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 20.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -5.0f)
 				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
@@ -457,7 +457,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 35.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 20.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 2.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -8.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 10.0f)
@@ -474,7 +474,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 35.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 20.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 2.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -8.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 20.0f)
@@ -491,9 +491,9 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 40.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 28.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 18.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 4.0f)
-				.makeProperty(ArmorPropertyType.MOBILITY, -10.0f)
+				.makeProperty(ArmorPropertyType.MOBILITY, -5.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 40.0f)
 				.makeProperty(ArmorPropertyType.FIREPROOF, 1.0f)
 				.build()
@@ -509,7 +509,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 37.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 22.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 16.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -10.0f)
 				.build()
 
@@ -524,7 +524,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 28.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 18.0f)
 				.makeProperty(ArmorPropertyType.TOUGHNESS, 4.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -20.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 40.0f)
@@ -541,7 +541,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 38.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 20.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -10.0f)
 				.build()
 
@@ -556,7 +556,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 40.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 20.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 14.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -10.0f)
 				.build()
 
@@ -571,7 +571,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 28.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 18.0f)
 				.build()
 
 				.build()
@@ -585,7 +585,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 45.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 22.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 16.0f)
 				.makeProperty(ArmorPropertyType.ENCHANTABILITY, 20.0f)
 				.makeProperty(ArmorPropertyType.MOBILITY, -2.0f)
 				.makeProperty(ArmorPropertyType.PIGLIN_LOVED, 1.0f)
@@ -602,7 +602,7 @@ public class AlloygeryArmorMaterials
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 50.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 28.0f)
+				.makeProperty(ArmorPropertyType.ARMOR, 18.0f)
 				.makeProperty(ArmorPropertyType.KNOCKBACK_RESISTANCE, 10.0f)
 				.build()
 

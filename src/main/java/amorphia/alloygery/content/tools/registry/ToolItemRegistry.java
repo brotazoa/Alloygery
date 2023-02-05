@@ -63,9 +63,9 @@ public class ToolItemRegistry
 		makeToolPartsForMaterial(LEATHER, false, true, false, false);
 		makeToolPartsForMaterial(VANILLA_STICK, false, false, false, true);
 
-		makeToolInlayUpgradePartItemsFromMaterials(Set.of(EMERALD));
-		makeToolPlatingUpgradePartItemsForMaterials(Set.of(GOLD, NETHERITE));
-		makeToolTipplingUpgradePartItemsForMaterials(Set.of(DIAMOND));
+//		makeToolInlayUpgradePartItemsFromMaterials(Set.of(EMERALD));
+//		makeToolPlatingUpgradePartItemsForMaterials(Set.of(GOLD, NETHERITE));
+//		makeToolTipplingUpgradePartItemsForMaterials(Set.of(DIAMOND));
 	}
 
 	private static void makeToolSetsForMaterial(AlloygeryToolMaterial material)

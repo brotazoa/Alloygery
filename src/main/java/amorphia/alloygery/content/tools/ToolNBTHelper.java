@@ -181,6 +181,17 @@ public class ToolNBTHelper
 		return compound;
 	}
 
+	public static NbtCompound modifyToolStackNBTWithUpgradeMaterial(ItemStack toolStack, AlloygeryToolMaterial upgradeMaterial)
+	{
+		NbtCompound toolNbt = getAlloygeryDataNBTFromItemStack(toolStack);
+		NbtCompound compound = new NbtCompound();
+		compound.putString(TYPE.getName(), TOOL_PART_IDENTIFIER.getName());
+		compound.putString(TOOL_PART_TYPE_IDENTIFIER.getName(), getToolPartNBTIdentifier(ToolPartType.UPGRADE).getName());
+		compound.putString(MATERIAL_IDENTIFIER.getName(), AlloygeryToolMaterialRegistry.identify(upgradeMaterial).toString());
+		toolNbt.put(TOOL_PART_UPGRADE.getName(), compound);
+		return toolNbt;
+	}
+
 	public static NbtCompound removeUpgradeNBTFromToolStackNBT(ItemStack toolStack)
 	{
 		NbtCompound compound = getAlloygeryDataNBTFromItemStack(toolStack);

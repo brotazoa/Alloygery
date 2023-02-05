@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alloygery:netherite_tool_plating",
-    "alloygery:gold_tool_plating"
+    "minecraft:netherite_ingot",
+    "minecraft:gold_ingot"
   ]
 }

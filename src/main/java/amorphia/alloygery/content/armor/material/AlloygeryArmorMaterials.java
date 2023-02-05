@@ -18,10 +18,7 @@ public class AlloygeryArmorMaterials
 
 	public static final AlloygeryArmorMaterial LEATHER_BASE;
 
-	public static final AlloygeryArmorMaterial IRON_CHAIN_BASE;
-
-	public static final AlloygeryArmorMaterial LEATHER_HALF_PLATE;
-	public static final AlloygeryArmorMaterial LEATHER_FULL_PLATE;
+	public static final AlloygeryArmorMaterial CHAIN_BASE;
 
 	public static final AlloygeryArmorMaterial COPPER_HALF_PLATE;
 
@@ -80,20 +77,6 @@ public class AlloygeryArmorMaterials
 
 	static
 	{
-		final AlloygeryArmorMaterial STATIC_CHAIN_BASE_TEMPLATE = new AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder("chain_base_template")
-				.layer(ArmorLayer.BASE)
-
-				.itemTexture(ArmorType.HELMET, Alloygery.identifier("armor/parts/helmet/helmet_chainmail"))
-				.itemTexture(ArmorType.CHESTPLATE, Alloygery.identifier("armor/parts/chestplate/chestplate_chainmail"))
-				.itemTexture(ArmorType.LEGGINGS, Alloygery.identifier("armor/parts/leggings/leggings_chainmail"))
-				.itemTexture(ArmorType.BOOTS, Alloygery.identifier("armor/parts/boots/boots_chainmail"))
-
-				.modelTexture(ArmorType.HELMET, Alloygery.identifier("textures/armor/model/helmet/helmet_chainmail.png"))
-				.modelTexture(ArmorType.CHESTPLATE, Alloygery.identifier("textures/armor/model/chestplate/chestplate_chainmail.png"))
-				.modelTexture(ArmorType.LEGGINGS, Alloygery.identifier("textures/armor/model/leggings/leggings_chainmail.png"))
-				.modelTexture(ArmorType.BOOTS, Alloygery.identifier("textures/armor/model/boots/boots_chainmail.png"))
-				.build();
-
 		final AlloygeryArmorMaterial STATIC_HALF_PLATE_TEMPLATE = new AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder("half_plate_template")
 				.layer(ArmorLayer.PLATE)
 
@@ -135,10 +118,10 @@ public class AlloygeryArmorMaterials
 				.itemTexture(ArmorType.LEGGINGS, Alloygery.identifier("armor/parts/leggings/leggings_wool"))
 				.itemTexture(ArmorType.BOOTS, Alloygery.identifier("armor/parts/boots/boots_wool"))
 
-				.modelTexture(ArmorType.HELMET, Alloygery.identifier("textures/armor/model/helmet/helmet_leather.png"))
-				.modelTexture(ArmorType.CHESTPLATE, Alloygery.identifier("textures/armor/model/chestplate/chestplate_leather.png"))
-				.modelTexture(ArmorType.LEGGINGS, Alloygery.identifier("textures/armor/model/leggings/leggings_leather.png"))
-				.modelTexture(ArmorType.BOOTS, Alloygery.identifier("textures/armor/model/boots/boots_leather.png"))
+				.modelTexture(ArmorType.HELMET, Alloygery.identifier("textures/armor/model/helmet/helmet_wool.png"))
+				.modelTexture(ArmorType.CHESTPLATE, Alloygery.identifier("textures/armor/model/chestplate/chestplate_wool.png"))
+				.modelTexture(ArmorType.LEGGINGS, Alloygery.identifier("textures/armor/model/leggings/leggings_wool.png"))
+				.modelTexture(ArmorType.BOOTS, Alloygery.identifier("textures/armor/model/boots/boots_wool.png"))
 
 				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
 				.makeProperty(ArmorPropertyType.DURABILITY, 5f)
@@ -176,11 +159,20 @@ public class AlloygeryArmorMaterials
 
 		//chain base
 
-		IRON_CHAIN_BASE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_CHAIN_BASE_TEMPLATE)
-				.name("chain")
+		CHAIN_BASE = register(new AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder("chain")
 				.color(MaterialColor.IRON.getColor())
+				.layer(ArmorLayer.BASE)
 				.repairIngredientFromTag("c:iron_ingots")
+
+				.itemTexture(ArmorType.HELMET, Alloygery.identifier("armor/parts/helmet/helmet_chainmail"))
+				.itemTexture(ArmorType.CHESTPLATE, Alloygery.identifier("armor/parts/chestplate/chestplate_chainmail"))
+				.itemTexture(ArmorType.LEGGINGS, Alloygery.identifier("armor/parts/leggings/leggings_chainmail"))
+				.itemTexture(ArmorType.BOOTS, Alloygery.identifier("armor/parts/boots/boots_chainmail"))
+
+				.modelTexture(ArmorType.HELMET, Alloygery.identifier("textures/armor/model/helmet/helmet_chainmail.png"))
+				.modelTexture(ArmorType.CHESTPLATE, Alloygery.identifier("textures/armor/model/chestplate/chestplate_chainmail.png"))
+				.modelTexture(ArmorType.LEGGINGS, Alloygery.identifier("textures/armor/model/leggings/leggings_chainmail.png"))
+				.modelTexture(ArmorType.BOOTS, Alloygery.identifier("textures/armor/model/boots/boots_chainmail.png"))
 
 				.armorProperty().forLayer(ArmorLayer.BASE).operation(ArmorPropertyOperation.BASE)
 				.makeProperty(ArmorPropertyType.DURABILITY, 15.0f)
@@ -193,21 +185,6 @@ public class AlloygeryArmorMaterials
 		);
 
 		//half plate
-
-		LEATHER_HALF_PLATE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_HALF_PLATE_TEMPLATE)
-				.name("leather_half_plate")
-				.color(MaterialColor.LEATHER.getColor())
-				.repairIngredientFromTag("c:leathers")
-				.dyeable(true)
-
-				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
-				.makeProperty(ArmorPropertyType.DURABILITY, 5.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 4.0f)
-				.build()
-
-				.build()
-		);
 
 		COPPER_HALF_PLATE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
 				.fromMaterial(STATIC_HALF_PLATE_TEMPLATE)
@@ -439,21 +416,6 @@ public class AlloygeryArmorMaterials
 		);
 
 		//full plate
-
-		LEATHER_FULL_PLATE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
-				.fromMaterial(STATIC_FULL_PLATE_TEMPLATE)
-				.name("leather_full_plate")
-				.color(MaterialColor.LEATHER.getColor())
-				.repairIngredientFromTag("c:leathers")
-				.dyeable(true)
-
-				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
-				.makeProperty(ArmorPropertyType.DURABILITY, 5.0f)
-				.makeProperty(ArmorPropertyType.ARMOR, 8.0f)
-				.build()
-
-				.build()
-		);
 
 		IRON_FULL_PLATE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
 				.fromMaterial(STATIC_FULL_PLATE_TEMPLATE)

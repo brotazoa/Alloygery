@@ -35,7 +35,7 @@ public class DynamicArmorItem extends ArmorItem implements IDynamicArmor
 	@Override
 	public boolean canRepair(ItemStack stack, ItemStack ingredient)
 	{
-		return ArmorMaterialHelper.getRepairIngredientForStack(stack).test(ingredient);
+		return ArmorMaterialHelper.getRepairIngredientForStack(stack).test(ingredient) || super.canRepair(stack, ingredient);
 	}
 
 	@Override

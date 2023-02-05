@@ -5,7 +5,6 @@ import amorphia.alloygery.content.armor.ArmorNBTHelper;
 import amorphia.alloygery.content.armor.client.ArmorPartModelBuilder;
 import amorphia.alloygery.content.armor.item.*;
 import amorphia.alloygery.content.armor.material.AlloygeryArmorMaterial;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -31,33 +30,18 @@ public class ArmorItemRegistry
 	{
 		createBaseArmorSet(LEATHER_BASE);
 		createBaseArmorSet(WOOL_BASE);
-
-		createBaseArmorSet(IRON_CHAIN_BASE);
-//		createBaseArmorSet(GOLD_CHAIN_BASE);
-//		createBaseArmorSet(ANTANIUM_CHAIN_BASE);
-//		createBaseArmorSet(STEEL_CHAIN_BASE);
-//		createBaseArmorSet(NETHERITE_CHAIN_BASE);
-//		createBaseArmorSet(NICKEL_CHAIN_BASE);
-//		createBaseArmorSet(INVAR_CHAIN_BASE);
-//		createBaseArmorSet(CONSTANTAN_CHAIN_BASE);
-//		createBaseArmorSet(CUPRONICKEL_CHAIN_BASE);
-//		createBaseArmorSet(TITANIUM_CHAIN_BASE);
-//		createBaseArmorSet(TITANIUM_GOLD_CHAIN_BASE);
-//		createBaseArmorSet(NITINOL_CHAIN_BASE);
+		createBaseArmorSet(CHAIN_BASE);
 
 		createArmorSetWithBase("leather_half_plate", LEATHER_BASE, IRON_HALF_PLATE);
 		createArmorSetWithBase("leather_full_plate", LEATHER_BASE, IRON_FULL_PLATE);
 		createArmorSetWithBase("wool_half_plate", WOOL_BASE, IRON_HALF_PLATE);
 		createArmorSetWithBase("wool_full_plate", WOOL_BASE, IRON_FULL_PLATE);
-		createArmorSetWithBase("chain_half_plate", IRON_CHAIN_BASE, IRON_HALF_PLATE);
-		createArmorSetWithBase("chain_full_plate", IRON_CHAIN_BASE, IRON_FULL_PLATE);
+		createArmorSetWithBase("chain_half_plate", CHAIN_BASE, IRON_HALF_PLATE);
+		createArmorSetWithBase("chain_full_plate", CHAIN_BASE, IRON_FULL_PLATE);
 	}
 
 	private static void makeCraftingItems()
 	{
-		createArmorPartItemSet(LEATHER_HALF_PLATE);
-		createArmorPartItemSet(LEATHER_FULL_PLATE);
-
 		createArmorPartItemSet(COPPER_HALF_PLATE);
 
 		createArmorPartItemSet(BRONZE_HALF_PLATE);

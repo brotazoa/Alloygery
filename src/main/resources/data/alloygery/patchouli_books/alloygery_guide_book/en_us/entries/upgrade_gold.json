@@ -1,6 +1,6 @@
 {
   "name": "Gold Plated",
-  "icon": "alloygery:gold_tool_plating",
+  "icon": "minecraft:gold_ingot",
   "category": "alloygery:upgrades_category",
   "pages": [
     {

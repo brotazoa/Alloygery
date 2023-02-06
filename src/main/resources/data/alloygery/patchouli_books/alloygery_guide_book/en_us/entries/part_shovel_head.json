@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/dynamic_shovel"
+      "recipe": "alloygery:crafting/tool_crafting/iron/iron_shovel"
     }
   ]
 }

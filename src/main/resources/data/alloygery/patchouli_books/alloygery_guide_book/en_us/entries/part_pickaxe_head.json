@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/dynamic_pickaxe"
+      "recipe": "alloygery:crafting/tool_crafting/iron/iron_pickaxe"
     }
   ]
 }

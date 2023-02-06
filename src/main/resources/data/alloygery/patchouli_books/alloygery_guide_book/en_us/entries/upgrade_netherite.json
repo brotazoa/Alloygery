@@ -1,6 +1,6 @@
 {
   "name": "Netherite Plated",
-  "icon": "alloygery:netherite_tool_plating",
+  "icon": "minecraft:netherite_ingot",
   "category": "alloygery:upgrades_category",
   "pages": [
     {

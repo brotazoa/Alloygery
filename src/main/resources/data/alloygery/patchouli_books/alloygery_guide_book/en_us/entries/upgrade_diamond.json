@@ -1,6 +1,6 @@
 {
   "name": "Diamond Tipped",
-  "icon": "alloygery:diamond_tool_tipping",
+  "icon": "minecraft:diamond",
   "category": "alloygery:upgrades_category",
   "pages": [
     {

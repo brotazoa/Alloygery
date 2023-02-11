@@ -1,14 +1,14 @@
 # Alloygery
 <p>adding new metals and alloys to change up tools and armor while preserving a vanilla feel</p>
 
-<p>Alloygery adds a way to make alloys from vanilla and Alloygery ores and metals.</p>
+<p>Alloygery adds a way new to make alloys from metal and ores.</p>
 <p>The Alloy Kiln</p>
 <img src="readmeAssets/ores_metals_and_alloys/alloy_kiln_banner.png"/>
 <p>and the Blast Alloy Kiln</p>
 <img src="readmeAssets/ores_metals_and_alloys/blast_alloy_kiln_banner.png"/>
 
 <p>Alloygery introduces a new way to craft tools out of parts made at the Smithing Anvil.</p>
-<img src="readmeAssets/tool_parts_smithing_banner.png"/>
+<img src="readmeAssets/tool_update/tool_parts_smithing_banner.png"/>
 <details>
 <summary>Tool Update Details</summary>
 <p>Tools are crafted from a combination of a tool head (like a pickaxe head), a binding, and a handle. Where each part contributes to the overall stats of the tool. Try mix and matching materials to get the best results.</p>
@@ -25,7 +25,7 @@
 <img src="readmeAssets/tool_update/netherite_tool_salvaging.png"/>
 
 <p>Similarly, regular gear can also be dismantled this way.</p>
-<img src="readmeAssets/gear_dismantling.png"/>
+<img src="readmeAssets/tool_update/tool_head_removing.png"/>
 </details>
 
 <p>In a similar way to tool crafting, Alloygery also changes the way armor is made.</p>
@@ -58,4 +58,5 @@
 </details>
 
 <p>If you have some ideas, or want to talk about Alloygery, consider joining the discord.</p>
-<p><a href="https://discord.gg/W5yXwW8yAA"><img src="readmeAssets/amorphia_modding_banner.png"/><img src="https://img.shields.io/discord/949008773308092457?color=7289DA&amp;label=discord&amp;logo=discord&amp;logoColor=fff&amp;style=for-the-badge"/></a></p>
+<p><a href="https://discord.gg/W5yXwW8yAA"><img src="readmeAssets/amorphia_modding_banner.png"/></a></p>
+<p><a href="https://discord.gg/W5yXwW8yAA"><img src="https://img.shields.io/discord/949008773308092457?color=7289DA&amp;label=discord&amp;logo=discord&amp;logoColor=fff&amp;style=for-the-badge"/></a></p>

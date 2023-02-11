@@ -1,6 +1,6 @@
-# Alloygery
+<img src="readmeAssets/alloygery_banner.png">
 <p>adding new metals and alloys to change up tools and armor while preserving a vanilla feel</p>
-
+<br>
 <p>Alloygery adds a way new to make alloys from metal and ores.</p>
 <p>The Alloy Kiln</p>
 <img src="readmeAssets/ores_metals_and_alloys/alloy_kiln_banner.png"/>

@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/block",
+  "parent": "minecraft:block/orientable",
   "textures": {
     "particle": "minecraft:block/bricks",
     "base": "minecraft:block/bricks",

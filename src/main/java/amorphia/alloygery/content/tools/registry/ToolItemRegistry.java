@@ -26,7 +26,7 @@ public class ToolItemRegistry
 
 	public static void init()
 	{
-		makeToolSetForMaterial(FLINT, ToolUpgradeType.NONE, EnumSet.of(ToolType.AXE, ToolType.PICKAXE));
+		makeToolSetForMaterial(FLINT, ToolUpgradeType.NONE, EnumSet.of(ToolType.AXE, ToolType.PICKAXE, ToolType.SHOVEL, ToolType.HOE));
 		makeToolSetsForMaterial(COPPER);
 		makeToolSetsForMaterial(BRONZE);
 		makeToolSetsForMaterial(IRON);

@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "item": "alloygery:bronze_pickaxe"
+            "tag": "alloygery:tools/bronze/bronze_pickaxes"
           }
         ]
       }

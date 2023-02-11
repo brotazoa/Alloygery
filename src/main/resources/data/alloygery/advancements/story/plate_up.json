@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:story/obtain_armor",
+  "display": {
+    "icon": {
+      "item": "alloygery:dynamic_leather_full_plate_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.plate_up.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.plate_up.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "any_plated_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:armors/plated_armors"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any_plated_armor"
+    ]
+  ]
+}

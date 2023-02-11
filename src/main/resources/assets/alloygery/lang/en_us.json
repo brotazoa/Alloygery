@@ -889,6 +889,11 @@
   "advancements.alloygery.story.smithing_anvil.title": "Hammer Time",
   "advancements.alloygery.story.smithing_anvil.description": "Construct and place a Smithing Anvil",
 
+  "advancements.alloygery.story.obtain_armor.description": "Protect yourself with a piece of armor",
+
+  "advancements.alloygery.story.plate_up.title": "Plate Up",
+  "advancements.alloygery.story.plate_up.description": "Apply plating to a piece of armor",
+
   "advancements.alloygery.story.blast_alloy_kiln.title": "A Blasting Good Time",
   "advancements.alloygery.story.blast_alloy_kiln.description": "Construct and place a Blast Alloy Kiln",
 
@@ -899,10 +904,10 @@
   "advancements.alloygery.story.dismantling.description": "Acquire a diamond tool head by dismantling a diamond tool at the Crafting Table",
 
   "advancements.alloygery.story.diamond_tipped.title": "Diamond Tipper",
-  "advancements.alloygery.story.diamond_tipped.description": "Upgrade a tool with Diamond Tool Paste at the Smithing Table",
+  "advancements.alloygery.story.diamond_tipped.description": "Upgrade a tool with a diamond at the Smithing Table",
 
   "advancements.alloygery.nether.netherite_plated.title": "Netherite Plating",
-  "advancements.alloygery.nether.netherite_plated.description": "Upgrade a tool with Netherite Tool Plating at the Smithing Table",
+  "advancements.alloygery.nether.netherite_plated.description": "Upgrade a tool with a netherite ingot at the Smithing Table",
 
   "advancements.alloygery.story.classic_blunder.title": "Classic Blunder",
   "advancements.alloygery.story.classic_blunder.description": "You need a Bronze pickaxe or better to mine iron ore"

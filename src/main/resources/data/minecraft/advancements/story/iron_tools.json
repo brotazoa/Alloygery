@@ -34,7 +34,7 @@
       "conditions": {
         "items": [
           {
-            "item": "alloygery:iron_pickaxe"
+            "tag": "alloygery:tools/iron/iron_pickaxes"
           }
         ]
       }

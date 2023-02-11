@@ -29,7 +29,7 @@ public class SmithingAnvilBlockEntityRenderer implements BlockEntityRenderer<Smi
 
 		matrices.push();
 		matrices.translate(0.5, 0.578125, 0.5);
-		final float rotation = entity.getWorld().getBlockState(entity.getPos()).get(Properties.HORIZONTAL_FACING).getOpposite().asRotation();
+		final float rotation = entity.getWorld().getBlockState(entity.getPos()).get(Properties.HORIZONTAL_FACING).asRotation();
 		matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(rotation));
 		matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180));
 

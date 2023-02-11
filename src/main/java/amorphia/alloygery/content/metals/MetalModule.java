@@ -4,6 +4,7 @@ import amorphia.alloygery.IAlloygeryModule;
 import amorphia.alloygery.content.metals.client.CraftingItemReloadListener;
 import amorphia.alloygery.content.metals.registry.MetalBlockRegistry;
 import amorphia.alloygery.content.metals.registry.MetalItemRegistry;
+import amorphia.alloygery.content.metals.registry.MetalLootTableRegistry;
 import amorphia.alloygery.content.metals.registry.MetalOreGen;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.resource.ResourceType;
@@ -16,6 +17,7 @@ public class MetalModule implements IAlloygeryModule
 		MetalBlockRegistry.init();
 		MetalItemRegistry.init();
 		MetalOreGen.init();
+		MetalLootTableRegistry.init();
 	}
 
 	@Override

@@ -5,9 +5,9 @@ import amorphia.alloygery.content.tools.data.IAlloygeryToolMaterialData;
 import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.util.Identifier;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 import java.util.Map;

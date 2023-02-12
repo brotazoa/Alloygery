@@ -4,8 +4,8 @@ import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
+import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
-import org.apache.commons.compress.utils.Lists;
 
 import java.util.List;
 

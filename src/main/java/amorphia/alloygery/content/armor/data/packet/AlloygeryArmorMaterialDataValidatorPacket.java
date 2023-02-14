@@ -18,6 +18,6 @@ public class AlloygeryArmorMaterialDataValidatorPacket implements IAlloygeryArmo
 	@Override
 	public Class<? extends IAlloygeryArmorMaterialData> getDataVersionClass()
 	{
-		return null;
+		return AlloygeryArmorMaterialDataPacket.class;
 	}
 }

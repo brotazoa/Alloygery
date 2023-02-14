@@ -57,7 +57,7 @@ public class ArmorNetworkEventRegistry
 					String jsonString = compound.getString(materialName);
 					Identifier id = Identifier.tryParse(materialName);
 
-					Alloygery.LOGGER.info("Reading material from server packet: " + id.toString());
+					Alloygery.LOGGER.info("Reading material from server packet: " + id);
 
 					JsonObject json = JsonHelper.deserialize(new StringReader(jsonString));
 

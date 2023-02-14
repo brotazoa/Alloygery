@@ -33,5 +33,7 @@ public class ArmorModule implements IAlloygeryModule
 		ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(ArmorPartClientReloadListener.INSTANCE);
 
 		ArmorRenderLibRenderers.initClient();
+
+		ArmorNetworkEventRegistry.initClient();
 	}
 }

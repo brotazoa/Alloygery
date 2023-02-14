@@ -41,36 +41,38 @@ public class ToolRecipeShaped extends ShapedRecipe
 		ItemStack bindingStack = null;
 		ItemStack handleStack = null;
 
-		final List<Ingredient> ingredients = super.getIngredients();
-
-		for (int slot = 0; slot < ingredients.size(); slot++)
+		for (int slot = 0; slot < craftingInventory.size(); slot++)
 		{
-			if(Arrays.stream(ingredients.get(slot).getMatchingStacks()).anyMatch(itemStack -> itemStack.getItem() instanceof ToolHeadItem))
-			{
+			if(craftingInventory.getStack(slot) == null || craftingInventory.getStack(slot).isEmpty())
+				continue;
+
+			if(craftingInventory.getStack(slot).getItem() instanceof ToolHeadItem)
 				headStack = craftingInventory.getStack(slot);
-			}
 
-			if(Arrays.stream(ingredients.get(slot).getMatchingStacks()).anyMatch(itemStack -> itemStack.getItem() instanceof ToolBindingItem))
-			{
+			if(craftingInventory.getStack(slot).getItem() instanceof ToolBindingItem)
 				bindingStack = craftingInventory.getStack(slot);
-			}
 
-			if(Arrays.stream(ingredients.get(slot).getMatchingStacks()).anyMatch(itemStack -> itemStack.getItem() instanceof ToolHandleItem))
-			{
+			if(craftingInventory.getStack(slot).getItem() instanceof ToolHandleItem)
 				handleStack = craftingInventory.getStack(slot);
-			}
 		}
 
-		if(headStack == null || headStack.isEmpty() || bindingStack == null || bindingStack.isEmpty() || handleStack == null || handleStack.isEmpty())
+		if(headStack == null || headStack.isEmpty() ||  handleStack == null || handleStack.isEmpty())
 			return ItemStack.EMPTY;
 
 		ItemStack toolStack = super.getOutput().copy();
 		if(toolStack == null || toolStack.isEmpty())
 			return ItemStack.EMPTY;
 
-		if(toolStack.getItem() instanceof IDynamicTool && headStack.getItem() instanceof ToolHeadItem headItem && bindingStack.getItem() instanceof ToolBindingItem bindingItem && handleStack.getItem() instanceof ToolHandleItem handleItem)
+		if(toolStack.getItem() instanceof IDynamicTool && headStack.getItem() instanceof ToolHeadItem headItem && handleStack.getItem() instanceof ToolHandleItem handleItem)
 		{
-			ToolNBTHelper.addAlloygeryNBTToToolStack(toolStack, ToolNBTHelper.createToolNBTFromToolPartItems(headItem, bindingItem, handleItem));
+			if (bindingStack != null && bindingStack.getItem() instanceof ToolBindingItem bindingItem)
+			{
+				ToolNBTHelper.addAlloygeryNBTToToolStack(toolStack, ToolNBTHelper.createToolNBTFromToolPartItems(headItem, bindingItem, handleItem));
+			}
+			else
+			{
+				ToolNBTHelper.addAlloygeryNBTToToolStack(toolStack, ToolNBTHelper.createToolNBTFromToolPartItems(headItem, handleItem));
+			}
 
 			final Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(headStack);
 			EnchantmentHelper.set(enchantments, toolStack);

@@ -54,7 +54,7 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 
 		final boolean showTools = AlloygeryConfig.showDynamicToolsInRecipeViewer.getValue();
 		if(!showTools)
-			registry.removeEmiStacks(entryStack -> entryStack.getItemStack().getItem() instanceof IDynamicTool);
+			registry.removeEmiStacks(entryStack -> entryStack.getItemStack().getItem() instanceof IDynamicTool && entryStack.getItemStack().getItem().getGroup() == null);
 
 		final boolean showArmors = AlloygeryConfig.showDynamicArmorsInRecipeViewer.getValue();
 		if(!showArmors)

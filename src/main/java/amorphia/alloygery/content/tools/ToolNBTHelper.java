@@ -101,7 +101,7 @@ public class ToolNBTHelper
 		NbtCompound compound = new NbtCompound();
 		compound.putString(TYPE.getName(), TOOL_IDENTIFIER.getName());
 		compound.put(TOOL_PART_HEAD.getName(), createNBTFromToolPartItem(head));
-		compound.put(TOOL_PART_BINDING.getName(), createNBTFromToolPartItem(binding));
+		compound.put(TOOL_PART_BINDING.getName(), binding == null ? createHiddenBindingNbt() : createNBTFromToolPartItem(binding));
 		compound.put(TOOL_PART_HANDLE.getName(), createNBTFromToolPartItem(handle));
 		return compound;
 	}
@@ -111,7 +111,7 @@ public class ToolNBTHelper
 		NbtCompound compound = new NbtCompound();
 		compound.putString(TYPE.getName(), TOOL_IDENTIFIER.getName());
 		compound.put(TOOL_PART_HEAD.getName(), createNBTFromToolPartItem(head));
-		compound.put(TOOL_PART_BINDING.getName(), createNBTFromToolPartItem(binding));
+		compound.put(TOOL_PART_BINDING.getName(), binding == null ? createHiddenBindingNbt() : createNBTFromToolPartItem(binding));
 		compound.put(TOOL_PART_HANDLE.getName(), createNBTFromToolPartItem(handle));
 		compound.put(TOOL_PART_UPGRADE.getName(), createNBTFromToolPartItem(upgrade));
 		return compound;

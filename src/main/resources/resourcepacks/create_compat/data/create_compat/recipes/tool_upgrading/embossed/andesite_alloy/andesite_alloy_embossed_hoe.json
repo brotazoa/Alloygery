@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/andesite_alloy/andesite_alloy_hoes"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/embossed_upgrades"
+  },
+  "result": {
+    "item": "create_compat:embossed_andesite_alloy_hoe"
+  }
+}

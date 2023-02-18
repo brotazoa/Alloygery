@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "create_compat:embossed_brass_shovel",
+    "create_compat:plated_brass_shovel",
+    "create_compat:tipped_brass_shovel"
+  ]
+}

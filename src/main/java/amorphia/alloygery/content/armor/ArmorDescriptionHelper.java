@@ -8,6 +8,7 @@ import amorphia.alloygery.content.armor.material.AlloygeryArmorMaterials;
 import amorphia.alloygery.content.armor.property.ArmorProperty;
 import amorphia.alloygery.content.armor.property.ArmorPropertyOperation;
 import amorphia.alloygery.content.armor.property.ArmorPropertyType;
+import amorphia.alloygery.content.armor.registry.AlloygeryArmorMaterialRegistry;
 import com.google.common.collect.Maps;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
@@ -17,6 +18,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 
 import java.util.Comparator;
 import java.util.List;
@@ -33,26 +35,26 @@ public class ArmorDescriptionHelper
 	{
 		if (armor.getItem() instanceof IDynamicArmor dynamicArmor && ArmorNBTHelper.isAlloygeryDataNBT(armor.getNbt()))
 		{
-			AlloygeryArmorMaterial baseMaterial;
-			AlloygeryArmorMaterial plateMaterial;
-			AlloygeryArmorMaterial upgradeMaterial;
+			AlloygeryArmorMaterial baseMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.BASE);
+			AlloygeryArmorMaterial plateMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.PLATE);
+			AlloygeryArmorMaterial upgradeMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.UPGRADE);
 
-			baseMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.BASE);
-			plateMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.PLATE);
-			upgradeMaterial = ArmorMaterialHelper.getMaterialForLayer(armor, ArmorLayer.UPGRADE);
+			Identifier baseIdentifier = AlloygeryArmorMaterialRegistry.identify(baseMaterial);
+			Identifier plateIdentifier = AlloygeryArmorMaterialRegistry.identify(plateMaterial);
+			Identifier upgradeIdentifier = AlloygeryArmorMaterialRegistry.identify(upgradeMaterial);
 
-			MutableText armorBaseName = translatable("item.alloygery." + baseMaterial.getMaterialName() + "_" + dynamicArmor.getArmorType().getName());
+			MutableText armorBaseName = translatable("item." + baseIdentifier.getNamespace() + "." + baseMaterial.getMaterialName() + "_" + dynamicArmor.getArmorType().getName());
 
 			if (plateMaterial != AlloygeryArmorMaterials.UNKNOWN && plateMaterial != AlloygeryArmorMaterials.HIDDEN)
 			{
-				armorBaseName = translatable("item.alloygery." + plateMaterial.getMaterialName() + "_" + dynamicArmor.getArmorType().getName());
+				armorBaseName = translatable("item." + plateIdentifier.getNamespace() + "." + plateMaterial.getMaterialName() + "_" + dynamicArmor.getArmorType().getName());
 			}
 
 			MutableText armorName = armorBaseName;
 
 			if (upgradeMaterial != AlloygeryArmorMaterials.UNKNOWN && upgradeMaterial != AlloygeryArmorMaterials.HIDDEN)
 			{
-				MutableText upgradeName = translatable("tooltip.alloygery.armor_upgrade." + upgradeMaterial.getMaterialName());
+				MutableText upgradeName = translatable("tooltip." + upgradeIdentifier.getNamespace() + ".armor_upgrade." + upgradeMaterial.getMaterialName());
 				armorName = upgradeName.append(literal(" - ")).append(armorBaseName);
 			}
 

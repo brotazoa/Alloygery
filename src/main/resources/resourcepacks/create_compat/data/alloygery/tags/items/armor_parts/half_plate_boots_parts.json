@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_compat:andesite_alloy_plate_boots_part",
+    "create_compat:brass_plate_boots_part"
+  ]
+}

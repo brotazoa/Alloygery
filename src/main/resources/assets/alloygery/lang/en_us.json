@@ -230,6 +230,8 @@
 
   "item.alloygery.wooden_handle": "Wooden Handle",
   "item.alloygery.leather_binding": "Leather Binding",
+  "item.alloygery.sapling_binding": "Sapling Binding",
+  "item.alloygery.string_binding": "String Binding",
 
   "item.alloygery.diamond_tool_tipping": "Diamond Tool Paste",
   "item.alloygery.netherite_tool_plating": "Netherite Tool Plating",

@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "alloygery:leather_binding",
+    "alloygery:sapling_binding",
+    "alloygery:string_binding",
     "alloygery:copper_binding",
     "alloygery:bronze_binding",
     "alloygery:iron_binding",

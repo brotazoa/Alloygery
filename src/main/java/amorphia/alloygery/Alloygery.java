@@ -1,5 +1,6 @@
 package amorphia.alloygery;
 
+import amorphia.alloygery.compat.create.CreateModule;
 import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.content.armor.ArmorModule;
 import amorphia.alloygery.content.armor.data.AlloygeryArmorMaterialDataHelper;
@@ -17,6 +18,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -55,6 +58,16 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	@Override
 	public void onInitialize()
 	{
+		//register builtin create compat resource pack
+		if (FabricLoader.getInstance().isModLoaded("create"))
+		{
+			FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(
+					modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("create_compat"), modContainer, ResourcePackActivationType.ALWAYS_ENABLED)
+			);
+
+			MODULES.add(new CreateModule());
+		}
+
 		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();

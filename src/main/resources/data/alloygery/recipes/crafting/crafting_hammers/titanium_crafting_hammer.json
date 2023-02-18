@@ -6,10 +6,10 @@
   ],
   "key": {
     "i": {
-      "tag": "c:titanium_plates"
+      "tag": "c:titanium_ingots"
     },
     "s": {
-      "tag": "c:sticks"
+      "item": "alloygery:wooden_handle"
     }
   },
   "result": {

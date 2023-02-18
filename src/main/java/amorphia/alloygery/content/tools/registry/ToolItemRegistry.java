@@ -72,6 +72,8 @@ public class ToolItemRegistry
 
 		makeToolPartsForMaterial(LEATHER, false, true, false, false);
 		makeToolPartsForMaterial(VANILLA_STICK, false, false, false, true);
+		makeToolPartsForMaterial(SAPLING, false, true, false, false);
+		makeToolPartsForMaterial(STRING, false, true, false, false);
 
 //		makeToolInlayUpgradePartItemsFromMaterials(Set.of(EMERALD));
 //		makeToolPlatingUpgradePartItemsForMaterials(Set.of(GOLD, NETHERITE));

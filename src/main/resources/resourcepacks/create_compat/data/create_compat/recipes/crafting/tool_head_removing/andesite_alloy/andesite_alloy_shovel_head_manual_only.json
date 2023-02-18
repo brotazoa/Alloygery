@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_head_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/andesite_alloy/andesite_alloy_shovels"
+    }
+  ],
+  "result": {
+    "item": "create_compat:andesite_alloy_shovel_head"
+  }
+}

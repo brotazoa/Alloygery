@@ -28,14 +28,14 @@ public class MetalItemRegistry
 	public static final Map<String, Item> ITEMS = Maps.newHashMap();
 
 	//TODO: move all of these enum out of here
-	enum CraftingMaterialTypes
+	public enum CraftingMaterialTypes
 	{
 		RAW, NUGGET, INGOT, DOUBLE_INGOT, PLATE, HEAVY_PLATE, BLOCK, RAW_BLOCK;
 
 		public static final EnumSet<CraftingMaterialTypes> CRAFTING_MATERIAL_TYPES = EnumSet.allOf(CraftingMaterialTypes.class);
 	}
 
-	enum CraftingMaterialVariantTypes
+	public enum CraftingMaterialVariantTypes
 	{
 		NORMAL, DULL, SHINY;
 
@@ -47,7 +47,7 @@ public class MetalItemRegistry
 		}
 	}
 
-	enum CraftingToolTypes
+	public enum CraftingToolTypes
 	{
 		HAMMER;
 

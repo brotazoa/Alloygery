@@ -34,6 +34,8 @@ public class AlloygeryToolMaterials
 
 	public static final AlloygeryToolMaterial VANILLA_STICK;
 	public static final AlloygeryToolMaterial LEATHER;
+	public static final AlloygeryToolMaterial SAPLING;
+	public static final AlloygeryToolMaterial STRING;
 
 	private static AlloygeryToolMaterial register(AlloygeryToolMaterial material)
 	{
@@ -431,11 +433,31 @@ public class AlloygeryToolMaterials
 		VANILLA_STICK = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("wooden")
 				.color(6835742)
 				.repairIngredientFromTag("minecraft:planks")
+				.toolProperty().forPart(ToolPartType.HANDLE).operation(ToolPropertyOperation.MULTIPLY_BASE)
+				.property(ToolPropertyType.DURABILITY, 0.8f).build()
 				.build());
 
 		LEATHER = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("leather")
 				.color(14117699)
 				.repairIngredientFromTag("c:leathers")
+				.toolProperty().forPart(ToolPartType.BINDING).operation(ToolPropertyOperation.MULTIPLY_BASE)
+				.property(ToolPropertyType.DURABILITY, 0.5f).build()
 				.build());
+
+		SAPLING = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("sapling")
+				.color(13238153)
+				.repairIngredientFromTag("minecraft:planks")
+				.toolProperty().forPart(ToolPartType.BINDING).operation(ToolPropertyOperation.MULTIPLY_BASE)
+				.property(ToolPropertyType.DURABILITY, 0.2f).build()
+				.build()
+		);
+
+		STRING = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("string")
+				.color(15266815)
+				.repairIngredientFromItem("minecraft:string")
+				.toolProperty().forPart(ToolPartType.BINDING).operation(ToolPropertyOperation.MULTIPLY_BASE)
+				.property(ToolPropertyType.DURABILITY, 0.3f).build()
+				.build()
+		);
 	}
 }

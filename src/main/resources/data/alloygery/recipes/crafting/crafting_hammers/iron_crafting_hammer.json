@@ -6,10 +6,10 @@
   ],
   "key": {
     "i": {
-      "tag": "c:iron_plates"
+      "tag": "c:iron_ingots"
     },
     "s": {
-      "tag": "c:sticks"
+      "item": "alloygery:wooden_handle"
     }
   },
   "result": {

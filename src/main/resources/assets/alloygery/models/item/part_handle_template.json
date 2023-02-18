@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alloygery:tool_render_parts/pickaxe_handle_template"
+    "layer0": "alloygery:tool_parts/tool_handle_template"
   }
 }

@@ -1,16 +1,28 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:not",
+      "value": {
+        "condition": "alloygery:config_boolean_condition",
+        "config": "enable_vanilla_like_tool_recipes"
+      }
+    }
+  ],
   "type": "alloygery:alloygery_simple_tool_shaped",
   "pattern": [
     "ii",
-    "s ",
-    "s "
+    " b",
+    " h"
   ],
   "key": {
     "i": {
       "tag": "c:copper_ingots"
     },
-    "s": {
-      "tag": "c:sticks"
+    "b": {
+      "tag": "alloygery:tool_parts/simple_bindings"
+    },
+    "h": {
+      "tag": "alloygery:tool_parts/simple_handles"
     }
   },
   "result": {
@@ -18,8 +30,5 @@
   },
   "substitute_head_part": {
     "item": "alloygery:copper_hoe_head"
-  },
-  "substitute_handle_part": {
-    "item": "alloygery:wooden_handle"
   }
 }

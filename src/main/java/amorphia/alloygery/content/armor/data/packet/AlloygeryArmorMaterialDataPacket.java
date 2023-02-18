@@ -2,11 +2,13 @@ package amorphia.alloygery.content.armor.data.packet;
 
 import amorphia.alloygery.content.armor.data.IAlloygeryArmorMaterialData;
 import amorphia.alloygery.content.armor.item.ArmorLayer;
+import amorphia.alloygery.content.armor.item.ArmorType;
 import amorphia.alloygery.content.armor.material.AlloygeryArmorMaterial;
 import amorphia.alloygery.content.armor.property.ArmorPropertyOperation;
 import amorphia.alloygery.content.armor.property.ArmorPropertyType;
 import com.google.gson.*;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.util.Identifier;
 
 import java.lang.reflect.Type;
 
@@ -17,7 +19,7 @@ public class AlloygeryArmorMaterialDataPacket implements IAlloygeryArmorMaterial
 	@Override
 	public AlloygeryArmorMaterial apply(AlloygeryArmorMaterial material)
 	{
-		return AlloygeryArmorMaterial.AlloygeryArmorMaterialMerger.override(material, dataHolder);
+		return AlloygeryArmorMaterial.AlloygeryArmorMaterialMerger.overrideData(material, dataHolder);
 	}
 
 	public static class Serializer implements JsonSerializer<AlloygeryArmorMaterial>, JsonDeserializer<AlloygeryArmorMaterialDataPacket>
@@ -37,6 +39,22 @@ public class AlloygeryArmorMaterialDataPacket implements IAlloygeryArmorMaterial
 			json.addProperty("layer", material.getLayer().getName());
 
 			json.add("repair_ingredient", material.getRepairIngredient().toJson());
+
+//			JsonObject itemTextures = new JsonObject();
+//			for(ArmorType armorType : ArmorType.VALUES_CACHE)
+//			{
+//				Identifier id = material.getModelTexture(armorType);
+//				itemTextures.addProperty(armorType.getName(), id.toString());
+//			}
+//			json.add("item_textures", itemTextures);
+//
+//			JsonObject modelTextures = new JsonObject();
+//			for(ArmorType armorType: ArmorType.VALUES_CACHE)
+//			{
+//				Identifier id = material.getModelTexture(armorType);
+//				modelTextures.addProperty(armorType.getName(), id.toString());
+//			}
+//			json.add("model_textures", modelTextures);
 
 			JsonArray properties = new JsonArray();
 			material.getArmorProperties().forEach(property -> {
@@ -74,6 +92,28 @@ public class AlloygeryArmorMaterialDataPacket implements IAlloygeryArmorMaterial
 
 			if(json.has("repair_ingredient") && json.get("repair_ingredient").isJsonObject())
 				builder.repairIngredientFromIngredient(Ingredient.fromJson(json.get("repair_ingredient").getAsJsonObject()));
+
+			if (json.has("item_textures") && json.get("item_textures").isJsonObject())
+			{
+				JsonObject textures = json.get("item_textures").getAsJsonObject();
+				for(ArmorType armorType : ArmorType.VALUES_CACHE)
+				{
+					Identifier id = Identifier.tryParse(textures.get(armorType.getName()).getAsString());
+					if(id != null)
+						builder.itemTexture(armorType, id);
+				}
+			}
+
+			if (json.has("model_textures") && json.get("model_textures").isJsonObject())
+			{
+				JsonObject models = json.getAsJsonObject("model_textures");
+				for(ArmorType armorType : ArmorType.VALUES_CACHE)
+				{
+					Identifier id = Identifier.tryParse(models.get(armorType.getName()).getAsString());
+					if(id != null)
+						builder.modelTexture(armorType, id);
+				}
+			}
 
 			if (json.has("armor_properties") && json.get("armor_properties").isJsonArray())
 			{

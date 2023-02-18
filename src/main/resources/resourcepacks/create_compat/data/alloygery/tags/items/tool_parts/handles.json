@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_compat:andesite_alloy_handle",
+    "create_compat:brass_handle"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "create_compat:embossed_andesite_alloy_sword",
+    "create_compat:plated_andesite_alloy_sword",
+    "create_compat:tipped_andesite_alloy_sword"
+  ]
+}

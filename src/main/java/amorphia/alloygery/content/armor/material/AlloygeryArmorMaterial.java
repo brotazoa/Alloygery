@@ -162,6 +162,26 @@ public class AlloygeryArmorMaterial
 			return original;
 		}
 
+		public static AlloygeryArmorMaterial overrideData(AlloygeryArmorMaterial original, AlloygeryArmorMaterial other)
+		{
+			if(other == null || original == other)
+				return original;
+
+			if(!original.materialName.equals(other.materialName))
+				return original;
+
+			original.armorProperties.clear();
+			original.armorPropertiesByLayer.clear();
+
+			original.dyeable = other.dyeable;
+			original.repairIngredient = other.repairIngredient;
+			original.layer = other.layer;
+
+			other.armorProperties.forEach(original::addArmorProperty);
+
+			return original;
+		}
+
 		public static AlloygeryArmorMaterial merge(AlloygeryArmorMaterial original, AlloygeryArmorMaterial other)
 		{
 			if(other == null || original == other)

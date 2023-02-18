@@ -8,6 +8,7 @@ import amorphia.alloygery.content.tools.material.AlloygeryToolMaterials;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
+import amorphia.alloygery.content.tools.registry.AlloygeryToolMaterialRegistry;
 import amorphia.alloygery.content.tools.registry.ToolItemRegistry;
 import com.google.common.collect.Maps;
 import net.minecraft.client.gui.screen.Screen;
@@ -18,6 +19,7 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 
 import java.util.Comparator;
 import java.util.List;
@@ -50,8 +52,11 @@ public class ToolDescriptionHelper
 				upgradeMaterial = ToolItemRegistry.getDefaultMaterialForUpgrade(dynamicTool.getToolUpgradeType());
 			}
 
-			MutableText toolBaseName = translatable("item.alloygery." + headMaterial.getMaterialName() + "_" + dynamicTool.getToolType().getName());
-			MutableText toolUpgradeName = translatable("tooltip.alloygery.upgrade." + upgradeMaterial.getMaterialName());
+			Identifier baseIdentifier = AlloygeryToolMaterialRegistry.identify(headMaterial);
+			Identifier upgadeIdentifier = AlloygeryToolMaterialRegistry.identify(upgradeMaterial);
+
+			MutableText toolBaseName = translatable("item." + baseIdentifier.getNamespace() + "." + headMaterial.getMaterialName() + "_" + dynamicTool.getToolType().getName());
+			MutableText toolUpgradeName = translatable("tooltip." + upgadeIdentifier.getNamespace() + ".upgrade." + upgradeMaterial.getMaterialName());
 
 			return upgradeMaterial == AlloygeryToolMaterials.UNKNOWN || upgradeMaterial == AlloygeryToolMaterials.HIDDEN ? toolBaseName : toolUpgradeName.append(literal(" - ")).append(toolBaseName);
 		}

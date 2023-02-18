@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:saplings"
+    }
+  ],
+  "result": {
+    "item": "alloygery:sapling_binding"
+  }
+}

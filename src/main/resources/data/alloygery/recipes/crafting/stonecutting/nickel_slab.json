@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "alloygery:nickel_block"
+  },
+  "result": "alloygery:nickel_slab",
+  "count": 2
+}

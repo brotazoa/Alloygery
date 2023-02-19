@@ -2,6 +2,8 @@ package amorphia.alloygery.content.metals.client;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.metals.block.TintedBlock;
+import amorphia.alloygery.content.metals.block.TintedSlabBlock;
+import amorphia.alloygery.content.metals.block.TintedStairsBlock;
 import amorphia.alloygery.content.metals.item.CraftingItem;
 import amorphia.alloygery.content.metals.item.TintedBlockItem;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
@@ -34,6 +36,18 @@ public class CraftingItemReloadListener implements SimpleSynchronousResourceRelo
 		TintedBlock.TINTED_BLOCKS.forEach(block -> {
 			ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
 				return tintIndex == 0 ? block.getAlloygeryMaterial().getMaterialColor() : -1;
+			}, block);
+		});
+
+		TintedStairsBlock.BLOCKS.forEach(block -> {
+			ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
+				return tintIndex == 0 ? block.getMaterial().getMaterialColor() : -1;
+			}, block);
+		});
+
+		TintedSlabBlock.BLOCKS.forEach(block -> {
+			ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
+				return tintIndex == 0 ? block.getMaterial().getMaterialColor() : -1;
 			}, block);
 		});
 

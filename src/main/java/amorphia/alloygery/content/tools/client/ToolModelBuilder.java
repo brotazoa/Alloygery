@@ -1,7 +1,8 @@
 package amorphia.alloygery.content.tools.client;
 
+import amorphia.alloygery.content.tools.item.part.ToolType;
+import amorphia.alloygery.content.tools.item.part.ToolUpgradeType;
 import com.google.common.collect.Maps;
-import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 import java.util.Map;
@@ -30,5 +31,25 @@ public class ToolModelBuilder
 	public static String createToolItemModelJson(String parent)
 	{
 		return "{\"parent\": \"alloygery:item/" + parent + "\"}";
+	}
+
+	public static Supplier<String> createToolHeadItemModelJson(ToolType toolType)
+	{
+		return () -> createPartItemModelJson(toolType.getName() + (toolType.equals(ToolType.SWORD) ? "_blade" : "_head"));
+	}
+
+	public static Supplier<String> createToolBindingItemModelJson()
+	{
+		return () -> createPartItemModelJson("binding");
+	}
+
+	public static Supplier<String> createToolHandleItemModelJson()
+	{
+		return () -> createPartItemModelJson("handle");
+	}
+
+	public static Supplier<String> createToolItemModelJson(ToolType toolType, ToolUpgradeType upgradeType)
+	{
+		return () -> createToolItemModelJson((upgradeType.equals(ToolUpgradeType.NONE) ? "" : upgradeType.getName()) + "_dynamic_" + toolType.getName());
 	}
 }

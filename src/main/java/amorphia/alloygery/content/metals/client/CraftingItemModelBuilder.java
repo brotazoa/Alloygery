@@ -1,5 +1,6 @@
 package amorphia.alloygery.content.metals.client;
 
+import amorphia.alloygery.content.metals.item.CraftingMaterialVariantTypes;
 import com.google.common.collect.Maps;
 import net.minecraft.util.Identifier;
 
@@ -36,29 +37,29 @@ public class CraftingItemModelBuilder
 		return () -> createCraftingItemModelJson("raw_ore");
 	}
 
-	public static Supplier<String> createIngotItemModelJson(String variantString)
+	public static Supplier<String> createIngotItemModelJson(CraftingMaterialVariantTypes variantType)
 	{
-		return () -> createCraftingItemModelJson("ingot_" + variantString);
+		return () -> createCraftingItemModelJson("ingot_" + variantType.getName());
 	}
 
-	public static Supplier<String> createDoubleIngotItemModelJson(String variantString)
+	public static Supplier<String> createDoubleIngotItemModelJson(CraftingMaterialVariantTypes variantType)
 	{
-		return () -> createCraftingItemModelJson("double_ingot_" + variantString);
+		return () -> createCraftingItemModelJson("double_ingot_" + variantType.getName());
 	}
 
-	public static Supplier<String> createNuggetItemModelJson(String variantString)
+	public static Supplier<String> createNuggetItemModelJson(CraftingMaterialVariantTypes variantType)
 	{
-		return () -> createCraftingItemModelJson("nugget_" + variantString);
+		return () -> createCraftingItemModelJson("nugget_" + variantType.getName());
 	}
 
-	public static Supplier<String> createPlateItemModelJson(String variantString)
+	public static Supplier<String> createPlateItemModelJson(CraftingMaterialVariantTypes variantType)
 	{
-		return () -> createCraftingItemModelJson("plate_" + variantString);
+		return () -> createCraftingItemModelJson("plate_" + variantType.getName());
 	}
 
-	public static Supplier<String> createHeavyPlateItemModelJson(String variantString)
+	public static Supplier<String> createHeavyPlateItemModelJson(CraftingMaterialVariantTypes variantType)
 	{
-		return () -> createCraftingItemModelJson("heavy_plate_" + variantString);
+		return () -> createCraftingItemModelJson("heavy_plate_" + variantType.getName());
 	}
 
 	public static Supplier<String> createBlockItemModelJson(String parentBlockName)
@@ -68,16 +69,46 @@ public class CraftingItemModelBuilder
 
 	public static Supplier<String> createMetalBlockModelJson()
 	{
-		return createMetalBlockModelJson("normal");
+		return createMetalBlockModelJson(CraftingMaterialVariantTypes.NORMAL);
 	}
 
-	public static Supplier<String> createMetalBlockModelJson(String variantString)
+	public static Supplier<String> createMetalBlockModelJson(CraftingMaterialVariantTypes variantType)
 	{
-		return () -> "{\"parent\": \"alloygery:block/metal_block_" + variantString + "_template\"}";
+		return () -> "{\"parent\": \"alloygery:block/metal_block_" + variantType.getName() + "_template\"}";
 	}
 
-	public static String createRawOreBlockModelJson()
+	public static Supplier<String> createMetalStairsBlockModelJson()
 	{
-		return "{\"parent\": \"alloygery:block/raw_ore_block_template\"}";
+		return createMetalStairsBlockModelJson(CraftingMaterialVariantTypes.NORMAL);
+	}
+
+	public static Supplier<String> createMetalStairsBlockModelJson(CraftingMaterialVariantTypes variantType)
+	{
+		return () -> "{\"parent\": \"alloygery:block/metal_" + variantType.getName() + "_stairs\"}";
+	}
+
+	public static Supplier<String> createMetalSlopeBlockModelJson()
+	{
+		return createMetalSlopeBlockModelJson(CraftingMaterialVariantTypes.NORMAL);
+	}
+
+	public static Supplier<String> createMetalSlopeBlockModelJson(CraftingMaterialVariantTypes variantType)
+	{
+		return () -> "{\"parent\": \"alloygery:block/metal_" + variantType.getName() + "_slope\"}";
+	}
+
+	public static Supplier<String> createMetalSlabBlockModelJson()
+	{
+		return createMetalSlabBlockModelJson(CraftingMaterialVariantTypes.NORMAL);
+	}
+
+	public static Supplier<String> createMetalSlabBlockModelJson(CraftingMaterialVariantTypes variantType)
+	{
+		return () -> "{\"parent\": \"alloygery:block/metal_" + variantType.getName() + "_slab\"}";
+	}
+
+	public static Supplier<String> createRawOreBlockModelJson()
+	{
+		return () -> "{\"parent\": \"alloygery:block/raw_ore_block_template\"}";
 	}
 }

@@ -3,9 +3,10 @@ package amorphia.alloygery.compat.create;
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.metals.client.CraftingItemModelBuilder;
 import amorphia.alloygery.content.metals.item.CraftingItem;
+import amorphia.alloygery.content.metals.item.CraftingMaterialItemTypes;
+import amorphia.alloygery.content.metals.item.CraftingMaterialVariantTypes;
 import amorphia.alloygery.content.metals.item.TintedBlockItem;
 import amorphia.alloygery.content.metals.registry.MetalBlockRegistry;
-import amorphia.alloygery.content.metals.registry.MetalItemRegistry;
 import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
@@ -17,7 +18,8 @@ import java.util.EnumSet;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import static amorphia.alloygery.content.metals.registry.MetalItemRegistry.CraftingMaterialTypes.*;
+import static amorphia.alloygery.content.metals.item.CraftingMaterialItemTypes.*;
+import static amorphia.alloygery.content.metals.item.CraftingMaterialVariantTypes.*;
 
 public class CreateMetalItemRegistry
 {
@@ -25,30 +27,30 @@ public class CreateMetalItemRegistry
 
 	public static void init()
 	{
-		makeCraftingMaterials(CreateToolMaterials.ZINC, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), MetalItemRegistry.CraftingMaterialVariantTypes.DULL);
-		makeCraftingMaterials(CreateToolMaterials.ANDESITE_ALLOY, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), MetalItemRegistry.CraftingMaterialVariantTypes.DULL);
-		makeCraftingMaterials(CreateToolMaterials.BRASS, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), MetalItemRegistry.CraftingMaterialVariantTypes.SHINY);
+		makeCraftingMaterials(CreateToolMaterials.ZINC, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), DULL);
+		makeCraftingMaterials(CreateToolMaterials.ANDESITE_ALLOY, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), DULL);
+		makeCraftingMaterials(CreateToolMaterials.BRASS, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), SHINY);
 	}
 
-	private static void makeCraftingMaterials(AlloygeryToolMaterial material, EnumSet<MetalItemRegistry.CraftingMaterialTypes> materialTypes, MetalItemRegistry.CraftingMaterialVariantTypes variant)
+	private static void makeCraftingMaterials(AlloygeryToolMaterial material, EnumSet<CraftingMaterialItemTypes> materialTypes, CraftingMaterialVariantTypes variant)
 	{
-		if(materialTypes.contains(MetalItemRegistry.CraftingMaterialTypes.RAW))
+		if(materialTypes.contains(RAW))
 			registerGeneratedItem("raw_" + material.getMaterialName(), new CraftingItem(material), CraftingItemModelBuilder.createRawOreItemModelJson());
 
-		if(materialTypes.contains(MetalItemRegistry.CraftingMaterialTypes.NUGGET))
-			registerGeneratedItem(material.getMaterialName() + "_nugget", new CraftingItem(material), CraftingItemModelBuilder.createNuggetItemModelJson(variant.getName()));
+		if(materialTypes.contains(NUGGET))
+			registerGeneratedItem(material.getMaterialName() + "_nugget", new CraftingItem(material), CraftingItemModelBuilder.createNuggetItemModelJson(variant));
 
-		if(materialTypes.contains(MetalItemRegistry.CraftingMaterialTypes.INGOT))
-			registerGeneratedItem(material.getMaterialName() + "_ingot", new CraftingItem(material), CraftingItemModelBuilder.createIngotItemModelJson(variant.getName()));
+		if(materialTypes.contains(INGOT))
+			registerGeneratedItem(material.getMaterialName() + "_ingot", new CraftingItem(material), CraftingItemModelBuilder.createIngotItemModelJson(variant));
 
-		if(materialTypes.contains(MetalItemRegistry.CraftingMaterialTypes.DOUBLE_INGOT))
-			registerGeneratedItem(material.getMaterialName() + "_double_ingot", new CraftingItem(material), CraftingItemModelBuilder.createDoubleIngotItemModelJson(variant.getName()));
+		if(materialTypes.contains(DOUBLE_INGOT))
+			registerGeneratedItem(material.getMaterialName() + "_double_ingot", new CraftingItem(material), CraftingItemModelBuilder.createDoubleIngotItemModelJson(variant));
 
 		if(materialTypes.contains(PLATE))
-			registerGeneratedItem(material.getMaterialName() + "_plate", new CraftingItem(material), CraftingItemModelBuilder.createPlateItemModelJson(variant.getName()));
+			registerGeneratedItem(material.getMaterialName() + "_plate", new CraftingItem(material), CraftingItemModelBuilder.createPlateItemModelJson(variant));
 
-		if(materialTypes.contains(MetalItemRegistry.CraftingMaterialTypes.HEAVY_PLATE))
-			registerGeneratedItem(material.getMaterialName() + "_heavy_plate", new CraftingItem(material), CraftingItemModelBuilder.createHeavyPlateItemModelJson(variant.getName()));
+		if(materialTypes.contains(HEAVY_PLATE))
+			registerGeneratedItem(material.getMaterialName() + "_heavy_plate", new CraftingItem(material), CraftingItemModelBuilder.createHeavyPlateItemModelJson(variant));
 
 		if(materialTypes.contains(BLOCK))
 		{

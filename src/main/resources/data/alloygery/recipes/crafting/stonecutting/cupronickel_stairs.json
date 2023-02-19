@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "alloygery:cupronickel_block"
+  },
+  "result": "alloygery:cupronickel_stairs",
+  "count": 1
+}

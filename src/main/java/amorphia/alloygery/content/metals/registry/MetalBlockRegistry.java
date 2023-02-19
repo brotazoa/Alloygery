@@ -1,22 +1,27 @@
 package amorphia.alloygery.content.metals.registry;
 
 import amorphia.alloygery.Alloygery;
+import amorphia.alloygery.content.metals.block.CraftingMaterialBlockTypes;
 import amorphia.alloygery.content.metals.block.TintedBlock;
+import amorphia.alloygery.content.metals.block.TintedSlabBlock;
+import amorphia.alloygery.content.metals.block.TintedStairsBlock;
 import amorphia.alloygery.content.metals.client.CraftingItemModelBuilder;
+import amorphia.alloygery.content.metals.item.CraftingMaterialVariantTypes;
 import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.EnumSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import static amorphia.alloygery.content.metals.block.CraftingMaterialBlockTypes.*;
 import static amorphia.alloygery.content.tools.material.AlloygeryToolMaterials.*;
 
 public class MetalBlockRegistry
@@ -36,36 +41,84 @@ public class MetalBlockRegistry
 		register("nickel_ore", NICKEL_ORE);
 		register("titanium_ore", TITANIUM_ORE);
 
-		makeRawOreBlock(TIN);
-		makeRawOreBlock(NICKEL);
-		makeRawOreBlock(TITANIUM);
-
-		makeMetalBlock(TIN, MetalItemRegistry.CraftingMaterialVariantTypes.NORMAL);
-		makeMetalBlock(BRONZE, MetalItemRegistry.CraftingMaterialVariantTypes.NORMAL);
-		makeMetalBlock(ANTANIUM, MetalItemRegistry.CraftingMaterialVariantTypes.SHINY);
-		makeMetalBlock(STEEL, MetalItemRegistry.CraftingMaterialVariantTypes.NORMAL);
-		makeMetalBlock(NICKEL, MetalItemRegistry.CraftingMaterialVariantTypes.DULL);
-		makeMetalBlock(INVAR, MetalItemRegistry.CraftingMaterialVariantTypes.DULL);
-		makeMetalBlock(CONSTANTAN, MetalItemRegistry.CraftingMaterialVariantTypes.DULL);
-		makeMetalBlock(CUPRONICKEL, MetalItemRegistry.CraftingMaterialVariantTypes.DULL);
-		makeMetalBlock(TITANIUM, MetalItemRegistry.CraftingMaterialVariantTypes.NORMAL);
-		makeMetalBlock(TITANIUM_GOLD, MetalItemRegistry.CraftingMaterialVariantTypes.SHINY);
-		makeMetalBlock(NITINOL, MetalItemRegistry.CraftingMaterialVariantTypes.SHINY);
+		makeBlocksForMaterial(TIN, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(BRONZE, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(ANTANIUM, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.SHINY);
+		makeBlocksForMaterial(STEEL, EnumSet.of(BLOCK, STAIR, SLAB, FENCE, FENCE_GATE), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(NICKEL, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(INVAR, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(CONSTANTAN, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(CUPRONICKEL, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(TITANIUM, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(TITANIUM_GOLD, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.SHINY);
+		makeBlocksForMaterial(NITINOL, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.SHINY);
 	}
 
-	private static void makeMetalBlock(AlloygeryToolMaterial material)
+	private static void makeBlocksForMaterial(AlloygeryToolMaterial material, EnumSet<CraftingMaterialBlockTypes> blockTypes, CraftingMaterialVariantTypes variantType)
 	{
-		makeMetalBlock(material, MetalItemRegistry.CraftingMaterialVariantTypes.NORMAL);
-	}
+		if (blockTypes.contains(BLOCK))
+		{
+			registerGeneratedBlock(
+					material.getMaterialName() + "_block",
+					new TintedBlock(material, FabricBlockSettings.of(Material.METAL).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL)),
+					CraftingItemModelBuilder.createMetalBlockModelJson(variantType)
+			);
+		}
 
-	private static void makeMetalBlock(AlloygeryToolMaterial material, MetalItemRegistry.CraftingMaterialVariantTypes type)
-	{
-		registerGeneratedBlock(material.getMaterialName() + "_block", new TintedBlock(material, FabricBlockSettings.of(Material.METAL).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f).sounds(BlockSoundGroup.METAL)), CraftingItemModelBuilder.createMetalBlockModelJson(type.getName()));
-	}
+		if (blockTypes.contains(STAIR))
+		{
+			Block parent = BLOCKS.get(material.getMaterialName() + "_block");
+			if(parent == null) throw new IllegalStateException("Stair block requires parent block state");
 
-	private static void makeRawOreBlock(AlloygeryToolMaterial material)
-	{
-		registerGeneratedBlock("raw_" + material.getMaterialName() + "_block", new TintedBlock(material, FabricBlockSettings.of(Material.STONE).mapColor(MapColor.IRON_GRAY).requiresTool().strength(5.0f, 6.0f)), CraftingItemModelBuilder::createRawOreBlockModelJson);
+			registerGeneratedBlock(
+					material.getMaterialName() + "_stairs",
+					new TintedStairsBlock(material, parent.getDefaultState(), FabricBlockSettings.copyOf(parent)),
+					CraftingItemModelBuilder.createMetalStairsBlockModelJson(variantType)
+			);
+		}
+
+		if (blockTypes.contains(SLAB))
+		{
+			Block parent = BLOCKS.get(material.getMaterialName() + "_block");
+			if(parent == null) throw new IllegalStateException("Slab block requires parent block state");
+
+			registerGeneratedBlock(
+					material.getMaterialName() + "_slab",
+					new TintedSlabBlock(material, FabricBlockSettings.copyOf(parent)),
+					CraftingItemModelBuilder.createMetalSlabBlockModelJson(variantType)
+			);
+		}
+
+		if (blockTypes.contains(SLOPE))
+		{
+			Block parent = BLOCKS.get(material.getMaterialName() + "_block");
+			if(parent == null) throw new IllegalStateException("Stair block requires parent block state");
+
+			registerGeneratedBlock(
+					material.getMaterialName() + "_slope",
+					new TintedStairsBlock(material, parent.getDefaultState(), FabricBlockSettings.copyOf(parent)),
+					CraftingItemModelBuilder.createMetalSlopeBlockModelJson(variantType)
+			);
+		}
+
+		if (blockTypes.contains(FENCE))
+		{
+
+		}
+
+		if (blockTypes.contains(FENCE_GATE))
+		{
+
+		}
+
+		if (blockTypes.contains(RAW))
+		{
+			registerGeneratedBlock(
+					"raw_" + material.getMaterialName() + "_block",
+					new TintedBlock(material, FabricBlockSettings.of(Material.STONE).requiresTool().strength(5.0f, 6.0f)),
+					CraftingItemModelBuilder.createRawOreBlockModelJson()
+			);
+		}
 	}
 
 	private static void registerGeneratedBlock(String path, Block block, Supplier<String> modelJsonSupplier)

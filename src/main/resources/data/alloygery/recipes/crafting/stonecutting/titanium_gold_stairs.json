@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "alloygery:titanium_gold_block"
+  },
+  "result": "alloygery:titanium_gold_stairs",
+  "count": 1
+}

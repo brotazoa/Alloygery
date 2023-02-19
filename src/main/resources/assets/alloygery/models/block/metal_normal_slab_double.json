@@ -1,0 +1,7 @@
+{
+  "parent": "alloygery:block/tinted_cube_column",
+  "textures": {
+    "end": "alloygery:block/metal_block_normal_template",
+    "side": "alloygery:block/metal_slab_side_normal_template"
+  }
+}

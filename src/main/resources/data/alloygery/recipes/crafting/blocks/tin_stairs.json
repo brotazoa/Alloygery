@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i  ",
+    "ii ",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:tin_block"
+    }
+  },
+  "result": {
+    "item": "alloygery:tin_stairs",
+    "count": 4
+  }
+}

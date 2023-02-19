@@ -2,9 +2,7 @@ package amorphia.alloygery.content.metals.registry;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.content.metals.client.CraftingItemModelBuilder;
-import amorphia.alloygery.content.metals.item.CraftingHammer;
-import amorphia.alloygery.content.metals.item.CraftingItem;
-import amorphia.alloygery.content.metals.item.TintedBlockItem;
+import amorphia.alloygery.content.metals.item.*;
 import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
@@ -14,45 +12,17 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 import java.util.EnumSet;
-import java.util.Locale;
 import java.util.Map;
 import java.util.function.Supplier;
 
-import static amorphia.alloygery.content.metals.registry.MetalItemRegistry.CraftingMaterialTypes.*;
-import static amorphia.alloygery.content.metals.registry.MetalItemRegistry.CraftingMaterialVariantTypes.*;
-import static amorphia.alloygery.content.metals.registry.MetalItemRegistry.CraftingToolTypes.*;
+import static amorphia.alloygery.content.metals.item.CraftingMaterialItemTypes.*;
+import static amorphia.alloygery.content.metals.item.CraftingMaterialVariantTypes.*;
+import static amorphia.alloygery.content.metals.item.CraftingToolTypes.*;
 import static amorphia.alloygery.content.tools.material.AlloygeryToolMaterials.*;
 
 public class MetalItemRegistry
 {
 	public static final Map<String, Item> ITEMS = Maps.newHashMap();
-
-	//TODO: move all of these enum out of here
-	public enum CraftingMaterialTypes
-	{
-		RAW, NUGGET, INGOT, DOUBLE_INGOT, PLATE, HEAVY_PLATE, BLOCK, RAW_BLOCK;
-
-		public static final EnumSet<CraftingMaterialTypes> CRAFTING_MATERIAL_TYPES = EnumSet.allOf(CraftingMaterialTypes.class);
-	}
-
-	public enum CraftingMaterialVariantTypes
-	{
-		NORMAL, DULL, SHINY;
-
-		public static final EnumSet<CraftingMaterialVariantTypes> CRAFTING_MATERIAL_VARIANT_TYPES = EnumSet.allOf(CraftingMaterialVariantTypes.class);
-
-		public String getName()
-		{
-			return name().toLowerCase(Locale.ROOT);
-		}
-	}
-
-	public enum CraftingToolTypes
-	{
-		HAMMER;
-
-		public static final EnumSet<CraftingToolTypes> CRAFTING_TOOL_TYPES = EnumSet.allOf(CraftingToolTypes.class);
-	}
 
 	public static void init()
 	{
@@ -68,17 +38,17 @@ public class MetalItemRegistry
 		makeCraftingMaterials(TITANIUM, EnumSet.of(RAW_BLOCK), NORMAL);
 
 		//metal blocks
-		makeCraftingMaterials(TIN, EnumSet.of(BLOCK), NORMAL);
-		makeCraftingMaterials(BRONZE, EnumSet.of(BLOCK), NORMAL);
-		makeCraftingMaterials(ANTANIUM, EnumSet.of(BLOCK), SHINY);
-		makeCraftingMaterials(STEEL, EnumSet.of(BLOCK), NORMAL);
-		makeCraftingMaterials(NICKEL, EnumSet.of(BLOCK), DULL);
-		makeCraftingMaterials(INVAR, EnumSet.of(BLOCK), DULL);
-		makeCraftingMaterials(CONSTANTAN, EnumSet.of(BLOCK), DULL);
-		makeCraftingMaterials(CUPRONICKEL, EnumSet.of(BLOCK), DULL);
-		makeCraftingMaterials(TITANIUM, EnumSet.of(BLOCK), NORMAL);
-		makeCraftingMaterials(TITANIUM_GOLD, EnumSet.of(BLOCK), SHINY);
-		makeCraftingMaterials(NITINOL, EnumSet.of(BLOCK), SHINY);
+		makeCraftingMaterials(TIN, EnumSet.of(BLOCK, STAIR, SLAB), NORMAL);
+		makeCraftingMaterials(BRONZE, EnumSet.of(BLOCK, STAIR, SLAB), NORMAL);
+		makeCraftingMaterials(ANTANIUM, EnumSet.of(BLOCK, STAIR, SLAB), SHINY);
+		makeCraftingMaterials(STEEL, EnumSet.of(BLOCK, STAIR, SLAB, FENCE, FENCE_GATE), NORMAL);
+		makeCraftingMaterials(NICKEL, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
+		makeCraftingMaterials(INVAR, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
+		makeCraftingMaterials(CONSTANTAN, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
+		makeCraftingMaterials(CUPRONICKEL, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
+		makeCraftingMaterials(TITANIUM, EnumSet.of(BLOCK, STAIR, SLAB), NORMAL);
+		makeCraftingMaterials(TITANIUM_GOLD, EnumSet.of(BLOCK, STAIR, SLAB), SHINY);
+		makeCraftingMaterials(NITINOL, EnumSet.of(BLOCK, STAIR, SLAB), SHINY);
 
 		//metal items
 		makeCraftingMaterials(TIN, EnumSet.of(RAW, NUGGET, INGOT, DOUBLE_INGOT, PLATE, HEAVY_PLATE), DULL);
@@ -112,25 +82,25 @@ public class MetalItemRegistry
 //		makeCraftingTools(NITINOL, EnumSet.of(HAMMER), 4);
 	}
 
-	private static void makeCraftingMaterials(AlloygeryToolMaterial material, EnumSet<CraftingMaterialTypes> materialTypes, CraftingMaterialVariantTypes variant)
+	private static void makeCraftingMaterials(AlloygeryToolMaterial material, EnumSet<CraftingMaterialItemTypes> materialTypes, amorphia.alloygery.content.metals.item.CraftingMaterialVariantTypes variant)
 	{
-		if(materialTypes.contains(CraftingMaterialTypes.RAW))
+		if(materialTypes.contains(RAW))
 			registerGeneratedItem("raw_" + material.getMaterialName(), new CraftingItem(material), CraftingItemModelBuilder.createRawOreItemModelJson());
 
-		if(materialTypes.contains(CraftingMaterialTypes.NUGGET))
-			registerGeneratedItem(material.getMaterialName() + "_nugget", new CraftingItem(material), CraftingItemModelBuilder.createNuggetItemModelJson(variant.getName()));
+		if(materialTypes.contains(NUGGET))
+			registerGeneratedItem(material.getMaterialName() + "_nugget", new CraftingItem(material), CraftingItemModelBuilder.createNuggetItemModelJson(variant));
 
-		if(materialTypes.contains(CraftingMaterialTypes.INGOT))
-			registerGeneratedItem(material.getMaterialName() + "_ingot", new CraftingItem(material), CraftingItemModelBuilder.createIngotItemModelJson(variant.getName()));
+		if(materialTypes.contains(INGOT))
+			registerGeneratedItem(material.getMaterialName() + "_ingot", new CraftingItem(material), CraftingItemModelBuilder.createIngotItemModelJson(variant));
 
-		if(materialTypes.contains(CraftingMaterialTypes.DOUBLE_INGOT))
-			registerGeneratedItem(material.getMaterialName() + "_double_ingot", new CraftingItem(material), CraftingItemModelBuilder.createDoubleIngotItemModelJson(variant.getName()));
+		if(materialTypes.contains(DOUBLE_INGOT))
+			registerGeneratedItem(material.getMaterialName() + "_double_ingot", new CraftingItem(material), CraftingItemModelBuilder.createDoubleIngotItemModelJson(variant));
 
 		if(materialTypes.contains(PLATE))
-			registerGeneratedItem(material.getMaterialName() + "_plate", new CraftingItem(material), CraftingItemModelBuilder.createPlateItemModelJson(variant.getName()));
+			registerGeneratedItem(material.getMaterialName() + "_plate", new CraftingItem(material), CraftingItemModelBuilder.createPlateItemModelJson(variant));
 
-		if(materialTypes.contains(CraftingMaterialTypes.HEAVY_PLATE))
-			registerGeneratedItem(material.getMaterialName() + "_heavy_plate", new CraftingItem(material), CraftingItemModelBuilder.createHeavyPlateItemModelJson(variant.getName()));
+		if(materialTypes.contains(HEAVY_PLATE))
+			registerGeneratedItem(material.getMaterialName() + "_heavy_plate", new CraftingItem(material), CraftingItemModelBuilder.createHeavyPlateItemModelJson(variant));
 
 		if(materialTypes.contains(BLOCK))
 		{
@@ -144,6 +114,55 @@ public class MetalItemRegistry
 			Block parent = MetalBlockRegistry.BLOCKS.get("raw_" + material.getMaterialName() + "_block");
 			if(parent != null)
 				registerGeneratedItem("raw_" + material.getMaterialName() + "_block", new TintedBlockItem(material, parent, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)), CraftingItemModelBuilder.createBlockItemModelJson("raw_" + material.getMaterialName() + "_block"));
+		}
+
+		if (materialTypes.contains(STAIR))
+		{
+			Block parent = MetalBlockRegistry.BLOCKS.get(material.getMaterialName() + "_stairs");
+			if(parent != null)
+			{
+				registerGeneratedItem(
+						material.getMaterialName() + "_stairs",
+						new TintedBlockItem(material, parent, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)),
+						CraftingItemModelBuilder.createBlockItemModelJson(material.getMaterialName() + "_stairs")
+				);
+			}
+		}
+
+		if (materialTypes.contains(SLAB))
+		{
+			Block parent = MetalBlockRegistry.BLOCKS.get(material.getMaterialName() + "_slab");
+			if(parent != null)
+			{
+				registerGeneratedItem(
+						material.getMaterialName() + "_slab",
+						new TintedBlockItem(material, parent, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)),
+						CraftingItemModelBuilder.createBlockItemModelJson(material.getMaterialName() + "_slab")
+				);
+			}
+		}
+
+		if (materialTypes.contains(SLOPE))
+		{
+			Block parent = MetalBlockRegistry.BLOCKS.get(material.getMaterialName() + "_slope");
+			if(parent != null)
+			{
+				registerGeneratedItem(
+						material.getMaterialName() + "_slope",
+						new TintedBlockItem(material, parent, new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP)),
+						CraftingItemModelBuilder.createBlockItemModelJson(material.getMaterialName() + "_slope")
+				);
+			}
+		}
+
+		if (materialTypes.contains(FENCE))
+		{
+
+		}
+
+		if (materialTypes.contains(FENCE_GATE))
+		{
+
 		}
 	}
 

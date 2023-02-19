@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i  ",
+    "ii ",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:bronze_block"
+    }
+  },
+  "result": {
+    "item": "alloygery:bronze_stairs",
+    "count": 4
+  }
+}

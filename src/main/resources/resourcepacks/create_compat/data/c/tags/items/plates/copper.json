@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alloygery:copper_plate"
+    "alloygery:copper_plate",
+    "create:copper_sheet"
   ]
 }

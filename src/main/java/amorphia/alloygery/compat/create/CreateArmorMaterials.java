@@ -52,7 +52,7 @@ public class CreateArmorMaterials
 		ANDESITE_ALLOY_PLATE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
 				.fromMaterial(STATIC_HALF_PLATE_TEMPLATE)
 				.name("andesite_alloy_plate")
-				.color(7763574)
+				.color(13224634)
 				.repairIngredientFromTag("create_compat:andesite_alloy_ingots")
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
@@ -66,7 +66,7 @@ public class CreateArmorMaterials
 		ADNESITE_ALLOY_HEAVY_PLATE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
 				.fromMaterial(STATIC_FULL_PLATE_TEMPLATE)
 				.name("andesite_alloy_heavy_plate")
-				.color(7763574)
+				.color(13224634)
 				.repairIngredientFromTag("create_compat:andesite_alloy_ingots")
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
@@ -81,7 +81,7 @@ public class CreateArmorMaterials
 		BRASS_PLATE = register(AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder
 				.fromMaterial(STATIC_HALF_PLATE_TEMPLATE)
 				.name("brass_plate")
-				.color(14927216)
+				.color(16501864)
 				.repairIngredientFromTag("c:ingots/brass")
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)

@@ -29,7 +29,7 @@ public class CreateToolMaterials
 		);
 
 		ANDESITE_ALLOY = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("andesite_alloy")
-				.color(7763574)
+				.color(13224634)
 				.repairIngredientFromTag("create_compat:andesite_alloy_ingots")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
 				.property(ToolPropertyType.MINING_LEVEL, 1).next()
@@ -45,7 +45,7 @@ public class CreateToolMaterials
 		);
 
 		BRASS = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("brass")
-				.color(14927216)
+				.color(16501864)
 				.repairIngredientFromTag("c:ingots/brass")
 				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
 				.property(ToolPropertyType.MINING_LEVEL, 2).next()

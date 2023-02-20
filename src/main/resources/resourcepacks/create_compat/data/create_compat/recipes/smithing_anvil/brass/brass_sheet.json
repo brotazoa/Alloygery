@@ -1,12 +1,4 @@
 {
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:all_mods_loaded",
-      "values": [
-        "create"
-      ]
-    }
-  ],
   "type": "alloygery:smithing_anvil",
   "crafting_tool": {
     "tag": "alloygery:tools/crafting_hammers"

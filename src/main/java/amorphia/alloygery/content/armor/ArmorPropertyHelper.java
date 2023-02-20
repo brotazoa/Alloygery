@@ -7,7 +7,6 @@ import amorphia.alloygery.content.armor.property.ArmorProperty;
 import amorphia.alloygery.content.armor.property.ArmorPropertyOperation;
 import amorphia.alloygery.content.armor.property.ArmorPropertyType;
 import com.google.common.collect.Lists;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 
 import java.util.List;
@@ -44,13 +43,13 @@ public class ArmorPropertyHelper
 
 		float multiplyBase = 0.0f;
 		for (ArmorProperty property : multiplyBaseProperties)
-			multiplyBase += base <= 0.0f ? property.value() : base * property.value();
+			multiplyBase += base <= 0.0f ? property.value() : (base * property.value()) - base;
 
 		final float baseTotal = base + addition + multiplyBase;
 
 		float multiplyTotal = 0.0f;
 		for (ArmorProperty property : multiplyTotalProperties)
-			multiplyTotal += baseTotal <= 0.0f ? property.value() : baseTotal * property.value();
+			multiplyTotal += baseTotal <= 0.0f ? property.value() : (baseTotal * property.value()) - baseTotal;
 
 		return baseTotal + multiplyTotal;
 	}

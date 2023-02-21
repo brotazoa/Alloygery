@@ -1,0 +1,47 @@
+{
+  "alloygery_packet": "alloygery_armor_material",
+  "name": "steel_chain",
+  "color": 4408907,
+  "layer": "base",
+  "repair_ingredient": {
+    "tag": "c:steel_ingots"
+  },
+  "model_textures": {
+    "helmet": "alloygery:textures/armor/model/helmet/helmet_chainmail.png",
+    "chestplate": "alloygery:textures/armor/model/chestplate/chestplate_chainmail.png",
+    "leggings": "alloygery:textures/armor/model/leggings/leggings_chainmail.png",
+    "boots": "alloygery:textures/armor/model/boots/boots_chainmail.png"
+  },
+  "armor_properties": [
+    {
+      "layer": "base",
+      "type": "durability",
+      "operation": "base",
+      "value": 20.0
+    },
+    {
+      "layer": "base",
+      "type": "armor",
+      "operation": "base",
+      "value": 10.0
+    },
+    {
+      "layer": "base",
+      "type": "toughness",
+      "operation": "base",
+      "value": 1.0
+    },
+    {
+      "layer": "base",
+      "type": "mobility",
+      "operation": "base",
+      "value": 3.0
+    },
+    {
+      "layer": "base",
+      "type": "enchantability",
+      "operation": "base",
+      "value": 8.0
+    }
+  ]
+}

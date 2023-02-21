@@ -68,6 +68,11 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 			MODULES.add(new CreateModule());
 		}
 
+		//register builtin extra_chain_armors pack
+		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(
+				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("extra_chain_armors"), modContainer, ResourcePackActivationType.NORMAL)
+		);
+
 		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();
@@ -92,7 +97,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	{
 		AlloygeryToolMaterialRegistry.forEach((identifier, alloygeryToolMaterial) -> {
 
-			Path path = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/tool_materials/" + identifier.getPath() + ".json");
+			Path path = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/" + identifier.getPath() + ".json");
 			try
 			{
 				Files.createDirectories(path.getParent());
@@ -111,7 +116,7 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	{
 		AlloygeryArmorMaterialRegistry.forEach((identifier, alloygeryArmorMaterial) -> {
 
-			Path path = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/armor_materials/" + identifier.getPath() + ".json");
+			Path path = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/" + identifier.getPath() + ".json");
 			try
 			{
 				Files.createDirectories(path.getParent());

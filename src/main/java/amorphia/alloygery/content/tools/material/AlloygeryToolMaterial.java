@@ -119,17 +119,39 @@ public class AlloygeryToolMaterial
 			if(other == null || original == other)
 				return original;
 
-			if(!original.materialName.equals(other.materialName))
-				return original;
+//			if(!original.materialName.equals(other.materialName))
+//				return original;
 
 			original.toolProperties.clear();
 			original.toolPropertiesByPart.clear();
 
+			original.materialName = other.materialName;
 			original.materialColor = other.materialColor;
 			original.repairIngredient = other.repairIngredient;
 			original.upgradeIngredient = other.upgradeIngredient;
 
 			other.toolProperties.forEach(original::addToolProperty);
+
+			return original;
+		}
+
+		public static AlloygeryToolMaterial setData(AlloygeryToolMaterial original, AlloygeryToolMaterial data)
+		{
+			if(data == null || original == data)
+				return original;
+
+			original.materialName = data.materialName;
+
+			//FIXME: material color is not data, and should be handled on client
+			original.materialColor = data.materialColor;
+
+			original.repairIngredient = data.repairIngredient;
+			original.upgradeIngredient = data.upgradeIngredient;
+
+			original.toolProperties.clear();
+			original.toolPropertiesByPart.clear();
+
+			data.toolProperties.forEach(original::addToolProperty);
 
 			return original;
 		}

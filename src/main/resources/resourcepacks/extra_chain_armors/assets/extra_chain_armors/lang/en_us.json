@@ -1,0 +1,60 @@
+{
+  "language.name": "English",
+  "language.region": "United States",
+  "language.code": "en_us",
+
+  "item.extra_chain_armors.gold_chain_helmet": "Gold Chain Helmet",
+  "item.extra_chain_armors.gold_chain_chestplate": "Gold Chain Chestplate",
+  "item.extra_chain_armors.gold_chain_leggings": "Gold Chain Leggings",
+  "item.extra_chain_armors.gold_chain_boots": "Gold Chain Boots",
+
+  "item.extra_chain_armors.antanium_chain_helmet": "Antanium Chain Helmet",
+  "item.extra_chain_armors.antanium_chain_chestplate": "Antanium Chain Chestplate",
+  "item.extra_chain_armors.antanium_chain_leggings": "Antanium Chain Leggings",
+  "item.extra_chain_armors.antanium_chain_boots": "Antanium Chain Boots",
+
+  "item.extra_chain_armors.steel_chain_helmet": "Steel Chain Helmet",
+  "item.extra_chain_armors.steel_chain_chestplate": "Steel Chain Chestplate",
+  "item.extra_chain_armors.steel_chain_leggings": "Steel Chain Leggings",
+  "item.extra_chain_armors.steel_chain_boots": "Steel Chain Boots",
+
+  "item.extra_chain_armors.netherite_chain_helmet": "Netherite Chain Helmet",
+  "item.extra_chain_armors.netherite_chain_chestplate": "Netherite Chain Chestplate",
+  "item.extra_chain_armors.netherite_chain_leggings": "Netherite Chain Leggings",
+  "item.extra_chain_armors.netherite_chain_boots": "Netherite Chain Boots",
+
+  "item.extra_chain_armors.nickel_chain_helmet": "Nickel Chain Helmet",
+  "item.extra_chain_armors.nickel_chain_chestplate": "Nickel Chain Chestplate",
+  "item.extra_chain_armors.nickel_chain_leggings": "Nickel Chain Leggings",
+  "item.extra_chain_armors.nickel_chain_boots": "Nickel Chain Boots",
+
+  "item.extra_chain_armors.invar_chain_helmet": "Invar Chain Helmet",
+  "item.extra_chain_armors.invar_chain_chestplate": "Invar Chain Chestplate",
+  "item.extra_chain_armors.invar_chain_leggings": "Invar Chain Leggings",
+  "item.extra_chain_armors.invar_chain_boots": "Invar Chain Boots",
+
+  "item.extra_chain_armors.constantan_chain_helmet": "Constantan Chain Helmet",
+  "item.extra_chain_armors.constantan_chain_chestplate": "Constantan Chain Chestplate",
+  "item.extra_chain_armors.constantan_chain_leggings": "Constantan Chain Leggings",
+  "item.extra_chain_armors.constantan_chain_boots": "Constantan Chain Boots",
+
+  "item.extra_chain_armors.cupronickel_chain_helmet": "Cupronickel Chain Helmet",
+  "item.extra_chain_armors.cupronickel_chain_chestplate": "Cupronickel Chain Chestplate",
+  "item.extra_chain_armors.cupronickel_chain_leggings": "Cupronickel Chain Leggings",
+  "item.extra_chain_armors.cupronickel_chain_boots": "Cupronickel Chain Boots",
+
+  "item.extra_chain_armors.titanium_chain_helmet": "Titanium Chain Helmet",
+  "item.extra_chain_armors.titanium_chain_chestplate": "Titanium Chain Chestplate",
+  "item.extra_chain_armors.titanium_chain_leggings": "Titanium Chain Leggings",
+  "item.extra_chain_armors.titanium_chain_boots": "Titanium Chain Boots",
+
+  "item.extra_chain_armors.titanium_gold_chain_helmet": "Titanium_gold Chain Helmet",
+  "item.extra_chain_armors.titanium_gold_chain_chestplate": "Titanium_gold Chain Chestplate",
+  "item.extra_chain_armors.titanium_gold_chain_leggings": "Titanium_gold Chain Leggings",
+  "item.extra_chain_armors.titanium_gold_chain_boots": "Titanium_gold Chain Boots",
+
+  "item.extra_chain_armors.nitinol_chain_helmet": "Nitinol Chain Helmet",
+  "item.extra_chain_armors.nitinol_chain_chestplate": "Nitinol Chain Chestplate",
+  "item.extra_chain_armors.nitinol_chain_leggings": "Nitinol Chain Leggings",
+  "item.extra_chain_armors.nitinol_chain_boots": "Nitinol Chain Boots"
+}

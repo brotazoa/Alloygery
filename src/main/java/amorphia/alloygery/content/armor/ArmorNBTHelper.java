@@ -1,8 +1,6 @@
 package amorphia.alloygery.content.armor;
 
 import amorphia.alloygery.content.armor.item.ArmorLayer;
-import amorphia.alloygery.content.armor.item.ArmorPartItem;
-import amorphia.alloygery.content.armor.item.IArmorPart;
 import amorphia.alloygery.content.armor.material.AlloygeryArmorMaterial;
 import amorphia.alloygery.content.armor.material.AlloygeryArmorMaterials;
 import amorphia.alloygery.content.armor.registry.AlloygeryArmorMaterialRegistry;
@@ -10,7 +8,6 @@ import net.minecraft.item.DyeableItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import static amorphia.alloygery.content.armor.AlloygeryArmorNBT.*;
 

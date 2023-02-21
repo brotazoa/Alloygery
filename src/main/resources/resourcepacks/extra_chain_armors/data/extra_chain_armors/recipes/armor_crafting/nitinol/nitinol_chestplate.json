@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "l l",
+    "lll",
+    "lll"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:nitinol_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_chain_chestplate"
+  },
+  "with_material": "extra_chain_armors:armor_materials/nitinol_chain"
+}

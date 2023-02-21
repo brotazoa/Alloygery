@@ -1,0 +1,41 @@
+{
+  "alloygery_packet": "alloygery_armor_material",
+  "name": "nitinol_chain",
+  "color": 6185051,
+  "layer": "base",
+  "repair_ingredient": {
+    "tag": "c:nitinol_ingots"
+  },
+  "model_textures": {
+    "helmet": "alloygery:textures/armor/model/helmet/helmet_chainmail.png",
+    "chestplate": "alloygery:textures/armor/model/chestplate/chestplate_chainmail.png",
+    "leggings": "alloygery:textures/armor/model/leggings/leggings_chainmail.png",
+    "boots": "alloygery:textures/armor/model/boots/boots_chainmail.png"
+  },
+  "armor_properties": [
+    {
+      "layer": "base",
+      "type": "durability",
+      "operation": "base",
+      "value": 20.0
+    },
+    {
+      "layer": "base",
+      "type": "armor",
+      "operation": "base",
+      "value": 14.0
+    },
+    {
+      "layer": "base",
+      "type": "enchantability",
+      "operation": "base",
+      "value": 18.0
+    },
+    {
+      "layer": "base",
+      "type": "mobility",
+      "operation": "base",
+      "value": 8.0
+    }
+  ]
+}

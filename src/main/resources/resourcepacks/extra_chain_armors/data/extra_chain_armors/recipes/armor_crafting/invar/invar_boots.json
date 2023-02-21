@@ -1,0 +1,16 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "l l",
+    "l l"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:invar_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_chain_boots"
+  },
+  "with_material": "extra_chain_armors:armor_materials/invar_chain"
+}

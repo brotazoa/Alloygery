@@ -141,14 +141,15 @@ public class AlloygeryArmorMaterial
 			if(other == null || original == other)
 				return original;
 
-			if(!original.materialName.equals(other.materialName))
-				return original;
+//			if(!original.materialName.equals(other.materialName))
+//				return original;
 
 			original.armorProperties.clear();
 			original.armorPropertiesByLayer.clear();
 			original.itemTextures.clear();
 			original.modelTextures.clear();
 
+			original.materialName = other.materialName;
 			original.materialColor = other.materialColor;
 			original.dyeable = other.dyeable;
 			original.repairIngredient = other.repairIngredient;
@@ -167,8 +168,7 @@ public class AlloygeryArmorMaterial
 			if(other == null || original == other)
 				return original;
 
-			if(!original.materialName.equals(other.materialName))
-				return original;
+			original.materialName = other.materialName;
 
 			original.armorProperties.clear();
 			original.armorPropertiesByLayer.clear();
@@ -176,6 +176,9 @@ public class AlloygeryArmorMaterial
 			original.dyeable = other.dyeable;
 			original.repairIngredient = other.repairIngredient;
 			original.layer = other.layer;
+
+			//FIXME: material color is not data, and should be handled on client
+			original.materialColor = other.materialColor;
 
 			other.armorProperties.forEach(original::addArmorProperty);
 

@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "l l",
+    "lll",
+    "lll"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:antanium_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_chain_chestplate"
+  },
+  "with_material": "extra_chain_armors:armor_materials/antanium_chain"
+}

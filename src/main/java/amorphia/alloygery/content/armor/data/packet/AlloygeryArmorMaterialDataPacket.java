@@ -19,7 +19,7 @@ public class AlloygeryArmorMaterialDataPacket implements IAlloygeryArmorMaterial
 	@Override
 	public AlloygeryArmorMaterial apply(AlloygeryArmorMaterial material)
 	{
-		return AlloygeryArmorMaterial.AlloygeryArmorMaterialMerger.overrideData(material, dataHolder);
+		return AlloygeryArmorMaterial.AlloygeryArmorMaterialMerger.override(material, dataHolder);
 	}
 
 	public static class Serializer implements JsonSerializer<AlloygeryArmorMaterial>, JsonDeserializer<AlloygeryArmorMaterialDataPacket>
@@ -40,21 +40,21 @@ public class AlloygeryArmorMaterialDataPacket implements IAlloygeryArmorMaterial
 
 			json.add("repair_ingredient", material.getRepairIngredient().toJson());
 
-//			JsonObject itemTextures = new JsonObject();
-//			for(ArmorType armorType : ArmorType.VALUES_CACHE)
-//			{
-//				Identifier id = material.getModelTexture(armorType);
-//				itemTextures.addProperty(armorType.getName(), id.toString());
-//			}
-//			json.add("item_textures", itemTextures);
-//
-//			JsonObject modelTextures = new JsonObject();
-//			for(ArmorType armorType: ArmorType.VALUES_CACHE)
-//			{
-//				Identifier id = material.getModelTexture(armorType);
-//				modelTextures.addProperty(armorType.getName(), id.toString());
-//			}
-//			json.add("model_textures", modelTextures);
+			JsonObject itemTextures = new JsonObject();
+			for(ArmorType armorType : ArmorType.VALUES_CACHE)
+			{
+				Identifier id = material.getModelTexture(armorType);
+				itemTextures.addProperty(armorType.getName(), id.toString());
+			}
+			json.add("item_textures", itemTextures);
+
+			JsonObject modelTextures = new JsonObject();
+			for(ArmorType armorType: ArmorType.VALUES_CACHE)
+			{
+				Identifier id = material.getModelTexture(armorType);
+				modelTextures.addProperty(armorType.getName(), id.toString());
+			}
+			json.add("model_textures", modelTextures);
 
 			JsonArray properties = new JsonArray();
 			material.getArmorProperties().forEach(property -> {

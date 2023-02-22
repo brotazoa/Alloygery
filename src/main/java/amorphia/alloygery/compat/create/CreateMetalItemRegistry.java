@@ -25,7 +25,7 @@ public class CreateMetalItemRegistry
 {
 	public static final Map<String, Item> ITEMS = Maps.newLinkedHashMap();
 
-	public static void init()
+	static void init()
 	{
 		makeCraftingMaterials(CreateToolMaterials.ZINC, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), DULL);
 		makeCraftingMaterials(CreateToolMaterials.ANDESITE_ALLOY, EnumSet.of(DOUBLE_INGOT, PLATE, HEAVY_PLATE), DULL);

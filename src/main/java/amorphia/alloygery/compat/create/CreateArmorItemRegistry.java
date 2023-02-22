@@ -18,7 +18,7 @@ public class CreateArmorItemRegistry
 {
 	public static final Map<String, Item> ITEMS = Maps.newLinkedHashMap();
 
-	public static void init()
+	static void init()
 	{
 		createArmorPartItemSet(CreateArmorMaterials.ANDESITE_ALLOY_PLATE);
 		createArmorPartItemSet(CreateArmorMaterials.ADNESITE_ALLOY_HEAVY_PLATE);

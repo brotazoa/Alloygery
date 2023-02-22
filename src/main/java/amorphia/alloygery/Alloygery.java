@@ -1,6 +1,7 @@
 package amorphia.alloygery;
 
 import amorphia.alloygery.compat.create.CreateModule;
+import amorphia.alloygery.compat.vsas.VsasModule;
 import amorphia.alloygery.config.AlloygeryConfig;
 import amorphia.alloygery.content.armor.ArmorModule;
 import amorphia.alloygery.content.armor.data.AlloygeryArmorMaterialDataHelper;
@@ -43,7 +44,12 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	public static Item ALLOYGERY_TAB_ITEM = Registry.register(Registry.ITEM, Alloygery.identifier("alloygery_tab_item"), new Item(new Item.Settings()));
 	public static ItemGroup ALLOYGERY_TAB_GROUP = FabricItemGroupBuilder.create(Alloygery.identifier("alloygery_group")).icon(() -> new ItemStack(ALLOYGERY_TAB_ITEM)).build();
 
-	public static final List<IAlloygeryModule> MODULES = Lists.newArrayList(new MachineModule(), new MetalModule(), new ToolModule(), new ArmorModule());
+	public static final List<IAlloygeryModule> MODULES = Lists.newArrayList(
+			//alloygery modules
+			new MachineModule(), new MetalModule(), new ToolModule(), new ArmorModule(),
+			//mod compat modules
+			new CreateModule(), new VsasModule()
+	);
 
 	@Override
 	@Environment(EnvType.CLIENT)
@@ -58,16 +64,6 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 	@Override
 	public void onInitialize()
 	{
-		//register builtin create compat resource pack
-		if (FabricLoader.getInstance().isModLoaded("create"))
-		{
-			FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(
-					modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("create_compat"), modContainer, ResourcePackActivationType.ALWAYS_ENABLED)
-			);
-
-			MODULES.add(new CreateModule());
-		}
-
 		//register builtin extra_chain_armors pack
 		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(
 				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("extra_chain_armors"), modContainer, ResourcePackActivationType.NORMAL)

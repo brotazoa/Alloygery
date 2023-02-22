@@ -1,4 +1,4 @@
-package amorphia.alloygery.compat.create;
+package amorphia.alloygery.compat.vsas;
 
 import amorphia.alloygery.Alloygery;
 import amorphia.alloygery.IAlloygeryModule;
@@ -7,28 +7,25 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 
-public class CreateModule implements IAlloygeryModule
+public class VsasModule implements IAlloygeryModule
 {
 	@Override
 	public boolean shouldInitialize()
 	{
-		return FabricLoader.getInstance().isModLoaded("create");
+		return FabricLoader.getInstance().isModLoaded("vsas");
 	}
 
 	@Override
 	public void initialize()
 	{
-		Alloygery.LOGGER.info("loading create module");
+		Alloygery.LOGGER.info("Loading Variant Sticks and Stuff module");
 
 		FabricLoader.getInstance().getModContainer(Alloygery.MOD_ID).ifPresent(
-				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(Alloygery.identifier("create_compat"), modContainer, ResourcePackActivationType.ALWAYS_ENABLED)
+				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(Alloygery.identifier("vsas_compat"), modContainer, ResourcePackActivationType.ALWAYS_ENABLED)
 		);
 
-		CreateToolMaterials.init();
-		CreateToolItemRegistry.init();
-		CreateMetalItemRegistry.init();
-		CreateArmorMaterials.init();
-		CreateArmorItemRegistry.init();
+		VsasToolMaterials.init();
+		VsasToolItemRegistry.init();
 	}
 
 	@Override
@@ -39,6 +36,6 @@ public class CreateModule implements IAlloygeryModule
 
 	static Identifier identify(String path)
 	{
-		return new Identifier("create_compat", path);
+		return new Identifier("vsas_compat", path);
 	}
 }

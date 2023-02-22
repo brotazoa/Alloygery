@@ -1,6 +1,5 @@
 package amorphia.alloygery.compat.create;
 
-import amorphia.alloygery.compat.create.CreateModule;
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
 import amorphia.alloygery.content.tools.material.AlloygeryToolMaterial;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
@@ -20,7 +19,7 @@ public class CreateToolMaterials
 		return AlloygeryToolMaterialRegistry.register(CreateModule.identify("tool_materials/" + material.getMaterialName()), material);
 	}
 
-	public static void init()
+	static void init()
 	{
 		ZINC = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("zinc")
 				.color(15790570)

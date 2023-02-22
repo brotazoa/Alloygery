@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " s",
+    "s "
+  ],
+  "key": {
+    "s": {
+      "item": "vsas:sticks/warped_stick"
+    }
+  },
+  "result": {
+    "item": "vsas_compat:warped_handle"
+  }
+}

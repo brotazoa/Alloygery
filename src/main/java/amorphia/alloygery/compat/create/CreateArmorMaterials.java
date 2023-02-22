@@ -19,7 +19,7 @@ public class CreateArmorMaterials
 		return AlloygeryArmorMaterialRegistry.register(CreateModule.identify("armor_materials/" + material.getMaterialName()), material);
 	}
 
-	public static void init()
+	static void init()
 	{
 		final AlloygeryArmorMaterial STATIC_HALF_PLATE_TEMPLATE = new AlloygeryArmorMaterial.AlloygeryArmorMaterialBuilder("half_plate_template")
 				.layer(ArmorLayer.PLATE)

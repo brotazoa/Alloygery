@@ -28,7 +28,7 @@ public class CreateToolItemRegistry
 {
 	public static final Map<String, Item> ITEMS = Maps.newLinkedHashMap();
 
-	public static void init()
+	static void init()
 	{
 		makeToolSetsForMaterial(CreateToolMaterials.ANDESITE_ALLOY, null);
 		makeToolSetsForMaterial(CreateToolMaterials.BRASS, null);
@@ -257,10 +257,10 @@ public class CreateToolItemRegistry
 		}
 	}
 
-	private static Item registerGeneratedItem(String path, Item item, Supplier<String> jsonModleSupplier)
+	private static Item registerGeneratedItem(String path, Item item, Supplier<String> jsonModelSupplier)
 	{
 		Identifier identifier = CreateModule.identify("item/" + path);
-		ToolModelBuilder.register(identifier, jsonModleSupplier);
+		ToolModelBuilder.register(identifier, jsonModelSupplier);
 		return register(path, item);
 	}
 

@@ -41,15 +41,16 @@ public class ArmorPropertyHelper
 		for(ArmorProperty property : additionProperties)
 			addition += property.value();
 
+		final float absBase = Math.abs(base);
 		float multiplyBase = 0.0f;
 		for (ArmorProperty property : multiplyBaseProperties)
-			multiplyBase += base <= 0.0f ? property.value() : (base * property.value()) - base;
+			multiplyBase += absBase * property.value() - absBase;
 
 		final float baseTotal = base + addition + multiplyBase;
-
+		final float absBaseTotal = Math.abs(baseTotal);
 		float multiplyTotal = 0.0f;
 		for (ArmorProperty property : multiplyTotalProperties)
-			multiplyTotal += baseTotal <= 0.0f ? property.value() : (baseTotal * property.value()) - baseTotal;
+			multiplyTotal += absBaseTotal * property.value() - absBaseTotal;
 
 		return baseTotal + multiplyTotal;
 	}

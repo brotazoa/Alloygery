@@ -39,13 +39,15 @@ public class ToolPropertyHelper
 			addition += property.value();
 
 		float multiplyBase = 0.0f;
+		final float absBase = Math.abs(base);
 		for(ToolProperty property : multiplyBaseProperties)
-			multiplyBase += base <= 0.0f ? property.value() : (base * property.value()) - base;
+			multiplyBase += absBase * property.value() - absBase;
 
 		final float baseTotal = base + addition + multiplyBase;
+		final float absBaseTotal = Math.abs(baseTotal);
 		float multiplyTotal = 0.0f;
 		for(ToolProperty property : multiplyTotalProperties)
-			multiplyTotal += baseTotal <= 0.0f ? property.value() : (baseTotal * property.value()) - baseTotal;
+			multiplyTotal += absBaseTotal * property.value() - absBaseTotal;
 
 		return baseTotal + multiplyTotal;
 	}

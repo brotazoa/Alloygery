@@ -1,0 +1,22 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:blackstone"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:gravel",
+      "chance": 1.0
+    },
+    {
+      "item": "minecraft:soul_sand",
+      "chance": 0.25
+    },
+    {
+      "item": "alloygery:nickel_nugget",
+      "chance": 0.125
+    }
+  ]
+}

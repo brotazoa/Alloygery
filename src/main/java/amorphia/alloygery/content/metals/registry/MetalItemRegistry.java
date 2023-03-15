@@ -38,17 +38,17 @@ public class MetalItemRegistry
 		makeCraftingMaterials(TITANIUM, EnumSet.of(RAW_BLOCK), NORMAL);
 
 		//metal blocks
-		makeCraftingMaterials(TIN, EnumSet.of(BLOCK, STAIR, SLAB), NORMAL);
-		makeCraftingMaterials(BRONZE, EnumSet.of(BLOCK, STAIR, SLAB), NORMAL);
-		makeCraftingMaterials(ANTANIUM, EnumSet.of(BLOCK, STAIR, SLAB), SHINY);
-		makeCraftingMaterials(STEEL, EnumSet.of(BLOCK, STAIR, SLAB, FENCE, FENCE_GATE), NORMAL);
-		makeCraftingMaterials(NICKEL, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
-		makeCraftingMaterials(INVAR, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
-		makeCraftingMaterials(CONSTANTAN, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
-		makeCraftingMaterials(CUPRONICKEL, EnumSet.of(BLOCK, STAIR, SLAB), DULL);
-		makeCraftingMaterials(TITANIUM, EnumSet.of(BLOCK, STAIR, SLAB), NORMAL);
-		makeCraftingMaterials(TITANIUM_GOLD, EnumSet.of(BLOCK, STAIR, SLAB), SHINY);
-		makeCraftingMaterials(NITINOL, EnumSet.of(BLOCK, STAIR, SLAB), SHINY);
+		makeCraftingMaterials(TIN, EnumSet.of(BLOCK), NORMAL);
+		makeCraftingMaterials(BRONZE, EnumSet.of(BLOCK), NORMAL);
+		makeCraftingMaterials(ANTANIUM, EnumSet.of(BLOCK), SHINY);
+		makeCraftingMaterials(STEEL, EnumSet.of(BLOCK, STAIR, SLAB, SLOPE, FENCE, FENCE_GATE), NORMAL);
+		makeCraftingMaterials(NICKEL, EnumSet.of(BLOCK), DULL);
+		makeCraftingMaterials(INVAR, EnumSet.of(BLOCK), DULL);
+		makeCraftingMaterials(CONSTANTAN, EnumSet.of(BLOCK), DULL);
+		makeCraftingMaterials(CUPRONICKEL, EnumSet.of(BLOCK), DULL);
+		makeCraftingMaterials(TITANIUM, EnumSet.of(BLOCK), NORMAL);
+		makeCraftingMaterials(TITANIUM_GOLD, EnumSet.of(BLOCK), SHINY);
+		makeCraftingMaterials(NITINOL, EnumSet.of(BLOCK), SHINY);
 
 		//metal items
 		makeCraftingMaterials(TIN, EnumSet.of(RAW, NUGGET, INGOT, DOUBLE_INGOT, PLATE, HEAVY_PLATE), DULL);

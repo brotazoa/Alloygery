@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "alloygery:steel_block"
+  },
+  "result": "alloygery:steel_slope",
+  "count": 1
+}

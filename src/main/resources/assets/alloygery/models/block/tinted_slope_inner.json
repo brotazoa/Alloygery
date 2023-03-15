@@ -1,0 +1,61 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "#all"
+	},
+	"elements": [
+		{
+			"name": "base",
+			"from": [0, 0, 0],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [0, 8, 16, 16], "texture": "#all", "tintindex": 0},
+				"east": {"uv": [0, 8, 16, 16], "texture": "#all", "tintindex": 0},
+				"south": {"uv": [0, 8, 16, 16], "texture": "#all", "tintindex": 0},
+				"west": {"uv": [0, 8, 16, 16], "texture": "#all", "tintindex": 0},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#all", "tintindex": 0}
+			}
+		},
+		{
+			"name": "top",
+			"from": [0, 8, 8],
+			"to": [16, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 8, 8], "texture": "#all", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#all", "tintindex": 0},
+				"west": {"uv": [8, 0, 16, 8], "texture": "#all", "tintindex": 0},
+				"up": {"uv": [0, 8, 16, 16], "texture": "#all", "tintindex": 0}
+			}
+		},
+		{
+			"name": "top",
+			"from": [8, 8, 0],
+			"to": [16, 16, 8],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 8], "texture": "#all", "tintindex": 0},
+				"east": {"uv": [8, 0, 16, 8], "texture": "#all", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#all", "tintindex": 0},
+				"up": {"uv": [8, 0, 16, 8], "texture": "#all", "tintindex": 0}
+			}
+		},
+		{
+			"name": "slope",
+			"from": [0.0001, 5.65001, 2.34031],
+			"to": [7.9991, 13.65001, 13.65401],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8.0001, 8.00001, 7.99031]},
+			"faces": {
+				"west": {"uv": [0, 2, 8, 13.3], "rotation": 90, "texture": "#all", "tintindex": 0},
+				"up": {"uv": [0, 2, 8, 13.3], "texture": "#all", "tintindex": 0}
+			}
+		},
+		{
+			"from": [2.35799, 5.65733, 0.0001],
+			"to": [13.67169, 13.65733, 7.9991],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8.00799, 7.98233, 8.0001]},
+			"faces": {
+				"north": {"uv": [0, 2, 8, 13.3], "rotation": 90, "texture": "#all", "tintindex": 0},
+				"up": {"uv": [0, 2, 8, 13.3], "rotation": 90, "texture": "#all", "tintindex": 0}
+			}
+		}
+	]
+}

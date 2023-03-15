@@ -44,7 +44,7 @@ public class MetalBlockRegistry
 		makeBlocksForMaterial(TIN, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.NORMAL);
 		makeBlocksForMaterial(BRONZE, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.NORMAL);
 		makeBlocksForMaterial(ANTANIUM, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.SHINY);
-		makeBlocksForMaterial(STEEL, EnumSet.of(BLOCK, STAIR, SLAB, FENCE, FENCE_GATE), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(STEEL, EnumSet.of(BLOCK, STAIR, SLAB, SLOPE, FENCE, FENCE_GATE), CraftingMaterialVariantTypes.NORMAL);
 		makeBlocksForMaterial(NICKEL, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.DULL);
 		makeBlocksForMaterial(INVAR, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
 		makeBlocksForMaterial(CONSTANTAN, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
@@ -92,7 +92,7 @@ public class MetalBlockRegistry
 		if (blockTypes.contains(SLOPE))
 		{
 			Block parent = BLOCKS.get(material.getMaterialName() + "_block");
-			if(parent == null) throw new IllegalStateException("Stair block requires parent block state");
+			if(parent == null) throw new IllegalStateException("Slope block requires parent block state");
 
 			registerGeneratedBlock(
 					material.getMaterialName() + "_slope",

@@ -6,6 +6,11 @@
     "minecraft:iron_ore",
     "minecraft:deepslate_iron_ore",
     "alloygery:antanium_block",
-    "alloygery:steel_block"
+    "alloygery:antanium_stairs",
+    "alloygery:antanium_slab",
+    "alloygery:steel_block",
+    "alloygery:steel_slab",
+    "alloygery:steel_stairs",
+    "alloygery:steel_slope"
   ]
 }

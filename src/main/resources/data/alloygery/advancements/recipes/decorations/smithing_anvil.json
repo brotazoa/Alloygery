@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "alloygery:crafting/blocks/smithing_anvil"
+    ]
+  },
+  "criteria": {
+    "has_iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "alloygery:crafting/blocks/smithing_anvil"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_iron",
+      "has_the_recipe"
+    ]
+  ]
+}

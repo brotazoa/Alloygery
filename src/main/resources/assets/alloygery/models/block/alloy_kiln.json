@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/block",
+  "parent": "minecraft:block/orientable",
   "textures": {
     "base": "minecraft:block/bricks",
     "front": "alloygery:block/alloy_kiln_front_no_background"

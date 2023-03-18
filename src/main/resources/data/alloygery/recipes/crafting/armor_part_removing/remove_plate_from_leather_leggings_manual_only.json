@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:armor_part_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:armors/leather_plated_leggings"
+    }
+  ],
+  "result": {
+    "item": "alloygery:dynamic_leather_leggings"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:story/obtain_armor",
+  "display": {
+    "icon": {
+      "item": "alloygery:dynamic_leather_full_plate_chestplate",
+      "nbt": "{alloygery_nbt_identifier:{type:\"armor_identifier\", armor_layer_plate:{armor_layer_identifier:\"armor_layer_plate\", material_identifier:\"alloygery:armor_materials/diamond_full_plate\", type:\"armor_layer_identifier\"}, armor_layer_base:{armor_layer_identifier:\"armor_layer_base\", material_identifier:\"alloygery:armor_materials/leather\", type:\"armor_layer_identifier\", armor_dye_color:10511680}}}"
+    },
+    "title": {
+      "translate": "advancements.story.shiny_gear.title"
+    },
+    "description": {
+      "translate": "advancements.story.shiny_gear.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "any_diamond_heavy_plated_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:armors/plated_armors",
+            "nbt": "{alloygery_nbt_identifier:{armor_layer_plate:{material_identifier:\"alloygery:armor_materials/diamond_full_plate\"}}}"
+          }
+        ]
+      }
+    },
+    "any_diamond_plated_armor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "alloygery:armors/plated_armors",
+            "nbt": "{alloygery_nbt_identifier:{armor_layer_plate:{material_identifier:\"alloygery:armor_materials/diamond_half_plate\"}}}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "any_diamond_heavy_plated_armor",
+      "any_diamond_plated_armor"
+    ]
+  ]
+}

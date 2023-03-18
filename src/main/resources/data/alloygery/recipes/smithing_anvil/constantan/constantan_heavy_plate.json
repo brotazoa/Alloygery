@@ -1,17 +1,14 @@
 {
   "type": "alloygery:smithing_anvil",
-  "group": "constantan_materials",
-  "hammer": {
-    "item": "alloygery:anvil_hammer"
+  "crafting_tool": {
+    "tag": "alloygery:tools/crafting_hammers"
   },
   "material": {
     "tag": "c:constantan_double_ingots"
   },
   "material_cost": 1,
+  "minimum_crafting_tier": 2,
   "result": {
-    "item": "alloygery:constantan_heavy_plate",
-    "data": {
-      "PartMaterial": "alloygery:materials/constantan"
-    }
+    "item": "alloygery:constantan_heavy_plate"
   }
 }

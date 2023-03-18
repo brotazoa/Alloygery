@@ -1,0 +1,22 @@
+{
+  "type": "alloygery:alloygery_tool_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "item": "create_compat:andesite_alloy_pickaxe_head"
+    },
+    "b": {
+      "tag": "alloygery:tool_parts/bindings"
+    },
+    "h": {
+      "tag": "alloygery:tool_parts/handles"
+    }
+  },
+  "result": {
+    "item": "create_compat:andesite_alloy_pickaxe"
+  }
+}

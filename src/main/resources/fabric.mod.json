@@ -7,7 +7,9 @@
   "authors": [
     "brotazoa"
   ],
-  "contact": {},
+  "contact": {
+    "sources": "https://github.com/brotazoa/Alloygery"
+  },
   "license": "MIT",
   "icon": "assets/alloygery/icon.png",
   "environment": "*",
@@ -21,17 +23,22 @@
     "rei_client": [
       "amorphia.alloygery.compat.rei.AlloygeryPlugin"
     ],
+    "emi": [
+      "amorphia.alloygery.compat.emi.AlloygeryEmiPlugin"
+    ],
     "modmenu": [
       "amorphia.alloygery.config.AlloygeryModMenu"
     ]
   },
   "mixins": [
-    "alloygery.mixins.json"
+    "alloygery.tool.mixins.json",
+    "alloygery.armor.mixins.json",
+    "alloygery.metal.mixins.json",
+    "alloygery.advancement.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.13.3",
-    "fabric": ">=0.47.10+1.18.2",
-    "minecraft": "1.18.2",
-    "nbtcrafting": ">=2.1.2+mc1.18.2"
+    "fabric": ">=0.59.1+1.18.2",
+    "minecraft": "1.18.2"
   }
 }

@@ -2,8 +2,7 @@
   "parent": "alloygery:story/smelt_bronze",
   "display": {
     "icon": {
-      "item": "alloygery:alloygery_pickaxe",
-      "nbt": "{Damage:0, HeadMaterial:\"alloygery:materials/bronze\", BindingMaterial:\"alloygery:materials/hidden\", HandleMaterial:\"alloygery:materials/wooden\"}"
+      "item": "alloygery:bronze_pickaxe"
     },
     "title": {
       "translate": "advancements.alloygery.story.bronze_tools.title"
@@ -22,8 +21,7 @@
       "conditions": {
         "items": [
           {
-            "item": "alloygery:alloygery_pickaxe",
-            "nbt": "{HeadMaterial:\"alloygery:materials/bronze\"}"
+            "tag": "alloygery:tools/bronze/bronze_pickaxes"
           }
         ]
       }

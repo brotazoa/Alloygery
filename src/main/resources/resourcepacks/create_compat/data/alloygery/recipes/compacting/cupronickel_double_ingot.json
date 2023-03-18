@@ -1,0 +1,24 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "c:cupronickel_ingots"
+    },
+    {
+      "tag": "c:cupronickel_ingots"
+    }
+  ],
+  "results": [
+    {
+      "item": "alloygery:cupronickel_double_ingot"
+    }
+  ]
+}

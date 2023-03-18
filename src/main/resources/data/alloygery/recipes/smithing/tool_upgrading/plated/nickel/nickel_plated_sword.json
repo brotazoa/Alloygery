@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/nickel/nickel_swords"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/plated_upgrades"
+  },
+  "result": {
+    "item": "alloygery:plated_nickel_sword"
+  }
+}

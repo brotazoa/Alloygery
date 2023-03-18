@@ -1,0 +1,22 @@
+{
+  "type": "alloygery:alloygery_tool_shaped",
+  "pattern": [
+    "  i",
+    " b ",
+    "h  "
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:gold_pickaxe_head"
+    },
+    "b": {
+      "tag": "alloygery:tool_parts/bindings"
+    },
+    "h": {
+      "tag": "alloygery:tool_parts/handles"
+    }
+  },
+  "result": {
+    "item": "alloygery:gold_pickaxe"
+  }
+}

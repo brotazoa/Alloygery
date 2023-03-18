@@ -1,0 +1,14 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "minecraft:clay"
+    }
+  ],
+  "results": [
+    {
+      "item": "alloygery:tin_nugget",
+      "chance": 0.125
+    }
+  ]
+}

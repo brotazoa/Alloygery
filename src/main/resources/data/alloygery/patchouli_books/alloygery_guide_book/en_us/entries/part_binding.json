@@ -1,6 +1,6 @@
 {
   "name": "Binding",
-  "icon": "alloygery:alloygery_binding{PartMaterial:\"alloygery:materials/antanium\"}",
+  "icon": "alloygery:antanium_binding",
   "category": "alloygery:tool_parts_category",
   "pages": [
     {

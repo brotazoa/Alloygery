@@ -1,0 +1,8 @@
+{
+  "parent": "alloygery:block/tinted_slab_top",
+  "textures": {
+    "bottom": "alloygery:block/metal_block_shiny_template",
+    "top": "alloygery:block/metal_block_shiny_template",
+    "side": "alloygery:block/metal_slab_side_shiny_template"
+  }
+}

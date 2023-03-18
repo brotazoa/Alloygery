@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/gold/gold_swords"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/plated_upgrades"
+  },
+  "result": {
+    "item": "alloygery:plated_gold_sword"
+  }
+}

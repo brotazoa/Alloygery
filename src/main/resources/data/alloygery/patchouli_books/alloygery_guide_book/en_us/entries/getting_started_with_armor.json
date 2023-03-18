@@ -1,0 +1,74 @@
+{
+  "name": "Getting Started With Armor",
+  "icon": "alloygery:dynamic_leather_full_plate_chestplate",
+  "category": "alloygery:getting_started_category",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Alloygery introduces a completely new and customizable way to craft armor. All armor starts as a base layer. You can later upgrade your base armor with armor plates made from various materials."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Base Armor Types",
+      "images": [
+        "alloygery:textures/gui/patchouli/base_armors.png"
+      ],
+      "text": "Alloygery adds three base armor types: Wool, Leather, and Chain."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Upgrading Your Armor",
+      "text": "You can add plates to your base armor to upgrade its durability, protection, and other stats. The image depicts Steel Plating applied to each base armor type."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "alloygery:textures/gui/patchouli/steel_plate_armors.png"
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crafting Armor Plates",
+      "text": "Crafting armor plating is easily done at the $(l:block_smithing_anvil)Smithing Anvil$()."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "alloygery:textures/gui/patchouli/craft_plate_armor.png"
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Applying Armor Plates",
+      "text": "Once you have crafted some armor plating, you can add it to your base armor at the $(l:block_smithing_table)Smithing Table$()."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "alloygery:textures/gui/patchouli/apply_armor_plating.png"
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "title": "What About Diamond Armor?",
+      "text": "This way of making armor doesn't include diamond or netherite armor. If you happen to come across some as loot, you can make armor plates from them in the $(l:block_smithing_anvil)Smithing Anvil$()."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "alloygery:textures/gui/patchouli/craft_diamond_armor_plating.png"
+      ]
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Removing Plates",
+      "text": "You can remove the plating from your armor at any time by using a $(thing)Crafting Hammer$() at a $(thing)Crafting Table$()."
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "alloygery:textures/gui/patchouli/remove_armor_plating.png"
+      ]
+    }
+  ]
+}

@@ -6,13 +6,6 @@
     {
       "type": "patchouli:text",
       "text": ""
-    },
-    {
-      "type": "alloygery:part_settings",
-      "part": "minecraft:netherite_ingot",
-      "material": "alloygery:materials/netherite",
-      "text": "When used to upgrade a tool, this upgrade modifies the following values:",
-      "part_settings": "upgrade"
     }
   ]
 }

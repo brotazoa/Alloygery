@@ -224,64 +224,35 @@
 
   "item.alloygery.wooden_handle": "Деревяна ручка",
   "item.alloygery.leather_binding": "Кожаное крепление",
-
-  "item.alloygery.anvil_hammer": "Молоток для наковальни",
-  "item.alloygery.smithing_hammer": "Кузнечный молот",
-
   "item.alloygery.antanium_axe": "Антаниевый топор",
   "item.alloygery.antanium_hoe": "Антаниевая мотыга",
   "item.alloygery.antanium_pickaxe": "Антаниевая кирка",
   "item.alloygery.antanium_shovel": "Антаниевая лопата",
   "item.alloygery.antanium_sword": "Антаниевый меч",
-  
-  "item.alloygery.antanium_helmet": "Антаниевый шлем",
-  "item.alloygery.antanium_chestplate": "Антаниевый нагрудник",
-  "item.alloygery.antanium_leggings": "Антаниевые поножи",
-  "item.alloygery.antanium_boots": "Антаниевые ботинки",
 
   "item.alloygery.bronze_axe": "Бронзовый топор",
   "item.alloygery.bronze_hoe": "Бронзовая мотыга",
   "item.alloygery.bronze_pickaxe": "Бронзовая кирка",
   "item.alloygery.bronze_shovel": "Бронзовая лопата",
   "item.alloygery.bronze_sword": "Бронзовый меч",
-  
-  "item.alloygery.bronze_helmet": "Бронзовый шлем",
-  "item.alloygery.bronze_chestplate": "Бронзовый нагрудник",
-  "item.alloygery.bronze_leggings": "Бронзовые поножи",
-  "item.alloygery.bronze_boots": "Бронзовые ботинки",
 
   "item.alloygery.constantan_axe": "Константановый топор",
   "item.alloygery.constantan_hoe": "Константановая мотыга",
   "item.alloygery.constantan_pickaxe": "Константановая кирка",
   "item.alloygery.constantan_shovel": "Константановая лопата",
   "item.alloygery.constantan_sword": "Константановый меч",
-  
-  "item.alloygery.constantan_helmet": "Константановый шлем",
-  "item.alloygery.constantan_chestplate": "Константановый нагрудник",
-  "item.alloygery.constantan_leggings": "Константановые поножи",
-  "item.alloygery.constantan_boots": "Константановые ботинки",
 
   "item.alloygery.copper_axe": "Медный топор",
   "item.alloygery.copper_hoe": "Медная мотыга",
   "item.alloygery.copper_pickaxe": "Медная кирка",
   "item.alloygery.copper_shovel": "Медная лопата",
   "item.alloygery.copper_sword": "Медный меч",
-  
-  "item.alloygery.copper_helmet": "Медный шлем",
-  "item.alloygery.copper_chestplate": "Медный нагрудник",
-  "item.alloygery.copper_leggings": "Медные поножи",
-  "item.alloygery.copper_boots": "Медные ботинки",
 
   "item.alloygery.cupronickel_axe": "Купроникелевый топор",
   "item.alloygery.cupronickel_hoe": "Купроникелевая мотыга",
   "item.alloygery.cupronickel_pickaxe": "Купроникелевая кирка",
   "item.alloygery.cupronickel_shovel": "Купроникелевая лопата",
   "item.alloygery.cupronickel_sword": "Купроникелевый меч",
-  
-  "item.alloygery.cupronickel_helmet": "Купроникелевый шлем",
-  "item.alloygery.cupronickel_chestplate": "Купроникелевый нагрудник",
-  "item.alloygery.cupronickel_leggings": "Купроникелевые поножи",
-  "item.alloygery.cupronickel_boots": "Купроникелевые ботинки",
 
   "item.alloygery.diamond_axe": "Алмазный топор",
   "item.alloygery.diamond_hoe": "Алмазная мотыга",
@@ -295,32 +266,17 @@
   "item.alloygery.gold_shovel": "Золотая лопата",
   "item.alloygery.gold_sword": "Золотой меч",
 
-  "item.alloygery.gold_helmet": "Золотой шлем",
-  "item.alloygery.gold_chestplate": "Золотой нагрудник",
-  "item.alloygery.gold_leggings": "Золотые поножи",
-  "item.alloygery.gold_boots": "Золотые ботинки",
-
   "item.alloygery.invar_axe": "Инваровый топор",
   "item.alloygery.invar_hoe": "Инваровая мотыга",
   "item.alloygery.invar_pickaxe": "Инваровая кирка",
   "item.alloygery.invar_shovel": "Инваровая лопата",
   "item.alloygery.invar_sword": "Инваровый меч",
-  
-  "item.alloygery.invar_helmet": "Инваровый шлем",
-  "item.alloygery.invar_chestplate": "Инваровый нагрудник",
-  "item.alloygery.invar_leggings": "Инваровые поножи",
-  "item.alloygery.invar_boots": "Инваровые ботинки",
 
   "item.alloygery.iron_axe": "Железный топор",
   "item.alloygery.iron_hoe": "Железная мотыга",
   "item.alloygery.iron_pickaxe": "Железная кирка",
   "item.alloygery.iron_shovel": "Железная лопата",
   "item.alloygery.iron_sword": "Железный меч",
-
-  "item.alloygery.iron_helmet": "Железный шлем",
-  "item.alloygery.iron_chestplate": "Железный нагрудник",
-  "item.alloygery.iron_leggings": "Железные поножи",
-  "item.alloygery.iron_boots": "Железные ботинки",
 
   "item.alloygery.netherite_axe": "Незеритовый топор",
   "item.alloygery.netherite_hoe": "Незеритовая мотыга",
@@ -333,55 +289,30 @@
   "item.alloygery.nickel_pickaxe": "Никелевая кирка",
   "item.alloygery.nickel_shovel": "Никелевая лопата",
   "item.alloygery.nickel_sword": "Никелевый меч",
-  
-  "item.alloygery.nickel_helmet": "Никелевый шлем",
-  "item.alloygery.nickel_chestplate": "Никелевый нагрудник",
-  "item.alloygery.nickel_leggings": "Никелевые поножи",
-  "item.alloygery.nickel_boots": "Никелевые ботинки",
 
   "item.alloygery.nitinol_axe": "Нитиноловый топор",
   "item.alloygery.nitinol_hoe": "Нитиноловая мотыга",
   "item.alloygery.nitinol_pickaxe": "Нитиноловая кирка",
   "item.alloygery.nitinol_shovel": "Нитиноловая лопата",
   "item.alloygery.nitinol_sword": "Нитиноловый меч",
-  
-  "item.alloygery.nitinol_helmet": "Нитиноловый шлем",
-  "item.alloygery.nitinol_chestplate": "Нитиноловый нагрудник",
-  "item.alloygery.nitinol_leggings": "Нитиноловые поножи",
-  "item.alloygery.nitinol_boots": "Нитиноловые ботинки",
 
   "item.alloygery.steel_axe": "Стальной топор",
   "item.alloygery.steel_hoe": "Стальная мотыга",
   "item.alloygery.steel_pickaxe": "Стальная кирка",
   "item.alloygery.steel_shovel": "Стальная мотыга",
   "item.alloygery.steel_sword": "Стальная меч",
-  
-  "item.alloygery.steel_helmet": "Стальной шлем",
-  "item.alloygery.steel_chestplate": "Стальной нагрудник",
-  "item.alloygery.steel_leggings": "Стальные поножи",
-  "item.alloygery.steel_boots": "Стальные ботинки",
 
   "item.alloygery.titanium_axe": "Титановый топор",
   "item.alloygery.titanium_hoe": "Титановая мотыга",
   "item.alloygery.titanium_pickaxe": "Титановая кирка",
   "item.alloygery.titanium_shovel": "Титановая лопата",
   "item.alloygery.titanium_sword": "Титановый меч",
-  
-  "item.alloygery.titanium_helmet": "Титановый шлем",
-  "item.alloygery.titanium_chestplate": "Титановый нагрудник",
-  "item.alloygery.titanium_leggings": "Титановые поножи",
-  "item.alloygery.titanium_boots": "Титановые ботинки",
 
   "item.alloygery.titanium_gold_axe": "Титаново-золотой топор",
   "item.alloygery.titanium_gold_hoe": "Титаново-золотая мотыга",
   "item.alloygery.titanium_gold_pickaxe": "Титаново-золотая кирка",
   "item.alloygery.titanium_gold_shovel": "Титаново-золотая лопата",
   "item.alloygery.titanium_gold_sword": "Титаново-золотой меч",
-  
-  "item.alloygery.titanium_gold_helmet": "Титаново-золотой шлем",
-  "item.alloygery.titanium_gold_chestplate": "Титаново-золотой нагрудник",
-  "item.alloygery.titanium_gold_leggings": "Титаново-золотые поножи",
-  "item.alloygery.titanium_gold_boots": "Титаново-золотые ботинки",
 
   "block.alloygery.alloy_kiln": "Печь для обжига сплавов",
   "block.alloygery.blast_alloy_kiln": "Доменный печь для обжига сплавов",
@@ -409,31 +340,8 @@
   "container.alloygery.blast_alloy_kiln": "Доменный печь для обжига сплавов",
   "container.alloygery.smithing_anvil": "Кузнечная наковальня",
 
-  "item.alloygery.info_axe": "Топор",
-  "item.alloygery.info_hoe": "Мотыга",
-  "item.alloygery.info_pickaxe": "Кирка",
-  "item.alloygery.info_shovel": "Лопата",
-  "item.alloygery.info_sword": "Меч",
-
-  "item.alloygery.info_axe_head": "Любая головка топора",
-  "item.alloygery.info_hoe_head": "Любая головка мотыги",
-  "item.alloygery.info_pickaxe_head": "Любая головка кирки",
-  "item.alloygery.info_shovel_head": "Любая головка лопаты",
-  "item.alloygery.info_sword_blade": "Любая головка меча",
-
-  "item.alloygery.info_binding": "Любое крепление",
-  "item.alloygery.info_sword_guard": "Любая гарда",
-  "item.alloygery.info_handle": "Любая рукоять",
-
-  "tooltip.alloygery.crafting_info.axe": "Крафт топора с любой головкой топора, креплением и рукоятью",
-  "tooltip.alloygery.crafting_info.hoe": "Крафт мотыги с любой головкой мотыги, креплением и рукоятью",
-  "tooltip.alloygery.crafting_info.pickaxe": "Крафт кирки с любой головкой кирки, креплением и рукоятью",
-  "tooltip.alloygery.crafting_info.shovel": "Крафт лопаты с любой головкой лопаты, креплением и рукоятью",
-  "tooltip.alloygery.crafting_info.sword": "Крафт меча с любой головкой меча, креплением и рукоятью",
-
   "tooltip.alloygery.shift_for_info": "Зажмите SHIFT для получения дополнительной информации",
   "tooltip.alloygery.ctrl_for_details": "Зажмите CTRL для получения более подробной информации",
-  "tooltip.alloygery.when_used_in_craft": "Когда используется для крафта инструмента",
 
   "tooltip.alloygery.info.durability": "Прочнсть",
   "tooltip.alloygery.info.mining_level": "Уровень добычи",
@@ -444,13 +352,6 @@
   "tooltip.alloygery.info.luck": "Удача",
   "tooltip.alloygery.info.fireproof": "Огнеупорный",
   "tooltip.alloygery.info.piglin_loved": "Позолоченный",
-
-  "tooltip.alloygery.info.durability_multiplier": "Множитель прочности",
-  "tooltip.alloygery.info.mining_speed_multiplier": "Множитель скорости добычи",
-  "tooltip.alloygery.info.attack_damage_multiplier": "Множитель урона от атаки",
-  "tooltip.alloygery.info.attack_speed_multiplier": "Множитель скорости атаки",
-  "tooltip.alloygery.info.enchantability_multiplier": "Множитель зачаровываемости",
-  "tooltip.alloygery.info.luck_multiplier": "Множитель удачи",
 
   "tooltip.alloygery.info.head": "Головка",
   "tooltip.alloygery.info.binding": "Крепление",
@@ -485,10 +386,6 @@
   "stat.alloygery.interact_with_smithing_anvil": "Взаимодействие с кузнечной наковальней",
 
   "text.config.alloygery.title": "Конфигурация Alloygery",
-  "text.config.alloygery.option.enable_diamond_upgrade": "Включить улучшение снаряжений алмазом",
-  "text.config.alloygery.option.enable_emerald_upgrade": "Включить улучшение снаряжений изумрудом",
-  "text.config.alloygery.option.enable_netherite_upgrade": "Включить улучшение снаряжений незеритом",
-  "text.config.alloygery.option.enable_gold_upgrade": "Включить улучшение снаряжений золотом",
 
   "text.config.alloygery.option.disable_diamond_crafting": "Отключить рецепты ванильных алмазных инструменто",
   "text.config.alloygery.option.disable_iron_crafting": "Отключить рецепты ванильных железных инструментоs",
@@ -507,9 +404,6 @@
   "text.config.alloygery.option.titanium_ore.should_generate": "Генерация титановой руды",
   "text.config.alloygery.option.titanium_ore.size": "Средний размер скопления титановой руды",
   "text.config.alloygery.option.titanium_ore.number": "Среднее количество скоплений титановой руды в чанке",
-
-  "advancements.alloygery.adventure.single_use.title": "На разок",
-  "advancements.alloygery.adventure.single_use.description": "Сделать кирку с максимальной прочностью 1",
 
   "advancements.alloygery.story.smelt_bronze.title": "Обзавестись бронзовой посудой",
   "advancements.alloygery.story.smelt_bronze.description": "Выплавить бронзовый слиток из олова и меди",
@@ -530,8 +424,5 @@
   "advancements.alloygery.story.dismantling.description": "Получить алмазную головку инструмента, разобрав алмазный инструмент на кузнечном столе",
 
   "advancements.alloygery.story.diamond_tipped.title": "Алмазный наконечник",
-  "advancements.alloygery.story.diamond_tipped.description": "Улучшить инструмент с помощью алмаза на кузнечном столе",
-
-  "advancements.alloygery.nether.netherite_platted.title": "Незеритовое покрытие",
-  "advancements.alloygery.nether.netherite_platted.description": "Улучшить инструмент с помощью незеритового слитка на кузнечном столе"
+  "advancements.alloygery.story.diamond_tipped.description": "Улучшить инструмент с помощью алмаза на кузнечном столе"
 }

@@ -1,0 +1,21 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "c:titanium_gold_ingots"
+    }
+  ],
+  "results": [
+    {
+      "item": "alloygery:titanium_gold_plate"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The Smithing Table is a default Minecraft block with some new features added by Alloygery.$(br2)Now, you can $(l:alloygery:upgrades_category)Upgrade$() your tools by placing a suitable material in the material slot. In conjunction with the $(l:tool_smithing_hammer)Smithing Hammer$(), you can remove said upgrades, and even disassemble tools to reclaim their $(l:alloygery:tool_parts_category)Tool Head$()."
+      "text": "The Smithing Table is a default Minecraft block with some new features added by Alloygery.$(br2)Now, you can $(l:alloygery:upgrades_category)Upgrade$() your tools by placing a suitable material in the material slot."
     },
     {
       "type": "patchouli:crafting",
@@ -22,28 +22,6 @@
         [
           "alloygery:textures/gui/patchouli/tool_part_upgrades.gif"
         ]
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Upgrade Removing",
-      "text": "You can remove any upgrades applied to a tool by using a $(l:tool_smithing_hammer)Smithing Hammer$()."
-    },
-    {
-      "type": "patchouli:image",
-      "images": [
-        "alloygery:textures/gui/patchouli/upgrade_removing.png"
-      ]
-    },
-    {
-      "type": "patchouli:text",
-      "title": "Gear Dismantling",
-      "text": "You can recover the tool head from a tool by using a $(l:tool_smithing_hammer)Smithing Hammer$()."
-    },
-    {
-      "type": "patchouli:image",
-      "images": [
-        "alloygery:textures/gui/patchouli/gear_dismantling.png"
-      ]
     }
   ]
 }

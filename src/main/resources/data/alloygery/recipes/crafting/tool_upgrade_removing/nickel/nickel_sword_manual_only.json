@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/nickel/nickel_upgraded_swords"
+    }
+  ],
+  "result": {
+    "item": "alloygery:nickel_sword"
+  }
+}

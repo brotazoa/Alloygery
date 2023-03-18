@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "alloygery:parts/tough_metal_leggings_template"
-  }
-}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "vsas_compat:acacia_handle",
+    "vsas_compat:birch_handle",
+    "vsas_compat:crimson_handle",
+    "vsas_compat:dark_oak_handle",
+    "vsas_compat:jungle_handle",
+    "vsas_compat:oak_handle",
+    "vsas_compat:spruce_handle",
+    "vsas_compat:warped_handle"
+  ]
+}

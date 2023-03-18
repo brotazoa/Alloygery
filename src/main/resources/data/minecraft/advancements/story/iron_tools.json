@@ -34,8 +34,7 @@
       "conditions": {
         "items": [
           {
-            "item": "alloygery:alloygery_pickaxe",
-            "nbt": "{HeadMaterial:\"alloygery:materials/iron\"}"
+            "tag": "alloygery:tools/iron/iron_pickaxes"
           }
         ]
       }

@@ -1,0 +1,16 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "lll",
+    "l l",
+    "l l"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:leathers"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_leather_leggings"
+  }
+}

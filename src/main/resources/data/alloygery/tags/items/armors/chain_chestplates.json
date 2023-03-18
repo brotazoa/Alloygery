@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:chainmail_chestplate",
+    "alloygery:dynamic_chain_chestplate"
+  ]
+}

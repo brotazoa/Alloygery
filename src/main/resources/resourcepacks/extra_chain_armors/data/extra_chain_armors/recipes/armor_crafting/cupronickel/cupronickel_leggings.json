@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:base_armor_shaped",
+  "pattern": [
+    "lll",
+    "l l",
+    "l l"
+  ],
+  "key": {
+    "l": {
+      "tag": "c:cupronickel_nuggets"
+    }
+  },
+  "result": {
+    "item": "alloygery:dynamic_chain_leggings"
+  },
+  "with_material": "extra_chain_armors:armor_materials/cupronickel_chain"
+}

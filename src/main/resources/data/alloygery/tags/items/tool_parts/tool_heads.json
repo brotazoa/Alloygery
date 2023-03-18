@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#alloygery:tool_parts/axe_heads",
+    "#alloygery:tool_parts/hoe_heads",
+    "#alloygery:tool_parts/pickaxe_heads",
+    "#alloygery:tool_parts/shovel_heads",
+    "#alloygery:tool_parts/sword_blades"
+  ]
+}

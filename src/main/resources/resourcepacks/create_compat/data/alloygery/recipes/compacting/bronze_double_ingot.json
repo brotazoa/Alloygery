@@ -1,0 +1,24 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "c:bronze_ingots"
+    },
+    {
+      "tag": "c:bronze_ingots"
+    }
+  ],
+  "results": [
+    {
+      "item": "alloygery:bronze_double_ingot"
+    }
+  ]
+}

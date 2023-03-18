@@ -1,0 +1,31 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "alloygery:config_boolean_condition",
+      "config": "enable_vanilla_like_tool_recipes"
+    }
+  ],
+  "type": "alloygery:alloygery_simple_tool_shaped",
+  "pattern": [
+    "i",
+    "i",
+    "s"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:copper_ingots"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:copper_sword"
+  },
+  "substitute_head_part": {
+    "item": "alloygery:copper_sword_blade"
+  },
+  "substitute_handle_part": {
+    "item": "alloygery:wooden_handle"
+  }
+}

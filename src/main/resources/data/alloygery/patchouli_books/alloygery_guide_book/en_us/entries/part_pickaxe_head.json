@@ -1,6 +1,6 @@
 {
   "name": "Pickaxe Head",
-  "icon": "alloygery:alloygery_pickaxe_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "icon": "alloygery:antanium_pickaxe_head",
   "category": "alloygery:tool_parts_category",
   "pages": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/alloygery_pickaxe"
+      "recipe": "alloygery:crafting/tool_crafting/iron/iron_pickaxe"
     }
   ]
 }

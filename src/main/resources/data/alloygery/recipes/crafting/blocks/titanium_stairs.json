@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i  ",
+    "ii ",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:titanium_block"
+    }
+  },
+  "result": {
+    "item": "alloygery:titanium_stairs",
+    "count": 4
+  }
+}

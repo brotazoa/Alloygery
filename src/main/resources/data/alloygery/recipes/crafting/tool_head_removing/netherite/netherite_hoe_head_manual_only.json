@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_head_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/netherite/netherite_hoes"
+    }
+  ],
+  "result": {
+    "item": "alloygery:netherite_hoe_head"
+  }
+}

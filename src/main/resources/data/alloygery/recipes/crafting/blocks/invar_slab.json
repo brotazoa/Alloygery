@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:invar_block"
+    }
+  },
+  "result": {
+    "item": "alloygery:invar_slab",
+    "count": 6
+  }
+}

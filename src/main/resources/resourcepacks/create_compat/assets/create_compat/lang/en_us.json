@@ -1,0 +1,78 @@
+{
+  "language.name": "English",
+  "language.region": "United States",
+  "language.code": "en_us",
+
+  "item.create_compat.andesite_alloy_double_ingot": "Andesite Alloy Double Ingot",
+  "item.create_compat.andesite_alloy_plate": "Andesite Alloy Plate",
+  "item.create_compat.andesite_alloy_heavy_plate": "Andesite Alloy Heavy Plate",
+  "item.create_compat.brass_double_ingot": "Brass Double Ingot",
+  "item.create_compat.brass_plate": "Brass Plate",
+  "item.create_compat.brass_heavy_plate": "Brass Heavy Plate",
+  "item.create_compat.zinc_double_ingot": "Zinc Double Ingot",
+  "item.create_compat.zinc_plate": "Zinc Plate",
+  "item.create_compat.zinc_heavy_plate": "Zinc Heavy Plate",
+
+  "item.create_compat.andesite_alloy_axe_head": "Andesite Alloy Axe Head",
+  "item.create_compat.andesite_alloy_hoe_head": "Andesite Alloy Hoe Head",
+  "item.create_compat.andesite_alloy_pickaxe_head": "Andesite Alloy Pickaxe Head",
+  "item.create_compat.andesite_alloy_shovel_head": "Andesite Alloy Shovel Head",
+  "item.create_compat.andesite_alloy_sword_blade": "Andesite Alloy Sword Blade",
+  "item.create_compat.andesite_alloy_binding": "Andesite Alloy Binding",
+  "item.create_compat.andesite_alloy_handle": "Andesite Alloy Handle",
+  "item.create_compat.andesite_alloy_sword_guard": "Andesite Alloy Sword Guard",
+
+  "item.create_compat.brass_axe_head": "Brass Axe Head",
+  "item.create_compat.brass_hoe_head": "Brass Hoe Head",
+  "item.create_compat.brass_pickaxe_head": "Brass Pickaxe Head",
+  "item.create_compat.brass_shovel_head": "Brass Shovel Head",
+  "item.create_compat.brass_sword_blade": "Brass Sword Blade",
+  "item.create_compat.brass_binding": "Brass Binding",
+  "item.create_compat.brass_handle": "Brass Handle",
+  "item.create_compat.brass_sword_guard": "Brass Sword Guard",
+
+  "item.create_compat.andesite_alloy_axe": "Andesite Alloy Axe",
+  "item.create_compat.andesite_alloy_hoe": "Andesite Alloy Hoe",
+  "item.create_compat.andesite_alloy_pickaxe": "Andesite Alloy Pickaxe",
+  "item.create_compat.andesite_alloy_shovel": "Andesite Alloy Shovel",
+  "item.create_compat.andesite_alloy_sword": "Andesite Alloy Sword",
+
+  "item.create_compat.brass_axe": "Brass Axe",
+  "item.create_compat.brass_hoe": "Brass Hoe",
+  "item.create_compat.brass_pickaxe": "Brass Pickaxe",
+  "item.create_compat.brass_shovel": "Brass Shovel",
+  "item.create_compat.brass_sword": "Brass Sword",
+
+  "item.create_compat.andesite_alloy_plate_helmet": "Andesite Alloy Plate Helmet",
+  "item.create_compat.andesite_alloy_plate_chestplate": "Andesite Alloy Plate Chestplate",
+  "item.create_compat.andesite_alloy_plate_leggings": "Andesite Alloy Plate Leggings",
+  "item.create_compat.andesite_alloy_plate_boots": "Andesite Alloy Plate Boots",
+
+  "item.create_compat.andesite_alloy_heavy_plate_helmet": "Andesite Alloy Heavy Plate Helmet",
+  "item.create_compat.andesite_alloy_heavy_plate_chestplate": "Andesite Alloy Heavy Plate Chestplate",
+  "item.create_compat.andesite_alloy_heavy_plate_leggings": "Andesite Alloy Heavy Plate Leggings",
+  "item.create_compat.andesite_alloy_heavy_plate_boots": "Andesite Alloy Heavy Plate Boots",
+
+  "item.create_compat.brass_plate_helmet": "Brass Plate Helmet",
+  "item.create_compat.brass_plate_chestplate": "Brass Plate Chestplate",
+  "item.create_compat.brass_plate_leggings": "Brass Plate Leggings",
+  "item.create_compat.brass_plate_boots": "Brass Plate Boots",
+
+  "item.create_compat.andesite_alloy_plate_helmet_part": "Andesite Alloy Helmet Plating",
+  "item.create_compat.andesite_alloy_plate_chestplate_part": "Andesite Alloy Chestplate Plating",
+  "item.create_compat.andesite_alloy_plate_leggings_part": "Andesite Alloy Leggings Plating",
+  "item.create_compat.andesite_alloy_plate_boots_part": "Andesite Alloy Boots Plating",
+
+  "item.create_compat.andesite_alloy_heavy_plate_helmet_part": "Andesite Alloy Helmet Heavy Plating",
+  "item.create_compat.andesite_alloy_heavy_plate_chestplate_part": "Andesite Alloy Chestplate Heavy Plating",
+  "item.create_compat.andesite_alloy_heavy_plate_leggings_part": "Andesite Alloy Leggings Heavy Plating",
+  "item.create_compat.andesite_alloy_heavy_plate_boots_part": "Andesite Alloy Boots Heavy Plating",
+
+  "item.create_compat.brass_plate_helmet_part": "Brass Helmet Plating",
+  "item.create_compat.brass_plate_chestplate_part": "Brass Chestplate Plating",
+  "item.create_compat.brass_plate_leggings_part": "Brass Leggings Plating",
+  "item.create_compat.brass_plate_boots_part": "Brass Boots Plating",
+
+  "tooltip.create_compat.upgrade.refined_radiance": "Refined",
+  "tooltip.create_compat.upgrade.shadow_steel": "Shadowed"
+}

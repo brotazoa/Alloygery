@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:leather_binding",
+    "alloygery:sapling_binding",
+    "alloygery:string_binding",
+    "alloygery:copper_binding",
+    "alloygery:bronze_binding",
+    "alloygery:iron_binding",
+    "alloygery:gold_binding",
+    "alloygery:antanium_binding",
+    "alloygery:steel_binding",
+    "alloygery:nickel_binding",
+    "alloygery:invar_binding",
+    "alloygery:constantan_binding",
+    "alloygery:cupronickel_binding",
+    "alloygery:titanium_binding",
+    "alloygery:titanium_gold_binding",
+    "alloygery:nitinol_binding"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/copper/copper_swords"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/embossed_upgrades"
+  },
+  "result": {
+    "item": "alloygery:embossed_copper_sword"
+  }
+}

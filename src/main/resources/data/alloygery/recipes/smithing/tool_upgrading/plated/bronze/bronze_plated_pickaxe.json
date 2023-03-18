@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/bronze/bronze_pickaxes"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/plated_upgrades"
+  },
+  "result": {
+    "item": "alloygery:plated_bronze_pickaxe"
+  }
+}

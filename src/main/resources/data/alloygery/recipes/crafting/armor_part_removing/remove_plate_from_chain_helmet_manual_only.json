@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:armor_part_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:armors/chain_plated_helmets"
+    }
+  ],
+  "result": {
+    "item": "alloygery:dynamic_chain_helmet"
+  }
+}

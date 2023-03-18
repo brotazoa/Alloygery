@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i ",
+    "si"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:invar_ingots"
+    },
+    "s": {
+      "item": "alloygery:wooden_handle"
+    }
+  },
+  "result": {
+    "item": "alloygery:invar_crafting_hammer"
+  }
+}

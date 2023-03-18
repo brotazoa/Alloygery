@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "alloygery:crafting/blocks/raw_nickel_block"
+    ]
+  },
+  "criteria": {
+    "has_raw_nickel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:raw_nickel"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "alloygery:crafting/blocks/raw_nickel_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_nickel",
+      "has_the_recipe"
+    ]
+  ]
+}

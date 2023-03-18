@@ -10,9 +10,6 @@
     }
   },
   "result": {
-    "item": "alloygery:alloygery_handle",
-    "data": {
-      "PartMaterial": "alloygery:materials/wooden"
-    }
+    "item": "alloygery:wooden_handle"
   }
 }

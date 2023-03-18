@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "alloygery:crafting/ingots/nickel_ingot_from_nickel_nugget"
+    ]
+  },
+  "criteria": {
+    "has_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:nickel_nugget"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "alloygery:crafting/ingots/nickel_ingot_from_nickel_nugget"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nugget",
+      "has_the_recipe"
+    ]
+  ]
+}

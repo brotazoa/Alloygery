@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/titanium_gold/titanium_gold_pickaxes"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/embossed_upgrades"
+  },
+  "result": {
+    "item": "alloygery:embossed_titanium_gold_pickaxe"
+  }
+}

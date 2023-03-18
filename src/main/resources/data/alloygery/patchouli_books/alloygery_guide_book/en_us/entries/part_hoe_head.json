@@ -1,6 +1,6 @@
 {
   "name": "Hoe Head",
-  "icon": "alloygery:alloygery_hoe_head{PartMaterial:\"alloygery:materials/antanium\"}",
+  "icon": "alloygery:antanium_hoe_head",
   "category": "alloygery:tool_parts_category",
   "pages": [
     {
@@ -9,7 +9,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "alloygery:crafting/tools/alloygery_hoe"
+      "recipe": "alloygery:crafting/tool_crafting/iron/iron_hoe"
     }
   ]
 }

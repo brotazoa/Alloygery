@@ -1,0 +1,24 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "c:invar_ingots"
+    },
+    {
+      "tag": "c:invar_ingots"
+    }
+  ],
+  "results": [
+    {
+      "item": "alloygery:invar_double_ingot"
+    }
+  ]
+}

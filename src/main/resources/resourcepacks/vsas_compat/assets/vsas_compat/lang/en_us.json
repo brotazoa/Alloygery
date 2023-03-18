@@ -1,0 +1,14 @@
+{
+  "language.name": "English",
+  "language.region": "United States",
+  "language.code": "en_us",
+
+  "item.vsas_compat.acacia_handle": "Acacia Handle",
+  "item.vsas_compat.birch_handle": "Birch Handle",
+  "item.vsas_compat.crimson_handle": "Crimson Handle",
+  "item.vsas_compat.dark_oak_handle": "Dark Oak Handle",
+  "item.vsas_compat.jungle_handle": "Jungle Handle",
+  "item.vsas_compat.oak_handle": "Oak Handle",
+  "item.vsas_compat.spruce_handle": "Spruce Handle",
+  "item.vsas_compat.warped_handle": "Warped Handle"
+}

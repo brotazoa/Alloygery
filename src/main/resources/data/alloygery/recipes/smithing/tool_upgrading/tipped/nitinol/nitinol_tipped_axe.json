@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_smithing",
+  "base": {
+    "tag": "alloygery:tools/nitinol/nitinol_axes"
+  },
+  "addition": {
+    "tag": "alloygery:tool_parts/tipped_upgrades"
+  },
+  "result": {
+    "item": "alloygery:tipped_nitinol_axe"
+  }
+}

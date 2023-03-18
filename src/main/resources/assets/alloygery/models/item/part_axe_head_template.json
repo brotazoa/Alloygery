@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "alloygery:parts/axe_head_template"
+    "layer0": "alloygery:tool_parts/axe_head_template"
   }
 }

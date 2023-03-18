@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/steel/steel_upgraded_swords"
+    }
+  ],
+  "result": {
+    "item": "alloygery:steel_sword"
+  }
+}

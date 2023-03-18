@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_compat:andesite_alloy_hoe_head",
+    "create_compat:brass_hoe_head"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "alloygery:block/tinted_slope",
+  "textures": {
+    "all": "alloygery:block/metal_block_shiny_template"
+  }
+}

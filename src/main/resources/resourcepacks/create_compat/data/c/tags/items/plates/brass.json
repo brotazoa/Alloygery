@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_compat:brass_plate",
+    "create:brass_sheet"
+  ]
+}

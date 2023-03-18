@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:leather_helmet",
+    "alloygery:dynamic_leather_helmet"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "alloygery:crafting/blocks/cupronickel_block"
+    ]
+  },
+  "criteria": {
+    "has_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "alloygery:cupronickel_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "alloygery:crafting/blocks/cupronickel_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

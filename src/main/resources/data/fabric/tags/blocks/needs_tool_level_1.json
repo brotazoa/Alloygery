@@ -5,6 +5,10 @@
     "alloygery:deepslate_tin_ore",
     "alloygery:raw_tin_block",
     "alloygery:tin_block",
-    "alloygery:bronze_block"
+    "alloygery:tin_stairs",
+    "alloygery:tin_slab",
+    "alloygery:bronze_block",
+    "alloygery:bronze_stairs",
+    "alloygery:bronze_slab"
   ]
 }

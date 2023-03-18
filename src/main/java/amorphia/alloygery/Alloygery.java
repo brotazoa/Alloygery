@@ -1,23 +1,32 @@
 package amorphia.alloygery;
 
+import amorphia.alloygery.compat.create.CreateModule;
+import amorphia.alloygery.compat.vsas.VsasModule;
 import amorphia.alloygery.config.AlloygeryConfig;
-import amorphia.alloygery.content.client.AlloygeryColorProviderReloadListener;
-import amorphia.alloygery.content.material.AlloygeryMaterial;
-import amorphia.alloygery.content.material.AlloygeryMaterialRegistry;
-import amorphia.alloygery.content.material.AlloygeryMaterials;
-import amorphia.alloygery.data.AlloygeryMaterialDataLoader;
-import amorphia.alloygery.registry.*;
+import amorphia.alloygery.content.armor.ArmorModule;
+import amorphia.alloygery.content.armor.data.AlloygeryArmorMaterialDataHelper;
+import amorphia.alloygery.content.armor.registry.AlloygeryArmorMaterialRegistry;
+import amorphia.alloygery.content.machines.MachineModule;
+import amorphia.alloygery.content.metals.MetalModule;
+import amorphia.alloygery.content.tools.ToolModule;
+import amorphia.alloygery.content.tools.data.AlloygeryToolMaterialDataHelper;
+import amorphia.alloygery.content.tools.registry.AlloygeryToolMaterialRegistry;
+import amorphia.alloygery.registry.ModAdvancements;
+import amorphia.alloygery.registry.ModResourceConditions;
+import com.google.common.collect.Lists;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,57 +34,54 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Set;
+import java.util.List;
 
 public class Alloygery implements ModInitializer, ClientModInitializer
 {
 	public static final String MOD_ID = "alloygery";
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	public static final Set<Integer> ALLOYGERY_DATA_VERSIONS = Set.of(1);
+	public static Item ALLOYGERY_TAB_ITEM = Registry.register(Registry.ITEM, Alloygery.identifier("alloygery_tab_item"), new Item(new Item.Settings()));
+	public static ItemGroup ALLOYGERY_TAB_GROUP = FabricItemGroupBuilder.create(Alloygery.identifier("alloygery_group")).icon(() -> new ItemStack(ALLOYGERY_TAB_ITEM)).build();
 
-	public static ItemGroup ALLOYGERY_GROUP_BLOCKS = FabricItemGroupBuilder.create(Alloygery.identifier("blocks")).icon(() -> new ItemStack(ModItems.BLOCKS_TAB_ITEM)).build();
-	public static ItemGroup ALLOYGERY_GROUP_MATERIALS = FabricItemGroupBuilder.create(Alloygery.identifier("materials")).icon(() -> new ItemStack(ModItems.MATERIALS_TAB_ITEM)).build();
-	public static ItemGroup ALLOYGERY_GROUP_GEAR = FabricItemGroupBuilder.create(Alloygery.identifier("gear")).icon(() -> new ItemStack(ModItems.GEAR_TAB_ITEM)).build();
-	public static ItemGroup ALLOYGERY_GROUP_PARTS = FabricItemGroupBuilder.create(Alloygery.identifier("parts")).icon(() -> new ItemStack(ModItems.PARTS_TAB_ITEM)).build();
+	public static final List<IAlloygeryModule> MODULES = Lists.newArrayList(
+			//alloygery modules
+			new MachineModule(), new MetalModule(), new ToolModule(), new ArmorModule(),
+			//mod compat modules
+			new CreateModule(), new VsasModule()
+	);
 
 	@Override
 	@Environment(EnvType.CLIENT)
 	public void onInitializeClient()
 	{
-		ModBlocks.registerClient();
-
-		ModScreens.registerClient();
-
-		ModNetworking.registerClient();
-
-		ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(AlloygeryColorProviderReloadListener.INSTANCE);
+		MODULES.forEach(module -> {
+			if(module.shouldInitialize())
+				module.initializeClient();
+		});
 	}
 
 	@Override
 	public void onInitialize()
 	{
+		//register builtin extra_chain_armors pack
+		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(
+				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("extra_chain_armors"), modContainer, ResourcePackActivationType.NORMAL)
+		);
+
 		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();
 
-		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(AlloygeryMaterialDataLoader.INSTANCE);
+		ModAdvancements.init();
 
-		AlloygeryMaterials.init();
+		MODULES.forEach(module -> {
+			if(module.shouldInitialize())
+				module.initialize();
+		});
 
-		ModBlocks.register();
-		ModItems.register();
-		ModOreGeneration.register();
-		ModRecipes.register();
-		ModScreens.register();
-		ModStatistics.register();
-		ModAttributes.init();
-		ModTags.register();
-
-		ModNetworking.register();
-
-		//FIXME: remove this
-		//dumpMaterialData();
+		//dumpToolMaterialFiles();
+		//dumpArmorMaterialFiles();
 	}
 
 	public static Identifier identifier(String path)
@@ -83,17 +89,35 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 		return new Identifier(MOD_ID, path);
 	}
 
-	//FIXME: remove this
-	//this is just for development purposes, so I don't have to handwrite the files
-	private static void dumpMaterialData()
+	private static void dumpToolMaterialFiles()
 	{
-		AlloygeryMaterialRegistry.forEach((identifier, material) -> {
-			Path materialPath = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/" + identifier.getPath() + ".json");
+		AlloygeryToolMaterialRegistry.forEach((identifier, alloygeryToolMaterial) -> {
+
+			Path path = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/" + identifier.getPath() + ".json");
 			try
 			{
-				Files.createDirectories(materialPath.getParent());
-				BufferedWriter writer = Files.newBufferedWriter(materialPath);
-				AlloygeryMaterial.GSON.toJson(material, writer);
+				Files.createDirectories(path.getParent());
+				BufferedWriter writer = Files.newBufferedWriter(path);
+				writer.write(AlloygeryToolMaterialDataHelper.getJsonStringFromToolMaterial(alloygeryToolMaterial).orElse("{}"));
+				writer.close();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		});
+	}
+
+	private static void dumpArmorMaterialFiles()
+	{
+		AlloygeryArmorMaterialRegistry.forEach((identifier, alloygeryArmorMaterial) -> {
+
+			Path path = FabricLoader.getInstance().getConfigDir().resolve(identifier.getNamespace() + "/" + identifier.getPath() + ".json");
+			try
+			{
+				Files.createDirectories(path.getParent());
+				BufferedWriter writer = Files.newBufferedWriter(path);
+				writer.write(AlloygeryArmorMaterialDataHelper.getJsonStringFromArmorMaterial(alloygeryArmorMaterial).orElse("{}"));
 				writer.close();
 			}
 			catch (IOException e)

@@ -1,0 +1,21 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "c:cupronickel_double_ingots"
+    }
+  ],
+  "results": [
+    {
+      "item": "alloygery:cupronickel_heavy_plate"
+    }
+  ]
+}

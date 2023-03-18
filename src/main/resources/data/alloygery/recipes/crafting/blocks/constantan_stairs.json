@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i  ",
+    "ii ",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "alloygery:constantan_block"
+    }
+  },
+  "result": {
+    "item": "alloygery:constantan_stairs",
+    "count": 4
+  }
+}

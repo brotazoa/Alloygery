@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_compat:andesite_alloy_sword_guard",
+    "create_compat:brass_sword_guard"
+  ]
+}

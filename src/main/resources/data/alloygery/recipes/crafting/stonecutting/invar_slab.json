@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "alloygery:invar_block"
+  },
+  "result": "alloygery:invar_slab",
+  "count": 2
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " s",
+    "s "
+  ],
+  "key": {
+    "s": {
+      "item": "vsas:sticks/dark_oak_stick"
+    }
+  },
+  "result": {
+    "item": "vsas_compat:dark_oak_handle"
+  }
+}

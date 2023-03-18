@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "alloygery:block/metal_dull_slab"
+    },
+    "type=double": {
+      "model": "alloygery:block/metal_dull_slab_double"
+    },
+    "type=top": {
+      "model": "alloygery:block/metal_dull_slab_top"
+    }
+  }
+}

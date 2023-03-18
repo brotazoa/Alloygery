@@ -21,8 +21,8 @@
       "conditions": {
         "items": [
           {
-            "tag": "alloygery:upgraded_tools",
-            "nbt": "{UpgradeMaterial:\"alloygery:materials/diamond\"}"
+            "tag": "alloygery:tools/upgraded_tools",
+            "nbt": "{alloygery_nbt_identifier:{tool_part_upgrade:{material_identifier:\"alloygery:tool_materials/diamond\"}}}"
           }
         ]
       }

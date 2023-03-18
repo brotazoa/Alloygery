@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:apply_armor_part_to_armor_smithing",
+  "base": {
+    "tag": "alloygery:armors/leather_leggings"
+  },
+  "addition": {
+    "tag": "alloygery:armor_parts/full_plate_leggings_parts"
+  },
+  "result": {
+    "item": "alloygery:dynamic_leather_full_plate_leggings"
+  }
+}

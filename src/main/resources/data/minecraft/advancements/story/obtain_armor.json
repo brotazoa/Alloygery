@@ -1,15 +1,15 @@
 {
-  "parent": "alloygery:story/smithing_anvil",
+  "parent": "minecraft:story/root",
   "display": {
     "icon": {
-      "item": "minecraft:iron_chestplate",
+      "item": "alloygery:dynamic_leather_chestplate",
       "nbt": "{Damage:0}"
     },
     "title": {
       "translate": "advancements.story.obtain_armor.title"
     },
     "description": {
-      "translate": "advancements.story.obtain_armor.description"
+      "translate": "advancements.alloygery.story.obtain_armor.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -17,97 +17,101 @@
     "hidden": false
   },
   "criteria": {
-    "iron_helmet": {
+    "leather_helmet": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_helmet"
+              "minecraft:leather_helmet",
+              "alloygery:dynamic_leather_helmet"
             ]
           }
         ]
       }
     },
-    "iron_chestplate": {
+    "leather_chestplate": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_chestplate"
+              "minecraft:leather_chestplate",
+              "alloygery:dynamic_leather_chestplate"
             ]
           }
         ]
       }
     },
-    "iron_leggings": {
+    "leather_leggings": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_leggings"
+              "minecraft:leather_leggings",
+              "alloygery:dynamic_leather_leggings"
             ]
           }
         ]
       }
     },
-    "iron_boots": {
+    "leather_boots": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_boots"
+              "minecraft:leather_boots",
+              "alloygery:dynamic_leather_boots"
             ]
           }
         ]
       }
     },
-    "alloygery_iron_helmet": {
+    "wool_helmet": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "alloygery:iron_helmet"
+              "alloygery:dynamic_wool_helmet"
             ]
           }
         ]
       }
     },
-    "alloygery_iron_chestplate": {
+    "wool_chestplate": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "alloygery:iron_chestplate"
+              "alloygery:dynamic_wool_chestplate"
             ]
           }
         ]
       }
     },
-    "alloygery_iron_leggings": {
+    "wool_leggings": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "alloygery:iron_leggings"
+              "alloygery:dynamic_wool_leggings"
             ]
           }
         ]
       }
     },
-    "alloygery_iron_boots": {
+    "wool_boots": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "alloygery:iron_boots"
+              "alloygery:dynamic_wool_boots"
             ]
           }
         ]
@@ -116,14 +120,14 @@
   },
   "requirements": [
     [
-      "iron_helmet",
-      "iron_chestplate",
-      "iron_leggings",
-      "iron_boots",
-      "alloygery_iron_helmet",
-      "alloygery_iron_chestplate",
-      "alloygery_iron_leggings",
-      "alloygery_iron_boots"
+      "leather_helmet",
+      "leather_chestplate",
+      "leather_leggings",
+      "leather_boots",
+      "wool_helmet",
+      "wool_chestplate",
+      "wool_leggings",
+      "wool_boots"
     ]
   ]
 }

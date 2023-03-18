@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "crafting_tool": {
+    "tag": "alloygery:tools/crafting_hammers"
+  },
+  "material": {
+    "tag": "c:ingots/brass"
+  },
+  "material_cost": 3,
+  "minimum_crafting_tier": 1,
+  "result": {
+    "item": "create_compat:brass_axe_head"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:smithing_anvil",
+  "crafting_tool": {
+    "tag": "alloygery:tools/crafting_hammers"
+  },
+  "material": {
+    "tag": "c:ingots/andesite_alloy"
+  },
+  "material_cost": 2,
+  "minimum_crafting_tier": 1,
+  "result": {
+    "item": "create_compat:andesite_alloy_hoe_head"
+  }
+}

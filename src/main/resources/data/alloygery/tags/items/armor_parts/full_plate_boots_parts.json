@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:iron_full_plate_boots_part",
+    "alloygery:antanium_full_plate_boots_part",
+    "alloygery:diamond_full_plate_boots_part",
+    "alloygery:steel_full_plate_boots_part",
+    "alloygery:netherite_full_plate_boots_part",
+    "alloygery:nickel_full_plate_boots_part",
+    "alloygery:invar_full_plate_boots_part",
+    "alloygery:constantan_full_plate_boots_part",
+    "alloygery:cupronickel_full_plate_boots_part",
+    "alloygery:titanium_full_plate_boots_part",
+    "alloygery:titanium_gold_full_plate_boots_part",
+    "alloygery:nitinol_full_plate_boots_part"
+  ]
+}

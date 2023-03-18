@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "amorphia.alloygery.content.armor.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "ArmorEnchantablilityMixin",
+    "ArmorItemEntityFireImmuneMixin",
+    "ArmorItemStackMixin",
+    "ArmorPiglinLovedMixin",
+    "ArmorWalkOnPowderedSnowMixin"
+  ],
+  "client": [
+    "ArmorModelLoaderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

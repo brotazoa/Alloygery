@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_axes",
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_hoes",
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_pickaxes",
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_shovels",
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_swords",
+    "#alloygery:tools/brass/brass_upgraded_axes",
+    "#alloygery:tools/brass/brass_upgraded_hoes",
+    "#alloygery:tools/brass/brass_upgraded_pickaxes",
+    "#alloygery:tools/brass/brass_upgraded_shovels",
+    "#alloygery:tools/brass/brass_upgraded_swords"
+  ]
+}

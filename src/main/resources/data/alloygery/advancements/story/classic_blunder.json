@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:story/upgrade_tools",
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_ore"
+    },
+    "title": {
+      "translate": "advancements.alloygery.story.classic_blunder.title"
+    },
+    "description": {
+      "translate": "advancements.alloygery.story.classic_blunder.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "stone_cant_mine_iron": {
+      "trigger": "alloygery:block_broken",
+      "conditions": {
+        "location": {
+          "block": {
+            "tag": "c:iron_ores"
+          }
+        },
+        "item": {
+          "items": [
+            "minecraft:stone_pickaxe"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "stone_cant_mine_iron"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "alloygery:grant_book_on_classic_blunder"
+    ]
+  }
+}

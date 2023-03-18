@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "alloygery:iron_crafting_hammer",
+    "alloygery:steel_crafting_hammer",
+    "alloygery:invar_crafting_hammer",
+    "alloygery:titanium_crafting_hammer"
+  ]
+}

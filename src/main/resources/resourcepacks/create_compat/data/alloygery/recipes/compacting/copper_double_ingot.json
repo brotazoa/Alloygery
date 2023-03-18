@@ -1,0 +1,24 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "tag": "c:copper_ingots"
+    },
+    {
+      "tag": "c:copper_ingots"
+    }
+  ],
+  "results": [
+    {
+      "item": "alloygery:copper_double_ingot"
+    }
+  ]
+}

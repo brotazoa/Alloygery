@@ -1,0 +1,12 @@
+{
+  "type": "alloygery:apply_armor_part_to_armor_smithing",
+  "base": {
+    "tag": "alloygery:armors/wool_chestplates"
+  },
+  "addition": {
+    "tag": "alloygery:armor_parts/full_plate_chestplate_parts"
+  },
+  "result": {
+    "item": "alloygery:dynamic_wool_full_plate_chestplate"
+  }
+}

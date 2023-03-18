@@ -1,0 +1,8 @@
+{
+  "parent": "alloygery:block/outer_tinted_stairs",
+  "textures": {
+    "bottom": "alloygery:block/metal_block_normal_template",
+    "top": "alloygery:block/metal_block_normal_template",
+    "side": "alloygery:block/metal_block_normal_template"
+  }
+}

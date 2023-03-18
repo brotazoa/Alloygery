@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "alloygery:bronze_block"
+  },
+  "result": "alloygery:bronze_stairs",
+  "count": 1
+}

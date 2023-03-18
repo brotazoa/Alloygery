@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_head_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/copper/copper_swords"
+    }
+  ],
+  "result": {
+    "item": "alloygery:copper_sword_blade"
+  }
+}

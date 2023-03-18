@@ -1,0 +1,14 @@
+{
+  "type": "alloygery:alloygery_tool_upgrade_removing_shapeless",
+  "ingredients": [
+    {
+      "tag": "alloygery:tools/crafting_hammers"
+    },
+    {
+      "tag": "alloygery:tools/gold/gold_upgraded_hoes"
+    }
+  ],
+  "result": {
+    "item": "alloygery:gold_hoe"
+  }
+}

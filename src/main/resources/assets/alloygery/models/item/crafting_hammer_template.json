@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "alloygery:tool_render_parts/crafting_hammer_head_template",
+    "layer1": "alloygery:tool_render_parts/crafting_hammer_handle_template"
+  }
+}

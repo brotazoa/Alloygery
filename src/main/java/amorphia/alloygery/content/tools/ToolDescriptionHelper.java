@@ -14,10 +14,8 @@ import com.google.common.collect.Maps;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
@@ -175,14 +173,14 @@ public class ToolDescriptionHelper
 		tooltip.add(translatable("tooltip.alloygery.ctrl_for_details").formatted(Formatting.DARK_GRAY));
 	}
 
-	private static TranslatableText translatable(String translationKey)
+	private static MutableText translatable(String translationKey)
 	{
-		return new TranslatableText(translationKey);
+		return Text.translatable(translationKey);
 	}
 
-	private static LiteralText literal(String text)
+	private static MutableText literal(String text)
 	{
-		return new LiteralText(text);
+		return Text.literal(text);
 	}
 
 	interface ToolTooltipPropertyWriter

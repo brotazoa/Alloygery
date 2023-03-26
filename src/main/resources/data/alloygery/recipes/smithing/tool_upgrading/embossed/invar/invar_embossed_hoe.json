@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/invar/invar_hoes"
+    "item": "alloygery:invar_hoe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/embossed_upgrades"

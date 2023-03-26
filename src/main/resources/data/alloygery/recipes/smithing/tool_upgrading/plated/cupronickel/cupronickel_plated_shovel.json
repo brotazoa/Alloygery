@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/cupronickel/cupronickel_shovels"
+    "item": "alloygery:cupronickel_shovel"
   },
   "addition": {
     "tag": "alloygery:tool_parts/plated_upgrades"

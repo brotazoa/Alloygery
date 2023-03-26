@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/gold/gold_swords"
+    "item": "alloygery:gold_sword"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

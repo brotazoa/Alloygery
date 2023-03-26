@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/antanium/antanium_hoes"
+    "item": "alloygery:antanium_hoe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/plated_upgrades"

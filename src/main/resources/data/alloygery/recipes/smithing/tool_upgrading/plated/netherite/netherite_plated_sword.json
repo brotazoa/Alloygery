@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/netherite/netherite_swords"
+    "item": "alloygery:netherite_sword"
   },
   "addition": {
     "tag": "alloygery:tool_parts/plated_upgrades"

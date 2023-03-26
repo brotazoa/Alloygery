@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/netherite/netherite_shovels"
+    "item": "alloygery:netherite_shovel"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

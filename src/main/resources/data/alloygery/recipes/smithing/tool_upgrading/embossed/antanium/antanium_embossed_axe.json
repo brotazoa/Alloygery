@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/antanium/antanium_axes"
+    "item": "alloygery:antanium_axe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/embossed_upgrades"

@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/copper/copper_swords"
+    "item": "alloygery:copper_sword"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

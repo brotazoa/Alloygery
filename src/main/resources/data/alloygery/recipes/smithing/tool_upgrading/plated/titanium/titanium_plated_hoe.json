@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/titanium/titanium_hoes"
+    "item": "alloygery:titanium_hoe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/plated_upgrades"

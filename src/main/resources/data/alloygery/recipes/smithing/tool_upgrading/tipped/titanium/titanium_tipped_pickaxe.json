@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/titanium/titanium_pickaxes"
+    "item": "alloygery:titanium_pickaxe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

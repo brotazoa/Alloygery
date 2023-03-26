@@ -235,7 +235,7 @@ public class SmithingAnvilScreenHandler extends ScreenHandler
 		this.contentsChangedListener.run();
 
 		this.context.run((world1, blockPos) -> {
-			if(Objects.requireNonNull(world1.getBlockEntity(blockPos)) instanceof SmithingAnvilBlockEntity smithingAnvilBlockEntity)
+			if(world1.getBlockEntity(blockPos) instanceof SmithingAnvilBlockEntity smithingAnvilBlockEntity)
 				smithingAnvilBlockEntity.updateListeners();
 		});
 

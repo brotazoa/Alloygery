@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/antanium/antanium_pickaxes"
+    "item": "alloygery:antanium_pickaxe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

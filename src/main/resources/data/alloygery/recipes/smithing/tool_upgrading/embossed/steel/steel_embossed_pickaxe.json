@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/steel/steel_pickaxes"
+    "item": "alloygery:steel_pickaxe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/embossed_upgrades"

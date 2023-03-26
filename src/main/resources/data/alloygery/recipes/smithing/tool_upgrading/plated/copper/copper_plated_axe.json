@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/copper/copper_axes"
+    "item": "alloygery:copper_axe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/plated_upgrades"

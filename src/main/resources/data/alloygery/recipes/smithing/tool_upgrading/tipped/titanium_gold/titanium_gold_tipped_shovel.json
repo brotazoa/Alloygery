@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/titanium_gold/titanium_gold_shovels"
+    "item": "alloygery:titanium_gold_shovel"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

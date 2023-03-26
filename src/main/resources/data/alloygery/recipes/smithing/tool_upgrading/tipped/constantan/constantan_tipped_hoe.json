@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/constantan/constantan_hoes"
+    "item": "alloygery:constantan_hoe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

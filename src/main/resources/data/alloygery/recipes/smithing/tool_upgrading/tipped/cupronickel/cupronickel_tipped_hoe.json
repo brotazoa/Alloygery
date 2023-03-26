@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/cupronickel/cupronickel_hoes"
+    "item": "alloygery:cupronickel_hoe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/tipped_upgrades"

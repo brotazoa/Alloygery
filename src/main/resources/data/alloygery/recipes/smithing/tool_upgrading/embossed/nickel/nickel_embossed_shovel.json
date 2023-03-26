@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/nickel/nickel_shovels"
+    "item": "alloygery:nickel_shovel"
   },
   "addition": {
     "tag": "alloygery:tool_parts/embossed_upgrades"

@@ -43,7 +43,7 @@ public class AlloygeryArmorMaterialDataPacket implements IAlloygeryArmorMaterial
 			JsonObject itemTextures = new JsonObject();
 			for(ArmorType armorType : ArmorType.VALUES_CACHE)
 			{
-				Identifier id = material.getModelTexture(armorType);
+				Identifier id = material.getItemTexture(armorType);
 				itemTextures.addProperty(armorType.getName(), id.toString());
 			}
 			json.add("item_textures", itemTextures);

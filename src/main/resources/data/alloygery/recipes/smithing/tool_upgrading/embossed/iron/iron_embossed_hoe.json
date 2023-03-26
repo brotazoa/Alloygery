@@ -1,7 +1,7 @@
 {
   "type": "alloygery:alloygery_tool_upgrade_smithing",
   "base": {
-    "tag": "alloygery:tools/iron/iron_hoes"
+    "item": "alloygery:iron_hoe"
   },
   "addition": {
     "tag": "alloygery:tool_parts/embossed_upgrades"

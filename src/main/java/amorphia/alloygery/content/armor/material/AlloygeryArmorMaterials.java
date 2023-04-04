@@ -265,7 +265,7 @@ public class AlloygeryArmorMaterials
 				.fromMaterial(STATIC_HALF_PLATE_TEMPLATE)
 				.name("diamond_half_plate")
 				.color(MaterialColor.DIAMOND.getColor())
-				.repairIngredientFromTag("c:diamond_ingots")
+				.repairIngredientFromTag("c:diamonds")
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 35.0f)
@@ -453,7 +453,7 @@ public class AlloygeryArmorMaterials
 				.fromMaterial(STATIC_FULL_PLATE_TEMPLATE)
 				.name("diamond_full_plate")
 				.color(MaterialColor.DIAMOND.getColor())
-				.repairIngredientFromTag("c:diamond_ingots")
+				.repairIngredientFromTag("c:diamonds")
 
 				.armorProperty().forLayer(ArmorLayer.PLATE).operation(ArmorPropertyOperation.ADDITION)
 				.makeProperty(ArmorPropertyType.DURABILITY, 35.0f)

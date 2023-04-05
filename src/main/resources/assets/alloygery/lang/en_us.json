@@ -123,6 +123,12 @@
   "item.alloygery.flint_shovel_head": "Flint Shovel Head",
   "item.alloygery.flint_sword_blade": "Flint Sword Blade",
 
+  "item.alloygery.crude_copper_axe_head": "Crude Copper Axe Head",
+  "item.alloygery.crude_copper_hoe_head": "Crude Copper Hoe Head",
+  "item.alloygery.crude_copper_pickaxe_head": "Crude Copper Pickaxe Head",
+  "item.alloygery.crude_copper_shovel_head": "Crude Copper Shovel Head",
+  "item.alloygery.crude_copper_sword_blade": "Crude Copper Sword Blade",
+
   "item.alloygery.copper_axe_head": "Copper Axe Head",
   "item.alloygery.copper_hoe_head": "Copper Hoe Head",
   "item.alloygery.copper_pickaxe_head": "Copper Pickaxe Head",
@@ -131,6 +137,12 @@
   "item.alloygery.copper_binding": "Copper Binding",
   "item.alloygery.copper_handle": "Copper Handle",
   "item.alloygery.copper_sword_guard": "Copper Sword Guard",
+
+  "item.alloygery.crude_bronze_axe_head": "Crude Bronze Axe Head",
+  "item.alloygery.crude_bronze_hoe_head": "Crude Bronze Hoe Head",
+  "item.alloygery.crude_bronze_pickaxe_head": "Crude Bronze Pickaxe Head",
+  "item.alloygery.crude_bronze_shovel_head": "Crude Bronze Shovel Head",
+  "item.alloygery.crude_bronze_sword_blade": "Crude Bronze Sword Blade",
 
   "item.alloygery.bronze_axe_head": "Bronze Axe Head",
   "item.alloygery.bronze_hoe_head": "Bronze Hoe Head",
@@ -288,6 +300,12 @@
   "item.alloygery.antanium_shovel": "Antanium Shovel",
   "item.alloygery.antanium_sword": "Antanium Sword",
 
+  "item.alloygery.crude_bronze_axe": "Crude Bronze Axe",
+  "item.alloygery.crude_bronze_hoe": "Crude Bronze Hoe",
+  "item.alloygery.crude_bronze_pickaxe": "Crude Bronze Pickaxe",
+  "item.alloygery.crude_bronze_shovel": "Crude Bronze Shovel",
+  "item.alloygery.crude_bronze_sword": "Crude Bronze Sword",
+
   "item.alloygery.bronze_axe": "Bronze Axe",
   "item.alloygery.bronze_hoe": "Bronze Hoe",
   "item.alloygery.bronze_pickaxe": "Bronze Pickaxe",
@@ -299,6 +317,12 @@
   "item.alloygery.constantan_pickaxe": "Constantan Pickaxe",
   "item.alloygery.constantan_shovel": "Constantan Shovel",
   "item.alloygery.constantan_sword": "Constantan Sword",
+
+  "item.alloygery.crude_copper_axe": "Crude Copper Axe",
+  "item.alloygery.crude_copper_hoe": "Crude Copper Hoe",
+  "item.alloygery.crude_copper_pickaxe": "Crude Copper Pickaxe",
+  "item.alloygery.crude_copper_shovel": "Crude Copper Shovel",
+  "item.alloygery.crude_copper_sword": "Crude Copper Sword",
 
   "item.alloygery.copper_axe": "Copper Axe",
   "item.alloygery.copper_hoe": "Copper Hoe",

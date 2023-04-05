@@ -1,0 +1,25 @@
+{
+  "type": "alloygery:alloygery_simple_tool_shaped",
+  "pattern": [
+    "ii",
+    "si",
+    "s "
+  ],
+  "key": {
+    "i": {
+      "tag": "c:copper_ingots"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:crude_copper_axe"
+  },
+  "substitute_head_part": {
+    "item": "alloygery:crude_copper_axe_head"
+  },
+  "substitute_handle_part": {
+    "item": "alloygery:wooden_handle"
+  }
+}

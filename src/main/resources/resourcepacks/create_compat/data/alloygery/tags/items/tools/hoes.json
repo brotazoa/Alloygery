@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#alloygery:tools/andesite_alloy/andesite_alloy_hoes",
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_hoes",
+    "#alloygery:tools/brass/brass_hoes",
+    "#alloygery:tools/brass/brass_upgraded_hoes"
+  ]
+}

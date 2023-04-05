@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "L",
+    "N"
+  ],
+  "key": {
+    "L": {
+      "item": "create:polished_rose_quartz"
+    },
+    "N": {
+      "tag": "c:plates/antanium"
+    }
+  },
+  "result": {
+    "item": "create:electron_tube",
+    "count": 4
+  }
+}

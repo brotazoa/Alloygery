@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    "GWG",
+    "SES"
+  ],
+  "key": {
+    "S": {
+      "tag": "c:ingots/steel"
+    },
+    "G": {
+      "tag": "c:ingots/gold"
+    },
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "W": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "create:controller_rail",
+    "count": 6
+  }
+}

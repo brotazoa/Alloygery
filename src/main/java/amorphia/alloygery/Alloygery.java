@@ -69,6 +69,16 @@ public class Alloygery implements ModInitializer, ClientModInitializer
 				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("extra_chain_armors"), modContainer, ResourcePackActivationType.NORMAL)
 		);
 
+		//register builtin vanilla_recipe_tweaks pack
+		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(
+				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("vanilla_recipe_tweaks"), modContainer, ResourcePackActivationType.NORMAL)
+		);
+
+		//register builtin vanilla_like_crude_tools pack
+		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(
+				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(identifier("vanilla_like_crude_tools"), modContainer, ResourcePackActivationType.NORMAL)
+		);
+
 		AlloygeryConfig.loadFromFile();
 
 		ModResourceConditions.register();

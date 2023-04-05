@@ -24,6 +24,11 @@ public class CreateModule implements IAlloygeryModule
 				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(Alloygery.identifier("create_compat"), modContainer, ResourcePackActivationType.ALWAYS_ENABLED)
 		);
 
+		//register optional create recipe tweaks pack
+		FabricLoader.getInstance().getModContainer(Alloygery.MOD_ID).ifPresent(
+				modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(Alloygery.identifier("create_recipe_tweaks"), modContainer, ResourcePackActivationType.NORMAL)
+		);
+
 		CreateToolMaterials.init();
 		CreateToolItemRegistry.init();
 		CreateMetalItemRegistry.init();

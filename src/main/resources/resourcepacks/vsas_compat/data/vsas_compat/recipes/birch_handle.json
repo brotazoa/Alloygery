@@ -6,10 +6,10 @@
   ],
   "key": {
     "s": {
-      "item": "vsas:sticks/brich_stick"
+      "item": "vsas:sticks/birch_stick"
     }
   },
   "result": {
-    "item": "vsas_compat:brich_handle"
+    "item": "vsas_compat:birch_handle"
   }
 }

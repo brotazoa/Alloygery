@@ -4,13 +4,7 @@
     "alloygery:titanium_ore",
     "alloygery:raw_titanium_block",
     "alloygery:titanium_block",
-    "alloygery:titanium_stairs",
-    "alloygery:titanium_slab",
     "alloygery:titanium_gold_block",
-    "alloygery:titanium_gold_stairs",
-    "alloygery:titanium_gold_slab",
-    "alloygery:nitinol_block",
-    "alloygery:nitinol_stairs",
-    "alloygery:nitinol_slab"
+    "alloygery:nitinol_block"
   ]
 }

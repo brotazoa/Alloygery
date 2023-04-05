@@ -43,8 +43,6 @@ public class AlloygeryConfig
 	public static final ConfigValue disableVanillaIronCrafting;
 	public static final ConfigValue disableVanillaGoldCrafting;
 
-	public static final ConfigValue enableVanillaLikeRecipesForSimpleTools;
-
 	public static final ConfigValue showDynamicToolsInRecipeViewer;
 	public static final ConfigValue showDynamicArmorsInRecipeViewer;
 
@@ -59,8 +57,6 @@ public class AlloygeryConfig
 		disableVanillaDiamondCrafting = ALLOYGERY_CONFIG.register("disable_diamond_crafting", new ConfigValue(true));
 		disableVanillaIronCrafting = ALLOYGERY_CONFIG.register("disable_iron_crafting", new ConfigValue(true));
 		disableVanillaGoldCrafting = ALLOYGERY_CONFIG.register("disable_golden_crafting", new ConfigValue(true));
-
-		enableVanillaLikeRecipesForSimpleTools = ALLOYGERY_CONFIG.register("enable_vanilla_like_tool_recipes", new ConfigValue(true));
 
 		showDynamicToolsInRecipeViewer = ALLOYGERY_CONFIG.register("show_tools_in_recipe_viewers", new ConfigValue(false));
 		showDynamicArmorsInRecipeViewer = ALLOYGERY_CONFIG.register("show_armors_in_recipe_viewers", new ConfigValue(false));

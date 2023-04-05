@@ -4,16 +4,8 @@
     "alloygery:nickel_ore",
     "alloygery:raw_nickel_block",
     "alloygery:nickel_block",
-    "alloygery:nickel_stairs",
-    "alloygery:nickel_slab",
     "alloygery:invar_block",
-    "alloygery:invar_stairs",
-    "alloygery:invar_slab",
     "alloygery:constantan_block",
-    "alloygery:constantan_stairs",
-    "alloygery:constantan_slab",
-    "alloygery:cupronickel_block",
-    "alloygery:cupronickel_stairs",
-    "alloygery:cupronickel_slab"
+    "alloygery:cupronickel_block"
   ]
 }

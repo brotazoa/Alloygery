@@ -21,7 +21,7 @@ public class CraftingToolDamagingRecipeShapeless extends ShapelessRecipe
 	@Override
 	public DefaultedList<ItemStack> getRemainder(CraftingInventory inventory)
 	{
-		DefaultedList<ItemStack> defaultedList = DefaultedList.ofSize(inventory.size(), ItemStack.EMPTY);
+		DefaultedList<ItemStack> defaultedList = super.getRemainder(inventory);
 
 		for(int i = 0; i < defaultedList.size(); i++)
 		{

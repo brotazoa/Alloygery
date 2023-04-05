@@ -29,16 +29,12 @@ public class ToolItemRegistry
 	{
 		makeToolSetForMaterial(FLINT, ToolUpgradeType.NONE, EnumSet.of(ToolType.AXE, ToolType.PICKAXE, ToolType.SHOVEL, ToolType.HOE), Alloygery.ALLOYGERY_TAB_GROUP);
 
-		makeToolSetForMaterial(COPPER, ToolUpgradeType.NONE, Alloygery.ALLOYGERY_TAB_GROUP);
-		makeToolSetForMaterial(COPPER, ToolUpgradeType.EMBOSSED);
-		makeToolSetForMaterial(COPPER, ToolUpgradeType.PLATED);
-		makeToolSetForMaterial(COPPER, ToolUpgradeType.TIPPED);
+		makeToolSetForMaterial(CRUDE_COPPER, ToolUpgradeType.NONE, Alloygery.ALLOYGERY_TAB_GROUP);
 
-		makeToolSetForMaterial(BRONZE, ToolUpgradeType.NONE, Alloygery.ALLOYGERY_TAB_GROUP);
-		makeToolSetForMaterial(BRONZE, ToolUpgradeType.EMBOSSED);
-		makeToolSetForMaterial(BRONZE, ToolUpgradeType.PLATED);
-		makeToolSetForMaterial(BRONZE, ToolUpgradeType.TIPPED);
+		makeToolSetForMaterial(CRUDE_BRONZE, ToolUpgradeType.NONE, Alloygery.ALLOYGERY_TAB_GROUP);
 
+		makeToolSetsForMaterial(COPPER);
+		makeToolSetsForMaterial(BRONZE);
 		makeToolSetsForMaterial(IRON);
 		makeToolSetsForMaterial(GOLD);
 		makeToolSetsForMaterial(ANTANIUM);
@@ -52,6 +48,9 @@ public class ToolItemRegistry
 		makeToolSetsForMaterial(TITANIUM);
 		makeToolSetsForMaterial(TITANIUM_GOLD);
 		makeToolSetsForMaterial(NITINOL);
+
+		makeToolPartsForMaterial(CRUDE_COPPER, EnumSet.allOf(ToolType.class), false, false, false, null);
+		makeToolPartsForMaterial(CRUDE_BRONZE, EnumSet.allOf(ToolType.class), false, false, false, null);
 
 		makeToolPartsForMaterial(FLINT, EnumSet.of(ToolType.AXE, ToolType.HOE, ToolType.PICKAXE, ToolType.SHOVEL), false, false, false);
 		makeToolPartsForMaterial(COPPER);
@@ -74,10 +73,6 @@ public class ToolItemRegistry
 		makeToolPartsForMaterial(VANILLA_STICK, false, false, false, true);
 		makeToolPartsForMaterial(SAPLING, false, true, false, false);
 		makeToolPartsForMaterial(STRING, false, true, false, false);
-
-//		makeToolInlayUpgradePartItemsFromMaterials(Set.of(EMERALD));
-//		makeToolPlatingUpgradePartItemsForMaterials(Set.of(GOLD, NETHERITE));
-//		makeToolTipplingUpgradePartItemsForMaterials(Set.of(DIAMOND));
 	}
 
 	private static void makeToolSetsForMaterial(AlloygeryToolMaterial material)
@@ -273,76 +268,66 @@ public class ToolItemRegistry
 
 	private static void makeToolPartsForMaterial(AlloygeryToolMaterial material, EnumSet<ToolType> headTypes, boolean makeBindings, boolean makeGuards, boolean makeHandles)
 	{
+		makeToolPartsForMaterial(material, headTypes, makeBindings, makeGuards, makeHandles, Alloygery.ALLOYGERY_TAB_GROUP);
+	}
+
+	private static void makeToolPartsForMaterial(AlloygeryToolMaterial material, EnumSet<ToolType> headTypes, boolean makeBindings, boolean makeGuards, boolean makeHandles, ItemGroup group)
+	{
 		if (headTypes.contains(ToolType.AXE))
 		{
 			registerGeneratedItem(material.getMaterialName() + "_axe_head",
-					new AxeHeadItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new AxeHeadItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("axe_head"));
 		}
 
 		if (headTypes.contains(ToolType.HOE))
 		{
 			registerGeneratedItem(material.getMaterialName() + "_hoe_head",
-					new HoeHeadItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new HoeHeadItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("hoe_head"));
 		}
 
 		if (headTypes.contains(ToolType.PICKAXE))
 		{
 			registerGeneratedItem(material.getMaterialName() + "_pickaxe_head",
-					new PickaxeHeadItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new PickaxeHeadItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("pickaxe_head"));
 		}
 
 		if (headTypes.contains(ToolType.SHOVEL))
 		{
 			registerGeneratedItem(material.getMaterialName() + "_shovel_head",
-					new ShovelHeadItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new ShovelHeadItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("shovel_head"));
 		}
 
 		if (headTypes.contains(ToolType.SWORD))
 		{
 			registerGeneratedItem(material.getMaterialName() + "_sword_blade",
-					new SwordBladeItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new SwordBladeItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("sword_blade"));
 		}
 
 		if (makeBindings)
 		{
 			registerGeneratedItem(material.getMaterialName() + "_binding",
-					new ToolBindingItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new ToolBindingItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("binding"));
 		}
 
 		if (makeGuards)
 		{
 			registerGeneratedItem(material.getMaterialName() + "_sword_guard",
-					new ToolBindingItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new ToolBindingItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("sword_guard"));
 		}
 
 		if (makeHandles)
 		{
 			registerGeneratedItem(material.getMaterialName() + "_handle",
-					new ToolHandleItem(new Item.Settings().group(Alloygery.ALLOYGERY_TAB_GROUP), material),
+					new ToolHandleItem(new Item.Settings().group(group), material),
 					() -> ToolModelBuilder.createPartItemModelJson("handle"));
 		}
-	}
-
-	private static void makeToolInlayUpgradePartItemsFromMaterials(Set<AlloygeryToolMaterial> materials)
-	{
-		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_inlay", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_inlay")));
-	}
-
-	private static void makeToolPlatingUpgradePartItemsForMaterials(Set<AlloygeryToolMaterial> materials)
-	{
-		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_plating", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_plating")));
-	}
-
-	private static void makeToolTipplingUpgradePartItemsForMaterials(Set<AlloygeryToolMaterial> materials)
-	{
-		materials.forEach(material -> registerGeneratedItem(material.getMaterialName() + "_tool_tipping", new ToolUpgradePartItem(material), () -> ToolModelBuilder.createPartItemModelJson("tool_tipping")));
 	}
 
 	private static Item registerGeneratedItem(String path, Item item, Supplier<String> modelJsonSupplier)

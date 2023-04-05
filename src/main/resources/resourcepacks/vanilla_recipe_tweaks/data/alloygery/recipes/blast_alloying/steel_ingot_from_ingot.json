@@ -1,0 +1,17 @@
+{
+  "type": "alloygery:blast_alloying",
+  "inputs": [
+    {
+      "tag": "c:iron_ingots"
+    },
+    {
+      "tag": "c:carbon"
+    }
+  ],
+  "output":{
+    "id": "alloygery:steel_ingot",
+    "count": 2
+  },
+  "smelting_time": 400,
+  "experience": 0.7
+}

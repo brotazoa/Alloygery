@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NPN",
+    "ICI"
+  ],
+  "key": {
+    "N": {
+      "tag": "c:nuggets/steel"
+    },
+    "P": {
+      "tag": "c:plates/steel"
+    },
+    "I": {
+      "tag": "c:ingots/steel"
+    },
+    "C": {
+      "item": "create:andesite_alloy"
+    }
+  },
+  "result": {
+    "item": "create:metal_bracket",
+    "count": 8
+  }
+}

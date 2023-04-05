@@ -1,6 +1,8 @@
 package amorphia.alloygery.content.armor.mixin;
 
+import amorphia.alloygery.content.armor.ArmorPropertyHelper;
 import amorphia.alloygery.content.armor.item.IDynamicArmor;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,6 +20,20 @@ public class ArmorPiglinLovedMixin
 		{
 			cir.setReturnValue(true);
 			cir.cancel();
+		}
+	}
+
+	@Inject(method = "wearsGoldArmor", at = @At("HEAD"), cancellable = true)
+	private static void isWearingGoldArmor(LivingEntity entity, CallbackInfoReturnable<Boolean> cir)
+	{
+		for (ItemStack stack : entity.getArmorItems())
+		{
+			if (stack.getItem() instanceof IDynamicArmor && ArmorPropertyHelper.isPiglinLoved(stack))
+			{
+				cir.setReturnValue(true);
+				cir.cancel();
+				return;
+			}
 		}
 	}
 

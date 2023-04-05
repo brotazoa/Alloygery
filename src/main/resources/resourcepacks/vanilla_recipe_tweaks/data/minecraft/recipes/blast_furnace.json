@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "IXI",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:smooth_stone"
+    },
+    "X": {
+      "item": "minecraft:furnace"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "p": {
+      "item": "alloygery:iron_plate"
+    }
+  },
+  "result": {
+    "item": "minecraft:blast_furnace"
+  }
+}

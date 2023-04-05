@@ -1,13 +1,4 @@
 {
-  "fabric:load_conditions": [
-    {
-      "condition": "fabric:not",
-      "value": {
-        "condition": "alloygery:config_boolean_condition",
-        "config": "enable_vanilla_like_tool_recipes"
-      }
-    }
-  ],
   "type": "alloygery:alloygery_simple_tool_shaped",
   "pattern": [
     "i",
@@ -23,9 +14,9 @@
     }
   },
   "result": {
-    "item": "alloygery:bronze_sword"
+    "item": "alloygery:crude_bronze_sword"
   },
   "substitute_head_part": {
-    "item": "alloygery:bronze_sword_blade"
+    "item": "alloygery:crude_bronze_sword_blade"
   }
 }

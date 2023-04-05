@@ -1,6 +1,8 @@
 package amorphia.alloygery.content.tools;
 
 import amorphia.alloygery.content.tools.item.part.ToolPartType;
+import amorphia.alloygery.content.tools.item.part.ToolType;
+import amorphia.alloygery.content.tools.item.tool.*;
 import amorphia.alloygery.content.tools.property.ToolProperty;
 import amorphia.alloygery.content.tools.property.ToolPropertyOperation;
 import amorphia.alloygery.content.tools.property.ToolPropertyType;
@@ -14,11 +16,44 @@ public class ToolPropertyHelper
 	public static List<ToolProperty> getPropertiesForTool(ItemStack tool)
 	{
 		List<ToolProperty> toolProperties = Lists.newArrayList();
+
+		if (tool.getItem() instanceof IDynamicTool dynamicTool)
+		{
+			addBaseStatsByTool(dynamicTool.getToolType(), toolProperties);
+		}
+
 		toolProperties.addAll(ToolMaterialHelper.getHeadMaterial(tool).getToolPropertiesByPart(ToolPartType.HEAD));
 		toolProperties.addAll(ToolMaterialHelper.getBindingMaterial(tool).getToolPropertiesByPart(ToolPartType.BINDING));
 		toolProperties.addAll(ToolMaterialHelper.getHandleMaterial(tool).getToolPropertiesByPart(ToolPartType.HANDLE));
 		toolProperties.addAll(ToolMaterialHelper.getUpgradeMaterial(tool).getToolPropertiesByPart(ToolPartType.UPGRADE));
 		return toolProperties;
+	}
+
+	private static void addBaseStatsByTool(ToolType toolType, List<ToolProperty> toolProperties)
+	{
+		switch (toolType)
+		{
+			case AXE -> {
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_DAMAGE, ToolPropertyOperation.BASE, DynamicAxeItem.ATTACK_DAMAGE));
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_SPEED, ToolPropertyOperation.BASE, DynamicAxeItem.ATTACK_SPEED));
+			}
+			case HOE -> {
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_DAMAGE, ToolPropertyOperation.BASE, DynamicHoeItem.ATTACK_DAMAGE));
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_SPEED, ToolPropertyOperation.BASE, DynamicHoeItem.ATTACK_SPEED));
+			}
+			case PICKAXE -> {
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_DAMAGE, ToolPropertyOperation.BASE, DynamicPickaxeItem.ATTACK_DAMAGE));
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_SPEED, ToolPropertyOperation.BASE, DynamicPickaxeItem.ATTACK_SPEED));
+			}
+			case SHOVEL -> {
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_DAMAGE, ToolPropertyOperation.BASE, DynamicShovelItem.ATTACK_DAMAGE));
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_SPEED, ToolPropertyOperation.BASE, DynamicShovelItem.ATTACK_SPEED));
+			}
+			case SWORD -> {
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_DAMAGE, ToolPropertyOperation.BASE, DynamicSwordItem.ATTACK_DAMAGE));
+				toolProperties.add(new ToolProperty(ToolPartType.HEAD, ToolPropertyType.ATTACK_SPEED, ToolPropertyOperation.BASE, DynamicSwordItem.ATTACK_SPEED));
+			}
+		}
 	}
 
 	public static float computePropertyValue(List<ToolProperty> toolProperties, ToolPropertyType propertyType)
@@ -79,7 +114,7 @@ public class ToolPropertyHelper
 	public static float getAttackSpeed(ItemStack tool)
 	{
 		final float propertyValue = computePropertyValue(getPropertiesForTool(tool), ToolPropertyType.ATTACK_SPEED);
-		return Math.max(-3.9f, propertyValue);
+		return Math.max(-3.990f, propertyValue);
 	}
 
 	public static float getAttackDamage(ItemStack tool)

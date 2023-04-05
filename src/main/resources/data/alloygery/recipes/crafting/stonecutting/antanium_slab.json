@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "alloygery:antanium_block"
-  },
-  "result": "alloygery:antanium_slab",
-  "count": 2
-}

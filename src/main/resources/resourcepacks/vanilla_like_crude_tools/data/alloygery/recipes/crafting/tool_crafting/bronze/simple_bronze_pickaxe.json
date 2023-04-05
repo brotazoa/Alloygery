@@ -1,0 +1,25 @@
+{
+  "type": "alloygery:alloygery_simple_tool_shaped",
+  "pattern": [
+    "iii",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "i": {
+      "tag": "c:bronze_ingots"
+    },
+    "s": {
+      "tag": "c:sticks"
+    }
+  },
+  "result": {
+    "item": "alloygery:crude_bronze_pickaxe"
+  },
+  "substitute_head_part": {
+    "item": "alloygery:crude_bronze_pickaxe_head"
+  },
+  "substitute_handle_part": {
+    "item": "alloygery:wooden_handle"
+  }
+}

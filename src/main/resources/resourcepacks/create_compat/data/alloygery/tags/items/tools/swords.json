@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#alloygery:tools/andesite_alloy/andesite_alloy_swords",
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_swords",
+    "#alloygery:tools/brass/brass_swords",
+    "#alloygery:tools/brass/brass_upgraded_swords"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#alloygery:tools/andesite_alloy/andesite_alloy_pickaxes",
+    "#alloygery:tools/andesite_alloy/andesite_alloy_upgraded_pickaxes",
+    "#alloygery:tools/brass/brass_pickaxes",
+    "#alloygery:tools/brass/brass_upgraded_pickaxes"
+  ]
+}

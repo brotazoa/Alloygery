@@ -13,6 +13,7 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.ShapelessRecipe;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DefaultedList;
 
 public class ToolHeadRemovingRecipeShapeless extends CraftingToolDamagingRecipeShapeless
 {
@@ -40,6 +41,46 @@ public class ToolHeadRemovingRecipeShapeless extends CraftingToolDamagingRecipeS
 
 		EnchantmentHelper.set(EnchantmentHelper.get(toolStack), headStack);
 		return headStack;
+	}
+
+	@Override
+	public DefaultedList<ItemStack> getRemainder(CraftingInventory inventory)
+	{
+		DefaultedList<ItemStack> defaultedList = super.getRemainder(inventory);
+
+		for(int i = 0; i < defaultedList.size() && i < inventory.size(); i++)
+		{
+			ItemStack stack = inventory.getStack(i).copy();
+			if (stack != null && !stack.isEmpty() && stack.getItem() instanceof IDynamicTool dynamicTool)
+			{
+				ItemStack handle = ToolNBTHelper.createToolPartItemStackFromNBT(ToolNBTHelper.getHandlePartNBTFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(stack)));
+				ItemStack binding = ToolNBTHelper.createToolPartItemStackFromNBT(ToolNBTHelper.getBindingPartNBTFromToolNBT(ToolNBTHelper.getAlloygeryDataNBTFromItemStack(stack)));
+
+				if (handle != null && !handle.isEmpty())
+				{
+					findSpaceForRemainder(defaultedList, handle);
+				}
+
+				if (binding != null && !binding.isEmpty())
+				{
+					findSpaceForRemainder(defaultedList, binding);
+				}
+			}
+		}
+
+		return defaultedList;
+	}
+
+	private void findSpaceForRemainder(DefaultedList<ItemStack> defaultedList, ItemStack itemStack)
+	{
+		for(int i = 0; i < defaultedList.size(); i++)
+		{
+			if(defaultedList.get(i).isEmpty())
+			{
+				defaultedList.set(i, itemStack);
+				break;
+			}
+		}
 	}
 
 	public static class Type implements RecipeType<ToolHeadRemovingRecipeShapeless>

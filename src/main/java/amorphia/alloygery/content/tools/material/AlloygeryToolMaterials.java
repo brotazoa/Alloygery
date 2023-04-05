@@ -13,6 +13,9 @@ public class AlloygeryToolMaterials
 	public static final AlloygeryToolMaterial UNKNOWN = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("unknown").build());
 	public static final AlloygeryToolMaterial HIDDEN = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("hidden").color(0).build());
 
+	public static final AlloygeryToolMaterial CRUDE_COPPER;
+	public static final AlloygeryToolMaterial CRUDE_BRONZE;
+
 	public static final AlloygeryToolMaterial FLINT;
 	public static final AlloygeryToolMaterial TIN;
 	public static final AlloygeryToolMaterial COPPER;
@@ -66,6 +69,18 @@ public class AlloygeryToolMaterials
 				.repairIngredientFromTag("c:tin_ingots")
 				.build());
 
+		CRUDE_COPPER = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("crude_copper")
+				.color(15433553)
+				.repairIngredientFromTag("c:copper_ingots")
+				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
+					.property(ToolPropertyType.MINING_LEVEL, 1).next()
+					.property(ToolPropertyType.DURABILITY, 70).next()
+					.property(ToolPropertyType.ENCHANTABILITY, 6).next()
+					.property(ToolPropertyType.MINING_SPEED, 4.0f).next()
+					.property(ToolPropertyType.ATTACK_SPEED, 0.0f).next()
+					.property(ToolPropertyType.ATTACK_DAMAGE, 1.0f).build()
+				.build());
+
 		COPPER = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("copper")
 				.color(15433553)
 				.repairIngredientFromTag("c:copper_ingots")
@@ -86,6 +101,18 @@ public class AlloygeryToolMaterials
 					.property(ToolPropertyType.MINING_SPEED, 0.6f).next()
 					.property(ToolPropertyType.ATTACK_SPEED, 0.8f).next()
 					.property(ToolPropertyType.ATTACK_DAMAGE, 0.4f).build()
+				.build());
+
+		CRUDE_BRONZE = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("crude_bronze")
+				.color(7556410)
+				.repairIngredientFromTag("c:bronze_ingots")
+				.toolProperty().forPart(ToolPartType.HEAD).operation(ToolPropertyOperation.BASE)
+					.property(ToolPropertyType.MINING_LEVEL, 2).next()
+					.property(ToolPropertyType.DURABILITY, 190).next()
+					.property(ToolPropertyType.ENCHANTABILITY, 8).next()
+					.property(ToolPropertyType.MINING_SPEED, 5.0f).next()
+					.property(ToolPropertyType.ATTACK_SPEED, 0.0f).next()
+					.property(ToolPropertyType.ATTACK_DAMAGE, 2.0f).build()
 				.build());
 
 		BRONZE = register(new AlloygeryToolMaterial.AlloygeryToolMaterialBuilder("bronze")

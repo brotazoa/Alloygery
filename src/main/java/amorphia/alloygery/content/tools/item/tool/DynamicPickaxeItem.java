@@ -31,7 +31,7 @@ public class DynamicPickaxeItem extends PickaxeItem implements IDynamicTool
 
 	public DynamicPickaxeItem(Settings settings, ToolUpgradeType upgradeType)
 	{
-		super(EmptyToolMaterial.INSTANCE, (int) ATTACK_DAMAGE, ATTACK_SPEED, settings);
+		super(EmptyToolMaterial.INSTANCE, 0, 0.0f, settings);
 		this.upgradeType = upgradeType;
 		TOOL_ITEMS.add(this);
 	}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    " d ",
+    "iii"
+  ],
+  "key": {
+    "b": {
+      "item": "alloygery:steel_block"
+    },
+    "d": {
+      "item": "alloygery:steel_double_ingot"
+    },
+    "i": {
+      "item": "alloygery:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "minecraft:anvil"
+  }
+}

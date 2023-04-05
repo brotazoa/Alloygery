@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "alloygery:bronze_shovel"
+    "alloygery:bronze_shovel",
+    "alloygery:crude_bronze_shovel"
   ]
 }

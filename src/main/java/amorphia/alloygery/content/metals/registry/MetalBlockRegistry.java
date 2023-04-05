@@ -41,17 +41,17 @@ public class MetalBlockRegistry
 		register("nickel_ore", NICKEL_ORE);
 		register("titanium_ore", TITANIUM_ORE);
 
-		makeBlocksForMaterial(TIN, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.NORMAL);
-		makeBlocksForMaterial(BRONZE, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.NORMAL);
-		makeBlocksForMaterial(ANTANIUM, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.SHINY);
+		makeBlocksForMaterial(TIN, EnumSet.of(BLOCK, RAW), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(BRONZE, EnumSet.of(BLOCK), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(ANTANIUM, EnumSet.of(BLOCK), CraftingMaterialVariantTypes.SHINY);
 		makeBlocksForMaterial(STEEL, EnumSet.of(BLOCK, STAIR, SLAB, SLOPE, FENCE, FENCE_GATE), CraftingMaterialVariantTypes.NORMAL);
-		makeBlocksForMaterial(NICKEL, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.DULL);
-		makeBlocksForMaterial(INVAR, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
-		makeBlocksForMaterial(CONSTANTAN, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
-		makeBlocksForMaterial(CUPRONICKEL, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.DULL);
-		makeBlocksForMaterial(TITANIUM, EnumSet.of(BLOCK, STAIR, SLAB, RAW), CraftingMaterialVariantTypes.NORMAL);
-		makeBlocksForMaterial(TITANIUM_GOLD, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.SHINY);
-		makeBlocksForMaterial(NITINOL, EnumSet.of(BLOCK, STAIR, SLAB), CraftingMaterialVariantTypes.SHINY);
+		makeBlocksForMaterial(NICKEL, EnumSet.of(BLOCK, RAW), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(INVAR, EnumSet.of(BLOCK), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(CONSTANTAN, EnumSet.of(BLOCK), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(CUPRONICKEL, EnumSet.of(BLOCK), CraftingMaterialVariantTypes.DULL);
+		makeBlocksForMaterial(TITANIUM, EnumSet.of(BLOCK, RAW), CraftingMaterialVariantTypes.NORMAL);
+		makeBlocksForMaterial(TITANIUM_GOLD, EnumSet.of(BLOCK), CraftingMaterialVariantTypes.SHINY);
+		makeBlocksForMaterial(NITINOL, EnumSet.of(BLOCK), CraftingMaterialVariantTypes.SHINY);
 	}
 
 	private static void makeBlocksForMaterial(AlloygeryToolMaterial material, EnumSet<CraftingMaterialBlockTypes> blockTypes, CraftingMaterialVariantTypes variantType)

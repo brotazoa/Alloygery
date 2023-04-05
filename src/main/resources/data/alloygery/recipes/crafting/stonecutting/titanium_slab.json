@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "alloygery:titanium_block"
-  },
-  "result": "alloygery:titanium_slab",
-  "count": 2
-}

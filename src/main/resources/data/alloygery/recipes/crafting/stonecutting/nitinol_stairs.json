@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "alloygery:nitinol_block"
-  },
-  "result": "alloygery:nitinol_stairs",
-  "count": 1
-}

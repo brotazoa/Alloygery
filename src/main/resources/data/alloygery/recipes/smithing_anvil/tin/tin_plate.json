@@ -6,7 +6,6 @@
   "material": {
     "tag": "c:tin_ingots"
   },
-  "minimum_crafting_tier": 2,
   "result": {
     "item": "alloygery:tin_plate"
   }

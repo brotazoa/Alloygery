@@ -9,12 +9,10 @@ import amorphia.alloygery.content.machines.recipe.SmithingAnvilRecipe;
 import amorphia.alloygery.content.machines.registry.MachineBlockRegistry;
 import amorphia.alloygery.content.machines.registry.MachineRecipeRegistry;
 import amorphia.alloygery.content.tools.item.tool.IDynamicTool;
-import amorphia.alloygery.content.tools.registry.ToolItemRegistry;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 import dev.emi.emi.api.stack.EmiStack;
-import net.minecraft.util.registry.Registry;
 
 public class AlloygeryEmiPlugin implements EmiPlugin
 {
@@ -44,7 +42,7 @@ public class AlloygeryEmiPlugin implements EmiPlugin
 
 		for(BlastAlloyingRecipe recipe : registry.getRecipeManager().listAllOfType(MachineRecipeRegistry.BLAST_ALLOYING_RECIPE_TYPE))
 		{
-			registry.addRecipe(new AlloyingEmiRecipe(recipe));
+			registry.addRecipe(new BlastAlloyingEmiRecipe(recipe));
 		}
 
 		for(SmithingAnvilRecipe recipe : registry.getRecipeManager().listAllOfType(MachineRecipeRegistry.SMITHING_ANVIL_RECIPE_TYPE))

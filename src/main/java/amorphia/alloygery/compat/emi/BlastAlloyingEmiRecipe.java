@@ -3,9 +3,9 @@ package amorphia.alloygery.compat.emi;
 import amorphia.alloygery.content.machines.recipe.AbstractAlloyingRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
 
-public class AlloyingEmiRecipe extends AbstractAlloyingEmiRecipe
+public class BlastAlloyingEmiRecipe extends AbstractAlloyingEmiRecipe
 {
-	public AlloyingEmiRecipe(AbstractAlloyingRecipe recipe)
+	public BlastAlloyingEmiRecipe(AbstractAlloyingRecipe recipe)
 	{
 		super(recipe);
 	}
@@ -13,6 +13,6 @@ public class AlloyingEmiRecipe extends AbstractAlloyingEmiRecipe
 	@Override
 	public EmiRecipeCategory getCategory()
 	{
-		return AlloygeryEmiPlugin.ALLOYING_CATEGORY;
+		return AlloygeryEmiPlugin.BLAST_ALLOYING_CATEGORY;
 	}
 }

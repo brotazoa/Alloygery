@@ -4,9 +4,8 @@
     "tag": "alloygery:tools/crafting_hammers"
   },
   "material": {
-    "tag": "c:tin_plates"
+    "tag": "c:tin_double_ingots"
   },
-  "minimum_crafting_tier": 2,
   "result": {
     "item": "alloygery:tin_heavy_plate"
   }
